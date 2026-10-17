@@ -14,6 +14,7 @@ Train for the job as it is actually done inside a health authority: learn who yo
 | 6 | [Module 05 — Evaluation](<Module 05 - Evaluation/README.md>) | A scored set, with failures named |
 | 7 | [Module 06 — Run it in their environment](<Module 06 - Run it in their environment/README.md>) | A start, an access log, and a result file |
 | 8 | [Module 07 — The handoff](<Module 07 - The handoff/README.md>) | Two pages, a runbook, and a pilot that stays stopped |
+| 9 | [Module 08 — Capstone](<Module 08 - Capstone/README.md>) | A refusal or a later slice for a new ask |
 
 ## 1. Who is an FDE
 
@@ -89,10 +90,8 @@ Then open [Module 07](<Module 07 - The handoff/README.md>).
 
 One scope for the Chief Digital Officer and the ophthalmology lead, plus a runbook. The clinical safety owner is unassigned, so the pilot does not start. The checker reads the pack and does not call a model.
 
-## Later modules
+## 9. Module 08 — Capstone
 
-These folders say what each remaining module is for. The lesson notes inside them are not written yet.
+Then open [Module 08](<Module 08 - Capstone/README.md>).
 
-| | Module | What it is for |
-|---|---|---|
-| 8 | [Capstone](<Module 08 - Capstone/README.md>) | Answer a new ask on the same data |
+Three new asks use the same data. Each answer refuses the ask or leaves it for a later slice, and cites a file already in the program. The platform is not rebuilt. The pilot does not start.
