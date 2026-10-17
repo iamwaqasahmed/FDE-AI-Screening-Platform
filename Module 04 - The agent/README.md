@@ -1,9 +1,24 @@
 # Module 04 — The agent
 
-Put a model in front of the tools and the retriever. The agent chooses a step, calls a Module 02 tool or the Module 03 retriever, and answers from what came back. It does not recalculate coverage in a sentence, and it does not diagnose a retina. The drop has no picture files.
+Put a model in front of the tools and the retriever. The model chooses a step. The numbers and the rules come back from code. The model does not recalculate coverage, and it does not diagnose a retina.
 
-The jobs are the ones already in the case: who is due, what is on the queue, whether a rule is in force, a letter filled from one row, and a refusal when asked to diagnose or to treat the draft as policy. The reply names the tool, the document, and the result. A grader still signs any referral, recall, or reassurance.
+**Time.** About half a day.
+**Code.** The reference loop is in [screening_agent](../screening_agent).
+**Check.** `python -m screening_agent.check` from the repository root. No API key is required for the check.
 
-This module is ready when those jobs work at the three sites named in the clinic note, and a request to invent a diagnosis or a referral fails closed.
+## Leave closed
 
-The lesson notes for this module are not written yet.
+`data/truth`, `data/eval`, and `problem_simulation/config.yaml`. The agent sees tool results, not the handover files.
+
+## Sequence
+
+| | Note | What you do |
+|---|---|---|
+| 1 | [What the agent does](01-what-the-agent-does.md) | Choose a tool. Repeat the result. Do not invent. |
+| 2 | [The catalog](02-the-catalog.md) | See the tools and `retrieve`. |
+| 3 | [The loop](03-the-loop.md) | Tool call, tool result, structured reply. |
+| 4 | [Refusals](04-refusals.md) | Diagnosis, unsigned referral, draft treated as policy. |
+| 5 | [Three sites](05-three-sites.md) | Name the clinics. Do not invent a count per clinic. |
+| 6 | [Check](06-check.md) | Run the checker. Point the same loop at a live model if you have a key. |
+
+Next: [What the agent does](01-what-the-agent-does.md).

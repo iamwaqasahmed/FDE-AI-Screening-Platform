@@ -10,6 +10,7 @@ Train for the job as it is actually done inside a health authority: learn who yo
 | 2 | [Module 01 — Problem Discovery](<Module 01 - Problem Discovery/README.md>) | An ask log and a problem brief |
 | 3 | [Module 02 — Tools the agent can trust](<Module 02 - Tools the agent can trust/README.md>) | Functions that match the discovery counts |
 | 4 | [Module 03 — Retrieval](<Module 03 - Retrieval/README.md>) | A cited passage, with in-force and draft kept apart |
+| 5 | [Module 04 — The agent](<Module 04 - The agent/README.md>) | A reply that names the tool, the document, and the result |
 
 ## 1. Who is an FDE
 
@@ -61,13 +62,18 @@ Then open [Module 03](<Module 03 - Retrieval/README.md>).
 
 Retrieval cites the written rule. It does not count. The issued procedure and the 14-day draft can both look similar. The retriever returns a passage with its document id and its status, and it does not relabel a draft as in force. `screening_retrieval` is the reference. No model and no network.
 
+## 5. Module 04 — The agent
+
+Then open [Module 04](<Module 04 - The agent/README.md>).
+
+The agent calls the Module 02 tools and the Module 03 retriever. The reply names the tool, the document, and the result. It refuses to grade a retina, to refer without a grader, and to treat the 14-day draft as current policy. The checker uses a scripted model. A live OpenAI-compatible model is optional.
+
 ## Later modules
 
 These folders say what each remaining module is for. The lesson notes inside them are not written yet.
 
 | | Module | What it is for |
 |---|---|---|
-| 4 | [The agent](<Module 04 - The agent/README.md>) | Call the tools and the retriever, and refuse to diagnose |
 | 5 | [Evaluation](<Module 05 - Evaluation/README.md>) | Record where the agent is right, wrong, or silent |
 | 6 | [Run it in their environment](<Module 06 - Run it in their environment/README.md>) | Start, audit, and stop the service on their network |
 | 7 | [The handoff](<Module 07 - The handoff/README.md>) | Leave an executive page, a clinical page, and a runbook |
