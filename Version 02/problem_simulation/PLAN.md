@@ -527,7 +527,7 @@ The simulation is finished when the assessment seed builds, every baseline loses
 
 The weekly modules are designed in full after the simulation milestones. The shape stays:
 
-- **Week 1: Opportunity and landscape.** Interviews, systems of record, the opportunity ranking, and the first brief. Out of scope: autonomous grading and unsigned referrals.
+- **Week 1: Opportunity and landscape.** Interviews, systems of record, the opportunity ranking, and the first brief. Out of scope: autonomous grading and unsigned referrals. The lesson is [Week 01 — Problem discovery](<../Week 01 - Problem Discovery/README.md>). `truth/gold/discovery.json` is the seed-specific key.
 - **Week 2: Enterprise data.** Identity resolution, a warehouse model with data contracts, and the schema-change drop.
 - **Week 3: Retrieval and ML evidence.** Index the corpus and beat the retrieval baselines. Evaluate the vendor model against the proposals, under the DPO's new restriction.
 - **Week 4: Graph retrieval and integration.** Policy and care-path graphs, multi-hop cohorts, and reconciliation through the letter-bureau incident.

@@ -2,6 +2,8 @@
 
 The factory for the Version 02 world. It generates [../data](../data/README.md) from a seed, checks that every planted problem traces to one cause, scores reference baselines, and serves the mock APIs. It is not the client brief. Participants work from `../data`; facilitators and maintainers work here.
 
+Week 1 gold is `truth/gold/discovery.json`, written by `simulation/eval/discovery_gold.py` on every build. The facilitator reference that must pass the Week 1 checker on that gold lives in [Week 01](<../Week 01 - Problem Discovery/reference_discovery/README.md>), and participants leave it closed.
+
 | Path | What it is |
 |---|---|
 | `simulation/` | The generator, checks, eval, scorer, baselines, and hardness audit (Python package) |
@@ -79,7 +81,7 @@ Every module does one thing and stays under about 200 lines.
 | `ml/` | Vendor retrospective set, operating points, adjudication, did-not-attend table, numpy baselines, judge calibration |
 | `delivery/`, `drops/` | Tracker, roadmap, risks, freezes, RACI, gates, procurement, benefits, accessibility, contracts; one module per weekly drop |
 | `check/` | One check module per surface |
-| `eval/` | One case module per surface, `score/` (the scorer), `baselines/` |
+| `eval/` | One case module per surface, `score/` (the scorer), `baselines/`, and `discovery_gold.py` (the Week 1 key, written to `truth/gold/discovery.json`) |
 | `audit/` | The hardness audit and the human dry-run protocol (`audit/DRY_RUN.md`) |
 | `tests/` | Unit tests |
 

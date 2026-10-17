@@ -1,0 +1,7 @@
+Can you walk me through the systems landscape and trust zones?
+How do vendor scores come back, across which trust zone?
+How does the warehouse SQL count eligible people?
+What is on the change and release calendar?
+Is the registry frozen at any point?
+Is a new schema version due?
+Does the letter bureau have a seasonal freeze too?

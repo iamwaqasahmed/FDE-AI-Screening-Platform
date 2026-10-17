@@ -37,6 +37,9 @@ def write_world(world: dict) -> None:
     _write_handover(world)
     print(f"Writing {len(world['files'])} surface files...")
     write_all(DATA, world["files"])
+    from simulation.eval.discovery_gold import build as discovery_gold
+
+    world["gold"]["discovery"] = discovery_gold(world)
     write_all(TRUTH / "gold", {f"{key}.{'jsonl' if isinstance(value, list) else 'json'}": value for key, value in world["gold"].items()})
     print("Writing eval...")
     write_cases(world, EVAL / "cases.jsonl")

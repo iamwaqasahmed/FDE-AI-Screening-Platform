@@ -1,0 +1,8 @@
+How is the records register maintained?
+Are the statuses in it current or stale?
+How are duplicate patient records and merges handled?
+Was any merge batch ever reversed?
+How many alias records are there?
+What does the registry feed file look like?
+Did the schema or column format change?
+Were reissued registry numbers ever repeated in the feed?

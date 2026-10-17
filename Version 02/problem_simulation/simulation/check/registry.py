@@ -11,13 +11,14 @@ from simulation.check import (
     core_warehouse,
     corpus,
     delivery,
+    discovery,
     economics,
     estate,
     ml,
     stakeholders,
 )
 
-SURFACE_CHECKS = (corpus, estate, economics, stakeholders, ml, delivery)
+SURFACE_CHECKS = (corpus, estate, economics, stakeholders, ml, delivery, discovery)
 
 CORE_CHECKS = [
     ("people", core_people.check),

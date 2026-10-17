@@ -7,3 +7,6 @@ runtime/
 # Version 02 data is generated from its seed: cd "Version 02/problem_simulation" && python -m simulation
 Version 02/data/*
 !Version 02/data/README.md
+
+# Team work and reference runs for Version 02 modules
+Version 02/work/

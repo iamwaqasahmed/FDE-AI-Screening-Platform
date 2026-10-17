@@ -11,6 +11,7 @@ Everyone and everything in it is fictional. Nothing here is a real patient's rec
 | Folder | Who it is for | Start with |
 |---|---|---|
 | [data](data/README.md) | Participants. Everything the authority hands you: 19 system exports, 1,927 documents, stakeholder personas, user research, economics, and the weekly drops. | [data/README.md](data/README.md) |
+| [Week 01 — Problem discovery](<Week 01 - Problem Discovery/README.md>) | Participants. Interviews, profiling, the timeline, the sizing, and the first brief. | [Week 01](<Week 01 - Problem Discovery/README.md>) |
 | [problem_simulation](problem_simulation/README.md) | Facilitators and maintainers. The generator that builds `data/` from a seed, the checks, the eval set and scorer, the baselines, and the mock APIs. | [problem_simulation/README.md](problem_simulation/README.md) |
 
 ## What you will practise
@@ -29,7 +30,7 @@ Everyone and everything in it is fictional. Nothing here is a real patient's rec
 
 | Week | Focus | Drop |
 |---|---|---|
-| 1 | Discovery: interviews, profiling, the timeline, sizing problems | The base handover |
+| 1 | Discovery: interviews, profiling, the timeline, sizing problems. [Week 01](<Week 01 - Problem Discovery/README.md>) | The base handover |
 | 2 | Enterprise data: identity, the care-path record, data quality | Registry schema v3 |
 | 3 | Retrieval and ML evidence | A data protection restriction |
 | 4 | The agent and the integration | A letter bureau incident |
