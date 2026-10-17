@@ -1,19 +1,21 @@
 # Problem discovery
 
-Self-paced module for forward deployed engineers. The client, the figures, and the clinical details are a simulation for practice. They are not a real health authority and not a protocol for patient care.
+Self-paced module for forward deployed engineers. Hartland Regional Health Authority is a simulation. The people, the counts, and the clinical details are for practice. They are not a real health system and not a protocol for patient care.
 
-You are embedded at a regional health authority that reports to the Ministry of Health. The only sentence you were given before you arrived is: "We need an AI Screening Platform."
+You are embedded at a regional authority that reports to the Ministry of Health. The only sentence you were given before you arrived is: "We need an AI Screening Platform."
 
 ## How to study this
 
 Set aside about half a day. Work in order. Write the two artifacts when the module tells you to stop. The reference debrief at the end is the answer key. Reading it early skips the skill this module exists to teach.
 
+Do not open `data/truth`, `data/eval`, or `problem_simulation/config.yaml`. Those are the grading materials and the generator. The client did not hand them to you.
+
 You need a place to write. Produce two short documents:
 
-1. An ask log, written before you read the evidence.
-2. A problem brief, written after the evidence and before the debrief.
+1. An ask log, written before you open the files.
+2. A problem brief, written after you have queried the files and before you read the debrief.
 
-Skills in [FDE.md](FDE.md) this module trains: problem discovery, product judgment, domain learning, and working while the picture is still incomplete.
+Skills in [FDE.md](FDE.md) this module trains: problem discovery, product judgment, domain learning, and working while the picture is still incomplete. The folder guide is [problem_simulation/README.md](problem_simulation/README.md).
 
 ## What you will be able to do
 
@@ -21,7 +23,7 @@ By the end you can take a vague executive request and turn it into a problem a t
 
 - Restate the ask without improving it.
 - Separate the sponsor's goal from the operator's pain.
-- Reconstruct the workflow people actually follow, including where it breaks.
+- Reconstruct the workflow from the extracts and the written rules, including where they disagree.
 - Name one outcome, one first slice, and the work you are leaving for later.
 - Say what is still unknown, and proceed anyway.
 
@@ -29,9 +31,9 @@ By the end you can take a vague executive request and turn it into a problem a t
 
 A forward deployed engineer is hired when a customer says "build us a platform." That sentence is a request. The job is to find the problem underneath it.
 
-In a health system the cost of skipping discovery is specific. A model can be accurate on a demo set and still send the wrong patients into an overcrowded clinic, miss people who never appear in the data, or stall for a year in security review. Discovery is how you find that out while the change is still small.
+In a health system the cost of skipping discovery is specific. A model can look strong on a slide and still send the wrong patients into an overcrowded clinic, miss people who never appear in the data, or stall in security review. Discovery is how you find that out while the change is still small.
 
-Use these moves on every engagement. They are the method. The Hartland case is only the practice.
+Use these moves on every engagement. They are the method. Hartland is only the practice.
 
 1. Write the ask down verbatim. Leave your improvements out of it.
 2. Name the sponsor's goal and the operator's pain as two different things.
@@ -51,21 +53,21 @@ The brief you hand to the client has ten parts: the ask, the client, who feels t
 | Term | Meaning here |
 |---|---|
 | Health authority | The regional body that runs public screening programs for the ministry |
-| Registry | The list of people known to have a condition, in this case diabetes |
-| Coverage | The share of eligible people who actually received a screen in the required window |
-| Fundus photo | A photograph of the retina, used to look for diabetic eye disease |
-| Ungradable | A photo that cannot be read, so the screen did not happen |
-| Referable | A human grader's judgment that an eye clinician should see the patient |
+| Registry | The list of people known to have diabetes |
+| Coverage | The share of eligible people with a recorded result in the last 24 months |
+| Fundus photo | A photograph of the retina, used in diabetic eye screening |
+| Ungradable | A photo coded so that it cannot be read |
+| Referable | A grader's judgment that an eye clinician should see the patient |
 | Grader | The trained person who reads the photo and records a result |
-| Sight-threatening | The urgent subset that needs a specialist soon, not at the next routine visit |
-| PACS | The hospital system that stores medical images |
+| Sight-threatening | The urgent grade that needs a specialist sooner than a routine visit |
+| PACS | The hospital image index |
 | DPO | Data protection officer, who can stop a deployment that breaks the data rules |
 
 ## The engagement
 
-Hartland Regional Health Authority is fictional. It runs population screening for the Ministry of Health. You arrived this morning. Your company expects a recommended first deployment. The authority expects an architecture.
+You arrived this morning. Your company expects a recommended first deployment. The authority expects an architecture.
 
-You have one email.
+You have one email. You do not have the extract yet.
 
 > From: Chief Digital Officer, Hartland Regional Health Authority
 > Subject: AI Screening Platform — kickoff
@@ -90,67 +92,73 @@ The Chief Digital Officer offered you the vendor slides and thirty minutes. Trea
 
 ## Evidence
 
-You spend the next two days in the building. This is what you collect. Read it as raw notes. People contradict each other. Spoken numbers and file extracts disagree. That is the assignment.
+You spend the next two days in the building. IT then sends the extract and the written rules. The interviews below are what people said. The files are what you can count. Where a person and a file disagree, the assignment is to show the disagreement, not to average it away.
 
-### Director of Screening Programs
+The extract is [data/handover](data/handover). The written rules are [data/corpus](data/corpus). The cover note in the extract is the authority's note, not this module.
 
-> Breast screening meets its coverage target. Cervical screening is close. Diabetic eye screening is the one I cannot defend. The registry says we have about 84,000 people with diabetes. I tell the ministry that coverage is 41%, and that rural coverage is around a quarter. I do not have a source for the rural number. It is the figure we have been repeating.
->
-> People are screened at six hospital eye clinics. Two primary-care sites started a pilot and then stalled. Photos go to three graders. One grader is on leave. Results go out by letter. I hear that letters take weeks. Ophthalmology tells me we refer too many people, and also that the urgent people wait too long. Both things are probably true.
->
-> If your platform touches breast screening, that program lead will block you. She is right to. Do not spend this quarter on a home for every program. I need the diabetics who have not been seen, and I need the ones we photograph to come out with a result.
+### What people said
 
-### Ophthalmology clinical lead
+**Director of Screening Programs.** Breast screening meets its coverage target. Cervical screening is close. Diabetic eye screening is the program they cannot defend in front of the ministry. They have been saying the registry holds about 84,000 people with diabetes, that coverage is about 41%, and that rural coverage is around a quarter. They do not have a source for the rural figure. It is the number the briefing keeps repeating. Photos go to three graders. One of them has been away. Results go out by letter. Ophthalmology says too many people are referred, and also that the urgent people wait too long.
 
-> Do not send me a longer list. My routine queue is already past fourteen weeks. For disease that can take someone's sight, our draft rule is that they are seen within fourteen days. Nobody issued that rule. Look at the waits.
->
-> Last year's model marked a huge share of hospital photos as positive. The vendor called that safety. I call it my clinic. Specificity was not on the slide.
->
-> A grader must remain accountable for any result that changes what we do to a patient. A score can sort a queue. A score cannot discharge a patient or refer one. If you want my signature on a safety note, that is the rule.
+**Ophthalmology clinical lead.** Do not send a longer list. The routine queue is already past fourteen weeks. A draft note talks about seeing sight-threatening disease within 14 days. Nobody has issued that note. Last year's model marked a large share of hospital photos as positive. Specificity was not on the slide. A grader must remain accountable for any result that changes care. A score can sort a queue. A score cannot discharge a patient or create a referral.
 
-### Nurse at a Hill Counties primary-care site
+**Nurse at a Hill Counties primary-care site.** Patients travel a long way, longer from the river towns. The nurse takes the photo and does not know if it is usable. The file goes in a shared folder called `EYE SCREEN 2024 final final`. If the picture is no good, the patient has already gone home before anyone says so. The nurse can keep someone for another ten minutes if something on the screen says to retake the photo. The nurse cannot invent a specialist appointment.
 
-> Patients take half a day to get here, longer from the river towns. I take the photo. I do not know if it is usable. The file goes in a shared folder called `EYE SCREEN 2024 final final`. If the picture is no good, the letter comes back after the patient has already lost wages to come in. Most of them do not come back.
->
-> I can keep someone for another ten minutes if something on the screen tells me to retake the photo before they leave. I cannot keep them for a specialist appointment we do not have.
+**Grader.** The queue is the workbook. Blank results do not sort themselves. The clinic that calls gets opened first. Some sight-threatening cases are written as a code, and some are written only in the notes. Mild referable disease and sight-threatening disease still leave on one referral list.
 
-### Grader
+**Data protection officer.** A previous pilot stored images outside the authority network and was paused. The written rule is the one they will enforce. They will review a bounded service with a data map. They will not review one release that covers breast, cervical, and eye screening.
 
-> The work queue is a spreadsheet. The oldest tab still says the photo was taken and the result is blank. Those rows do not sort themselves. I open whichever file a clinic chases me about. The urgent code exists, and I use it when I am sure. Plenty of referable results are mild and could be photographed again in primary care next year. They still land on the same ophthalmology list as the urgent ones, because the letter template has one referral box.
+**IT manager.** The electronic health record team can start an integration in about fourteen months. What exists now is the extract you were given: a registry file, a workbook, a hospital manifest, a shared-folder listing, letters, and referrals. There is no API. Hospital captures are on the PACS manifest. Primary-care and outreach captures are on the shared-folder listing. The cover note tells you how to join the files. IT did not write that note.
 
-### Data protection officer
+**Breast screening program lead.** That program meets its standard. Two readers already review every set. A shared AI platform creates a safety case they did not ask for. Leave that program out of the first release.
 
-> The vendor pilot stored retinal images in a cloud region outside the authority network. I paused it. Images are health data. A restart needs four things: images stay on the authority network, every access is logged, retention is written down, and a named clinical safety owner signs the operating rule. Using patient images to train a model is a separate approval. It is not included in a software pilot.
->
-> I will not review a platform for three screening programs. I will review a bounded service with a data map.
+**Vendor.** On 1,200 hospital images, sensitivity for referable disease was 93%. Those images came from dilated patients on hospital cameras. Specificity is "available under NDA." The model returns nothing when it judges an image ungradable. The contract in procurement is a regional license for eye, breast, and cervical screening.
 
-### IT manager
+### What you count
 
-> The electronic health record team can start an integration in about fourteen months. That slot is real. What I can give you now is a nightly file from the diabetes registry over SFTP, and a folder where you can leave a result file for the call center and the graders. Hospital images also sit in PACS. The rural sites do not use PACS. They use the shared folder.
->
-> There is no API for this program. Please stop drawing one on the architecture slide until we have a reason to build it.
+Use the snapshot on the cover note and the 24-month rule in the issued procedure. Then answer these from the files. Write the queries down. The debrief has the figures, and your counts should match them.
 
-### Breast screening program lead
+- Who is eligible. Test the cover note and the data dictionary against the registry columns. `RECORD_STATUS` and `FLAG` do not mean what the cover note says.
+- Coverage for the authority, and coverage for each district. District names are not spelled one way.
+- How many people have a photo and no result. The grade-code list tells you what a blank result means. The dictionary says something else.
+- The mix of result codes, after you map the free text in the workbook. Tabs and the `OLD` sheet are part of the mess.
+- Median days from photo to letter, for completed results only. Some letter rows match nobody. Some completed results have no letter.
+- Median days from an urgent result to a specialist visit. The referral file has no urgent column. The issued procedure explains why.
+- What the vendor file actually contains, set next to the 93% sentence in the cover note.
+- Which corpus documents are in force, and which document is still a draft.
+- How many shared-folder names appear on no workbook row.
 
-> We meet our standard. Two readers already review every set of images. We have an audit trail. A single platform that "adds AI" to my program creates a safety case I did not ask for, on a clock set by a press announcement. Leave us out of the first release.
+`LOCAL_PID` is on the registry and on the workbook. `REGISTRY_NO` is what the cover note tells you to join on. The PACS manifest uses a hospital number. Try all three.
 
-### Call with the vendor
+## Stop. Write the problem brief.
 
-The sales engineer repeats the slide. On 1,200 hospital images, sensitivity for referable disease was 93%. The images came from dilated patients on hospital cameras. Specificity is "available under a mutual NDA later." The model returns no output when it judges an image ungradable. The contract they sent procurement is a regional license for an AI Screening Platform covering eye, breast, and cervical screening. Implementation services are a separate statement of work.
+Write this before you read the debrief. Two pages is enough. Where the files are thin, say so under open questions. Do not fill the gaps with a platform diagram.
 
-### Registry extract
+1. **Ask, verbatim.**
+2. **Client and sponsor.** Who can say yes, and what they are under pressure to show.
+3. **Who feels the pain.** The people whose day changes if you succeed. One sentence each.
+4. **Workflow as it is.** From "person with diabetes" to "seen or not seen," including the broken handoffs.
+5. **Job to be done.** One paragraph. The request was a platform. The job is the outcome the eye-screening program cannot currently produce.
+6. **Outcome and metrics.** One primary outcome. Three to five metrics you counted, or that the first slice would have to start counting.
+7. **Constraints.** Clinical, data, integration, and political. Only constraints you can point to in an interview, a file, or a corpus document.
+8. **First slice.** The sites, the users, what the agent does this quarter, which tools it calls, which documents it retrieves, and the decision a human still owns.
+9. **Later work.** What you will not put in the first release. Each item needs a reason from the evidence.
+10. **Open questions.** What would change the slice if the answer came back differently.
+11. **Two conversations.** Five lines for the Chief Digital Officer. Five lines for the ophthalmology lead. Same slice, different sentences.
 
-You are given a one-off export, not a live system. A data analyst warns you that "active" and "eligible" are different.
+The first slice is an agent with retrieval and tools. Retrieval reads the corpus. Tools read the handover. A chat window that answers from memory, with no tool call and no cited rule, is not that slice. A grader still signs every result that refers, recalls, or reassures a patient.
 
-| | Count |
-|---|---|
-| Rows marked active on the diabetes registry | 91,406 |
-| Flagged deceased or moved out of region | 7,286 |
-| Eligible people | 84,120 |
-| Eligible people with a result code in the last 24 months | 34,490 |
-| Photo recorded in the last 24 months and no result code | 6,110 |
+## Reference debrief
 
-Coverage on the eligible denominator is 34,490 / 84,120 = 41%. The 6,110 photos with no result are not in that coverage figure. Those people were photographed and still have no completed screen.
+Read this only after your brief exists. A difference is a miss when your version ignores a file or adds a system nobody asked to run.
+
+### What the files support
+
+The Chief Digital Officer asked for a three-program architecture, a vendor already in procurement, and a demo before quarter end. That is the sponsor's goal.
+
+The operator's pain is diabetic eye screening. Breast screening meets its target. Cervical screening is not the failure anyone described. The clinic note already sets breast, cervical, and River Outreach outside the first slice.
+
+Eligible people are registry rows whose `FLAG` is empty. That is 84,120 people, not every row marked `RECORD_STATUS` Active. The extract has 91,406 rows. 7,286 are deceased or moved. The director's "about 84,000" is this denominator, rounded. Coverage is 34,490 / 84,120 = 41%. A photo with no result is not coverage. There are 6,110 of those.
 
 | District | Eligible | Result in 24 months | Coverage |
 |---|---:|---:|---:|
@@ -159,146 +167,98 @@ Coverage on the eligible denominator is 34,490 / 84,120 = 41%. The 6,110 photos 
 | Hill Counties | 15,800 | 1,264 | 8% |
 | River Districts | 9,720 | 230 | 2.4% |
 
-The director's "rural coverage is around a quarter" does not match Hill Counties or River Districts. North City and East City together hold 58,600 eligible people and 32,996 results, about 56%. Hill Counties and River Districts together hold 25,520 eligible people and 1,494 results, about 6%.
+Spellings such as `N. City`, `Hill County`, and `Rivers` map back to those four names. The spoken "rural coverage is around a quarter" does not survive that map. Hill Counties and River Districts together are 25,520 eligible people and 1,494 results, about 6%.
 
-Among the 34,490 completed results:
+Among the 34,490 completed results, after mapping `prolif`, a note of `urgent`, and `ungradable`:
 
-| Result | Share | Count |
-|---|---:|---:|
-| Ungradable | 22% | 7,588 |
-| Referable, any severity | 18% | 6,208 |
-| Of which coded urgent, sight-threatening | 1.1% of all results | 379 |
-
-Median time from photo to letter is 19 days. For the 379 urgent results, median time from result to a specialist appointment is 47 days. The unpublished draft standard for that wait is 14 days. Routine ophthalmology referrals are waiting past 14 weeks.
-
-### Primary-care pilot, separate from the vendor slide
-
-The two pilot sites submitted 400 images.
-
-| | Count |
+| Result | Count |
 |---|---:|
-| Images | 400 |
-| Ungradable on human review | 140 (35%) |
-| Gradable | 260 |
-| Gradable images where model and grader disagreed on refer or not-refer | 81 (31%) |
+| Readable, not referable (`R0` and `R1`) | 20,694 |
+| Ungradable | 7,588 |
+| Referable, not urgent (`R2`) | 5,829 |
+| Sight-threatening (`R3`) | 379 |
 
-The model produced no score on the 140 ungradable images. Nobody tracked whether those patients were brought back.
+`REGISTRY_NO` is not unique. `LOCAL_PID` joins the workbook to the registry for people who were photographed. The PACS manifest joins on the hospital number. The cover note and the dictionary describe the opposite of those facts. A blank result is an unfinished screen. A blank model label is a silent model. `REFERRAL` = yes is any referral, not an urgent one.
 
-### What the shared folder shows
+Median days from photo to letter, on completed results that have a letter, is 19. Median days from an urgent result to a specialist visit is 47. The 14-day target is in `sop_urgent_pathway_draft.md`, and that document says `NOT ISSUED`. The issued procedure has one referral box and no day target. Mild and sight-threatening disease therefore share `ophthalmology_referrals.csv`. Mild seen-dates are blank in that file. The fourteen-week routine wait is the clinician's report, not a column you can average.
 
-The grader spreadsheet has no stable patient key. Names are retyped. Dates mix day-month and month-day. The result column is blank on the 6,110 known orphans and on an unknown number of files that never made the sheet. The referral column is yes or blank. Urgent is a free-text note. There is no field for "retake before the patient left."
+The vendor file has 400 primary-care images. 140 have no model label. On the other 260, the model and the grader disagree 81 times. The 93% figure belongs to a 1,200-image hospital slide. It is not in the handover, and it is not a result on these 400 images. The shared folder contains names that match no workbook row, including the `IMG_9#####.JPG` decoys.
 
-## Stop. Write the problem brief.
-
-Write this before you read the debrief. Two pages is enough. Use the headings below. Where the evidence is thin, say so in open questions. Do not fill gaps with a platform design.
-
-1. **Ask, verbatim.**
-2. **Client and sponsor.** Who can say yes, and what they are under pressure to show.
-3. **Who feels the pain.** The people whose day changes if you succeed. One sentence each.
-4. **Workflow as it is.** From "person with diabetes" to "seen or not seen," including the broken handoffs.
-5. **Job to be done.** One paragraph. The request was a platform. The job is the outcome the program cannot currently produce.
-6. **Outcome and metrics.** One primary outcome. Three to five metrics you could recount from the systems you have actually seen.
-7. **Constraints.** Clinical, data, integration, and political. Only constraints you can point to in the evidence.
-8. **First slice.** Sites, users, what the software does this quarter, and the decision a human still owns.
-9. **Later work.** What you will not put in the first release. Each item needs a reason tied to risk, evidence, or capacity.
-10. **Open questions.** What would change the slice if the answer came back differently.
-11. **Two conversations.** Five lines for the Chief Digital Officer. Five lines for the ophthalmology lead. Same slice, different sentences.
-
-When you write the slice, stay inside the moves. A model can sort work and catch a bad photo. The brief has to say who is allowed to change a patient's path.
-
-## Reference debrief
-
-Read this only after your brief exists. Compare claims. A difference is a miss only when your version ignores evidence or adds a system nobody asked to run.
-
-### What the evidence supports
-
-The Chief Digital Officer asked for an architecture for a three-program AI platform, a vendor already in procurement, and a demo before quarter end. That is the sponsor's goal: a visible commitment to the ministry, kept.
-
-The operator's pain is diabetic eye screening. Breast screening meets its target and the program lead will block a shared release. Cervical screening is not the failure anyone described. Eye-screening coverage is 41% of eligible people, and the rural districts in the file are far below the director's spoken "quarter." Another 6,110 people have a photo and no result. Urgent cases wait a median of 47 days against a draft standard of 14. Referrals are a single yes or blank, so mild and sight-threatening disease enter one specialist queue.
-
-The scarce people are the graders, the ophthalmologists, and the patients who cannot make a second trip. The costly delays are an unusable photo discovered after the patient has gone home, a result letter at 19 days, and an urgent appointment at 47 days.
-
-The vendor number does not describe this deployment. Sensitivity of 93% was measured on 1,200 dilated hospital images. Specificity was withheld. On the 400 primary-care images, 140 (35%) were ungradable and the model was silent, and it disagreed with the grader on 81 of the 260 photos a human could read (31%). A regional multi-disease license does not answer any of those facts.
-
-Data that exists: a nightly registry file, a messy grader sheet, hospital PACS, and a shared folder. Data that does not exist: an API, a reliable patient key, a rural coverage dashboard, and an issued clinical standard for the 14-day wait. The record integration the architecture slide usually assumes is fourteen months away.
-
-The human decision that changes care stays with the grader. The ophthalmology lead will sign a safety note on that condition and not on autonomous referral. The data protection officer will review a bounded service on the authority network and will not review a three-program platform or a training set carved out of patient images.
+The scarce people are the graders, the ophthalmologists, and the patients who cannot make a second trip. The costly delays are an unusable photo discovered after the patient has gone home, a letter at 19 days, and an urgent appointment at 47 days.
 
 ### A brief that holds up
 
-**Job to be done.** Get more eligible people with diabetes to a completed eye screen, and get the sight-threatening cases to a specialist sooner, without lengthening the routine ophthalmology queue.
+**Job to be done.** Get more eligible people with diabetes to a completed eye screen, and get sight-threatening cases to a specialist sooner, without lengthening the routine ophthalmology queue.
 
-**Primary outcome.** More completed screens, and faster action on urgent disease, in the sites you touch.
+**Primary outcome.** More completed screens, and faster action on urgent disease, at the sites the clinic note already names.
 
-**Metrics you can actually count.**
+**Metrics you can count from this drop.**
 
-- Coverage of eligible people, using 84,120 as the denominator until someone defends a different one.
-- Share of photos that are usable before the patient leaves.
-- Share of photos that receive a result code, so the 6,110 do not grow.
-- Median days from urgent result to specialist appointment.
-- Share of ophthalmology referrals from the pilot that the specialist agrees were urgent.
-- Agreement between the model and the grader, reported separately for hospital photos and primary-care photos.
+- Coverage of eligible people, denominator 84,120, until someone defends a different rule.
+- Completed results versus photos with no result code.
+- Median days from photo to letter.
+- Median days from urgent result to specialist visit.
+- Agreement between model and grader on the 400 pilot images, with silent outputs counted separately.
 
-**First slice.** A bounded service at the two primary-care pilot sites and one hospital eye clinic.
+**Metric the slice has to start counting.** Share of photos caught as unusable before the patient leaves. The extract does not record a retake.
 
-- At capture, tell the nurse to retake a photo that will not be readable, while the patient is still in the room.
-- Give the grader a queue with a stable identifier, a blank-result list, and the urgent cases separated from mild referable ones.
-- Let a model rank that queue and flag a likely bad image.
-- A grader confirms every result that refers, recalls, or reassures a patient.
-- Take the nightly registry file in. Write a result file out for the graders and the call center.
-- Keep images on the authority network. Log access. Name the clinical safety owner before the first patient photo is processed.
-- Run long enough to recount the metrics. Eight weeks is a fair first window if the sites will staff it.
+**First slice.** An agent at Hill Counties Health Centre, Oakridge Primary Care, and North City Eye Clinic.
+
+- Tools answer from the registry, the workbook, the manifests, the letters, and the referrals.
+- Retrieval uses the issued procedure for current policy, the grade-code list for the workbook's free text, the letter templates for drafts, the data-protection rule for refusals, and the clinic note for queue order. The urgent-pathway draft is retrieved only to say it is not in force.
+- The agent can list who is due, who has a photo and no result, and which recorded results look sight-threatening. It can draft a letter by filling the template from the row.
+- It refuses to diagnose from a photo and refuses to create a referral the grader has not signed.
+- Images stay on the authority network. The first integration is the file you were given and a result file back. There is no electronic health record feed.
 
 **Later work, with reasons.**
 
-- Breast and cervical screening. Their constraint is political and clinical, and the failing pathway is eye screening.
-- A regional platform contract. Procurement is ahead of the evidence, and the primary-care pilot already contradicted the hospital slide.
-- Autonomous diagnosis or automatic referral. The signing clinician refused it.
-- Training a model on Hartland images. The data protection officer requires a separate approval.
-- Electronic health record integration and a new API. The integration slot is fourteen months out, and a file exchange can prove the outcome sooner.
-- Rolling the service to River Districts in the first release. Their coverage is 2.4%, which matters, and you do not yet know whether the failure is cameras, travel, registry quality, or staffing. Discover that before you promise a deployment there.
+- Breast and cervical screening. The clinic note and the breast-screening lead already refused a shared release, and the failing pathway is diabetic eye screening.
+- River Outreach. Coverage there is 2.4%. The files do not yet tell you whether the gap is cameras, travel, or staffing.
+- The regional platform license. The primary-care file does not support the hospital slide.
+- Training a model on Hartland images. The data-protection rule requires a separate approval.
+- Electronic health record integration and an API. IT placed that work about fourteen months out.
+- Treating the 14-day rule as policy. The draft is not issued. Using it in a patient letter would invent a promise the authority has not made.
 
 **Open questions that should stay open.**
 
-- Who the named clinical safety owner is.
-- Whether the 14-day urgent standard will be issued, or only used as a private target.
-- Camera types at the pilot sites, and whether a retake prompt is enough when the camera itself is poor.
-- How many shared-folder files never reached the spreadsheet.
-- What patients are told about their images, and in which languages the result has to go out.
-- Whether procurement can pause the platform license without losing the relationship the Chief Digital Officer is protecting.
+- Who the named clinical safety owner is. The draft says the clinical lead must sign before the 14-day rule can be used.
+- Whether a retake prompt is enough at the two primary-care sites, or the cameras themselves are the limit.
+- How many of the unmatched shared-folder files are real patients.
+- Which languages the letter has to go out in.
+- Whether procurement can pause the three-program license without the Chief Digital Officer losing the commitment they have already signaled.
 
 ### The two conversations
 
-To the Chief Digital Officer: the quarter can still produce something the ministry can see. A working eye-screening service at three sites, with coverage, retake rate, and urgent-wait numbers. The three-program platform is the second decision, made after those numbers exist. Buying the license now purchases a sensitivity figure that was not measured on the clinics that are failing.
+To the Chief Digital Officer: the quarter can produce a working eye-screening agent at three sites, with coverage, unfinished photos, and urgent-wait numbers counted from the extract. The three-program platform is the next decision, after those numbers. The 93% slide is a hospital study. It is not the primary-care file.
 
-To the ophthalmology lead: the pilot sends you a shorter list. Mild referable disease stays on a community recall. A grader signs every result that changes care. You will see how often you agree the urgent flag was right. Your signature is on that operating rule, or the pilot does not start.
+To the ophthalmology lead: the agent separates sight-threatening results from mild ones for your review. It does not add referrals. A grader signs every result that changes care. The 14-day target stays a draft until you sign it. Your signature is on that operating rule, or the pilot does not start.
 
 ### How to grade your own brief
 
 | Check | What "done" looks like |
 |---|---|
 | Ask left intact | The verbatim request is still a three-program platform |
-| Pain located | Diabetic eye screening, not screening in general |
-| Numbers reconciled | 41% is explained, and the rural "quarter" is challenged with the district table |
-| Queue found | Ungradable photos, blank results, and one referral list for mild and urgent disease |
-| Vendor claim bounded | Hospital sensitivity is not treated as proof for primary care |
+| Pain located | Diabetic eye screening |
+| Numbers from the files | 84,120 eligible, 41% coverage, the district table, 6,110 unfinished photos |
+| Cover note tested | `REGISTRY_NO` and `FLAG` were checked, not trusted |
+| Rules separated | The issued procedure is in force. The 14-day document is a draft |
+| Vendor claim bounded | 93% is not treated as the result on the 400 pilot images |
 | Human owner named | A grader signs care-changing results |
-| Constraint used | Data protection scope and the fourteen-month record integration change the slice |
-| First slice is small | Three sites, file in and file out, retake plus queue |
-| Later work is explicit | Breast, cervical, platform license, model training, and full record integration are deferred with reasons |
-| Unknowns kept | River Districts and the safety owner are questions, not assumed designs |
-| Two audiences | An executive can hear the value, and a clinician can hear the safety rule |
+| First slice is the agent | Tools on the handover, retrieval on the corpus, three named sites |
+| Later work is explicit | Breast, cervical, River Outreach, the platform license, model training, and the health-record integration are deferred |
+| Unknowns kept | The safety owner and the unmatched files stay open |
 
-A strong brief can choose a different first site mix. It cannot honestly choose a three-disease platform as the first release. The evidence points the other way.
+A strong brief can argue for a different third site. It cannot honestly choose a three-disease platform as the first release.
 
 ### Misses that look like progress
 
-- An architecture diagram in response to the email. That is the deliverable the sponsor requested, and it freezes the wrong problem.
-- Leading with model selection, fine-tuning, or a new accuracy target. You do not yet have a representative labeled set, and specificity is missing.
+- An architecture diagram in reply to the email. That is the deliverable the sponsor requested, and it freezes the wrong problem.
+- Trusting `data/handover/README.txt` or the data dictionary over a query.
 - Treating 93% sensitivity as the requirement. The operators asked for completed screens and a shorter urgent wait.
-- A patient app, a chatbot, or an agent as the first build. Nothing in the notes says the bottleneck is a missing conversation. The bottlenecks are capture, grading, and referral capacity.
-- Promising River Districts a deployment because their coverage is the worst. Low coverage tells you where to look next. It does not tell you the intervention.
-- Accepting the spoken rural figure because a director said it. The file is the better instrument. Take the contradiction back to the director instead of averaging it away.
+- A chatbot that explains screening without calling a tool or citing a document. The bottleneck is the queue, the letter, and the referral list.
+- A vision model that grades the retina. The drop has paths, not images, and the data-protection rule forbids an unsigned diagnosis.
+- Applying the draft 14-day rule as if the issued procedure had been replaced.
+- Promising River Outreach a deployment because its coverage is the lowest. Low coverage tells you where to look next.
 
 ## Use the method again
 
