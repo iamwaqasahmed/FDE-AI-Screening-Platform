@@ -1,41 +1,49 @@
 # The Hartland data
 
-This folder is a fictional extract from Hartland Regional Health Authority, a regional body that runs public health programs for a Ministry of Health. Nothing here is a real patient's record, and nothing here is a protocol for care.
+A generated extract from Hartland Regional Health Authority, the fictional regional body that runs public health programs for a Ministry of Health. Nothing here is a real patient's record, and nothing here is a protocol for care.
 
-If health services are new to you, read this page first. The course then continues in [Module 01](<../Module 01 - Problem Discovery/README.md>). A longer glossary is in [Health language](<../Module 01 - Problem Discovery/01-health-language.md>).
+New to health services? Read this page, then continue in [Module 01](<../Module 01 - Problem Discovery/README.md>). The longer glossary is [Health language](<../Module 01 - Problem Discovery/01-health-language.md>).
 
-## The story the files belong to
+## On this page
 
-**Screening** means checking people who may feel well, to find disease early.
+- [The path a person takes](#the-path-a-person-takes)
+- [Which folder to open](#which-folder-to-open)
+- [The extract](#the-extract)
+- [The written rules](#the-written-rules)
+- [What is not here](#what-is-not-here)
 
-**Diabetes** is a long-term condition that can, over years, damage the back of the eye. **Diabetic eye screening** takes a photograph of that part of the eye (a retinal photo, also called a fundus photo). A trained **grader** looks at the photograph and writes a code. A letter tells the person the result. If the grader says a specialist should see them, that request is a **referral**. The eye specialist service is **ophthalmology**.
+## The path a person takes
 
-A person moves through the files in that order:
+**Screening** checks people who may feel well, to find disease early.
 
-1. They are on the diabetes **registry** (the authority's list of people known to have diabetes).
+**Diabetes** can, over years, damage the back of the eye. **Diabetic eye screening** photographs that part of the eye (a retinal photo, also called a fundus photo). A trained **grader** reads the photograph and writes a code. A letter tells the person the result. If the grader says a specialist should see them, that request is a **referral**. The eye specialist service is **ophthalmology**.
+
+The files follow that path:
+
+1. The person is on the diabetes **registry**, the authority's list of people known to have diabetes.
 2. Someone takes a photo. The hospital stores an index row. A local clinic may only have a file in a shared folder.
 3. The grader records a result in a workbook. Until that happens, the photo has no result.
 4. A letter may be sent.
 5. Some people appear on the referral list for the eye specialist.
 
-You are not expected to judge a photograph. The picture files themselves are not in this folder. A row that names a picture is the record you have.
+You are not expected to judge a photograph. The picture files are not in this folder. A row that names a picture is the record you have.
 
 ## Which folder to open
 
 | Folder | Who it is for | What it holds |
 |---|---|---|
-| [handover](handover) | You, as the engineer on site | The messy extract the authority's IT team would send |
+| [handover](handover) | You, on site | The messy extract the authority's IT team would send |
 | [corpus](corpus) | You | The written rules, letter templates, and clinic note |
 | `truth` | Grading only, when present | A clean hidden copy of the same world |
 | `eval` | Grading only, when present | Questions with known answers |
 
-Work from `handover` and `corpus`. If `truth` or `eval` is on your machine, leave it closed while you do Module 01. Opening it skips the discovery.
+Work from `handover` and `corpus`. If `truth` or `eval` is on your machine, leave it closed during Module 01. Opening it skips the discovery.
 
-`handover/README.txt` and `handover/data_dictionary.xlsx` were included by the authority. They are part of the drop. The operating rules in `corpus` are the other description of the same service. Module 01 asks you to compare them.
+`handover/README.txt` and `handover/data_dictionary.xlsx` came with the extract. They are part of the drop. The operating rules in `corpus` are the other description of the same service. Module 01 asks you to compare them.
 
 ## The extract
 
-Dates are stored in more than one way: as `2024-10-01`, as `30/08/2024`, or as a spreadsheet serial number such as `35339`. Read the column before you sort it.
+Dates appear as `2024-10-01`, as `30/08/2024`, or as a spreadsheet serial such as `35339`. Read the column before you sort it.
 
 ### `handover/diabetes_registry.csv`
 
@@ -52,7 +60,7 @@ One row is one person on the diabetes list.
 | `DIAGNOSIS_DATE` | When diabetes was recorded |
 | `RECORD_STATUS` | A label the export puts on the row |
 | `FLAG` | A second label. Empty, `DECEASED`, and `MOVED` appear here |
-| `TRAVEL_BURDEN` | A simple score for how hard it is for the person to reach a clinic. Higher means harder |
+| `TRAVEL_BURDEN` | How hard it is for the person to reach a clinic. Higher means harder |
 
 ### `handover/grader_workbook.xlsx`
 
@@ -71,7 +79,7 @@ The graders' queue. Open every tab, including `OLD`. One row is one photographed
 | `NOTES` | Free text. Urgent cases are sometimes written only here |
 | `GRADER` | The initials of the person who read the photo |
 
-The codes `R0`, `R1`, `R2`, `R3`, and `U` are explained in ordinary language in [Health language](<../Module 01 - Problem Discovery/01-health-language.md>) and formally in `corpus/grade_codes.md`. The sheet also contains words that are not in that short list.
+`R0`, `R1`, `R2`, `R3`, and `U` are explained in ordinary language in [Health language](<../Module 01 - Problem Discovery/01-health-language.md>) and formally in `corpus/grade_codes.md`. The sheet also contains words that are not in that short list.
 
 ### `handover/pacs_manifest.csv`
 
@@ -87,7 +95,7 @@ Letters the service recorded as sent. A **result letter** tells a person their g
 
 ### `handover/ophthalmology_referrals.csv`
 
-People sent toward the eye specialist. There is one list. It does not have a separate column for "urgent." `REFERRED_DATE` is when they were sent. `BOOKED_DATE` and `SEEN_DATE` are the appointment and the visit. Those last two are often empty.
+People sent toward the eye specialist. There is one list. It has no separate column for "urgent." `REFERRED_DATE` is when they were sent. `BOOKED_DATE` and `SEEN_DATE` are the appointment and the visit. Those last two are often empty.
 
 ### `handover/vendor_scores.csv`
 
@@ -111,8 +119,8 @@ The cover note and a field glossary shipped with the extract. Read them as claim
 | `dpo_operating_rule.md` | What the data protection officer will allow: where data may live, what a letter may say, and what a model must not do |
 | `clinic_note_pilot_sites.md` | Which clinics are in the first slice, and how the grader queue should be ordered |
 
-## What this folder does not contain
+## What is not here
 
-Retinal photographs. The manifests and the workbook name files, and those files are not here. You can count, join, and draft from the tables and the rules. You cannot look at an eye.
+Retinal photographs. The manifests and the workbook name files, and those files are not in the drop. You can count, join, and draft from the tables and the rules. You cannot look at an eye.
 
-The course exercise for using these files is [Count the files](<../Module 01 - Problem Discovery/05-count-the-files.md>).
+The exercise that uses these files is [Count the files](<../Module 01 - Problem Discovery/05-count-the-files.md>).

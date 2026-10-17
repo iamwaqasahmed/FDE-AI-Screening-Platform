@@ -1,29 +1,46 @@
 # Forward deployed engineer
 
-This course trains you to do the work of a forward deployed engineer in a health authority. The work is the real shape of the job: understand who you are for, discover the problem inside a messy engagement, then build a system that can run there.
+Train for the job as it is actually done inside a health authority: learn who you are for, discover the problem in a messy engagement, and build a system that can run there.
 
-There is no real client and no real patient data. We simulated the engagement and generated the files.
+## Path
 
-The simulated client is Hartland Regional Health Authority, a fictional regional service that reports to a Ministry of Health. Their request is an AI Screening Platform. The generated world is a diabetic eye screening service: a registry of people with diabetes, retinal photos recorded as rows, a grader workbook, letters, referrals, a vendor score file, and the written rules for that service. How that world was built is in [problem_simulation/README.md](problem_simulation/README.md). What each generated file means, in ordinary language, is in [data/README.md](data/README.md).
-
-The generated drop you will use is [data/handover](data/handover) and [data/corpus](data/corpus). `data/truth` and `data/eval`, when present, are the hidden copy and the answer key. Leave them closed until a module tells you to open them.
-
-Read the documents in this order.
+| | Read | You leave with |
+|---|---|---|
+| 1 | [FDE.md](FDE.md) | The skill set |
+| 2 | [Module 01 — Problem Discovery](<Module 01 - Problem Discovery/README.md>) | An ask log and a problem brief |
 
 ## 1. Who is an FDE
 
-Start with [FDE.md](FDE.md).
+[FDE.md](FDE.md) is the skill set. A forward deployed engineer embeds with a customer, turns a vague operational problem into a working AI system, and leaves it running in production.
 
-That note is the skill set. A forward deployed engineer embeds with a customer, turns a vague operational problem into a working AI system, and leaves it running in production. The four parts are production engineering, applied AI, customer consulting, and ownership in the client's environment.
-
-Keep this list nearby. Each module trains a piece of it.
+The four parts are production engineering, applied AI, customer consulting, and ownership in the client's environment. Keep the list nearby. Each module trains a piece of it.
 
 ## 2. Module 01 — Problem discovery
 
-Then open [Module 01 — Problem Discovery](<Module 01 - Problem Discovery/README.md>).
+[Module 01](<Module 01 - Problem Discovery/README.md>) does not assume a health background. It teaches the words the case uses, then walks the engagement one note at a time.
 
-No health background is required. The module starts with the words the case uses, then walks the engagement one note at a time.
+You are embedded at a simulated authority. The only request in front of you is an AI Screening Platform. Find the problem underneath that sentence before you design a system.
 
-You are embedded at the simulated authority. The only request you have been given is an AI Screening Platform. The module teaches you to find the problem underneath that sentence before you design a system, using the generated extract and rules. It tells you when to open them. Leave the grading files and the generator closed until the module says otherwise.
+**Write two artifacts.** An ask log, then a problem brief. Open the debrief only after the brief exists.
 
-Write the two artifacts the module asks for: an ask log, then a problem brief. Read the debrief only after the brief exists.
+### The simulated engagement
+
+There is no real client and no real patient data. We simulated the engagement and generated the files.
+
+The client is Hartland Regional Health Authority, a fictional regional service that reports to a Ministry of Health. The generated world is a diabetic eye screening service:
+
+- a registry of people with diabetes
+- retinal photos recorded as rows
+- a grader workbook
+- letters and referrals
+- a vendor score file
+- the written rules for that service
+
+| | |
+|---|---|
+| How the world was built | [problem_simulation/README.md](problem_simulation/README.md) |
+| What each file means | [data/README.md](data/README.md) |
+| The drop you use | [data/handover](data/handover) and [data/corpus](data/corpus) |
+| Leave closed | `data/truth` and `data/eval`, when present. They are the hidden copy and the answer key |
+
+The module tells you when to open the extract. Leave the grading files and the generator closed until it says otherwise.

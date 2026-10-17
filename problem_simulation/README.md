@@ -1,20 +1,24 @@
 # Problem simulation
 
-This folder is the factory for a fictional client engagement. It builds the world. It is not the client brief.
+The factory for the Hartland engagement. It builds the world. It is not the client brief.
 
-Hartland Regional Health Authority is an invented regional health service that reports to a Ministry of Health. Nothing here is a real health system, and nothing here is a protocol for patient care. The authority's request is an AI Screening Platform. Diabetic eye screening is the program the files describe: a photograph of the back of the eye, a person who reads it, a letter, and sometimes a referral to an eye specialist.
+Hartland Regional Health Authority is an invented regional health service that reports to a Ministry of Health. Nothing here is a real health system, and nothing here is a protocol for patient care.
 
-No health background is required. The words are taught in [Health language](<../Module 01 - Problem Discovery/01-health-language.md>).
+The authority asked for an AI Screening Platform. The files describe diabetic eye screening: a photograph of the back of the eye, a person who reads it, a letter, and sometimes a referral to an eye specialist.
 
-## Where to start
+No health background is required. The words are in [Health language](<../Module 01 - Problem Discovery/01-health-language.md>).
 
-Read the [course journey](../README.md) first, then [who an FDE is](../FDE.md), then [Module 01 — Problem Discovery](<../Module 01 - Problem Discovery/README.md>).
+## Start here
+
+| | |
+|---|---|
+| 1 | [Course journey](../README.md) |
+| 2 | [Who an FDE is](../FDE.md) |
+| 3 | [Module 01 — Problem Discovery](<../Module 01 - Problem Discovery/README.md>) |
 
 The module is a sequence. It tells you when to open the tables. The plain-language map of those tables is [data/README.md](../data/README.md).
 
-## What you are given
-
-Two folders are the client drop.
+## The client drop
 
 | Folder | What it is |
 |---|---|
@@ -25,33 +29,33 @@ Two folders are the client drop.
 
 The indexes name image files. The picture bytes are not in the drop. A capture is a path, a date, and a row.
 
-## What to leave closed during Module 01
+## Closed during Module 01
+
+Opening these skips the discovery.
 
 | Path | Why it stays closed |
 |---|---|
 | `data/truth` | Clean hidden copy of the same people and events. Used for grading |
 | `data/eval` | Questions with known answers |
-| `config.yaml` in this folder | The quotas and rules used to generate the files |
-| `src/` in this folder | The Python that writes `data/` |
+| `config.yaml` | The quotas and rules used to generate the files |
+| `src/` | The Python that writes `data/` |
 
-Opening those skips the discovery. The authored rule text also lives in `corpus/` here. Read the copy in `data/corpus`. It is the same text, and it is the copy the module points at.
+The authored rule text also lives in `corpus/` in this folder. Read the copy in `data/corpus`. It is the same text, and it is the copy the module points at.
 
-## What the later work uses
+## What you will build later
 
-The system you eventually build is an agent with retrieval and tools.
+An agent with retrieval and tools.
 
-- Tools read the handover: who is on the registry, who has a photo, who has a result, who was referred.
-- Retrieval reads the corpus: which rule is in force, which letter to draft, what a grade code means, what the service must refuse.
+- **Tools** read the handover: who is on the registry, who has a photo, who has a result, who was referred.
+- **Retrieval** reads the corpus: which rule is in force, which letter to draft, what a grade code means, what the service must refuse.
 - A grader still signs every result that changes care. The agent does not invent a diagnosis from a retinal photo.
 
-The skill list for that work is in [FDE.md](../FDE.md).
+The skill list is [FDE.md](../FDE.md).
 
-## Rebuilding the world
+## Rebuild
 
-After Module 01, the same files can be regenerated from this folder:
+After Module 01, regenerate the world from the repository root. Install `requirements.txt` first. One seed rewrites `data/truth`, `data/handover`, `data/corpus`, and `data/eval`.
 
 ```text
 python -m problem_simulation.src.run
 ```
-
-Run that from the repository root, with the packages in `requirements.txt` installed. One seed rewrites `data/truth`, `data/handover`, `data/corpus`, and `data/eval`.
