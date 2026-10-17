@@ -1,0 +1,9 @@
+# The clinical page
+
+[handoff/clinical.md](../handoff/clinical.md) is the page for the ophthalmology lead.
+
+It names the same three sites. A grader signs any referral, recall, or reassurance. The 14-day pathway stays a draft. It is not current policy.
+
+The pilot does not start until this lead signs as clinical safety owner. The page says that. It does not ask them to accept an automatic referral.
+
+Next: [The runbook](04-the-runbook.md).

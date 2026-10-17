@@ -13,6 +13,7 @@ Train for the job as it is actually done inside a health authority: learn who yo
 | 5 | [Module 04 — The agent](<Module 04 - The agent/README.md>) | A reply that names the tool, the document, and the result |
 | 6 | [Module 05 — Evaluation](<Module 05 - Evaluation/README.md>) | A scored set, with failures named |
 | 7 | [Module 06 — Run it in their environment](<Module 06 - Run it in their environment/README.md>) | A start, an access log, and a result file |
+| 8 | [Module 07 — The handoff](<Module 07 - The handoff/README.md>) | Two pages, a runbook, and a pilot that stays stopped |
 
 ## 1. Who is an FDE
 
@@ -82,11 +83,16 @@ Then open [Module 06](<Module 06 - Run it in their environment/README.md>).
 
 The service starts the agent, writes who asked to an access log, and appends the reply to a result file. It does not copy patient images or the API key. The checker does not need Docker.
 
+## 8. Module 07 — The handoff
+
+Then open [Module 07](<Module 07 - The handoff/README.md>).
+
+One scope for the Chief Digital Officer and the ophthalmology lead, plus a runbook. The clinical safety owner is unassigned, so the pilot does not start. The checker reads the pack and does not call a model.
+
 ## Later modules
 
 These folders say what each remaining module is for. The lesson notes inside them are not written yet.
 
 | | Module | What it is for |
 |---|---|---|
-| 7 | [The handoff](<Module 07 - The handoff/README.md>) | Leave an executive page, a clinical page, and a runbook |
 | 8 | [Capstone](<Module 08 - Capstone/README.md>) | Answer a new ask on the same data |
