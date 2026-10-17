@@ -20,6 +20,6 @@ Run the checkers from `Version 01`. The commands are at the end of that guide.
 
 For senior engineers who already put services in production: machine learning specialists, data engineers, software engineers, and solution architects.
 
-The design is [Version 02/PLAN.md](<Version 02/PLAN.md>). The track is specified. Building the generator, the indexes, and the agent comes after that design.
+Start at [Version 02/README.md](<Version 02/README.md>). The data participants work from is described in [Version 02/data](<Version 02/data/README.md>). The generator, checks, eval, and mock APIs are in [Version 02/problem_simulation](<Version 02/problem_simulation/README.md>), and the design is [problem_simulation/PLAN.md](<Version 02/problem_simulation/PLAN.md>). The retrieval index, the graph, and the agent are not built yet.
 
 The Hartland world in that plan is deep enough that a count, a citation, and a handoff depend on identity resolution, policy lineage, a care-path graph, and a workflow that can stop. LangGraph, retrieval, graph retrieval, and a solution architecture are how those questions come out right.

@@ -1,0 +1,56 @@
+# Enterprise profile. Run from the serve folder: docker compose up --build
+# Postgres is optional: docker compose --profile enterprise up --build
+x-api: &api
+  build:
+    context: ..
+    dockerfile: serve/Dockerfile
+  image: hartland-serve
+  volumes:
+    - ${HARTLAND_DATA_HOST:-../../data}:/data:ro
+    - ./runtime/logs:/app/serve/runtime/logs
+  environment: &api-env
+    HARTLAND_DATA: /data
+    HARTLAND_CLOCK: ${HARTLAND_CLOCK:-2026-10-01}
+    HARTLAND_WEEK: ${HARTLAND_WEEK:-1}
+  restart: unless-stopped
+
+services:
+  registry:
+    <<: *api
+    environment: {<<: *api-env, SYSTEM: registry, PORT: "8801"}
+    ports: ["8801:8801"]
+
+  booking:
+    <<: *api
+    environment: {<<: *api-env, SYSTEM: booking, PORT: "8802"}
+    ports: ["8802:8802"]
+
+  letters:
+    <<: *api
+    environment: {<<: *api-env, SYSTEM: letters, PORT: "8803"}
+    ports: ["8803:8803"]
+
+  ophthalmology:
+    <<: *api
+    environment: {<<: *api-env, SYSTEM: ophthalmology, PORT: "8804"}
+    ports: ["8804:8804"]
+
+  vendor:
+    <<: *api
+    environment: {<<: *api-env, SYSTEM: vendor, PORT: "8805"}
+    ports: ["8805:8805"]
+
+  postgres:
+    image: postgres:16
+    profiles: [enterprise]
+    environment:
+      POSTGRES_DB: hartland
+      POSTGRES_USER: hartland
+      POSTGRES_PASSWORD: hartland-local-only
+    ports: ["5432:5432"]
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ${HARTLAND_DATA_HOST:-../../data}:/data:ro
+
+volumes:
+  postgres-data:

@@ -1,0 +1,8 @@
+description: Published practice world. Participants work on this drop.
+seed: 20261001
+scale: 2.25
+volume: false
+output: ../data
+stale_feed: "2024-06-30"
+date_shift: {}
+site_names: {}

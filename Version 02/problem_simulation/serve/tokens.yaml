@@ -1,0 +1,59 @@
+# Bearer tokens for the Hartland mock systems. Send as: Authorization: Bearer <token>
+# Scopes are <system>:read or <system>:write. Expiry is checked against the simulated clock (HARTLAND_CLOCK).
+# burst is the bucket size; per_minute is the refill rate.
+tokens:
+  - token: hl-registry-etl-4c1e
+    client: registry-etl
+    scopes: [registry:read]
+    expires: 2027-03-31
+    burst: 30
+    per_minute: 120
+
+  - token: hl-booking-portal-9a7d
+    client: booking-portal
+    scopes: [booking:read, booking:write]
+    expires: 2027-03-31
+    burst: 20
+    per_minute: 60
+
+  - token: hl-letters-recon-2b88
+    client: letters-reconciliation
+    scopes: [letters:read]
+    expires: 2027-03-31
+    burst: 20
+    per_minute: 60
+
+  - token: hl-eye-referrals-61f0
+    client: ophthalmology-referrals
+    scopes: [ophthalmology:read]
+    expires: 2027-03-31
+    burst: 20
+    per_minute: 60
+
+  - token: hl-vendor-pilot-d3a5
+    client: vendor-pilot-dashboard
+    scopes: [vendor:read]
+    expires: 2027-03-31
+    burst: 10
+    per_minute: 30
+
+  - token: hl-coverage-report-7e42
+    client: coverage-reporting
+    scopes: [registry:read, booking:read, booking:write, letters:read, ophthalmology:read, vendor:read]
+    expires: 2027-03-31
+    burst: 20
+    per_minute: 60
+
+  - token: hl-outreach-sync-0f19
+    client: outreach-sync
+    scopes: [registry:read, booking:read]
+    expires: 2026-06-30
+    burst: 20
+    per_minute: 60
+
+  - token: hl-discovery-team-5b2c
+    client: discovery-team
+    scopes: [registry:read, booking:read, letters:read, ophthalmology:read, vendor:read]
+    expires: 2026-11-13
+    burst: 5
+    per_minute: 10

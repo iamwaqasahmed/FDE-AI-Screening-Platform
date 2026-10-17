@@ -1,0 +1,12 @@
+description: Team 4 variant. Same structure as practice, its own seed and small date shifts, so answers cannot be shared between teams.
+seed: 30404
+scale: 2.25
+volume: false
+output: build/data-team-4
+stale_feed: "2024-06-30"
+date_shift:
+  ncec_adopt: 53
+  harbour_adopt: 14
+  incident: -30
+  outage: -30
+site_names: {}
