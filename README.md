@@ -11,6 +11,7 @@ Train for the job as it is actually done inside a health authority: learn who yo
 | 3 | [Module 02 — Tools the agent can trust](<Module 02 - Tools the agent can trust/README.md>) | Functions that match the discovery counts |
 | 4 | [Module 03 — Retrieval](<Module 03 - Retrieval/README.md>) | A cited passage, with in-force and draft kept apart |
 | 5 | [Module 04 — The agent](<Module 04 - The agent/README.md>) | A reply that names the tool, the document, and the result |
+| 6 | [Module 05 — Evaluation](<Module 05 - Evaluation/README.md>) | A scored set, with failures named |
 
 ## 1. Who is an FDE
 
@@ -68,13 +69,18 @@ Then open [Module 04](<Module 04 - The agent/README.md>).
 
 The agent calls the Module 02 tools and the Module 03 retriever. The reply names the tool, the document, and the result. It refuses to grade a retina, to refer without a grader, and to treat the 14-day draft as current policy. The checker uses a scripted model. A live OpenAI-compatible model is optional.
 
+## 6. Module 05 — Evaluation
+
+Then open [Module 05](<Module 05 - Evaluation/README.md>).
+
+A demo is not a measurement. The practice set in that folder is scored for tool, document, result, and refusal, plus latency and how many times the model was called. `data/eval` stays the instructor set.
+
 ## Later modules
 
 These folders say what each remaining module is for. The lesson notes inside them are not written yet.
 
 | | Module | What it is for |
 |---|---|---|
-| 5 | [Evaluation](<Module 05 - Evaluation/README.md>) | Record where the agent is right, wrong, or silent |
 | 6 | [Run it in their environment](<Module 06 - Run it in their environment/README.md>) | Start, audit, and stop the service on their network |
 | 7 | [The handoff](<Module 07 - The handoff/README.md>) | Leave an executive page, a clinical page, and a runbook |
 | 8 | [Capstone](<Module 08 - Capstone/README.md>) | Answer a new ask on the same data |

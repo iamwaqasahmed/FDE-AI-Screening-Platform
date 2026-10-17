@@ -2,10 +2,24 @@
 
 Measure the agent. A demo is not a measurement.
 
-You build a small labeled set from the engagement: coverage, the queue, draft versus issued policy, letters, and refusals. `data/eval` stays hidden. It is the instructor's set, not the one you write.
+You write a small labeled set. The scorer runs `ask` on each case and records whether the tool, the document, the numbers, and the refusal match. `data/eval` is the instructor set. Leave it closed while you write yours.
 
-For each case you record whether the right tool was called, the right document was cited, the result matched, and the agent refused when it should have. Failures get a type: wrong join, draft treated as policy, a silent model treated as healthy, a letter that invents a diagnosis. You also record latency and how many model calls a case cost.
+**Time.** About half a day.
+**Practice cases.** [practice_cases.jsonl](practice_cases.jsonl)
+**Check.** `python -m screening_eval.check` from the repository root. No API key.
 
-This module is ready when a change to a tool or a prompt can be accepted or rejected from your set, and the instructor set can be run without you having written it.
+## Leave closed
 
-The lesson notes for this module are not written yet.
+`data/truth`, `data/eval`, and `problem_simulation/config.yaml`, until you deliberately run the instructor report.
+
+## Sequence
+
+| | Note | What you do |
+|---|---|---|
+| 1 | [Why measure](01-why-measure.md) | See why one good demo is not enough. |
+| 2 | [The practice set](02-the-practice-set.md) | Read the fields in one case. |
+| 3 | [What is recorded](03-what-is-recorded.md) | Tool, document, result, refusal, latency, model calls. |
+| 4 | [Error types](04-error-types.md) | Name the failure instead of saying "it broke." |
+| 5 | [Check](05-check.md) | Run the practice set, then the instructor report. |
+
+Next: [Why measure](01-why-measure.md).
