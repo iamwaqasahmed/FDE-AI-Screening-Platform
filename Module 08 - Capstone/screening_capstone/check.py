@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-PACK = Path(__file__).resolve().parents[1] / "capstone"
+PACK = Path(__file__).resolve().parents[2] / "capstone"
 NOTES = ("breast_screening.md", "river_outreach.md", "fourteen_day_draft.md")
 
 

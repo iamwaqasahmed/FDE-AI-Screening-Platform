@@ -7,7 +7,7 @@ For someone who was not in the build.
 From the repository root:
 
 ```text
-python -m screening_service.run --who "clinic nurse" --question "How many eligible people are there?"
+python -m course screening_service.run --who "clinic nurse" --question "How many eligible people are there?"
 ```
 
 The default model is scripted. No API key is required for that start.

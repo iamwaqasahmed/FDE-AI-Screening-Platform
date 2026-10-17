@@ -10,7 +10,7 @@ from screening_agent.loop import ask
 from screening_eval.model import CountingModel
 from screening_eval.score import score_case, unsupported_reason
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 PRACTICE_SET = REPO_ROOT / "Module 05 - Evaluation" / "practice_cases.jsonl"
 INSTRUCTOR_SET = REPO_ROOT / "data" / "eval" / "cases.jsonl"
 

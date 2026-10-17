@@ -23,4 +23,6 @@ In this course the first slice is an **agent**: software that chooses a next ste
 
 A grader still signs every result that refers, recalls, or reassures a patient. The agent can prepare the queue and the letter. It does not invent a diagnosis from a retinal photo.
 
+**Finish.** The brief is about two pages. This module has no checker. Open the debrief only after the brief exists.
+
 When the brief exists, open [Debrief](07-debrief.md).

@@ -2,7 +2,7 @@
 
 A generated extract from Hartland Regional Health Authority, the fictional regional body that runs public health programs for a Ministry of Health. Nothing here is a real patient's record, and nothing here is a protocol for care.
 
-New to health services? Read this page, then continue in [Module 01](<../Module 01 - Problem Discovery/README.md>). The longer glossary is [Health language](<../Module 01 - Problem Discovery/01-health-language.md>).
+Open this page when [Module 01](<../Module 01 - Problem Discovery/README.md>) tells you to count. Who the case is for is [target_audience.md](../target_audience.md). The longer glossary is [Health language](<../Module 01 - Problem Discovery/01-health-language.md>). Health experience is not required.
 
 ## On this page
 

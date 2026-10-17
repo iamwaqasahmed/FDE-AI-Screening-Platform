@@ -13,4 +13,8 @@ Call `coverage()` for the whole authority. Call `coverage(district="Hill Countie
 
 The result carries `eligible`, `completed`, and `by_district`. Each district entry has `eligible` and `completed`. Those figures are the table in the [Module 01 debrief](<../Module 01 - Problem Discovery/07-debrief.md>). If your eligible count is every row marked Active, you followed the cover note.
 
+Open `eligibility.py` and match it to the bullets above.
+
+**Finish.** You can explain why an empty `FLAG` is the denominator, and why `RECORD_STATUS` is not.
+
 Next: [Grades and blanks](04-grades-and-blanks.md).

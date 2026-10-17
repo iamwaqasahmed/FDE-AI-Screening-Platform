@@ -8,6 +8,8 @@ Both pages describe the same first slice:
 - Oakridge Primary Care
 - North City Eye Clinic
 
-Do not give the executive a three-program platform and the clinician a single pathway. If the sites differ, the pack is not ready.
+The executive page and the clinical page have to name the same pathway. If the sites differ, the pack is not ready.
+
+**Finish.** You will hold the next two pages to the same three sites.
 
 Next: [The executive page](02-the-executive-page.md).

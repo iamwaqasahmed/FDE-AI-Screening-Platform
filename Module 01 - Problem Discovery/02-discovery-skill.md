@@ -27,4 +27,6 @@ By the end of the module you can take a vague executive request and turn it into
 - Name one outcome, one first slice, and the work you are leaving for later.
 - Say what is still unknown, and proceed anyway.
 
+**Finish.** You can list the ten moves. The next note uses the first of them.
+
 Next: [The ask](03-the-ask.md).

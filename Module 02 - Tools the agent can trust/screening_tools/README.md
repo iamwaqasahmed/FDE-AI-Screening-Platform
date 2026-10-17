@@ -1,5 +1,7 @@
 # Screening tools
 
+Reference functions for [Module 02](../README.md). Read them and run the checker. The lesson explains which rule each function follows.
+
 Deterministic functions over the Hartland extract. No language model. No reads of `data/truth`, `data/eval`, or the generator config.
 
 A later agent calls these functions and repeats the dictionary they return. It does not compute coverage, sort the grader queue, or fill a letter from its own guess. The handover disagrees with itself. These tools follow the issued procedure and the grade-code list, and each result names the `document_id` it obeyed.
@@ -14,12 +16,12 @@ A later agent calls these functions and repeats the dictionary they return. It d
 | `vendor_pilot` | Empty model labels and disagreements on the pilot file. Not the 93% slide |
 | `letter_fields` | The fields one person's result or recall letter may contain. No diagnosis added |
 
-The lesson that walks through them is [Module 02](<../Module 02 - Tools the agent can trust/README.md>).
+The lesson that walks through them is [Module 02](../README.md).
 
 From the repository root:
 
 ```text
-python -m screening_tools.check
+python -m course screening_tools.check
 ```
 
 The checker passes when the functions match the Module 01 debrief. It also runs the cover-note reading, which treats every Active row as eligible and joins on `REGISTRY_NO`. That reading must not match.

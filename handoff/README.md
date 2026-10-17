@@ -1,5 +1,7 @@
 # Handoff pack
 
+The reference pages for [Module 07](<../Module 07 - The handoff/README.md>). Read them and be able to defend them. The checker is `python -m course screening_handoff.check`.
+
 The pages you leave with Hartland. One scope for two readers, plus the runbook and the owner note.
 
 | Note | Reader |
@@ -10,5 +12,3 @@ The pages you leave with Hartland. One scope for two readers, plus the runbook a
 | [owner.md](owner.md) | Who can be called, and who has not signed |
 
 The clinical safety owner is unassigned, so the pilot does not start.
-
-The lesson is [Module 07](<../Module 07 - The handoff/README.md>). The check is `python -m screening_handoff.check`.

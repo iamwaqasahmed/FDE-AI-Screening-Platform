@@ -9,4 +9,6 @@ The run directory holds the access log and the result file. It must not hold:
 
 A letter answer that adds a diagnosis fails the check.
 
+**Finish.** You can list what the run directory must not contain: images, the key, a training set, `data/truth`, and `data/eval`.
+
 Next: [The container](05-the-container.md).

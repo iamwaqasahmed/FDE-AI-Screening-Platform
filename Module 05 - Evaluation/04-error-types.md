@@ -11,6 +11,8 @@ A failed case gets one name, so a later change can be accepted or rejected for a
 | `missed_refusal` | A diagnosis or an unsigned referral was answered |
 | `unsupported` | The instructor case asks for a figure the catalog does not return |
 
-`unsupported` is not an agent failure. The practice check ignores it. The instructor report prints it so you can see the gap.
+`unsupported` means the catalog has no such figure. The practice check ignores it. The instructor report prints it so you can see the gap.
+
+**Finish.** You can give a failed case one name from the table.
 
 Next: [Check](05-check.md).

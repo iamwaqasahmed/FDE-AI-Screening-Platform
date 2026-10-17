@@ -11,4 +11,8 @@ That second case is how the agent can say "there is a 14-day proposal, and it is
 
 The issued procedure also says the draft is not current policy. Citing that file for the 14-day question is a reasonable sentence and the wrong document for this check. The checker expects the draft file, labeled as a draft.
 
+Open `retrieve.py` and find the two cases.
+
+**Finish.** You can state both: ordinary questions search `in_force` documents only, and the 14-day question may return `sop-urgent-draft` with status `draft`.
+
 Next: [Five questions](05-five-questions.md).

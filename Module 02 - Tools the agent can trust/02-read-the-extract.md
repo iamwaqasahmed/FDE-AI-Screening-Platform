@@ -5,7 +5,7 @@ The tools may open these files.
 | File | One row is |
 |---|---|
 | [data/handover/diabetes_registry.csv](../data/handover/diabetes_registry.csv) | A person on the diabetes list |
-| [data/handover/grader_workbook.xlsx](../data/handover/grader_workbook.xlsx) | A person who was photographed. Open every tab except `OLD` |
+| [data/handover/grader_workbook.xlsx](../data/handover/grader_workbook.xlsx) | A person who was photographed. Open every tab. The tools skip `OLD` |
 | [data/handover/letter_dispatch.csv](../data/handover/letter_dispatch.csv) | A letter the service recorded as sent |
 | [data/handover/ophthalmology_referrals.csv](../data/handover/ophthalmology_referrals.csv) | A person sent toward the eye specialist |
 | [data/handover/vendor_scores.csv](../data/handover/vendor_scores.csv) | One pilot image and the model's reply |
@@ -17,8 +17,10 @@ Dates are not one format. You will see `2024-10-01`, `30/08/2024`, and spreadshe
 
 The cover note in `data/handover/README.txt` tells you to join on `REGISTRY_NO` and to ignore `FLAG`. Do not build the tools that way. The issued procedure in `data/corpus/sop_screening_issued.md` is the rule `coverage` follows. The last note in this module shows that the cover-note reading fails the checker.
 
-`LOCAL_PID` is the id that appears on the registry and on the workbook. The hospital image index uses a different number. You do not need it for these six tools.
+`LOCAL_PID` is the id that appears on the registry and on the workbook. The hospital image index uses a different number. These functions do not join on it.
 
 The snapshot date is printed on the cover note. The issued procedure uses a 24-month window ending at that snapshot.
+
+**Finish.** You can say which files a tool may open, and that the cover note is a claim the tools are not allowed to obey.
 
 Next: [Eligibility](03-eligibility.md).

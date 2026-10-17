@@ -5,8 +5,11 @@ Package the agent so someone else can start it, see who asked, and stop it. The 
 The integration is the extract in and a result file out. There is no new API and no electronic health record.
 
 **Time.** About half a day.
-**Code.** The service is in [screening_service](../screening_service).
-**Check.** `python -m screening_service.check` from the repository root. No API key. Docker is not required.
+**Who.** [target_audience.md](../target_audience.md). Same case for the whole group.
+**Your work.** Read the service in [screening_service](screening_service), start it once, and read the Dockerfile.
+**Done when.** The checker passes, and you can say what the access log stores and what the image leaves out.
+**Code.** The service is in [screening_service](screening_service).
+**Check.** `python -m course screening_service.check` from the repository root. No API key. Docker is not required.
 
 ## Leave closed
 

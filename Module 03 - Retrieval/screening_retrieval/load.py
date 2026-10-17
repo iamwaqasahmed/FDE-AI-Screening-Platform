@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
-CORPUS = Path(__file__).resolve().parents[1] / "data" / "corpus"
+CORPUS = Path(__file__).resolve().parents[2] / "data" / "corpus"
 
 
 @dataclass(frozen=True)

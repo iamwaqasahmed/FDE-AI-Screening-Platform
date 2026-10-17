@@ -5,8 +5,11 @@ Teach the agent where a rule comes from. The corpus holds an issued procedure an
 The Module 02 tools still do the counting. Retrieval does not replace them.
 
 **Time.** About half a day.
-**Code.** The reference retriever is in [screening_retrieval](../screening_retrieval).
-**Check.** `python -m screening_retrieval.check` from the repository root.
+**Who.** [target_audience.md](../target_audience.md). Same case for the whole group.
+**Your work.** Read the notes, then `retrieve` in [screening_retrieval](screening_retrieval). The package is the reference.
+**Done when.** The checker passes, and you can quote a passage with its status still `draft` when the document is a draft.
+**Code.** The reference retriever is in [screening_retrieval](screening_retrieval).
+**Check.** `python -m course screening_retrieval.check` from the repository root.
 
 ## Leave closed
 

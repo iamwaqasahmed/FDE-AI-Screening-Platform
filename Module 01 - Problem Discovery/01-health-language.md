@@ -79,4 +79,6 @@ You are not expected to compute these from images. This drop does not include th
 
 You decide what the software should do first, what it must refuse, and which number defines success. The grader decides any result that changes a patient's care: a referral, a recall, or a reassurance.
 
+**Finish.** You can describe the eye pathway, the five codes, and why a slide that quotes only sensitivity is incomplete, without opening the extract.
+
 Next: [The discovery skill](02-discovery-skill.md).

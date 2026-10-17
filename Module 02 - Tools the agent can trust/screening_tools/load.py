@@ -10,7 +10,7 @@ import pandas as pd
 
 from screening_tools.dates import parse_date
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 HANDOVER = REPO_ROOT / "data" / "handover"
 CORPUS = REPO_ROOT / "data" / "corpus"
 

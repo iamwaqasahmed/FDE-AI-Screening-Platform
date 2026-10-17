@@ -27,4 +27,6 @@ Write one page before you read any further. Use these headings.
 
 The Chief Digital Officer offered you the vendor slides and thirty minutes. Treat that as a limit on the sponsor's time. The people who run the pathway have not spoken yet.
 
+**Finish.** The ask log is one page, kept with you. This module has no checker. Leave the extract closed.
+
 Next, after the ask log exists: [What people said](04-what-people-said.md).

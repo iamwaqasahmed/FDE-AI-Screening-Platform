@@ -14,6 +14,8 @@ Six documents are `in_force`. One is `draft`: `sop-urgent-draft`, the urgent pat
 | `clinic-note` | in force | Which sites and which queue order |
 | `sop-urgent-draft` | draft | The unissued 14-day proposal |
 
-Counts still come from [screening_tools](../screening_tools). If someone asks "how many people are eligible?", call `coverage`. Do not answer that number from a paragraph.
+Counts still come from [screening_tools](<../Module 02 - Tools the agent can trust/screening_tools>). If someone asks "how many people are eligible?", call `coverage`. A paragraph in the corpus is the wrong place to get that number.
+
+**Finish.** You can name `sop-urgent-draft` as the only draft, and say a count still comes from a tool.
 
 Next: [Chunks](03-chunks.md).

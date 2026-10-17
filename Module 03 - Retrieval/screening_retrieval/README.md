@@ -1,8 +1,10 @@
 # Screening retrieval
 
-Finds which written rule answers a question. No language model. No embeddings. No network. It reads [data/corpus](../data/corpus) only.
+Reference retriever for [Module 03](../README.md). Read it and run the checker. The lesson is the citation and the status, which stay even if a later course replaces the overlap score.
 
-A later agent calls `retrieve(question)` when it needs a rule, and calls [screening_tools](../screening_tools) when it needs a count. Retrieval does not calculate coverage.
+Finds which written rule answers a question. No language model. No embeddings. No network. It reads [data/corpus](../../data/corpus) only.
+
+A later agent calls `retrieve(question)` when it needs a rule, and calls [screening_tools](<../../Module 02 - Tools the agent can trust/screening_tools>) when it needs a count. Retrieval does not calculate coverage.
 
 ## Why this is not an embedding search
 
@@ -15,12 +17,12 @@ The lesson is the citation, not the vector. This package splits each file into s
 
 `retrieve` returns `document_id`, `status`, `filename`, and `passage`. A vector index can replace the overlap score later. The agent should still receive that same shape, including the status, or the draft problem comes back.
 
-The lesson is [Module 03](<../Module 03 - Retrieval/README.md>).
+The lesson is [Module 03](../README.md).
 
 From the repository root:
 
 ```text
-python -m screening_retrieval.check
+python -m course screening_retrieval.check
 ```
 
 The checker passes when the five service questions cite the expected document and status, and every passage is non-empty.

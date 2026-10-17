@@ -10,4 +10,6 @@ When a question names those sites, the answer names them too. That is the scope.
 
 A sentence that adds "Oakridge: 10" is discarded. The stored answer says the tools do not return a separate count per clinic, then repeats the tool's number.
 
+**Finish.** You can name the three clinics and say the tools do not return a separate count for each one.
+
 Next: [Check](06-check.md).

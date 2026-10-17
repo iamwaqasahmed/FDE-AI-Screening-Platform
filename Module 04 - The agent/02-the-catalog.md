@@ -15,4 +15,8 @@ The model may call only these. It does not receive the handover files.
 
 Each tool result already carries `document_id`. `retrieve` carries `status` as well. The agent copies those fields. It does not look up a second rule to decorate them.
 
+The list is `catalog.py`. Open it after this table.
+
+**Finish.** You can point at a question and name which row answers it. The handover files are not an argument the model receives.
+
 Next: [The loop](03-the-loop.md).

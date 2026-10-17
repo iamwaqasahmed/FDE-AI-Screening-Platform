@@ -9,6 +9,8 @@ A new ask does not get a new platform. For each ask, write four lines:
 3. What they must refuse, and which file is the reason.
 4. What would have to be true before a second slice.
 
-Use the corpus, the clinic note, the data-protection rule, and [handoff/owner.md](../handoff/owner.md). Do not generate a new extract.
+Use the corpus, the clinic note, the data-protection rule, and [handoff/owner.md](../handoff/owner.md). Do not generate a new extract. Write the four lines before you open the reference note for that ask.
+
+**Finish.** You have the four headings. The next three notes are one ask each.
 
 Next: [Breast screening](02-breast-screening.md).

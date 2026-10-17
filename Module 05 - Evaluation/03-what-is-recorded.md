@@ -18,4 +18,6 @@ A wrapper counts `complete` calls. A refusal that happens before the model runs 
 
 The numbers in `result` are the tool's numbers. A sentence that says a different count does not get credit.
 
+**Finish.** You can read one scored row and say what `tool_ok`, `document_ok`, `result_ok`, and `refusal_ok` each mean.
+
 Next: [Error types](04-error-types.md).

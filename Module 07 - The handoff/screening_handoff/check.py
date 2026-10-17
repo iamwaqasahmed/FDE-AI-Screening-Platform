@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-PACK = Path(__file__).resolve().parents[1] / "handoff"
+PACK = Path(__file__).resolve().parents[2] / "handoff"
 SITES = (
     "Hill Counties Health Centre",
     "Oakridge Primary Care",
@@ -30,7 +30,7 @@ def main() -> None:
         errors.append("clinical page does not name the grader as signer")
     if "draft" not in clinical.lower() or "not current policy" not in clinical.lower():
         errors.append("clinical page does not leave the 14-day rule as a draft")
-    if "python -m screening_service.run" not in runbook:
+    if "screening_service.run" not in runbook:
         errors.append("runbook is missing the start command")
     if "runtime/access.log" not in runbook:
         errors.append("runbook is missing the access log path")

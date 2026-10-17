@@ -10,6 +10,8 @@ Three requests stop before a care decision is invented.
 
 The first two are refused from the question itself. The model is not asked to improvise a grade.
 
-The third happens after `retrieve`. If the passage status is `draft` and the model's sentence says the target is current policy, the loop replaces that sentence with a refusal. An answer that says the draft is not in force is not this refusal. That answer is allowed, and the status in `result` is still `draft`.
+The third happens after `retrieve`. If the passage status is `draft` and the model's sentence says the target is current policy, the loop replaces that sentence with a refusal. An answer that says the draft is not in force is allowed, and the status in `result` is still `draft`.
+
+**Finish.** You can name `diagnosis`, `unsigned_referral`, and `draft_as_policy`, and say that the first two are refused before the model is asked.
 
 Next: [Three sites](05-three-sites.md).

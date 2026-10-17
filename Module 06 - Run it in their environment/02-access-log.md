@@ -6,4 +6,6 @@ The log does not include the API key, the rest of `.env`, or the full tool paylo
 
 Default path: `runtime/access.log`. That directory is gitignored.
 
+**Finish.** You can list the fields on one access-log line. The API key is not one of them.
+
 Next: [Result file](03-result-file.md).

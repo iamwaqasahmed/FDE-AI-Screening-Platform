@@ -2,8 +2,15 @@
 
 The Chief Digital Officer asks: add breast screening to the agent this quarter.
 
-[capstone/breast_screening.md](../capstone/breast_screening.md) refuses that release. The clinic note already leaves breast screening out of the first slice. The handover has no breast-screening extract. The agent cannot count a program it has no tool for.
+Write four lines before you open [capstone/breast_screening.md](../capstone/breast_screening.md):
 
-A second slice would need a breast-screening extract, a written procedure, and a named clinical owner for that program. None of those are in this drop.
+1. The ask, in their words.
+2. What the current tools can take.
+3. What they must refuse, and which file is the reason.
+4. What would have to be true before a second slice.
+
+Then open the reference and mark any reason you missed.
+
+**Finish.** Your four lines are written, and you have compared them with the reference note.
 
 Next: [River Outreach](03-river-outreach.md).

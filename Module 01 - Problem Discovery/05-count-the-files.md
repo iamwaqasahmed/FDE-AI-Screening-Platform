@@ -44,6 +44,8 @@ Use the snapshot date on the cover note and the 24-month rule in the issued proc
 - Which corpus documents are in force, and which document is still a draft. Read the status line at the top of each note.
 - How many shared-folder names appear on no workbook row.
 
-Try joining on `REGISTRY_NO`, on `LOCAL_PID`, and on the hospital number. Record which join works for which file.
+Try joining on `REGISTRY_NO`, on `LOCAL_PID`, and on the hospital number. Record which join works for which file. Open the `OLD` tab of the workbook so you see it. The current counts do not use those rows.
+
+**Finish.** You have written the counts, including which join fails. Leave the `screening_tools` package closed until the brief and the debrief are done.
 
 Next: [Write the brief](06-write-the-brief.md).

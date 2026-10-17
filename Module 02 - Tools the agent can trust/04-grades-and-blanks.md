@@ -17,6 +17,10 @@ A blank result is an unfinished screen. The data dictionary's claim that blank m
 
 Keep the readable-not-referable pair (`R0` and `R1`), the ungradable count, the mild referable count (`R2`), and the sight-threatening count (`R3`). The checker expects those four piles among completed results.
 
-Ignore the `OLD` tab. Those rows are practice data from years outside the window.
+Ignore the `OLD` tab. Those rows are practice data from years outside the window. `load.py` drops that sheet before the counts run.
+
+Open `grades.py` and match `normalize` to the table above.
+
+**Finish.** You can map `prolif`, a note of `urgent`, `ungradable`, and a blank result.
 
 Next: [Queue and waits](05-queue-and-waits.md).

@@ -14,4 +14,12 @@ Read the passage, not only the id. "Who counts as screened?" should land in the 
 
 If a question comes back with the right file and an empty passage, it still fails. The caller has to be able to quote the words.
 
+From the repository root, call one question before the checker and read `passage`:
+
+```text
+python -c "from course import install; install(); from screening_retrieval import retrieve; print(retrieve('Who counts as screened?'))"
+```
+
+**Finish.** You have run the five questions and read the passage, not only the document id.
+
 Next: [Check](06-check.md).

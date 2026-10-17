@@ -7,7 +7,7 @@ from pathlib import Path
 
 from screening_service.service import serve
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_LOG = REPO_ROOT / "runtime" / "access.log"
 DEFAULT_RESULTS = REPO_ROOT / "runtime" / "results.jsonl"
 

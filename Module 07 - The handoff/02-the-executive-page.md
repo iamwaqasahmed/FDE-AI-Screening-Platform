@@ -11,4 +11,8 @@ It defers, in the same words the clinical page can live with:
 - River Outreach
 - the platform license
 
+Read the page, then close it and repeat those four deferred items.
+
+**Finish.** You can say the eligible and completed counts, why the 93% figure does not prove the primary-care pilot, and what this release leaves out.
+
 Next: [The clinical page](03-the-clinical-page.md).

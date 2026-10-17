@@ -3,7 +3,7 @@
 From the repository root:
 
 ```text
-python -m screening_service.check
+python -m course screening_service.check
 ```
 
 The checker uses a temporary directory. It asks one coverage question and one rule question. Then it checks:
@@ -15,4 +15,6 @@ The checker uses a temporary directory. It asks one coverage question and one ru
 
 No API key is required. The default model is scripted.
 
-Back to the [module guide](README.md).
+**Finish.** The line `Service check passed.` means two asks were logged, two replies were written, no image was copied, and the Dockerfile leaves out `.env`, `data/truth`, and `data/eval`.
+
+Back to the [module guide](README.md). Next: [The handoff](<../Module 07 - The handoff/README.md>).

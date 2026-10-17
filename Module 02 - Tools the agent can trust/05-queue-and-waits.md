@@ -23,4 +23,8 @@ The 14-day target is in `sop_urgent_pathway_draft.md`. That file's status is dra
 
 Both medians are in the Module 01 debrief.
 
+Open `queue.py` and `waits.py` and match each function to a paragraph above.
+
+**Finish.** You can say why 14 days is reported with document id `sop-urgent-draft`.
+
 Next: [Vendor and letters](06-vendor-and-letters.md).

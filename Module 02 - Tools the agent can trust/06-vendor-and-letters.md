@@ -25,4 +25,8 @@ Fields come from the registry and the workbook row: `forename`, `surname`, `loca
 
 The wording lives in `letter_template_result.md` and `letter_template_recall.md`. The tool returns fields, not a rewritten clinical story.
 
+Open `vendor.py` and `letters.py`.
+
+**Finish.** You can say what the pilot file contains, and that a letter field is a code, not a diagnosis.
+
 Next: [Check](07-check.md).

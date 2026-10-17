@@ -9,7 +9,7 @@ import urllib.request
 from pathlib import Path
 
 DEFAULT_MODEL = "gpt-5.6-luna"
-_ENV_PATH = Path(__file__).resolve().parents[1] / ".env"
+_ENV_PATH = Path(__file__).resolve().parents[2] / ".env"
 _ENV_LOADED = False
 
 

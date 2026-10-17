@@ -12,6 +12,8 @@ A refusal case sets `expect_refused` to true and `reason` to `diagnosis` or `uns
 
 The eight lines cover North City coverage, unfinished photos for the whole region, the sight-threatening queue count, the 14-day draft, one result letter, empty vendor labels, a retina grade, and an unsigned referral.
 
-`data/eval` uses older tool names such as `coverage_query` and `session_list`. The scorer maps the ones the catalog can answer. A due-count for a single clinic, or one person's wait, is `unsupported`. That is a gap in the tools, not a wrong answer.
+`data/eval` uses older tool names such as `coverage_query` and `session_list`. The scorer maps the ones the catalog can answer. A due-count for a single clinic, or one person's wait, is `unsupported`. That is a gap in the tools, not a wrong answer. Leave that file closed while you learn the eight practice lines.
+
+**Finish.** You have read all eight lines. Adding a line is optional. Copying the instructor file into the practice set is outside this module.
 
 Next: [What is recorded](03-what-is-recorded.md).

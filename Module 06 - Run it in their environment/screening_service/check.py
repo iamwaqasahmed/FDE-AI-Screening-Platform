@@ -9,7 +9,7 @@ from pathlib import Path
 
 from screening_service.service import IMAGE_SUFFIXES, serve
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 DOCKERFILE = REPO_ROOT / "Dockerfile"
 FORBIDDEN = (".env", "data/truth", "data/eval")
 COVERAGE = "How many eligible people are there?"

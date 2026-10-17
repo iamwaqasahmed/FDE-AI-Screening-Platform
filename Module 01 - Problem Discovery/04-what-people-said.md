@@ -20,4 +20,6 @@ Roles in brackets are the plain-language reminder from [Health language](01-heal
 
 **Vendor.** On 1,200 hospital images, sensitivity for referable disease was 93%. Those images came from dilated patients on hospital cameras. Dilated means the pupil was widened with drops so the photo would be clearer. Specificity is "available under NDA." The model returns nothing when it judges an image ungradable. The contract in procurement is a regional license for eye, breast, and cervical screening.
 
+**Finish.** You can separate the Chief Digital Officer's goal from what the grader, the nurse, and the ophthalmology lead will not accept.
+
 Next: [Count the files](05-count-the-files.md).

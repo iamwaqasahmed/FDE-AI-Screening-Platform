@@ -3,8 +3,11 @@
 Put a model in front of the tools and the retriever. The model chooses a step. The numbers and the rules come back from code. The model does not recalculate coverage, and it does not diagnose a retina.
 
 **Time.** About half a day.
-**Code.** The reference loop is in [screening_agent](../screening_agent).
-**Check.** `python -m screening_agent.check` from the repository root. No API key is required for the check.
+**Who.** [target_audience.md](../target_audience.md). Same case for the whole group.
+**Your work.** Read the loop in [screening_agent](screening_agent) and run it. A live model is optional.
+**Done when.** The checker passes with no API key, and you can name the tool, the document, and the refusal reason on a reply.
+**Code.** The reference loop is in [screening_agent](screening_agent).
+**Check.** `python -m course screening_agent.check` from the repository root. No API key is required for the check.
 
 ## Leave closed
 

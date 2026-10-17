@@ -10,11 +10,7 @@ No health background is required. The words are in [Health language](<../Module 
 
 ## Start here
 
-| | |
-|---|---|
-| 1 | [Course journey](../README.md) |
-| 2 | [Who an FDE is](../FDE.md) |
-| 3 | [Module 01 — Problem Discovery](<../Module 01 - Problem Discovery/README.md>) |
+Participants start at the [course guide](../README.md), then [who this course is for](../target_audience.md), then [Module 01](<../Module 01 - Problem Discovery/README.md>). This folder is how the world was built. Leave `config.yaml` and `src/` closed during Module 01.
 
 The module is a sequence. It tells you when to open the tables. The plain-language map of those tables is [data/README.md](../data/README.md).
 
@@ -42,19 +38,21 @@ Opening these skips the discovery.
 
 The authored rule text also lives in `corpus/` in this folder. Read the copy in `data/corpus`. It is the same text, and it is the copy the module points at.
 
-## What you will build later
+## What the later modules study
 
-An agent with retrieval and tools.
+The reference agent, retriever, and tools. Participants read that code and run the checkers. They do not regenerate this world to finish the course.
 
 - **Tools** read the handover: who is on the registry, who has a photo, who has a result, who was referred.
 - **Retrieval** reads the corpus: which rule is in force, which letter to draft, what a grade code means, what the service must refuse.
-- A grader still signs every result that changes care. The agent does not invent a diagnosis from a retinal photo.
+- A grader still signs every result that changes care. The agent prepares a queue and a letter. A diagnosis from a retinal photo is outside what it is allowed to do.
 
-The skill list is [FDE.md](../FDE.md).
+The practice is [FDE.md](../FDE.md).
 
 ## Rebuild
 
-After Module 01, regenerate the world from the repository root. Install `requirements.txt` first. One seed rewrites `data/truth`, `data/handover`, `data/corpus`, and `data/eval`.
+This command is for the person maintaining the simulation. Participants leave it unrun. Finishing the course uses the extract already in `data/`.
+
+Install `requirements.txt` in this folder first. One seed rewrites `data/truth`, `data/handover`, `data/corpus`, and `data/eval`.
 
 ```text
 python -m problem_simulation.src.run

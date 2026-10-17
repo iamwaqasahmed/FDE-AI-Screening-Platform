@@ -118,4 +118,6 @@ When the next client asks for a platform, write the sentence down, then find the
 
 That list of unknowns is part of the deliverable. An FDE who fills every blank with an architecture has stopped discovering and started guessing.
 
-Back to the [module guide](README.md).
+**Finish.** Mark what your brief missed. The later checkers use the figures on this page. Continue with Module 02.
+
+Back to the [module guide](README.md). Next: [Tools the agent can trust](<../Module 02 - Tools the agent can trust/README.md>).

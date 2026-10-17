@@ -14,17 +14,20 @@ Every tool returns a dictionary with three kinds of fields:
 
 A tool that cannot point at a document is guessing. A tool that points at the urgent-pathway draft for a current-policy answer is wrong, because that file is not in force.
 
-The six tools are:
+The functions are:
 
-| Function | Question it answers |
-|---|---|
-| `coverage` | Who is eligible, and who has a recorded result |
-| `unfinished_photos` | Who has a photo and no result code |
-| `grader_queue` | How the workbook splits into four work piles |
-| `urgent_wait` | How long sight-threatening cases wait, and that the 14-day rule is a draft |
-| `vendor_pilot` | What the model file actually contains |
-| `letter_fields` | The fields one person's letter may use |
+| Function | Question it answers | File |
+|---|---|---|
+| `coverage` | Who is eligible, and who has a recorded result | `eligibility.py` |
+| `unfinished_photos` | Who has a photo and no result code | `queue.py` |
+| `grader_queue` | How the workbook splits into four work piles | `queue.py` |
+| `letter_timing` | Median days from photo to letter | `waits.py` |
+| `urgent_wait` | How long sight-threatening cases wait, and that the 14-day rule is a draft | `waits.py` |
+| `vendor_pilot` | What the model file actually contains | `vendor.py` |
+| `letter_fields` | The fields one person's letter may use | `letters.py` |
 
-They live in the `screening_tools` package. Read the notes before you treat the package as the answer.
+They live in the `screening_tools` package. Read the notes, then open the file named in the table.
+
+**Finish.** You can name each function and the document id it is allowed to follow.
 
 Next: [Read the extract](02-read-the-extract.md).
