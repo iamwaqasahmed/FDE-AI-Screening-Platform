@@ -9,6 +9,7 @@ Train for the job as it is actually done inside a health authority: learn who yo
 | 1 | [FDE.md](FDE.md) | The skill set |
 | 2 | [Module 01 — Problem Discovery](<Module 01 - Problem Discovery/README.md>) | An ask log and a problem brief |
 | 3 | [Module 02 — Tools the agent can trust](<Module 02 - Tools the agent can trust/README.md>) | Functions that match the discovery counts |
+| 4 | [Module 03 — Retrieval](<Module 03 - Retrieval/README.md>) | A cited passage, with in-force and draft kept apart |
 
 ## 1. Who is an FDE
 
@@ -46,19 +47,6 @@ The client is Hartland Regional Health Authority, a fictional regional service t
 
 The module tells you when to open the extract. Leave the grading files and the generator closed until it says otherwise.
 
-## Later modules
-
-These folders say what each remaining module is for. The lesson notes inside them are not written yet.
-
-| | Module | What it is for |
-|---|---|---|
-| 3 | [Retrieval](<Module 03 - Retrieval/README.md>) | Cite the rule that is actually in force |
-| 4 | [The agent](<Module 04 - The agent/README.md>) | Call the tools and the retriever, and refuse to diagnose |
-| 5 | [Evaluation](<Module 05 - Evaluation/README.md>) | Record where the agent is right, wrong, or silent |
-| 6 | [Run it in their environment](<Module 06 - Run it in their environment/README.md>) | Start, audit, and stop the service on their network |
-| 7 | [The handoff](<Module 07 - The handoff/README.md>) | Leave an executive page, a clinical page, and a runbook |
-| 8 | [Capstone](<Module 08 - Capstone/README.md>) | Answer a new ask on the same data |
-
 ## 3. Module 02 — Tools the agent can trust
 
 Then open [Module 02](<Module 02 - Tools the agent can trust/README.md>).
@@ -66,3 +54,21 @@ Then open [Module 02](<Module 02 - Tools the agent can trust/README.md>).
 The screening tools are the only part of the system allowed to count. The agent you build later chooses a tool and repeats what it returns. It does not invent coverage, a queue, or a letter field in prose. The handover disagrees with itself: the cover note, the dictionary, and the issued procedure do not define eligibility the same way, and urgent cases are written as free text. A model that answers those questions from memory will sound sure and be wrong.
 
 The reference functions live in [screening_tools](screening_tools). No language model. A checker accepts the run only when those functions match the Module 01 debrief, and when a reading that trusts the cover note fails.
+
+## 4. Module 03 — Retrieval
+
+Then open [Module 03](<Module 03 - Retrieval/README.md>).
+
+Retrieval cites the written rule. It does not count. The issued procedure and the 14-day draft can both look similar. The retriever returns a passage with its document id and its status, and it does not relabel a draft as in force. `screening_retrieval` is the reference. No model and no network.
+
+## Later modules
+
+These folders say what each remaining module is for. The lesson notes inside them are not written yet.
+
+| | Module | What it is for |
+|---|---|---|
+| 4 | [The agent](<Module 04 - The agent/README.md>) | Call the tools and the retriever, and refuse to diagnose |
+| 5 | [Evaluation](<Module 05 - Evaluation/README.md>) | Record where the agent is right, wrong, or silent |
+| 6 | [Run it in their environment](<Module 06 - Run it in their environment/README.md>) | Start, audit, and stop the service on their network |
+| 7 | [The handoff](<Module 07 - The handoff/README.md>) | Leave an executive page, a clinical page, and a runbook |
+| 8 | [Capstone](<Module 08 - Capstone/README.md>) | Answer a new ask on the same data |

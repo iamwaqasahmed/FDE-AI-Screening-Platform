@@ -1,11 +1,26 @@
 # Module 03 — Retrieval
 
-Teach the agent where a rule comes from. The corpus holds an issued screening procedure and a stricter draft. Both can look relevant. A search that returns the closest paragraph will treat the draft as policy.
-
-You index `data/corpus` and return a passage with its document id and its status, `in_force` or `draft`. The questions are the ones a nurse, a grader, and the Chief Digital Officer ask: who counts as screened, what a blank result means, whether the 14-day target is current policy, what a letter may say, and what a model must not do.
+Teach the agent where a rule comes from. The corpus holds an issued procedure and a stricter draft. Both can look relevant. A search that returns only the closest paragraph will treat the draft as policy.
 
 The Module 02 tools still do the counting. Retrieval does not replace them.
 
-This module is ready when an in-force question cites the issued procedure, the 14-day file comes back only as a draft, and every answer names the file it came from.
+**Time.** About half a day.
+**Code.** The reference retriever is in [screening_retrieval](../screening_retrieval).
+**Check.** `python -m screening_retrieval.check` from the repository root.
 
-The lesson notes for this module are not written yet.
+## Leave closed
+
+`data/truth`, `data/eval`, and `problem_simulation/config.yaml`. Retrieval reads [data/corpus](../data/corpus) only.
+
+## Sequence
+
+| | Note | What you do |
+|---|---|---|
+| 1 | [Why retrieval is not search](01-why-retrieval.md) | See why the closest paragraph can be the wrong rule. |
+| 2 | [The corpus](02-the-corpus.md) | Learn the seven files and the status column. |
+| 3 | [Chunks](03-chunks.md) | Split each file into sections. |
+| 4 | [The status rule](04-status-rule.md) | Keep a draft from becoming current policy. |
+| 5 | [Five questions](05-five-questions.md) | Ask the questions the service actually gets. |
+| 6 | [Check](06-check.md) | Run the checker. |
+
+Next: [Why retrieval is not search](01-why-retrieval.md).
