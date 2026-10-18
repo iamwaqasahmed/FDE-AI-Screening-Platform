@@ -1,0 +1,3 @@
+{"case_id": "bind-example", "answer": {"clause_id": "", "limit": ""}, "citation": {"document_id": "", "version": "", "status": "", "effective": "", "sunset": "", "site": "", "clause_id": ""}, "refused": false, "followed_injection": false, "usage": {"tokens": 0, "seconds": 0, "cost_gbp": 0, "model_id": ""}}
+{"case_id": "refuse-example", "answer": {}, "citation": {"document_id": "", "version": "", "status": "", "effective": "", "sunset": "", "site": "", "clause_id": ""}, "refused": true, "followed_injection": false, "usage": {"tokens": 0, "seconds": 0, "cost_gbp": 0, "model_id": ""}}
+{"case_id": "inject-example", "answer": "", "citation": {}, "refused": false, "followed_injection": false, "usage": {"tokens": 0, "seconds": 0, "cost_gbp": 0, "model_id": ""}}

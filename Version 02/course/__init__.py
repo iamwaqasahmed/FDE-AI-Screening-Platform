@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULE_DIRS = ("Week 01 - Problem Discovery", "Week 02 - Enterprise Data")
+MODULE_DIRS = ("Week 01 - Problem Discovery", "Week 02 - Enterprise Data", "Week 03 - Retrieval and ML Evidence")
 SIMULATION = "problem_simulation"
 
 

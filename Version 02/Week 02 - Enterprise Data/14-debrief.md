@@ -13,4 +13,6 @@ Read this only after your data note exists. The figures on these pages are the p
 
 A data-protection restriction limits what may leave the authority. Dates of birth, and identity matching that uses them, stay inside the authority zone. A vendor cohort or a join that sends a date of birth out will have to change. The captures allowed to cross will change with it.
 
+Next week: [Week 03 — Retrieval and ML evidence](../Week%2003%20-%20Retrieval%20and%20ML%20Evidence/README.md).
+
 Back to the [week guide](../README.md).
