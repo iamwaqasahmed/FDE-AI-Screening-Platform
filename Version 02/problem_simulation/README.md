@@ -2,7 +2,7 @@
 
 The factory for the Version 02 world. It generates [../data](../data/README.md) from a seed, checks that every planted problem traces to one cause, scores reference baselines, and serves the mock APIs. It is not the client brief. Participants work from `../data`; facilitators and maintainers work here.
 
-Week 1 gold is `truth/gold/discovery.json`, written by `simulation/eval/discovery_gold.py` on every build. The facilitator reference that must pass the Week 1 checker on that gold lives in [Week 01](<../Week 01 - Problem Discovery/reference_discovery/README.md>), and participants leave it closed.
+Week 1 gold is `truth/gold/discovery.json`, written by `simulation/eval/discovery_gold.py` on every build. Week 2 gold is `truth/gold/enterprise.json` and `truth/gold/identity_records.parquet`, written by `simulation/eval/enterprise/` on every build. The reference solutions that must pass the checkers live in [Week 01](<../Week 01 - Problem Discovery/reference_discovery/README.md>) and [Week 02](<../Week 02 - Enterprise Data/reference_enterprise/README.md>). Participants leave both closed.
 
 | Path | What it is |
 |---|---|
@@ -81,7 +81,7 @@ Every module does one thing and stays under about 200 lines.
 | `ml/` | Vendor retrospective set, operating points, adjudication, did-not-attend table, numpy baselines, judge calibration |
 | `delivery/`, `drops/` | Tracker, roadmap, risks, freezes, RACI, gates, procurement, benefits, accessibility, contracts; one module per weekly drop |
 | `check/` | One check module per surface |
-| `eval/` | One case module per surface, `score/` (the scorer), `baselines/`, and `discovery_gold.py` (the Week 1 key, written to `truth/gold/discovery.json`) |
+| `eval/` | One case module per surface, `score/` (the scorer), `baselines/`, `discovery_gold.py` (the Week 1 key), and `enterprise/` (the Week 2 key, written to `truth/gold/enterprise.json` and `identity_records.parquet`) |
 | `audit/` | The hardness audit and the human dry-run protocol (`audit/DRY_RUN.md`) |
 | `tests/` | Unit tests |
 

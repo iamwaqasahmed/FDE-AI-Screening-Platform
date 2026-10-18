@@ -3,6 +3,9 @@
     python -m course discovery_check --work <folder> [--data data] [--rerun]
     python -m course reference_discovery --data <build> --out <dir> --profile <name>
     python -m course discovery_check.key --data <build>
+    python -m course enterprise_check --work <folder> [--data data] [--rerun]
+    python -m course reference_enterprise --data <build> --out <dir> --profile <name>
+    python -m course enterprise_check.key --data <build>
 """
 
 from __future__ import annotations
@@ -11,7 +14,7 @@ import os
 import runpy
 import sys
 
-USAGE = "Usage: python -m course discovery_check --work <folder>"
+USAGE = "Usage: python -m course <discovery_check|enterprise_check|reference_discovery|reference_enterprise> ..."
 
 
 def main() -> None:

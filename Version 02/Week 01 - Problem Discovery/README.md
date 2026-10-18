@@ -13,9 +13,9 @@ Hartland's people and counts are for practice. They are not a real health servic
 
 ## Leave closed
 
-`data/truth`, `data/eval`, `drops/week-2` through `drops/week-6`, and `reference_discovery` in this folder.
+`data/truth`, `data/eval`, `drops/week-3` through `drops/week-6`, and `reference_discovery` in this folder. Open `drops/week-2` at the start of Week 2, and each later drop at the start of its own week.
 
-`data/truth` and `data/eval` are the hidden model and the answer key. The weekly drops are released by the facilitator. The reference solution is for facilitators.
+`data/truth` and `data/eval` are the hidden model and the answer key. The reference solution is for maintainers.
 
 ## What you will produce
 

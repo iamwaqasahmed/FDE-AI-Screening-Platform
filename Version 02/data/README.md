@@ -314,7 +314,7 @@ You get twelve questions per interview. The score is the share of important fact
 
 ## 9. drops: what changes each week
 
-Open a week's folder only when your facilitator releases it. Each has a `README.md` brief.
+Open a week's folder at the start of that week. Each has a `README.md` brief. There is no separate release step.
 
 | Week | Folder | What arrives |
 |---|---|---|

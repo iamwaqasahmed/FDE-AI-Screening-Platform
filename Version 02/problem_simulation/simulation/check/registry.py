@@ -13,12 +13,13 @@ from simulation.check import (
     delivery,
     discovery,
     economics,
+    enterprise,
     estate,
     ml,
     stakeholders,
 )
 
-SURFACE_CHECKS = (corpus, estate, economics, stakeholders, ml, delivery, discovery)
+SURFACE_CHECKS = (corpus, estate, economics, stakeholders, ml, delivery, discovery, enterprise)
 
 CORE_CHECKS = [
     ("people", core_people.check),

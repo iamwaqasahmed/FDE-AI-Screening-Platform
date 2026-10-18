@@ -38,9 +38,13 @@ def write_world(world: dict) -> None:
     print(f"Writing {len(world['files'])} surface files...")
     write_all(DATA, world["files"])
     from simulation.eval.discovery_gold import build as discovery_gold
+    from simulation.eval.enterprise import build as enterprise_gold
 
     world["gold"]["discovery"] = discovery_gold(world)
+    payload, records = enterprise_gold(world)
+    world["gold"]["enterprise"] = payload
     write_all(TRUTH / "gold", {f"{key}.{'jsonl' if isinstance(value, list) else 'json'}": value for key, value in world["gold"].items()})
+    records.to_parquet(TRUTH / "gold" / "identity_records.parquet", index=False)
     print("Writing eval...")
     write_cases(world, EVAL / "cases.jsonl")
 

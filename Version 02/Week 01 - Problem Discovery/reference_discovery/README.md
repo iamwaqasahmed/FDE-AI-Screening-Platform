@@ -1,6 +1,6 @@
 # reference_discovery
 
-A reference Week 1 solution for facilitators. Participants leave this folder closed. It reads `handover/`, `corpus/`, and `engagement/` only. It does not open `truth/` or `eval/`.
+A reference Week 1 solution for maintainers. Participants leave this folder closed. It reads `handover/`, `corpus/`, and `engagement/` only. It does not open `truth/` or `eval/`.
 
 ```text
 python -m reference_discovery --data <build> --out <dir> --profile <name>

@@ -1,0 +1,46 @@
+{
+  "items": {
+    "drop_schema": {"renamed": {"HOME_CLINIC": ""}, "added": [], "dob": ""},
+    "drop_reissue": {"count": 0, "warehouse_lost": 0},
+    "drop_local_ids": {"added": 0},
+    "api_v3": {"keeps": [], "missing": [], "old_numbers": false},
+    "catalogue_stale": {"entries": []},
+    "sms_reconcile": {"duplicates": 0, "late_share": 0, "inverted_share": 0, "in_order": true},
+    "booking_reconcile": {"ref": "", "history_in_export": true},
+    "feed_dedupe": {"key": "", "order": ""},
+    "unlinked_keys": {"keys": []},
+    "identity_defects": {"aliases": 0, "decoys": 0, "reversed_from": "", "reversed_to": "", "reuse_month": ""},
+    "confidence_rule": {"confirmed_national": 0, "name_dob_postcode": 0, "name_dob": 0, "name": 0, "otherwise": 0},
+    "eligible_people": {"count": 0},
+    "eligible_by_district": {"counts": {}},
+    "coverage": {"people": 0, "days": 0, "warehouse_months": 0},
+    "site_rules": {
+      "hill_recall_days": 0,
+      "hill_document": "",
+      "hill_from": "",
+      "national_ungradable_days": 0,
+      "ncec_specialist_days": 0,
+      "ncec_from": "",
+      "harbour_specialist_days": 0,
+      "harbour_from": "",
+      "oakridge_memo": "",
+      "oakridge_from": "",
+      "oakridge_sunset": ""
+    },
+    "stale_register": {"documents": [], "register_says": ""},
+    "overdue": {"rows": 0, "blank_rows": 0, "latest_blank": 0, "upper_bound": 0, "is_upper_bound": false},
+    "vendor_cohort": {"captures": 0, "linked_by_file": 0, "linked_people": 0, "unlinked": 0},
+    "split_leak": {"seed": 0, "leak_share": 0},
+    "release_plan": {
+      "freeze_ref": "",
+      "freeze_start": "",
+      "freeze_end": "",
+      "registry_release": "",
+      "warehouse_release": "",
+      "v2_stops": ""
+    },
+    "freeze_blocked": {"tickets": []},
+    "rerun_contracts": {"contracts": []},
+    "raci_v3": {"activity": "", "responsible": "", "accountable": "", "consulted": "", "informed": ""}
+  }
+}

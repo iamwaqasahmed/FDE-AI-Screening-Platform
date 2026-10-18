@@ -21,15 +21,24 @@ All of these, together:
 
 ## A second seed
 
-The facilitator reruns your profiling code on a second build and grades the computed items and the scripts:
+You build it yourselves. From `problem_simulation`:
 
 ```text
-python -m course discovery_check --work <your folder> --data <the other build> --rerun
+python -m simulation --profile small
+```
+
+That writes `problem_simulation/build/data-small` while you are still changing the code. For the rerun that counts:
+
+```text
+python -m simulation --profile team-1
+python -m course discovery_check --work <your folder> --data problem_simulation/build/data-team-1 --rerun
 ```
 
 `--rerun` ignores the notes, the brief, and the items that are the same on every seed. Counts, months, site names, and dates have to come from the files. The same thresholds apply.
 
-The answer key for facilitators is `python -m course discovery_check.key`. It prints the gold. Participants do not run it. Opening `data/truth` has the same effect: it skips the week.
+Do not tune the code on the assessment profile. That build is held out.
+
+The answer key for maintainers is `python -m course discovery_check.key`. It prints the gold. Participants do not run it. Opening `data/truth` has the same effect: it skips the week.
 
 **Finish.** The check prints `Discovery check passed.` Open the debrief only after that, or after you have decided your brief is finished and you want to see what it missed.
 
