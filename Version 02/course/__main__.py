@@ -24,6 +24,9 @@
     python -m course agent_check.score --answers <file> [--data <build>] [--baseline]
     python -m course reference_agent --data <build> --out <dir> --profile <name>
     python -m course agent_check.key --data <build>
+    python -m course handoff_check --work <folder> [--data data] [--rerun]
+    python -m course reference_handoff --data <build> --out <dir> --profile <name>
+    python -m course handoff_check.key --data <build>
 """
 
 from __future__ import annotations
@@ -32,7 +35,7 @@ import os
 import runpy
 import sys
 
-USAGE = "Usage: python -m course <discovery_check|enterprise_check|evidence_check|graph_check|agent_check|reference_discovery|reference_enterprise|reference_evidence|reference_graph|reference_agent> ..."
+USAGE = "Usage: python -m course <discovery_check|enterprise_check|evidence_check|graph_check|agent_check|handoff_check|reference_discovery|reference_enterprise|reference_evidence|reference_graph|reference_agent|reference_handoff> ..."
 
 
 def main() -> None:

@@ -11,8 +11,6 @@ Read this only after your reply exists. The figures on these pages are the pract
 
 ## What Week 6 will break
 
-A clinical safety owner is named, with conditions. The owners register is not updated. The stop lifts only when every condition is met. Week 6 adds the architecture decision records, the trust zones, the production path, and two one-page handoffs: one for the executive reader and one for the clinical lead.
-
-Next week is not in this folder yet.
+A clinical safety owner is named, with conditions. The owners register is not updated. The stop lifts only when every condition is met. Week 6 adds the architecture decision records, the trust zones, the production path, and two one-page handoffs: one for the executive reader and one for the clinical lead. The lesson is [Week 06 — Architecture, governance, and handoff](<../Week 06 - Architecture, Governance, and Handoff/README.md>).
 
 Back to the [week guide](README.md).

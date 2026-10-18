@@ -12,6 +12,7 @@ MODULE_DIRS = (
     "Week 03 - Retrieval and ML Evidence",
     "Week 04 - Graph Retrieval and Integration",
     "Week 05 - The Agent and the Re-plan",
+    "Week 06 - Architecture, Governance, and Handoff",
 )
 SIMULATION = "problem_simulation"
 

@@ -42,6 +42,7 @@ def write_world(world: dict) -> None:
     from simulation.eval.evidence import build as evidence_gold
     from simulation.eval.graph import build as graph_gold
     from simulation.eval.agent import build as agent_gold
+    from simulation.eval.handoff import build as handoff_gold
 
     world["gold"]["discovery"] = discovery_gold(world)
     payload, records = enterprise_gold(world)
@@ -52,6 +53,7 @@ def write_world(world: dict) -> None:
     world["gold"]["graph"] = graph
     agent, backlog, sweep = agent_gold(world)
     world["gold"]["agent"] = agent
+    world["gold"]["handoff"] = handoff_gold(world)
     write_all(TRUTH / "gold", {f"{key}.{'jsonl' if isinstance(value, list) else 'json'}": value for key, value in world["gold"].items()})
     records.to_parquet(TRUTH / "gold" / "identity_records.parquet", index=False)
     extract.to_parquet(TRUTH / "gold" / "evidence_extract.parquet", index=False)

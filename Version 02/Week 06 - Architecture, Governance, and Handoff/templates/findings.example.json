@@ -1,0 +1,122 @@
+{
+  "items": {
+    "drop_owner": {
+      "owner": "",
+      "owner_role": "",
+      "named_on": "",
+      "conditions": [],
+      "register_owner": "",
+      "pilot_may_start": false,
+      "friday": ""
+    },
+    "outputs_changed": {
+      "delivered": [],
+      "consumed": [],
+      "unchanged": [],
+      "changed": []
+    },
+    "conditions": {
+      "CSO-1": {"met": false, "acts": "", "confirms": ""},
+      "CSO-2": {"met": false, "acts": "", "confirms": "", "sites": [], "withdraw": ""},
+      "CSO-3": {"met": false, "acts": "", "confirms": ""},
+      "CSO-4": {"met": false, "acts": "", "confirms": "", "people": 0, "is_upper_bound": false},
+      "CSO-5": {"met": false, "acts": "", "confirms": "", "not_before": "", "requested": ""},
+      "all_met": false,
+      "pilot_may_start": false
+    },
+    "register_state": {
+      "owners_register": "",
+      "raci_blank": [],
+      "keep_open": [],
+      "reopen": [],
+      "rm09_owner": "",
+      "g3": {"date": "", "approver": "", "passes": false}
+    },
+    "current_state": {
+      "zones": [],
+      "callback_path": [],
+      "callback_zones": [],
+      "fhir": [],
+      "no_backup": [],
+      "tiers": {},
+      "vendor_hosting": ""
+    },
+    "flow_rules": {
+      "allowed_sites": [],
+      "banned_field": "",
+      "replacement_field": "",
+      "inbound_terminates": "",
+      "result_system": "",
+      "score_system": "",
+      "region_decided_by": ""
+    },
+    "threat_summary": {
+      "threat_ids": [],
+      "live": [],
+      "service_account": "",
+      "excess_role": "",
+      "stale_accounts": [],
+      "reopen": "",
+      "stays_closed": ""
+    },
+    "service_levels": {
+      "peak_band": "",
+      "peak_rpm": 0,
+      "peak_month": "",
+      "season_max": 0,
+      "design_rpm": 0,
+      "vendor_availability": 0,
+      "vendor_downtime_hours": 0,
+      "event_lag_minutes": 0,
+      "grader_tier": 0,
+      "vendor_tier": 0,
+      "grader_waits": false
+    },
+    "prototype_gaps": {
+      "copies": [],
+      "default_model": "",
+      "model_host": "",
+      "on_register": false,
+      "logs_question": false,
+      "sign_in": false,
+      "gaps": [],
+      "replace_with": ""
+    },
+    "production_account": {
+      "client": "",
+      "expires": "",
+      "expires_this_week": false,
+      "standard": "",
+      "production_client_exists": false
+    },
+    "tier_three": {
+      "system": "",
+      "tier": "",
+      "required": [],
+      "missing": [],
+      "conflict": [],
+      "conditional": [],
+      "evidenced": [],
+      "agent_tier": 0
+    },
+    "model_evidence": {
+      "cut": 0,
+      "sensitivity": 0,
+      "age_75_plus": 0,
+      "age_under_75": 0,
+      "sites": [],
+      "claimed": 0,
+      "claim_holds_overall": false,
+      "claim_population": "",
+      "drift_site": "",
+      "drift_before": 0,
+      "drift_after": 0,
+      "inventory_lags": false
+    },
+    "adr_index": {
+      "ids": [],
+      "deciders": {},
+      "status": ""
+    }
+  }
+}
