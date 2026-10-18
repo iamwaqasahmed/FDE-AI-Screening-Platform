@@ -11,6 +11,8 @@ Read this only after your evidence note exists. The figures on these pages are t
 
 ## What Week 4 will break
 
-A letter-bureau incident duplicates and loses dispatches for a week. C-07 asks which overdue people never received the chase letter. The counts you quoted this week move. Graph retrieval starts there: a policy clause, a care-path edge, and a dispatch, in one answer.
+A letter-bureau incident duplicates and loses dispatches for a week. C-07 asks which people were not reached. The overdue counts keep their size and gain a contact status. Graph retrieval starts there: a policy clause, a care-path edge, and a dispatch, in one answer.
+
+Next week: [Week 04 — Graph retrieval and integration](../Week%2004%20-%20Graph%20Retrieval%20and%20Integration/README.md).
 
 Back to the [week guide](README.md).

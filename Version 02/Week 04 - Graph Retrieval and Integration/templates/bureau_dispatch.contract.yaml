@@ -1,0 +1,15 @@
+feed: bureau_dispatch
+system:
+zone:
+grain:
+keys: []
+columns: []
+dates: []
+known_defects: []
+owner:
+consumers: []
+fails_when:
+business_key:
+reconciles_against:
+retention_days:
+crosses_to:

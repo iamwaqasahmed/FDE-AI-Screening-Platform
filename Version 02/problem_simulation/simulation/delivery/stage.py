@@ -74,5 +74,6 @@ def _contracts(world: dict) -> None:
     files, gold = world["files"], world["gold"]
     files["engagement/workstreams/contracts.md"] = contracts_markdown()
     files["engagement/workstreams/contracts.csv"] = contracts_frame()
-    lost_chase = bureau_gold(*bureau_run(world))["lost_chase"]
+    requests, dispatch = bureau_run(world)
+    lost_chase = bureau_gold(world, requests, dispatch)["lost_chase_overdue"]
     gold["integration"] = integration_gold(world, gold["pilot_date"], gold["benefits"], lost_chase)

@@ -22,11 +22,13 @@ def build(world: dict, rng: np.random.Generator) -> None:
     brief = [
         f"{name('bureau_manager')} at the letter bureau reports a queue failure between {start} and {end}.",
         "The authority's request file and the bureau's dispatch file are both here. They do not agree.",
-        "The chase letters went to people with an overdue referral. Work out who has not been reached.",
+        "The programme asked for a chase letter for every local id whose latest referral message has no seen date.",
+        "Work out who has not been reached.",
     ]
-    gold = {"change": "letter bureau incident", **bureau_gold(requests, dispatch),
+    gold = {"change": "letter bureau incident", **bureau_gold(world, requests, dispatch),
             "invalidates": ["any count of letters sent taken from dispatch rows", "the overdue cohort's contact status",
-                            "the bureau notice's statement that no letters were lost"]}
+                            "the bureau notice's statement that no letters were lost",
+                            "a chase list read as the overdue cohort"]}
     add_drop(world, 4, "Letter bureau incident", brief, files, gold)
 
 

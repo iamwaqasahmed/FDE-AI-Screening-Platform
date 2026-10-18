@@ -12,6 +12,12 @@
     python -m course evidence_check.score --answers <file> [--data <build>] [--baseline]
     python -m course reference_evidence --data <build> --out <dir> --profile <name>
     python -m course evidence_check.key --data <build>
+    python -m course graph_check --work <folder> [--data data] [--rerun]
+    python -m course graph_check.questions --data <build> --out questions.jsonl
+    python -m course graph_check.baseline --name keyword|tfidf --data <build> --out <file>
+    python -m course graph_check.score --answers <file> [--data <build>] [--baseline]
+    python -m course reference_graph --data <build> --out <dir> --profile <name>
+    python -m course graph_check.key --data <build>
 """
 
 from __future__ import annotations
@@ -20,7 +26,7 @@ import os
 import runpy
 import sys
 
-USAGE = "Usage: python -m course <discovery_check|enterprise_check|evidence_check|reference_discovery|reference_enterprise|reference_evidence> ..."
+USAGE = "Usage: python -m course <discovery_check|enterprise_check|evidence_check|graph_check|reference_discovery|reference_enterprise|reference_evidence|reference_graph> ..."
 
 
 def main() -> None:
