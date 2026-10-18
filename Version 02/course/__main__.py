@@ -18,6 +18,12 @@
     python -m course graph_check.score --answers <file> [--data <build>] [--baseline]
     python -m course reference_graph --data <build> --out <dir> --profile <name>
     python -m course graph_check.key --data <build>
+    python -m course agent_check --work <folder> [--data data] [--rerun]
+    python -m course agent_check.questions --data <build> --out questions.jsonl
+    python -m course agent_check.baseline --name single_loop|keyword_veto --data <build> --out <file>
+    python -m course agent_check.score --answers <file> [--data <build>] [--baseline]
+    python -m course reference_agent --data <build> --out <dir> --profile <name>
+    python -m course agent_check.key --data <build>
 """
 
 from __future__ import annotations
@@ -26,7 +32,7 @@ import os
 import runpy
 import sys
 
-USAGE = "Usage: python -m course <discovery_check|enterprise_check|evidence_check|graph_check|reference_discovery|reference_enterprise|reference_evidence|reference_graph> ..."
+USAGE = "Usage: python -m course <discovery_check|enterprise_check|evidence_check|graph_check|agent_check|reference_discovery|reference_enterprise|reference_evidence|reference_graph|reference_agent> ..."
 
 
 def main() -> None:

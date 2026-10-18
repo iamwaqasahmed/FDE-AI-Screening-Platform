@@ -7,6 +7,8 @@ from datetime import date
 import numpy as np
 
 from simulation.delivery.plan import pilot_path
+from simulation.drops.assumptions import gold as assumptions_gold
+from simulation.drops.assumptions import text as assumptions_text
 from simulation.drops.common import add_drop, memo
 from simulation.drops.press import press_gold, press_query
 from simulation.drops.rules import PRIMARY_CARE_SITES, SECOND_SITE
@@ -16,9 +18,14 @@ from simulation.world.staff import name, role
 
 def build(world: dict, rng: np.random.Generator) -> None:
     bound = pilot_path(date.min)
-    files = {"scope_change_cdo.md": _scope_memo(), "press_query.md": press_query()}
+    files = {
+        "scope_change_cdo.md": _scope_memo(),
+        "press_query.md": press_query(),
+        "delivery_assumptions.md": assumptions_text(),
+    }
     brief = [
         f"{name('cdo')} has changed the pilot scope. The press office has a media and ministerial query due this week.",
+        f"{name('delivery_manager')} has written the planning assumptions the pilot date depends on. They are durations, not a date.",
         "Re-plan with evidence, and draft the two-paragraph public answer.",
     ]
     gold = {
@@ -34,6 +41,7 @@ def build(world: dict, rng: np.random.Generator) -> None:
                            "framework call-off lead time after Gate 2"],
         "invalidates": ["any plan that dates the pilot from the original roadmap", "a cohort that includes the second site"],
         "press": press_gold(),
+        "assumptions": assumptions_gold(),
     }
     add_drop(world, 5, "Scope change and press query", brief, files, gold)
 

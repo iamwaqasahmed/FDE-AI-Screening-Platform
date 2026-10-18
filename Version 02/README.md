@@ -15,6 +15,7 @@ Everyone and everything in it is fictional. Nothing here is a real patient's rec
 | [Week 02 — Enterprise data](<Week 02 - Enterprise Data/README.md>) | Participants. Identity, the care-path record, contracts, and the schema-change drop. | [Week 02](<Week 02 - Enterprise Data/README.md>) |
 | [Week 03 — Retrieval and ML evidence](<Week 03 - Retrieval and ML Evidence/README.md>) | Participants. The corpus index, the vendor evidence, and the data-protection restriction. | [Week 03](<Week 03 - Retrieval and ML Evidence/README.md>) |
 | [Week 04 — Graph retrieval and integration](<Week 04 - Graph Retrieval and Integration/README.md>) | Participants. The bureau incident, who was not reached, and a graph that cites its path. | [Week 04](<Week 04 - Graph Retrieval and Integration/README.md>) |
+| [Week 05 — The agent and the re-plan](<Week 05 - The Agent and the Re-plan/README.md>) | Participants. The scope change, the public line, and an agent that stops when a rule forbids the action. | [Week 05](<Week 05 - The Agent and the Re-plan/README.md>) |
 | [problem_simulation](problem_simulation/README.md) | Facilitators and maintainers. The generator that builds `data/` from a seed, the checks, the eval set and scorer, the baselines, and the mock APIs. | [problem_simulation/README.md](problem_simulation/README.md) |
 
 ## What you will practise
@@ -37,7 +38,7 @@ Everyone and everything in it is fictional. Nothing here is a real patient's rec
 | 2 | Enterprise data: identity, the care-path record, data quality. [Week 02](<Week 02 - Enterprise Data/README.md>) | Registry schema v3 |
 | 3 | Retrieval and ML evidence. [Week 03](<Week 03 - Retrieval and ML Evidence/README.md>) | A data protection restriction |
 | 4 | Graph retrieval and integration. [Week 04](<Week 04 - Graph Retrieval and Integration/README.md>) | A letter bureau incident |
-| 5 | The agent and the re-plan | A scope change and a press query |
+| 5 | The agent and the re-plan. [Week 05](<Week 05 - The Agent and the Re-plan/README.md>) | A scope change and a press query |
 | 6 | Architecture, governance, and handoff | A decision on clinical safety ownership |
 
 The full design, including the hidden world model and the gold for each outcome, is in [problem_simulation/PLAN.md](problem_simulation/PLAN.md). Participants should not read it during the engagement.

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from simulation.check import (
+    agent,
     core_care,
     core_drop,
     core_identity,
@@ -21,7 +22,7 @@ from simulation.check import (
     stakeholders,
 )
 
-SURFACE_CHECKS = (corpus, estate, economics, stakeholders, ml, delivery, discovery, enterprise, evidence, graph)
+SURFACE_CHECKS = (corpus, estate, economics, stakeholders, ml, delivery, discovery, enterprise, evidence, graph, agent)
 
 CORE_CHECKS = [
     ("people", core_people.check),

@@ -11,8 +11,6 @@ Read this only after your incident note exists. The figures on these pages are t
 
 ## What Week 5 will break
 
-The Chief Digital Officer asks for a second site and an earlier pilot date. The second site is a hospital, and the Week 3 memo does not allow it. A press query asks whose fault the lost letters were, and it asks about one person. The public answer cannot name a patient, a date, or a blame. An agent that plans its own steps starts there, and it stops when it is asked to do something the safety rule forbids.
-
-Next week is not in this folder yet.
+The Chief Digital Officer asks for a second site and an earlier pilot date. The second site is a hospital, and the Week 3 memo does not allow it. A press query asks whose fault the lost letters were, and it asks about one person. The public answer cannot name a patient, a date, or a blame. An agent that plans its own steps starts there, and it stops when it is asked to do something the safety rule forbids. The lesson is [Week 05 — The agent and the re-plan](<../Week 05 - The Agent and the Re-plan/README.md>).
 
 Back to the [week guide](README.md).
