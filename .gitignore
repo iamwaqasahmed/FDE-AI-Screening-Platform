@@ -4,9 +4,9 @@ __pycache__/
 .env
 runtime/
 
-# Version 02 data is generated from its seed: cd "Version 02/problem_simulation" && python -m simulation
-Version 02/data/*
-!Version 02/data/README.md
+# Week 01 - Week 06 data is generated from its seed: cd "Week 01 - Week 06/problem_simulation" && python -m simulation
+Week 01 - Week 06/data/*
+!Week 01 - Week 06/data/README.md
 
-# Team work and reference runs for Version 02 modules
-Version 02/work/
+# Team work and reference runs for Week 01 - Week 06 modules
+Week 01 - Week 06/work/
