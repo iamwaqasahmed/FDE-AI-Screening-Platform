@@ -1,5 +1,7 @@
 # Module 06 — Run it in their environment
 
+The program map is [README.md](../../README.md). This module is part of [Week 00 — Self Paced](../README.md).
+
 Package the agent so someone else can start it, see who asked, and stop it. The data-protection rule is the deployment spec: an access log, no training on patient images, and no diagnosis in a generated letter.
 
 The integration is the extract in and a result file out. There is no new API and no electronic health record.

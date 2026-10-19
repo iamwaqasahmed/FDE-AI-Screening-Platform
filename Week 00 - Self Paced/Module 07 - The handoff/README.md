@@ -1,5 +1,7 @@
 # Module 07 — The handoff
 
+The program map is [README.md](../../README.md). This module is part of [Week 00 — Self Paced](../README.md).
+
 Leave the service with the two people who have to live with it. One scope, two pages, one runbook, and an owner note. The pilot does not start until a clinical safety owner is named.
 
 **Time.** About half a day.

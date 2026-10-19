@@ -1,14 +1,20 @@
-# Who this course is for
+# Who this is for
 
-This course is a guided case. It takes about four days. The client is fictional. The work is one engagement: a vague platform request, a messy extract, a small agent, and a handoff that keeps the pilot stopped.
+Two tracks. One fictional client. The practice is [FDE.md](FDE.md). The program map is [README.md](README.md). The words are [Health language](health_language.md).
 
-Read this before [FDE.md](FDE.md). The four-day path is [Week 00 — Self Paced](<Week 00 - Self Paced/README.md>). The program map is [README.md](README.md).
-
-## Participants
+## Both tracks
 
 Government employees who contribute, or are expected to contribute, to AI, data, digital transformation, technology, or operational improvement.
 
-A mixed group is the right room:
+You do not need to have worked in health. [Health language](health_language.md) teaches the words before either track opens a file.
+
+The Chief Digital Officer and the ophthalmology lead are people inside the case. They read the handoff. You write for them. You do not play them.
+
+## Week 00 — Self Paced
+
+About four days. The guide is [Week 00 — Self Paced](<Week 00 - Self Paced/README.md>).
+
+You work alone, or in a mixed room where everyone does the same case:
 
 - software engineers
 - data scientists and data engineers
@@ -16,11 +22,13 @@ A mixed group is the right room:
 - technical product managers
 - technology consultants
 
-Everyone does the same case. An engineer may be the person who traces a failing check into a function. A product manager or an architect still runs the checker and explains the result. Health experience is not required. [Health language](health_language.md) is the vocabulary. [Module 01](<Week 00 - Self Paced/Module 01 - Problem Discovery/README.md>) is where the self-paced track uses it.
+An engineer may be the person who traces a failing check into a function. A product manager or an architect still runs the checker and explains the result.
 
 You can finish if you can read a short Python function and run a command from `Week 00 - Self Paced`. A spreadsheet is enough for the Module 01 counts. The reference code, the handoff pages, and the capstone notes are the lesson. You study them, run them, and explain them.
 
-## What you leave able to do
+The work is one engagement: a vague platform request, a messy extract, a small agent, and a handoff that keeps the pilot stopped.
+
+### What you leave able to do
 
 1. Write an ask log and a problem brief from a one-line platform request and a messy extract.
 2. Say which written rule a count follows, and show that the cover note uses the wrong rule.
@@ -31,7 +39,7 @@ You can finish if you can read a short Python function and run a command from `W
 7. Explain one scope to an executive and to a clinical lead, and say why a missing safety owner stops the pilot.
 8. Answer a new ask with a refusal or a later slice, citing a file already in the case.
 
-## What you do
+### What you do
 
 | Module | Your work |
 |---|---|
@@ -40,12 +48,41 @@ You can finish if you can read a short Python function and run a command from `W
 | 07 | Read the handoff pack and be able to defend each page. |
 | 08 | Write four lines on each new ask, then compare them with the reference note. |
 
-## People inside the case
+Finishing Week 00 means you can support the first slice of an AI initiative: discovery, a bounded agent, a measurement, a deployment boundary, and a recommendation.
 
-The Chief Digital Officer and the ophthalmology lead are the readers of the handoff. They are the client's audience. They are not the participants.
+## Week 01 — Week 06
 
-## After this course
+Six weeks, in a team of five or six. The guide is [Week 01 — Week 06](<Week 01 - Week 06/README.md>).
 
-Finishing Hartland means you can support the first slice of an AI initiative: discovery, a bounded agent, a measurement, a deployment boundary, and a recommendation.
+For people who already put services in production:
 
-A later course takes the same kind of professional through enterprise data and integration, architecture and governance, the path from prototype to production, and a real client project. That track is [Week 01 — Week 06](<Week 01 - Week 06/README.md>). This repository is the shared case that comes first.
+- machine learning specialists
+- data scientists
+- data engineers and software engineers
+- solution and enterprise architects
+- technical product managers
+- technology consultants
+
+Each role has a hard problem in the drop. The team shares one brief. The week notes say which role owns which part.
+
+Week 00 is the same client in a smaller world, and a useful introduction. This track has its own data and its own weekly drops. You can start at Week 1 without finishing Week 00.
+
+### What you leave able to do
+
+1. From a one-line pilot request and a multi-system drop, say which problems are real and how big they are.
+2. Join records across systems that have no common key, and show when a schema change breaks yesterday's count.
+3. Cite the document in force, and check a vendor model claim against the evidence the rules still allow.
+4. Say who a failed letter run did not reach, and answer a question that needs more than one record.
+5. Re-plan when the sponsor changes the ask, and stop an agent when a rule forbids the action.
+6. Hand over a design the authority can govern, and say why the pilot stays stopped while the safety owner's conditions are unmet.
+
+### What you do
+
+| Week | Your work |
+|---|---|
+| [01](<Week 01 - Week 06/Week 01 - Problem Discovery/README.md>) | Interviews, a profile, a timeline, a sizing, and the first brief |
+| [02](<Week 01 - Week 06/Week 02 - Enterprise Data/README.md>) | Identity, the care-path record, and the schema-change drop |
+| [03](<Week 01 - Week 06/Week 03 - Retrieval and ML Evidence/README.md>) | The corpus index, the vendor evidence, and the data-protection restriction |
+| [04](<Week 01 - Week 06/Week 04 - Graph Retrieval and Integration/README.md>) | The bureau incident, who was not reached, and a graph that cites its path |
+| [05](<Week 01 - Week 06/Week 05 - The Agent and the Re-plan/README.md>) | The scope change, the public line, and an agent that stops |
+| [06](<Week 01 - Week 06/Week 06 - Architecture, Governance, and Handoff/README.md>) | The clinical safety owner, the production path, and a handoff that keeps the pilot stopped |

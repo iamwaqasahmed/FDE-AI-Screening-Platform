@@ -1,5 +1,7 @@
 # Module 08 — Capstone
 
+The program map is [README.md](../../README.md). This module is part of [Week 00 — Self Paced](../README.md).
+
 A new ask arrives on the same authority. No new data. You do not rebuild the platform.
 
 Run the Module 01 moves in short form: write the ask down, say what the current tools can take, say what they must refuse, and say what would have to be true before a second slice. Write those four lines before you open the matching note in [capstone](../capstone).

@@ -1,6 +1,6 @@
 # Problem simulation
 
-The factory for the Hartland engagement. It builds the world. It is not the client brief.
+This factory builds the Week 00 world. The six-week factory is [Week 01 — Week 06 / problem_simulation](<../../Week 01 - Week 06/problem_simulation/README.md>). Participants start at the [course guide](../README.md), not in this folder.
 
 Hartland Regional Health Authority is an invented regional health service that reports to a Ministry of Health. Nothing here is a real health system, and nothing here is a protocol for patient care.
 
@@ -10,7 +10,7 @@ No health background is required. The words are in [Health language](<../../heal
 
 ## Start here
 
-Participants start at the [course guide](../README.md), then [who this course is for](../../target_audience.md), then [Module 01](<../Module 01 - Problem Discovery/README.md>). This folder is how the world was built. Leave `config.yaml` and `src/` closed during Module 01.
+Read the [program map](../../README.md), then this track's [guide](../README.md), then [Module 01](<../Module 01 - Problem Discovery/README.md>). This folder is how the Week 00 world was built. Leave `config.yaml` and `src/` closed during Module 01.
 
 The module is a sequence. It tells you when to open the tables. The plain-language map of those tables is [data/README.md](../data/README.md).
 

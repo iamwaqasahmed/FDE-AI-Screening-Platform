@@ -1,5 +1,7 @@
 # Week 01 — Problem discovery
 
+The program map is [README.md](../../README.md). This week is part of [Week 01 — Week 06](../README.md).
+
 Week 1 of the six-week engagement. The Chief Digital Officer wants the vendor model live. Your team has the base drop and five days to find which problems are real, how big they are, and what has to come first.
 
 Hartland's people and counts are for practice. They are not a real health service, and they are not instructions for care.

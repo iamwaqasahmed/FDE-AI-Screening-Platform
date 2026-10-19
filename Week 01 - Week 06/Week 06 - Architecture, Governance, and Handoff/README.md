@@ -1,5 +1,7 @@
 # Week 06 — Architecture, governance, and handoff
 
+The program map is [README.md](../../README.md). This week is part of [Week 01 — Week 06](../README.md).
+
 Week 6 of the six-week engagement. A clinical director has agreed to be clinical safety owner, with conditions. The owners register is not updated. By Friday the team can say why the pilot stays stopped, can show a design that denies what the rules deny, and can hand over a pack the authority can run and govern.
 
 Hartland's people and counts are for practice. They are not a real health service, and they are not instructions for care.

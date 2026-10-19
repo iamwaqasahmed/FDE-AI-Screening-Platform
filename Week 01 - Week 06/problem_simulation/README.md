@@ -1,8 +1,23 @@
 # problem_simulation
 
-The factory for the Week 01 - Week 06 world. It generates [../data](../data/README.md) from a seed, checks that every planted problem traces to one cause, scores reference baselines, and serves the mock APIs. It is not the client brief. Participants work from `../data`; facilitators and maintainers work here.
+This factory builds the world for [Week 01 — Week 06](../README.md). Participants work from [data](../data/README.md). Facilitators and maintainers work here. The four-day world has its own factory, in [Week 00 — Self Paced / problem_simulation](<../../Week 00 - Self Paced/problem_simulation/README.md>).
 
-Week 1 gold is `truth/gold/discovery.json`, written by `simulation/eval/discovery_gold.py` on every build. Week 2 gold is `truth/gold/enterprise.json` and `truth/gold/identity_records.parquet`, written by `simulation/eval/enterprise/` on every build. Week 3 gold is `truth/gold/evidence.json` and `truth/gold/evidence_extract.parquet`, written by `simulation/eval/evidence/` on every build. Week 4 gold is `truth/gold/graph.json` and `truth/gold/graph_reconciliation.parquet`, written by `simulation/eval/graph/` on every build. The week 4 chase list is every local id whose latest referral message has no seen date, which is wider than the overdue cohort. Week 5 gold is `truth/gold/agent.json`, `truth/gold/agent_backlog.parquet`, and `truth/gold/agent_sweep.parquet`, written by `simulation/eval/agent/` on every build. The week 5 drop adds `delivery_assumptions.md`, which states the durations the pilot date depends on and states no date. Week 6 gold is `truth/gold/handoff.json`, written by `simulation/eval/handoff/` on every build. The week 6 drop names a clinical safety owner and leaves every condition unmet, and it does not update the owners register. The reference solutions that must pass the checkers live in [Week 01](<../Week 01 - Problem Discovery/reference_discovery/README.md>), [Week 02](<../Week 02 - Enterprise Data/reference_enterprise/README.md>), [Week 03](<../Week 03 - Retrieval and ML Evidence/reference_evidence/README.md>), [Week 04](<../Week 04 - Graph Retrieval and Integration/reference_graph/README.md>), [Week 05](<../Week 05 - The Agent and the Re-plan/reference_agent/README.md>), and [Week 06](<../Week 06 - Architecture, Governance, and Handoff/reference_handoff/README.md>). Participants leave them closed.
+It generates `data/` from a seed, checks that every planted problem traces to one cause, scores reference baselines, and serves the mock APIs. Participants leave this folder and [PLAN.md](PLAN.md) closed during the engagement.
+
+A build writes the gold for each week:
+
+| Week | Gold | Written by |
+|---|---|---|
+| 1 | `truth/gold/discovery.json` | `simulation/eval/discovery_gold.py` |
+| 2 | `truth/gold/enterprise.json`, `truth/gold/identity_records.parquet` | `simulation/eval/enterprise/` |
+| 3 | `truth/gold/evidence.json`, `truth/gold/evidence_extract.parquet` | `simulation/eval/evidence/` |
+| 4 | `truth/gold/graph.json`, `truth/gold/graph_reconciliation.parquet` | `simulation/eval/graph/` |
+| 5 | `truth/gold/agent.json`, `truth/gold/agent_backlog.parquet`, `truth/gold/agent_sweep.parquet` | `simulation/eval/agent/` |
+| 6 | `truth/gold/handoff.json` | `simulation/eval/handoff/` |
+
+The week 4 chase list is every local id whose latest referral message has no seen date. That list is wider than the overdue cohort. The week 5 drop adds `delivery_assumptions.md`, which states the durations the pilot date depends on and states no date. The week 6 drop names a clinical safety owner, leaves every condition unmet, and does not update the owners register.
+
+The reference solutions that must pass the checkers live in [Week 01](<../Week 01 - Problem Discovery/reference_discovery/README.md>), [Week 02](<../Week 02 - Enterprise Data/reference_enterprise/README.md>), [Week 03](<../Week 03 - Retrieval and ML Evidence/reference_evidence/README.md>), [Week 04](<../Week 04 - Graph Retrieval and Integration/reference_graph/README.md>), [Week 05](<../Week 05 - The Agent and the Re-plan/reference_agent/README.md>), and [Week 06](<../Week 06 - Architecture, Governance, and Handoff/reference_handoff/README.md>). Participants leave them closed.
 
 | Path | What it is |
 |---|---|

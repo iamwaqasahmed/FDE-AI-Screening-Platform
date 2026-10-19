@@ -1,6 +1,13 @@
 # Health language
 
-You can do this case without having worked in a hospital. This note is the shared vocabulary for both tracks. It does not describe Hartland's numbers. Those come later, from the files.
+Read this before you open a data file on either track. You can do the case without having worked in a hospital.
+
+This note is the shared vocabulary. It describes the service. Hartland's numbers are in the files, and the two tracks do not share a data folder.
+
+| Track | Where the numbers are |
+|---|---|
+| [Week 00 — Self Paced](<Week 00 - Self Paced/README.md>) | [Week 00 data](<Week 00 - Self Paced/data/README.md>) |
+| [Week 01 — Week 06](<Week 01 - Week 06/README.md>) | [Weeks 1–6 data](<Week 01 - Week 06/data/README.md>) |
 
 ## The organisations
 
@@ -79,6 +86,8 @@ You are not expected to compute these from images. This drop does not include th
 
 You decide what the software should do first, what it must refuse, and which number defines success. The grader decides any result that changes a patient's care: a referral, a recall, or a reassurance.
 
-**Finish.** You can describe the eye pathway, the five codes, and why a slide that quotes only sensitivity is incomplete, without opening the extract.
+**Finish.** You can describe the eye pathway, the five codes, and why a slide that quotes only sensitivity is incomplete, without opening an extract.
 
-Next, on the self-paced track: [The discovery skill](<Week 00 - Self Paced/Module 01 - Problem Discovery/02-discovery-skill.md>).
+Week 00 continues at [The discovery skill](<Week 00 - Self Paced/Module 01 - Problem Discovery/02-discovery-skill.md>).
+
+Weeks 1 to 6 continue at [Week 01 — Problem discovery](<Week 01 - Week 06/Week 01 - Problem Discovery/README.md>).

@@ -2,6 +2,8 @@
 
 A generated extract from Hartland Regional Health Authority, the fictional regional body that runs public health programs for a Ministry of Health. Nothing here is a real patient's record, and nothing here is a protocol for care.
 
+This is the small extract for [Week 00 — Self Paced](../README.md). The six-week extract is a different world: [Week 01 — Week 06 data](<../../Week 01 - Week 06/data/README.md>). A count from one folder does not belong in the other.
+
 Open this page when [Module 01](<../Module 01 - Problem Discovery/README.md>) tells you to count. Who the case is for is [target_audience.md](../../target_audience.md). The longer glossary is [Health language](../../health_language.md). Health experience is not required.
 
 ## On this page

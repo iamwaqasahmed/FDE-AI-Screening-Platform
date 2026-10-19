@@ -1,8 +1,8 @@
-# Forward deployed engineer
+# Week 00 — Self Paced
 
-This folder is the self-paced introduction to forward deployed engineering. The program map is one level up, in [README.md](../README.md).
+You are in the four-day track. The program map is [README.md](../README.md). The six-week track on the same client is [Week 01 — Week 06](<../Week 01 - Week 06/README.md>).
 
-A first engagement inside a health authority: discover the problem in a messy drop, then follow a small system through to a handoff that keeps the pilot stopped.
+Discover the problem in a messy drop, then follow a small system through to a handoff that keeps the pilot stopped.
 
 Who it is for, and what you leave able to do, is [target_audience.md](../target_audience.md). The practice this case trains is [FDE.md](../FDE.md). The words for the case are in [Health language](../health_language.md).
 
@@ -25,13 +25,14 @@ About four days. Each module is about half a day. From Module 02 on, the code in
 
 ## Before the checks
 
-From `Week 00 - Self Paced`, with Python 3:
+From the repository root:
 
 ```text
+cd "Week 00 - Self Paced"
 pip install pandas openpyxl
 ```
 
-Module 01 can be done with a spreadsheet. The later checkers need those two packages. No API key. Docker is optional.
+Every checker on this page runs in that folder, `Week 00 - Self Paced`. Module 01 can be done with a spreadsheet. The later checkers need those two packages. No API key. Docker is optional.
 
 ## 1. Module 01 — Problem discovery
 

@@ -2,6 +2,8 @@
 
 Everything a forward-deployed team would be handed on day one at Hartland Regional Health Authority, plus what arrives during the six weeks. The authority, its staff, and its patients are fictional. Nothing here is a real patient's record, and nothing here is a protocol for care.
 
+This is the extract for [Week 01 — Week 06](../README.md). The four-day extract is a different world: [Week 00 data](<../../Week 00 - Self Paced/data/README.md>). The shared vocabulary is [Health language](../../health_language.md). The counts in this guide come from the files below.
+
 This guide explains what each file is, what one row means, how files join, and where to start. It does not tell you what is wrong. Finding that out is the work.
 
 ## Contents

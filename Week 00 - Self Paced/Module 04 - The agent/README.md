@@ -1,5 +1,7 @@
 # Module 04 — The agent
 
+The program map is [README.md](../../README.md). This module is part of [Week 00 — Self Paced](../README.md).
+
 Put a model in front of the tools and the retriever. The model chooses a step. The numbers and the rules come back from code. The model does not recalculate coverage, and it does not diagnose a retina.
 
 **Time.** About half a day.

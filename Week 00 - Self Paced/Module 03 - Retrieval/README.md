@@ -1,5 +1,7 @@
 # Module 03 — Retrieval
 
+The program map is [README.md](../../README.md). This module is part of [Week 00 — Self Paced](../README.md).
+
 Teach the agent where a rule comes from. The corpus holds an issued procedure and a stricter draft. Both can look relevant. A search that returns only the closest paragraph will treat the draft as policy.
 
 The Module 02 tools still do the counting. Retrieval does not replace them.

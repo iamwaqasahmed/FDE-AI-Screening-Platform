@@ -1,5 +1,7 @@
 # Module 02 — Tools the agent can trust
 
+The program map is [README.md](../../README.md). This module is part of [Week 00 — Self Paced](../README.md).
+
 Turn the Module 01 counts into functions. No language model.
 
 These functions are what a later agent is allowed to call. It may choose `coverage`, the queue, the urgent wait, the vendor file, or the letter fields. It may not recalculate them in a sentence. The cover note, the dictionary, and the issued procedure disagree, and a model that picks among them from memory will sound sure and be wrong.

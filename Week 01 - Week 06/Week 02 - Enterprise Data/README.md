@@ -1,5 +1,7 @@
 # Week 02 — Enterprise data
 
+The program map is [README.md](../../README.md). This week is part of [Week 01 — Week 06](../README.md).
+
 Week 2 of the six-week engagement. The ministry published a new registry extract this morning. Your Week 1 code still runs on the old file. By Friday the team has one cluster per person, counts it will stand behind, contracts that fail loudly, a warehouse model, and a release plan that survives the freeze.
 
 Hartland's people and counts are for practice. They are not a real health service, and they are not instructions for care.

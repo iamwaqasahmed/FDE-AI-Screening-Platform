@@ -1,8 +1,12 @@
-# Week 01 - Week 06: advanced track
+# Week 01 — Week 06
+
+You are in the six-week track. The program map is [README.md](../README.md). The four-day introduction to the same client is [Week 00 — Self Paced](<../Week 00 - Self Paced/README.md>). You can start here without finishing it.
+
+Read the shared notes before the weeks: [who it is for](../target_audience.md), [the practice](../FDE.md), and [health language](../health_language.md). Hartland's counts are in [the data guide](data/README.md), not in the health-language note.
 
 For engineers who already put services in production: ML specialists, data scientists, data and software engineers, architects, technical product managers, and consultants, working in mixed teams of five or six.
 
-The client is the same as in [Week 00 - Self Paced](<../Week 00 - Self Paced/README.md>): Hartland Regional Health Authority and its diabetic eye screening programme. Here the world is much deeper. The Chief Digital Officer wants an AI triage pilot live. Your team has six weeks to find which problems are real, size them, build what is justified, and hand over something the authority can run and govern.
+The client is Hartland Regional Health Authority and its diabetic eye screening programme. The world here is deep: nineteen systems, a large corpus, and a new drop each week. The Chief Digital Officer wants an AI triage pilot live. Your team has six weeks to find which problems are real, size them, build what is justified, and hand over something the authority can run and govern.
 
 Everyone and everything in it is fictional. Nothing here is a real patient's record or a protocol for care.
 
@@ -46,19 +50,23 @@ The full design, including the hidden world model and the gold for each outcome,
 
 ## Getting started
 
-The data files are not in git; only `data/README.md` is. Generate them once after cloning (about six minutes, about 380 MB):
+Read this page, then [data/README.md](data/README.md), then [Week 01](<Week 01 - Problem Discovery/README.md>).
+
+The data files are not in git. Only `data/README.md` is. From the repository root, generate them once (about six minutes, about 380 MB):
 
 ```text
-cd problem_simulation
+cd "Week 01 - Week 06/problem_simulation"
 pip install -r requirements.txt
 python -m simulation --no-repeat
 ```
 
-The same seed always produces the same data.
+The same seed always produces the same data. After it finishes, come back to this folder.
 
-Participants: read [data/README.md](data/README.md), then open `data/handover/interfaces/` and `data/engagement/personas/`.
+Participants then open `data/handover/interfaces/` and `data/engagement/personas/`.
 
-Facilitators, from `problem_simulation/`:
+Week checks, such as `python -m course discovery_check`, run from `Week 01 - Week 06`. They do not run from the repository root, and they do not run from `problem_simulation`.
+
+Facilitators, from `Week 01 - Week 06/problem_simulation`:
 
 ```text
 pip install -r requirements.txt

@@ -1,5 +1,7 @@
 # Week 04 — Graph retrieval and integration
 
+The program map is [README.md](../../README.md). This week is part of [Week 01 — Week 06](../README.md).
+
 Week 4 of the six-week engagement. The letter bureau says a queue failure last week duplicated some letters and lost none. The request file and the dispatch file do not agree. By Friday the team can say who was not reached, what must not be sent again, and can answer a question that needs more than one record.
 
 Hartland's people and counts are for practice. They are not a real health service, and they are not instructions for care.

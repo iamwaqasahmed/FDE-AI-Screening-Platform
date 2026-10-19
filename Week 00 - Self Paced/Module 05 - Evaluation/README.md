@@ -1,5 +1,7 @@
 # Module 05 — Evaluation
 
+The program map is [README.md](../../README.md). This module is part of [Week 00 — Self Paced](../README.md).
+
 Measure the agent. A demo is not a measurement.
 
 The practice set is already in this folder. The scorer runs `ask` on each case and records whether the tool, the document, the numbers, and the refusal match. `data/eval` is the instructor set. Leave it closed until you choose to print the instructor report. The practice check is enough to finish.

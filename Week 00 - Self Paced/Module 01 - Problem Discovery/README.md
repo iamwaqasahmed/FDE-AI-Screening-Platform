@@ -1,8 +1,10 @@
 # Module 01 — Problem discovery
 
+The program map is [README.md](../../README.md). This module is part of [Week 00 — Self Paced](../README.md).
+
 Find the problem underneath a one-line request, using a simulated health authority. Hartland's people and counts are for practice. They are not a real health system, and they are not instructions for patient care.
 
-No health background is required. The first note teaches the words. After that, everyone does the same work: read a vague request, then find the problem in the files.
+No health background is required. [Health language](../../health_language.md) teaches the words. After that, everyone does the same work: read a vague request, then find the problem in the files.
 
 **Time.** About half a day.
 **Who.** [target_audience.md](../../target_audience.md). The whole group writes. This module has no checker.

@@ -1,5 +1,7 @@
 # Week 05 — The agent and the re-plan
 
+The program map is [README.md](../../README.md). This week is part of [Week 01 — Week 06](../README.md).
+
 Week 5 of the six-week engagement. The Chief Digital Officer wants the pilot at a hospital clinic, and sooner. The press office wants a public line by Friday. By the end of the week the team can say no with a plan, can publish two paragraphs that survive the files, and has an agent that stops when a rule forbids the action.
 
 Hartland's people and counts are for practice. They are not a real health service, and they are not instructions for care.

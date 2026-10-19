@@ -1,5 +1,7 @@
 # Week 03 — Retrieval and ML evidence
 
+The program map is [README.md](../../README.md). This week is part of [Week 01 — Week 06](../README.md).
+
 Week 3 of the six-week engagement. The data protection officer restricted the vendor pathway this morning. Your Week 2 cohort still includes the captures that may no longer leave the authority. By Friday the team has an index that cites the document in force, a vendor extract the memo allows, and a number for the vendor model that survives the proposals.
 
 Hartland's people and counts are for practice. They are not a real health service, and they are not instructions for care.
