@@ -1,6 +1,6 @@
 # Decisions on the record
 
-**Days 3 and 4. Architect.** Stop and write four architecture decision records. Use [the ADR template](templates/adr.md). Save them as `adr/ADR-01.md`, `adr/ADR-02.md`, `adr/ADR-03.md`, and `adr/ADR-04.md`.
+**Days 3 and 4. Be the architect.** Stop and write four architecture decision records. Use [the ADR template](templates/adr.md). Save them as `adr/ADR-01.md`, `adr/ADR-02.md`, `adr/ADR-03.md`, and `adr/ADR-04.md`.
 
 Status is `Proposed` on every one. You are not the decider. A record marked Accepted fails.
 

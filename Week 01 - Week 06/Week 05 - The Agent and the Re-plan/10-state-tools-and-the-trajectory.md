@@ -1,6 +1,6 @@
 # State, tools, and the trajectory
 
-**Day 3. Software engineer and data engineer.** The agent does not read the handover itself. It calls tools you already trust, and it keeps a log of what it called.
+**Day 3. Be the software engineer, then the data engineer.** The agent does not read the handover itself. It calls tools you already trust, and it keeps a log of what it called.
 
 ## State
 
@@ -8,7 +8,7 @@ A run has a plan, the records read so far, the draft, and the decision if a pers
 
 ## Tools
 
-Wrap what the team has already built. Do not rebuild it inside the agent.
+Wrap what you have already built. Do not rebuild it inside the agent.
 
 - Week 2 clusters, and the count of people.
 - Week 3 index, and the pilot-scope set.

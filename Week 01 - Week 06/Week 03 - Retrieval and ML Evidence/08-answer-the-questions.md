@@ -1,6 +1,6 @@
 # Answer the questions
 
-**Day 3. Software engineer and data engineer.** Produce `answers.jsonl` for every question in the file you printed. Score it:
+**Day 3. Be the software engineer, then the data engineer.** Produce `answers.jsonl` for every question in the file you printed. Score it:
 
 ```text
 python -m course evidence_check.score --answers answers.jsonl --data data

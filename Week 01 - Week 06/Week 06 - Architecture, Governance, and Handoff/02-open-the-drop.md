@@ -1,6 +1,6 @@
 # Open the drop
 
-**Day 1. Product manager and consultant.** This note is the release. `drops/week-6/` is open.
+**Day 1. Be the product manager, then the consultant.** This note is the release. `drops/week-6/` is open.
 
 Read the memo, including the last paragraph. The sender agrees to be clinical safety owner. The acceptance is conditional. The owners register is a different file. Open `handover/owners.csv` and read the clinical safety owner row before you answer anyone.
 

@@ -1,6 +1,6 @@
 # Open the drop
 
-**Day 1. Product manager and software engineer.** This note is the release. Open `data/drops/week-4/` now, and nothing later than it.
+**Day 1. Be the product manager, then the software engineer.** This note is the release. Open `data/drops/week-4/` now, and nothing later than it.
 
 Read `letters/bureau_notice.md` before anyone reruns a cohort or quotes a count of letters sent. The notice makes two claims. The files are the test of those claims.
 

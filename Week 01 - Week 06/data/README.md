@@ -1,6 +1,6 @@
 # The Hartland data
 
-Everything a forward-deployed team would be handed on day one at Hartland Regional Health Authority, plus what arrives during the six weeks. The authority, its staff, and its patients are fictional. Nothing here is a real patient's record, and nothing here is a protocol for care.
+Everything you would be handed on day one at Hartland Regional Health Authority, plus what arrives during the six weeks. The authority, its staff, and its patients are fictional. Nothing here is a real patient's record, and nothing here is a protocol for care.
 
 This is the extract for [Week 01 — Week 06](../README.md). The four-day extract is a different world: [Week 00 data](<../../Week 00 - Self Paced/data/README.md>). The shared vocabulary is [Health language](../../health_language.md). The counts in this guide come from the files below.
 
@@ -26,7 +26,7 @@ This guide explains what each file is, what one row means, how files join, and w
 
 Hartland runs a diabetic eye screening programme. Every person with diabetes on the regional register is invited for retinal photographs on a regular cycle. Graders read the photographs. People with results that need a specialist are referred to a hospital eye clinic.
 
-The Chief Digital Officer has bought an AI triage pilot and wants it live. Clinicians, the data protection officer, finance, and the patient representative each see the programme differently. Your team has been asked to find where AI and data work would really help, build what is justified, and hand over something the authority can run.
+The Chief Digital Officer has bought an AI triage pilot and wants it live. Clinicians, the data protection officer, finance, and the patient representative each see the programme differently. You have been asked to find where AI and data work would really help, build what is justified, and hand over something the authority can run.
 
 - History in the data: **October 2018 to September 2026**.
 - Snapshot date of the handover: **1 October 2026**. Treat that as "today" in week 1.
@@ -301,7 +301,7 @@ Some documents contain personal data. Some contain text written to manipulate an
 | `economics/unit_costs.csv` | Unit costs (grader read, letter, SMS, appointment, clinic visit, call, and more) |
 | `economics/budgets.csv` | Budget and actual by cost centre and financial year |
 | `economics/attendance_by_month.csv` | Invitations, attendances, and rate by district and month |
-| `workstreams/contracts.md`, `contracts.csv` | Which role's output feeds which other role, so a team of five or six integrates instead of working in parallel |
+| `workstreams/contracts.md`, `contracts.csv` | The order of your own outputs. The hat that produces a file is named first. You use that file when you wear the next hat. You do not wait for another person |
 
 ### Interviewing stakeholders
 

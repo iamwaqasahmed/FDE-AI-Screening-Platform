@@ -1,6 +1,6 @@
 # Cohorts
 
-**Day 4. Data scientist and ML specialist.** You are the consumers of C-02 and C-01. Rerun on the clusters from Day 3. A cohort counted in rows is not the cohort the contract asked for.
+**Day 4. Be the data scientist, then the ML specialist.** You use C-02 and C-01, which you published as the data engineer. Rerun on the clusters from Day 3. A cohort counted in rows is not the cohort the contract asked for.
 
 Use [templates/cohort-notes.md](templates/cohort-notes.md). One note can hold both cohorts. Write the definition, the count at each step, what you refused to count, and what would settle the rest.
 

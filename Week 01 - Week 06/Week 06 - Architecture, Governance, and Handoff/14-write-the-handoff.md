@@ -1,6 +1,6 @@
 # Write the handoff
 
-**Day 5. Consultant, product manager, and software engineer.** Write these before you open the [debrief](16-debrief.md). Use the templates. The checker looks for key facts, not for a heading style. Name dates as `YYYY-MM-DD`.
+**Day 5. Be the consultant, then the product manager, then the software engineer.** Write these before you open the [debrief](16-debrief.md). Use the templates. The checker looks for key facts, not for a heading style. Name dates as `YYYY-MM-DD`.
 
 Both pages name the same sites, the ones the Week 3 memo allows, and the same earliest go-live, the one from note 03. A page that adds a hospital site, or a different date, does not match the other page.
 

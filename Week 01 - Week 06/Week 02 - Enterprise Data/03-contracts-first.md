@@ -1,8 +1,8 @@
 # Contracts first
 
-**Days 1 and 2. Architect.** A contract is written before the loader. The loader is the test that the contract is true.
+**Days 1 and 2. Be the architect.** A contract is written before the loader. The loader is the test that the contract is true.
 
-`engagement/workstreams/contracts.csv` says who produces and who consumes. A producer may not change a shape without telling the consumer. This week's drop already changed one. The eleven feeds below are the ones your pipelines will read. Each gets a file `contracts/<feed>.yaml`, from [the example](templates/contract.example.yaml).
+`engagement/workstreams/contracts.csv` names the hat that produces each file and the hat that uses it. You do both, in that order. Do not change a shape in one hat without using the new shape in the next. This week's drop already changed one. The eleven feeds below are the ones your pipelines will read. Each gets a file `contracts/<feed>.yaml`, from [the example](templates/contract.example.yaml).
 
 ## The eleven feeds
 

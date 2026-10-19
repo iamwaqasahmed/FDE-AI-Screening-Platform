@@ -4,9 +4,9 @@ You are in the six-week track. The program map is [README.md](../README.md). The
 
 Read the shared notes before the weeks: [who it is for](../target_audience.md), [the practice](../FDE.md), and [health language](../health_language.md). Hartland's counts are in [the data guide](data/README.md), not in the health-language note.
 
-For engineers who already put services in production: ML specialists, data scientists, data and software engineers, architects, technical product managers, and consultants, working in mixed teams of five or six.
+For one engineer who already puts services in production. Across the six weeks you work as the ML specialist, the data scientist, the data engineer, the software engineer, the architect, the technical product manager, and the consultant.
 
-The client is Hartland Regional Health Authority and its diabetic eye screening programme. The world here is deep: nineteen systems, a large corpus, and a new drop each week. The Chief Digital Officer wants an AI triage pilot live. Your team has six weeks to find which problems are real, size them, build what is justified, and hand over something the authority can run and govern.
+The client is Hartland Regional Health Authority and its diabetic eye screening programme. The world here is deep: nineteen systems, a large corpus, and a new drop each week. The Chief Digital Officer wants an AI triage pilot live. You have six weeks to find which problems are real, size them, build what is justified, and hand over something the authority can run and govern.
 
 Everyone and everything in it is fictional. Nothing here is a real patient's record or a protocol for care.
 
@@ -33,7 +33,7 @@ Everyone and everything in it is fictional. Nothing here is a real patient's rec
 | AI architecture and governance | Trust zones, an EA current state, a model register, AI governance policy, data sharing agreements, security standards |
 | Product and project delivery | A backlog, roadmap, freezes, funding gates, procurement routes, a benefits register, a RACI |
 | Consulting and stakeholder management | Twelve stakeholders with conflicting positions, an interview simulator, a press query |
-| Forward deployed engineering practice | Weekly drops that change the ground under you, and workstream contracts that make the team integrate |
+| Forward deployed engineering practice | Weekly drops that change the ground under you, and workstream contracts that set the order of your own outputs |
 
 ## The six weeks
 

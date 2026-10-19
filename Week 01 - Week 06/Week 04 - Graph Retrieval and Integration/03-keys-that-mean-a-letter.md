@@ -1,6 +1,6 @@
 # Keys that mean a letter
 
-**Day 1. Software engineer and data engineer.** Week 2 deduped event feeds on `event_id`, because that id meant one thing that happened. This file is not that feed.
+**Day 1. Be the software engineer, then the data engineer.** Week 2 deduped event feeds on `event_id`, because that id meant one thing that happened. This file is not that feed.
 
 ## Three ids
 

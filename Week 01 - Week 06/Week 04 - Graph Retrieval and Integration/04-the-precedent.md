@@ -1,6 +1,6 @@
 # The precedent
 
-**Days 1 and 2. Product manager, data engineer, and consultant.** The bureau notice names no ticket. The cause it describes is already in the service desk, and in a notice from 2025.
+**Days 1 and 2. Be the product manager, then the data engineer, then the consultant.** The bureau notice names no ticket. The cause it describes is already in the service desk, and in a notice from 2025.
 
 ## The same sentence
 

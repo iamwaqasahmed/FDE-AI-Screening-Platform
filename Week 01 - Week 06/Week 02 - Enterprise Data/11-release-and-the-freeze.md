@@ -1,6 +1,6 @@
 # Release and the freeze
 
-**Days 4 and 5. Product manager.** The schema changed on 12 October. The last registry release window before the freeze was 6 October. The next one is not this month.
+**Days 4 and 5. Be the product manager.** The schema changed on 12 October. The last registry release window before the freeze was 6 October. The next one is not this month.
 
 `handover/delivery/freeze_calendar.csv` is the calendar. `FRZ-0301` freezes registry interface changes from 19 October 2026 through 29 January 2027. Version 2 files stop at the month end, 31 October. The warehouse has its own windows. The first warehouse window on or after the drop is the one that can carry a model change. A registry interface change cannot ride along.
 

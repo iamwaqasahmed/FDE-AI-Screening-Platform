@@ -1,6 +1,6 @@
 # Three asks
 
-**Days 1 and 2. Product manager, architect, and consultant.** Take the three asks one at a time. A yes to the bundle is a yes to each of them.
+**Days 1 and 2. Be the product manager, then the architect, then the consultant.** Take the three asks one at a time. A yes to the bundle is a yes to each of them.
 
 ## The date
 

@@ -1,6 +1,6 @@
 # The register stays blank
 
-**Day 2. Product manager.** The memo says nothing in the register changes until every condition is confirmed. Draft the changes. Do not apply them.
+**Day 2. Be the product manager.** The memo says nothing in the register changes until every condition is confirmed. Draft the changes. Do not apply them.
 
 ## What stays open
 

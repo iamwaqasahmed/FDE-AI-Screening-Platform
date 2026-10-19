@@ -1,6 +1,6 @@
 # The baselines
 
-**Day 3. Software engineer.** Two agents are already written. One retrieves a single document and answers from it. The other does the same, and refuses when the question contains a short list of phrases. Neither plans a second step, and neither pauses for a person.
+**Day 3. Be the software engineer.** Two agents are already written. One retrieves a single document and answers from it. The other does the same, and refuses when the question contains a short list of phrases. Neither plans a second step, and neither pauses for a person.
 
 Print the tasks, then run each baseline. From `Week 01 - Week 06`:
 

@@ -1,6 +1,6 @@
 # The chase list
 
-**Day 2. Data scientist and data engineer.** The drop's brief says who was chased. Read it. The programme asked for a chase letter for every local id whose latest referral message has no seen date.
+**Day 2. Be the data scientist, then the data engineer.** The drop's brief says who was chased. Read it. The programme asked for a chase letter for every local id whose latest referral message has no seen date.
 
 That is Week 2's second step, not its fourth. A blank seen date is not proof the visit never happened. Week 2 already said so. The chase list is wider than the overdue cohort, and some of the letters went to people who should not have been chased.
 

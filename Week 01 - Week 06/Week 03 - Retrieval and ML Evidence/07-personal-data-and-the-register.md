@@ -1,6 +1,6 @@
 # Personal data and the register
 
-**Days 2 and 3. Architect and software engineer.** The corpus is not one classification. Patient letters are official-sensitive: names, dates of birth, national ids, screening numbers, postcodes. Policy text is not. The model register says which deployment may see which classification, and the cloud policy says official-sensitive personal data stays in a UK region unless the data protection officer approves another region in writing.
+**Days 2 and 3. Be the architect, then the software engineer.** The corpus is not one classification. Patient letters are official-sensitive: names, dates of birth, national ids, screening numbers, postcodes. Policy text is not. The model register says which deployment may see which classification, and the cloud policy says official-sensitive personal data stays in a UK region unless the data protection officer approves another region in writing.
 
 ## Which model
 

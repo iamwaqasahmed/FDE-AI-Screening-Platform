@@ -1,6 +1,6 @@
 # The production contract
 
-**Day 4. Software engineer and data engineer.** Write two files. The checker reads them. It does not build an image, so you do not need Docker.
+**Day 4. Be the software engineer, then the data engineer.** Write two files. The checker reads them. It does not build an image, so you do not need Docker.
 
 ## The contract
 

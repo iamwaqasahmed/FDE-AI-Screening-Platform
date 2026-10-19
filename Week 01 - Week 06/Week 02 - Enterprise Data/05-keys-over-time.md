@@ -1,6 +1,6 @@
 # Keys over time
 
-**Day 2. Data engineer.** A key has an owner, a scope, and a lifetime. A join that ignores the lifetime will attach a stay, a grade, or a letter to the wrong person, or to no one.
+**Day 2. Be the data engineer.** A key has an owner, a scope, and a lifetime. A join that ignores the lifetime will attach a stay, a grade, or a letter to the wrong person, or to no one.
 
 There is still no master key. Week 1 listed five. This week you say which system owns each one, and between which dates it meant the person you think it meant.
 

@@ -18,22 +18,20 @@ Each outcome needs evidence in the data. A participant cannot learn to prioritis
 4. **AI architecture and governance.** Design secure, scalable, and responsible enterprise AI solutions.
 5. **Product and project delivery.** Define requirements, run agile delivery, and plan the path from prototype to production.
 6. **Consulting and stakeholder management.** Facilitate discovery, communicate with stakeholders, and present executive recommendations.
-7. **Forward deployed engineering practice.** Deliver one client engagement end to end, as a multidisciplinary team.
+7. **Forward deployed engineering practice.** Deliver one client engagement end to end, one person wearing every hat.
 
 ## Who it is for
 
-Government professionals who contribute, or will contribute, to AI, data, digital, product, or operational improvement work:
+One learner does the whole engagement and wears every hat below:
 
-- AI and machine learning specialists
-- data scientists and data engineers
-- software engineers
-- solution and enterprise architects
-- technical product managers
-- technology consultants
+- AI and machine learning specialist
+- data scientist and data engineer
+- software engineer
+- solution and enterprise architect
+- technical product manager
+- technology consultant
 
-Cohorts are mixed. A team of five or six combines technical, product, business, and architecture profiles.
-
-The standard: a staff engineer in any of those profiles should find their part of the drop hard. It should be hard because of how the world is structured, not because the files are large.
+A strong generalist should find each hat's part of the drop hard. It should be hard because of how the world is structured, not because the files are large.
 
 ## Current state and gap
 
@@ -46,14 +44,14 @@ Milestones 1 to 10 are built (October 2026). [problem_simulation](README.md) wri
 - **ML evidence.** A vendor retrospective set with true operating points by subgroup, adjudicated labels, a did-not-attend table with a leaky feature, numpy baselines, and a 200-answer judge calibration set.
 - **Delivery and drops.** A 600-ticket tracker, roadmap, risks, freezes, RACI without a safety owner, gates, procurement routes, a benefits double count, an inaccessible letter template, workstream contracts, and drops for weeks 2 to 6 (week 5 carries the press query).
 - **Mock APIs** in `serve/`: five systems with auth, pagination, rate limits, schema versions, late and duplicate events, outages from the timeline, and a PII-leaking log.
-- **Eval.** 292 tagged cases with budgets and written-work fact lists, a scorer, and four baselines. On both the practice and assessment seeds the best baseline for each role passes at most 17%, while an oracle built from gold passes at least 98% (`python -m simulation.audit`).
+- **Eval.** 292 tagged cases with budgets and written-work fact lists, a scorer, and four baselines. On both the practice and assessment seeds the best baseline for each hat passes at most 17%, while an oracle built from gold passes at least 98% (`python -m simulation.audit`).
 
 What is still open:
 
 | Item | Status |
 |---|---|
 | Human dry run | Protocol in `simulation/audit/DRY_RUN.md`. Not yet run; needs two or three experienced engineers who have not seen the generator. |
-| LLM prose for the assessment and team seeds | The practice seed is authored. Other seeds use the fact-checked template drafts until `python -m simulation.prose author --profile <name>` is run. |
+| LLM prose for the assessment and per-learner seeds | The practice seed is authored. Other seeds use the fact-checked template drafts until `python -m simulation.prose author --profile <name>` is run. |
 | Docker profile | `serve/docker-compose.yml` is written; it has not been built in this environment. |
 
 ## Simulation principles
@@ -351,8 +349,8 @@ A review against a staff-engineer audience found that the surfaces above still l
 
 ### Forward deployed engineering practice
 
-- **Workstream contracts.** Each role's output feeds another's: identity clusters feed the ML cohort and the overdue cohort, and the cohort feeds the economics. Gold checks the integrated answer.
-- **Team seed variants.** Each team gets its own seed with the same structure, so answers cannot be shared. The assessment seed stays held out.
+- **Workstream contracts.** One person's outputs feed their later work: identity clusters feed the ML cohort and the overdue cohort, and the cohort feeds the economics. Gold checks the integrated answer.
+- **Per-learner seeds.** `team-1` to `team-4` each give one learner a private world with the same structure, so answers cannot be copied. The assessment seed stays held out.
 
 ### Prose pipeline
 

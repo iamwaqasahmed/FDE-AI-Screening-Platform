@@ -1,6 +1,6 @@
 # The critical path
 
-**Day 2. Product manager and consultant.** The delivery manager's memo is the rule. The freeze calendar, the routes, and the gates are the dates. Give a range. Name the constraint that binds.
+**Day 2. Be the product manager, then the consultant.** The delivery manager's memo is the rule. The freeze calendar, the routes, and the gates are the dates. Give a range. Name the constraint that binds.
 
 ## The chain
 

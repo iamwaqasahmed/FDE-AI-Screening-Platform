@@ -1,6 +1,6 @@
 # Write the evidence note
 
-**Day 5. Consultant and product manager.** Write this before you open the [debrief](16-debrief.md). Two pages is enough. Use [the evidence-note template](templates/evidence-note.md). Save it as `evidence-note.md`.
+**Day 5. Be the consultant, then the product manager.** Write this before you open the [debrief](16-debrief.md). Two pages is enough. Use [the evidence-note template](templates/evidence-note.md). Save it as `evidence-note.md`.
 
 The checker looks for key facts, not for a heading style. Name dates as `YYYY-MM-DD`. A count may use a thousands separator. Quote an AUC to two decimal places.
 

@@ -7,7 +7,7 @@ Package the agent so someone else can start it, see who asked, and stop it. The 
 The integration is the extract in and a result file out. There is no new API and no electronic health record.
 
 **Time.** About half a day.
-**Who.** [target_audience.md](../../target_audience.md). Same case for the whole group.
+**Who.** [target_audience.md](../../target_audience.md). You do this module yourself, end to end.
 **Your work.** Read the service in [screening_service](screening_service), start it once, and read the Dockerfile.
 **Done when.** The checker passes, and you can say what the access log stores and what the image leaves out.
 **Code.** The service is in [screening_service](screening_service).

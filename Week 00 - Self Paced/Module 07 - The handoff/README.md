@@ -5,7 +5,7 @@ The program map is [README.md](../../README.md). This module is part of [Week 00
 Leave the service with the two people who have to live with it. One scope, two pages, one runbook, and an owner note. The pilot does not start until a clinical safety owner is named.
 
 **Time.** About half a day.
-**Who.** [target_audience.md](../../target_audience.md). The two readers below are the client's readers, not the participants.
+**Who.** [target_audience.md](../../target_audience.md). You do this module yourself, end to end. The two readers below are the client's readers.
 **Your work.** Read the reference pack in [handoff](../handoff) and be able to defend each page.
 **Done when.** The checker passes, and you can give the same three sites, the deferred list, the signer, and the reason the pilot stays stopped.
 **Pack.** [handoff](../handoff)

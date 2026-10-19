@@ -1,6 +1,6 @@
 # The gate before the date
 
-**Days 2 and 3. Consultant and product manager.** Gate 2 is on the critical path. A day lost there is a day lost at go-live. The gate is a business case, not a meeting.
+**Days 2 and 3. Be the consultant, then the product manager.** Gate 2 is on the critical path. A day lost there is a day lost at go-live. The gate is a business case, not a meeting.
 
 Read `corpus/standards/business-case-template.md`. Five cases. A case left blank fails the gate. This note is the commercial case and the management case. The economic case is the benefits register.
 

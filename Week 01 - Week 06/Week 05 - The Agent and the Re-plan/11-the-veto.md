@@ -1,6 +1,6 @@
 # The veto
 
-**Days 3 and 4. Software engineer and architect.** The veto sits in code between the plan and the tool, and again between the draft and the answer. It looks at the action the planner proposed. It does not look at the words the person used.
+**Days 3 and 4. Be the software engineer, then the architect.** The veto sits in code between the plan and the tool, and again between the draft and the answer. It looks at the action the planner proposed. It does not look at the words the person used.
 
 When it fires, the step's node is `veto`, `rule` is the document id from note 08, and `refused` is true. Nothing runs after it, and nothing writes. One veto, and it is the last step.
 

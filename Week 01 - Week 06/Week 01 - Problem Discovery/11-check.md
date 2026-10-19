@@ -8,7 +8,7 @@ python -m course discovery_check --work <your folder>
 
 `<your folder>` contains `findings.json`, `interviews/`, `notes/`, and `brief.md`. The data folder defaults to `data`. The shape of every item is [templates/findings.example.json](templates/findings.example.json). That file is a shape, not an answer. It does not pass.
 
-The checker prints how many items passed, the count for each role, the interview scores, the note coverage, and the brief coverage. It does not print the expected value. A failed id is a place to look again.
+The checker prints how many items passed, the count for each hat, the interview scores, the note coverage, and the brief coverage. It does not print the expected value. A failed id is a place to look again.
 
 ## Pass
 
@@ -21,7 +21,7 @@ All of these, together:
 
 ## A second seed
 
-You build it yourselves. From `problem_simulation`:
+You build it yourself. From `problem_simulation`:
 
 ```text
 python -m simulation --profile small

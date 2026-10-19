@@ -1,6 +1,6 @@
 # Index with status and dates
 
-**Days 1 and 2. Data engineer.** A chunk without its header is the wrong unit. The header is the signed record: document id, title, status, effective date, sunset, site, version, and the edges `supersedes`, `cites`, `applies_to`, and `constrains`. `corpus/register.csv` is maintained by hand. Where it disagrees with the header, the header wins. Week 2 already found documents the register calls draft while the header says `in_force`.
+**Days 1 and 2. Be the data engineer.** A chunk without its header is the wrong unit. The header is the signed record: document id, title, status, effective date, sunset, site, version, and the edges `supersedes`, `cites`, `applies_to`, and `constrains`. `corpus/register.csv` is maintained by hand. Where it disagrees with the header, the header wins. Week 2 already found documents the register calls draft while the header says `in_force`.
 
 ## What binds
 

@@ -1,6 +1,6 @@
 # The warehouse model
 
-**Days 4 and 5. Architect.** `handover/warehouse/build.sql` is the model the authority runs. It counts a deceased flag as eligible, and it covers twelve months. Renaming `HOME_CLINIC` inside that file keeps the wrong rule. Write the model you would put in its place. Save it as `model.md`, from [the outline](templates/model.md).
+**Days 4 and 5. Be the architect.** `handover/warehouse/build.sql` is the model the authority runs. It counts a deceased flag as eligible, and it covers twelve months. Renaming `HOME_CLINIC` inside that file keeps the wrong rule. Write the model you would put in its place. Save it as `model.md`, from [the outline](templates/model.md).
 
 ## What the model has
 

@@ -1,6 +1,6 @@
 # The week
 
-**Day 1. Everyone.**
+**Day 1. You.**
 
 Week 1 put the letter fix in the first slice, next to identity. Week 2 did identity. Week 3 measured the vendor on the captures that may still leave the authority. This morning the letter bureau reports a queue failure for the week just finished. "Today" is 26 October 2026. The registry freeze that started on 19 October is still running. Nothing you ship this week needs a registry release.
 
@@ -8,21 +8,21 @@ Your job is not to start the pilot. It is to reconcile the bureau run, to say wh
 
 Nothing here is a real patient's record. Do not grade a photograph, and do not give clinical advice.
 
-## The team
+## The hats
 
-The same five or six people. `engagement/workstreams/contracts.csv` still makes you integrate. C-07 is the row this drop changes. C-01, C-02, and C-03 are reused: the clusters count people, the Week 2 bound is the list you check against, and the Week 3 pilot scope is the subset the data protection officer still allows.
+You wear every hat below. `engagement/workstreams/contracts.csv` sets the order of your outputs. C-07 is the row this drop changes. C-01, C-02, and C-03 are reused: the clusters count people, the Week 2 bound is the list you check against, and the Week 3 pilot scope is the subset the data protection officer still allows.
 
-| Role | The hard question this week |
+| Hat | The hard question this week |
 |---|---|
-| Data engineer | The key that means a letter, and edges that carry the file they came from and the dates they were valid |
-| Data scientist | The chase list is not the overdue cohort. C-07 is counted in people. The clock is the one at the referring clinic |
-| ML specialist | The calls that say a letter never came, when many are uncoded and the export renamed its columns |
-| Software engineer | A reconciliation and a re-send that a second run cannot double, and answers that cite the path they walked |
-| Architect | A contract for a feed whose rows are not letters, and what the bureau agreement covers, and for how long |
-| Product manager | The impact log. What changes, what does not, and whether a re-send needs a release |
-| Consultant | The incident note. The bureau's notice does not survive the files |
+| Be the data engineer | The key that means a letter, and edges that carry the file they came from and the dates they were valid |
+| Be the data scientist | The chase list is not the overdue cohort. C-07 is counted in people. The clock is the one at the referring clinic |
+| Be the ML specialist | The calls that say a letter never came, when many are uncoded and the export renamed its columns |
+| Be the software engineer | A reconciliation and a re-send that a second run cannot double, and answers that cite the path they walked |
+| Be the architect | A contract for a feed whose rows are not letters, and what the bureau agreement covers, and for how long |
+| Be the product manager | The impact log. What changes, what does not, and whether a re-send needs a release |
+| Be the consultant | The incident note. The bureau's notice does not survive the files |
 
-If the team is smaller, pair the architect with the software engineer and the product manager with the consultant. Do not drop a question.
+Do not drop a question.
 
 ## Out of scope
 
@@ -32,7 +32,7 @@ A graph earns its place only on a slice where one document was not enough. An em
 
 ## Where the work lives
 
-`work/<team>/week-04/`, or a folder outside the repo. The checker does not care which, as long as the files are the ones named in the [guide](README.md).
+`work/week-04/`, or a folder outside the repo. The checker does not care which, as long as the files are the ones named in the [guide](README.md).
 
 **Finish.** You can name the contract this drop changes, the three it reuses, and the things this week will not do.
 

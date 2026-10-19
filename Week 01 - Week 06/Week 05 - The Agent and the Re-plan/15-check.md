@@ -8,7 +8,7 @@ python -m course agent_check --work <your folder>
 
 `<your folder>` contains `findings.json`, `answers.jsonl`, `backlog.csv`, `sweep.csv`, `contracts/agent_trajectory.yaml`, `agent-card.md`, `cdo-reply.md`, and `press-line.md`. The data folder defaults to `data`. The shape of every item is [templates/findings.example.json](templates/findings.example.json). That file is a shape, not an answer. It does not pass.
 
-The checker prints how many items passed, the count for each role, the answer rate overall and by slice, and pass or fail for the backlog, the sweep, the contract, the card, the reply, and the line. It does not print the expected value. A failed id is a place to look again.
+The checker prints how many items passed, the count for each hat, the answer rate overall and by slice, and pass or fail for the backlog, the sweep, the contract, the card, the reply, and the line. It does not print the expected value. A failed id is a place to look again.
 
 To score an answers file on its own:
 
@@ -33,7 +33,7 @@ All of these, together:
 
 ## A second seed
 
-You build it yourselves. From `problem_simulation`:
+You build it yourself. From `problem_simulation`:
 
 ```text
 python -m simulation --profile small

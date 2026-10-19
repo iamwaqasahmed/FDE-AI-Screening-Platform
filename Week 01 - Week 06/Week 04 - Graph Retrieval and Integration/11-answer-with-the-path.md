@@ -1,6 +1,6 @@
 # Answer with the path
 
-**Day 4. Software engineer and data engineer.** `answers.jsonl` is one JSON object per line, the same shape as Week 3, plus `path`. The question file tells you the `kind` and the `answer_keys`. The checker scores the line. It does not tell you the expected value.
+**Day 4. Be the software engineer, then the data engineer.** `answers.jsonl` is one JSON object per line, the same shape as Week 3, plus `path`. The question file tells you the `kind` and the `answer_keys`. The checker scores the line. It does not tell you the expected value.
 
 ## The line
 

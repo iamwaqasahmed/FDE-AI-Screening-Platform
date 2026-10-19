@@ -1,6 +1,6 @@
 # Write the incident note
 
-**Day 5. Consultant and product manager.** Write this before you open the [debrief](16-debrief.md). Two pages is enough. Use [the incident-note template](templates/incident-note.md). Save it as `incident-note.md`.
+**Day 5. Be the consultant, then the product manager.** Write this before you open the [debrief](16-debrief.md). Two pages is enough. Use [the incident-note template](templates/incident-note.md). Save it as `incident-note.md`.
 
 The checker looks for key facts, not for a heading style. Name dates as `YYYY-MM-DD`. A count may use a thousands separator. Quote the cost in whole pounds.
 

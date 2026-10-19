@@ -1,6 +1,6 @@
 # Build the graph
 
-**Days 3 and 4. Data engineer and architect.** A link pasted into a chunk is not an edge. An edge has a source file and the dates it was valid. A traversal on a date ignores an edge outside those dates. A draft never binds. Week 2's reading of status, effective date, and sunset still applies.
+**Days 3 and 4. Be the data engineer, then the architect.** A link pasted into a chunk is not an edge. An edge has a source file and the dates it was valid. A traversal on a date ignores an edge outside those dates. A draft never binds. Week 2's reading of status, effective date, and sunset still applies.
 
 You do not need a graph database. A dict of nodes and a list of edges is enough. Three layers, because the questions cross them.
 

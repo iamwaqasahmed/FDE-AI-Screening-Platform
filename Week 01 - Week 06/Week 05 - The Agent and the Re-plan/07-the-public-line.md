@@ -1,6 +1,6 @@
 # The public line
 
-**Days 2 and 3. Consultant and product manager.** The query has four questions. The line answers the ones the files support and refuses the ones they do not. Two paragraphs. Plain English. Suitable to publish.
+**Days 2 and 3. Be the consultant, then the product manager.** The query has four questions. The line answers the ones the files support and refuses the ones they do not. Two paragraphs. Plain English. Suitable to publish.
 
 ## Who signs it
 

@@ -1,6 +1,6 @@
 # What the agent may do
 
-**Days 2 and 3. Architect and consultant.** The software engineer builds to this. Read the tier policy, the oversight standard, the logging standard, the authentication standard, the classification policy, and the cloud policy before you pick a model or an account.
+**Days 2 and 3. Be the architect, then the consultant.** You build to this when you are the software engineer. Read the tier policy, the oversight standard, the logging standard, the authentication standard, the classification policy, and the cloud policy before you pick a model or an account.
 
 ## The tier
 

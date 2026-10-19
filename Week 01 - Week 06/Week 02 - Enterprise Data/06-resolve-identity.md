@@ -1,6 +1,6 @@
 # Resolve identity
 
-**Days 2 and 3. Data engineer, with the ML specialist and the software engineer.** Publish `clusters.csv` by the end of Day 3. C-01 and C-02 are blocked until you do.
+**Days 2 and 3. Be the data engineer, then the ML specialist, then the software engineer.** Publish `clusters.csv` by the end of Day 3. C-01 and C-02 are blocked until you do.
 
 One row is one visible record: `kind`, `record_id`, `cluster_id`. The same `cluster_id` means the same person. A decoy is its own cluster, or it is left out. Kinds and ids:
 

@@ -13,7 +13,7 @@ Read this only after your pages exist. The figures on these pages are the practi
 
 The pilot stays stopped. W. Achebe has agreed to be clinical safety owner, and she has not confirmed a condition. The owners register is still blank, so `owner-governance` still blocks a start.
 
-The conditions close in an order, and not by the team editing a file:
+The conditions close in an order, and not by you editing a file:
 
 1. A. Okonkwo withdraws Harbour Eye Clinic and accepts a go-live no earlier than 2027-03-29.
 2. J. Whitfield contacts the people whose chase letter was lost. On this seed that upper bound is 269.

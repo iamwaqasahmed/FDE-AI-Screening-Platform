@@ -1,6 +1,6 @@
 # Labels you can trust
 
-**Days 3 and 4. Data scientist and ML specialist.** Three references get talked about as if they were one.
+**Days 3 and 4. Be the data scientist, then the ML specialist.** Three references get talked about as if they were one.
 
 The routine grade is the signed code on the retrospective row. It is missing on a large share of captures. `U` means ungradable. Neither a blank nor a `U` is a negative. Drop both before you compute a rate against the routine grade.
 

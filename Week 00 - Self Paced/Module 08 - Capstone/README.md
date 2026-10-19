@@ -7,7 +7,7 @@ A new ask arrives on the same authority. No new data. You do not rebuild the pla
 Run the Module 01 moves in short form: write the ask down, say what the current tools can take, say what they must refuse, and say what would have to be true before a second slice. Write those four lines before you open the matching note in [capstone](../capstone).
 
 **Time.** About half a day.
-**Who.** [target_audience.md](../../target_audience.md). Same case for the whole group.
+**Who.** [target_audience.md](../../target_audience.md). You do this module yourself, end to end.
 **Your work.** Four lines per ask, then a comparison with the reference note.
 **Done when.** The checker passes, and each of your comparisons cites a file already in the case.
 **Pack.** [capstone](../capstone)

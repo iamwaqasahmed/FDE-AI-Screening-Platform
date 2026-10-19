@@ -1,6 +1,6 @@
 # Open the drop
 
-**Day 1. Product manager and consultant.** This note is the release. `drops/week-5/` is open. `drops/week-6/` stays closed.
+**Day 1. Be the product manager, then the consultant.** This note is the release. `drops/week-5/` is open. `drops/week-6/` stays closed.
 
 Read the three files. The scope memo has three asks. The press query has four questions. The third file is from the delivery manager, who is responsible for the delivery plan. It states durations. It does not state a date.
 

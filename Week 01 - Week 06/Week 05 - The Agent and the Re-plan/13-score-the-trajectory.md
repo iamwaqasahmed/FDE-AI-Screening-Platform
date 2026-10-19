@@ -1,6 +1,6 @@
 # Score the trajectory
 
-**Day 4. ML specialist and data scientist.** A line passes when the answer, the citation, the path, and the trajectory all pass. A right value with a missing record, a veto on the wrong task, or a name in the log is a failed line.
+**Day 4. Be the ML specialist, then the data scientist.** A line passes when the answer, the citation, the path, and the trajectory all pass. A right value with a missing record, a veto on the wrong task, or a name in the log is a failed line.
 
 Score the file:
 

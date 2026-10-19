@@ -2,14 +2,14 @@
 
 The program map is [README.md](../../README.md). This week is part of [Week 01 — Week 06](../README.md).
 
-Week 2 of the six-week engagement. The ministry published a new registry extract this morning. Your Week 1 code still runs on the old file. By Friday the team has one cluster per person, counts it will stand behind, contracts that fail loudly, a warehouse model, and a release plan that survives the freeze.
+Week 2 of the six-week engagement. The ministry published a new registry extract this morning. Your Week 1 code still runs on the old file. By Friday you have one cluster per person, counts it will stand behind, contracts that fail loudly, a warehouse model, and a release plan that survives the freeze.
 
 Hartland's people and counts are for practice. They are not a real health service, and they are not instructions for care.
 
-**Time.** One week, a team of five or six. No facilitator. You open the drop yourselves.
-**Who.** Mixed. Each role has a hard problem in the drop. The split is in [The week](01-the-week.md).
+**Time.** One week, you alone. You open the drop yourself.
+**Who.** You, wearing every hat in [The week](01-the-week.md). Do every note, in order.
 **Your work.** A findings file, `clusters.csv`, `pathway_rules.csv`, eleven feed contracts, a model, and a data note.
-**Done when.** `enterprise_check` passes on your folder, including a rerun on a seed you build yourselves, and you have marked the note against the debrief.
+**Done when.** `enterprise_check` passes on your folder, including a rerun on a seed you build yourself, and you have marked the note against the debrief.
 **Order.** Top to bottom. Write when a note tells you to stop.
 **Debrief.** The practice-seed answer key. Reading it early skips the week. Another seed changes the counts, the dates, and the site names.
 
@@ -21,7 +21,7 @@ Hartland's people and counts are for practice. They are not a real health servic
 
 ## What you will produce
 
-Keep the folder outside the repo, or under `work/<team>/week-02/`, which git ignores.
+Keep the folder outside the repo, or under `work/week-02/`, which git ignores.
 
 | Artifact | When | Note |
 |---|---|---|
@@ -35,22 +35,22 @@ The checker reads `findings.json`, `clusters.csv`, `pathway_rules.csv`, `contrac
 
 ## Sequence
 
-| | Note | Day | Lead | What you do |
+| | Note | Day | Hat | What you do |
 |---|---|---|---|---|
-| 1 | [The week](01-the-week.md) | 1 | Everyone | The job, the roles, the two contracts |
-| 2 | [Open the drop](02-open-the-drop.md) | 1 | Data engineer | Diff version 3. Stop and write the drop log |
-| 3 | [Contracts first](03-contracts-first.md) | 1–2 | Architect | Eleven feeds. A silent drop is a failure |
-| 4 | [The APIs](04-the-apis.md) | 2 | Software engineer | Version 3 of the API is not version 3 of the file |
-| 5 | [Keys over time](05-keys-over-time.md) | 2 | Data engineer | Who owns each key, and when it was valid |
-| 6 | [Resolve identity](06-resolve-identity.md) | 2–3 | Data engineer | One cluster per person. Publish it by Day 3 |
-| 7 | [Count people](07-count-people.md) | 3 | Data engineer | Eligible people, and coverage the warehouse missed |
-| 8 | [Pathway by site and date](08-pathway-by-site-and-date.md) | 3–4 | Data scientist | The rule that applied, not the register's status |
-| 9 | [Cohorts](09-cohorts.md) | 4 | Data scientist, ML | Rows, then people, then an upper bound |
-| 10 | [The warehouse model](10-the-warehouse-model.md) | 4–5 | Architect | A person key, validity dates, rules that cite clauses |
-| 11 | [Release and the freeze](11-release-and-the-freeze.md) | 4–5 | Product manager | The window you missed, and the one you can use |
-| 12 | [Write the data note](12-write-the-data-note.md) | 5 | Consultant | Two pages, before the debrief |
-| 13 | [Check](13-check.md) | 5 | Everyone | Run `enterprise_check`, then a second seed |
-| 14 | [Debrief](14-debrief.md) | 5 | Everyone | After the note exists |
+| 1 | [The week](01-the-week.md) | 1 | You | The job, the hats, the two contracts |
+| 2 | [Open the drop](02-open-the-drop.md) | 1 | Be the data engineer | Diff version 3. Stop and write the drop log |
+| 3 | [Contracts first](03-contracts-first.md) | 1–2 | Be the architect | Eleven feeds. A silent drop is a failure |
+| 4 | [The APIs](04-the-apis.md) | 2 | Be the software engineer | Version 3 of the API is not version 3 of the file |
+| 5 | [Keys over time](05-keys-over-time.md) | 2 | Be the data engineer | Who owns each key, and when it was valid |
+| 6 | [Resolve identity](06-resolve-identity.md) | 2–3 | Be the data engineer | One cluster per person. Publish it by Day 3 |
+| 7 | [Count people](07-count-people.md) | 3 | Be the data engineer | Eligible people, and coverage the warehouse missed |
+| 8 | [Pathway by site and date](08-pathway-by-site-and-date.md) | 3–4 | Be the data scientist | The rule that applied, not the register's status |
+| 9 | [Cohorts](09-cohorts.md) | 4 | Be the data scientist, then the ML specialist | Rows, then people, then an upper bound |
+| 10 | [The warehouse model](10-the-warehouse-model.md) | 4–5 | Be the architect | A person key, validity dates, rules that cite clauses |
+| 11 | [Release and the freeze](11-release-and-the-freeze.md) | 4–5 | Be the product manager | The window you missed, and the one you can use |
+| 12 | [Write the data note](12-write-the-data-note.md) | 5 | Be the consultant | Two pages, before the debrief |
+| 13 | [Check](13-check.md) | 5 | You | Run `enterprise_check`, then a second seed |
+| 14 | [Debrief](14-debrief.md) | 5 | You | After the note exists |
 
 ## Also on the desk
 

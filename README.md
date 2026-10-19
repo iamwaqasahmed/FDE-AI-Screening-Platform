@@ -22,16 +22,18 @@ A forward deployed engineer sits with that customer, turns a vague request into 
 
 ## Two tracks, one client
 
-Week 00 is a four-day introduction. You work alone, or in a mixed room where everyone does the same case. The world is small. You read the reference, run a checker, and explain the result.
+Both tracks are for one person. You do every note, from the first ask to the handoff. A job title in a note is a hat you put on for that note. You are the software engineer, the data scientist, the architect, the product manager, and the consultant, one after another.
 
-Weeks 1 to 6 are a team engagement for people who already put services in production. Five or six people share a deeper copy of the same screening service. A new drop arrives each week and changes something the team has already used.
+Week 00 is a four-day introduction. The world is small. You read the reference, run a checker, and explain the result.
+
+Weeks 1 to 6 are for someone who already puts services in production. You work through a deeper copy of the same screening service. A new drop arrives each week and changes something you have already used.
 
 You can start at Week 1 without finishing Week 00. Week 00 is the shorter way to learn the client and the practice.
 
 | | Week 00 — Self Paced | Week 01 — Week 06 |
 |---|---|---|
 | Time | About four days. Each module is about half a day. | Six weeks |
-| Room | One person, or a mixed cohort on the same case | A team of five or six |
+| Who | One person, end to end | One person, end to end, wearing a different hat on each note |
 | The request | An AI Screening Platform | An AI triage pilot, wanted live |
 | The world | One extract, one corpus, one vendor score file | Nineteen systems, 1,927 documents, and a drop each week |
 | Your job | Find the problem, follow a small agent to a handoff, and keep the pilot stopped | Find which problems are real, build what is justified, and hand over a system the authority can govern |

@@ -1,6 +1,6 @@
 # The baselines
 
-**Day 3. Software engineer.** Two retrievers are already written. Both read one document and stop. Your Week 3 index does the same: it cites the document it ranked first. Several questions this week are wrong if that is all you cite.
+**Day 3. Be the software engineer.** Two retrievers are already written. Both read one document and stop. Your Week 3 index does the same: it cites the document it ranked first. Several questions this week are wrong if that is all you cite.
 
 Print the questions, then run each retriever. From `Week 01 - Week 06`:
 

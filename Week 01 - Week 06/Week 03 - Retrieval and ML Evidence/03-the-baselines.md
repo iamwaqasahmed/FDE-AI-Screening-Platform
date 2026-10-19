@@ -1,6 +1,6 @@
 # The baselines
 
-**Day 1. Software engineer.** Two retrievers are already written. Both read the Markdown, score a question by word overlap, and ignore status, dates, and site. Your index has to beat them on the questions where that loses. It does not have to beat them on a slice they already answer.
+**Day 1. Be the software engineer.** Two retrievers are already written. Both read the Markdown, score a question by word overlap, and ignore status, dates, and site. Your index has to beat them on the questions where that loses. It does not have to beat them on a slice they already answer.
 
 Print the questions, then run each retriever. From `Week 01 - Week 06`:
 

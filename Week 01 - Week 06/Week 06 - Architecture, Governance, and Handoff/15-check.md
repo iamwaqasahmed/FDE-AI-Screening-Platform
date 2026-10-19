@@ -8,7 +8,7 @@ python -m course handoff_check --work <your folder>
 
 `<your folder>` contains the files named in the [guide](README.md). The data folder defaults to `data`. The shape of every item is [templates/findings.example.json](templates/findings.example.json). That file is a shape, not an answer. It does not pass.
 
-The checker prints how many items passed, the count for each role, and pass or fail for the flows, the threats, the hazard log, the Dockerfile, the contract, the two records, the four decision records, the two pages, the runbook, and the check that both pages share their sites and their date. It does not print the expected value. A failed id is a place to look again.
+The checker prints how many items passed, the count for each hat, and pass or fail for the flows, the threats, the hazard log, the Dockerfile, the contract, the two records, the four decision records, the two pages, the runbook, and the check that both pages share their sites and their date. It does not print the expected value. A failed id is a place to look again.
 
 ## Pass
 
@@ -27,7 +27,7 @@ All of these, together:
 
 ## A second seed
 
-You build it yourselves. From `problem_simulation`:
+You build it yourself. From `problem_simulation`:
 
 ```text
 python -m simulation --profile small

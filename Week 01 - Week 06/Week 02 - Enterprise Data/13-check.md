@@ -8,7 +8,7 @@ python -m course enterprise_check --work <your folder>
 
 `<your folder>` contains `findings.json`, `clusters.csv`, `pathway_rules.csv`, `contracts/`, `model.md`, and `data-note.md`. The data folder defaults to `data`. The shape of every item is [templates/findings.example.json](templates/findings.example.json). That file is a shape, not an answer. It does not pass.
 
-The checker prints how many items passed, the count for each role, precision and recall and F0.5 for the clusters, pass or fail for each slice, pathway coverage, contract coverage, and the model and the note. It does not print the expected value. A failed id is a place to look again.
+The checker prints how many items passed, the count for each hat, precision and recall and F0.5 for the clusters, pass or fail for each slice, pathway coverage, contract coverage, and the model and the note. It does not print the expected value. A failed id is a place to look again.
 
 ## Pass
 
@@ -22,7 +22,7 @@ All of these, together:
 
 ## A second seed
 
-You build it yourselves. From `problem_simulation`:
+You build it yourself. From `problem_simulation`:
 
 ```text
 python -m simulation --profile small

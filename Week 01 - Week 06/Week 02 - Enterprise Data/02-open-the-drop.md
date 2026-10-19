@@ -1,6 +1,6 @@
 # Open the drop
 
-**Day 1. Data engineer.** This note is the release. Open `data/drops/week-2/` now, and nothing later than it.
+**Day 1. Be the data engineer.** This note is the release. Open `data/drops/week-2/` now, and nothing later than it.
 
 Rerun the Week 1 profiling on `drops/week-2/registry/current_v3.csv` before you read `schema_v3.md`. A loader that still asks for `HOME_CLINIC`, or that still parses spreadsheet dates, will fail here. That failure is the point. Write down what broke, then read the schema note and see what it admits.
 

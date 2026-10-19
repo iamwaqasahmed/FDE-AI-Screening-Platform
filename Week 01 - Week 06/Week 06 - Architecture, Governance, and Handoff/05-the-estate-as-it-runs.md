@@ -1,6 +1,6 @@
 # The estate as it runs
 
-**Day 2. Architect.** Draw the current state before you draw a target. `corpus` document `ea-current-state` is the prose. `handover/architecture/components.csv` is the table. They are the same estate.
+**Day 2. Be the architect.** Draw the current state before you draw a target. `corpus` document `ea-current-state` is the prose. `handover/architecture/components.csv` is the table. They are the same estate.
 
 ## What to read off the table
 

@@ -1,6 +1,6 @@
 # Flows across zones
 
-**Days 2 and 3. Architect and data engineer.** Write `flows.csv` with one row for every flow the pilot needs and one row for every flow a rule denies. A diagram that shows only what moves is an incomplete design.
+**Days 2 and 3. Be the architect, then the data engineer.** Write `flows.csv` with one row for every flow the pilot needs and one row for every flow a rule denies. A diagram that shows only what moves is an incomplete design.
 
 Use [the flows template](templates/flows.example.csv). The columns are `flow_id,source,target,data,allowed,rule`.
 

@@ -1,6 +1,6 @@
 # From prototype to production
 
-**Days 3 and 4. Software engineer.** Week 00 - Self Paced already runs. [Its Dockerfile](../../Week%2000%20-%20Self%20Paced/Dockerfile) copies the handover and the corpus into the image, and its command is `screening_service.run`. The checker in that course reads the Dockerfile and passes. Passing there is not the same as meeting Hartland's standards. Read the image against the standards, not against the Week 00 - Self Paced checker.
+**Days 3 and 4. Be the software engineer.** Week 00 - Self Paced already runs. [Its Dockerfile](../../Week%2000%20-%20Self%20Paced/Dockerfile) copies the handover and the corpus into the image, and its command is `screening_service.run`. The checker in that course reads the Dockerfile and passes. Passing there is not the same as meeting Hartland's standards. Read the image against the standards, not against the Week 00 - Self Paced checker.
 
 ## Five gaps
 

@@ -1,6 +1,6 @@
 # Open the drop
 
-**Day 1. Product manager and architect.** This note is the release. Open `data/drops/week-3/` now, and nothing later than it.
+**Day 1. Be the product manager, then the architect.** This note is the release. Open `data/drops/week-3/` now, and nothing later than it.
 
 Read `dpo_restriction_memo.md` before anyone reruns a cohort, a feature table, or a data-flow diagram. The memo is the constraint. The schema note from Week 2 does not override it.
 

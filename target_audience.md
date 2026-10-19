@@ -12,17 +12,15 @@ The Chief Digital Officer and the ophthalmology lead are people inside the case.
 
 ## Week 00 — Self Paced
 
-About four days. The guide is [Week 00 — Self Paced](<Week 00 - Self Paced/README.md>).
+About four days, done by you alone. The guide is [Week 00 — Self Paced](<Week 00 - Self Paced/README.md>).
 
-You work alone, or in a mixed room where everyone does the same case:
+You do the whole case. When a note asks for an engineer's reading, you trace the check into the function. When it asks for a product manager's or an architect's reading, you still run the checker and explain the result. The hats you practice are:
 
-- software engineers
-- data scientists and data engineers
-- solution and enterprise architects
-- technical product managers
-- technology consultants
-
-An engineer may be the person who traces a failing check into a function. A product manager or an architect still runs the checker and explains the result.
+- software engineer
+- data scientist and data engineer
+- solution and enterprise architect
+- technical product manager
+- technology consultant
 
 You can finish if you can read a short Python function and run a command from `Week 00 - Self Paced`. A spreadsheet is enough for the Module 01 counts. The reference code, the handoff pages, and the capstone notes are the lesson. You study them, run them, and explain them.
 
@@ -52,18 +50,16 @@ Finishing Week 00 means you can support the first slice of an AI initiative: dis
 
 ## Week 01 — Week 06
 
-Six weeks, in a team of five or six. The guide is [Week 01 — Week 06](<Week 01 - Week 06/README.md>).
+Six weeks, done by you alone. The guide is [Week 01 — Week 06](<Week 01 - Week 06/README.md>).
 
-For people who already put services in production:
+For someone who already puts services in production. Each week has a hard question for every hat below. You answer all of them, in the order the notes give, and you write the one brief.
 
-- machine learning specialists
-- data scientists
-- data engineers and software engineers
-- solution and enterprise architects
-- technical product managers
-- technology consultants
-
-Each role has a hard problem in the drop. The team shares one brief. The week notes say which role owns which part.
+- Be the machine learning specialist
+- Be the data scientist
+- Be the data engineer, and the software engineer
+- Be the solution and enterprise architect
+- Be the technical product manager
+- Be the technology consultant
 
 Week 00 is the same client in a smaller world, and a useful introduction. This track has its own data and its own weekly drops. You can start at Week 1 without finishing Week 00.
 

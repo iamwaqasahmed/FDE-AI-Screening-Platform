@@ -1,6 +1,6 @@
 # What the calls say
 
-**Days 3 and 4. ML specialist and data scientist.** The call export is the only place a lost letter shows up as a person ringing in. It is a bad place to count, unless you read the note.
+**Days 3 and 4. Be the ML specialist, then the data scientist.** The call export is the only place a lost letter shows up as a person ringing in. It is a bad place to count, unless you read the note.
 
 ## Two schemas
 

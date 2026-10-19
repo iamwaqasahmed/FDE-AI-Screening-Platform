@@ -1,6 +1,6 @@
 # The week
 
-**Day 1. Everyone.**
+**Day 1. You.**
 
 Week 4 reconciled the bureau and said who was not reached. This morning the Chief Digital Officer changes the pilot, and the press office asks for a public line. "Today" is 2 November 2026. The line is due Friday. Gate 2 is later this month. The registry freeze that started on 19 October is still running.
 
@@ -8,21 +8,21 @@ Your job is not to start the pilot. It is to test the three asks, to answer the 
 
 Nothing here is a real patient's record. Do not grade a photograph, and do not give clinical advice.
 
-## The team
+## The hats
 
-The same five or six people. `engagement/workstreams/contracts.csv` still makes you integrate. C-06 is the row this drop changes: the delivery plan, and the pilot date given to the Chief Digital Officer. C-04 has no drop of its own. Gate 2 is where the benefits become the business case. C-03, C-07, and C-05 are reused: the pilot scope stays primary care, the people who were not reached feed the sweep, and a date of birth still does not cross.
+You wear every hat below. `engagement/workstreams/contracts.csv` sets the order of your outputs. C-06 is the row this drop changes: the delivery plan, and the pilot date given to the Chief Digital Officer. C-04 has no drop of its own. Gate 2 is where the benefits become the business case. C-03, C-07, and C-05 are reused: the pilot scope stays primary care, the people who were not reached feed the sweep, and a date of birth still does not cross.
 
-| Role | The hard question this week |
+| Hat | The hard question this week |
 |---|---|
-| Product manager | The impact log, the backlog without its duplicates, and a critical path given as a range |
-| Consultant | A reply that says no to the date and the site and still gives a plan, and a public line with no patient, no date, and no blame |
-| Architect | The agent's tier, the document behind each stop, its account and its models, and why the second site is a decision for the data protection officer |
-| Data scientist | Heron's pace, and what it does not move. Per-person answers that agree with C-03 and C-07 |
-| Data engineer | Duplicates found from reworded tickets, tools that return a fact with its source and its date, and a trajectory that holds no personal data |
-| Software engineer | The loop, the veto in code, checkpoints, a resume that repeats no read, and a pause for a person |
-| ML specialist | Whether the veto holds when the same request is reworded, what a clean run on the stop tasks proves, and which model each step may use |
+| Be the product manager | The impact log, the backlog without its duplicates, and a critical path given as a range |
+| Be the consultant | A reply that says no to the date and the site and still gives a plan, and a public line with no patient, no date, and no blame |
+| Be the architect | The agent's tier, the document behind each stop, its account and its models, and why the second site is a decision for the data protection officer |
+| Be the data scientist | Heron's pace, and what it does not move. Per-person answers that agree with C-03 and C-07 |
+| Be the data engineer | Duplicates found from reworded tickets, tools that return a fact with its source and its date, and a trajectory that holds no personal data |
+| Be the software engineer | The loop, the veto in code, checkpoints, a resume that repeats no read, and a pause for a person |
+| Be the ML specialist | Whether the veto holds when the same request is reworded, what a clean run on the stop tasks proves, and which model each step may use |
 
-If the team is smaller, pair the architect with the software engineer and the product manager with the consultant. Do not drop a question.
+Do not drop a question.
 
 ## Out of scope
 
@@ -32,7 +32,7 @@ Any framework is allowed, including none. LangGraph is one way to get checkpoint
 
 ## Where the work lives
 
-`work/<team>/week-05/`, or a folder outside the repo. The checker does not care which, as long as the files are the ones named in the [guide](README.md).
+`work/week-05/`, or a folder outside the repo. The checker does not care which, as long as the files are the ones named in the [guide](README.md).
 
 **Finish.** You can name the contract this drop changes, the one Gate 2 consumes, the three it reuses, and the things this week will not do.
 

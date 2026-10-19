@@ -1,6 +1,6 @@
 # Check the claims
 
-**Day 4. Consultant, product manager, and ML specialist.** Week 1 bounded the vendor's headline. This week you measure it on the cohort the memo still allows, against the strongest label in the drop.
+**Day 4. Be the consultant, then the product manager, then the ML specialist.** Week 1 bounded the vendor's headline. This week you measure it on the cohort the memo still allows, against the strongest label in the drop.
 
 ## Retinalytics
 

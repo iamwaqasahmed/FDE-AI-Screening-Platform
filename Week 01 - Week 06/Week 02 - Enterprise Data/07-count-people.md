@@ -1,6 +1,6 @@
 # Count people
 
-**Day 3. Data engineer.** Week 1 counted living rows and said aliases were later. Later is this week.
+**Day 3. Be the data engineer.** Week 1 counted living rows and said aliases were later. Later is this week.
 
 Use version 3. An eligible person has an empty `FLAG` and a local id that does not start with `LX`. Aliases are not extra people. Deceased and moved rows are not eligible. The register rule is `sop-national-v3`. The warehouse SQL is a different rule, and it still counts a deceased flag as eligible.
 

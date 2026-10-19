@@ -1,6 +1,6 @@
 # Checkpoints and a person
 
-**Day 4. Software engineer and data engineer.** Two things the single-loop agent cannot do: continue after it is killed, and wait for a person.
+**Day 4. Be the software engineer, then the data engineer.** Two things the single-loop agent cannot do: continue after it is killed, and wait for a person.
 
 ## Checkpoints
 

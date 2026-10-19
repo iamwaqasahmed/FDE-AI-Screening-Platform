@@ -1,6 +1,6 @@
 # Originals, scans, and duplicates
 
-**Day 2. Data engineer.** Most corpus documents have a Markdown file and one original under `<family>/originals/`. The Markdown is the export. It is not always the record. A board pack's per-site table is in the PDF and not in the Markdown. A quality audit's per-grader table is on the `table` sheet of the spreadsheet and not in the Markdown. A scan is the same PDF writer with damage applied. A file whose id ends in `-fwd` is a forward, not a second event.
+**Day 2. Be the data engineer.** Most corpus documents have a Markdown file and one original under `<family>/originals/`. The Markdown is the export. It is not always the record. A board pack's per-site table is in the PDF and not in the Markdown. A quality audit's per-grader table is on the `table` sheet of the spreadsheet and not in the Markdown. A scan is the same PDF writer with damage applied. A file whose id ends in `-fwd` is a forward, not a second event.
 
 ## Read the originals
 

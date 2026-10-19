@@ -1,6 +1,6 @@
 # Pathway by site and date
 
-**Days 3 and 4. Data scientist.** A limit is not "the national procedure". It is the clause that was in force for that site on that date. `corpus/register.csv` is maintained by hand. Several documents it calls draft are in force in the signed header. Read the header.
+**Days 3 and 4. Be the data scientist.** A limit is not "the national procedure". It is the clause that was in force for that site on that date. `corpus/register.csv` is maintained by hand. Several documents it calls draft are in force in the signed header. Read the header.
 
 ## What binds
 

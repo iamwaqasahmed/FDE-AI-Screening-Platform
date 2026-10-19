@@ -1,6 +1,6 @@
 # Restrict the cohorts
 
-**Day 3. ML specialist and data scientist.** You are the producers of C-08 and the consumer of C-03. The memo changed both. Rerun on the clusters from Week 2. A cohort counted on the old site list is not the cohort the contract asks for.
+**Day 3. Be the ML specialist, then the data scientist.** You produce C-08 here, and you use C-03 from your earlier work. The memo changed both. Rerun on the clusters from Week 2. A cohort counted on the old site list is not the cohort the contract asks for.
 
 ## The vendor extract
 

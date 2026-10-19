@@ -1,6 +1,6 @@
 # Re-send without harm
 
-**Day 3. Software engineer and product manager.** The lost requests are the ones to look at. Not every lost request should be printed again.
+**Day 3. Be the software engineer, then the product manager.** The lost requests are the ones to look at. Not every lost request should be printed again.
 
 ## Who is held
 

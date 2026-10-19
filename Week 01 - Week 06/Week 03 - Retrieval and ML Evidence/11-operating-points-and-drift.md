@@ -1,6 +1,6 @@
 # Operating points and drift
 
-**Day 4. ML specialist.** The model card in `corpus/ai-governance/ai-model-card-requirements.md` asks for sensitivity and specificity by age band, performance by site, performance by camera and firmware, image quality limits, and a drift trigger. Fill [the evaluation sheet](templates/evaluation-sheet.md) in that order, on the restricted cohort, against adjudication. Specificity can sit in the sheet. The checker asks for the sensitivity.
+**Day 4. Be the ML specialist.** The model card in `corpus/ai-governance/ai-model-card-requirements.md` asks for sensitivity and specificity by age band, performance by site, performance by camera and firmware, image quality limits, and a drift trigger. Fill [the evaluation sheet](templates/evaluation-sheet.md) in that order, on the restricted cohort, against adjudication. Specificity can sit in the sheet. The checker asks for the sensitivity.
 
 ## The points
 

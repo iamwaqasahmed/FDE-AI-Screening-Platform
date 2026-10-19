@@ -2,14 +2,14 @@
 
 The program map is [README.md](../../README.md). This week is part of [Week 01 — Week 06](../README.md).
 
-Week 5 of the six-week engagement. The Chief Digital Officer wants the pilot at a hospital clinic, and sooner. The press office wants a public line by Friday. By the end of the week the team can say no with a plan, can publish two paragraphs that survive the files, and has an agent that stops when a rule forbids the action.
+Week 5 of the six-week engagement. The Chief Digital Officer wants the pilot at a hospital clinic, and sooner. The press office wants a public line by Friday. By the end of the week you can say no with a plan, you can publish two paragraphs that survive the files, and you have an agent that stops when a rule forbids the action.
 
 Hartland's people and counts are for practice. They are not a real health service, and they are not instructions for care.
 
-**Time.** One week, a team of five or six. No facilitator. You open the drop yourselves.
-**Who.** Mixed. Each role has a hard problem in the drop. The split is in [The week](01-the-week.md).
+**Time.** One week, you alone. You open the drop yourself.
+**Who.** You, wearing every hat in [The week](01-the-week.md). Do every note, in order.
 **Your work.** A findings file, `backlog.csv`, `sweep.csv`, one contract, `answers.jsonl`, an agent card, a reply, and a public line.
-**Done when.** `agent_check` passes on your folder, including a rerun on a seed you build yourselves, and you have marked the reply against the debrief.
+**Done when.** `agent_check` passes on your folder, including a rerun on a seed you build yourself, and you have marked the reply against the debrief.
 **Order.** Top to bottom. Write when a note tells you to stop.
 **Debrief.** The practice-seed answer key. Reading it early skips the week. Another seed changes the counts, the pace, and the site names.
 
@@ -21,7 +21,7 @@ Hartland's people and counts are for practice. They are not a real health servic
 
 ## What you will produce
 
-Keep the folder outside the repo, or under `work/<team>/week-05/`, which git ignores.
+Keep the folder outside the repo, or under `work/week-05/`, which git ignores.
 
 | Artifact | When | Note |
 |---|---|---|
@@ -37,24 +37,24 @@ The checker reads `findings.json`, `answers.jsonl`, `backlog.csv`, `sweep.csv`, 
 
 ## Sequence
 
-| | Note | Day | Lead | What you do |
+| | Note | Day | Hat | What you do |
 |---|---|---|---|---|
-| 1 | [The week](01-the-week.md) | 1 | Everyone | The job, the roles, the contracts |
-| 2 | [Open the drop](02-open-the-drop.md) | 1 | Product manager, consultant | The memo and the query. Stop and write the impact log |
-| 3 | [Three asks](03-three-asks.md) | 1–2 | Product manager, architect, consultant | The date, the site, and the variation |
-| 4 | [The backlog](04-the-backlog.md) | 2 | Data engineer, product manager | Duplicates without a column, and Heron's pace |
-| 5 | [The critical path](05-the-critical-path.md) | 2 | Product manager, consultant | A range, and the constraint that binds |
-| 6 | [The gate before the date](06-the-gate-before-the-date.md) | 2–3 | Consultant, product manager | Gate 2, the double count, the closed risk |
-| 7 | [The public line](07-the-public-line.md) | 2–3 | Consultant, product manager | Two paragraphs. Stop and write them |
-| 8 | [What the agent may do](08-what-the-agent-may-do.md) | 2–3 | Architect, consultant | The tier, the rules, the account, the models |
-| 9 | [The baselines](09-the-baselines.md) | 3 | Software engineer | Where one retrieval is not an agent |
-| 10 | [State, tools, and the trajectory](10-state-tools-and-the-trajectory.md) | 3 | Software engineer, data engineer | The contract, before the first run |
-| 11 | [The veto](11-the-veto.md) | 3–4 | Software engineer, architect | A stop in code, on the action |
-| 12 | [Checkpoints and a person](12-checkpoints-and-a-person.md) | 4 | Software engineer, data engineer | Resume, and the sweep |
-| 13 | [Score the trajectory](13-score-the-trajectory.md) | 4 | ML specialist, data scientist | Stop and write the card |
-| 14 | [Write the reply](14-write-the-reply.md) | 5 | Consultant, product manager | One page, before the debrief |
-| 15 | [Check](15-check.md) | 5 | Everyone | Run `agent_check`, then a second seed |
-| 16 | [Debrief](16-debrief.md) | 5 | Everyone | After the reply exists |
+| 1 | [The week](01-the-week.md) | 1 | You | The job, the hats, the contracts |
+| 2 | [Open the drop](02-open-the-drop.md) | 1 | Be the product manager, then the consultant | The memo and the query. Stop and write the impact log |
+| 3 | [Three asks](03-three-asks.md) | 1–2 | Be the product manager, then the architect, then the consultant | The date, the site, and the variation |
+| 4 | [The backlog](04-the-backlog.md) | 2 | Be the data engineer, then the product manager | Duplicates without a column, and Heron's pace |
+| 5 | [The critical path](05-the-critical-path.md) | 2 | Be the product manager, then the consultant | A range, and the constraint that binds |
+| 6 | [The gate before the date](06-the-gate-before-the-date.md) | 2–3 | Be the consultant, then the product manager | Gate 2, the double count, the closed risk |
+| 7 | [The public line](07-the-public-line.md) | 2–3 | Be the consultant, then the product manager | Two paragraphs. Stop and write them |
+| 8 | [What the agent may do](08-what-the-agent-may-do.md) | 2–3 | Be the architect, then the consultant | The tier, the rules, the account, the models |
+| 9 | [The baselines](09-the-baselines.md) | 3 | Be the software engineer | Where one retrieval is not an agent |
+| 10 | [State, tools, and the trajectory](10-state-tools-and-the-trajectory.md) | 3 | Be the software engineer, then the data engineer | The contract, before the first run |
+| 11 | [The veto](11-the-veto.md) | 3–4 | Be the software engineer, then the architect | A stop in code, on the action |
+| 12 | [Checkpoints and a person](12-checkpoints-and-a-person.md) | 4 | Be the software engineer, then the data engineer | Resume, and the sweep |
+| 13 | [Score the trajectory](13-score-the-trajectory.md) | 4 | Be the ML specialist, then the data scientist | Stop and write the card |
+| 14 | [Write the reply](14-write-the-reply.md) | 5 | Be the consultant, then the product manager | One page, before the debrief |
+| 15 | [Check](15-check.md) | 5 | You | Run `agent_check`, then a second seed |
+| 16 | [Debrief](16-debrief.md) | 5 | You | After the reply exists |
 
 ## Also on the desk
 

@@ -1,6 +1,6 @@
 # The contract and the agreement
 
-**Days 2 and 3. Architect and consultant.** Write the contract before `resend.csv` exists. A re-send file that crosses a zone is a data flow. C-05's shape still applies: the architect's contract is the input to the review.
+**Days 2 and 3. Be the architect, then the consultant.** Write the contract before `resend.csv` exists. A re-send file that crosses a zone is a data flow. C-05's shape still applies: the contract you write as the architect is the input to the review.
 
 ## The feed
 

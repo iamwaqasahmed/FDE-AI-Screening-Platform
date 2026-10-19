@@ -8,7 +8,7 @@ python -m course evidence_check --work <your folder>
 
 `<your folder>` contains `findings.json`, `answers.jsonl`, `redactions.csv`, `vendor_extract.csv`, `contracts/vendor_extract.yaml`, `retrieval-card.md`, and `evidence-note.md`. The data folder defaults to `data`. The shape of every item is [templates/findings.example.json](templates/findings.example.json). That file is a shape, not an answer. It does not pass.
 
-The checker prints how many items passed, the count for each role, the answer rate overall and by slice, redaction recall and precision, and pass or fail for the extract, the contract, the card, and the note. It does not print the expected value. A failed id is a place to look again.
+The checker prints how many items passed, the count for each hat, the answer rate overall and by slice, redaction recall and precision, and pass or fail for the extract, the contract, the card, and the note. It does not print the expected value. A failed id is a place to look again.
 
 To score an answers file on its own:
 
@@ -32,7 +32,7 @@ All of these, together:
 
 ## A second seed
 
-You build it yourselves. From `problem_simulation`:
+You build it yourself. From `problem_simulation`:
 
 ```text
 python -m simulation --profile small

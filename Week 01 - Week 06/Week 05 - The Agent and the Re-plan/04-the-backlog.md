@@ -1,6 +1,6 @@
 # The backlog
 
-**Day 2. Data engineer and product manager.** The data scientist uses the pace. The tracker has no column that says a ticket is a copy of another. The copies are still there.
+**Day 2. Be the data engineer, then the product manager.** You use the pace when you are the data scientist. The tracker has no column that says a ticket is a copy of another. The copies are still there.
 
 ## Which tickets
 

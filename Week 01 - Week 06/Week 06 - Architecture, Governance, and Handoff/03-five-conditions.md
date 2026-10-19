@@ -1,6 +1,6 @@
 # Five conditions
 
-**Days 1 and 2. Product manager, consultant, and data scientist.** Take the five conditions one at a time. A go decision is a yes to each of them, in writing, from the person who sent the memo. She confirms all five. Someone else has to act before she can.
+**Days 1 and 2. Be the product manager, then the consultant, then the data scientist.** Take the five conditions one at a time. A go decision is a yes to each of them, in writing, from the person who sent the memo. She confirms all five. Someone else has to act before she can.
 
 ## Who acts
 

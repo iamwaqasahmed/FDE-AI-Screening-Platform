@@ -1,6 +1,6 @@
 # Cost and owners
 
-**Day 4. Consultant and product manager.** The incident has a price, and it has owners. Neither is the number of dispatch rows.
+**Day 4. Be the consultant, then the product manager.** The incident has a price, and it has owners. Neither is the number of dispatch rows.
 
 ## The price
 

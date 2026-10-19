@@ -70,7 +70,7 @@ flowchart LR
 2. `stages.py` runs each surface stage in order: workforce and devices, corpus, estate (the new systems), economics, stakeholders, ML evidence, delivery, drops. Each stage only adds files, small fingerprinted tables, and gold to the world.
 3. `export.py` writes `truth/`, `corpus/`, the original system exports, every stage file, `truth/gold/`, and `eval/cases.jsonl`.
 4. `check/registry.py` lists one check module per surface. A check fails when a planted problem is missing or does not trace to its cause.
-5. `eval/baselines` scores what a strong generalist would build first. `python -m simulation.audit` requires each role's best baseline to stay below a pass rate of 0.5 on both the practice and assessment seeds.
+5. `eval/baselines` scores what a strong generalist would build first. `python -m simulation.audit` requires each hat's best baseline to stay below a pass rate of 0.5 on both the practice and assessment seeds.
 
 ## Code map
 

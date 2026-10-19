@@ -2,12 +2,12 @@
 
 The program map is [README.md](../../README.md). This week is part of [Week 01 — Week 06](../README.md).
 
-Week 1 of the six-week engagement. The Chief Digital Officer wants the vendor model live. Your team has the base drop and five days to find which problems are real, how big they are, and what has to come first.
+Week 1 of the six-week engagement. The Chief Digital Officer wants the vendor model live. You have the base drop and five days to find which problems are real, how big they are, and what has to come first.
 
 Hartland's people and counts are for practice. They are not a real health service, and they are not instructions for care.
 
-**Time.** One week, a team of five or six.
-**Who.** Mixed. Each role has a hard problem in the drop. The split is in [The engagement](01-the-engagement.md).
+**Time.** One week, you alone.
+**Who.** You, wearing every hat in [The engagement](01-the-engagement.md). Do every note, in order.
 **Your work.** An ask log, a findings file, twelve interview scripts, a note per persona, and a brief.
 **Done when.** `discovery_check` passes on your folder, and you have marked the brief against the debrief.
 **Order.** Top to bottom. Write when a note tells you to stop.
@@ -38,7 +38,7 @@ The checker reads `findings.json`, `interviews/<persona>.txt`, `notes/<persona>.
 
 | | Note | Day | What you do |
 |---|---|---|---|
-| 1 | [The engagement](01-the-engagement.md) | 1 | The team, the roles, the limit |
+| 1 | [The engagement](01-the-engagement.md) | 1 | The hats, and the limit |
 | 2 | [The ask](02-the-ask.md) | 1 | Read the board paper. Stop and write the ask log |
 | 3 | [Systems of record](03-systems-of-record.md) | 1 | Nineteen notes, one owner that is blank |
 | 4 | [Profile before you trust](04-profile-before-you-trust.md) | 2 | Schemas, dates, duplicates, units. Keep the code |

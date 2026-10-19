@@ -1,6 +1,6 @@
 # Write the reply
 
-**Day 5. Consultant and product manager.** Write this before you open the [debrief](16-debrief.md). One page is enough. Use [the reply template](templates/cdo-reply.md). Save it as `cdo-reply.md`.
+**Day 5. Be the consultant, then the product manager.** Write this before you open the [debrief](16-debrief.md). One page is enough. Use [the reply template](templates/cdo-reply.md). Save it as `cdo-reply.md`.
 
 The checker looks for key facts, not for a heading style. Name dates as `YYYY-MM-DD`. A count may use a thousands separator. The contract value and the corrected cashable figure are whole pounds.
 

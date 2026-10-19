@@ -7,7 +7,7 @@ Teach the agent where a rule comes from. The corpus holds an issued procedure an
 The Module 02 tools still do the counting. Retrieval does not replace them.
 
 **Time.** About half a day.
-**Who.** [target_audience.md](../../target_audience.md). Same case for the whole group.
+**Who.** [target_audience.md](../../target_audience.md). You do this module yourself, end to end.
 **Your work.** Read the notes, then `retrieve` in [screening_retrieval](screening_retrieval). The package is the reference.
 **Done when.** The checker passes, and you can quote a passage with its status still `draft` when the document is a draft.
 **Code.** The reference retriever is in [screening_retrieval](screening_retrieval).

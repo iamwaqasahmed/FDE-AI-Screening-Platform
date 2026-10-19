@@ -1,6 +1,6 @@
 # The hazard log
 
-**Day 4. ML specialist and data scientist.** CSO-1 asks for a hazard log for the vendor pathway, signed by the owner. Write the draft. Leave `signed_by` blank. A log the team signs is not the log she asked for.
+**Day 4. Be the ML specialist, then the data scientist.** CSO-1 asks for a hazard log for the vendor pathway, signed by the owner. Write the draft. Leave `signed_by` blank. A log you sign is not the log she asked for.
 
 Use [the hazard-log template](templates/hazard-log.example.csv). The columns are `hazard_id,cause,effect,anchor,evidence,control,control_owner,signed_by`.
 
@@ -22,7 +22,7 @@ You need at least six of these seven. The first and the fifth need their numbers
 
 A row copied from the risk register with no number, on the two rows that have numbers, does not count. The age figure is not the headline sensitivity. The letter count is not a guess.
 
-**A miss that looks like progress.** A log signed by the team, or a log that repeats the risk titles and stops. She asked for a log she can sign. The signature line is how you show she has not.
+**A miss that looks like progress.** A log you sign, or a log that repeats the risk titles and stops. She asked for a log she can sign. The signature line is how you show she has not.
 
 **Finish.** `hazard-log.csv` has the anchors, the two numbers, and an empty signature column.
 

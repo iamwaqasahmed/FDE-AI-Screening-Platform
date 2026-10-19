@@ -1,6 +1,6 @@
 # Cite, refuse, and resist
 
-**Days 2 and 3. Software engineer.** `answers.jsonl` is one JSON object per line. The question file tells you the `kind` and the `answer_keys`. The checker scores the line against the question. It does not tell you the expected value.
+**Days 2 and 3. Be the software engineer.** `answers.jsonl` is one JSON object per line. The question file tells you the `kind` and the `answer_keys`. The checker scores the line against the question. It does not tell you the expected value.
 
 ## The line
 

@@ -1,6 +1,6 @@
 # The threat model
 
-**Day 3. Architect and software engineer.** Four threats are already in the estate. Write `threats.csv` with one row each. Use [the threats template](templates/threats.example.csv). The columns are `threat_id,title,components,evidence,standard,live,mitigation,owner`.
+**Day 3. Be the architect, then the software engineer.** Four threats are already in the estate. Write `threats.csv` with one row each. Use [the threats template](templates/threats.example.csv). The columns are `threat_id,title,components,evidence,standard,live,mitigation,owner`.
 
 `live` is `true` or `false`. `standard` is a document id. `owner` is a person named in the files. `evidence` or `components` has to carry the key below, so a reader can find the same row you found.
 

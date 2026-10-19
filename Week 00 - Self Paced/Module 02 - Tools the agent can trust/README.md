@@ -9,7 +9,7 @@ These functions are what a later agent is allowed to call. It may choose `covera
 Hartland is still the simulation from Module 01. These notes assume you have written the problem brief and read the [debrief](<../Module 01 - Problem Discovery/07-debrief.md>).
 
 **Time.** About half a day.
-**Who.** [target_audience.md](../../target_audience.md). Same case for the whole group.
+**Who.** [target_audience.md](../../target_audience.md). You do this module yourself, end to end.
 **Your work.** Read each note, then open the function it names. The package is the reference.
 **Done when.** The checker passes, and you can say why the cover-note reading fails.
 **Code.** The reference tools are in [screening_tools](screening_tools). Each note names the function it corresponds to.

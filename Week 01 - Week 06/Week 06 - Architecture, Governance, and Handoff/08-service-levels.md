@@ -1,6 +1,6 @@
 # Service levels
 
-**Day 3. Software engineer and architect.** `problem_simulation/serve/slos.yaml` is the published level. The design has to meet the busy hour, not the average hour.
+**Day 3. Be the software engineer, then the architect.** `problem_simulation/serve/slos.yaml` is the published level. The design has to meet the busy hour, not the average hour.
 
 ## The hour
 

@@ -1,6 +1,6 @@
 # The governance pack
 
-**Day 4. ML specialist, architect, and consultant.** Two systems, two tiers. Do not collapse them.
+**Day 4. Be the ML specialist, then the architect, then the consultant.** Two systems, two tiers. Do not collapse them.
 
 The Week 5 agent searches, summarises, and drafts, and a person reads every output. That is tier 2. `agent_tier` is 2.
 

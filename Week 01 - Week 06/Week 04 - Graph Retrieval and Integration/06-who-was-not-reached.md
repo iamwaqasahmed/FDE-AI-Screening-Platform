@@ -1,6 +1,6 @@
 # Who was not reached
 
-**Days 2 and 3. Data scientist and ML specialist.** You are the consumer of C-07. The software engineer publishes the reconciliation. You publish the people.
+**Days 2 and 3. Be the data scientist, then the ML specialist.** You published the reconciliation as the software engineer. Here you use it, and you publish the people.
 
 ## C-07
 

@@ -1,6 +1,6 @@
 # The leak
 
-**Day 4. Data scientist.** `handover/ml/dna_training.csv` is the did-not-attend table the authority's analyst built. One row is an invitation. `patient_key` repeats, because a person is invited more than once. `did_not_attend` is the label.
+**Day 4. Be the data scientist.** `handover/ml/dna_training.csv` is the did-not-attend table the authority's analyst built. One row is an invitation. `patient_key` repeats, because a person is invited more than once. `did_not_attend` is the label.
 
 ## The column written after the outcome
 
