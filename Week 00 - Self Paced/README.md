@@ -59,6 +59,7 @@ The client is Hartland Regional Health Authority, a fictional regional service t
 |---|---|
 | How the world was built | [problem_simulation/README.md](problem_simulation/README.md) |
 | What each file means | [data/README.md](data/README.md) |
+| The system this track builds | [the-system.md](the-system.md) |
 | The drop you use | [data/handover](data/handover) and [data/corpus](data/corpus) |
 | Leave closed | `data/truth` and `data/eval`, when present. They are the hidden copy and the answer key |
 

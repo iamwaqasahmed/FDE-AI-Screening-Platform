@@ -4,7 +4,7 @@ A generated extract from Hartland Regional Health Authority, the fictional regio
 
 This is the small extract for [Week 00 — Self Paced](../README.md). The six-week extract is a different world: [Week 01 — Week 06 data](<../../Week 01 - Week 06/data/README.md>). A count from one folder does not belong in the other.
 
-Open this page when [Module 01](<../Module 01 - Problem Discovery/README.md>) tells you to count. Who the case is for is [target_audience.md](../../target_audience.md). The longer glossary is [Health language](../../health_language.md). Health experience is not required.
+Open this page when [Module 01](<../Module 01 - Problem Discovery/README.md>) tells you to count. Who the case is for is [target_audience.md](../../target_audience.md). The longer glossary is [Health language](../../health_language.md). What the system does with these files is [The system](../the-system.md). Health experience is not required.
 
 ## On this page
 
@@ -37,8 +37,8 @@ You are not expected to judge a photograph. The picture files are not in this fo
 |---|---|---|
 | [handover](handover) | You, on site | The messy extract the authority's IT team would send |
 | [corpus](corpus) | You | The written rules, letter templates, and clinic note |
-| [truth](truth) | Grading only, when present | A clean hidden copy of the same world |
-| [eval](eval) | Grading only, when present | Questions with known answers |
+| [truth](truth) | Grading only, when present | A clean hidden copy of the same world. The IT team did not send this |
+| [eval](eval) | Grading only, when present | Questions with known answers. The IT team did not send this |
 
 Work from [handover](handover) and [corpus](corpus). If [truth](truth) or [eval](eval) is on your machine, leave it closed during Module 01. Opening it skips the discovery.
 
@@ -194,11 +194,11 @@ Read each sentence in these two files as a claim. Compare it with the rows, and 
 | [`letter_template_result.md`](corpus/letter_template_result.md) | The in-force wording for `letter-result`. Use it after a grader records a code. The letter copies that code. It does not add a diagnosis, a stage of disease, or a specialist outcome. If the referral box was ticked, it says the eye clinic will write about an appointment |
 | [`letter_template_recall.md`](corpus/letter_template_recall.md) | The in-force wording for `letter-recall`. Use it when there is no completed result, or the photo could not be read and the person needs another capture. It asks them to contact the clinic and bring the letter. It does not say whether disease is present |
 | [`dpo_operating_rule.md`](corpus/dpo_operating_rule.md) | The data protection officer's rule that is in force. Images and extracts stay on the authority network, and every access is logged. Patient images are not used to train a model unless a separate approval is signed. A letter may repeat a code a grader has recorded, and it must not add a diagnosis. A model may sort a queue or flag a photo to retake. A grader still signs every result that refers, recalls, or reassures a patient. The officer will review a bounded eye-screening service, not one release that also covers breast and cervical screening |
-| [`clinic_note_pilot_sites.md`](corpus/clinic_note_pilot_sites.md) | The in-force note for the first slice. The sites are Hill Counties Health Centre, Oakridge Primary Care, and North City Eye Clinic. River Outreach, breast screening, and cervical screening are outside this slice. The grader queue is ordered as: no result code, then `U`, then `R2`, then `R3`. The 14-day draft is not current policy. This slice takes the nightly registry file and returns a result file. There is no electronic health record feed |
+| [`clinic_note_pilot_sites.md`](corpus/clinic_note_pilot_sites.md) | The in-force note for the first slice. The sites are Hill Counties Health Centre, Oakridge Primary Care, and North City Eye Clinic. River Outreach, breast screening, and cervical screening are outside this slice. The grader queue is ordered as: no result code, then `U`, then `R2`, then `R3`. The 14-day draft is not current policy. The connection for this slice is a file in and a file out. Each night it takes a registry file, the same kind of extract as [`handover/diabetes_registry.csv`](handover/diabetes_registry.csv). It writes a result file back. There is no API. There is no feed into the electronic health record, the hospital system that holds the patient's chart. Screening keeps its own lists until that connection exists |
 
 ## Closed folders
 
-Leave [truth](truth) and [eval](eval) closed during Module 01. Opening them skips the discovery. The tables below are the column map for grading.
+Leave [truth](truth) and [eval](eval) closed during Module 01. Opening them skips the discovery. The IT team did not send these folders. The extract they would send is [handover](handover). These two folders are the grading copy: a clean version of the same people and events, and the questions with known answers. The tables below are the column map for that grading copy.
 
 Dates in [truth](truth) are written as `2025-07-09`.
 
@@ -339,6 +339,6 @@ One JSON object per line. One line is one graded question. The known counts live
 
 ## What is not here
 
-Retinal photographs. The [hospital index](handover/pacs_manifest.csv), the [shared-folder listing](handover/shared_folder_listing.csv), and the [workbook](handover/grader_workbook.xlsx) name files, and those picture files are not in the drop. You can count, join, and draft from the tables and the rules. You cannot look at an eye.
+Retinal photographs. The [hospital index](handover/pacs_manifest.csv), the [shared-folder listing](handover/shared_folder_listing.csv), and the [workbook](handover/grader_workbook.xlsx) are in the drop, and each of them names picture files such as `I0000001.jpg`. Those picture files are not in the drop. You can count, join, and draft from the tables and the rules. You cannot look at an eye.
 
 The exercise that uses these files is [Count the files](<../Module 01 - Problem Discovery/05-count-the-files.md>).
