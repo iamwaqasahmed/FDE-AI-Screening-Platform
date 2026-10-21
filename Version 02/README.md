@@ -1,0 +1,70 @@
+# Version 02 — Weeks 1 to 4
+
+Weeks 1 to 4 of the FDE program are one engagement. Participants design, build, deploy, and harden an AI assistant for a fictional Saudi health cluster. The topic list is the [FDE Program Syllabus](<FDE Program Syllabus.md>). This folder is the base those days are written from: the case, the system, the simulated world, and the course design.
+
+Nothing here is a real patient's record, a real facility, or a protocol for care. Laws that appear in the case are fictional analogues. A mapping for facilitators sits in [problem_simulation/README.md](problem_simulation/README.md).
+
+## Who may open what
+
+| Path | Who | What it is |
+|---|---|---|
+| [FDE Program Syllabus](<FDE Program Syllabus.md>) | Everyone | The accepted program |
+| [case](case/README.md) | Participants and facilitators | The client, the ask, the constraints, and the words |
+| [problem_simulation](problem_simulation/README.md) | Facilitators | The hidden world, the reference system, the data, the services, and the gold |
+| [course_design](course_design/README.md) | Facilitators | The day maps, roles, assessment, and the course environment |
+
+Participants work from `case/` and from the participant pack the generator will later write. They leave `problem_simulation/` and `course_design/` closed. Opening the design skips the discovery the course is built to teach.
+
+## Read in this order
+
+Participants:
+
+1. This page.
+2. [The case](case/README.md).
+3. [Access language](case/access_language.md), before opening a data file.
+
+Facilitators, after the case:
+
+1. [Simulation index](problem_simulation/README.md).
+2. The design notes in order, `01` through `12`, then [traceability](problem_simulation/design/traceability/README.md).
+3. [Course design](course_design/README.md), then the week day maps.
+
+## The four parts
+
+```mermaid
+flowchart LR
+  syllabus[Syllabus weeks 1 to 4]
+  caseBrief[Case]
+  world[Problem simulation]
+  course[Course design]
+  days[Day content later]
+  syllabus --> caseBrief
+  caseBrief --> world
+  world --> course
+  course --> days
+```
+
+| Part | Question it answers |
+|---|---|
+| Case | Who the client is, what they asked for, and what the team is allowed to do |
+| Problem simulation | What is true in the world, what the team can see, and how work is graded |
+| Reference system | One architecture that can carry every topic, held back so teams can design their own |
+| Course design | What each day, role, and grade uses from that world |
+
+The reference system is facilitator material. Teams publish their own architecture. Checks grade outcomes through a fixed assistant contract, so a different stack can pass.
+
+## What is already fixed
+
+- The client is the Al-Waha Health Cluster, and the service is patient access: referrals, appointments, reminders, and the contact center.
+- The assistant handles operations. A clinician assigns every clinical urgency. The assistant routes emergency wording to a human.
+- The cluster runs hospital data centers, a private cloud on two sites, and one external model for public content.
+- The engagement inside the case opens on 10 January 2027, a few weeks before Ramadan.
+- Teams of five rotate the Real Client Project roles. Each team has its own world. Each participant has a small personal world for individual labs.
+
+Stable names (facilities, personas, systems, releases, checks) are defined in the design notes. Later lessons should cite those names, and should cite counts only as something the team measured.
+
+## What this folder does not contain yet
+
+The generator, the live services, the participant pack, the starter repository, the checkers, the reference solution, and the day content (notes, slides, and labs) are later builds. [Generator build](problem_simulation/design/12-generator-build.md) sets the order: one week at a time, after the design gates.
+
+Weeks 5 and 6, the Real Client Project, are a real client. This case supplies the rehearsal only. The optional admissions prep course is out of scope; the `small` world profile is reserved for it.

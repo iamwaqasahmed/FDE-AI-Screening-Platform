@@ -1,0 +1,49 @@
+# Problem simulation
+
+Facilitators only. Participants leave this folder closed. The participant-facing case is [../case/README.md](../case/README.md). The course that sits on this world is [../course_design/README.md](../course_design/README.md).
+
+This folder will generate the Al-Waha world from a seed, serve it, and score it. The notes in `design/` specify that world. The generator itself is a later build, in the order [design/12-generator-build.md](design/12-generator-build.md) gives.
+
+## Principles
+
+- **One seed.** One seed writes every file, every mock, and every gold answer. A second build with the same seed matches.
+- **Closed truth.** `truth/` and `eval/` are never part of the participant pack. A grading service scores submissions without handing the key back.
+- **A technique earns its place.** A method is taught when a simpler method loses on a published slice. The slices are in [design/11-eval-and-hardness.md](design/11-eval-and-hardness.md).
+- **Foundation and advanced layers.** Every syllabus topic has a foundation check and further checks. Deeper work can earn credit. Day content chooses the depth.
+- **Daily releases.** `rel-w1d1` through `rel-w4d5` are written by the same seed. A later release can invalidate an earlier design. See [design/10-release-schedule.md](design/10-release-schedule.md).
+- **Stable ids.** Lessons cite facilities, personas, systems, files, and checks by id. Counts and dates that the seed can change are measurements, not constants in the prose.
+- **Fictional and safe.** Fictional people and facilities. No real patient data. Page images are synthetic. Clinical weights and red-flag lists are teaching devices. The assistant routes emergency wording to a human and leaves urgency decisions to a clinician.
+- **Small modules.** Generator modules stay under about 200 lines, one purpose each.
+
+## Design notes
+
+| Note | What it fixes |
+|---|---|
+| [01 Hidden world](design/01-hidden-world.md) | Causes, scale, calendar, sites, case clock |
+| [02 Real problems](design/02-real-problems.md) | The nine problems, value, and approach fit |
+| [03 Reference system](design/03-reference-system.md) | The assistant facilitators hold back |
+| [04 Systems and environments](design/04-systems-and-environments.md) | Exports, defects, zones, catalog |
+| [05 Corpus](design/05-corpus.md) | Documents, versions, permissions |
+| [06 Engagement and delivery](design/06-engagement-and-delivery.md) | Personas, workshops, backlog, adoption |
+| [07 Datasets](design/07-datasets.md) | Letters, messages, tables, scenarios |
+| [08 Live services](design/08-live-services.md) | Mocks, identity, events, gateway, contract |
+| [09 Traffic and threats](design/09-traffic-and-threats.md) | Patients, staff, load, attacks, canaries |
+| [10 Release schedule](design/10-release-schedule.md) | What arrives each day |
+| [11 Eval and hardness](design/11-eval-and-hardness.md) | Checks, slices, packs, grading |
+| [12 Generator build](design/12-generator-build.md) | Packages, reuse, gates |
+| [Traceability](design/traceability/README.md) | Every syllabus element to a check |
+
+## Regulatory analogues
+
+Case documents use the fictional names. Facilitators may say what each one resembles. The resemblance is for teaching, and the case text is not a statement of the real law.
+
+| In the case | Resembles |
+|---|---|
+| Personal Data Statute (PDS) | Saudi Personal Data Protection Law |
+| National Data Classification Standard (NDCS) | National data-classification rules |
+| National Cyber Controls (NCC) | National cybersecurity controls |
+| National AI Ethics Principles (NAEP) | National AI ethics principles |
+
+## Version 01
+
+Copy and adapt. Do not import. Version 01 stays frozen. Paths are under `Version 01/Week 01 - Week 06/problem_simulation/`. What moves, and what is rewritten, is listed in [design/12-generator-build.md](design/12-generator-build.md).
