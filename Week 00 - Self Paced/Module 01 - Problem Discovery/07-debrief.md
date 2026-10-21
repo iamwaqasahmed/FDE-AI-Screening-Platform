@@ -32,7 +32,9 @@ Among the 34,490 completed results, after mapping `prolif`, a note of `urgent`, 
 
 Median days from photo to letter, on completed results that have a letter, is 19. Median days from an urgent result to a specialist visit is 47. The 14-day target is in `sop_urgent_pathway_draft.md`, and that document says `NOT ISSUED`. The issued procedure has one referral box and no day target. Mild and sight-threatening disease therefore share `ophthalmology_referrals.csv`. Seen-dates for the mild referrals are blank in that file. The fourteen-week routine wait is the clinician's report. It is not a column you can average.
 
-The vendor file has 400 primary-care images. 140 have no model label. On the other 260, the model and the grader disagree 81 times. The 93% figure belongs to a 1,200-image hospital slide. It is not in the handover, and it is not a result on these 400 images. The shared folder contains names that match no workbook row, including files named like `IMG_9#####.JPG`.
+The vendor file has 400 primary-care images. 140 have no model label. On the other 260, the model and the grader disagree 81 times. The 93% figure belongs to a 1,200-image hospital slide. It is not in the handover, and it is not a result on these 400 images.
+
+The shared folder contains names that match no workbook row, including files named like `IMG_9#####.JPG`.
 
 The scarce people are the graders, the eye specialists, and the patients who cannot make a second trip. The costly delays are an unusable photo discovered after the patient has gone home, a letter at 19 days, and an urgent appointment at 47 days.
 
