@@ -33,7 +33,7 @@ The `small` profile runs under Docker Compose with CPU-sized models. Faults, ide
 
 ## Starter kit
 
-The Week 1, Day 1 lab clones `paa-starter`. It contains:
+The Week 1, Day 1 template is [Week 01/Day 01/starter](../Week%2001/Day%2001/starter/README.md). The lab copies it into a `work` folder beside the notes. It contains:
 
 - a service skeleton and generated clients for the OpenAPI specs published with `rel-w1d1`;
 - a compose file for the dev mocks;

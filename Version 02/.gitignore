@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+
+# Generated kickoff pack and facilitator truth.
+data/rel-w1d1/
+problem_simulation/build/
+
+# Participant work for the days.
+Week 01/Day 01/work/

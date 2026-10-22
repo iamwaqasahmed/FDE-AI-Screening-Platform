@@ -1,0 +1,110 @@
+"""The second half of the persona roster. A tree row is (node_id, keywords, answer, releases, parent)."""
+
+from __future__ import annotations
+
+ROSTER_B: tuple[dict, ...] = (
+    {
+        "id": "ciso",
+        "name": "Omar Al-Zahrani",
+        "role": "Chief Information Security Officer",
+        "says_first": "Security reviews at the end.",
+        "goals": ("A go-live checklist that is used.", "Logs without patient data."),
+        "facts": (
+            ("checklist", "The go-live checklist is the list the security office will use at gate G4."),
+            ("engine-log", "Patient data has been in the integration-engine log since change CHG-2025-118."),
+        ),
+        "banned": ("The integration-engine log is clean.",),
+        "tree": (
+            ("review", ("security", "review", "end", "late"), "The review is booked at the end. The list itself already exists.", (), ""),
+            ("checklist", ("checklist", "golive", "gate", "g4"), "The go-live checklist is the list the security office will use at gate G4.", ("checklist",), "review"),
+            ("log", ("log", "engine", "change", "chg"), "Patient data has been in the integration-engine log since change CHG-2025-118.", ("engine-log",), "review"),
+        ),
+    },
+    {
+        "id": "ea",
+        "name": "Huda Al-Ghamdi",
+        "role": "Enterprise Architect",
+        "says_first": "We have an API strategy.",
+        "goals": ("A map of which hospital speaks which interface.", "No promise of a live slot where none exists."),
+        "facts": (
+            ("ain-file", "h-ain publishes slots only as a nightly file."),
+            ("hl7-pair", "h-nakhl and h-safra still send HL7 v2. h-wadi is the hospital on the private cloud."),
+        ),
+        "banned": ("Every hospital has a live slot API.",),
+        "tree": (
+            ("api", ("api", "integration", "strategy", "interface"), "The strategy is real. The hospitals are not all on it.", (), ""),
+            ("ain", ("ain", "file", "nightly", "schedule"), "h-ain publishes slots only as a nightly file.", ("ain-file",), "api"),
+            ("hl7", ("hl7", "nakhl", "safra", "wadi", "message"), "h-nakhl and h-safra still send HL7 v2. h-wadi is the hospital on the private cloud.", ("hl7-pair",), "api"),
+        ),
+    },
+    {
+        "id": "bi-lead",
+        "name": "Yusuf Al-Anazi",
+        "role": "BI lead",
+        "says_first": "Waiting time improved.",
+        "goals": ("A dashboard the board will quote.", "A catalog the analysts trust."),
+        "facts": (
+            ("booking-clock", "The wait-time mart starts the clock at booking_date."),
+            ("stale-code", "The catalog still defines the old endocrinology clinic code END-01."),
+        ),
+        "banned": ("Waiting time fell last year.",),
+        "tree": (
+            ("wait", ("wait", "dashboard", "improved", "mart"), "The dashboard is what the board sees. The column under it is older than the chart.", (), ""),
+            ("clock", ("clock", "booking_date", "booking", "column", "date"), "The wait-time mart starts the clock at booking_date.", ("booking-clock",), "wait"),
+            ("code", ("code", "catalog", "clinic", "endo", "old"), "The catalog still defines the old endocrinology clinic code END-01.", ("stale-code",), "wait"),
+        ),
+    },
+    {
+        "id": "finance",
+        "name": "Reem Al-Subaie",
+        "role": "Finance",
+        "says_first": "There is a budget line for AI.",
+        "goals": ("A price for each unit.", "No saving counted twice."),
+        "facts": (
+            ("rent-or-buy", "Buying GPUs takes 16 weeks. Renting them does not."),
+            ("double-benefit", "The vendor saving and the contact-center saving count the same calls."),
+            ("unit-prices", "SMS and annotation labels are on the price sheet."),
+        ),
+        "banned": ("The vendor saving and the contact-center saving are separate.",),
+        "tree": (
+            ("budget", ("budget", "money", "line", "spend"), "The line exists. What it can buy before Ramadan is a shorter list.", (), ""),
+            ("gpu", ("gpu", "rent", "buy", "purchase", "weeks"), "Buying GPUs takes 16 weeks. Renting them does not.", ("rent-or-buy",), "budget"),
+            ("benefit", ("benefit", "saving", "double", "vendor"), "The vendor saving and the contact-center saving count the same calls.", ("double-benefit",), "budget"),
+            ("prices", ("sms", "label", "price", "sheet", "annotation"), "SMS and annotation labels are on the price sheet.", ("unit-prices",), "budget"),
+        ),
+    },
+    {
+        "id": "patient-rep",
+        "name": "Abdullah Al-Harthy",
+        "role": "Patient representative",
+        "says_first": "The phone line never answers.",
+        "goals": ("A way in that is not only the phone.", "Slots his mother can attend."),
+        "facts": (
+            ("ramadan-day", "His mother is offered daytime slots in Ramadan, and that is when she misses the appointment."),
+            ("caregiver", "A caregiver books for her."),
+        ),
+        "banned": ("Every patient can use the app alone.",),
+        "tree": (
+            ("phone", ("phone", "line", "call", "answers"), "The phone line is the door most families still use.", (), ""),
+            ("ramadan", ("ramadan", "daytime", "mother", "slot", "misses"), "His mother is offered daytime slots in Ramadan, and that is when she misses the appointment.", ("ramadan-day",), "phone"),
+            ("caregiver", ("caregiver", "books", "family", "daughter"), "A caregiver books for her.", ("caregiver",), "phone"),
+        ),
+    },
+    {
+        "id": "vendor",
+        "name": "Daniel Okonkwo",
+        "role": "Vendor account manager",
+        "says_first": "Our bot contains about 70 percent of chats.",
+        "goals": ("A renewal.", "A containment number the board will repeat."),
+        "facts": (
+            ("abandoned", "The containment figure counts abandoned chats as handled."),
+            ("other-population", "The figure comes from another population, not from Al-Waha."),
+        ),
+        "banned": ("Al-Waha containment is about 70 percent.",),
+        "tree": (
+            ("contain", ("contain", "bot", "percent", "chats"), "The 70 percent is the number in our proposal. Ask me how it is counted.", (), ""),
+            ("abandon", ("abandon", "abandoned", "hang", "drop", "handled"), "The containment figure counts abandoned chats as handled.", ("abandoned",), "contain"),
+            ("population", ("population", "country", "where", "waha", "whose"), "The figure comes from another population, not from Al-Waha.", ("other-population",), "contain"),
+        ),
+    },
+)

@@ -2,7 +2,22 @@
 
 Facilitators only. Participants leave this folder closed. The participant-facing case is [../case/README.md](../case/README.md). The course that sits on this world is [../course_design/README.md](../course_design/README.md).
 
-This folder will generate the Al-Waha world from a seed, serve it, and score it. The notes in `design/` specify that world. The generator itself is a later build, in the order [design/12-generator-build.md](design/12-generator-build.md) gives.
+This folder generates the Al-Waha world from a seed. Day 1 is the first slice. The rest of the generator follows [design/12-generator-build.md](design/12-generator-build.md).
+
+## Day 1
+
+From this folder:
+
+```text
+python -m alwaha.build --profile practice --release rel-w1d1
+python -m unittest discover -s tests -q
+```
+
+The pack is written to `../data/rel-w1d1`. Truth is written to `build/practice/truth`. Participants use the pack and the commands in [Week 1, Day 1](<../Week 01/Day 01/README.md>). They leave `build/` and `design/` closed.
+
+`python -m alwaha.interview --persona <id> --script questions.txt` prints the answer and does not print a score.
+
+`python -m alwaha.check repo --work <dir>` and `python -m alwaha.check interview --work <dir>` print pass or fail. They do not print the missing fact.
 
 ## Principles
 
