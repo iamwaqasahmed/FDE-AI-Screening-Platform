@@ -1,6 +1,6 @@
 # Day 1 pack
 
-`rel-w1d1/` is generated. It is not stored in git.
+[rel-w1d1/](rel-w1d1/README.md) is generated. It is not stored in git. The notes that use it are [Week 1, Day 1](../Week%2001/Day%2001/README.md).
 
 From `problem_simulation`:
 

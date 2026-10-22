@@ -34,13 +34,13 @@ def _persona_page(data: dict) -> str:
 
 
 def _release_note(files: list[str]) -> str:
-    listed = "\n".join(f"- `{name}`" for name in files)
+    listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w1d1
 
 From: the office of the Chief Digital and Transformation Officer
 Case date: 2027-01-10
 
-This is the kickoff. Dev credentials are watermarked. They are not a grant of the full history.
+This is the kickoff. Dev credentials are watermarked. They are not a grant of the full history. The day notes are [Week 1, Day 1](../../Week%2001/Day%2001/README.md).
 
 Files:
 

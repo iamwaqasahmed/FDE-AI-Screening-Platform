@@ -7,7 +7,7 @@ python -m alwaha.check repo --work "..\Week 01\Day 01\work"
 python -m alwaha.check interview --work "..\Week 01\Day 01\work"
 ```
 
-`chk-w1-repo` passes when the health test passes, the assistant-use rule is the cluster document, the scan is clean, the credentials match this profile, and the access request names the requester, the data, the purpose, and the classification.
+`chk-w1-repo` passes when the health test in [starter/tests/test_health.py](starter/tests/test_health.py) passes, [starter/policy/pol-assistant-use.md](starter/policy/pol-assistant-use.md) is still the cluster document, [starter/scan.py](starter/scan.py) is clean, the credentials match this profile, and the access request names the requester, the data, the purpose, and the classification.
 
 `chk-w1-interview` passes when exactly two scripts were run, each of those conversations reached what that person will say when asked, and each notes file marks statements as a claim, a request, or a fact. A failed interview says that it is incomplete. It does not name the missing fact. Go back to the questions.
 
