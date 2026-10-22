@@ -2,8 +2,7 @@ __pycache__/
 *.py[cod]
 .venv/
 
-# Generated kickoff pack and facilitator truth.
-data/rel-w1d1/
+# Facilitator answer key. The practice kickoff pack under data/rel-w1d1 is tracked.
 problem_simulation/build/
 
 # Participant work for the days.
