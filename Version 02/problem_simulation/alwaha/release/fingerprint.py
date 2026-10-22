@@ -9,6 +9,12 @@ from pathlib import Path
 def fingerprint(*roots: Path) -> str:
     digest = hashlib.sha256()
     for root in roots:
+        if root.is_file():
+            digest.update(root.name.encode())
+            digest.update(b"\0")
+            digest.update(root.read_bytes())
+            digest.update(b"\0")
+            continue
         for path in sorted(item for item in root.rglob("*") if item.is_file()):
             if path.name == "fingerprint.txt":
                 continue

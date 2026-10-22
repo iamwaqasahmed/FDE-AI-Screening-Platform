@@ -1,0 +1,3 @@
+Who assigns clinical urgency, and does triage sit with a clinician?
+Where is the red-flag phrase list written down as a document?
+Must a human approve every returned referral before it is sent?

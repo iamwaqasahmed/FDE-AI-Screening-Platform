@@ -1,0 +1,4 @@
+credentials/*
+!credentials/dev.json
+__pycache__/
+*.pyc

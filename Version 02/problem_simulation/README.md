@@ -2,22 +2,25 @@
 
 Facilitators only. Participants leave this folder closed. The participant-facing case is [../case/README.md](../case/README.md). The course that sits on this world is [../course_design/README.md](../course_design/README.md).
 
-This folder generates the Al-Waha world from a seed. Day 1 is the first slice. The rest of the generator follows [design/12-generator-build.md](design/12-generator-build.md).
+This folder generates the Al-Waha world from a seed. Days 1 and 2 are the first slices. The rest of the generator follows [design/12-generator-build.md](design/12-generator-build.md).
 
-## Day 1
+## Days 1 and 2
 
 From this folder:
 
 ```text
 python -m alwaha.build --profile practice --release rel-w1d1
+python -m alwaha.build --profile practice --release rel-w1d2
 python -m unittest discover -s tests -q
 ```
 
-The pack is written to `../data/rel-w1d1`. Truth is written to `build/practice/truth`. Participants use the pack and the commands in [Week 1, Day 1](<../Week 01/Day 01/README.md>). They leave `build/` and `design/` closed.
+Day 1 writes `../data/rel-w1d1`. Day 2 writes `../data/rel-w1d2` and adds its gold beside the Day 1 truth in `build/practice/truth`. Rebuilding Day 1 clears that truth folder. Participants use the packs and the commands in [Week 1, Day 1](<../Week 01/Day 01/README.md>) and [Week 1, Day 2](<../Week 01/Day 02/README.md>). They leave `build/` and `design/` closed.
 
 `python -m alwaha.interview --persona <id> --script questions.txt` prints the answer and does not print a score.
 
-`python -m alwaha.check repo --work <dir>` and `python -m alwaha.check interview --work <dir>` print pass or fail. They do not print the missing fact.
+`python -m alwaha.check repo --work <dir>` and `python -m alwaha.check interview --work <dir>` print pass or fail for Day 1. `approach` and `brief` do the same for Day 2. They do not print the missing fact or the fitting family.
+
+`python -m alwaha.demo.split --profile practice` prints the two DNA scores and how many people sit on both sides of the row split. Read those three lines aloud. Do not name the cause.
 
 ## Principles
 
