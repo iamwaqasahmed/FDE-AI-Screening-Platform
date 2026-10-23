@@ -1,0 +1,1 @@
+{"consent": true, "constraint": "travel", "count": 4, "dataset": "ds-reason", "facility_id": "h-wadi", "letter": "", "referral_id": "ref-reason", "scenario": "reason", "session": "ses-reason", "stored_preference": "", "turns": [{"role": "patient", "text": "Book the earliest slot. I am coming from Rim."}]}

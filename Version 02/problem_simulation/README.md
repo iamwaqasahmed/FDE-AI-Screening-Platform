@@ -2,9 +2,9 @@
 
 Facilitators only. Participants leave this folder closed. The participant-facing case is [../case/README.md](../case/README.md). The course that sits on this world is [../course_design/README.md](../course_design/README.md).
 
-This folder generates the Al-Waha world from a seed. Days 1, 2, and 3 are the first slices. The rest of the generator follows [design/12-generator-build.md](design/12-generator-build.md).
+This folder generates the Al-Waha world from a seed. Days 1, 2, 3, and 4 are the first slices. The rest of the generator follows [design/12-generator-build.md](design/12-generator-build.md).
 
-## Days 1 to 3
+## Days 1 to 4
 
 From this folder:
 
@@ -12,18 +12,21 @@ From this folder:
 python -m alwaha.build --profile practice --release rel-w1d1
 python -m alwaha.build --profile practice --release rel-w1d2
 python -m alwaha.build --profile practice --release rel-w1d3
+python -m alwaha.build --profile practice --release rel-w1d4
 python -m unittest discover -s tests -q
 ```
 
-Day 1 writes `../data/rel-w1d1`. Day 2 writes `../data/rel-w1d2` and adds its gold beside the Day 1 truth in `build/practice/truth`. Day 3 writes `../data/rel-w1d3` and adds `events_gold.json` beside that truth. Rebuilding Day 1 clears that truth folder. Rebuilding Day 2 or Day 3 leaves the other days' packs where they are. Participants use the packs and the commands in [Week 1, Day 1](<../Week 01/Day 01/README.md>), [Week 1, Day 2](<../Week 01/Day 02/README.md>), and [Week 1, Day 3](<../Week 01/Day 03/README.md>). They leave `build/` and `design/` closed.
+Day 1 writes `../data/rel-w1d1`. Day 2 writes `../data/rel-w1d2` and adds its gold beside the Day 1 truth in `build/practice/truth`. Day 3 writes `../data/rel-w1d3` and adds `events_gold.json` beside that truth. Day 4 writes `../data/rel-w1d4` and adds `agent_gold.json` beside that truth. Rebuilding Day 1 clears that truth folder. Rebuilding Day 2, Day 3, or Day 4 leaves the other days' packs where they are. Participants use the packs and the commands in [Week 1, Day 1](<../Week 01/Day 01/README.md>), [Week 1, Day 2](<../Week 01/Day 02/README.md>), [Week 1, Day 3](<../Week 01/Day 03/README.md>), and [Week 1, Day 4](<../Week 01/Day 04/README.md>). They leave `build/` and `design/` closed.
 
 `python -m alwaha.interview --persona <id> --script questions.txt` prints the answer and does not print a score.
 
-`python -m alwaha.check repo --work <dir>` and `python -m alwaha.check interview --work <dir>` print pass or fail for Day 1. `approach` and `brief` do the same for Day 2. `events` does the same for Day 3. They do not print the missing fact, the fitting family, or the due date.
+`python -m alwaha.check repo --work <dir>` and `python -m alwaha.check interview --work <dir>` print pass or fail for Day 1. `approach` and `brief` do the same for Day 2. `events` does the same for Day 3. `agent` and `trajectory` do the same for Day 4. They do not print the missing fact, the fitting family, the due date, or the tool count.
 
 `python -m alwaha.demo.split --profile practice` prints the two DNA scores and how many people sit on both sides of the row split. Read those three lines aloud. Do not name the cause.
 
 `python -m alwaha.demo.order --profile practice` prints the two arrivals and how many approvals the apply holds. Read those lines aloud. Do not name the cause.
+
+`python -m alwaha.demo.count --profile practice` prints an invented count and the status tool's count. Read those two lines aloud. Do not name the cause.
 
 ## Principles
 

@@ -13,10 +13,13 @@ TEMPLATES_ROOT = DAY2_ROOT / "templates"
 DAY3_ROOT = VERSION_ROOT / "Week 01" / "Day 03"
 WORKFLOW_ROOT = DAY3_ROOT / "workflow"
 DAY3_TEMPLATES = DAY3_ROOT / "templates"
+DAY4_ROOT = VERSION_ROOT / "Week 01" / "Day 04"
+AGENT_ROOT = DAY4_ROOT / "agent"
+DAY4_TEMPLATES = DAY4_ROOT / "templates"
 
 
 def pack_dir(profile: str, release: str = "rel-w1d1") -> Path:
-    if release not in {"rel-w1d1", "rel-w1d2", "rel-w1d3"}:
+    if release not in {"rel-w1d1", "rel-w1d2", "rel-w1d3", "rel-w1d4"}:
         raise SystemExit(f"Unknown release {release}.")
     if profile == "practice":
         return VERSION_ROOT / "data" / release

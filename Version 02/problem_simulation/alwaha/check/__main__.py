@@ -7,14 +7,27 @@ import json
 import sys
 from pathlib import Path
 
+from alwaha.check.agent import agent_problems
 from alwaha.check.approach import approach_problems
 from alwaha.check.brief import brief_problems
 from alwaha.check.events import events_problems
 from alwaha.check.interviews import interview_problems, load_truth
 from alwaha.check.repo import repo_problems
+from alwaha.check.trajectory import trajectory_problems
 from alwaha.config.profile import load
 from alwaha.paths import pack_dir, truth_dir
 from alwaha.samples.measure import measure_pack
+
+
+def _day4(which: str, work: Path, profile) -> tuple[str, list[str]]:
+    pack = pack_dir(profile.name, "rel-w1d4")
+    gold_path = truth_dir(profile.name) / "agent_gold.json"
+    if not pack.is_dir() or not gold_path.is_file():
+        raise SystemExit("Build rel-w1d4 first.")
+    gold = json.loads(gold_path.read_text(encoding="utf-8"))
+    if which == "agent":
+        return "chk-w1-agent", agent_problems(work, pack, gold, profile.canary())
+    return "chk-w1-trajectory", trajectory_problems(work, pack, gold, profile.canary())
 
 
 def _day3(work: Path, profile) -> tuple[str, list[str]]:
@@ -40,7 +53,7 @@ def _day2(which: str, work: Path, profile) -> tuple[str, list[str]]:
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Check a Week 1 work directory.")
-    parser.add_argument("which", choices=("repo", "interview", "approach", "brief", "events"))
+    parser.add_argument("which", choices=("repo", "interview", "approach", "brief", "events", "agent", "trajectory"))
     parser.add_argument("--work", required=True)
     parser.add_argument("--profile", default=None)
     args = parser.parse_args(argv)
@@ -50,6 +63,8 @@ def main(argv: list[str] | None = None) -> None:
         name, problems = _day2(args.which, work, profile)
     elif args.which == "events":
         name, problems = _day3(work, profile)
+    elif args.which in {"agent", "trajectory"}:
+        name, problems = _day4(args.which, work, profile)
     else:
         truth = truth_dir(profile.name) / "personas.json"
         if not truth.is_file():
