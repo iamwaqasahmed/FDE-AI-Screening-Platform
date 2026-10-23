@@ -9,6 +9,8 @@ from alwaha.config.profile import load
 from alwaha.paths import pack_dir, truth_dir
 from alwaha.release.day2 import RELEASE as DAY2
 from alwaha.release.day2 import write_day2
+from alwaha.release.day3 import RELEASE as DAY3
+from alwaha.release.day3 import write_day3
 from alwaha.release.write import RELEASE as DAY1
 from alwaha.release.write import write_release
 
@@ -26,6 +28,10 @@ def main(argv: list[str] | None = None) -> None:
         pack = pack_dir(profile.name, DAY2)
         truth = truth_dir(profile.name)
         digest = write_day2(profile, pack, truth)
+    elif args.release == DAY3:
+        pack = pack_dir(profile.name, DAY3)
+        truth = truth_dir(profile.name)
+        digest = write_day3(profile, pack, truth)
     else:
         raise SystemExit(f"Unknown release {args.release}.")
     print(f"Wrote {args.release} for {profile.name}")

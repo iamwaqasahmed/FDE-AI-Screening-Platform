@@ -1,0 +1,144 @@
+[
+  {
+    "scenario": "order",
+    "referral_id": "ref-150",
+    "state": "approval.held",
+    "due": "2027-01-13",
+    "approval_ids": [
+      "apr-ref-150"
+    ],
+    "booked": false,
+    "criteria_id": "crit-endo-v3",
+    "suggested_facility": "h-wadi",
+    "clinic": "ENDO-CLN",
+    "duplicate": false,
+    "hold": "open",
+    "dead_letter": false
+  },
+  {
+    "scenario": "happy",
+    "referral_id": "ref-100",
+    "state": "approval.held",
+    "due": "2027-01-13",
+    "approval_ids": [
+      "apr-ref-100"
+    ],
+    "booked": false,
+    "criteria_id": "crit-endo-v3",
+    "suggested_facility": "h-wadi",
+    "clinic": "ENDO-CLN",
+    "duplicate": false,
+    "hold": "open",
+    "dead_letter": false
+  },
+  {
+    "scenario": "friday",
+    "referral_id": "ref-120",
+    "state": "approval.held",
+    "due": "2027-01-17",
+    "approval_ids": [
+      "apr-ref-120"
+    ],
+    "booked": false,
+    "criteria_id": "crit-endo-v3",
+    "suggested_facility": "h-wadi",
+    "clinic": "ENDO-CLN",
+    "duplicate": false,
+    "hold": "open",
+    "dead_letter": false
+  },
+  {
+    "scenario": "holiday",
+    "referral_id": "ref-130",
+    "state": "approval.held",
+    "due": "2027-03-14",
+    "approval_ids": [
+      "apr-ref-130"
+    ],
+    "booked": false,
+    "criteria_id": "crit-endo-v3",
+    "suggested_facility": "h-wadi",
+    "clinic": "ENDO-CLN",
+    "duplicate": false,
+    "hold": "open",
+    "dead_letter": false
+  },
+  {
+    "scenario": "ain",
+    "referral_id": "ref-140",
+    "state": "approval.held",
+    "due": "2027-01-14",
+    "approval_ids": [
+      "apr-ref-140"
+    ],
+    "booked": false,
+    "criteria_id": "crit-endo-v3",
+    "suggested_facility": "h-ain",
+    "clinic": "",
+    "duplicate": false,
+    "hold": "none",
+    "dead_letter": false
+  },
+  {
+    "scenario": "replay",
+    "referral_id": "ref-110",
+    "state": "approval.held",
+    "due": "2027-01-13",
+    "approval_ids": [
+      "apr-ref-110"
+    ],
+    "booked": false,
+    "criteria_id": "crit-endo-v3",
+    "suggested_facility": "h-wadi",
+    "clinic": "ENDO-CLN",
+    "duplicate": false,
+    "hold": "open",
+    "dead_letter": false
+  },
+  {
+    "scenario": "duplicate",
+    "referral_id": "ref-160",
+    "state": "approval.held",
+    "due": "2027-01-13",
+    "approval_ids": [
+      "apr-ref-160"
+    ],
+    "booked": false,
+    "criteria_id": "crit-endo-v3",
+    "suggested_facility": "h-wadi",
+    "clinic": "ENDO-CLN",
+    "duplicate": true,
+    "hold": "open",
+    "dead_letter": false
+  },
+  {
+    "scenario": "compensation",
+    "referral_id": "ref-170",
+    "state": "approval.held",
+    "due": "2027-01-13",
+    "approval_ids": [
+      "apr-ref-170"
+    ],
+    "booked": false,
+    "criteria_id": "crit-endo-v3",
+    "suggested_facility": "h-wadi",
+    "clinic": "ENDO-CLN",
+    "duplicate": false,
+    "hold": "released",
+    "dead_letter": false
+  },
+  {
+    "scenario": "dead-letter",
+    "referral_id": "ref-180",
+    "state": "dead-letter",
+    "due": "",
+    "approval_ids": [],
+    "booked": false,
+    "criteria_id": "",
+    "suggested_facility": "",
+    "clinic": "",
+    "duplicate": false,
+    "hold": "none",
+    "dead_letter": true
+  }
+]
