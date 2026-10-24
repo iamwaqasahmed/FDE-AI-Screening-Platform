@@ -1,0 +1,112 @@
+"""Written notes for the Week 2 Day 3 checks. A miss does not name the delay."""
+
+from __future__ import annotations
+
+import re
+from pathlib import Path
+
+from alwaha.check.tables import dict_rows
+
+
+def _text(path: Path) -> str | None:
+    if not path.is_file():
+        return None
+    return path.read_text(encoding="utf-8")
+
+
+def _usability(work: Path, gold: dict) -> list[str]:
+    text = _text(work / "usability.md")
+    problems = []
+    if text and "every patient can use the app alone" in text.lower():
+        problems.append("a usability script is unfinished")
+    rows = dict_rows(text or "", {"script", "finished", "clause"})
+    if not rows:
+        return problems + ["a usability script is unfinished"]
+    finished = {row["script"] for row in rows if row["finished"].lower() == "yes"}
+    needed = {row["id"] for row in gold["scripts"] if row["layer"] == "foundation"}
+    if not needed <= finished:
+        problems.append("a usability script is unfinished")
+    found = {row["clause"] for row in rows}
+    if not set(gold["clauses"]) <= found:
+        problems.append("an accessibility clause is missing")
+    return problems
+
+
+def _done(work: Path, gold: dict) -> list[str]:
+    text = _text(work / "dod.md")
+    if text is None or gold["switch"] not in text or "red" not in text.lower():
+        return ["the fault is not in the definition of done"]
+    return []
+
+
+def _crossings(work: Path) -> list[str]:
+    rows = dict_rows(_text(work / "crossings.md") or "", {"case", "from", "to"})
+    if not rows:
+        return ["a zone-crossing case is missing"]
+    receipt = any(
+        row["case"] == "receipt" and "zone-private" in row["from"] and "partner" in row["to"] for row in rows
+    )
+    calendar = any(
+        row["case"] == "calendar" and row["from"] == "zone-private" and row["to"] == "zone-private" for row in rows
+    )
+    if not receipt or not calendar:
+        return ["a zone-crossing case is missing"]
+    return []
+
+
+def _fixture(work: Path) -> list[str]:
+    text = (_text(work / "fixtures.md") or "").lower()
+    if "fixture" not in text or "state" not in text:
+        return ["the fixture note is missing"]
+    return []
+
+
+def _sprint(work: Path) -> list[str]:
+    text = _text(work / "sprint.md")
+    if text is None:
+        return ["sprint.md does not sequence the suite before sign-off"]
+    lowered = text.lower()
+    suite = lowered.find("suite")
+    if suite < 0:
+        suite = lowered.find("test")
+    sign = lowered.find("usability")
+    if sign < 0:
+        sign = lowered.find("sign-off")
+    if suite < 0 or sign < 0 or suite > sign:
+        return ["sprint.md does not sequence the suite before sign-off"]
+    return []
+
+
+def _ci(work: Path) -> list[str]:
+    text = _text(work / ".github" / "workflows" / "ci.yml")
+    if text is None or "unittest" not in text or "tests" not in text:
+        return ["the suite is not in CI"]
+    return []
+
+
+def _knowledge(work: Path) -> list[str]:
+    text = _text(work / "knowledge.md")
+    answers = [] if text is None else [line for line in text.splitlines() if re.match(r"\s*\d+\.\s+\S", line)]
+    if len(answers) < 2:
+        return ["knowledge.md needs two answers"]
+    problems = []
+    first = answers[0].lower()
+    if "clock" not in first and "switch" not in first:
+        problems.append("knowledge.md does not say why a sleep fails")
+    second = answers[1].lower()
+    recorded = "fixture" in second or "recorded" in second
+    if ("state" not in second and "mock" not in second) or not recorded:
+        problems.append("knowledge.md does not say what an AI journey asserts")
+    return problems
+
+
+def written_problems(work: Path, gold: dict) -> list[str]:
+    return (
+        _usability(work, gold)
+        + _done(work, gold)
+        + _crossings(work)
+        + _fixture(work)
+        + _sprint(work)
+        + _ci(work)
+        + _knowledge(work)
+    )

@@ -1,0 +1,3 @@
+{"actor": "patient", "id": "status-short", "layer": "foundation", "task": "Ask where the referral is. Use a short message."}
+{"actor": "caregiver", "id": "caregiver", "layer": "foundation", "task": "A caregiver asks about her mother's referral."}
+{"actor": "pop-literacy", "id": "phone-only", "layer": "advanced", "task": "Ask the same question by phone, with no app."}

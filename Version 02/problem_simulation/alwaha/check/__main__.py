@@ -18,6 +18,8 @@ from alwaha.check.interviews import interview_problems, load_truth
 from alwaha.check.journey import journey_problems
 from alwaha.check.journey_w2 import journey_problems as journey_w2_problems
 from alwaha.check.readout import readout_problems
+from alwaha.check.tests_w2 import test_problems
+from alwaha.check.ux_w2 import ux_problems
 from alwaha.check.repo import repo_problems
 from alwaha.check.trajectory import trajectory_problems
 from alwaha.config.profile import load
@@ -82,6 +84,17 @@ def _day3(work: Path, profile) -> tuple[str, list[str]]:
     return "chk-w1-events", events_problems(work, pack, gold, profile.canary())
 
 
+def _w2d3(which: str, work: Path, profile) -> tuple[str, list[str]]:
+    pack = pack_dir(profile.name, "rel-w2d3")
+    gold_path = truth_dir(profile.name) / "w2d3_gold.json"
+    if not pack.is_dir() or not gold_path.is_file():
+        raise SystemExit("Build rel-w2d3 first.")
+    gold = json.loads(gold_path.read_text(encoding="utf-8"))
+    if which == "tests":
+        return "chk-w2-tests", test_problems(work, pack, gold, profile.canary())
+    return "chk-w2-ux", ux_problems(work, gold, profile.canary())
+
+
 def _w2d2(work: Path, profile) -> tuple[str, list[str]]:
     pack = pack_dir(profile.name, "rel-w2d2")
     gold_path = truth_dir(profile.name) / "w2d2_gold.json"
@@ -131,6 +144,8 @@ def main(argv: list[str] | None = None) -> None:
             "individual",
             "auth",
             "journey",
+            "tests",
+            "ux",
         ),
     )
     parser.add_argument("--work", required=True)
@@ -143,6 +158,10 @@ def main(argv: list[str] | None = None) -> None:
         if args.release != "rel-w2d1":
             raise SystemExit("auth needs --release rel-w2d1.")
         name, problems = _w2d1(args.which, work, profile)
+    elif args.which in {"tests", "ux"}:
+        if args.release != "rel-w2d3":
+            raise SystemExit("tests and ux need --release rel-w2d3.")
+        name, problems = _w2d3(args.which, work, profile)
     elif args.which == "journey" and args.release == "rel-w2d2":
         name, problems = _w2d2(work, profile)
     elif args.which == "journey":
