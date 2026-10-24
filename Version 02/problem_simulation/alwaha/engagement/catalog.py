@@ -13,11 +13,25 @@ ROSTER_A: tuple[dict, ...] = (
         "role": "Chief Digital and Transformation Officer",
         "says_first": "The virtual front desk, including triage, goes live before Ramadan.",
         "goals": ("One front door for every hospital.", "Live before Ramadan."),
-        "facts": (("gpu-lead-time", "The board date assumes a GPU purchase, and that purchase takes 16 weeks."),),
+        "facts": (
+            ("gpu-lead-time", "The board date assumes a GPU purchase, and that purchase takes 16 weeks."),
+            (
+                "eye-campaign",
+                "An eye-screening campaign is coming. The session plan still uses last year's months.",
+                False,
+            ),
+        ),
         "banned": ("Triage is already approved.",),
         "tree": (
             ("deadline", ("deadline", "date", "ramadan", "when", "live"), "The board has already named a date, and it sits just before Ramadan.", (), ""),
             ("purchase", ("gpu", "purchase", "buy", "procurement", "hardware"), "That date only holds if the hardware is already here. The board date assumes a GPU purchase, and that purchase takes 16 weeks.", ("gpu-lead-time",), "deadline"),
+            (
+                "campaign",
+                ("campaign", "screening", "eye", "upcoming", "announce"),
+                "An eye-screening campaign is coming. The session plan still uses last year's months.",
+                ("eye-campaign",),
+                "deadline",
+            ),
         ),
     },
     {

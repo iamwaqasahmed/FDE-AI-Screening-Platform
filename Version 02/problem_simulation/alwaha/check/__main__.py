@@ -25,6 +25,8 @@ from alwaha.check.dispatch_w3d2 import model as w3d2_model
 from alwaha.check.dispatch_w3d3 import acl as w3d3_acl
 from alwaha.check.dispatch_w3d3 import hybrid as w3d3_hybrid
 from alwaha.check.dispatch_w3d3 import rag as w3d3_rag
+from alwaha.check.dispatch_w3d4 import evaluation as w3d4_eval
+from alwaha.check.dispatch_w3d4 import judge as w3d4_judge
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
@@ -177,6 +179,8 @@ def main(argv: list[str] | None = None) -> None:
             "rag",
             "hybrid",
             "acl",
+            "eval",
+            "judge",
         ),
     )
     parser.add_argument("--work", required=True)
@@ -244,6 +248,13 @@ def main(argv: list[str] | None = None) -> None:
             name, problems = w3d3_hybrid(work, profile)
         else:
             name, problems = w3d3_acl(work, profile)
+    elif args.which in {"eval", "judge"}:
+        if args.release != "rel-w3d4":
+            raise SystemExit("eval and judge need --release rel-w3d4.")
+        if args.which == "eval":
+            name, problems = w3d4_eval(work, profile)
+        else:
+            name, problems = w3d4_judge(work, profile)
     elif args.which in {"design", "readout", "individual"}:
         name, problems = _day5_written(args.which, work, profile)
     else:

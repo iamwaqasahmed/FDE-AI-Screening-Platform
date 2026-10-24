@@ -1,0 +1,9 @@
+{
+  "method": "dot-vote",
+  "ranked": [
+    "p-triage",
+    "vendor-bot",
+    "p-status",
+    "p-dna"
+  ]
+}

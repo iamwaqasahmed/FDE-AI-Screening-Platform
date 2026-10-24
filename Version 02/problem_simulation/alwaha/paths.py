@@ -34,6 +34,8 @@ W3D2_ROOT = VERSION_ROOT / "Week 03" / "Day 02"
 W3D2_APP = W3D2_ROOT / "app"
 W3D3_ROOT = VERSION_ROOT / "Week 03" / "Day 03"
 W3D3_APP = W3D3_ROOT / "app"
+W3D4_ROOT = VERSION_ROOT / "Week 03" / "Day 04"
+W3D4_APP = W3D4_ROOT / "app"
 
 
 def pack_dir(profile: str, release: str = "rel-w1d1") -> Path:
@@ -51,6 +53,7 @@ def pack_dir(profile: str, release: str = "rel-w1d1") -> Path:
         "rel-w3d1",
         "rel-w3d2",
         "rel-w3d3",
+        "rel-w3d4",
     }
     if release not in known:
         raise SystemExit(f"Unknown release {release}.")
