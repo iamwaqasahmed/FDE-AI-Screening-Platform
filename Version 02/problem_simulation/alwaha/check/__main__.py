@@ -35,6 +35,8 @@ from alwaha.check.dispatch_w4d1 import access as w4d1_access
 from alwaha.check.dispatch_w4d1 import fair as w4d1_fair
 from alwaha.check.dispatch_w4d1 import privacy as w4d1_privacy
 from alwaha.check.dispatch_w4d1 import redteam as w4d1_redteam
+from alwaha.check.dispatch_w4d2 import cache as w4d2_cache
+from alwaha.check.dispatch_w4d2 import incident as w4d2_incident
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
@@ -194,6 +196,8 @@ def main(argv: list[str] | None = None) -> None:
             "privacy",
             "access",
             "fair",
+            "incident",
+            "cache",
         ),
     )
     parser.add_argument("--work", required=True)
@@ -282,6 +286,13 @@ def main(argv: list[str] | None = None) -> None:
             name, problems = w4d1_access(work, profile)
         else:
             name, problems = w4d1_fair(work, profile)
+    elif args.which in {"incident", "cache"}:
+        if args.release != "rel-w4d2":
+            raise SystemExit("incident and cache need --release rel-w4d2.")
+        if args.which == "incident":
+            name, problems = w4d2_incident(work, profile)
+        else:
+            name, problems = w4d2_cache(work, profile)
     elif args.which in {"eval", "judge"}:
         if args.release != "rel-w3d4":
             raise SystemExit("eval needs --release rel-w3d4 or rel-w3d5. judge needs --release rel-w3d4.")

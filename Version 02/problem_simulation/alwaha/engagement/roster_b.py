@@ -12,12 +12,22 @@ ROSTER_B: tuple[dict, ...] = (
         "facts": (
             ("checklist", "The go-live checklist is the list the security office will use at gate G4."),
             ("engine-log", "Patient data has been in the integration-engine log since change CHG-2025-118."),
+            ("replay-alert", "The incident replay already contains the alert. Do not add a new bug."),
+            ("cpu-blind", "A CPU dashboard misses the tool failures."),
         ),
         "banned": ("The integration-engine log is clean.",),
         "tree": (
             ("review", ("security", "review", "end", "late"), "The review is booked at the end. The list itself already exists.", (), ""),
             ("checklist", ("checklist", "golive", "gate", "g4"), "The go-live checklist is the list the security office will use at gate G4.", ("checklist",), "review"),
             ("log", ("log", "engine", "change", "chg"), "Patient data has been in the integration-engine log since change CHG-2025-118.", ("engine-log",), "review"),
+            (
+                "replay",
+                ("replay", "incident", "telemetry"),
+                "The incident replay already contains the alert. Do not add a new bug.",
+                ("replay-alert",),
+                "",
+            ),
+            ("cpu", ("cpu", "dashboard", "miss"), "A CPU dashboard misses the tool failures.", ("cpu-blind",), "replay"),
         ),
     },
     {
@@ -105,12 +115,20 @@ ROSTER_B: tuple[dict, ...] = (
         "facts": (
             ("ramadan-day", "His mother is offered daytime slots in Ramadan, and that is when she misses the appointment."),
             ("caregiver", "A caregiver books for her."),
+            ("old-hours", "She is still offered the old evening close after the circular."),
         ),
         "banned": ("Every patient can use the app alone.",),
         "tree": (
             ("phone", ("phone", "line", "call", "answers"), "The phone line is the door most families still use.", (), ""),
             ("ramadan", ("ramadan", "daytime", "mother", "slot", "misses"), "His mother is offered daytime slots in Ramadan, and that is when she misses the appointment.", ("ramadan-day",), "phone"),
             ("caregiver", ("caregiver", "books", "family", "daughter"), "A caregiver books for her.", ("caregiver",), "phone"),
+            (
+                "hours",
+                ("hours", "circular", "offered", "evening"),
+                "She is still offered the old evening close after the circular.",
+                ("old-hours",),
+                "phone",
+            ),
         ),
     },
     {
