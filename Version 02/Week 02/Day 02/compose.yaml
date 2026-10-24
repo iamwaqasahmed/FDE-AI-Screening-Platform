@@ -1,0 +1,10 @@
+# Laptop stand-in for the dev namespace. Chat, the staff console, and the worker.
+name: alwaha-dev
+services:
+  assistant:
+    build: .
+    ports:
+      - "8080:8080"
+  wf-session-cancelled:
+    build: .
+    command: ["python", "run.py"]

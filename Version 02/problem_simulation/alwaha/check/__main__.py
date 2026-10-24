@@ -16,6 +16,7 @@ from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
 from alwaha.check.journey import journey_problems
+from alwaha.check.journey_w2 import journey_problems as journey_w2_problems
 from alwaha.check.readout import readout_problems
 from alwaha.check.repo import repo_problems
 from alwaha.check.trajectory import trajectory_problems
@@ -81,6 +82,15 @@ def _day3(work: Path, profile) -> tuple[str, list[str]]:
     return "chk-w1-events", events_problems(work, pack, gold, profile.canary())
 
 
+def _w2d2(work: Path, profile) -> tuple[str, list[str]]:
+    pack = pack_dir(profile.name, "rel-w2d2")
+    gold_path = truth_dir(profile.name) / "w2d2_gold.json"
+    if not pack.is_dir() or not gold_path.is_file():
+        raise SystemExit("Build rel-w2d2 first.")
+    gold = json.loads(gold_path.read_text(encoding="utf-8"))
+    return "chk-w2-journey", journey_w2_problems(work, pack, gold, profile.canary())
+
+
 def _w2d1(which: str, work: Path, profile) -> tuple[str, list[str]]:
     pack = pack_dir(profile.name, "rel-w2d1")
     gold_path = truth_dir(profile.name) / "w2d1_gold.json"
@@ -129,9 +139,15 @@ def main(argv: list[str] | None = None) -> None:
     args = parser.parse_args(argv)
     profile = load(args.profile)
     work = Path(args.work)
-    if args.which in {"auth", "journey"}:
+    if args.which == "auth":
         if args.release != "rel-w2d1":
-            raise SystemExit("auth and journey need --release rel-w2d1.")
+            raise SystemExit("auth needs --release rel-w2d1.")
+        name, problems = _w2d1(args.which, work, profile)
+    elif args.which == "journey" and args.release == "rel-w2d2":
+        name, problems = _w2d2(work, profile)
+    elif args.which == "journey":
+        if args.release != "rel-w2d1":
+            raise SystemExit("journey needs --release rel-w2d1 or rel-w2d2.")
         name, problems = _w2d1(args.which, work, profile)
     elif args.which in {"approach", "brief"}:
         name, problems = _day2(args.which, work, profile)

@@ -52,6 +52,9 @@ ROSTER_A: tuple[dict, ...] = (
             ("cost", ("cost", "no-show", "noshow", "dna", "miss"), "No-shows are what I feel in the clinic. The ledger is a different story.", (), ""),
             ("returns", ("return", "unused", "session", "slot", "bounce"), "The return loop and the unused sessions cost more than the no-shows once they are counted.", ("returns-and-slots",), "cost"),
             ("calls", ("call", "contact", "reason", "status", "phone"), "A large share of contact-center calls are people asking for the status of a referral.", ("reason-mix",), "cost"),
+            ("notify", ("cancelled", "cancellation", "sms", "texted"), "A cancelled session is told by SMS.", (), "calls"),
+            ("whatsapp", ("whatsapp", "template", "window"), "WhatsApp is the new channel. A reply dies after the session window.", (), "calls"),
+            ("desk", ("desk", "figure", "trusted"), "The mart wait figure is not the number I use at the desk.", (), "calls"),
         ),
     },
     {

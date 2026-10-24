@@ -1,0 +1,3 @@
+{"booking_id": "bkg-1", "event_id": "evt-can-1", "facility_id": "h-wadi", "occurred_at": "2027-01-18T10:00:00", "scenario": "happy", "sequence": 1, "session_id": "ses-1", "slot": true, "topic": "session.cancelled"}
+{"booking_id": "bkg-1", "event_id": "evt-can-1", "facility_id": "h-wadi", "occurred_at": "2027-01-18T10:00:00", "scenario": "replay", "sequence": 1, "session_id": "ses-1", "slot": true, "topic": "session.cancelled"}
+{"booking_id": "bkg-2", "event_id": "evt-can-2", "facility_id": "h-wadi", "occurred_at": "2027-01-18T11:00:00", "scenario": "compensate", "sequence": 1, "session_id": "ses-2", "slot": true, "topic": "session.cancelled"}

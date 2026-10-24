@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: eref
+  version: "2"
+paths:
+  /referrals/{referral_id}:
+    get:
+      operationId: readReferral
+      responses:
+        "200":
+          description: Polling is the previous intake.
+  /subscriptions/referral.submitted:
+    post:
+      operationId: subscribeReferralSubmitted
+      responses:
+        "202":
+          description: Webhook subscription.

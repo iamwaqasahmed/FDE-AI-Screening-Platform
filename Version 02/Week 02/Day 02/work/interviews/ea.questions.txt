@@ -1,0 +1,5 @@
+What is the API strategy?
+Do h-nakhl and h-safra still send HL7, and is h-wadi on the private cloud?
+Does eref push a webhook subscription now?
+Who owns the referral.submitted contract?
+Which zone is the integration engine in?

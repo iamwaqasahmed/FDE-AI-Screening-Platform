@@ -36,6 +36,9 @@ ROSTER_B: tuple[dict, ...] = (
             ("ain", ("ain", "file", "nightly", "schedule"), "h-ain publishes slots only as a nightly file.", ("ain-file",), "api"),
             ("hl7", ("hl7", "nakhl", "safra", "wadi", "message"), "h-nakhl and h-safra still send HL7 v2. h-wadi is the hospital on the private cloud.", ("hl7-pair",), "api"),
             ("fhir", ("fhir", "notice", "version", "spec"), "The version bump is the notice in this release. Read notices/fhir-v2.md.", (), "hl7"),
+            ("webhook", ("webhook", "push", "subscribe", "subscription"), "eref now pushes referral.submitted. Polling is the old path.", (), "hl7"),
+            ("owner", ("owner", "owns", "owned", "contract"), "referral.submitted is owned by eref.", (), "hl7"),
+            ("engine", ("engine", "zone", "crossing"), "HL7 from h-nakhl and h-safra lands in int-engine, in zone-hospital.", (), "hl7"),
         ),
     },
     {

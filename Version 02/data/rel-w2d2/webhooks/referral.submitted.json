@@ -1,0 +1,10 @@
+{
+  "event_id": "evt-ref-200",
+  "letter": "CANARY-396125ab9410",
+  "occurred_at": "2027-01-18T09:00:00",
+  "patient_key": "pt-200",
+  "priorityHint": "soon",
+  "referral_id": "ref-200",
+  "sequence": 1,
+  "topic": "referral.submitted"
+}
