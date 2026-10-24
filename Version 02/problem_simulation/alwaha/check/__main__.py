@@ -31,6 +31,10 @@ from alwaha.check.dispatch_w3d5 import evaluation as w3d5_eval
 from alwaha.check.dispatch_w3d5 import individual as w3d5_individual
 from alwaha.check.dispatch_w3d5 import rcp as w3d5_rcp
 from alwaha.check.dispatch_w3d5 import readout as w3d5_readout
+from alwaha.check.dispatch_w4d1 import access as w4d1_access
+from alwaha.check.dispatch_w4d1 import fair as w4d1_fair
+from alwaha.check.dispatch_w4d1 import privacy as w4d1_privacy
+from alwaha.check.dispatch_w4d1 import redteam as w4d1_redteam
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
@@ -186,6 +190,10 @@ def main(argv: list[str] | None = None) -> None:
             "eval",
             "judge",
             "rcp",
+            "redteam",
+            "privacy",
+            "access",
+            "fair",
         ),
     )
     parser.add_argument("--work", required=True)
@@ -263,6 +271,17 @@ def main(argv: list[str] | None = None) -> None:
         if args.release != "rel-w3d5":
             raise SystemExit("rcp needs --release rel-w3d5.")
         name, problems = w3d5_rcp(work, profile)
+    elif args.which in {"redteam", "privacy", "access", "fair"}:
+        if args.release != "rel-w4d1":
+            raise SystemExit("redteam, privacy, access, and fair need --release rel-w4d1.")
+        if args.which == "redteam":
+            name, problems = w4d1_redteam(work, profile)
+        elif args.which == "privacy":
+            name, problems = w4d1_privacy(work, profile)
+        elif args.which == "access":
+            name, problems = w4d1_access(work, profile)
+        else:
+            name, problems = w4d1_fair(work, profile)
     elif args.which in {"eval", "judge"}:
         if args.release != "rel-w3d4":
             raise SystemExit("eval needs --release rel-w3d4 or rel-w3d5. judge needs --release rel-w3d4.")

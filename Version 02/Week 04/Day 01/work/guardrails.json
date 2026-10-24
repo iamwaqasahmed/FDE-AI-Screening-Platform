@@ -1,0 +1,24 @@
+{
+  "checklist": [
+    "non-root",
+    "health-probe",
+    "resource-limits",
+    "no-phi-in-logs",
+    "image-provenance",
+    "registered-model-hash"
+  ],
+  "families": [
+    "atk-direct",
+    "atk-indirect",
+    "atk-disclose",
+    "atk-supply",
+    "atk-poison",
+    "atk-output",
+    "atk-agency",
+    "atk-prompt",
+    "atk-embed",
+    "atk-misinfo",
+    "atk-tokens",
+    "atk-hoard"
+  ]
+}

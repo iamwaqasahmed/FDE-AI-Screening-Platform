@@ -35,6 +35,8 @@ from alwaha.release.w3d4 import RELEASE as W3D4
 from alwaha.release.w3d4 import write_w3d4
 from alwaha.release.w3d5 import RELEASE as W3D5
 from alwaha.release.w3d5 import write_w3d5
+from alwaha.release.w4d1 import RELEASE as W4D1
+from alwaha.release.w4d1 import write_w4d1
 from alwaha.release.write import RELEASE as DAY1
 from alwaha.release.write import write_release
 
@@ -104,6 +106,10 @@ def main(argv: list[str] | None = None) -> None:
         pack = pack_dir(profile.name, W3D5)
         truth = truth_dir(profile.name)
         digest = write_w3d5(profile, pack, truth)
+    elif args.release == W4D1:
+        pack = pack_dir(profile.name, W4D1)
+        truth = truth_dir(profile.name)
+        digest = write_w4d1(profile, pack, truth)
     else:
         raise SystemExit(f"Unknown release {args.release}.")
     print(f"Wrote {args.release} for {profile.name}")
