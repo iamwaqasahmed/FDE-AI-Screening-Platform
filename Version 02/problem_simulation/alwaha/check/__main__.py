@@ -39,6 +39,7 @@ from alwaha.check.dispatch_w4d2 import cache as w4d2_cache
 from alwaha.check.dispatch_w4d2 import incident as w4d2_incident
 from alwaha.check.dispatch_w4d3 import slo as w4d3_slo
 from alwaha.check.dispatch_w4d3 import surge as w4d3_surge
+from alwaha.check.dispatch_w4d4 import slo as w4d4_slo
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
@@ -297,13 +298,17 @@ def main(argv: list[str] | None = None) -> None:
             name, problems = w4d2_incident(work, profile)
         else:
             name, problems = w4d2_cache(work, profile)
-    elif args.which in {"slo", "surge"}:
+    elif args.which == "surge":
         if args.release != "rel-w4d3":
-            raise SystemExit("slo and surge need --release rel-w4d3.")
-        if args.which == "slo":
+            raise SystemExit("surge needs --release rel-w4d3.")
+        name, problems = w4d3_surge(work, profile)
+    elif args.which == "slo":
+        if args.release == "rel-w4d3":
             name, problems = w4d3_slo(work, profile)
+        elif args.release == "rel-w4d4":
+            name, problems = w4d4_slo(work, profile)
         else:
-            name, problems = w4d3_surge(work, profile)
+            raise SystemExit("slo needs --release rel-w4d3 or rel-w4d4.")
     elif args.which in {"eval", "judge"}:
         if args.release != "rel-w3d4":
             raise SystemExit("eval needs --release rel-w3d4 or rel-w3d5. judge needs --release rel-w3d4.")

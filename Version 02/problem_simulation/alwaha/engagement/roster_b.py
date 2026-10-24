@@ -39,6 +39,21 @@ ROSTER_B: tuple[dict, ...] = (
         "facts": (
             ("ain-file", "h-ain publishes slots only as a nightly file."),
             ("hl7-pair", "h-nakhl and h-safra still send HL7 v2. h-wadi is the hospital on the private cloud."),
+            (
+                "site-takeover",
+                "site-b is the second private-cloud site. It takes over when site-a is down.",
+                False,
+            ),
+            (
+                "workflow-store",
+                "In-flight approvals live in the workflow store. They are not on the pod.",
+                False,
+            ),
+            (
+                "insure-partner",
+                "insure is a partner. It is not a site.",
+                False,
+            ),
         ),
         "banned": ("Every hospital has a live slot API.",),
         "tree": (
@@ -56,6 +71,27 @@ ROSTER_B: tuple[dict, ...] = (
             ("webhook", ("webhook", "push", "subscribe", "subscription"), "eref now pushes referral.submitted. Polling is the old path.", (), "hl7"),
             ("owner", ("owner", "owns", "owned", "contract"), "referral.submitted is owned by eref.", (), "hl7"),
             ("engine", ("engine", "zone", "crossing"), "HL7 from h-nakhl and h-safra lands in int-engine, in zone-hospital.", (), "hl7"),
+            (
+                "site",
+                ("site-b", "site", "drill", "failover"),
+                "site-b is the second private-cloud site. It takes over when site-a is down.",
+                ("site-takeover",),
+                "api",
+            ),
+            (
+                "store",
+                ("approval", "workflow", "inflight", "pod"),
+                "In-flight approvals live in the workflow store. They are not on the pod.",
+                ("workflow-store",),
+                "site",
+            ),
+            (
+                "partner",
+                ("insure", "partner", "insurance"),
+                "insure is a partner. It is not a site.",
+                ("insure-partner",),
+                "site",
+            ),
         ),
     },
     {
@@ -107,6 +143,11 @@ ROSTER_B: tuple[dict, ...] = (
                 "The external token price on today's release replaces yesterday's price. A plan at yesterday's price is rejected.",
                 False,
             ),
+            (
+                "purchase-deadline",
+                "A GPU purchase started on this release misses 8 February 2027. Renting meets that date.",
+                False,
+            ),
         ),
         "banned": ("The vendor saving and the contact-center saving are separate.",),
         "tree": (
@@ -127,6 +168,13 @@ ROSTER_B: tuple[dict, ...] = (
                 "The external token price on today's release replaces yesterday's price. A plan at yesterday's price is rejected.",
                 ("price-today",),
                 "prices",
+            ),
+            (
+                "deadline",
+                ("february", "ramadan", "deadline", "arrive"),
+                "A GPU purchase started on this release misses 8 February 2027. Renting meets that date.",
+                ("purchase-deadline",),
+                "gpu",
             ),
         ),
     },
