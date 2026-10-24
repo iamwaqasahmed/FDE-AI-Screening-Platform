@@ -11,8 +11,8 @@ def jobs() -> list[tuple[str, str, object]]:
     return [
         ("repo", "", DAY1),
         ("interview", "", DAY1),
-        ("approach", "", paths.DAY2_ROOT / "work"),
-        ("brief", "", paths.DAY2_ROOT / "work"),
+        ("approach", "", paths.DAY2_WORK),
+        ("brief", "", paths.DAY2_WORK),
         ("events", "", paths.DAY3_ROOT / "work"),
         ("agent", "", paths.DAY4_ROOT / "work"),
         ("trajectory", "", paths.DAY4_ROOT / "work"),

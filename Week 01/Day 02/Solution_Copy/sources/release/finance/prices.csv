@@ -1,0 +1,13 @@
+key,sar
+cost.slot_missed,598
+cost.return_cycle,244
+cost.coordinator_hour,55
+cost.call_minute,3
+cost.sms,1
+cost.wa_template,1
+cost.label,3
+cost.gpu_hour_rent,42
+cost.gpu_buy,23520
+price.ext_large_per_1k,20
+price.local_per_1k,3
+harm.week_waiting,150
