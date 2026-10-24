@@ -1,3 +1,0 @@
-What is the API strategy across the hospitals?
-Does h-ain publish slots only as a nightly file?
-Do h-nakhl and h-safra still send HL7, and is h-wadi on the private cloud?

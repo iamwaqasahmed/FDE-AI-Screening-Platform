@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: eref
+  version: "1"
+paths:
+  /referrals/{referral_id}:
+    get:
+      operationId: readReferral
+      responses:
+        "200":
+          description: The referral.
+  /referrals/{referral_id}/decision:
+    post:
+      operationId: decideReferral
+      responses:
+        "202":
+          description: Held for a coordinator.
