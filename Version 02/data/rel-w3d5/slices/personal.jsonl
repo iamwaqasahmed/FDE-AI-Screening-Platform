@@ -1,0 +1,4 @@
+{"asker": "patient", "audience": "patient", "doc_id": "circ-ramadan", "kind": "citation", "version": "v4"}
+{"asker": "patient", "audience": "staff", "doc_id": "prep-staff", "kind": "citation", "version": "v2"}
+{"floor": 0.8, "kind": "metric", "name": "citation", "value": 0.9}
+{"floor": 0.8, "kind": "metric", "name": "citation", "value": 0.5}

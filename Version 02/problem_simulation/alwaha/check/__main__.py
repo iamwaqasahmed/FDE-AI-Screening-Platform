@@ -27,6 +27,10 @@ from alwaha.check.dispatch_w3d3 import hybrid as w3d3_hybrid
 from alwaha.check.dispatch_w3d3 import rag as w3d3_rag
 from alwaha.check.dispatch_w3d4 import evaluation as w3d4_eval
 from alwaha.check.dispatch_w3d4 import judge as w3d4_judge
+from alwaha.check.dispatch_w3d5 import evaluation as w3d5_eval
+from alwaha.check.dispatch_w3d5 import individual as w3d5_individual
+from alwaha.check.dispatch_w3d5 import rcp as w3d5_rcp
+from alwaha.check.dispatch_w3d5 import readout as w3d5_readout
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
@@ -181,6 +185,7 @@ def main(argv: list[str] | None = None) -> None:
             "acl",
             "eval",
             "judge",
+            "rcp",
         ),
     )
     parser.add_argument("--work", required=True)
@@ -219,6 +224,10 @@ def main(argv: list[str] | None = None) -> None:
         name, problems = _day5_score(args.which, work, profile)
     elif args.which in {"agent", "trajectory"}:
         name, problems = _day4(args.which, work, profile)
+    elif args.which == "readout" and args.release == "rel-w3d5":
+        name, problems = w3d5_readout(work, profile)
+    elif args.which == "individual" and args.release == "rel-w3d5":
+        name, problems = w3d5_individual(work, profile)
     elif args.which == "readout" and args.release == "rel-w2d5":
         name, problems = w2d5_readout(work, profile)
     elif args.which == "individual" and args.release == "rel-w2d5":
@@ -248,9 +257,15 @@ def main(argv: list[str] | None = None) -> None:
             name, problems = w3d3_hybrid(work, profile)
         else:
             name, problems = w3d3_acl(work, profile)
+    elif args.which == "eval" and args.release == "rel-w3d5":
+        name, problems = w3d5_eval(work, profile)
+    elif args.which == "rcp":
+        if args.release != "rel-w3d5":
+            raise SystemExit("rcp needs --release rel-w3d5.")
+        name, problems = w3d5_rcp(work, profile)
     elif args.which in {"eval", "judge"}:
         if args.release != "rel-w3d4":
-            raise SystemExit("eval and judge need --release rel-w3d4.")
+            raise SystemExit("eval needs --release rel-w3d4 or rel-w3d5. judge needs --release rel-w3d4.")
         if args.which == "eval":
             name, problems = w3d4_eval(work, profile)
         else:
