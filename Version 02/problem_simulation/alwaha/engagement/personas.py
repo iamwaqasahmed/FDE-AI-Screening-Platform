@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from alwaha.engagement.catalog import PERSONAS
 from alwaha.engagement.model import Node
+from alwaha.engagement.w4d5_asks import extend
 
 BUDGET = 12
 
@@ -39,7 +40,7 @@ def _as_persona(row: dict) -> dict:
 
 
 def load_personas() -> dict[str, dict]:
-    personas = {row["id"]: _as_persona(row) for row in PERSONAS}
+    personas = {row["id"]: _as_persona(extend(row)) for row in PERSONAS}
     problems = validate(personas)
     if problems:
         raise SystemExit("Persona catalog: " + "; ".join(problems))

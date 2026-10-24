@@ -40,6 +40,11 @@ from alwaha.check.dispatch_w4d2 import incident as w4d2_incident
 from alwaha.check.dispatch_w4d3 import slo as w4d3_slo
 from alwaha.check.dispatch_w4d3 import surge as w4d3_surge
 from alwaha.check.dispatch_w4d4 import slo as w4d4_slo
+from alwaha.check.dispatch_w4d5 import individual as w4d5_individual
+from alwaha.check.dispatch_w4d5 import integrate as w4d5_integrate
+from alwaha.check.dispatch_w4d5 import ops as w4d5_ops
+from alwaha.check.dispatch_w4d5 import rcp as w4d5_rcp
+from alwaha.check.dispatch_w4d5 import readout as w4d5_readout
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
@@ -203,6 +208,8 @@ def main(argv: list[str] | None = None) -> None:
             "cache",
             "slo",
             "surge",
+            "integrate",
+            "ops",
         ),
     )
     parser.add_argument("--work", required=True)
@@ -241,6 +248,10 @@ def main(argv: list[str] | None = None) -> None:
         name, problems = _day5_score(args.which, work, profile)
     elif args.which in {"agent", "trajectory"}:
         name, problems = _day4(args.which, work, profile)
+    elif args.which == "readout" and args.release == "rel-w4d5":
+        name, problems = w4d5_readout(work, profile)
+    elif args.which == "individual" and args.release == "rel-w4d5":
+        name, problems = w4d5_individual(work, profile)
     elif args.which == "readout" and args.release == "rel-w3d5":
         name, problems = w3d5_readout(work, profile)
     elif args.which == "individual" and args.release == "rel-w3d5":
@@ -276,10 +287,20 @@ def main(argv: list[str] | None = None) -> None:
             name, problems = w3d3_acl(work, profile)
     elif args.which == "eval" and args.release == "rel-w3d5":
         name, problems = w3d5_eval(work, profile)
+    elif args.which == "rcp" and args.release == "rel-w4d5":
+        name, problems = w4d5_rcp(work, profile)
     elif args.which == "rcp":
         if args.release != "rel-w3d5":
-            raise SystemExit("rcp needs --release rel-w3d5.")
+            raise SystemExit("rcp needs --release rel-w3d5 or rel-w4d5.")
         name, problems = w3d5_rcp(work, profile)
+    elif args.which == "integrate":
+        if args.release != "rel-w4d5":
+            raise SystemExit("integrate needs --release rel-w4d5.")
+        name, problems = w4d5_integrate(work, profile)
+    elif args.which == "ops":
+        if args.release != "rel-w4d5":
+            raise SystemExit("ops needs --release rel-w4d5.")
+        name, problems = w4d5_ops(work, profile)
     elif args.which in {"redteam", "privacy", "access", "fair"}:
         if args.release != "rel-w4d1":
             raise SystemExit("redteam, privacy, access, and fair need --release rel-w4d1.")

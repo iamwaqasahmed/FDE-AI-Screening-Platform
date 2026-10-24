@@ -1,0 +1,16 @@
+{
+  "patient_groups": [
+    "app",
+    "caregiver",
+    "phone-only"
+  ],
+  "roles": [
+    "coordinators",
+    "contact-center",
+    "phc-clerks"
+  ],
+  "skew": {
+    "group": "phone-only",
+    "site": "phc-rim"
+  }
+}
