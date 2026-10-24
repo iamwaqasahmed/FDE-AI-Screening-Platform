@@ -75,6 +75,11 @@ ROSTER_B: tuple[dict, ...] = (
             ("rent-or-buy", "Buying GPUs takes 16 weeks. Renting them does not."),
             ("double-benefit", "The vendor saving and the contact-center saving count the same calls."),
             ("unit-prices", "SMS and annotation labels are on the price sheet."),
+            (
+                "gpu-quota",
+                "The quota is a count of GPUs on today's release. The price cap is on that note. A cloud fine-tune is not in the budget.",
+                False,
+            ),
         ),
         "banned": ("The vendor saving and the contact-center saving are separate.",),
         "tree": (
@@ -82,6 +87,13 @@ ROSTER_B: tuple[dict, ...] = (
             ("gpu", ("gpu", "rent", "buy", "purchase", "weeks"), "Buying GPUs takes 16 weeks. Renting them does not.", ("rent-or-buy",), "budget"),
             ("benefit", ("benefit", "saving", "double", "vendor"), "The vendor saving and the contact-center saving count the same calls.", ("double-benefit",), "budget"),
             ("prices", ("sms", "label", "price", "sheet", "annotation"), "SMS and annotation labels are on the price sheet.", ("unit-prices",), "budget"),
+            (
+                "quota",
+                ("quota", "cap"),
+                "The quota is a count of GPUs on today's release. The price cap is on that note. A cloud fine-tune is not in the budget.",
+                ("gpu-quota",),
+                "budget",
+            ),
         ),
     },
     {

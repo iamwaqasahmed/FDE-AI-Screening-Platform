@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: router
+  version: "1"
+paths:
+  /route:
+    post:
+      operationId: routeCall
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [model, hash]
+              properties:
+                model:
+                  type: string
+                hash:
+                  type: string
+                fields:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: The call is allowed. The hash is on reg-models, and a phi field was not sent to ext-large.
+        "403":
+          description: Refused. A phi field was sent to ext-large, or the hash is not on reg-models.

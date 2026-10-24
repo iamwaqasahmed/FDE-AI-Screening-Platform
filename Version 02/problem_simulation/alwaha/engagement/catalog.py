@@ -96,12 +96,26 @@ ROSTER_A: tuple[dict, ...] = (
         "role": "Data Protection Officer",
         "says_first": "Patient data needs care.",
         "goals": ("Patient data stays in the private cloud.", "Training data stays here too."),
-        "facts": (("unsigned-ruling", "An unsigned ruling says patient data stays off the external model ext-large, and training stays on the private cloud."),),
+        "facts": (
+            ("unsigned-ruling", "An unsigned ruling says patient data stays off the external model ext-large, and training stays on the private cloud."),
+            (
+                "signed-ruling",
+                "I signed the ruling this morning. The fields are named on the release. Patient data stays off the external model ext-large, and training stays on the private cloud.",
+                False,
+            ),
+        ),
         "banned": ("The external model may receive identified patient data.",),
         "tree": (
             ("care", ("data", "patient", "privacy", "protection"), "I have a draft on my desk. It is not signed.", (), ""),
             ("ruling", ("ruling", "unsigned", "cloud", "train", "external", "model"), "An unsigned ruling says patient data stays off the external model ext-large, and training stays on the private cloud.", ("unsigned-ruling",), "care"),
             ("request", ("request", "approved", "history", "sample"), "The data request for the full history is approved. Patient data still stays off the external model ext-large.", (), "care"),
+            (
+                "signed",
+                ("signed", "sign", "signature"),
+                "I signed the ruling this morning. The fields are named on the release. Patient data stays off the external model ext-large, and training stays on the private cloud.",
+                ("signed-ruling",),
+                "ruling",
+            ),
         ),
     },
 )

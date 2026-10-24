@@ -1,0 +1,6 @@
+{"intent": "status", "message_id": "dev-message-1", "text": "What is the status of my referral?"}
+{"intent": "emergency", "message_id": "dev-message-2", "text": "Where is my referral? I have chest pain and I need a slot."}
+{"intent": "book", "message_id": "dev-message-3", "text": "I want to book a morning slot."}
+{"intent": "cancel", "message_id": "dev-message-4", "text": "Cancel this visit."}
+{"intent": "info", "message_id": "dev-message-5", "text": "What documents do I bring?"}
+{"intent": "reschedule", "message_id": "dev-message-6", "text": "Can I reschedule to Sunday?"}

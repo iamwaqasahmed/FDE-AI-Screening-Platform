@@ -20,6 +20,8 @@ from alwaha.check.dispatch_w2d5 import readout as w2d5_readout
 from alwaha.check.dispatch_w3d1 import identity as w3d1_identity
 from alwaha.check.dispatch_w3d1 import labels as w3d1_labels
 from alwaha.check.dispatch_w3d1 import synthetic as w3d1_synthetic
+from alwaha.check.dispatch_w3d2 import lora as w3d2_lora
+from alwaha.check.dispatch_w3d2 import model as w3d2_model
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
@@ -167,6 +169,8 @@ def main(argv: list[str] | None = None) -> None:
             "identity",
             "labels",
             "synthetic",
+            "model",
+            "lora",
         ),
     )
     parser.add_argument("--work", required=True)
@@ -218,6 +222,13 @@ def main(argv: list[str] | None = None) -> None:
             name, problems = w3d1_labels(work, profile)
         else:
             name, problems = w3d1_synthetic(work, profile)
+    elif args.which in {"model", "lora"}:
+        if args.release != "rel-w3d2":
+            raise SystemExit("model and lora need --release rel-w3d2.")
+        if args.which == "model":
+            name, problems = w3d2_model(work, profile)
+        else:
+            name, problems = w3d2_lora(work, profile)
     elif args.which in {"design", "readout", "individual"}:
         name, problems = _day5_written(args.which, work, profile)
     else:

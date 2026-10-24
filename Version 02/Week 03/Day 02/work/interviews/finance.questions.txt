@@ -1,0 +1,3 @@
+Is there a budget line?
+Should we rent a GPU or buy one, and how many weeks?
+What is the quota and the cap?
