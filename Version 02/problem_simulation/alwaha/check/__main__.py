@@ -1,4 +1,4 @@
-"""Run a Week 1 check against a participant work directory."""
+"""Run a check against a participant work directory."""
 
 from __future__ import annotations
 
@@ -9,11 +9,13 @@ from pathlib import Path
 
 from alwaha.check.agent import agent_problems
 from alwaha.check.approach import approach_problems
+from alwaha.check.auth import auth_problems
 from alwaha.check.brief import brief_problems
 from alwaha.check.design import design_problems
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
+from alwaha.check.journey import journey_problems
 from alwaha.check.readout import readout_problems
 from alwaha.check.repo import repo_problems
 from alwaha.check.trajectory import trajectory_problems
@@ -79,6 +81,17 @@ def _day3(work: Path, profile) -> tuple[str, list[str]]:
     return "chk-w1-events", events_problems(work, pack, gold, profile.canary())
 
 
+def _w2d1(which: str, work: Path, profile) -> tuple[str, list[str]]:
+    pack = pack_dir(profile.name, "rel-w2d1")
+    gold_path = truth_dir(profile.name) / "w2d1_gold.json"
+    if not pack.is_dir() or not gold_path.is_file():
+        raise SystemExit("Build rel-w2d1 first.")
+    gold = json.loads(gold_path.read_text(encoding="utf-8"))
+    if which == "auth":
+        return "chk-w2-auth", auth_problems(work, pack, gold, profile.canary())
+    return "chk-w2-journey", journey_problems(work, pack, gold, profile.canary())
+
+
 def _day2(which: str, work: Path, profile) -> tuple[str, list[str]]:
     pack = pack_dir(profile.name, "rel-w1d2")
     gold_path = truth_dir(profile.name) / "approach_gold.json"
@@ -92,10 +105,23 @@ def _day2(which: str, work: Path, profile) -> tuple[str, list[str]]:
 
 
 def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser(description="Check a Week 1 work directory.")
+    parser = argparse.ArgumentParser(description="Check a work directory.")
     parser.add_argument(
         "which",
-        choices=("repo", "interview", "approach", "brief", "events", "agent", "trajectory", "design", "readout", "individual"),
+        choices=(
+            "repo",
+            "interview",
+            "approach",
+            "brief",
+            "events",
+            "agent",
+            "trajectory",
+            "design",
+            "readout",
+            "individual",
+            "auth",
+            "journey",
+        ),
     )
     parser.add_argument("--work", required=True)
     parser.add_argument("--profile", default=None)
@@ -103,7 +129,11 @@ def main(argv: list[str] | None = None) -> None:
     args = parser.parse_args(argv)
     profile = load(args.profile)
     work = Path(args.work)
-    if args.which in {"approach", "brief"}:
+    if args.which in {"auth", "journey"}:
+        if args.release != "rel-w2d1":
+            raise SystemExit("auth and journey need --release rel-w2d1.")
+        name, problems = _w2d1(args.which, work, profile)
+    elif args.which in {"approach", "brief"}:
         name, problems = _day2(args.which, work, profile)
     elif args.which == "events":
         name, problems = _day3(work, profile)

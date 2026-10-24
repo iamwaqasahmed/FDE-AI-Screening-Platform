@@ -35,6 +35,7 @@ ROSTER_B: tuple[dict, ...] = (
             ("api", ("api", "integration", "strategy", "interface"), "The strategy is real. The hospitals are not all on it.", (), ""),
             ("ain", ("ain", "file", "nightly", "schedule"), "h-ain publishes slots only as a nightly file.", ("ain-file",), "api"),
             ("hl7", ("hl7", "nakhl", "safra", "wadi", "message"), "h-nakhl and h-safra still send HL7 v2. h-wadi is the hospital on the private cloud.", ("hl7-pair",), "api"),
+            ("fhir", ("fhir", "notice", "version", "spec"), "The version bump is the notice in this release. Read notices/fhir-v2.md.", (), "hl7"),
         ),
     },
     {

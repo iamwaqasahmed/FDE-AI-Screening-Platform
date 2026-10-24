@@ -1,0 +1,4 @@
+sessions.db
+trace.json
+__pycache__/
+*.pyc

@@ -18,10 +18,13 @@ AGENT_ROOT = DAY4_ROOT / "agent"
 DAY4_TEMPLATES = DAY4_ROOT / "templates"
 DAY5_ROOT = VERSION_ROOT / "Week 01" / "Day 05"
 DAY5_TEMPLATES = DAY5_ROOT / "templates"
+W2D1_ROOT = VERSION_ROOT / "Week 02" / "Day 01"
+W2D1_APP = W2D1_ROOT / "app"
 
 
 def pack_dir(profile: str, release: str = "rel-w1d1") -> Path:
-    if release not in {"rel-w1d1", "rel-w1d2", "rel-w1d3", "rel-w1d4", "rel-w1d5"}:
+    known = {"rel-w1d1", "rel-w1d2", "rel-w1d3", "rel-w1d4", "rel-w1d5", "rel-w2d1"}
+    if release not in known:
         raise SystemExit(f"Unknown release {release}.")
     if profile == "practice":
         return VERSION_ROOT / "data" / release

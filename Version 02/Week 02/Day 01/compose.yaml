@@ -1,0 +1,7 @@
+# Laptop stand-in for the dev namespace. Both UIs are routes on this service.
+name: alwaha-dev
+services:
+  assistant:
+    build: .
+    ports:
+      - "8080:8080"

@@ -1,0 +1,3 @@
+What is the API strategy?
+Do h-nakhl and h-safra still send HL7, and is h-wadi on the private cloud?
+Where is the FHIR version notice?
