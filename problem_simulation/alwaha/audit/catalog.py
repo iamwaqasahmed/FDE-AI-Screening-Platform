@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from alwaha import paths
 
-DAY1 = paths.STARTER_ROOT.parent / "work"
+DAY1 = paths.DAY1_WORK
 
 
 def jobs() -> list[tuple[str, str, object]]:

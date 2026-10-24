@@ -6,7 +6,8 @@ from pathlib import Path
 
 SIM_ROOT = Path(__file__).resolve().parents[1]
 VERSION_ROOT = SIM_ROOT.parent
-STARTER_ROOT = VERSION_ROOT / "Week 01" / "Day 01" / "starter"
+STARTER_ROOT = VERSION_ROOT / "Week 01" / "Day 01" / "Student_Copy" / "packet" / "starter"
+DAY1_WORK = VERSION_ROOT / "Week 01" / "Day 01" / "Solution_Copy" / "work"
 DAY2_ROOT = VERSION_ROOT / "Week 01" / "Day 02"
 BASELINES_ROOT = DAY2_ROOT / "baselines"
 TEMPLATES_ROOT = DAY2_ROOT / "templates"

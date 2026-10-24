@@ -13,35 +13,33 @@ Nothing here is a real patient's record, a real facility, or a protocol for care
 | [problem_simulation](problem_simulation/README.md) | Facilitators | The hidden world, the reference system, the data, the services, and the gold |
 | [course_design](course_design/README.md) | Facilitators | The day maps, roles, assessment, and the course environment |
 
-Participants work from `case/`, from [Week 1, Day 1](<Week 01/Day 01/README.md>), [Week 1, Day 2](<Week 01/Day 02/README.md>), [Week 1, Day 3](<Week 01/Day 03/README.md>), [Week 1, Day 4](<Week 01/Day 04/README.md>), [Week 1, Day 5](<Week 01/Day 05/README.md>), [Week 2, Day 1](<Week 02/Day 01/README.md>), [Week 2, Day 2](<Week 02/Day 02/README.md>), [Week 2, Day 3](<Week 02/Day 03/README.md>), [Week 2, Day 4](<Week 02/Day 04/README.md>), [Week 2, Day 5](<Week 02/Day 05/README.md>), [Week 3, Day 1](<Week 03/Day 01/README.md>), [Week 3, Day 2](<Week 03/Day 02/README.md>), [Week 3, Day 3](<Week 03/Day 03/README.md>), [Week 3, Day 4](<Week 03/Day 04/README.md>), [Week 3, Day 5](<Week 03/Day 05/README.md>), [Week 4, Day 1](<Week 04/Day 01/README.md>), [Week 4, Day 2](<Week 04/Day 02/README.md>), [Week 4, Day 3](<Week 04/Day 03/README.md>), and [Week 4, Day 4](<Week 04/Day 04/README.md>), and [Week 4, Day 5](<Week 04/Day 05/README.md>), and from the packs in `data/rel-w1d1`, `data/rel-w1d2`, `data/rel-w1d3`, `data/rel-w1d4`, `data/rel-w1d5`, `data/rel-w2d1`, `data/rel-w2d2`, `data/rel-w2d3`, `data/rel-w2d4`, `data/rel-w2d5`, `data/rel-w3d1`, `data/rel-w3d2`, `data/rel-w3d3`, `data/rel-w3d4`, `data/rel-w3d5`, `data/rel-w4d1`, `data/rel-w4d2`, `data/rel-w4d3`, `data/rel-w4d4`, and `data/rel-w4d5`. They leave `course_design/`, `problem_simulation/design`, and `problem_simulation/build` closed. Opening the design skips the discovery the course is built to teach.
+Week 1, Day 1 is the [student copy](<Week 01/Day 01/Student_Copy/README.md>). Later days use the case and the packs under `data/`. Participants work from `case/`, from [Week 1, Day 1](<Week 01/Day 01/README.md>), [Week 1, Day 2](<Week 01/Day 02/README.md>), [Week 1, Day 3](<Week 01/Day 03/README.md>), [Week 1, Day 4](<Week 01/Day 04/README.md>), [Week 1, Day 5](<Week 01/Day 05/README.md>), [Week 2, Day 1](<Week 02/Day 01/README.md>), [Week 2, Day 2](<Week 02/Day 02/README.md>), [Week 2, Day 3](<Week 02/Day 03/README.md>), [Week 2, Day 4](<Week 02/Day 04/README.md>), [Week 2, Day 5](<Week 02/Day 05/README.md>), [Week 3, Day 1](<Week 03/Day 01/README.md>), [Week 3, Day 2](<Week 03/Day 02/README.md>), [Week 3, Day 3](<Week 03/Day 03/README.md>), [Week 3, Day 4](<Week 03/Day 04/README.md>), [Week 3, Day 5](<Week 03/Day 05/README.md>), [Week 4, Day 1](<Week 04/Day 01/README.md>), [Week 4, Day 2](<Week 04/Day 02/README.md>), [Week 4, Day 3](<Week 04/Day 03/README.md>), and [Week 4, Day 4](<Week 04/Day 04/README.md>), and [Week 4, Day 5](<Week 04/Day 05/README.md>), and from the packs in `data/rel-w1d1`, `data/rel-w1d2`, `data/rel-w1d3`, `data/rel-w1d4`, `data/rel-w1d5`, `data/rel-w2d1`, `data/rel-w2d2`, `data/rel-w2d3`, `data/rel-w2d4`, `data/rel-w2d5`, `data/rel-w3d1`, `data/rel-w3d2`, `data/rel-w3d3`, `data/rel-w3d4`, `data/rel-w3d5`, `data/rel-w4d1`, `data/rel-w4d2`, `data/rel-w4d3`, `data/rel-w4d4`, and `data/rel-w4d5`. They leave `course_design/`, `problem_simulation/design`, and `problem_simulation/build` closed. Opening the design skips the discovery the course is built to teach.
 
 ## Read in this order
 
 Participants:
 
 1. This page.
-2. [The case](case/README.md).
-3. [Access language](case/access_language.md), before opening a data file.
-4. [Week 1, Day 1](<Week 01/Day 01/README.md>).
-5. [Week 1, Day 2](<Week 01/Day 02/README.md>).
-6. [Week 1, Day 3](<Week 01/Day 03/README.md>).
-7. [Week 1, Day 4](<Week 01/Day 04/README.md>).
-8. [Week 1, Day 5](<Week 01/Day 05/README.md>).
-9. [Week 2, Day 1](<Week 02/Day 01/README.md>).
-10. [Week 2, Day 2](<Week 02/Day 02/README.md>).
-11. [Week 2, Day 3](<Week 02/Day 03/README.md>).
-12. [Week 2, Day 4](<Week 02/Day 04/README.md>).
-13. [Week 2, Day 5](<Week 02/Day 05/README.md>).
-14. [Week 3, Day 1](<Week 03/Day 01/README.md>).
-15. [Week 3, Day 2](<Week 03/Day 02/README.md>).
-16. [Week 3, Day 3](<Week 03/Day 03/README.md>).
-17. [Week 3, Day 4](<Week 03/Day 04/README.md>).
-18. [Week 3, Day 5](<Week 03/Day 05/README.md>).
-19. [Week 4, Day 1](<Week 04/Day 01/README.md>).
-20. [Week 4, Day 2](<Week 04/Day 02/README.md>).
-21. [Week 4, Day 3](<Week 04/Day 03/README.md>).
-22. [Week 4, Day 4](<Week 04/Day 04/README.md>).
-23. [Week 4, Day 5](<Week 04/Day 05/README.md>).
+2. [Week 1, Day 1 student copy](<Week 01/Day 01/Student_Copy/README.md>). Read [00 — Background](<Week 01/Day 01/Student_Copy/00-background.md>) first, then the chapters in order. That folder has the client, the words, and the files for today. The full [case](case/README.md) and [word list](case/access_language.md) are there when a later day uses a word this folder does not define.
+3. [Week 1, Day 2](<Week 01/Day 02/README.md>).
+4. [Week 1, Day 3](<Week 01/Day 03/README.md>).
+5. [Week 1, Day 4](<Week 01/Day 04/README.md>).
+6. [Week 1, Day 5](<Week 01/Day 05/README.md>).
+7. [Week 2, Day 1](<Week 02/Day 01/README.md>).
+8. [Week 2, Day 2](<Week 02/Day 02/README.md>).
+9. [Week 2, Day 3](<Week 02/Day 03/README.md>).
+10. [Week 2, Day 4](<Week 02/Day 04/README.md>).
+11. [Week 2, Day 5](<Week 02/Day 05/README.md>).
+12. [Week 3, Day 1](<Week 03/Day 01/README.md>).
+13. [Week 3, Day 2](<Week 03/Day 02/README.md>).
+14. [Week 3, Day 3](<Week 03/Day 03/README.md>).
+15. [Week 3, Day 4](<Week 03/Day 04/README.md>).
+16. [Week 3, Day 5](<Week 03/Day 05/README.md>).
+17. [Week 4, Day 1](<Week 04/Day 01/README.md>).
+18. [Week 4, Day 2](<Week 04/Day 02/README.md>).
+19. [Week 4, Day 3](<Week 04/Day 03/README.md>).
+20. [Week 4, Day 4](<Week 04/Day 04/README.md>).
+21. [Week 4, Day 5](<Week 04/Day 05/README.md>).
 
 Facilitators, after the case:
 
