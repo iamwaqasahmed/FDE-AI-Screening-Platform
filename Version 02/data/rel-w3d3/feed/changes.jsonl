@@ -1,0 +1,8 @@
+{"doc_id": "crit-endo-v4", "fields": {"effective": "2027-01-26", "status": "in_force", "supersedes": "crit-endo-v3"}, "op": "replace"}
+{"doc_id": "crit-endo-v3", "fields": {"status": "superseded", "sunset": "2027-01-26"}, "op": "replace"}
+{"doc_id": "crit-ophth-v4", "fields": {"effective": "2027-01-26", "status": "in_force", "supersedes": "crit-ophth-v3"}, "op": "replace"}
+{"doc_id": "crit-ophth-v3", "fields": {"status": "superseded", "sunset": "2027-01-26"}, "op": "replace"}
+{"doc_id": "crit-card-v4", "fields": {"effective": "2027-01-26", "status": "in_force", "supersedes": "crit-card-v3"}, "op": "replace"}
+{"doc_id": "crit-card-v3", "fields": {"status": "superseded", "sunset": "2027-01-26"}, "op": "replace"}
+{"doc": {"audience": "public", "body": "Which evening clinic hours apply in the fasting month. Which evening clinic hours apply in the fasting month. Code hrs-ramadan. Stay open past midnight.", "clause_id": "hrs-ramadan-unauth-c1", "code": "hrs-ramadan", "content_hash": "sha256:667acdf9ccd698e9", "doc_id": "circ-ramadan-unauth", "effective": "2026-01-01", "family": "hours", "site": "cluster", "specialty": "", "status": "unauthorized", "sunset": "", "supersedes": "", "title": "Ramadan hours, unapproved", "version": 1}, "doc_id": "circ-ramadan-unauth", "op": "add"}
+{"doc_id": "leaflet-prep-old", "fields": {"status": "superseded", "sunset": "2027-01-26"}, "op": "replace"}
