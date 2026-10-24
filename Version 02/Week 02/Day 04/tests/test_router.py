@@ -1,0 +1,18 @@
+import sys
+import unittest
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
+
+from router import route
+
+
+class RouterTests(unittest.TestCase):
+    def test_router_uses_the_external_model(self) -> None:
+        body = route("prod")
+        self.assertEqual(body["model"], "ext-large")
+        self.assertEqual(body["zone"], "zone-public")
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,3 @@
+Is the security review booked at the end?
+Which go-live checklist does gate G4 use?
+Is patient data in the integration engine log since that change?

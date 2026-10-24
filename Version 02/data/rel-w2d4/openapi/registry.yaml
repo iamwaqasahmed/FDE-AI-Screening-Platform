@@ -1,0 +1,13 @@
+openapi: 3.0.3
+info:
+  title: registry
+  version: "1"
+paths:
+  /images:
+    post:
+      operationId: admitImage
+      responses:
+        "201":
+          description: The image is accepted into the team namespace.
+        "422":
+          description: Rejected. The user is root, or the log line carries a national id.

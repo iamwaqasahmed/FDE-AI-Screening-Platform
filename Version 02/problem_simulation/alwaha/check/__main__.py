@@ -11,6 +11,7 @@ from alwaha.check.agent import agent_problems
 from alwaha.check.approach import approach_problems
 from alwaha.check.auth import auth_problems
 from alwaha.check.brief import brief_problems
+from alwaha.check.deploy_w2 import deploy_problems
 from alwaha.check.design import design_problems
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
@@ -84,6 +85,15 @@ def _day3(work: Path, profile) -> tuple[str, list[str]]:
     return "chk-w1-events", events_problems(work, pack, gold, profile.canary())
 
 
+def _w2d4(work: Path, profile) -> tuple[str, list[str]]:
+    pack = pack_dir(profile.name, "rel-w2d4")
+    gold_path = truth_dir(profile.name) / "w2d4_gold.json"
+    if not pack.is_dir() or not gold_path.is_file():
+        raise SystemExit("Build rel-w2d4 first.")
+    gold = json.loads(gold_path.read_text(encoding="utf-8"))
+    return "chk-w2-deploy", deploy_problems(work, pack, gold, profile.canary())
+
+
 def _w2d3(which: str, work: Path, profile) -> tuple[str, list[str]]:
     pack = pack_dir(profile.name, "rel-w2d3")
     gold_path = truth_dir(profile.name) / "w2d3_gold.json"
@@ -146,6 +156,7 @@ def main(argv: list[str] | None = None) -> None:
             "journey",
             "tests",
             "ux",
+            "deploy",
         ),
     )
     parser.add_argument("--work", required=True)
@@ -158,6 +169,10 @@ def main(argv: list[str] | None = None) -> None:
         if args.release != "rel-w2d1":
             raise SystemExit("auth needs --release rel-w2d1.")
         name, problems = _w2d1(args.which, work, profile)
+    elif args.which == "deploy":
+        if args.release != "rel-w2d4":
+            raise SystemExit("deploy needs --release rel-w2d4.")
+        name, problems = _w2d4(work, profile)
     elif args.which in {"tests", "ux"}:
         if args.release != "rel-w2d3":
             raise SystemExit("tests and ux need --release rel-w2d3.")
