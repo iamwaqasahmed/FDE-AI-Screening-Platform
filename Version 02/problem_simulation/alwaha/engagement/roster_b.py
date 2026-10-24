@@ -34,6 +34,13 @@ ROSTER_B: tuple[dict, ...] = (
         "tree": (
             ("api", ("api", "integration", "strategy", "interface"), "The strategy is real. The hospitals are not all on it.", (), ""),
             ("ain", ("ain", "file", "nightly", "schedule"), "h-ain publishes slots only as a nightly file.", ("ain-file",), "api"),
+            (
+                "missed",
+                ("missed", "night", "last", "clinic", "code", "wins"),
+                "The last file wins. A missed night leaves the previous file. The clinic codes are local to Ain.",
+                (),
+                "ain",
+            ),
             ("hl7", ("hl7", "nakhl", "safra", "wadi", "message"), "h-nakhl and h-safra still send HL7 v2. h-wadi is the hospital on the private cloud.", ("hl7-pair",), "api"),
             ("fhir", ("fhir", "notice", "version", "spec"), "The version bump is the notice in this release. Read notices/fhir-v2.md.", (), "hl7"),
             ("webhook", ("webhook", "push", "subscribe", "subscription"), "eref now pushes referral.submitted. Polling is the old path.", (), "hl7"),

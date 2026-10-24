@@ -13,6 +13,10 @@ from alwaha.check.auth import auth_problems
 from alwaha.check.brief import brief_problems
 from alwaha.check.deploy_w2 import deploy_problems
 from alwaha.check.design import design_problems
+from alwaha.check.dispatch_w2d5 import deploy as w2d5_deploy
+from alwaha.check.dispatch_w2d5 import individual as w2d5_individual
+from alwaha.check.dispatch_w2d5 import journey as w2d5_journey
+from alwaha.check.dispatch_w2d5 import readout as w2d5_readout
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
@@ -169,19 +173,23 @@ def main(argv: list[str] | None = None) -> None:
         if args.release != "rel-w2d1":
             raise SystemExit("auth needs --release rel-w2d1.")
         name, problems = _w2d1(args.which, work, profile)
+    elif args.which == "deploy" and args.release == "rel-w2d5":
+        name, problems = w2d5_deploy(work, profile)
     elif args.which == "deploy":
         if args.release != "rel-w2d4":
-            raise SystemExit("deploy needs --release rel-w2d4.")
+            raise SystemExit("deploy needs --release rel-w2d4 or rel-w2d5.")
         name, problems = _w2d4(work, profile)
     elif args.which in {"tests", "ux"}:
         if args.release != "rel-w2d3":
             raise SystemExit("tests and ux need --release rel-w2d3.")
         name, problems = _w2d3(args.which, work, profile)
+    elif args.which == "journey" and args.release == "rel-w2d5":
+        name, problems = w2d5_journey(work, profile)
     elif args.which == "journey" and args.release == "rel-w2d2":
         name, problems = _w2d2(work, profile)
     elif args.which == "journey":
         if args.release != "rel-w2d1":
-            raise SystemExit("journey needs --release rel-w2d1 or rel-w2d2.")
+            raise SystemExit("journey needs --release rel-w2d1, rel-w2d2, or rel-w2d5.")
         name, problems = _w2d1(args.which, work, profile)
     elif args.which in {"approach", "brief"}:
         name, problems = _day2(args.which, work, profile)
@@ -191,6 +199,10 @@ def main(argv: list[str] | None = None) -> None:
         name, problems = _day5_score(args.which, work, profile)
     elif args.which in {"agent", "trajectory"}:
         name, problems = _day4(args.which, work, profile)
+    elif args.which == "readout" and args.release == "rel-w2d5":
+        name, problems = w2d5_readout(work, profile)
+    elif args.which == "individual" and args.release == "rel-w2d5":
+        name, problems = w2d5_individual(work, profile)
     elif args.which in {"design", "readout", "individual"}:
         name, problems = _day5_written(args.which, work, profile)
     else:

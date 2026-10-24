@@ -143,7 +143,7 @@ def _copied_log(work: Path) -> bool:
     return any(path.name == "log.json" for path in work.rglob("*") if path.is_file())
 
 
-def _run(work: Path, pack: Path, gold: dict) -> list[str]:
+def _run(work: Path, pack: Path, gold: dict, notes) -> list[str]:
     app = load_suite(work / "app")
     line = json.loads((pack / "fixtures" / "log.json").read_text(encoding="utf-8"))["line"]
     problems = []
@@ -158,16 +158,17 @@ def _run(work: Path, pack: Path, gold: dict) -> list[str]:
     for item in _manifest(manifest, gold["namespace"]):
         _once(problems, item)
     problems.extend(_ci(work))
-    problems.extend(written_problems(work, pack, gold))
+    problems.extend(notes(work, pack, gold))
     return problems
 
 
-def deploy_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
+def deploy_problems(work: Path, pack: Path, gold: dict, canary: str, notes=None):
     if contains_canary(work, canary) or _copied_log(work):
         return [WATERMARK]
     if not _present(work):
         return ["the deploy is missing"]
+    writer = notes or written_problems
     try:
-        return _run(work, pack, gold)
+        return _run(work, pack, gold, writer)
     except Exception:
         return ["the deploy did not run"]
