@@ -1,8 +1,0 @@
-What is your vision and roadmap for AI in screening?
-What date has the board been given for the pilot launch?
-Does the roadmap account for the registry freeze and release calendar?
-Where do you want the vendor model to run?
-Which sites, hospitals included?
-Will you add a second site?
-What are the clinical safety risks?
-Who is the named clinical safety owner?

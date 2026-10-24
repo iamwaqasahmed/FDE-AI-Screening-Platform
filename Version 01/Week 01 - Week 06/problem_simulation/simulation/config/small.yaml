@@ -1,8 +1,0 @@
-description: Fast profile for checks while editing the generator. Not a teaching drop.
-seed: 11
-scale: 0.3
-volume: false
-output: build/data-small
-stale_feed: "2024-06-30"
-date_shift: {}
-site_names: {}

@@ -1,8 +1,0 @@
-What security incidents have you logged recently?
-Did personal data end up in any logs?
-Did any leaver keep account access?
-How do you assure suppliers like the vendor?
-Where is the vendor hosted, which cloud region?
-Has the vendor had an outage or failure?
-How does the booking system handle slots?
-Has booking had a failover or lost data?

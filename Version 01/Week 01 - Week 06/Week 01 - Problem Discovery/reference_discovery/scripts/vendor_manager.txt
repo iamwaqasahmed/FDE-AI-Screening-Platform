@@ -1,9 +1,0 @@
-What accuracy and sensitivity does the model achieve?
-How does it break down by subgroup, for example older age groups?
-What population was it validated on?
-Is calibration stable, or does it drift?
-Did a camera firmware update at an outreach site change scores?
-What is the service uptime and API availability?
-Has the API ever gone down in an incident?
-What happens to poor quality images?
-Below what threshold are they rejected with no score?

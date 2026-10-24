@@ -1,8 +1,0 @@
-document_id,title,status,filename
-sop-issued,Issued screening procedure,in_force,sop_screening_issued.md
-sop-urgent-draft,Urgent pathway,draft,sop_urgent_pathway_draft.md
-letter-result,Result letter template,in_force,letter_template_result.md
-letter-recall,Recall letter template,in_force,letter_template_recall.md
-dpo-rule,Data-protection rule,in_force,dpo_operating_rule.md
-grade-codes,Grade-code list,in_force,grade_codes.md
-clinic-note,Pilot clinic note,in_force,clinic_note_pilot_sites.md

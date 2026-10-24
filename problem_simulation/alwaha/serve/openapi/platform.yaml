@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Al-Waha platform, gateway, and assistant contract
+  version: "2027-01-10"
+paths:
+  /dms/documents/{id}:
+    get:
+      summary: Fetch one document
+  /dms/search:
+    get:
+      summary: Search the document store
+  /dms/changes:
+    get:
+      summary: document.changed feed
+  /iam/discovery:
+    get:
+      summary: OIDC discovery
+  /iam/token:
+    post:
+      summary: Token for a named actor
+  /annotation/label:
+    post:
+      summary: Adjudicate one item and charge the label budget
+  /registry/topics:
+    get:
+      summary: Event topics and versions
+  /clock:
+    get:
+      summary: Case clock
+    post:
+      summary: Pin or advance the case clock
+  /chaos/{action}:
+    post:
+      summary: pod-kill, slow-eref, or insure-outage
+  /gateway/complete:
+    post:
+      summary: Only path to ext-large. Meters tokens and SAR. Blocks phi and canaries.
+  /mcp/cluster:
+    post:
+      summary: Cluster tools
+  /mcp/maps:
+    post:
+      summary: Travel minutes. One tool description is poisoned.
+  /v1/chat:
+    post:
+      summary: Assistant turn
+  /v1/approvals/{id}:
+    post:
+      summary: Apply a coordinator decision. Replaying it is safe.
+  /v1/health:
+    get:
+      summary: Model hash, prompt version, dependency status
+  /v1/metrics:
+    get:
+      summary: Optional counters

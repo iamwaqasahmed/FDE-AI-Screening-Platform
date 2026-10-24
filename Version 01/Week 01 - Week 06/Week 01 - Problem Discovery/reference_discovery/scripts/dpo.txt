@@ -1,6 +1,0 @@
-What does the DPIA for the pilot cover?
-Does it cover hospital studies?
-Is any change or new restriction coming?
-Have there been any data incidents or breaches?
-Was personal data written to any logs, for example the booking API?
-Was there inappropriate access, for example a leaver account, in the audit?

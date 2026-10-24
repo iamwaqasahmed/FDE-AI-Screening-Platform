@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: zone-hospital
+  labels:
+    alwaha/zone: zone-hospital
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: zone-private
+  labels:
+    alwaha/zone: zone-private
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: facilitator
+  labels:
+    alwaha/zone: facilitator

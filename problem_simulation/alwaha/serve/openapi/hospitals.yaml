@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: Al-Waha hospital mocks
+  version: "2027-01-10"
+paths:
+  /his/nakhl/hl7:
+    post:
+      summary: HL7 v2 feed for Nakhl
+  /his/safra/hl7:
+    post:
+      summary: HL7 v2 feed for Safra
+  /his/wadi/fhir:
+    post:
+      summary: FHIR v2 read. clinic_code is rejected.
+  /his/wadi/holds:
+    post:
+      summary: Hold a slot. site-a fails closed when the pod is down.
+  /eref/referrals/{id}:
+    get:
+      summary: Referral read. Patients do not see pending.
+  /eref/webhooks:
+    post:
+      summary: Webhook intake from rel-w2d2
+  /sched-ain/book:
+    post:
+      summary: Real-time booking returns queued
+  /sched-ain/file:
+    post:
+      summary: Nightly file. The last file wins.
+  /nid/proof:
+    post:
+      summary: Identity proof. Rate limited.

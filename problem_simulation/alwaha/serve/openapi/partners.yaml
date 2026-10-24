@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: Al-Waha partner mocks
+  version: "2027-01-10"
+paths:
+  /sms/send:
+    post:
+      summary: Send SMS and return a receipt state
+  /wa/send:
+    post:
+      summary: WhatsApp template and session window
+  /cc/handoff:
+    post:
+      summary: Transcript summary in, agent id out
+  /consent/grants:
+    get:
+      summary: Grant lookup. The stale cache is a switch.
+  /insure/eligibility:
+    post:
+      summary: Eligibility. Mutual TLS is assumed at the edge. Outage is a chaos switch.
+  /hr/leave:
+    get:
+      summary: Leave recorded after the session is published

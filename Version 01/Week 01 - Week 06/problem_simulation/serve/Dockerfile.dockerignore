@@ -1,6 +1,0 @@
-data
-data-*
-.cache
-.pytest_cache
-**/__pycache__
-serve/runtime

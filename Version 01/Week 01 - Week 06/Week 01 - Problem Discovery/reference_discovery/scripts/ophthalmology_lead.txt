@@ -1,8 +1,0 @@
-How big is the referral backlog and waiting list?
-How many referrals have no seen date, by your count?
-Are seen dates sometimes blank in the messages even after a visit?
-What is clinic capacity like?
-Was there a consultant vacancy or a gap in fast track slots?
-Do referred patients attend, or do many miss or not show?
-What data feeds do you have, like the lab HbA1c feed?
-Which identifier keys the lab feed, and did the units change?

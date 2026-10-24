@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: site-labels
+  namespace: zone-private
+data:
+  site-a: alwaha/site=site-a
+  site-b: alwaha/site=site-b
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: assistant-site-a
+  namespace: zone-private
+  labels:
+    alwaha/site: site-a
+spec:
+  nodeSelector:
+    alwaha/site: site-a
+  containers:
+    - name: assistant
+      image: python:3.12-slim
+      args: ["python", "-m", "reference.server", "--port", "8081"]
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: assistant-site-b
+  namespace: zone-private
+  labels:
+    alwaha/site: site-b
+spec:
+  nodeSelector:
+    alwaha/site: site-b
+  containers:
+    - name: assistant
+      image: python:3.12-slim
+      args: ["python", "-m", "reference.server", "--port", "8081"]

@@ -1,1 +1,0 @@
-"""Hartland screening simulation factory."""
