@@ -85,6 +85,7 @@ ROSTER_A: tuple[dict, ...] = (
         "tree": (
             ("queue", ("queue", "backlog", "coordinator", "work"), "The queue is long because each referral takes a second reading.", (), ""),
             ("notes", ("note", "shorthand", "text", "free"), "The shorthand the PHCs use lives in the note, not in a coded field.", ("shorthand",), "queue"),
+            ("labels", ("label", "clerk", "guideline", "photo"), "Clerk labels leave the sub-specialty blank, and a phone photo is often typed as a scan.", (), "notes"),
             ("thursday", ("thursday", "afternoon", "stamp", "rubber"), "Approvals on Thursday afternoon get rubber-stamped.", ("thursday",), "queue"),
             ("draft", ("draft", "v4", "circulated", "version"), "Criteria v4 was circulated as a draft. It is not the version the templates use.", ("v4-draft",), "queue"),
         ),
@@ -100,6 +101,7 @@ ROSTER_A: tuple[dict, ...] = (
         "tree": (
             ("care", ("data", "patient", "privacy", "protection"), "I have a draft on my desk. It is not signed.", (), ""),
             ("ruling", ("ruling", "unsigned", "cloud", "train", "external", "model"), "An unsigned ruling says patient data stays off the external model ext-large, and training stays on the private cloud.", ("unsigned-ruling",), "care"),
+            ("request", ("request", "approved", "history", "sample"), "The data request for the full history is approved. Patient data still stays off the external model ext-large.", (), "care"),
         ),
     },
 )

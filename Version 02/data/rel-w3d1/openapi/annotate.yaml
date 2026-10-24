@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: annotate
+  version: "1"
+paths:
+  /labels:
+    post:
+      operationId: adjudicate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [item_id, guideline]
+              properties:
+                item_id:
+                  type: string
+                guideline:
+                  type: string
+      responses:
+        "200":
+          description: An adjudicated label. The call charges cost.label against the budget.

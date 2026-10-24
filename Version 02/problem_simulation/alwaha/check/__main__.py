@@ -17,6 +17,9 @@ from alwaha.check.dispatch_w2d5 import deploy as w2d5_deploy
 from alwaha.check.dispatch_w2d5 import individual as w2d5_individual
 from alwaha.check.dispatch_w2d5 import journey as w2d5_journey
 from alwaha.check.dispatch_w2d5 import readout as w2d5_readout
+from alwaha.check.dispatch_w3d1 import identity as w3d1_identity
+from alwaha.check.dispatch_w3d1 import labels as w3d1_labels
+from alwaha.check.dispatch_w3d1 import synthetic as w3d1_synthetic
 from alwaha.check.events import events_problems
 from alwaha.check.individual import individual_problems
 from alwaha.check.interviews import interview_problems, load_truth
@@ -161,6 +164,9 @@ def main(argv: list[str] | None = None) -> None:
             "tests",
             "ux",
             "deploy",
+            "identity",
+            "labels",
+            "synthetic",
         ),
     )
     parser.add_argument("--work", required=True)
@@ -203,6 +209,15 @@ def main(argv: list[str] | None = None) -> None:
         name, problems = w2d5_readout(work, profile)
     elif args.which == "individual" and args.release == "rel-w2d5":
         name, problems = w2d5_individual(work, profile)
+    elif args.which in {"identity", "labels", "synthetic"}:
+        if args.release != "rel-w3d1":
+            raise SystemExit("identity, labels, and synthetic need --release rel-w3d1.")
+        if args.which == "identity":
+            name, problems = w3d1_identity(work, profile)
+        elif args.which == "labels":
+            name, problems = w3d1_labels(work, profile)
+        else:
+            name, problems = w3d1_synthetic(work, profile)
     elif args.which in {"design", "readout", "individual"}:
         name, problems = _day5_written(args.which, work, profile)
     else:

@@ -1,0 +1,8 @@
+{"item_id": "canary", "source_type": "typed", "specialty": "endo", "sub_specialty": "", "text": "Referral NID-6707d394. CANARY-396125ab9410"}
+{"item_id": "d1", "source_type": "scan", "specialty": "endo", "sub_specialty": "", "text": "Kindly review this typed note for pediatric endocrinology."}
+{"item_id": "d2", "source_type": "scan", "specialty": "ophth", "sub_specialty": "", "text": "A phone photo of the retina clinic referral."}
+{"item_id": "d3", "source_type": "typed", "specialty": "endo", "sub_specialty": "", "text": "Scanned page for endocrinology."}
+{"item_id": "d4", "source_type": "photo", "specialty": "card", "sub_specialty": "retina", "text": "Typed letter for the heart clinic."}
+{"item_id": "h1", "source_type": "scan", "specialty": "ophth", "sub_specialty": "", "text": "Phone photo from the retina service."}
+{"item_id": "h2", "source_type": "scan", "specialty": "endo", "sub_specialty": "", "text": "Please review pediatric endocrinology."}
+{"item_id": "h3", "source_type": "photo", "specialty": "endo", "sub_specialty": "retina", "text": "A scanned referral for endocrinology."}

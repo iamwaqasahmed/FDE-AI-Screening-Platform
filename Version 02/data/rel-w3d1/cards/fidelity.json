@@ -1,0 +1,29 @@
+{
+  "label_margin": {
+    "retina": [
+      0.3,
+      0.7
+    ]
+  },
+  "phrase": {
+    "kindly": [
+      0.2,
+      0.6
+    ]
+  },
+  "rare_sub_specialty": "retina",
+  "sample_size": [
+    4,
+    8
+  ],
+  "specialty_mix": {
+    "endo": [
+      0.4,
+      0.6
+    ],
+    "ophth": [
+      0.4,
+      0.6
+    ]
+  }
+}

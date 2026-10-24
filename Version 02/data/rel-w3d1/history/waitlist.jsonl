@@ -1,0 +1,5 @@
+{"flag": "death-late", "mrn": "MRN-96300b0e", "national_id": "NID-c7e5eea2", "row_id": "wl-death"}
+{"flag": "seen-elsewhere", "mrn": "MRN-67a1eae6", "national_id": "NID-a54efd10", "row_id": "wl-seen"}
+{"flag": "bounced", "mrn": "MRN-75c2c9ce", "national_id": "NID-7a9d258d", "row_id": "wl-bounce-a"}
+{"flag": "resubmitted", "mrn": "MRN-75c2c9ce", "national_id": "NID-7a9d258d", "row_id": "wl-bounce-b"}
+{"flag": "", "mrn": "MRN-4073e011", "national_id": "NID-6707d394", "row_id": "wl-open"}
