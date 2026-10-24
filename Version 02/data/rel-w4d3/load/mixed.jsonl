@@ -1,0 +1,4 @@
+{"adapter": "lora-intent", "id": "chat-1", "kind": "chat", "phi": true, "text": "Where is my referral?"}
+{"adapter": "lora-extract", "id": "batch-1", "kind": "batch", "phi": true, "text": "Referral letter."}
+{"adapter": "", "id": "public-hours", "kind": "public", "phi": false, "text": "Clinic hours are on the circular."}
+{"adapter": "", "id": "public-hours", "kind": "public", "phi": false, "text": "Clinic hours are on the circular."}

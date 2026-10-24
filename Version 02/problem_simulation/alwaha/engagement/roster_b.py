@@ -67,12 +67,24 @@ ROSTER_B: tuple[dict, ...] = (
         "facts": (
             ("booking-clock", "The wait-time mart starts the clock at booking_date."),
             ("stale-code", "The catalog still defines the old endocrinology clinic code END-01."),
+            (
+                "campaign-backlog",
+                "The backlog is the eye-screening campaign, not last year's month.",
+                False,
+            ),
         ),
         "banned": ("Waiting time fell last year.",),
         "tree": (
             ("wait", ("wait", "dashboard", "improved", "mart"), "The dashboard is what the board sees. The column under it is older than the chart.", (), ""),
             ("clock", ("clock", "booking_date", "booking", "column", "date"), "The wait-time mart starts the clock at booking_date.", ("booking-clock",), "wait"),
             ("code", ("code", "catalog", "clinic", "endo", "old"), "The catalog still defines the old endocrinology clinic code END-01.", ("stale-code",), "wait"),
+            (
+                "campaign",
+                ("campaign", "backlog", "forecast", "ophth"),
+                "The backlog is the eye-screening campaign, not last year's month.",
+                ("campaign-backlog",),
+                "wait",
+            ),
         ),
     },
     {
@@ -90,6 +102,11 @@ ROSTER_B: tuple[dict, ...] = (
                 "The quota is a count of GPUs on today's release. The price cap is on that note. A cloud fine-tune is not in the budget.",
                 False,
             ),
+            (
+                "price-today",
+                "The external token price on today's release replaces yesterday's price. A plan at yesterday's price is rejected.",
+                False,
+            ),
         ),
         "banned": ("The vendor saving and the contact-center saving are separate.",),
         "tree": (
@@ -103,6 +120,13 @@ ROSTER_B: tuple[dict, ...] = (
                 "The quota is a count of GPUs on today's release. The price cap is on that note. A cloud fine-tune is not in the budget.",
                 ("gpu-quota",),
                 "budget",
+            ),
+            (
+                "today",
+                ("today", "yesterday", "replace", "external"),
+                "The external token price on today's release replaces yesterday's price. A plan at yesterday's price is rejected.",
+                ("price-today",),
+                "prices",
             ),
         ),
     },

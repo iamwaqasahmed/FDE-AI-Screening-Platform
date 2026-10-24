@@ -21,6 +21,7 @@ The practice packs are stored in git so the day notes can link to them. Running 
 | [rel-w3d5/](rel-w3d5/README.md) | Week 3, Day 5 rehearsal brief, price sheet, and steering questions |
 | [rel-w4d1/](rel-w4d1/README.md) | Week 4, Day 1 attack window, PHI-in-logs notice, and the first data-subject requests |
 | [rel-w4d2/](rel-w4d2/README.md) | Week 4, Day 2 incident replay, Ramadan-hours circular, and shadow-extract |
+| [rel-w4d3/](rel-w4d3/README.md) | Week 4, Day 3 surge forecast, external-token price change, and the referral batch |
 
 From `problem_simulation`:
 
@@ -42,6 +43,7 @@ python -m alwaha.build --profile practice --release rel-w3d4
 python -m alwaha.build --profile practice --release rel-w3d5
 python -m alwaha.build --profile practice --release rel-w4d1
 python -m alwaha.build --profile practice --release rel-w4d2
+python -m alwaha.build --profile practice --release rel-w4d3
 ```
 
 `problem_simulation/build/` holds the facilitator truth for the same seed. That folder stays out of git. Leave it closed.

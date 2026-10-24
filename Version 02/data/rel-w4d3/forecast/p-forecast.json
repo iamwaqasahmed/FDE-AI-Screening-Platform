@@ -1,0 +1,11 @@
+{
+  "backlog_referrals": 12000,
+  "campaign": "eye-screening",
+  "gpus": 1,
+  "id": "p-forecast",
+  "peak_at": "2027-02-02T21:00:00+03:00",
+  "peak_multiple": 5,
+  "shares_quota_with": "load-chat",
+  "specialty": "ophth",
+  "window_hours": 48
+}

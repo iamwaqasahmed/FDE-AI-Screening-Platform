@@ -1,0 +1,25 @@
+{
+  "models": [
+    {
+      "base": "local-small",
+      "hash": "sha256:e4cfe3c1415952fa",
+      "id": "lora-extract",
+      "status": "approved",
+      "zone": "zone-private"
+    },
+    {
+      "base": "local-small",
+      "hash": "sha256:c6c7f57f9f0ac36b",
+      "id": "lora-intent",
+      "status": "approved",
+      "zone": "zone-private"
+    },
+    {
+      "base": "local-small",
+      "hash": "sha256:0539840c7b3e824e",
+      "id": "lora-local",
+      "status": "approved",
+      "zone": "zone-private"
+    }
+  ]
+}

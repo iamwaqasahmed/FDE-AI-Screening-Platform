@@ -13,7 +13,7 @@ Nothing here is a real patient's record, a real facility, or a protocol for care
 | [problem_simulation](problem_simulation/README.md) | Facilitators | The hidden world, the reference system, the data, the services, and the gold |
 | [course_design](course_design/README.md) | Facilitators | The day maps, roles, assessment, and the course environment |
 
-Participants work from `case/`, from [Week 1, Day 1](<Week 01/Day 01/README.md>), [Week 1, Day 2](<Week 01/Day 02/README.md>), [Week 1, Day 3](<Week 01/Day 03/README.md>), [Week 1, Day 4](<Week 01/Day 04/README.md>), [Week 1, Day 5](<Week 01/Day 05/README.md>), [Week 2, Day 1](<Week 02/Day 01/README.md>), [Week 2, Day 2](<Week 02/Day 02/README.md>), [Week 2, Day 3](<Week 02/Day 03/README.md>), [Week 2, Day 4](<Week 02/Day 04/README.md>), [Week 2, Day 5](<Week 02/Day 05/README.md>), [Week 3, Day 1](<Week 03/Day 01/README.md>), [Week 3, Day 2](<Week 03/Day 02/README.md>), [Week 3, Day 3](<Week 03/Day 03/README.md>), [Week 3, Day 4](<Week 03/Day 04/README.md>), [Week 3, Day 5](<Week 03/Day 05/README.md>), [Week 4, Day 1](<Week 04/Day 01/README.md>), and [Week 4, Day 2](<Week 04/Day 02/README.md>), and from the packs in `data/rel-w1d1`, `data/rel-w1d2`, `data/rel-w1d3`, `data/rel-w1d4`, `data/rel-w1d5`, `data/rel-w2d1`, `data/rel-w2d2`, `data/rel-w2d3`, `data/rel-w2d4`, `data/rel-w2d5`, `data/rel-w3d1`, `data/rel-w3d2`, `data/rel-w3d3`, `data/rel-w3d4`, `data/rel-w3d5`, `data/rel-w4d1`, and `data/rel-w4d2`. They leave `course_design/`, `problem_simulation/design`, and `problem_simulation/build` closed. Opening the design skips the discovery the course is built to teach.
+Participants work from `case/`, from [Week 1, Day 1](<Week 01/Day 01/README.md>), [Week 1, Day 2](<Week 01/Day 02/README.md>), [Week 1, Day 3](<Week 01/Day 03/README.md>), [Week 1, Day 4](<Week 01/Day 04/README.md>), [Week 1, Day 5](<Week 01/Day 05/README.md>), [Week 2, Day 1](<Week 02/Day 01/README.md>), [Week 2, Day 2](<Week 02/Day 02/README.md>), [Week 2, Day 3](<Week 02/Day 03/README.md>), [Week 2, Day 4](<Week 02/Day 04/README.md>), [Week 2, Day 5](<Week 02/Day 05/README.md>), [Week 3, Day 1](<Week 03/Day 01/README.md>), [Week 3, Day 2](<Week 03/Day 02/README.md>), [Week 3, Day 3](<Week 03/Day 03/README.md>), [Week 3, Day 4](<Week 03/Day 04/README.md>), [Week 3, Day 5](<Week 03/Day 05/README.md>), [Week 4, Day 1](<Week 04/Day 01/README.md>), [Week 4, Day 2](<Week 04/Day 02/README.md>), and [Week 4, Day 3](<Week 04/Day 03/README.md>), and from the packs in `data/rel-w1d1`, `data/rel-w1d2`, `data/rel-w1d3`, `data/rel-w1d4`, `data/rel-w1d5`, `data/rel-w2d1`, `data/rel-w2d2`, `data/rel-w2d3`, `data/rel-w2d4`, `data/rel-w2d5`, `data/rel-w3d1`, `data/rel-w3d2`, `data/rel-w3d3`, `data/rel-w3d4`, `data/rel-w3d5`, `data/rel-w4d1`, `data/rel-w4d2`, and `data/rel-w4d3`. They leave `course_design/`, `problem_simulation/design`, and `problem_simulation/build` closed. Opening the design skips the discovery the course is built to teach.
 
 ## Read in this order
 
@@ -39,6 +39,7 @@ Participants:
 18. [Week 3, Day 5](<Week 03/Day 05/README.md>).
 19. [Week 4, Day 1](<Week 04/Day 01/README.md>).
 20. [Week 4, Day 2](<Week 04/Day 02/README.md>).
+21. [Week 4, Day 3](<Week 04/Day 03/README.md>).
 
 Facilitators, after the case:
 
