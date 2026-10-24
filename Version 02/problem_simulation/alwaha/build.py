@@ -13,6 +13,8 @@ from alwaha.release.day3 import RELEASE as DAY3
 from alwaha.release.day3 import write_day3
 from alwaha.release.day4 import RELEASE as DAY4
 from alwaha.release.day4 import write_day4
+from alwaha.release.day5 import RELEASE as DAY5
+from alwaha.release.day5 import write_day5
 from alwaha.release.write import RELEASE as DAY1
 from alwaha.release.write import write_release
 
@@ -38,6 +40,10 @@ def main(argv: list[str] | None = None) -> None:
         pack = pack_dir(profile.name, DAY4)
         truth = truth_dir(profile.name)
         digest = write_day4(profile, pack, truth)
+    elif args.release == DAY5:
+        pack = pack_dir(profile.name, DAY5)
+        truth = truth_dir(profile.name)
+        digest = write_day5(profile, pack, truth)
     else:
         raise SystemExit(f"Unknown release {args.release}.")
     print(f"Wrote {args.release} for {profile.name}")

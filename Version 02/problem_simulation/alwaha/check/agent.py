@@ -35,6 +35,11 @@ def _state(name: str, gold: dict, row: dict) -> list[str]:
         problems.append(f"{name} {word}")
     if sorted(row["approval_ids"]) != sorted(gold["approval_ids"]):
         problems.append(f"{name} approval does not match")
+    if gold.get("failure") and row.get("failure") != gold["failure"]:
+        problems.append(f"{name} does not name the failure")
+    bookings = gold.get("bookings")
+    if isinstance(bookings, int) and bookings >= 1 and row["tool_trace"].count("slots.book") > bookings:
+        problems.append(f"{name} booked twice")
     return problems
 
 
@@ -57,11 +62,19 @@ def _scenarios(rows: list, gold: dict) -> list[str]:
     return problems
 
 
-def agent_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
-    problems, rows = load_rows(work, pack, canary)
+def agent_problems(
+    work: Path,
+    pack: Path,
+    gold: dict,
+    canary: str,
+    failures: Path | None = None,
+    written: bool = True,
+) -> list[str]:
+    problems, rows = load_rows(work, pack, canary, failures)
     if rows is None and problems == [WATERMARK]:
         return problems
     if rows is not None:
         problems.extend(_scenarios(rows, gold))
-    problems.extend(prose(work))
+    if written:
+        problems.extend(prose(work))
     return problems

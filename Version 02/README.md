@@ -13,7 +13,7 @@ Nothing here is a real patient's record, a real facility, or a protocol for care
 | [problem_simulation](problem_simulation/README.md) | Facilitators | The hidden world, the reference system, the data, the services, and the gold |
 | [course_design](course_design/README.md) | Facilitators | The day maps, roles, assessment, and the course environment |
 
-Participants work from `case/`, from [Week 1, Day 1](<Week 01/Day 01/README.md>), [Week 1, Day 2](<Week 01/Day 02/README.md>), [Week 1, Day 3](<Week 01/Day 03/README.md>), and [Week 1, Day 4](<Week 01/Day 04/README.md>), and from the packs in `data/rel-w1d1`, `data/rel-w1d2`, `data/rel-w1d3`, and `data/rel-w1d4`. They leave `course_design/`, `problem_simulation/design`, and `problem_simulation/build` closed. Opening the design skips the discovery the course is built to teach.
+Participants work from `case/`, from [Week 1, Day 1](<Week 01/Day 01/README.md>), [Week 1, Day 2](<Week 01/Day 02/README.md>), [Week 1, Day 3](<Week 01/Day 03/README.md>), [Week 1, Day 4](<Week 01/Day 04/README.md>), and [Week 1, Day 5](<Week 01/Day 05/README.md>), and from the packs in `data/rel-w1d1`, `data/rel-w1d2`, `data/rel-w1d3`, `data/rel-w1d4`, and `data/rel-w1d5`. They leave `course_design/`, `problem_simulation/design`, and `problem_simulation/build` closed. Opening the design skips the discovery the course is built to teach.
 
 ## Read in this order
 
@@ -26,6 +26,7 @@ Participants:
 5. [Week 1, Day 2](<Week 01/Day 02/README.md>).
 6. [Week 1, Day 3](<Week 01/Day 03/README.md>).
 7. [Week 1, Day 4](<Week 01/Day 04/README.md>).
+8. [Week 1, Day 5](<Week 01/Day 05/README.md>).
 
 Facilitators, after the case:
 
@@ -69,6 +70,6 @@ Stable names (facilities, personas, systems, releases, checks) are defined in th
 
 ## What this folder does not contain yet
 
-Days 1 to 4 are in place: the kickoff, the approach release, the intake workflow, the patient agent, the checks, and the notes. Still ahead are the population, the hospital systems, the live services, and Day 5. [Generator build](problem_simulation/design/12-generator-build.md) sets that order.
+Days 1 to 5 are in place: the kickoff, the approach release, the intake workflow, the patient agent, the steering readout, the checks, and the notes. Still ahead are the population, the hospital systems, and the live services. [Generator build](problem_simulation/design/12-generator-build.md) sets that order.
 
 Weeks 5 and 6, the Real Client Project, are a real client. This case supplies the rehearsal only. The optional admissions prep course is out of scope; the `small` world profile is reserved for it.

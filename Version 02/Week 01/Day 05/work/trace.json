@@ -1,0 +1,364 @@
+[
+  {
+    "scenario": "status",
+    "reply": {
+      "intent": "status",
+      "text": "Done.",
+      "count": 4,
+      "facility_id": "",
+      "constraint": ""
+    },
+    "citations": [
+      "referral.status"
+    ],
+    "tool_trace": [
+      "referral.status"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [],
+    "booked": false,
+    "returned": false,
+    "redirected": false,
+    "sms": false,
+    "refusal_logged": false,
+    "preference_used": false,
+    "decisions": 0,
+    "failure": ""
+  },
+  {
+    "scenario": "book",
+    "reply": {
+      "intent": "book",
+      "text": "Done.",
+      "count": null,
+      "facility_id": "h-wadi",
+      "constraint": ""
+    },
+    "citations": [
+      "slots.offer",
+      "pol-approval"
+    ],
+    "tool_trace": [
+      "slots.offer",
+      "slots.book",
+      "sms.send"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [
+      "apr-book"
+    ],
+    "booked": true,
+    "returned": false,
+    "redirected": false,
+    "sms": true,
+    "refusal_logged": false,
+    "preference_used": false,
+    "decisions": 1,
+    "failure": ""
+  },
+  {
+    "scenario": "return",
+    "reply": {
+      "intent": "return",
+      "text": "A coordinator has to see this return.",
+      "count": null,
+      "facility_id": "",
+      "constraint": ""
+    },
+    "citations": [
+      "pol-approval"
+    ],
+    "tool_trace": [],
+    "pending_approval_ids": [
+      "apr-return"
+    ],
+    "approval_ids": [],
+    "booked": false,
+    "returned": false,
+    "redirected": false,
+    "sms": false,
+    "refusal_logged": false,
+    "preference_used": false,
+    "decisions": 0,
+    "failure": ""
+  },
+  {
+    "scenario": "emergency",
+    "reply": {
+      "intent": "emergency",
+      "text": "A person will take this from here.",
+      "count": null,
+      "facility_id": "",
+      "constraint": ""
+    },
+    "citations": [
+      "safety.redirect",
+      "pol-clinical-safety"
+    ],
+    "tool_trace": [
+      "safety.redirect"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [],
+    "booked": false,
+    "returned": false,
+    "redirected": true,
+    "sms": false,
+    "refusal_logged": true,
+    "preference_used": false,
+    "decisions": 0,
+    "failure": ""
+  },
+  {
+    "scenario": "injection",
+    "reply": {
+      "intent": "status",
+      "text": "Done.",
+      "count": 4,
+      "facility_id": "",
+      "constraint": ""
+    },
+    "citations": [
+      "referral.status"
+    ],
+    "tool_trace": [
+      "referral.status"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [],
+    "booked": false,
+    "returned": false,
+    "redirected": false,
+    "sms": false,
+    "refusal_logged": false,
+    "preference_used": false,
+    "decisions": 0,
+    "failure": ""
+  },
+  {
+    "scenario": "replay",
+    "reply": {
+      "intent": "book",
+      "text": "Done.",
+      "count": null,
+      "facility_id": "h-wadi",
+      "constraint": ""
+    },
+    "citations": [
+      "slots.offer",
+      "pol-approval"
+    ],
+    "tool_trace": [
+      "slots.offer",
+      "slots.book",
+      "sms.send"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [
+      "apr-replay"
+    ],
+    "booked": true,
+    "returned": false,
+    "redirected": false,
+    "sms": true,
+    "refusal_logged": false,
+    "preference_used": false,
+    "decisions": 1,
+    "failure": ""
+  },
+  {
+    "scenario": "resume",
+    "reply": {
+      "intent": "book",
+      "text": "Done.",
+      "count": 4,
+      "facility_id": "",
+      "constraint": ""
+    },
+    "citations": [
+      "referral.status",
+      "slots.offer",
+      "pol-approval"
+    ],
+    "tool_trace": [
+      "referral.status",
+      "slots.offer",
+      "slots.book",
+      "sms.send"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [
+      "apr-resume"
+    ],
+    "booked": true,
+    "returned": false,
+    "redirected": false,
+    "sms": true,
+    "refusal_logged": false,
+    "preference_used": false,
+    "decisions": 1,
+    "failure": ""
+  },
+  {
+    "scenario": "reject",
+    "reply": {
+      "intent": "refusal",
+      "text": "Done.",
+      "count": null,
+      "facility_id": "h-wadi",
+      "constraint": ""
+    },
+    "citations": [
+      "slots.offer",
+      "pol-approval"
+    ],
+    "tool_trace": [
+      "slots.offer"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [
+      "apr-reject"
+    ],
+    "booked": false,
+    "returned": false,
+    "redirected": false,
+    "sms": false,
+    "refusal_logged": true,
+    "preference_used": false,
+    "decisions": 1,
+    "failure": ""
+  },
+  {
+    "scenario": "memory",
+    "reply": {
+      "intent": "status",
+      "text": "Done.",
+      "count": 4,
+      "facility_id": "h-wadi",
+      "constraint": ""
+    },
+    "citations": [
+      "referral.status"
+    ],
+    "tool_trace": [
+      "referral.status"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [],
+    "booked": false,
+    "returned": false,
+    "redirected": false,
+    "sms": false,
+    "refusal_logged": false,
+    "preference_used": false,
+    "decisions": 0,
+    "failure": ""
+  },
+  {
+    "scenario": "consent",
+    "reply": {
+      "intent": "refusal",
+      "text": "Say what you need for this visit.",
+      "count": null,
+      "facility_id": "",
+      "constraint": ""
+    },
+    "citations": [],
+    "tool_trace": [],
+    "pending_approval_ids": [],
+    "approval_ids": [],
+    "booked": false,
+    "returned": false,
+    "redirected": false,
+    "sms": false,
+    "refusal_logged": true,
+    "preference_used": false,
+    "decisions": 0,
+    "failure": ""
+  },
+  {
+    "scenario": "reason",
+    "reply": {
+      "intent": "refusal",
+      "text": "No slot meets the constraint.",
+      "count": null,
+      "facility_id": "",
+      "constraint": "travel"
+    },
+    "citations": [
+      "slots.offer"
+    ],
+    "tool_trace": [
+      "slots.offer"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [],
+    "booked": false,
+    "returned": false,
+    "redirected": false,
+    "sms": false,
+    "refusal_logged": true,
+    "preference_used": false,
+    "decisions": 0,
+    "failure": ""
+  },
+  {
+    "scenario": "timeout",
+    "reply": {
+      "intent": "refusal",
+      "text": "The offer did not return.",
+      "count": null,
+      "facility_id": "",
+      "constraint": ""
+    },
+    "citations": [
+      "slots.offer"
+    ],
+    "tool_trace": [
+      "slots.offer"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [],
+    "booked": false,
+    "returned": false,
+    "redirected": false,
+    "sms": false,
+    "refusal_logged": true,
+    "preference_used": false,
+    "decisions": 0,
+    "failure": "timeout"
+  },
+  {
+    "scenario": "race-slot",
+    "reply": {
+      "intent": "book",
+      "text": "Done.",
+      "count": null,
+      "facility_id": "h-wadi",
+      "constraint": ""
+    },
+    "citations": [
+      "slots.offer",
+      "pol-approval"
+    ],
+    "tool_trace": [
+      "slots.offer",
+      "slots.book",
+      "sms.send",
+      "slots.offer"
+    ],
+    "pending_approval_ids": [],
+    "approval_ids": [
+      "apr-race-a",
+      "apr-race-b"
+    ],
+    "booked": true,
+    "returned": false,
+    "redirected": false,
+    "sms": true,
+    "refusal_logged": true,
+    "preference_used": false,
+    "decisions": 2,
+    "failure": "race-slot"
+  }
+]

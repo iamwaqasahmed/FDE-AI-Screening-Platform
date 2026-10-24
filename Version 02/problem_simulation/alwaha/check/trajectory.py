@@ -62,11 +62,19 @@ def _scenarios(rows: list, gold: dict) -> list[str]:
     return problems
 
 
-def trajectory_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
-    problems, rows = load_rows(work, pack, canary)
+def trajectory_problems(
+    work: Path,
+    pack: Path,
+    gold: dict,
+    canary: str,
+    failures: Path | None = None,
+    written: bool = True,
+) -> list[str]:
+    problems, rows = load_rows(work, pack, canary, failures)
     if rows is None and problems == [WATERMARK]:
         return problems
     if rows is not None:
         problems.extend(_scenarios(rows, gold))
-    problems.extend(prose(work))
+    if written:
+        problems.extend(prose(work))
     return problems

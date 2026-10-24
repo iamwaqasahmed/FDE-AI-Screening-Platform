@@ -52,16 +52,20 @@ def one(rows: list[dict]) -> dict | None:
     return rows[0]
 
 
-def run_agent(work: Path, pack: Path, canary: str) -> tuple[list[str], list | None]:
+def run_agent(work: Path, pack: Path, canary: str, failures: Path | None = None) -> tuple[list[str], list | None]:
     script = (work / "agent" / "run.py").resolve()
     pack = Path(pack).resolve()
     if not script.is_file():
         return ["run.py is missing"], None
+    command = [sys.executable, str(script), "--pack", str(pack), "--out"]
     with tempfile.TemporaryDirectory() as tmp:
         out = Path(tmp) / "trace.json"
+        command.append(str(out))
+        if failures is not None:
+            command.extend(["--failures", str(Path(failures).resolve())])
         try:
             completed = subprocess.run(
-                [sys.executable, str(script), "--pack", str(pack), "--out", str(out)],
+                command,
                 cwd=script.parent,
                 capture_output=True,
                 text=True,
@@ -122,7 +126,7 @@ def prose(work: Path) -> list[str]:
     return problems
 
 
-def load_rows(work: Path, pack: Path, canary: str) -> tuple[list[str], list | None]:
+def load_rows(work: Path, pack: Path, canary: str, failures: Path | None = None) -> tuple[list[str], list | None]:
     if contains_canary(work, canary):
         return [WATERMARK], None
-    return run_agent(work, pack, canary)
+    return run_agent(work, pack, canary, failures)
