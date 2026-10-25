@@ -24,7 +24,7 @@ from alwaha.check.model_w3 import (
 from alwaha.config.profile import load
 from alwaha.engagement.w3d2 import gold, measurement_block
 from alwaha.engagement.w3d2_rules import QLORA_RANK, keep_domain, qlora, revise
-from alwaha.paths import W3D2_APP, W3D2_ROOT
+from alwaha.paths import W3D2_APP, W3D2_WORK
 
 
 class CheckTests(unittest.TestCase):
@@ -39,7 +39,7 @@ class CheckTests(unittest.TestCase):
         write_w3d2(self.profile, self.pack, self.truth)
         self.gold = json.loads((self.truth / "w3d2_gold.json").read_text(encoding="utf-8"))
         self.work = root / "work"
-        shutil.copytree(W3D2_ROOT / "work", self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(W3D2_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
         self._align()
         self.assertEqual(self.gold, gold(self.profile))
 
@@ -139,8 +139,8 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_a_prompt_that_copies_the_adapter_clears_the_slice(self) -> None:
-        extract_src = (W3D2_ROOT / "work" / "app" / "extract.py").read_text(encoding="utf-8")
-        intent_src = (W3D2_ROOT / "work" / "app" / "intent.py").read_text(encoding="utf-8")
+        extract_src = (W3D2_WORK / "app" / "extract.py").read_text(encoding="utf-8")
+        intent_src = (W3D2_WORK / "app" / "intent.py").read_text(encoding="utf-8")
         intent_src = "\n".join(line for line in intent_src.splitlines() if "from __future__" not in line)
         body = (
             extract_src

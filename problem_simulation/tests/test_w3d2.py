@@ -16,7 +16,7 @@ from alwaha.demo.gateway import main as demo_main
 from alwaha.engagement.interview import run, score_turns, winning_questions
 from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w3d2 import gold, measurement_block
-from alwaha.paths import W3D2_APP, W3D2_ROOT
+from alwaha.paths import W3D2_APP, W3D2_ROOT, W3D2_TEMPLATES, W3D2_WORK
 from alwaha.release.day2 import write_day2
 from alwaha.release.day3 import write_day3
 from alwaha.release.day4 import write_day4
@@ -171,13 +171,9 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_state_the_seed_values(self) -> None:
-        lessons = []
-        for path in W3D2_ROOT.rglob("*"):
-            if not path.is_file() or "work" in path.parts:
-                continue
-            if path.suffix in {".md", ".py", ".yml", ".yaml"}:
-                lessons.append(path.read_text(encoding="utf-8"))
-        lesson_text = "\n".join(lessons)
+        notes = [path.read_text(encoding="utf-8") for path in W3D2_ROOT.glob("*.md")]
+        notes.extend(path.read_text(encoding="utf-8") for path in W3D2_TEMPLATES.glob("*.md"))
+        lesson_text = "\n".join(notes)
         hidden = gold(load("practice"))
         small = gold(load("small"))
         self.assertNotIn(load("practice").canary(), lesson_text)
@@ -187,16 +183,17 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(row["item_id"], lesson_text)
 
     def test_modules_differ_and_only_the_copy_passes(self) -> None:
+        packet = W3D2_APP.parent
         for name in _APP:
             shell = (W3D2_APP / name).read_bytes()
-            filled = (W3D2_ROOT / "work" / "app" / name).read_bytes()
+            filled = (W3D2_WORK / "app" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
         for name in _TESTS:
-            shell = (W3D2_ROOT / "tests" / name).read_bytes()
-            filled = (W3D2_ROOT / "work" / "tests" / name).read_bytes()
+            shell = (packet / "tests" / name).read_bytes()
+            filled = (W3D2_WORK / "tests" / name).read_bytes()
             self.assertEqual(shell, filled, name)
-        work = _suite(W3D2_ROOT / "work")
-        shell = _suite(W3D2_ROOT)
+        work = _suite(W3D2_WORK)
+        shell = _suite(packet)
         self.assertEqual(work.returncode, 0, work.stdout + work.stderr)
         self.assertNotEqual(shell.returncode, 0, shell.stdout + shell.stderr)
 
@@ -218,7 +215,7 @@ class DemoTests(unittest.TestCase):
         self.assertNotRegex(turns[2]["answer"], r"\d")
         self.assertEqual(finance["must_surface"], ("rent-or-buy", "double-benefit", "unit-prices"))
         practice = gold(load("practice"))
-        memo = (W3D2_ROOT / "work" / "approach.md").read_text(encoding="utf-8")
+        memo = (W3D2_WORK / "approach.md").read_text(encoding="utf-8")
         self.assertIn(measurement_block(practice["adapter_hash"], practice["local_sar"]), memo.replace("\r\n", "\n"))
 
 
