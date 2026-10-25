@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: sms
+  version: "1"
+paths:
+  /messages:
+    post:
+      operationId: sendMessage
+      responses:
+        "202":
+          description: Accepted. A receipt follows.
+  /receipts/{id}:
+    get:
+      operationId: readReceipt
+      responses:
+        "200":
+          description: Receipt.

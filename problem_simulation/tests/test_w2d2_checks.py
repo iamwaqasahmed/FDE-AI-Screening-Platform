@@ -12,7 +12,7 @@ from alwaha.check.agent_run import WATERMARK
 from alwaha.check.journey_w2 import journey_problems
 from alwaha.config.profile import load
 from alwaha.engagement.w2d2 import CLOCK, DROPPED, EXTRA, gold
-from alwaha.paths import W2D2_APP, W2D2_ROOT
+from alwaha.paths import W2D2_APP, W2D2_WORK
 from alwaha.release.w2d2 import write_w2d2
 
 _REJECT = '''"""Reject a field the registry does not list."""
@@ -40,7 +40,7 @@ class CheckTests(unittest.TestCase):
         self.gold = json.loads((self.truth / "w2d2_gold.json").read_text(encoding="utf-8"))
         self.work = root / "work"
         shutil.copytree(
-            W2D2_ROOT / "work",
+            W2D2_WORK,
             self.work,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "sessions.db", "trace.json"),
         )

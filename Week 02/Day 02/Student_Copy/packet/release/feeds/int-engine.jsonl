@@ -1,0 +1,3 @@
+{"facility_id": "h-safra", "kind": "siu", "sequence": 2}
+{"facility_id": "h-safra", "kind": "siu", "sequence": 1}
+{"facility_id": "h-nakhl", "kind": "mapping", "mapped": {"facility_id": "h-nakhl", "specialty": "endo"}, "raw": {"SCH": "endo", "ZSS": "thyroid"}}

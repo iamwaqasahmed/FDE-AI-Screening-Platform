@@ -23,7 +23,7 @@ def jobs() -> list[tuple[str, str, object]]:
         ("individual", "", paths.DAY5_WORK),
         ("auth", "rel-w2d1", paths.W2D1_WORK),
         ("journey", "rel-w2d1", paths.W2D1_WORK),
-        ("journey", "rel-w2d2", paths.W2D2_ROOT / "work"),
+        ("journey", "rel-w2d2", paths.W2D2_WORK),
         ("tests", "rel-w2d3", paths.W2D3_ROOT / "work"),
         ("ux", "rel-w2d3", paths.W2D3_ROOT / "work"),
         ("deploy", "rel-w2d4", paths.W2D4_ROOT / "work"),

@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: wa
+  version: "1"
+paths:
+  /messages:
+    post:
+      operationId: sendTemplate
+      parameters:
+        - name: template
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "202":
+          description: Accepted inside the session window.
+        "409":
+          description: The session window has closed.

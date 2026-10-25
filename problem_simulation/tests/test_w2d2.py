@@ -14,7 +14,7 @@ from alwaha.demo.hl7 import main as demo_main
 from alwaha.engagement.interview import run
 from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w2d2 import CLOCK, DROPPED, EXTRA, gold, webhook
-from alwaha.paths import W2D2_APP, W2D2_ROOT
+from alwaha.paths import W2D2_APP, W2D2_ROOT, W2D2_TEMPLATES, W2D2_WORK
 from alwaha.release.day2 import write_day2
 from alwaha.release.day3 import write_day3
 from alwaha.release.day4 import write_day4
@@ -145,19 +145,16 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(secret, text)
 
     def test_notes_do_not_name_the_hidden_fields(self) -> None:
-        lessons = []
-        for path in W2D2_ROOT.rglob("*.md"):
-            if "work" in path.parts:
-                continue
-            lessons.append(path.read_text(encoding="utf-8"))
-        lesson_text = "\n".join(lessons)
+        notes = [path.read_text(encoding="utf-8") for path in W2D2_ROOT.glob("*.md")]
+        notes.extend(path.read_text(encoding="utf-8") for path in W2D2_TEMPLATES.glob("*.md"))
+        lesson_text = "\n".join(notes)
         for secret in (DROPPED, EXTRA, CLOCK, "thyroid", "ZSS", "CANARY-", "sub-specialty"):
             self.assertNotIn(secret, lesson_text)
 
     def test_only_the_trap_modules_differ(self) -> None:
         traps = {"intake.py", "cancel.py", "mart.py"}
         for source in W2D2_APP.glob("*.py"):
-            copy = W2D2_ROOT / "work" / "app" / source.name
+            copy = W2D2_WORK / "app" / source.name
             if source.name in traps:
                 self.assertNotEqual(source.read_bytes(), copy.read_bytes(), source.name)
             else:
