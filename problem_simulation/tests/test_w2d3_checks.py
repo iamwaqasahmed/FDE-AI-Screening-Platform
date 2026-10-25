@@ -13,7 +13,7 @@ from alwaha.check.tests_w2 import test_problems
 from alwaha.check.ux_w2 import ux_problems
 from alwaha.config.profile import load
 from alwaha.engagement.w2d3 import SWITCH, gold
-from alwaha.paths import W2D3_APP, W2D3_ROOT
+from alwaha.paths import W2D3_APP, W2D3_TESTS, W2D3_WORK
 from alwaha.release.w2d3 import write_w2d3
 
 
@@ -28,7 +28,7 @@ class CheckTests(unittest.TestCase):
         self.gold = json.loads((self.truth / "w2d3_gold.json").read_text(encoding="utf-8"))
         self.work = root / "work"
         shutil.copytree(
-            W2D3_ROOT / "work",
+            W2D3_WORK,
             self.work,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
         )
@@ -67,7 +67,7 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_sleeping_receipt_fails_without_the_delay(self) -> None:
-        shutil.copy(W2D3_ROOT / "tests" / "test_receipt.py", self.work / "tests" / "test_receipt.py")
+        shutil.copy(W2D3_TESTS / "test_receipt.py", self.work / "tests" / "test_receipt.py")
         problems = self._tests()
         self.assertEqual(problems, ["the receipt test sleeps"])
         self._hidden(problems)

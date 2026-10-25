@@ -16,7 +16,7 @@ from alwaha.demo.receipt import main as demo_main
 from alwaha.engagement.interview import run
 from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w2d3 import OLD_DELAY_SECONDS, SWITCH, gold
-from alwaha.paths import W2D3_APP, W2D3_ROOT
+from alwaha.paths import W2D3_APP, W2D3_ROOT, W2D3_TEMPLATES, W2D3_TESTS, W2D3_WORK
 from alwaha.release.day2 import write_day2
 from alwaha.release.day3 import write_day3
 from alwaha.release.day4 import write_day4
@@ -121,12 +121,9 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(secret, text)
 
     def test_notes_do_not_name_the_hidden_delay(self) -> None:
-        lessons = []
-        for path in W2D3_ROOT.rglob("*.md"):
-            if "work" in path.parts:
-                continue
-            lessons.append(path.read_text(encoding="utf-8"))
-        lesson_text = "\n".join(lessons)
+        notes = [path.read_text(encoding="utf-8") for path in W2D3_ROOT.glob("*.md")]
+        notes.extend(path.read_text(encoding="utf-8") for path in W2D3_TEMPLATES.glob("*.md"))
+        lesson_text = "\n".join(notes)
         profile = load("small")
         hidden = gold(profile)
         for secret in (str(OLD_DELAY_SECONDS), hidden["cases"][0]["due"], hidden["cases"][1]["due"], "CANARY-"):
@@ -134,14 +131,14 @@ class DemoTests(unittest.TestCase):
 
     def test_only_the_trap_modules_differ(self) -> None:
         for source in W2D3_APP.glob("*.py"):
-            copy = W2D3_ROOT / "work" / "app" / source.name
+            copy = W2D3_WORK / "app" / source.name
             self.assertNotEqual(source.read_bytes(), copy.read_bytes(), source.name)
         for name in ("test_calendar.py", "test_schema.py", "test_receipt.py", "test_journey.py"):
-            shell = (W2D3_ROOT / "tests" / name).read_bytes()
-            filled = (W2D3_ROOT / "work" / "tests" / name).read_bytes()
+            shell = (W2D3_TESTS / name).read_bytes()
+            filled = (W2D3_WORK / "tests" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
-        shell_ci = (W2D3_ROOT / ".github" / "workflows" / "ci.yml").read_bytes()
-        filled_ci = (W2D3_ROOT / "work" / ".github" / "workflows" / "ci.yml").read_bytes()
+        shell_ci = (W2D3_ROOT / "Student_Copy" / "packet" / ".github" / "workflows" / "ci.yml").read_bytes()
+        filled_ci = (W2D3_WORK / ".github" / "workflows" / "ci.yml").read_bytes()
         self.assertEqual(shell_ci, filled_ci)
 
     def test_patient_rep_releases_the_caregiver(self) -> None:
@@ -156,7 +153,7 @@ class DemoTests(unittest.TestCase):
     def test_filled_suite_passes(self) -> None:
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
-            cwd=W2D3_ROOT / "work",
+            cwd=W2D3_WORK,
             capture_output=True,
             text=True,
             check=False,

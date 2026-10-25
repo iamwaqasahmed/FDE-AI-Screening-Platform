@@ -1,0 +1,18 @@
+{
+  "holidays": [
+    "2027-03-10",
+    "2027-03-11",
+    "2027-03-12"
+  ],
+  "weekend": [
+    "Friday",
+    "Saturday"
+  ],
+  "working_days": [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday"
+  ]
+}

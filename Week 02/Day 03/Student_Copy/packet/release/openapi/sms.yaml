@@ -1,0 +1,19 @@
+openapi: 3.0.3
+info:
+  title: sms
+  version: "2"
+paths:
+  /messages:
+    post:
+      operationId: sendMessage
+      responses:
+        "202":
+          description: Accepted. The receipt follows the case clock.
+  /receipts/{id}:
+    get:
+      operationId: readReceipt
+      responses:
+        "200":
+          description: Due once the clock has moved by the published interval.
+        "202":
+          description: Still pending.
