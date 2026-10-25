@@ -12,7 +12,7 @@ from alwaha.check.agent_run import WATERMARK
 from alwaha.check.deploy_w2 import deploy_problems
 from alwaha.config.profile import load
 from alwaha.engagement.w2d4 import gold
-from alwaha.paths import W2D4_APP, W2D4_ROOT
+from alwaha.paths import W2D4_APP, W2D4_DEPLOY, W2D4_ROOT, W2D4_TEMPLATES, W2D4_WORK
 from alwaha.release.w2d4 import write_w2d4
 
 
@@ -27,7 +27,7 @@ class CheckTests(unittest.TestCase):
         self.gold = json.loads((self.truth / "w2d4_gold.json").read_text(encoding="utf-8"))
         self.work = root / "work"
         shutil.copytree(
-            W2D4_ROOT / "work",
+            W2D4_WORK,
             self.work,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
         )
@@ -87,13 +87,13 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_image_runs_as_root(self) -> None:
-        shutil.copy(W2D4_ROOT / "deploy" / "Dockerfile", self.work / "deploy" / "Dockerfile")
+        shutil.copy(W2D4_DEPLOY / "Dockerfile", self.work / "deploy" / "Dockerfile")
         problems = self._deploy()
         self.assertEqual(problems, ["the image runs as root"])
         self._hidden(problems)
 
     def test_shell_manifest_is_not_in_the_namespace(self) -> None:
-        shutil.copy(W2D4_ROOT / "deploy" / "deployment.yaml", self.work / "deploy" / "deployment.yaml")
+        shutil.copy(W2D4_DEPLOY / "deployment.yaml", self.work / "deploy" / "deployment.yaml")
         problems = self._deploy()
         self.assertEqual(
             problems,
@@ -106,13 +106,14 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_pipeline_is_not_in_ci(self) -> None:
-        shutil.copy(W2D4_ROOT / ".github" / "workflows" / "ci.yml", self.work / ".github" / "workflows" / "ci.yml")
+        shell_ci = W2D4_ROOT / "Student_Copy" / "packet" / ".github" / "workflows" / "ci.yml"
+        shutil.copy(shell_ci, self.work / ".github" / "workflows" / "ci.yml")
         problems = self._deploy()
         self.assertEqual(problems, ["the pipeline is not in CI"])
         self._hidden(problems)
 
     def test_blank_note_misses_the_fact(self) -> None:
-        shutil.copy(W2D4_ROOT / "templates" / "deployment.md", self.work / "deployment.md")
+        shutil.copy(W2D4_TEMPLATES / "deployment.md", self.work / "deployment.md")
         problems = self._deploy()
         self.assertEqual(
             problems,
@@ -126,19 +127,19 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_blank_zone_row(self) -> None:
-        shutil.copy(W2D4_ROOT / "templates" / "zones.md", self.work / "zones.md")
+        shutil.copy(W2D4_TEMPLATES / "zones.md", self.work / "zones.md")
         problems = self._deploy()
         self.assertEqual(problems, ["the url is not in zone-private"])
         self._hidden(problems)
 
     def test_blank_operator_steps(self) -> None:
-        shutil.copy(W2D4_ROOT / "templates" / "operators.md", self.work / "operators.md")
+        shutil.copy(W2D4_TEMPLATES / "operators.md", self.work / "operators.md")
         problems = self._deploy()
         self.assertEqual(problems, ["the operator steps are missing"])
         self._hidden(problems)
 
     def test_blank_sprint(self) -> None:
-        shutil.copy(W2D4_ROOT / "templates" / "sprint.md", self.work / "sprint.md")
+        shutil.copy(W2D4_TEMPLATES / "sprint.md", self.work / "sprint.md")
         problems = self._deploy()
         self.assertEqual(problems, ["sprint.md does not book the readout after the deploy"])
         self._hidden(problems)

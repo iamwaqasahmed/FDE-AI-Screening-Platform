@@ -1,0 +1,13 @@
+openapi: 3.0.3
+info:
+  title: endpoint
+  version: "1"
+paths:
+  /infer:
+    post:
+      operationId: infer
+      responses:
+        "200":
+          description: A completion from ep-local-small.
+        "429":
+          description: Over the quota. Wait. Do not spill onto ext-large.

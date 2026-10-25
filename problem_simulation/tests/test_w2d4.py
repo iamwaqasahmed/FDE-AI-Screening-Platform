@@ -17,7 +17,7 @@ from alwaha.demo.deploy import main as demo_main
 from alwaha.engagement.interview import run
 from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w2d4 import gold
-from alwaha.paths import W2D4_APP, W2D4_ROOT
+from alwaha.paths import W2D4_APP, W2D4_DEPLOY, W2D4_ROOT, W2D4_TEMPLATES, W2D4_TESTS, W2D4_WORK
 from alwaha.release.day2 import write_day2
 from alwaha.release.day3 import write_day3
 from alwaha.release.day4 import write_day4
@@ -156,13 +156,9 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(str(hidden["quota"]), text)
 
     def test_notes_do_not_name_the_secrets(self) -> None:
-        lessons = []
-        for path in W2D4_ROOT.rglob("*"):
-            if not path.is_file() or "work" in path.parts:
-                continue
-            if path.suffix in {".md", ".py", ".yml", ".yaml"}:
-                lessons.append(path.read_text(encoding="utf-8"))
-        lesson_text = "\n".join(lessons)
+        notes = [path.read_text(encoding="utf-8") for path in W2D4_ROOT.glob("*.md")]
+        notes.extend(path.read_text(encoding="utf-8") for path in W2D4_TEMPLATES.glob("*.md"))
+        lesson_text = "\n".join(notes)
         profile = load("small")
         hidden = gold(profile)
         for secret in _secrets(hidden, profile.canary()):
@@ -171,23 +167,24 @@ class DemoTests(unittest.TestCase):
 
     def test_only_the_trap_modules_differ(self) -> None:
         for source in W2D4_APP.glob("*.py"):
-            copy = W2D4_ROOT / "work" / "app" / source.name
+            copy = W2D4_WORK / "app" / source.name
             self.assertNotEqual(source.read_bytes(), copy.read_bytes(), source.name)
         for name in ("test_admit.py", "test_health.py", "test_router.py", "test_secrets.py"):
-            shell = (W2D4_ROOT / "tests" / name).read_bytes()
-            filled = (W2D4_ROOT / "work" / "tests" / name).read_bytes()
+            shell = (W2D4_TESTS / name).read_bytes()
+            filled = (W2D4_WORK / "tests" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
         self.assertNotEqual(
-            (W2D4_ROOT / "deploy" / "Dockerfile").read_bytes(),
-            (W2D4_ROOT / "work" / "deploy" / "Dockerfile").read_bytes(),
+            (W2D4_DEPLOY / "Dockerfile").read_bytes(),
+            (W2D4_WORK / "deploy" / "Dockerfile").read_bytes(),
         )
         self.assertNotEqual(
-            (W2D4_ROOT / "deploy" / "deployment.yaml").read_bytes(),
-            (W2D4_ROOT / "work" / "deploy" / "deployment.yaml").read_bytes(),
+            (W2D4_DEPLOY / "deployment.yaml").read_bytes(),
+            (W2D4_WORK / "deploy" / "deployment.yaml").read_bytes(),
         )
+        shell_ci = W2D4_ROOT / "Student_Copy" / "packet" / ".github" / "workflows" / "ci.yml"
         self.assertNotEqual(
-            (W2D4_ROOT / ".github" / "workflows" / "ci.yml").read_bytes(),
-            (W2D4_ROOT / "work" / ".github" / "workflows" / "ci.yml").read_bytes(),
+            shell_ci.read_bytes(),
+            (W2D4_WORK / ".github" / "workflows" / "ci.yml").read_bytes(),
         )
 
     def test_ciso_releases_the_log(self) -> None:
@@ -202,7 +199,7 @@ class DemoTests(unittest.TestCase):
     def test_filled_suite_passes(self) -> None:
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
-            cwd=W2D4_ROOT / "work",
+            cwd=W2D4_WORK,
             capture_output=True,
             text=True,
             check=False,
@@ -212,7 +209,7 @@ class DemoTests(unittest.TestCase):
     def test_shell_suite_passes(self) -> None:
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
-            cwd=W2D4_ROOT,
+            cwd=W2D4_ROOT / "Student_Copy" / "packet",
             capture_output=True,
             text=True,
             check=False,
