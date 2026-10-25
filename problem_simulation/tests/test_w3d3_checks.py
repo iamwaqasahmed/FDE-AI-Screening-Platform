@@ -27,7 +27,7 @@ from alwaha.engagement.w3d3 import gold
 from alwaha.engagement.w3d3_corpus import extras, photo
 from alwaha.engagement.w3d3_docs import catalog_rows
 from alwaha.engagement.w3d3_rules import booking, lookup, vision_clause
-from alwaha.paths import W3D3_APP, W3D3_ROOT
+from alwaha.paths import W3D3_APP, W3D3_WORK
 
 
 class CheckTests(unittest.TestCase):
@@ -42,7 +42,7 @@ class CheckTests(unittest.TestCase):
         write_w3d3(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
         self.work = root / "work"
-        shutil.copytree(W3D3_ROOT / "work", self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(W3D3_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
         self.assertEqual(self.gold["changed"], gold(self.profile)["changed"])
 
     def tearDown(self) -> None:

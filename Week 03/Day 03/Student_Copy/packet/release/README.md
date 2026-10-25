@@ -1,0 +1,26 @@
+# Release
+
+Today's drop, copied here so the chapters can open it. The built pack is a second copy. You read this folder. The case date is 2027-01-26.
+
+- [notices/criteria-v4.md](notices/criteria-v4.md)
+- [dms/snapshot.jsonl](dms/snapshot.jsonl)
+- [feed/changes.jsonl](feed/changes.jsonl)
+- [slices/retrieve.jsonl](slices/retrieve.jsonl)
+- [openapi/dms.yaml](openapi/dms.yaml)
+- [catalog/service-catalog.json](catalog/service-catalog.json)
+- [photos/prep.json](photos/prep.json)
+- [dms/circ-ramadan.md](dms/circ-ramadan.md)
+- [dms/crit-endo-v3.md](dms/crit-endo-v3.md)
+- [dms/crit-endo-v4.md](dms/crit-endo-v4.md)
+- [dms/crit-ophth-v3.md](dms/crit-ophth-v3.md)
+- [dms/crit-ophth-v4.md](dms/crit-ophth-v4.md)
+- [dms/crit-card-v3.md](dms/crit-card-v3.md)
+- [dms/crit-card-v4.md](dms/crit-card-v4.md)
+- [dms/crit-neuro-v3.md](dms/crit-neuro-v3.md)
+- [dms/crit-neuro-v4.md](dms/crit-neuro-v4.md)
+- [dms/leaflet-prep.md](dms/leaflet-prep.md)
+- [dms/leaflet-prep-old.md](dms/leaflet-prep-old.md)
+- [dms/leaflet-staff.md](dms/leaflet-staff.md)
+- [dms/pol-booking-cluster.md](dms/pol-booking-cluster.md)
+- [dms/pol-booking-h-safra.md](dms/pol-booking-h-safra.md)
+- [dms/pol-safety.md](dms/pol-safety.md)

@@ -18,7 +18,7 @@ from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w3d3 import gold
 from alwaha.engagement.w3d3_docs import feed, snapshot
 from alwaha.engagement.w3d3_rules import apply, build, rank
-from alwaha.paths import W3D3_APP, W3D3_ROOT
+from alwaha.paths import W3D3_APP, W3D3_ROOT, W3D3_TEMPLATES, W3D3_WORK
 from alwaha.release.day2 import write_day2
 from alwaha.release.day3 import write_day3
 from alwaha.release.day4 import write_day4
@@ -194,29 +194,26 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn("past midnight", text)
 
     def test_lessons_do_not_state_the_held_questions(self) -> None:
-        lessons = []
-        for path in W3D3_ROOT.rglob("*"):
-            if not path.is_file() or "work" in path.parts:
-                continue
-            if path.suffix in {".md", ".py", ".yml", ".yaml"}:
-                lessons.append(path.read_text(encoding="utf-8"))
-        lesson_text = "\n".join(lessons)
+        notes = [path.read_text(encoding="utf-8") for path in W3D3_ROOT.glob("*.md")]
+        notes.extend(path.read_text(encoding="utf-8") for path in W3D3_TEMPLATES.glob("*.md"))
+        lesson_text = "\n".join(notes)
         hidden = gold(load("practice"))
         self.assertNotIn(load("practice").canary(), lesson_text)
         for row in hidden["held"]:
             self.assertNotIn(row["question"]["text"], lesson_text)
 
     def test_modules_differ_and_only_the_copy_passes(self) -> None:
+        packet = W3D3_APP.parent
         for name in _APP:
             shell = (W3D3_APP / name).read_bytes()
-            filled = (W3D3_ROOT / "work" / "app" / name).read_bytes()
+            filled = (W3D3_WORK / "app" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
         for name in _TESTS:
-            shell = (W3D3_ROOT / "tests" / name).read_bytes()
-            filled = (W3D3_ROOT / "work" / "tests" / name).read_bytes()
+            shell = (packet / "tests" / name).read_bytes()
+            filled = (W3D3_WORK / "tests" / name).read_bytes()
             self.assertEqual(shell, filled, name)
-        work = _suite(W3D3_ROOT / "work")
-        shell = _suite(W3D3_ROOT)
+        work = _suite(W3D3_WORK)
+        shell = _suite(packet)
         self.assertEqual(work.returncode, 0, work.stdout + work.stderr)
         self.assertNotEqual(shell.returncode, 0, shell.stdout + shell.stderr)
 

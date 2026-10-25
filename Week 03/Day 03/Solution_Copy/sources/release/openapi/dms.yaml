@@ -1,0 +1,23 @@
+openapi: 3.0.3
+info:
+  title: dms
+  version: "1"
+paths:
+  /documents/{doc_id}:
+    get:
+      operationId: fetchDocument
+      responses:
+        "200":
+          description: One document, including status, audience, and the effective window.
+  /documents:search:
+    post:
+      operationId: searchDocuments
+      responses:
+        "200":
+          description: Search hits. A hit is not a citation. Drafts are searchable.
+  /feeds/changes:
+    get:
+      operationId: readChangeFeed
+      responses:
+        "200":
+          description: document.changed events since the snapshot.
