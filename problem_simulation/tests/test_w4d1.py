@@ -17,7 +17,7 @@ from alwaha.engagement.interview import run
 from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w4d1 import gold
 from alwaha.engagement.w4d1_rows import CASE_AT
-from alwaha.paths import W4D1_APP, W4D1_ROOT
+from alwaha.paths import W4D1_APP, W4D1_ROOT, W4D1_WORK
 from alwaha.release.fingerprint import fingerprint
 from alwaha.release.w3d5 import write_w3d5
 from alwaha.release.w4d1 import write_w4d1
@@ -121,10 +121,10 @@ class ReleaseTests(unittest.TestCase):
     def test_modules_differ_and_both_copies_pass(self) -> None:
         for name in _APP:
             shell = (W4D1_APP / name).read_bytes()
-            filled = (W4D1_ROOT / "work" / "app" / name).read_bytes()
+            filled = (W4D1_WORK / "app" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
-        work = _suite(W4D1_ROOT / "work")
-        shell = _suite(W4D1_ROOT)
+        work = _suite(W4D1_WORK)
+        shell = _suite(W4D1_APP.parent)
         self.assertEqual(work.returncode, 0, work.stdout + work.stderr)
         self.assertEqual(shell.returncode, 0, shell.stdout + shell.stderr)
 

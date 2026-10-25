@@ -1,0 +1,126 @@
+"""Create the Week 4 Day 1 workspace.
+
+Chapter 01 runs this file with no extra word. That copies the shell,
+the shell tests, the workflow, the blank pages, and the interview
+folder into work/.
+
+Run the file from a terminal opened in the course folder. The path
+below is enough. You do not need to change directory first.
+
+A second run puts the starter app back, including the eight shell
+modules, and it replaces sprint.md, guardrails.json, dpia.md,
+requests.md, breach.md, and knowledge.md with the blanks. It also
+puts the blank CISO notes back. The shell tests are copied again.
+The question file is copied again and is not replaced. The workflow
+is copied again and is not replaced. Run it again only when a failure
+row says so. Then repeat the paste steps in chapters 05, 06, 07, 08,
+09, and 10.
+"""
+
+from __future__ import annotations
+
+import shutil
+import sys
+from pathlib import Path
+
+# This file's folder is the student copy. Paths below are built from
+# here so the script still works when the terminal starts in the course folder.
+HERE = Path(__file__).resolve().parent
+
+# The starter shell. Chapter 01 copies it. Later chapters replace
+# every module in the work copy. The packet copy stays the trap.
+APP = HERE / "packet" / "app"
+
+# The shell tests. Chapter 01 copies them. Later chapters replace the
+# work copies. The packet copies stay the shell tests.
+TESTS = HERE / "packet" / "tests"
+
+# The blank pages. Later chapters fill the copies, not these originals.
+TEMPLATES = HERE / "packet" / "templates"
+PAGES = (
+    "sprint.md",
+    "guardrails.json",
+    "dpia.md",
+    "requests.md",
+    "breach.md",
+    "knowledge.md",
+)
+
+# The questions are copied and not replaced. The notes start blank.
+INTERVIEWS = HERE / "packet" / "interviews"
+
+# The workflow. Chapter 01 copies it. This day does not replace it.
+PACKET = HERE / "packet"
+
+# The folder the day's checks read.
+WORK = HERE / "work"
+
+
+def _packet_ready() -> bool:
+    """True when the drawer this script copies is still beside it."""
+    return (
+        APP.is_dir()
+        and TESTS.is_dir()
+        and INTERVIEWS.is_dir()
+        and (INTERVIEWS / "ciso.questions.txt").is_file()
+        and (INTERVIEWS / "ciso.notes.md").is_file()
+        and (PACKET / ".github" / "workflows" / "ci.yml").is_file()
+        and all((TEMPLATES / name).is_file() for name in PAGES)
+    )
+
+
+def _copy_tree() -> None:
+    """Copy the shell, the tests, the workflow, the blanks, and the interview.
+
+    An existing work/app and work/tests are removed first so a
+    replaced file does not survive a second run. The release drawer
+    is not copied.
+    """
+    for source, name in ((APP, "app"), (TESTS, "tests"), (INTERVIEWS, "interviews")):
+        destination = WORK / name
+        if destination.exists():
+            shutil.rmtree(destination)
+        shutil.copytree(
+            source,
+            destination,
+            ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+        )
+    workflow = WORK / ".github" / "workflows"
+    workflow.mkdir(parents=True, exist_ok=True)
+    shutil.copy(PACKET / ".github" / "workflows" / "ci.yml", workflow / "ci.yml")
+    for name in PAGES:
+        shutil.copy(TEMPLATES / name, WORK / name)
+    (WORK / ".gitignore").write_text(
+        "__pycache__/\n*.pyc\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+
+
+def main() -> None:
+    """Copy the workspace. This file takes no extra word."""
+    if not _packet_ready():
+        raise SystemExit("This file must stay next to the packet folder. Do not move it.")
+    if len(sys.argv) > 1:
+        raise SystemExit("Use: python prepare_work.py")
+    WORK.mkdir(parents=True, exist_ok=True)
+    _copy_tree()
+    print("Created work/ from the packet.")
+    print("Leave the copies in packet/ unchanged.")
+    print()
+    print("Chapter 05 replaces work/sprint.md.")
+    print("Chapter 06 replaces work/app/guard.py, work/app/output.py, work/app/supply.py, work/app/redact.py, work/app/limit.py, and the work copies of test_guard.py, test_output.py, test_supply.py, test_redact.py, and test_limit.py.")
+    print("Chapter 07 replaces work/app/access.py, work/app/erase.py, and the work copies of test_access.py and test_erase.py.")
+    print("Chapter 08 replaces work/app/fair.py and the work copy of test_fair.py.")
+    print("Chapter 09 replaces work/guardrails.json, work/dpia.md, work/requests.md, work/breach.md, and work/interviews/ciso.notes.md.")
+    print("Chapter 10 replaces work/knowledge.md.")
+    print()
+    print("The packet tests stay the shell tests.")
+    print("The question file is copied and not replaced.")
+    print("The workflow is copied and not replaced.")
+    print()
+    print("A second run of this file puts the blanks, the starter app, and the shell tests back.")
+
+
+if __name__ == "__main__":
+    main()

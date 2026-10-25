@@ -1,0 +1,6 @@
+{
+  "key": "price.ext_large_per_1k",
+  "local_per_1k": 3,
+  "replaces": "price.ext_large_per_1k",
+  "sar": 21
+}

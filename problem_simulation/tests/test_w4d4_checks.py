@@ -23,7 +23,7 @@ from alwaha.check.failover_w4 import (
 from alwaha.check.notes_w4d4 import ARCH, EA, FAILOVER, FINANCE, MODEL, RENT, SEQUENCE
 from alwaha.config.profile import load
 from alwaha.engagement.w4d4 import gold
-from alwaha.paths import W4D4_APP, W4D4_ROOT
+from alwaha.paths import W4D4_APP, W4D4_WORK
 
 
 class CheckTests(unittest.TestCase):
@@ -38,7 +38,7 @@ class CheckTests(unittest.TestCase):
         write_w4d4(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
         self.work = root / "work"
-        shutil.copytree(W4D4_ROOT / "work", self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(W4D4_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
 
     def tearDown(self) -> None:
         self.tmp.cleanup()

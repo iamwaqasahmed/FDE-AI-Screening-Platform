@@ -1,0 +1,2 @@
+{"id": "req-access", "kind": "access", "person_id": "person-access"}
+{"id": "req-delete", "kind": "deletion", "person_id": "person-access"}

@@ -13,7 +13,7 @@ from alwaha.check.incident_w4 import COST, PROMOTE, RATE, SHADOW, TRACE, UNNAMED
 from alwaha.check.notes_w4d2 import ALERT, CISO, CPU, DRIFTS, EVENT, REP, RUNBOOK, SEQUENCE, TIMELINE
 from alwaha.config.profile import load
 from alwaha.engagement.w4d2 import gold
-from alwaha.paths import W4D2_APP, W4D2_ROOT
+from alwaha.paths import W4D2_APP, W4D2_WORK
 
 
 class CheckTests(unittest.TestCase):
@@ -28,7 +28,7 @@ class CheckTests(unittest.TestCase):
         write_w4d2(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
         self.work = root / "work"
-        shutil.copytree(W4D2_ROOT / "work", self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(W4D2_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
 
     def tearDown(self) -> None:
         self.tmp.cleanup()

@@ -13,7 +13,7 @@ from alwaha.check.slo_w4 import BACKLOG, LATENCY, MISSING, TABLE, UNREGISTERED, 
 from alwaha.check.surge_w4 import EXTERNAL, GPU, UNBATCHED
 from alwaha.config.profile import load
 from alwaha.engagement.w4d3 import gold
-from alwaha.paths import W4D3_APP, W4D3_ROOT
+from alwaha.paths import W4D3_APP, W4D3_WORK
 
 
 class CheckTests(unittest.TestCase):
@@ -28,7 +28,7 @@ class CheckTests(unittest.TestCase):
         write_w4d3(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
         self.work = root / "work"
-        shutil.copytree(W4D3_ROOT / "work", self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(W4D3_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
 
     def tearDown(self) -> None:
         self.tmp.cleanup()

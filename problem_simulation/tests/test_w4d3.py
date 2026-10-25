@@ -19,7 +19,7 @@ from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w3d2 import adapter_hash
 from alwaha.engagement.w4d3 import gold
 from alwaha.engagement.w4d3_rows import ADAPTERS, BACKLOG, COLD_START_SECONDS, PEAK_MULTIPLE, WINDOW_HOURS, registry
-from alwaha.paths import W4D3_APP, W4D3_ROOT
+from alwaha.paths import W4D3_APP, W4D3_ROOT, W4D3_WORK
 from alwaha.release.fingerprint import fingerprint
 from alwaha.release.w4d2 import write_w4d2
 from alwaha.release.w4d3 import write_w4d3
@@ -151,11 +151,17 @@ class ReleaseTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_state_the_canary_or_the_price(self) -> None:
+        release_trees = (
+            W4D3_ROOT / "Student_Copy" / "packet" / "release",
+            W4D3_ROOT / "Solution_Copy" / "sources",
+        )
         profile = load("practice")
         shown = gold(profile)
         notes = []
         blob = []
         for path in W4D3_ROOT.rglob("*"):
+            if any(path.is_relative_to(root) for root in release_trees):
+                continue
             if not path.is_file() or path.suffix not in _TEXT:
                 continue
             text = path.read_text(encoding="utf-8")
@@ -176,10 +182,10 @@ class ReleaseTests(unittest.TestCase):
     def test_modules_differ_and_both_copies_pass(self) -> None:
         for name in _APP:
             shell = (W4D3_APP / name).read_bytes()
-            filled = (W4D3_ROOT / "work" / "app" / name).read_bytes()
+            filled = (W4D3_WORK / "app" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
-        work = _suite(W4D3_ROOT / "work")
-        shell = _suite(W4D3_ROOT)
+        work = _suite(W4D3_WORK)
+        shell = _suite(W4D3_APP.parent)
         self.assertEqual(work.returncode, 0, work.stdout + work.stderr)
         self.assertEqual(shell.returncode, 0, shell.stdout + shell.stderr)
 

@@ -1,0 +1,8 @@
+{
+  "candidate_hash": "sha256:08d5ae4b2049a3d4",
+  "id": "shadow-extract",
+  "note": "The patient must not see the shadow text.",
+  "registered_hash": "sha256:ebbd9bb62913517f",
+  "registered_reply": "Your referral is still pending.",
+  "shadow_reply": "Your referral was accepted by the shadow adapter."
+}

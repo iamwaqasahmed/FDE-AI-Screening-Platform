@@ -1,0 +1,10 @@
+{
+  "chat_p95_budget_ms": 862,
+  "chat_p95_reserved_ms": 324,
+  "chat_p95_starved_ms": 2718,
+  "cold_start_seconds": 90,
+  "ext_large_tps": 280,
+  "local_batched_tps": 149,
+  "local_unbatched_tps": 58,
+  "tokens_per_referral": 1000
+}

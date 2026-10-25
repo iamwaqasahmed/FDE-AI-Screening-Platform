@@ -1,0 +1,23 @@
+{
+  "backlog_referrals": 12000,
+  "local_per_1k": 3,
+  "shares": [
+    {
+      "hospital": "h-nakhl",
+      "referrals": 2110
+    },
+    {
+      "hospital": "h-safra",
+      "referrals": 2710
+    },
+    {
+      "hospital": "h-wadi",
+      "referrals": 3310
+    },
+    {
+      "hospital": "h-ain",
+      "referrals": 3870
+    }
+  ],
+  "tokens_per_referral": 1000
+}

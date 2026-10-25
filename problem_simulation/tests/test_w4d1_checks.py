@@ -19,7 +19,7 @@ from alwaha.config.profile import load
 from alwaha.engagement.w2d4 import national_id
 from alwaha.engagement.w4d1 import gold
 from alwaha.engagement.w4d1_rows import CASE_AT
-from alwaha.paths import W4D1_APP, W4D1_ROOT
+from alwaha.paths import W4D1_APP, W4D1_WORK
 
 
 class CheckTests(unittest.TestCase):
@@ -34,7 +34,7 @@ class CheckTests(unittest.TestCase):
         write_w4d1(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
         self.work = root / "work"
-        shutil.copytree(W4D1_ROOT / "work", self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(W4D1_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
 
     def tearDown(self) -> None:
         self.tmp.cleanup()

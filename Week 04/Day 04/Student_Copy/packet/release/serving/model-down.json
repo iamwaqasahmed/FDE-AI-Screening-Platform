@@ -1,0 +1,15 @@
+{
+  "model": "down",
+  "rows": [
+    {
+      "id": "status-1",
+      "kind": "status",
+      "text": "The referral is still pending."
+    },
+    {
+      "id": "book-1",
+      "kind": "booking",
+      "text": "Offer a slot."
+    }
+  ]
+}

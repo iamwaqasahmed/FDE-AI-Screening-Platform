@@ -1,0 +1,4 @@
+Do we have an API strategy?
+Does site-b take over when site-a is down?
+Where do in-flight approvals live during the drill?
+Is insure a site?
