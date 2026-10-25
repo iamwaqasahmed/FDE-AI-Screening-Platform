@@ -16,7 +16,7 @@ from alwaha.check.synthetic_w3 import CARD, MARK, NID, synthetic_problems
 from alwaha.config.profile import load
 from alwaha.engagement.w3d1 import budget, gold
 from alwaha.engagement.w3d1_rules import INVITE_ON, PIT_ROWS, SPEND_ITEMS, features_at, spend
-from alwaha.paths import W3D1_APP, W3D1_ROOT
+from alwaha.paths import W3D1_APP, W3D1_WORK
 from alwaha.release.w3d1 import write_w3d1
 
 
@@ -30,7 +30,7 @@ class CheckTests(unittest.TestCase):
         write_w3d1(self.profile, self.pack, self.truth)
         self.gold = json.loads((self.truth / "w3d1_gold.json").read_text(encoding="utf-8"))
         self.work = root / "work"
-        shutil.copytree(W3D1_ROOT / "work", self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(W3D1_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
         self.assertEqual(self.gold, gold(self.profile))
 
     def tearDown(self) -> None:

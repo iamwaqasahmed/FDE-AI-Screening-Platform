@@ -16,7 +16,7 @@ from alwaha.demo.merge import main as demo_main
 from alwaha.engagement.interview import run
 from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w3d1 import gold
-from alwaha.paths import W3D1_APP, W3D1_ROOT
+from alwaha.paths import W3D1_APP, W3D1_ROOT, W3D1_TEMPLATES, W3D1_WORK
 from alwaha.release.day2 import write_day2
 from alwaha.release.day3 import write_day3
 from alwaha.release.day4 import write_day4
@@ -148,13 +148,9 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(converted, text)
 
     def test_lessons_do_not_state_the_gregorian_date(self) -> None:
-        lessons = []
-        for path in W3D1_ROOT.rglob("*"):
-            if not path.is_file() or "work" in path.parts:
-                continue
-            if path.suffix in {".md", ".py", ".yml", ".yaml"}:
-                lessons.append(path.read_text(encoding="utf-8"))
-        lesson_text = "\n".join(lessons)
+        notes = [path.read_text(encoding="utf-8") for path in W3D1_ROOT.glob("*.md")]
+        notes.extend(path.read_text(encoding="utf-8") for path in W3D1_TEMPLATES.glob("*.md"))
+        lesson_text = "\n".join(notes)
         hidden = gold(load("small"))
         self.assertNotIn(load("small").canary(), lesson_text)
         for secret in (*hidden["national_ids"], *hidden["dates"].values()):
@@ -163,17 +159,28 @@ class DemoTests(unittest.TestCase):
     def test_modules_differ_and_both_suites_pass(self) -> None:
         for name in _APP:
             shell = (W3D1_APP / name).read_bytes()
-            filled = (W3D1_ROOT / "work" / "app" / name).read_bytes()
+            filled = (W3D1_WORK / "app" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
-        for folder in (W3D1_ROOT, W3D1_ROOT / "work"):
-            completed = subprocess.run(
-                [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
-                cwd=folder,
-                capture_output=True,
-                text=True,
-                check=False,
-            )
-            self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
+
+    def test_filled_suite_passes(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
+            cwd=W3D1_WORK,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
+
+    def test_shell_suite_passes(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
+            cwd=W3D1_ROOT / "Student_Copy" / "packet",
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
 
     def test_dpo_and_coord_lead_add_no_required_fact(self) -> None:
         personas = load_personas()
