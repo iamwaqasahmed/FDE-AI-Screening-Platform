@@ -1,0 +1,15 @@
+openapi: 3.0.3
+info:
+  title: iam
+  version: "1"
+x-issuer: https://iam.alwaha.example
+x-token-endpoint: https://iam.alwaha.example/token
+x-actors:
+  - name: patient
+    sub: patient-status
+    role: patient
+    loa: loa-1
+  - name: coordinator
+    sub: staff-coordinator
+    role: coordinator
+    loa: loa-2

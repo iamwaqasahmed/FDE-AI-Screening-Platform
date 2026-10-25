@@ -1,0 +1,12 @@
+{
+  "clinic": "ENDO-CLN",
+  "count": 3,
+  "facility_id": "h-wadi",
+  "letter": "CANARY-396125ab9410",
+  "message": "Where is my referral?",
+  "referral_id": "ref-status",
+  "scenario": "status",
+  "session": "ses-status",
+  "state": "pending",
+  "subject": "patient-status"
+}

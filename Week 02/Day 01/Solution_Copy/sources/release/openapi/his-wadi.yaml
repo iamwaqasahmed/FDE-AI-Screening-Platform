@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: his-wadi
+  version: "2"
+paths:
+  /Referral/{referral_id}:
+    get:
+      operationId: readReferral
+      parameters:
+        - name: clinic
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Referral status.

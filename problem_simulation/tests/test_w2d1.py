@@ -14,7 +14,7 @@ from alwaha.demo.fhir import main as demo_main
 from alwaha.engagement.interview import run
 from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w2d1 import CLINIC, FIELD, REMOVED, gold, his_wadi_spec, scenario
-from alwaha.paths import W2D1_APP, W2D1_ROOT
+from alwaha.paths import W2D1_APP, W2D1_ROOT, W2D1_TEMPLATES, W2D1_WORK
 from alwaha.release.day2 import write_day2
 from alwaha.release.day3 import write_day3
 from alwaha.release.day4 import write_day4
@@ -121,12 +121,9 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn("END-01", text)
 
     def test_notes_do_not_name_the_removed_field(self) -> None:
-        lessons = []
-        for path in W2D1_ROOT.rglob("*.md"):
-            if "work" in path.parts:
-                continue
-            lessons.append(path.read_text(encoding="utf-8"))
-        lesson_text = "\n".join(lessons)
+        notes = [path.read_text(encoding="utf-8") for path in W2D1_ROOT.glob("*.md")]
+        notes.extend(path.read_text(encoding="utf-8") for path in W2D1_TEMPLATES.glob("*.md"))
+        lesson_text = "\n".join(notes)
         for secret in (REMOVED, CLINIC, "END-01", "loa-2", "CANARY-"):
             self.assertNotIn(secret, lesson_text)
         everything = "\n".join(path.read_text(encoding="utf-8") for path in W2D1_ROOT.rglob("*.md"))
@@ -142,9 +139,9 @@ class DemoTests(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         expected = module.render(module.fields(his_wadi_spec()))
-        self.assertEqual((W2D1_ROOT / "work" / "app" / "client.py").read_text(encoding="utf-8"), expected)
+        self.assertEqual((W2D1_WORK / "app" / "client.py").read_text(encoding="utf-8"), expected)
         for source in W2D1_APP.glob("*.py"):
-            copy = W2D1_ROOT / "work" / "app" / source.name
+            copy = W2D1_WORK / "app" / source.name
             if source.name == "client.py":
                 self.assertNotEqual(source.read_bytes(), copy.read_bytes())
             else:

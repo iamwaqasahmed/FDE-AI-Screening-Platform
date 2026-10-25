@@ -17,7 +17,7 @@ from alwaha.check.auth import auth_problems
 from alwaha.check.journey import journey_problems
 from alwaha.config.profile import load
 from alwaha.engagement.w2d1 import CLINIC, REMOVED, gold
-from alwaha.paths import W2D1_APP, W2D1_ROOT
+from alwaha.paths import W2D1_APP, W2D1_WORK
 from alwaha.release.w2d1 import write_w2d1
 
 
@@ -32,7 +32,7 @@ class CheckTests(unittest.TestCase):
         self.gold = json.loads((self.truth / "w2d1_gold.json").read_text(encoding="utf-8"))
         self.work = root / "work"
         shutil.copytree(
-            W2D1_ROOT / "work",
+            W2D1_WORK,
             self.work,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "sessions.db", "trace.json"),
         )
