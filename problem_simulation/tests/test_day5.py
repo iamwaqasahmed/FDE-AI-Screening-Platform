@@ -96,13 +96,14 @@ class ReleaseTests(unittest.TestCase):
             self.assertEqual([row["scenario"] for row in gold["scenarios"]], list(FAILURE_ORDER))
 
     def test_notes_do_not_copy_the_answers(self) -> None:
+        packet = DAY5_ROOT / "Student_Copy" / "packet"
         notes = [path.read_text(encoding="utf-8") for path in DAY5_ROOT.glob("*.md")]
-        notes.extend(path.read_text(encoding="utf-8") for path in (DAY5_ROOT / "templates").glob("*.md"))
-        notes.extend(path.read_text(encoding="utf-8") for path in (DAY5_ROOT / "agent").glob("*.py"))
+        notes.extend(path.read_text(encoding="utf-8") for path in (packet / "templates").glob("*.md"))
+        notes.extend(path.read_text(encoding="utf-8") for path in (packet / "agent").glob("*.py"))
         text = "\n".join(notes)
         for secret in ("16 weeks", "unsigned ruling", "CANARY-", "slot-race"):
             self.assertNotIn(secret, text)
-        self.assertEqual((DAY5_ROOT / "agent" / "model.py").read_text(encoding="utf-8"), (AGENT_ROOT / "model.py").read_text(encoding="utf-8"))
+        self.assertEqual((packet / "agent" / "model.py").read_text(encoding="utf-8"), (AGENT_ROOT / "model.py").read_text(encoding="utf-8"))
 
 
 class DemoTests(unittest.TestCase):

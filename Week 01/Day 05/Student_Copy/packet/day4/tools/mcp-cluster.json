@@ -1,0 +1,35 @@
+{
+  "server": "mcp-cluster",
+  "tools": [
+    {
+      "approval": false,
+      "kind": "read",
+      "name": "referral.status"
+    },
+    {
+      "approval": true,
+      "kind": "write",
+      "name": "referral.return"
+    },
+    {
+      "approval": false,
+      "kind": "read",
+      "name": "slots.offer"
+    },
+    {
+      "approval": true,
+      "kind": "write",
+      "name": "slots.book"
+    },
+    {
+      "approval": false,
+      "kind": "write",
+      "name": "sms.send"
+    },
+    {
+      "approval": false,
+      "kind": "write",
+      "name": "safety.redirect"
+    }
+  ]
+}

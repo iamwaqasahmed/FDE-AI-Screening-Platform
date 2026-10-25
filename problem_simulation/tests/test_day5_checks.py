@@ -15,7 +15,7 @@ from alwaha.check.individual import individual_problems
 from alwaha.check.readout import readout_problems
 from alwaha.check.trajectory import trajectory_problems
 from alwaha.config.profile import load
-from alwaha.paths import AGENT_ROOT, DAY5_ROOT
+from alwaha.paths import AGENT_ROOT, DAY5_ROOT, DAY5_WORK
 from alwaha.release.day4 import write_day4
 from alwaha.release.day5 import write_day5
 
@@ -63,14 +63,14 @@ class CheckTests(unittest.TestCase):
         self.work = root / "work"
         self.work.mkdir()
         self.here = Path(__file__).resolve().parent
-        self.filled = DAY5_ROOT / "work"
+        self.filled = DAY5_WORK
 
     def tearDown(self) -> None:
         self.tmp.cleanup()
 
     def _copy_skeleton(self) -> None:
         shutil.copytree(
-            DAY5_ROOT / "agent",
+            DAY5_ROOT / "Student_Copy" / "packet" / "agent",
             self.work / "agent",
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
         )
@@ -115,7 +115,7 @@ class CheckTests(unittest.TestCase):
 
     def test_filled_copy_matches_the_passing_agent(self) -> None:
         work = self.filled / "agent"
-        skeleton = DAY5_ROOT / "agent"
+        skeleton = DAY5_ROOT / "Student_Copy" / "packet" / "agent"
         for name in ("run.py", "tools.py"):
             self.assertEqual((work / name).read_text(encoding="utf-8"), (skeleton / name).read_text(encoding="utf-8"))
         self.assertEqual((work / "model.py").read_text(encoding="utf-8"), (self.here / "day5_model.py").read_text(encoding="utf-8"))
