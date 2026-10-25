@@ -1,4 +1,12 @@
-"""Reply fields for one scenario."""
+"""Reply fields for one scenario.
+
+This is the starter. Chapter 06 replaces the copy under work/.
+Leave this packet copy unchanged.
+
+The count argument is ignored. Every reply writes the same invented count.
+A reply that should carry the status tool's number, or no number at all,
+still leaves here with that invented count.
+"""
 
 from __future__ import annotations
 
@@ -10,6 +18,11 @@ def reply(
     facility_id: str = "",
     constraint: str = "",
 ) -> dict:
+    """Return the reply object the trace stores under reply.
+
+    intent, text, facility_id, and constraint are kept.
+    count is accepted and then discarded. The written count is 12.
+    """
     _ = count
     return {
         "intent": intent,
@@ -35,6 +48,12 @@ def row(
     preference_used: bool = False,
     decisions: int = 0,
 ) -> dict:
+    """Return one trace row.
+
+    Empty lists are written when the caller passes nothing.
+    This starter's caller leaves citations, pending, and approval ids empty,
+    and it leaves redirected and refusal_logged at their defaults.
+    """
     return {
         "scenario": scenario,
         "reply": reply_body,
