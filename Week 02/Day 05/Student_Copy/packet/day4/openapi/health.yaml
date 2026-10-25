@@ -1,0 +1,11 @@
+openapi: 3.0.3
+info:
+  title: health
+  version: "1"
+paths:
+  /v1/health:
+    get:
+      operationId: readHealth
+      responses:
+        "200":
+          description: Status, the registered model hash, the prompt version, and dependency status.

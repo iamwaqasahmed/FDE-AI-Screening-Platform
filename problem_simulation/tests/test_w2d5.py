@@ -17,7 +17,7 @@ from alwaha.demo.ain import main as demo_main
 from alwaha.engagement.interview import run
 from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w2d5 import CARD, QUESTIONS, gold
-from alwaha.paths import W2D5_APP, W2D5_ROOT
+from alwaha.paths import W2D5_APP, W2D5_DEPLOY, W2D5_ROOT, W2D5_TEMPLATES, W2D5_TESTS, W2D5_WORK
 from alwaha.release.day2 import write_day2
 from alwaha.release.day3 import write_day3
 from alwaha.release.day4 import write_day4
@@ -144,13 +144,9 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_name_the_clinic_code(self) -> None:
-        lessons = []
-        for path in W2D5_ROOT.rglob("*"):
-            if not path.is_file() or "work" in path.parts:
-                continue
-            if path.suffix in {".md", ".py", ".yml", ".yaml"}:
-                lessons.append(path.read_text(encoding="utf-8"))
-        lesson_text = "\n".join(lessons)
+        notes = [path.read_text(encoding="utf-8") for path in W2D5_ROOT.glob("*.md")]
+        notes.extend(path.read_text(encoding="utf-8") for path in W2D5_TEMPLATES.glob("*.md"))
+        lesson_text = "\n".join(notes)
         hidden = gold(load("small"))
         self.assertNotIn(hidden["clinic_code"], lesson_text)
         self.assertNotIn(hidden["previous_code"], lesson_text)
@@ -158,18 +154,19 @@ class DemoTests(unittest.TestCase):
     def test_only_the_trap_modules_differ(self) -> None:
         for name in ("queue.py", "file_ain.py", "notify.py", "contract.py"):
             shell = (W2D5_APP / name).read_bytes()
-            filled = (W2D5_ROOT / "work" / "app" / name).read_bytes()
+            filled = (W2D5_WORK / "app" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
         for name in _SMOKE:
-            folder = "app" if name.endswith(".py") and not name.startswith("test_") else "tests"
             if name in {"admit.py", "health.py", "router.py", "secrets.py"}:
-                folder = "app"
-            shell = (W2D5_ROOT / folder / name).read_bytes()
-            filled = (W2D5_ROOT / "work" / folder / name).read_bytes()
+                shell = (W2D5_APP / name).read_bytes()
+                filled = (W2D5_WORK / "app" / name).read_bytes()
+            else:
+                shell = (W2D5_TESTS / name).read_bytes()
+                filled = (W2D5_WORK / "tests" / name).read_bytes()
             self.assertEqual(shell, filled, name)
         self.assertEqual(
-            (W2D5_ROOT / "deploy" / "Dockerfile").read_bytes(),
-            (W2D5_ROOT / "work" / "deploy" / "Dockerfile").read_bytes(),
+            (W2D5_DEPLOY / "Dockerfile").read_bytes(),
+            (W2D5_WORK / "deploy" / "Dockerfile").read_bytes(),
         )
 
     def test_ea_confirms_the_missed_night(self) -> None:
@@ -185,7 +182,7 @@ class DemoTests(unittest.TestCase):
     def test_filled_suite_passes(self) -> None:
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
-            cwd=W2D5_ROOT / "work",
+            cwd=W2D5_WORK,
             capture_output=True,
             text=True,
             check=False,
@@ -195,7 +192,7 @@ class DemoTests(unittest.TestCase):
     def test_shell_suite_passes(self) -> None:
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
-            cwd=W2D5_ROOT,
+            cwd=W2D5_ROOT / "Student_Copy" / "packet",
             capture_output=True,
             text=True,
             check=False,

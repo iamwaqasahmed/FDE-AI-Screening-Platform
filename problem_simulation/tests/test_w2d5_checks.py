@@ -17,7 +17,7 @@ from alwaha.check.readout_w2 import readout_problems
 from alwaha.config.profile import load
 from alwaha.engagement.w2d4 import gold as deploy_gold
 from alwaha.engagement.w2d5 import gold
-from alwaha.paths import W2D5_APP, W2D5_ROOT
+from alwaha.paths import W2D5_APP, W2D5_TESTS, W2D5_WORK
 from alwaha.release.w2d4 import write_w2d4
 from alwaha.release.w2d5 import write_w2d5
 
@@ -36,7 +36,7 @@ class CheckTests(unittest.TestCase):
         self.gold = json.loads((self.truth / "w2d5_gold.json").read_text(encoding="utf-8"))
         self.work = root / "work"
         shutil.copytree(
-            W2D5_ROOT / "work",
+            W2D5_WORK,
             self.work,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
         )
@@ -110,7 +110,7 @@ class CheckTests(unittest.TestCase):
 
     def test_shell_contract_accepts_the_fault(self) -> None:
         shutil.copy(W2D5_APP / "contract.py", self.work / "app" / "contract.py")
-        shutil.copy(W2D5_ROOT / "tests" / "test_contract.py", self.work / "tests" / "test_contract.py")
+        shutil.copy(W2D5_TESTS / "test_contract.py", self.work / "tests" / "test_contract.py")
         problems = self._individual()
         self.assertEqual(problems, ["the contract test accepted the live-slot fault"])
         self._hidden(problems)

@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info:
+  title: sched-ain
+  version: "1"
+paths:
+  /files:
+    post:
+      operationId: acceptFile
+      responses:
+        "202":
+          description: The nightly file is stored. The last file wins.
+  /book:
+    post:
+      operationId: book
+      responses:
+        "202":
+          description: A real-time booking returns queued.
