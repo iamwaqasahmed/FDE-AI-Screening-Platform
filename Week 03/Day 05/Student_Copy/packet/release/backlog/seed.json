@@ -1,0 +1,14 @@
+[
+  {
+    "story_id": "p-triage",
+    "title": "Set clinical urgency"
+  },
+  {
+    "story_id": "vendor-bot",
+    "title": "Replace the contact center with the vendor bot"
+  },
+  {
+    "story_id": "req-cite",
+    "title": "Cite the in-force document"
+  }
+]

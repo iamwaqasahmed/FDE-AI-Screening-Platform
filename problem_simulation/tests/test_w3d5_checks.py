@@ -15,7 +15,7 @@ from alwaha.check.rcp_w3 import BACKLOG, BRIEF, DOT, GATE_SKIP, SPONSOR, TRIAGE
 from alwaha.config.profile import load
 from alwaha.engagement.w3d5 import gold
 from alwaha.engagement.w3d5_rows import IN_FORCE, UNAUTH
-from alwaha.paths import W3D5_APP, W3D5_ROOT
+from alwaha.paths import W3D5_APP, W3D5_WORK
 
 
 class CheckTests(unittest.TestCase):
@@ -30,7 +30,7 @@ class CheckTests(unittest.TestCase):
         write_w3d5(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
         self.work = root / "work"
-        shutil.copytree(W3D5_ROOT / "work", self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(W3D5_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
 
     def tearDown(self) -> None:
         self.tmp.cleanup()
@@ -138,7 +138,10 @@ class CheckTests(unittest.TestCase):
 
     def test_commented_gate_fails(self) -> None:
         target = self.work / ".github" / "workflows" / "ci.yml"
-        target.write_text((W3D5_ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8"), encoding="utf-8")
+        target.write_text(
+            (W3D5_APP.parent / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
         problems = self._eval()
         self.assertEqual(problems, [GATE])
         self._hidden(problems)
