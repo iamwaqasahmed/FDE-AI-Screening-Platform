@@ -1,0 +1,3 @@
+{"answer": "The clinic is open every night and the citation reads as settled.", "fluent": true, "item_id": "cal-fluent-wrong", "pass": false}
+{"answer": "In force.", "fluent": false, "item_id": "cal-terse-right", "pass": true}
+{"answer": "The in-force document is the cluster circular, and the hours match that document.", "fluent": true, "item_id": "cal-fluent-right", "pass": true}

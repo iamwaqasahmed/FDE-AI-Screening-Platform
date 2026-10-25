@@ -1,0 +1,19 @@
+{
+  "arms": [
+    "clause",
+    "short"
+  ],
+  "counts": {
+    "clause": {
+      "contained": 30,
+      "honest_pending": 48,
+      "n": 80
+    },
+    "short": {
+      "contained": 55,
+      "honest_pending": 40,
+      "n": 80
+    }
+  },
+  "metric": "honest_pending"
+}

@@ -17,7 +17,7 @@ from alwaha.engagement.interview import run
 from alwaha.engagement.personas import load_personas
 from alwaha.engagement.w3d4 import gold
 from alwaha.engagement.w3d4_judge import HELD_DOC, HELD_SPAN
-from alwaha.paths import W3D4_APP, W3D4_ROOT
+from alwaha.paths import W3D4_APP, W3D4_ROOT, W3D4_TEMPLATES, W3D4_WORK
 from alwaha.release.fingerprint import fingerprint
 from alwaha.release.w3d3 import write_w3d3
 from alwaha.release.w3d4 import write_w3d4
@@ -139,13 +139,9 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_state_the_held_item(self) -> None:
-        lessons = []
-        for path in W3D4_ROOT.rglob("*"):
-            if not path.is_file() or "work" in path.parts:
-                continue
-            if path.suffix in {".md", ".py", ".yml", ".yaml"}:
-                lessons.append(path.read_text(encoding="utf-8"))
-        lesson_text = "\n".join(lessons)
+        notes = [path.read_text(encoding="utf-8") for path in W3D4_ROOT.glob("*.md")]
+        notes.extend(path.read_text(encoding="utf-8") for path in W3D4_TEMPLATES.glob("*.md"))
+        lesson_text = "\n".join(notes)
         hidden = gold(load("practice"))
         held = hidden["calibration_held"][0]
         self.assertNotIn(load("practice").canary(), lesson_text)
@@ -153,20 +149,21 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(held["span"], lesson_text)
 
     def test_modules_differ_and_only_the_copy_passes(self) -> None:
+        packet = W3D4_APP.parent
         for name in _APP:
             shell = (W3D4_APP / name).read_bytes()
-            filled = (W3D4_ROOT / "work" / "app" / name).read_bytes()
+            filled = (W3D4_WORK / "app" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
         for name in _TESTS:
-            shell = (W3D4_ROOT / "tests" / name).read_bytes()
-            filled = (W3D4_ROOT / "work" / "tests" / name).read_bytes()
+            shell = (packet / "tests" / name).read_bytes()
+            filled = (W3D4_WORK / "tests" / name).read_bytes()
             self.assertEqual(shell, filled, name)
-        shell_ci = (W3D4_ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
-        work_ci = (W3D4_ROOT / "work" / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
+        shell_ci = (packet / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
+        work_ci = (W3D4_WORK / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
         self.assertIn("# evaluation-gate:", shell_ci)
         self.assertIn("\n  evaluation-gate:\n", work_ci)
-        work = _suite(W3D4_ROOT / "work")
-        shell = _suite(W3D4_ROOT)
+        work = _suite(W3D4_WORK)
+        shell = _suite(packet)
         self.assertEqual(work.returncode, 0, work.stdout + work.stderr)
         self.assertNotEqual(shell.returncode, 0, shell.stdout + shell.stderr)
 

@@ -1,0 +1,4 @@
+{"log_id": "log-night", "output": "The eye clinic is open all night. Source: a clause that is not on file."}
+{"log_id": "log-circular", "output": "The hours reply cites the unauthorized circular."}
+{"log_id": "log-friday", "output": "The offer is Friday at 10:00, and the gender preference is ignored."}
+{"log_id": "log-approval", "output": "The slot is booked. Approval: none."}

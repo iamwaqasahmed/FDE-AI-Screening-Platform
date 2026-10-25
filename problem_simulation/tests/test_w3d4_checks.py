@@ -16,7 +16,7 @@ from alwaha.engagement.w3d4 import gold
 from alwaha.engagement.w3d4_judge import HELD_DOC, HELD_SPAN
 from alwaha.engagement.w3d4_pages import experiment
 from alwaha.engagement.w3d4_rules import bounds, report
-from alwaha.paths import W3D4_APP, W3D4_ROOT
+from alwaha.paths import W3D4_APP, W3D4_WORK
 
 
 class CheckTests(unittest.TestCase):
@@ -31,7 +31,7 @@ class CheckTests(unittest.TestCase):
         write_w3d4(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
         self.work = root / "work"
-        shutil.copytree(W3D4_ROOT / "work", self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        shutil.copytree(W3D4_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
 
     def tearDown(self) -> None:
         self.tmp.cleanup()
@@ -160,7 +160,10 @@ class CheckTests(unittest.TestCase):
 
     def test_commented_gate_fails(self) -> None:
         target = self.work / ".github" / "workflows" / "ci.yml"
-        target.write_text((W3D4_ROOT / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8"), encoding="utf-8")
+        target.write_text(
+            (W3D4_APP.parent / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
         problems = self._eval()
         self.assertEqual(problems, ["the evaluation gate is still commented"])
         self._hidden(problems)
