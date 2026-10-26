@@ -123,7 +123,10 @@ def spans(profile: Profile) -> list[dict]:
 
 
 def changed() -> dict:
-    """Return the document-changed event for the hours circular, including the new body."""
+    """Return the document-changed event for the hours circular, including the new body.
+
+    The steps return the new hours body, the circular id, an in-force status, the document it supersedes, and the changed topic.
+    """
     return {
         "body": NEW_HOURS,
         "doc_id": CIRCULAR,
@@ -134,7 +137,10 @@ def changed() -> dict:
 
 
 def gateway(seed: int) -> list[dict]:
-    """Return gateway rows whose cost moves with the seed on two of the hospitals."""
+    """Return gateway rows whose cost moves with the seed on two of the hospitals.
+
+    The steps return one cost row for each hospital call and let the seed move the cost on two hospitals.
+    """
     extra = 1 + (seed % 3)
     return [
         {"hospital": "h-wadi", "sar": 10 + extra, "tokens": 400},
@@ -145,7 +151,10 @@ def gateway(seed: int) -> list[dict]:
 
 
 def overrides(seed: int) -> list[dict]:
-    """Return stamped rows, then unstamped rows. How many are stamped moves with the seed."""
+    """Return stamped rows, then unstamped rows. How many are stamped moves with the seed.
+
+    The steps write a seed-sized block of stamped rows and then a block of unstamped rows.
+    """
     stamped = 2 + (seed % 5)
     rows = [{"id": f"stamp-{index}", "stamped": True} for index in range(stamped)]
     rows.extend({"id": f"plain-{index}", "stamped": False} for index in range(6))
@@ -153,7 +162,10 @@ def overrides(seed: int) -> list[dict]:
 
 
 def signals() -> list[dict]:
-    """Return the drift signals: hours, criteria, and the campaign clinic, each with what was seen and what is current."""
+    """Return the drift signals: hours, criteria, and the campaign clinic, each with what was seen and what is current.
+
+    The steps return one signal for hours, one for criteria, and one for the campaign clinic, each storing the seen value and the current value.
+    """
     return [
         {"current": CIRCULAR, "id": "drift-hours", "kind": "hours", "seen": "circ-ramadan"},
         {"current": "crit-endo-v4", "id": "drift-criteria", "kind": "criteria", "seen": "crit-endo-v3"},

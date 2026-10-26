@@ -101,28 +101,46 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_health_misses_the_hash(self) -> None:
-        """Fails when a health probe that does not report the registered hash is accepted."""
+        """Fails when a health probe that does not report the registered hash is accepted.
+
+        The test copies the unfinished health probe into the work tree and fails unless the
+        deploy checker names that miss, and the problem list does not echo a hidden value.
+        """
         shutil.copy(W2D4_APP / "health.py", self.work / "app" / "health.py")
         problems = self._deploy()
         self.assertEqual(problems, ["the health probe does not report the registered hash"])
         self._hidden(problems)
 
     def test_shell_router_leaves_the_private_endpoint(self) -> None:
-        """Fails when a router that still exposes the private endpoint is accepted."""
+        """Fails when a router that still exposes the private endpoint is accepted.
+
+        The test copies the unfinished router into the work tree and fails unless the deploy
+        checker names the private endpoint, and the problem list does not echo a hidden value.
+        """
         shutil.copy(W2D4_APP / "router.py", self.work / "app" / "router.py")
         problems = self._deploy()
         self.assertEqual(problems, ["the router leaves the private endpoint"])
         self._hidden(problems)
 
     def test_shell_secrets_reuse_dev(self) -> None:
-        """Fails when production is allowed to reuse the dev credential."""
+        """Fails when production is allowed to reuse the dev credential.
+
+        The test copies the unfinished secrets module into the work tree and fails unless the
+        deploy checker names the reused dev credential, and the problem list does not echo a
+        hidden value.
+        """
         shutil.copy(W2D4_APP / "secrets.py", self.work / "app" / "secrets.py")
         problems = self._deploy()
         self.assertEqual(problems, ["prod uses the dev credential"])
         self._hidden(problems)
 
     def test_shell_image_runs_as_root(self) -> None:
-        """Fails when the unfinished image definition, which runs privileged, is accepted."""
+        """Fails when the unfinished image definition, which runs privileged, is accepted.
+
+        The test copies the unfinished image definition into the work tree and fails unless the
+        deploy checker names the privileged image, and the problem list does not echo a hidden
+        value.
+        """
         shutil.copy(W2D4_DEPLOY / "Dockerfile", self.work / "deploy" / "Dockerfile")
         problems = self._deploy()
         self.assertEqual(problems, ["the image runs as root"])
@@ -182,7 +200,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_blank_operator_steps(self) -> None:
-        """Fails when blank operator steps are accepted."""
+        """Fails when blank operator steps are accepted.
+
+        The test replaces the operator page with the blank template and fails unless the deploy
+        checker says the steps are missing, and the problem list does not echo a hidden value.
+        """
         shutil.copy(W2D4_TEMPLATES / "operators.md", self.work / "operators.md")
         problems = self._deploy()
         self.assertEqual(problems, ["the operator steps are missing"])
@@ -198,14 +220,23 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_knowledge_needs_two_answers(self) -> None:
-        """Fails when an empty knowledge page is accepted in place of the two answers."""
+        """Fails when an empty knowledge page is accepted in place of the two answers.
+
+        The test writes an empty knowledge page and fails unless the deploy checker asks for the
+        two answers, and the problem list does not echo a hidden value.
+        """
         (self.work / "knowledge.md").write_text("# Knowledge\n", encoding="utf-8")
         problems = self._deploy()
         self.assertEqual(problems, ["knowledge.md needs two answers"])
         self._hidden(problems)
 
     def test_banned_sentence_is_not_echoed(self) -> None:
-        """Fails when a banned sentence appended to the deployment note is accepted."""
+        """Fails when a banned sentence appended to the deployment note is accepted.
+
+        The test appends a banned sentence to the deployment note and fails unless the deploy
+        checker names that sentence without quoting it back, and the problem list does not echo
+        a hidden value.
+        """
         text = (self.work / "deployment.md").read_text(encoding="utf-8")
         text += "\nThe container runs as root.\n"
         (self.work / "deployment.md").write_text(text, encoding="utf-8")

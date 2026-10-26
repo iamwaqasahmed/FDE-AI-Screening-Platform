@@ -83,7 +83,10 @@ def benchmark_problems(work: Path) -> list[str]:
 
 
 def improvement_problems(work: Path) -> list[str]:
-    """Return the label-cost miss unless the cost field, the label word, and retrieval all appear."""
+    """Return the label-cost miss unless the cost field, the label word, and retrieval all appear.
+
+    The steps lowercase the improvement note and return the label-cost miss when the cost field, the label word, or retrieval is absent.
+    """
     lowered = _text(work / "improvement.md").lower()
     if "cost.label" not in lowered or "label" not in lowered or "retrieval" not in lowered:
         return [LABEL]
@@ -134,7 +137,10 @@ def gate_problems(work: Path) -> list[str]:
 
 
 def note_problems(work: Path) -> list[str]:
-    """Return the sprint, benchmark, improvement, knowledge, and gate misses, each sentence at most once."""
+    """Return the sprint, benchmark, improvement, knowledge, and gate misses, each sentence at most once.
+
+    The steps gather the sprint, benchmark, improvement, knowledge, and gate misses and keep a repeated sentence once.
+    """
     problems: list[str] = []
     for item in sprint_problems(work):
         _once(problems, item)

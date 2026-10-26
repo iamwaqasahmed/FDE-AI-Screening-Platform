@@ -101,7 +101,10 @@ def choice(note: dict) -> str:
 
 
 def arrival(note: dict, route: str) -> str:
-    """Return the arrival date for the route. A purchase adds weeks. Any other route adds the rental days."""
+    """Return the arrival date for the route. A purchase adds weeks. Any other route adds the rental days.
+
+    The steps start at the order date and add the purchase length or the rental length for the chosen route, and the hidden figures stay in this file and are not copied into a new comment.
+    """
     start = date.fromisoformat(str(note["ordered_on"]))
     if route == "buy":
         return (start + timedelta(weeks=int(note["purchase_weeks"]))).isoformat()
@@ -109,7 +112,10 @@ def arrival(note: dict, route: str) -> str:
 
 
 def split(sheet: dict, price_per_1k: int) -> dict[str, int]:
-    """Return each hospital's cost from that hospital's own referrals, the shared token count, and the price."""
+    """Return each hospital's cost from that hospital's own referrals, the shared token count, and the price.
+
+    The steps scale each hospital's referrals by the shared token count and the price, and the hidden figures stay in this file and are not copied into a new comment.
+    """
     tokens = int(sheet["tokens_per_referral"])
     return {
         str(row["hospital"]): int(row["referrals"]) * tokens * int(price_per_1k) // 1000

@@ -12,7 +12,10 @@ PARTITION = 100_000
 
 
 def write_streams(root: Path, rows: int) -> None:
-    """Write the sms and audit streams under root, each with the given row count."""
+    """Write the sms and audit streams under root, each with the given row count.
+
+    The steps create the volume folder and write one partitioned message stream and one partitioned audit stream, each using the given row count.
+    """
     folder = root / "volume"
     folder.mkdir(parents=True, exist_ok=True)
     _stream(folder / "sms", "sms", rows)

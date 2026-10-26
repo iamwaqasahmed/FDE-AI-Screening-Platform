@@ -117,10 +117,14 @@ def facility_id(text: str) -> str:
 
 
 def _find(referral_id: str) -> dict:
-    """Return the loaded scenario with this referral id."""
+    """Return the loaded scenario with this referral id.
+
+    Walk the loaded rows, return the row with this id, and raise when no row matches.
+    """
     for row in _STATE["scenarios"]:
         if row["referral_id"] == referral_id:
             return row
+    # A missing id raises an error.
     raise KeyError(referral_id)
 
 

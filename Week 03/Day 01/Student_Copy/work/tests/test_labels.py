@@ -19,7 +19,11 @@ from labels import relabel
 class LabelTests(unittest.TestCase):
     """The shell label test."""
     def test_clerk_label_is_kept(self) -> None:
-        """A phone photo typed as a scan stays a scan."""
+        """A phone photo typed as a scan stays a scan.
+
+        The steps label that row and check the guideline, the source
+        type, and the empty sub-specialty.
+        """
         row = {"item_id": "h1", "source_type": "scan", "sub_specialty": "", "text": "Phone photo from the retina service."}
         labeled = relabel(row)
         self.assertEqual(labeled["guideline"], "ann-v1")

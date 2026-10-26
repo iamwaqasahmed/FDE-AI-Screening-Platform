@@ -144,7 +144,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(self._rag())
 
     def test_shell_index_is_empty(self) -> None:
-        """Fails when an empty index is accepted by any of the three checkers."""
+        """Fails when an empty index is accepted by any of the three checkers.
+
+        The test restores the unfinished index and fails unless the retrieval checker, the
+        hybrid checker, and the access checker each say the citation is not the in-force span.
+        """
         self._swap("index.py")
         self.assertEqual(self._rag(), [SPAN])
         self.assertEqual(self._hybrid(), [SPAN])

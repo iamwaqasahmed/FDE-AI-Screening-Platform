@@ -27,7 +27,11 @@ class ScaleTests(unittest.TestCase):
     """The peak time minus the cold start on the sheet."""
 
     def test_the_start_leads_the_peak_by_the_cold_start(self) -> None:
-        """started matches the peak minus 15 seconds, and that time is not the peak."""
+        """started matches the peak minus 15 seconds, and that time is not the peak.
+
+        It takes the peak minus the cold start, then checks that
+        started returns that earlier time, not the peak.
+        """
         peak = datetime.fromisoformat(_FORECAST["peak_at"])
         expect = (peak - timedelta(seconds=15)).isoformat()
         self.assertEqual(started(_FORECAST, _SHEET), expect)

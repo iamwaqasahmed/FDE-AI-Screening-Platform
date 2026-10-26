@@ -54,12 +54,16 @@ def chosen(rows: list[dict[str, str]], split: str) -> list[dict[str, str]]:
 
 
 def score(rows: list[dict[str, str]], split: str) -> float:
-    """Share of scored rows where prior_dna >= 1 matches did_not_attend."""
+    """Share of scored rows where prior_dna >= 1 matches did_not_attend.
+
+    Keep the held-out rows, guess a missed visit when prior_dna is at least 1, and return the share of rows where that guess matches the label.
+    """
     test = chosen(rows, split)
     if not test:
         raise SystemExit("The split has no rows.")
     hits = 0
     for row in test:
+        # A prior count of at least 1 predicts a missed visit.
         guess = 1 if int(row["prior_dna"]) >= 1 else 0
         if guess == int(row["did_not_attend"]):
             hits += 1
@@ -84,7 +88,10 @@ def show(value: float) -> str:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print one line: the split name, then the score."""
+    """Print one line: the split name, then the score.
+
+    Read the CSV and the split name, score that split, and print both on one line.
+    """
     parser = argparse.ArgumentParser(description="Score prior_dna >= 1 on one split.")
     parser.add_argument("csv_path")
     parser.add_argument("--split", choices=("row", "person"), required=True)

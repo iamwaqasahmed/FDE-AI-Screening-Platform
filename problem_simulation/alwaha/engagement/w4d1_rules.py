@@ -110,7 +110,10 @@ def settle(grants: list[dict], as_of: str) -> list[dict]:
 
 
 def export_categories(stores: dict, person_id: str) -> list[str]:
-    """Return the store names that still contain this person, in the store order."""
+    """Return the store names that still contain this person, in the store order.
+
+    The steps walk the stores in fixed order and keep every name that still has a row for this person.
+    """
     found = []
     for name in STORES:
         if any(row.get("person_id") == person_id for row in stores.get(name, [])):
@@ -135,7 +138,10 @@ def drop(stores: dict, person_id: str) -> dict:
 
 
 def _rates(rows: list[dict], key: str) -> list[float]:
-    """Return the share of yes decisions in each group of this key. An empty group is skipped."""
+    """Return the share of yes decisions in each group of this key. An empty group is skipped.
+
+    The steps group the rows by the key and return each group's share of yes decisions, and the hidden figures stay in this file and are not copied into a new comment.
+    """
     groups: dict[str, list[bool]] = {}
     for row in rows:
         groups.setdefault(row[key], []).append(row["decision"] == "yes")

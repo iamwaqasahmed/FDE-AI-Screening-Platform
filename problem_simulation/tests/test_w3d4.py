@@ -61,7 +61,11 @@ _TYPES = ("hallucination", "retrieval", "reasoning", "workflow")
 
 
 def _blob(pack: Path) -> str:
-    """Join every file in a pack so a held answer cannot hide outside the notices."""
+    """Join every file in a pack so a held answer cannot hide outside the notices.
+
+    The release test joins the pack it just wrote and fails if a held answer, a held span, or
+    the watermark appears in that text.
+    """
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -234,7 +238,11 @@ class DemoTests(unittest.TestCase):
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
-    """Run a packet's own unit tests and return the process result without raising."""
+    """Run a packet's own unit tests and return the process result without raising.
+
+    The caller runs the filled packet, which must exit cleanly, and the unfinished packet,
+    which must fail.
+    """
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,

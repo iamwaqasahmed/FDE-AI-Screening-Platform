@@ -35,7 +35,10 @@ def filled(text: str) -> int:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print how many letters in the markdown path the specialty list fills."""
+    """Print how many letters in the markdown path the specialty list fills.
+
+    Read that path, count the filled letters, and print the count.
+    """
     parser = argparse.ArgumentParser(description="Count letters the specialty list fills.")
     parser.add_argument("markdown")
     args = parser.parse_args(argv)

@@ -60,7 +60,10 @@ def _case(name: str, dataset: str, turns: list[dict], **extra: object) -> dict:
 
 
 def _book(name: str) -> list[dict]:
-    """Return the book, confirm, and approved-decision turns for one scenario name."""
+    """Return the book, confirm, and approved-decision turns for one scenario name.
+
+    The steps return a booking request, a confirmation, and an approved decision whose approval id is taken from the scenario name.
+    """
     return [
         _turn(f"Book a slot at {WADI_NAME}."),
         _turn("I confirm."),

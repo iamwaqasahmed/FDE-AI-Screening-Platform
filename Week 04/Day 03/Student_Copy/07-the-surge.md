@@ -271,7 +271,10 @@ class CapacityTests(unittest.TestCase):
     """The two fields the starter keeps, and the two it drops."""
 
     def test_the_shell_omits_the_price_and_the_backlog(self) -> None:
-        """sar and hours are absent. tokens_per_second is 100 and chat_p95 is 200."""
+        """sar and hours are absent. tokens_per_second is 100 and chat_p95 is 200.
+
+        It calls table, then checks that sar and hours are left out and the kept fields stay.
+        """
         got = table(_PLAN)
         self.assertNotIn("sar", got)
         self.assertNotIn("hours", got)
@@ -451,7 +454,11 @@ class ScaleTests(unittest.TestCase):
     """The peak time minus the cold start on the sheet."""
 
     def test_the_start_leads_the_peak_by_the_cold_start(self) -> None:
-        """started matches the peak minus 15 seconds, and that time is not the peak."""
+        """started matches the peak minus 15 seconds, and that time is not the peak.
+
+        It takes the peak minus the cold start, then checks that
+        started returns that earlier time, not the peak.
+        """
         peak = datetime.fromisoformat(_FORECAST["peak_at"])
         expect = (peak - timedelta(seconds=15)).isoformat()
         self.assertEqual(started(_FORECAST, _SHEET), expect)

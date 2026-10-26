@@ -23,7 +23,10 @@ class CapacityTests(unittest.TestCase):
     """The two fields the starter keeps, and the two it drops."""
 
     def test_the_shell_omits_the_price_and_the_backlog(self) -> None:
-        """sar and hours are absent. tokens_per_second is 100 and chat_p95 is 200."""
+        """sar and hours are absent. tokens_per_second is 100 and chat_p95 is 200.
+
+        It calls table, then checks that sar and hours are left out and the kept fields stay.
+        """
         got = table(_PLAN)
         self.assertNotIn("sar", got)
         self.assertNotIn("hours", got)

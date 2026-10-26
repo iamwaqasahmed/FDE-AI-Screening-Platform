@@ -22,7 +22,11 @@ from synthetic import sample
 class SyntheticTests(unittest.TestCase):
     """The sample keeps the rare class and drops the real letter."""
     def test_rare_class_has_no_real_id(self) -> None:
-        """The invented rows do not repeat the letter, and two name retina."""
+        """The invented rows do not repeat the letter, and two name retina.
+
+        The steps build a sample from a clerk letter, then check that
+        the letter is absent and that two rows name retina.
+        """
         rows = sample([{"text": "clerk-row CANARY-x"}], {"rare_sub_specialty": "retina"})
         blob = json.dumps(rows)
         self.assertNotIn("clerk-row", blob)

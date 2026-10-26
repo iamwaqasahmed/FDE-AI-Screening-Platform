@@ -247,7 +247,11 @@ from labels import relabel
 class LabelTests(unittest.TestCase):
     """A phone photo and a retina note follow ann-v2."""
     def test_photo_and_retina_follow_ann_v2(self) -> None:
-        """Phone and retina in the text override the clerk fields."""
+        """Phone and retina in the text override the clerk fields.
+
+        The steps label that row and check the guideline, the photo
+        source, and the retina sub-specialty.
+        """
         row = {"item_id": "h1", "source_type": "scan", "sub_specialty": "", "text": "Phone photo from the retina service."}
         labeled = relabel(row)
         self.assertEqual(labeled["guideline"], "ann-v2")
@@ -333,7 +337,11 @@ from synthetic import sample
 class SyntheticTests(unittest.TestCase):
     """The sample keeps the rare class and drops the real letter."""
     def test_rare_class_has_no_real_id(self) -> None:
-        """The invented rows do not repeat the letter, and two name retina."""
+        """The invented rows do not repeat the letter, and two name retina.
+
+        The steps build a sample from a clerk letter, then check that
+        the letter is absent and that two rows name retina.
+        """
         rows = sample([{"text": "clerk-row CANARY-x"}], {"rare_sub_specialty": "retina"})
         blob = json.dumps(rows)
         self.assertNotIn("clerk-row", blob)

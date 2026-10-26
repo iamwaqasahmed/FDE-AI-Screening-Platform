@@ -66,7 +66,10 @@ def clauses(doc: dict) -> list[dict]:
 
 
 def build(docs: list[dict]) -> list[dict]:
-    """Return every clause with its token-share map attached, in document order."""
+    """Return every clause with its token-share map attached, in document order.
+
+    The steps walk the documents in order, split each body into clauses, and attach a token-share map to every clause.
+    """
     rows = []
     for doc in docs:
         for clause in clauses(doc):
@@ -148,7 +151,10 @@ def criteria(docs: list[dict], specialty: str, started: str) -> dict:
 
 
 def _cite(doc: dict) -> dict:
-    """Return the citation fields a caller is allowed to show for this document."""
+    """Return the citation fields a caller is allowed to show for this document.
+
+    The steps copy the audience, the document id, the clause span, the status, and the version from the document.
+    """
     return {
         "audience": doc.get("audience", ""),
         "doc_id": doc.get("doc_id", ""),

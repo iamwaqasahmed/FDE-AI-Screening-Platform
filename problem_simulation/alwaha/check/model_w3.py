@@ -87,7 +87,10 @@ def _modules(work: Path) -> dict:
 
 
 def _pack(pack: Path) -> dict:
-    """Return the cap, the cloud fixture, the quota, and the model register from the pack."""
+    """Return the cap, the cloud fixture, the quota, and the model register from the pack.
+
+    The steps read the price cap, the cloud fixture, the quota, and the model register from their pack paths.
+    """
     return {
         "cap": _read(pack / "budget" / "price-cap.json"),
         "cloud": _read(pack / "fixtures" / "cloud.json"),

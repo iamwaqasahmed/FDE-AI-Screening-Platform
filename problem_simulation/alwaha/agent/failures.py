@@ -21,7 +21,10 @@ def _turn(text: str, role: str = "patient", actor: str = "") -> dict:
 
 
 def _decision(actor: str, approval_id: str) -> dict:
-    """Return an approved coordinator decision for one actor and one approval id."""
+    """Return an approved coordinator decision for one actor and one approval id.
+
+    The steps fill a coordinator turn with the actor, the approval id, and an approved decision.
+    """
     return {
         "role": "coordinator",
         "actor": actor,

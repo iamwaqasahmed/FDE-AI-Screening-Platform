@@ -21,7 +21,11 @@ from labels import relabel
 class LabelTests(unittest.TestCase):
     """A phone photo and a retina note follow ann-v2."""
     def test_photo_and_retina_follow_ann_v2(self) -> None:
-        """Phone and retina in the text override the clerk fields."""
+        """Phone and retina in the text override the clerk fields.
+
+        The steps label that row and check the guideline, the photo
+        source, and the retina sub-specialty.
+        """
         row = {"item_id": "h1", "source_type": "scan", "sub_specialty": "", "text": "Phone photo from the retina service."}
         labeled = relabel(row)
         self.assertEqual(labeled["guideline"], "ann-v2")

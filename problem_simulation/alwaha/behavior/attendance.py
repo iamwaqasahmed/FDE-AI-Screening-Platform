@@ -22,7 +22,10 @@ def probability(row: dict) -> float:
 
 
 def reminded_delta(row: dict) -> float:
-    """Return how much a reminder changes the probability, holding every other field fixed."""
+    """Return how much a reminder changes the probability, holding every other field fixed.
+
+    The steps copy the row, score one copy with the reminder off and one copy with the reminder on, and subtract the silent probability from the reminded probability.
+    """
     silent = dict(row)
     silent["reminded"] = False
     reminded = dict(row)

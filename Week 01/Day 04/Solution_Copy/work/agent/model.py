@@ -209,7 +209,10 @@ def _decide(turn: dict, referral_id: str, walked: dict) -> None:
 
 
 def _intent(walked: dict) -> str:
-    """Name the reply from what the walk actually did."""
+    """Name the reply from what the walk actually did.
+
+    A booking returns book, a refusal returns refusal, a stored count returns status, and anything else returns answer.
+    """
     if walked["booked"]:
         return "book"
     if walked["refusal"]:

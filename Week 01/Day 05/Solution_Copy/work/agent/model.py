@@ -330,7 +330,11 @@ def _walk(scenario: dict, memory: object) -> dict:
 
 
 def respond(scenario: dict, memory: object) -> dict:
-    """Turns drive tools. The letter is not a turn."""
+    """Turns drive tools.
+
+    Hand an emergency to a person, return early for a blocked preference or a constraint or a waiting return, and otherwise walk the turns.
+    The letter is not a turn.
+    """
     if _emergency(scenario):
         return _redirect(scenario)
     blocked = _blocked(scenario, memory)

@@ -37,7 +37,11 @@ def _packet_ready() -> bool:
 
 
 def _copy_note() -> None:
-    """Copy the blank intake note. This replaces a note you already filled."""
+    """Copy the blank intake note.
+
+    Check that the work folder already exists, copy the blank note into it, and print the path of the copy.
+    This replaces a note you already filled.
+    """
     if not WORK.is_dir():
         raise SystemExit("Run python prepare_work.py first, with no extra word.")
     shutil.copy(INTAKE, WORK / "intake.md")

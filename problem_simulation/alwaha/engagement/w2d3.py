@@ -37,7 +37,10 @@ def cases() -> list[dict]:
 
 
 def hijri_rows() -> list[dict]:
-    """Return the month-end and month-start samples the calendar conversion is checked with."""
+    """Return the month-end and month-start samples the calendar conversion is checked with.
+
+    The steps return a month-end row and a month-start row, each with an id and a calendar value.
+    """
     return [
         {"id": "month-end", "value": "1448-07-29"},
         {"id": "month-start", "value": "1448-08-01"},

@@ -38,7 +38,12 @@ def _packet_ready() -> bool:
 
 
 def _copy_pages() -> None:
-    """Copy the four blank pages. This replaces a page you already filled."""
+    """Copy the four blank pages.
+
+    Check that the work folder already exists, copy each blank page into it, and print where the copies went.
+    This replaces a page you already filled.
+    """
+    # The work folder must already exist before these pages can be copied into it.
     if not WORK.is_dir():
         raise SystemExit("Run python prepare_work.py first, with no extra word.")
     for name in PAGES:

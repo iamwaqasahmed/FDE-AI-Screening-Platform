@@ -32,7 +32,10 @@ def letter(facility: str, canary: str = "") -> str:
 
 
 def _event(scenario: str, number: str, when: str, patient: str, facility: str, sequence: int = 1, canary: str = "") -> dict:
-    """Return one submitted-referral event. The referral id is the part of number before the first hyphen."""
+    """Return one submitted-referral event. The referral id is the part of number before the first hyphen.
+
+    The steps fill the event id, topic, time, sequence, patient, and scenario, take the referral id from the number, and build the letter for the facility.
+    """
     return {
         "event_id": f"evt-{number}",
         "topic": "referral.submitted",

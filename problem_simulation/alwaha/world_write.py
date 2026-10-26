@@ -63,7 +63,10 @@ def write_world(profile, root: Path, stream_rows: int | None = None) -> str:
 
 
 def _corpus(root: Path, specs: list[dict]) -> None:
-    """Write each spec as markdown and as one original file whose kind cycles with the index."""
+    """Write each spec as markdown and as one original file whose kind cycles with the index.
+
+    The steps create the corpus folder, render each spec as markdown, and write one original file whose kind follows the index.
+    """
     folder = root / "corpus"
     folder.mkdir(parents=True)
     for index, spec in enumerate(specs):

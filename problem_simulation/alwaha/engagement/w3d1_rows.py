@@ -167,7 +167,10 @@ def _row(profile, row_id, mrn_label, nid_label, phone_label, name, facility, dis
 
 
 def _letter(item_id: str, text: str, specialty: str, sub_specialty: str, source_type: str) -> dict:
-    """Return one letter. The clerk's specialty and source are stored as given, before any relabel."""
+    """Return one letter. The clerk's specialty and source are stored as given, before any relabel.
+
+    The steps copy the item id, the source, the specialty, the sub-specialty, and the text into one row.
+    """
     return {
         "item_id": item_id,
         "source_type": source_type,

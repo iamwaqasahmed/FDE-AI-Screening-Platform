@@ -32,7 +32,10 @@ def dna_rows(seed: int) -> list[dict[str, str]]:
 
 
 def _row(person: str, prior: int, label: int, offset: int, rng: random.Random) -> dict[str, str]:
-    """Return one invitation. The status word follows the label, and the clinic cycles with the offset."""
+    """Return one invitation. The status word follows the label, and the clinic cycles with the offset.
+
+    The steps cycle the clinic from the offset, set the status word from the label, shift the invite date by the offset, and draw the lead time from the seed.
+    """
     clinic = ("endo", "ophth", "card")[offset % 3]
     status = "dna" if label else "seen"
     invited = date(2026, 1, 5) + timedelta(days=offset)

@@ -31,7 +31,11 @@ class CheckTests(unittest.TestCase):
     live next to this file and only supply text.
     """
     def setUp(self) -> None:
-        """Write a small pack, measure it, and load the approach gold into a scratch work directory."""
+        """Write a small pack, measure it, and load the approach gold into a scratch work directory.
+
+        Later tests write an approach memo and a brief into the empty work directory and fail
+        when a checker accepts a bad memo or quotes a hidden value.
+        """
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")

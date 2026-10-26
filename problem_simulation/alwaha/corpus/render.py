@@ -59,7 +59,10 @@ def _pdf(text: str) -> bytes:
 
 
 def _docx_xml(text: str) -> str:
-    """Return a word document XML body containing a short escaped slice of the text."""
+    """Return a word document XML body containing a short escaped slice of the text.
+
+    The steps escape the text, keep a short slice, and wrap that slice in a word-document body.
+    """
     safe = _xml(text)[:200]
     return (
         '<?xml version="1.0" encoding="UTF-8"?>'
@@ -69,7 +72,10 @@ def _docx_xml(text: str) -> str:
 
 
 def _office(path: Path, part: str, xml: str, content_type: str) -> None:
-    """Write a zip package with content types and one XML part."""
+    """Write a zip package with content types and one XML part.
+
+    The steps write a content-types entry and the named XML part into a new zip package.
+    """
     types = (
         '<?xml version="1.0" encoding="UTF-8"?>'
         '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'
@@ -91,7 +97,10 @@ def _store(archive: zipfile.ZipFile, name: str, text: str) -> None:
 
 
 def _xlsx(path: Path, text: str) -> None:
-    """Write a spreadsheet package whose first cell is a short escaped slice of the text."""
+    """Write a spreadsheet package whose first cell is a short escaped slice of the text.
+
+    The steps escape a short slice of the text into the first cell and store that worksheet in a spreadsheet package.
+    """
     sheet = (
         '<?xml version="1.0" encoding="UTF-8"?>'
         '<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
@@ -107,7 +116,10 @@ def _xlsx(path: Path, text: str) -> None:
 
 
 def _png() -> bytes:
-    """Return a one-pixel PNG. The text is not stored in the image."""
+    """Return a one-pixel PNG. The text is not stored in the image.
+
+    The steps pack a header, one compressed pixel, and an end marker into the image bytes.
+    """
     def chunk(tag: bytes, data: bytes) -> bytes:
         """Wrap one PNG chunk with its length and a checksum of the tag plus the data."""
         return struct.pack(">I", len(data)) + tag + data + struct.pack(">I", zlib.crc32(tag + data) & 0xFFFFFFFF)

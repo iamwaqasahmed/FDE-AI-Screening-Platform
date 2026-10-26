@@ -149,7 +149,11 @@ class CheckTests(unittest.TestCase):
         )
 
     def _written(self) -> tuple[list[str], list[str], list[str]]:
-        """Run the design, readout, and individual checkers on the prose pages."""
+        """Run the design, readout, and individual checkers on the prose pages.
+
+        Both packs are handed to the design checker, and the watermark belongs to the profile,
+        so a page that pastes it fails without this helper printing the watermark.
+        """
         canary = self.profile.canary()
         return (
             design_problems(self.work, self.day5, canary, [self.pack, self.failures]),

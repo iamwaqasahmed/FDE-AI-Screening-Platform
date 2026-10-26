@@ -52,7 +52,10 @@ def _parts(seed: int) -> tuple[int, int, int, int]:
 
 
 def drill(seed: int) -> dict:
-    """Return the failover drill: which site was killed, the budget, and the longer timeout."""
+    """Return the failover drill: which site was killed, the budget, and the longer timeout.
+
+    The steps name the killed site and attach this seed's recovery budget and the longer timeout.
+    """
     return {
         "budget_seconds": budget_seconds(seed),
         "killed": "site-a",
@@ -85,7 +88,10 @@ def outage(seed: int) -> dict:
 
 
 def lead_time(seed: int) -> dict:
-    """Return the order date, the deadline, the purchase length, and this seed's rental length."""
+    """Return the order date, the deadline, the purchase length, and this seed's rental length.
+
+    The steps copy the order date, the deadline, and the purchase length, and they take the rental length from the seed.
+    """
     return {
         "deadline": DEADLINE,
         "ordered_on": CASE_DATE,
@@ -95,7 +101,10 @@ def lead_time(seed: int) -> dict:
 
 
 def hospitals(seed: int) -> dict:
-    """Return the backlog, the local price, each hospital's share, and the tokens per referral."""
+    """Return the backlog, the local price, each hospital's share, and the tokens per referral.
+
+    The steps pair each hospital with a seed-derived share of the backlog and attach the local price and the token count.
+    """
     counts = _parts(seed)
     return {
         "backlog_referrals": BACKLOG,
@@ -106,7 +115,10 @@ def hospitals(seed: int) -> dict:
 
 
 def model_down() -> dict:
-    """Return a down model with one status row and one booking row, so the fallback can differ by kind."""
+    """Return a down model with one status row and one booking row, so the fallback can differ by kind.
+
+    The steps mark the model down and return one status row beside one booking row.
+    """
     return {
         "model": "down",
         "rows": [

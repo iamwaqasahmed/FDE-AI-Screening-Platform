@@ -38,7 +38,11 @@ def _packet_ready() -> bool:
 
 
 def _copy_memos() -> None:
-    """Copy the two blank templates. This replaces any memo you already filled."""
+    """Copy the two blank templates.
+
+    Check that the work folder already exists, copy both templates into it, and print where the copies went.
+    This replaces any memo you already filled.
+    """
     if not WORK.is_dir():
         raise SystemExit("Run python prepare_work.py first, with no extra word.")
     shutil.copy(APPROACH, WORK / "approach.md")

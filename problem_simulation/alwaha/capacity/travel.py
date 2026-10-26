@@ -31,7 +31,10 @@ def nightly(profile) -> list[dict]:
 
 
 def travel(profile) -> list[dict]:
-    """Return origin, destination, and minutes. One nearby leg moves with the seed."""
+    """Return origin, destination, and minutes. One nearby leg moves with the seed.
+
+    The steps list the long Rim leg and the short legs, and they add a seed offset on the nearby Wadi leg.
+    """
     return [
         {"origin": "phc-rim", "destination": "h-wadi", "minutes": RIM_MINUTES},
         {"origin": "phc-nakhl-01", "destination": "h-nakhl", "minutes": NEAR_MINUTES},

@@ -69,7 +69,10 @@ def serve(port: int) -> None:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Parse the port and serve. The default port is the one the contract uses."""
+    """Parse the port and serve. The default port is the one the contract uses.
+
+    The steps parse the port argument and serve the shared store on that port until the process stops.
+    """
     parser = argparse.ArgumentParser(description="Serve the reference assistant.")
     parser.add_argument("--port", type=int, default=8081)
     args = parser.parse_args(argv)

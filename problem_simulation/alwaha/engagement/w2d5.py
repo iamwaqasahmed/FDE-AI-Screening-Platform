@@ -48,7 +48,10 @@ def queued_fixture() -> dict:
 
 
 def live_slot(profile: Profile) -> dict:
-    """Return the fault that claims a live booking. The watermark is this profile's canary."""
+    """Return the fault that claims a live booking. The watermark is this profile's canary.
+
+    The steps mark Ain as booked under the live-slot fault and store this profile's watermark on the row.
+    """
     return {
         "facility": "h-ain",
         "fault": "live-slot",
@@ -68,7 +71,10 @@ def missed_file(profile: Profile) -> dict:
 
 
 def _readout() -> dict:
-    """Return the readout sections the Ain page is checked against."""
+    """Return the readout sections the Ain page is checked against.
+
+    The steps name the asks heading and list each section together with the words that section is checked for.
+    """
     return {
         "asks": "Asks",
         "boundary": ["clinician", "urgency", "ext-large"],

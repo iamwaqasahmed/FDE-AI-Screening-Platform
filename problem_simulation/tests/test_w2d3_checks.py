@@ -126,7 +126,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_missing_clause(self) -> None:
-        """Fails when renaming the named-control clause away is still accepted."""
+        """Fails when renaming the named-control clause away is still accepted.
+
+        The test renames the named-control clause away and fails unless the usability checker
+        says an accessibility clause is missing, and the problem list does not echo a hidden
+        value.
+        """
         text = (self.work / "usability.md").read_text(encoding="utf-8").replace("named-control", "color-only")
         (self.work / "usability.md").write_text(text, encoding="utf-8")
         problems = self._ux()
@@ -134,7 +139,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_missing_fault_in_the_definition_of_done(self) -> None:
-        """Fails when a definition of done that only says the suite is green is accepted."""
+        """Fails when a definition of done that only says the suite is green is accepted.
+
+        The test replaces the definition of done with a note that only says the suite is green
+        and fails unless the usability checker still wants the fault recorded, and the problem
+        list does not echo a hidden value.
+        """
         (self.work / "dod.md").write_text("# Definition of done\n\nThe suite is green.\n", encoding="utf-8")
         problems = self._ux()
         self.assertEqual(problems, ["the fault is not in the definition of done"])

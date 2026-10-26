@@ -25,7 +25,10 @@ def before_labeled() -> list[dict]:
 
 
 def personal_public() -> list[dict]:
-    """Return the personal citations and the metric rows, including one staff citation and one metric under its floor."""
+    """Return the personal citations and the metric rows, including one staff citation and one metric under its floor.
+
+    The steps append the citation rows and the metric rows, keeping the audience on each citation and the floor beside each value.
+    """
     return [
         {"asker": "patient", "audience": "patient", "doc_id": IN_FORCE, "kind": "citation", "version": "v4"},
         {"asker": "patient", "audience": "staff", "doc_id": "prep-staff", "kind": "citation", "version": "v2"},
@@ -35,7 +38,10 @@ def personal_public() -> list[dict]:
 
 
 def stories() -> list[dict]:
-    """Return the work items, including the ones the proof will not build and the citation requirement it will."""
+    """Return the work items, including the ones the proof will not build and the citation requirement it will.
+
+    The steps return the urgency story, the vendor story, and the citation story.
+    """
     return [
         {"story_id": "p-triage", "title": "Set clinical urgency"},
         {"story_id": "vendor-bot", "title": "Replace the contact center with the vendor bot"},

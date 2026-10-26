@@ -15,7 +15,10 @@ def _pair(pred: dict, label: dict) -> dict:
 
 
 def extraction() -> list[dict]:
-    """Return extraction pairs: exact matches, a wrong sub-specialty, and a wrong source type."""
+    """Return extraction pairs: exact matches, a wrong sub-specialty, and a wrong source type.
+
+    The steps pair each prediction with the label it should match, and the hidden figures stay in this file and are not copied into a new comment.
+    """
     thyroid = {"source_type": "scan", "specialty": "endo", "sub_specialty": "thyroid"}
     cardiac = {"source_type": "scan", "specialty": "card", "sub_specialty": "echo"}
     return [
@@ -46,7 +49,10 @@ def held_score() -> dict:
 
 
 def dev_score() -> list[dict]:
-    """Return unlabeled development predictions, one of each kind, with no gold label attached."""
+    """Return unlabeled development predictions, one of each kind, with no gold label attached.
+
+    The steps return an extraction prediction, a citation prediction, and a journey prediction, and they leave the gold label off each row.
+    """
     return [
         {"kind": "extraction", "pred": {"source_type": "photo", "specialty": "ophth", "sub_specialty": ""}},
         {"kind": "citation", "pred": {"doc_id": "", "span": ""}},
@@ -55,7 +61,10 @@ def dev_score() -> list[dict]:
 
 
 def failures() -> list[dict]:
-    """Return the log lines, in the order the failure types are zipped against."""
+    """Return the log lines, in the order the failure types are zipped against.
+
+    The steps return the night log, the circular log, the Friday log, and the approval log in the same order as their failure types.
+    """
     return [
         {"log_id": "log-night", "output": "The eye clinic is open all night. Source: a clause that is not on file."},
         {"log_id": "log-circular", "output": "The hours reply cites the unauthorized circular."},

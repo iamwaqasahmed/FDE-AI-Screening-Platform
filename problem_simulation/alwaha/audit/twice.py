@@ -10,7 +10,10 @@ from alwaha.world_write import write_world
 
 
 def matches(profile) -> tuple[bool, str, str]:
-    """Return the match flag and the two fingerprints from building this profile twice."""
+    """Return the match flag and the two fingerprints from building this profile twice.
+
+    The steps write this profile's world twice into the same directory and return whether the fingerprints are equal, then the first fingerprint and the second.
+    """
     root = world_dir(profile.name)
     first = write_world(profile, root)
     second = write_world(profile, root)

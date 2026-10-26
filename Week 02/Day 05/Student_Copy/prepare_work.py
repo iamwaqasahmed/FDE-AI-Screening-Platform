@@ -56,7 +56,11 @@ WORK = HERE / "work"
 
 
 def _packet_ready() -> bool:
-    """True when the drawer this script copies is still beside it."""
+    """True when the drawer this script copies is still beside it.
+
+    It checks the app folder, the tests, the deploy files, the workflow,
+    and every blank page.
+    """
     image = (DEPLOY / "Dockerfile").is_file() and (DEPLOY / "deployment.yaml").is_file()
     return (
         APP.is_dir()

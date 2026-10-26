@@ -38,7 +38,10 @@ def _in_force(specialty: str) -> str:
 
 
 def _clinic(facility: str, specialty: str) -> str:
-    """Return the clinic code for this facility and specialty, or blank when the table has no row."""
+    """Return the clinic code for this facility and specialty, or blank when the table has no row.
+
+    The steps scan the clinic rows and return the clinic on the first row whose facility and specialty both match.
+    """
     for row in clinics():
         if row["facility_id"] == facility and row["specialty_id"] == specialty:
             return row["clinic"]
@@ -64,7 +67,10 @@ def _groups(canary: str) -> list[tuple[str, list[dict]]]:
 
 
 def _blank(scenario: str, referral_id: str) -> dict:
-    """Return the dead-letter row used when a referral is not taken through intake."""
+    """Return the dead-letter row used when a referral is not taken through intake.
+
+    The steps record the scenario and the referral, mark the row a dead letter, and leave the due date, criteria, facility, clinic, and booking empty.
+    """
     return {
         "scenario": scenario,
         "referral_id": referral_id,

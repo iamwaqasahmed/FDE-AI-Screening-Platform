@@ -38,7 +38,10 @@ class Profile:
 
 
 def _named() -> dict[str, Profile]:
-    """Return the fixed profiles: practice, small, and one profile for each team seed."""
+    """Return the fixed profiles: practice, small, and one profile for each team seed.
+
+    The steps build the practice profile and the small profile, then add one profile for each name in the team seed table.
+    """
     profiles = {
         "practice": Profile("practice", 20270110, people=PRACTICE_PEOPLE),
         "small": Profile("small", 11, people=SMALL_PEOPLE),

@@ -93,14 +93,22 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self._slo(), [])
 
     def test_shell_replicas_place_one_site(self) -> None:
-        """Fails when replicas that place only one site are accepted."""
+        """Fails when replicas that place only one site are accepted.
+
+        The test restores the unfinished replica placement and fails unless the failover checker
+        says traffic stays on one replica, and the problem list does not echo a hidden value.
+        """
         self._swap("replicas.py")
         problems = self._slo()
         self.assertEqual(problems, [ONE])
         self._hidden(problems)
 
     def test_shell_route_stays_on_site_a(self) -> None:
-        """Fails when routing that stays on the killed site is accepted."""
+        """Fails when routing that stays on the killed site is accepted.
+
+        The test restores the unfinished router and fails unless the failover checker says
+        traffic stayed on the killed site, and the problem list does not echo a hidden value.
+        """
         self._swap("route.py")
         problems = self._slo()
         self.assertEqual(problems, [SERVING])
@@ -116,14 +124,23 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_hashes_keep_the_lookalike(self) -> None:
-        """Fails when a hash pin that keeps the lookalike is accepted."""
+        """Fails when a hash pin that keeps the lookalike is accepted.
+
+        The test restores the unfinished hash pin and fails unless the failover checker says the
+        lookalike is still pinned, and the problem list does not echo a hidden value.
+        """
         self._swap("hashes.py")
         problems = self._slo()
         self.assertEqual(problems, [HASH])
         self._hidden(problems)
 
     def test_shell_breaker_waits_on_insure(self) -> None:
-        """Fails when a breaker that waits on the insurance partner is accepted."""
+        """Fails when a breaker that waits on the insurance partner is accepted.
+
+        The test restores the unfinished breaker and fails unless the failover checker says the
+        booking path waits on the insurance partner and treats insurance as a site, and the
+        problem list does not echo a hidden value.
+        """
         self._swap("breaker.py")
         problems = self._slo()
         self.assertEqual(problems, [WAIT, PARTNER])
@@ -139,35 +156,57 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_procure_buys(self) -> None:
-        """Fails when procurement that buys, and so misses the deadline, is accepted."""
+        """Fails when procurement that buys, and so misses the deadline, is accepted.
+
+        The test restores the unfinished procurement and fails unless the failover checker says
+        the purchase misses the deadline, and the problem list does not echo a hidden value.
+        """
         self._swap("procure.py")
         problems = self._slo()
         self.assertEqual(problems, [PURCHASE])
         self._hidden(problems)
 
     def test_shell_hospitals_use_one_figure(self) -> None:
-        """Fails when every hospital is given the same spend figure."""
+        """Fails when every hospital is given the same spend figure.
+
+        The test restores the unfinished hospital split and fails unless the failover checker
+        says one spend figure was reused for every hospital, and the problem list does not echo
+        a hidden value.
+        """
         self._swap("hospitals.py")
         problems = self._slo()
         self.assertEqual(problems, [SPLIT])
         self._hidden(problems)
 
     def test_sprint_out_of_order_fails(self) -> None:
-        """Fails when a sprint that puts the trade-off first is accepted."""
+        """Fails when a sprint that puts the trade-off first is accepted.
+
+        The test writes a sprint that puts the trade-off first and fails unless the failover
+        checker wants the drill to open the sprint, and the problem list does not echo a hidden
+        value.
+        """
         (self.work / "sprint.md").write_text("# Sprint\n\nThe trade-off comes first.\n", encoding="utf-8")
         problems = self._slo()
         self.assertEqual(problems, [SEQUENCE])
         self._hidden(problems)
 
     def test_an_empty_failover_note_fails(self) -> None:
-        """Fails when an empty failover page is accepted."""
+        """Fails when an empty failover page is accepted.
+
+        The test writes an empty failover page and fails unless the failover checker says a
+        required section is missing, and the problem list does not echo a hidden value.
+        """
         (self.work / "failover.md").write_text("# Failover\n", encoding="utf-8")
         problems = self._slo()
         self.assertEqual(problems, [FAILOVER])
         self._hidden(problems)
 
     def test_an_empty_architecture_draft_fails(self) -> None:
-        """Fails when an empty architecture draft is accepted."""
+        """Fails when an empty architecture draft is accepted.
+
+        The test writes an empty architecture draft and fails unless the failover checker says a
+        required section is missing, and the problem list does not echo a hidden value.
+        """
         (self.work / "architecture.md").write_text("# Architecture\n", encoding="utf-8")
         problems = self._slo()
         self.assertEqual(problems, [ARCH])

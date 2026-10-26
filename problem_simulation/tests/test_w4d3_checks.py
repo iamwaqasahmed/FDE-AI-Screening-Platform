@@ -129,42 +129,70 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self._slo(), [])
 
     def test_shell_quota_starves_chat(self) -> None:
-        """Fails when a quota that starves chat is accepted."""
+        """Fails when a quota that starves chat is accepted.
+
+        The test restores the unfinished quota and fails unless the service-level checker says
+        chat misses its latency while the batch runs, and the problem list does not echo a
+        hidden value.
+        """
         self._swap("quota.py")
         problems = self._slo()
         self.assertEqual(problems, [LATENCY])
         self._hidden(problems)
 
     def test_shell_scale_starts_at_the_peak(self) -> None:
-        """Fails when scaling that starts at the peak, and so misses the window, is accepted."""
+        """Fails when scaling that starts at the peak, and so misses the window, is accepted.
+
+        The test restores the unfinished scaler and fails unless the service-level checker says
+        the first window was missed, and the problem list does not echo a hidden value.
+        """
         self._swap("scale.py")
         problems = self._slo()
         self.assertEqual(problems, [WINDOW])
         self._hidden(problems)
 
     def test_shell_price_uses_yesterday(self) -> None:
-        """Fails when yesterday's price is accepted in place of today's."""
+        """Fails when yesterday's price is accepted in place of today's.
+
+        The test restores the unfinished price module and fails unless the service-level checker
+        says yesterday's price is still in use, and the problem list does not echo a hidden
+        value.
+        """
         self._swap("price.py")
         problems = self._slo()
         self.assertEqual(problems, [YESTERDAY])
         self._hidden(problems)
 
     def test_shell_capacity_omits_the_table(self) -> None:
-        """Fails when a capacity note that omits the comparison table is accepted."""
+        """Fails when a capacity note that omits the comparison table is accepted.
+
+        The test restores the unfinished capacity module and fails unless the service-level
+        checker says the comparison table misses the backlog or the price, and the problem list
+        does not echo a hidden value.
+        """
         self._swap("capacity.py")
         problems = self._slo()
         self.assertEqual(problems, [TABLE])
         self._hidden(problems)
 
     def test_sprint_out_of_order_fails(self) -> None:
-        """Fails when a sprint that puts capacity first is accepted."""
+        """Fails when a sprint that puts capacity first is accepted.
+
+        The test writes a sprint that puts capacity first and fails unless the service-level
+        checker wants the forecast to open the sprint, and the problem list does not echo a
+        hidden value.
+        """
         (self.work / "sprint.md").write_text("# Sprint\n\nCapacity comes first.\n", encoding="utf-8")
         problems = self._slo()
         self.assertEqual(problems, [SEQUENCE])
         self._hidden(problems)
 
     def test_an_empty_capacity_note_fails(self) -> None:
-        """Fails when an empty capacity page is accepted."""
+        """Fails when an empty capacity page is accepted.
+
+        The test writes an empty capacity page and fails unless the service-level checker says a
+        required section is missing, and the problem list does not echo a hidden value.
+        """
         (self.work / "capacity.md").write_text("# Capacity\n", encoding="utf-8")
         problems = self._slo()
         self.assertEqual(problems, [CAPACITY])

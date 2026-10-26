@@ -114,14 +114,22 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_forecast_ignores_the_campaign(self) -> None:
-        """Fails when a forecast that ignores the campaign is accepted."""
+        """Fails when a forecast that ignores the campaign is accepted.
+
+        The test restores the unfinished forecast and fails unless the evaluation checker says
+        the campaign was ignored, and the problem list does not echo a hidden value.
+        """
         self._swap("forecast.py")
         problems = self._eval()
         self.assertEqual(problems, [IGNORE])
         self._hidden(problems)
 
     def test_shell_failures_misname_the_log(self) -> None:
-        """Fails when a failure list that misnames the log is accepted."""
+        """Fails when a failure list that misnames the log is accepted.
+
+        The test restores the unfinished failure list and fails unless the evaluation checker
+        says a planted failure was misnamed, and the problem list does not echo a hidden value.
+        """
         self._swap("failures.py")
         problems = self._eval()
         self.assertEqual(problems, [NAME])
@@ -138,7 +146,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_scoring_the_fit_window_fails(self) -> None:
-        """Fails when a forecast that replays the fitting window is accepted as a prediction."""
+        """Fails when a forecast that replays the fitting window is accepted as a prediction.
+
+        The test replaces the forecast with one that replays the fitting window and fails unless
+        the evaluation checker rejects that replay, and the problem list does not echo a hidden
+        value.
+        """
         (self.work / "app" / "forecast.py").write_text(
             "def predict(rows):\n"
             "    chosen = []\n"

@@ -35,7 +35,10 @@ def planted() -> list[dict]:
 
 
 def _doc(doc_id, family, title, status, audience, effective, sunset="", site="", supersedes="") -> dict:
-    """Return one document spec, with the body looked up from the id."""
+    """Return one document spec, with the body looked up from the id.
+
+    The steps store the id, family, title, status, audience, dates, site, and supersedes link, and they fill the body by looking up the id.
+    """
     return {
         "doc_id": doc_id,
         "family": family,

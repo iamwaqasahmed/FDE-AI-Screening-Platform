@@ -120,7 +120,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_output_renders_html(self) -> None:
-        """Fails when an output path that renders markup is accepted."""
+        """Fails when an output path that renders markup is accepted.
+
+        The test restores the unfinished output path and fails unless the red-team checker says
+        markup is still rendered, and the problem list does not echo a hidden value.
+        """
         self._swap("output.py")
         problems = self._redteam()
         self.assertEqual(problems, [HTML])
@@ -137,7 +141,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_redact_keeps_the_line(self) -> None:
-        """Fails when redaction that keeps the sensitive line is accepted."""
+        """Fails when redaction that keeps the sensitive line is accepted.
+
+        The test restores the unfinished redaction and fails unless the red-team checker says
+        the sensitive line is still present, and the problem list does not echo a hidden value.
+        """
         self._swap("redact.py")
         problems = self._redteam()
         self.assertEqual(problems, [LEAK])
@@ -203,14 +211,23 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_sprint_out_of_order_fails(self) -> None:
-        """Fails when a sprint that puts the request first is accepted."""
+        """Fails when a sprint that puts the request first is accepted.
+
+        The test writes a sprint that puts the request first and fails unless the privacy
+        checker wants the notice to open the sprint, and the problem list does not echo a hidden
+        value.
+        """
         (self.work / "sprint.md").write_text("# Sprint\n\nThe request comes first.\n", encoding="utf-8")
         problems = self._privacy()
         self.assertEqual(problems, [SEQUENCE])
         self._hidden(problems)
 
     def test_an_empty_dpia_fails(self) -> None:
-        """Fails when an empty assessment page is accepted."""
+        """Fails when an empty assessment page is accepted.
+
+        The test writes an empty assessment page and fails unless the privacy checker says a
+        required field is missing, and the problem list does not echo a hidden value.
+        """
         (self.work / "dpia.md").write_text("# tpl-dpia\n", encoding="utf-8")
         problems = self._privacy()
         self.assertEqual(problems, [DPIA])

@@ -37,7 +37,11 @@ def _packet_ready() -> bool:
 
 
 def _copy_note() -> None:
-    """Copy the blank agent note. This replaces a note you already filled."""
+    """Copy the blank agent note.
+
+    Check that the work folder already exists, copy the blank note into it, and print the path of the copy.
+    This replaces a note you already filled.
+    """
     if not WORK.is_dir():
         raise SystemExit("Run python prepare_work.py first, with no extra word.")
     shutil.copy(NOTE, WORK / "agent-note.md")

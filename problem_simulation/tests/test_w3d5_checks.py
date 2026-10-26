@@ -114,14 +114,22 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_remeasure_copies_the_first_score(self) -> None:
-        """Fails when a remeasure that copies the first score is accepted."""
+        """Fails when a remeasure that copies the first score is accepted.
+
+        The test restores the unfinished remeasure and fails unless the second-run checker says
+        the retrieval failure did not move, and the problem list does not echo a hidden value.
+        """
         self._swap("remeasure.py")
         problems = self._eval()
         self.assertEqual(problems, [STUCK])
         self._hidden(problems)
 
     def test_shell_cost_misses_the_price_sheet(self) -> None:
-        """Fails when a cost that ignores the price sheet is accepted."""
+        """Fails when a cost that ignores the price sheet is accepted.
+
+        The test restores the unfinished cost module and fails unless the second-run checker
+        says the price sheet was missed, and the problem list does not echo a hidden value.
+        """
         self._swap("cost.py")
         problems = self._eval()
         self.assertEqual(problems, [COST])
@@ -140,14 +148,22 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_backlog_keeps_a_non_goal(self) -> None:
-        """Fails when a backlog that keeps a non-goal is accepted."""
+        """Fails when a backlog that keeps a non-goal is accepted.
+
+        The test restores the unfinished backlog and fails unless the rehearsal-spec checker
+        says a non-goal remains, and the problem list does not echo a hidden value.
+        """
         self._swap("backlog.py")
         problems = self._rcp()
         self.assertEqual(problems, [BACKLOG])
         self._hidden(problems)
 
     def test_shell_gate_skips_the_risk_tier(self) -> None:
-        """Fails when a gate that skips the risk tier is accepted."""
+        """Fails when a gate that skips the risk tier is accepted.
+
+        The test restores the unfinished gate and fails unless the rehearsal-spec checker says
+        the risk tier was skipped, and the problem list does not echo a hidden value.
+        """
         self._swap("gates.py")
         problems = self._rcp()
         self.assertEqual(problems, [GATE_SKIP])
@@ -163,7 +179,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_sprint_out_of_order_fails(self) -> None:
-        """Fails when a sprint that puts the spec first is accepted."""
+        """Fails when a sprint that puts the spec first is accepted.
+
+        The test writes a sprint that puts the spec first and fails unless the second-run
+        checker wants the fix before the spec, and the problem list does not echo a hidden
+        value.
+        """
         (self.work / "sprint.md").write_text("# Sprint\n\nThe spec comes first.\n", encoding="utf-8")
         problems = self._eval()
         self.assertEqual(problems, [SEQUENCE])

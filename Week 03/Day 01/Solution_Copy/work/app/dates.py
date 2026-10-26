@@ -37,11 +37,16 @@ def _from_hijri(value: str) -> date:
 
 def _hijri_jd(year: int, month: int, day: int) -> int:
     """Julian day number for a tabular Hijri date."""
+    # The arithmetic is the tabular conversion, and the day is not shifted.
     return (11 * year + 3) // 30 + 354 * year + 30 * month - (month - 1) // 2 + day + 1948440 - 385
 
 
 def _jd_to_date(jd: int) -> date:
-    """Civil date for a Julian day number. The day number is not shifted."""
+    """Civil date for a Julian day number. The day number is not shifted.
+
+    The steps turn that number into a century, a year, a month, and a day.
+    """
+    # The arithmetic is the tabular conversion, and the day is not shifted.
     left = jd + 68569
     century = (4 * left) // 146097
     left = left - (146097 * century + 3) // 4

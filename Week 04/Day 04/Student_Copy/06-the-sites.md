@@ -201,7 +201,10 @@ class FailoverTests(unittest.TestCase):
     """The killed site, an empty pending list, and the timeout."""
 
     def test_the_shell_drops_the_approvals_and_waits(self) -> None:
-        """The site is site-a, pending is empty, and seconds is 40."""
+        """The site is site-a, pending is empty, and seconds is 40.
+
+        It calls recover, then checks the site, the empty pending list, and the seconds.
+        """
         got = recover(_DRILL, _ROWS)
         self.assertEqual(got["site"], "site-a")
         self.assertEqual(got["pending"], [])
@@ -539,7 +542,10 @@ class FailoverTests(unittest.TestCase):
     """Pending approvals resumed on site-b."""
 
     def test_approvals_resume_inside_the_budget(self) -> None:
-        """The site is site-b, pending is apr-1 then apr-2, and seconds stays within 10."""
+        """The site is site-b, pending is apr-1 then apr-2, and seconds stays within 10.
+
+        It calls recover, then checks site-b, the sorted pending ids, and the budget.
+        """
         got = recover(_DRILL, _ROWS)
         self.assertEqual(got["site"], "site-b")
         self.assertEqual(got["pending"], ["apr-1", "apr-2"])

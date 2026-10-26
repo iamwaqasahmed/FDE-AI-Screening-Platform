@@ -24,7 +24,10 @@ RULES: dict[str, tuple[frozenset[str], frozenset[str]]] = {
 
 
 def gold_payload() -> dict:
-    """Return the allowed vocabulary and, for each problem, the sorted required and forbidden families."""
+    """Return the allowed vocabulary and, for each problem, the sorted required and forbidden families.
+
+    The steps sort the allowed vocabulary and each problem's required and forbidden families, and the hidden figures stay in this file and are not copied into a new comment.
+    """
     problems = {}
     for problem_id, (required, forbidden) in RULES.items():
         problems[problem_id] = {"required": sorted(required), "forbidden": sorted(forbidden)}

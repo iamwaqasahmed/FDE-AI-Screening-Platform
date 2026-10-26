@@ -59,7 +59,11 @@ _DAY1 = [
 
 
 def _canary_count(pack: Path, canary: str) -> int:
-    """Count watermark hits across every file in a pack."""
+    """Count watermark hits across every file in a pack.
+
+    The release tests write a pack for a profile and fail when that profile's watermark is
+    missing or repeated.
+    """
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():

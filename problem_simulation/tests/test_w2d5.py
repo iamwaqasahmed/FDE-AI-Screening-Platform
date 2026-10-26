@@ -60,7 +60,11 @@ _SMOKE = (
 
 
 def _canary_count(pack: Path, canary: str) -> int:
-    """Count watermark hits across every file in a pack."""
+    """Count watermark hits across every file in a pack.
+
+    The release tests write a pack for a profile and fail when that profile's watermark is
+    missing or repeated.
+    """
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -182,7 +186,11 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_name_the_clinic_code(self) -> None:
-        """Fails when lesson notes or templates contain either clinic code."""
+        """Fails when lesson notes or templates contain either clinic code.
+
+        The test reads every lesson note and template and fails if either clinic code appears in
+        that prose.
+        """
         notes = [path.read_text(encoding="utf-8") for path in W2D5_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W2D5_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -228,7 +236,11 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(persona["must_surface"], ("ain-file", "hl7-pair"))
 
     def test_filled_suite_passes(self) -> None:
-        """Fails when the filled packet's own unit tests do not pass."""
+        """Fails when the filled packet's own unit tests do not pass.
+
+        The test runs that packet's unit tests from the filled work tree and fails if the run
+        does not exit cleanly.
+        """
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
             cwd=W2D5_WORK,
@@ -239,7 +251,11 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
 
     def test_shell_suite_passes(self) -> None:
-        """Fails when the unfinished packet's own unit tests do not pass."""
+        """Fails when the unfinished packet's own unit tests do not pass.
+
+        The test runs the unfinished packet's unit tests from the student copy, which are still
+        supposed to pass, and fails if the run does not exit cleanly.
+        """
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
             cwd=W2D5_ROOT / "Student_Copy" / "packet",

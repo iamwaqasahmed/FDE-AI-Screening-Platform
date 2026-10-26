@@ -39,7 +39,10 @@ def _mentions(count: int) -> list[dict]:
 
 
 def _readout() -> dict:
-    """Return the readout sections the closing page is checked against."""
+    """Return the readout sections the closing page is checked against.
+
+    The steps name the asks heading and list each section together with the words that section is checked for.
+    """
     return {
         "asks": "Asks",
         "sections": [

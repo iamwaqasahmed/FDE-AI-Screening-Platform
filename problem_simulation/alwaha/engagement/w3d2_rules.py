@@ -54,7 +54,10 @@ def classify(row: dict) -> str:
 
 
 def extraction_f1(rows: list[dict], predictions: list[dict]) -> float:
-    """Return the share of source and sub-specialty fields that match, walking the rows in order."""
+    """Return the share of source and sub-specialty fields that match, walking the rows in order.
+
+    The steps walk the rows in order, pair each predicted source and sub-specialty with the row's values, and return the share of pairs that match.
+    """
     pairs = []
     for row, pred in zip(rows, predictions):
         pairs.append((row["source_type"], pred.get("source_type", "")))

@@ -30,7 +30,10 @@ def sessions(profile) -> list[dict]:
 
 
 def _day(cursor: date) -> list[dict]:
-    """Return every hospital and specialty header for one working day."""
+    """Return every hospital and specialty header for one working day.
+
+    The steps stamp the date and append one header for every hospital and specialty, with slot ids expanded from the slot count.
+    """
     stamp = cursor.isoformat()
     rows = []
     for hospital in HOSPITALS:

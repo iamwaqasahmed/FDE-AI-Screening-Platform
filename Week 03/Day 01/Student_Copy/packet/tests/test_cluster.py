@@ -49,7 +49,11 @@ class ClusterTests(unittest.TestCase):
     The test treats that shared id as one person and treats the row count as the patient count. The finished test is a different file.
     """
     def test_shared_national_id_is_one_person_and_rows_are_the_count(self) -> None:
-        """A mother and a newborn who share an id are one group."""
+        """A mother and a newborn who share an id are one group.
+
+        The steps build that pair, then check one group, the row count
+        as the patient count, and the open waitlist row.
+        """
         rows = _pair()
         self.assertEqual(partition(rows), [["mother", "newborn"]])
         self.assertEqual(patient_count(rows), 2)

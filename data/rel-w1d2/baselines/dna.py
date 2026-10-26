@@ -66,7 +66,11 @@ def show(value: float) -> str:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print the named split and its accuracy. The split argument is required."""
+    """Print the named split and its accuracy.
+
+    Read the CSV and the split name, score that split, and print both on one line.
+    The split argument is required.
+    """
     parser = argparse.ArgumentParser(description="Score prior_dna >= 1 on one split.")
     parser.add_argument("csv_path")
     parser.add_argument("--split", choices=("row", "person"), required=True)

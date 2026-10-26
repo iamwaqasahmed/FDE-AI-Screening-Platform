@@ -17,11 +17,15 @@ _STATE: dict = {}
 
 
 def load(pack: str | Path) -> None:
-    """Read the pack into memory: events, open referrals, clinics, criteria, calendar, policy, faults."""
+    """Read the pack into memory: events, open referrals, clinics, criteria, calendar, policy, faults.
+
+    Take the pack path, read each of those files from the folders inside it, and keep the results for the other functions.
+    """
     root = Path(pack)
     _STATE["events"] = _events(root / "events" / "intake.jsonl")
     _STATE["open"] = _csv(root / "events" / "open-referrals.csv")
     _STATE["clinics"] = _csv(root / "catalog" / "clinics.csv")
+    # Criteria pages are read in file-name order.
     _STATE["criteria"] = [_criteria(path.read_text(encoding="utf-8")) for path in sorted((root / "criteria").glob("*.md"))]
     _STATE["calendar"] = json.loads((root / "calendar" / "business-calendar.json").read_text(encoding="utf-8"))
     _STATE["policy"] = _policy((root / "policy" / "pol-sla.md").read_text(encoding="utf-8"))
@@ -59,8 +63,12 @@ def faults() -> dict[str, str]:
 
 
 def clinic(facility_id: str, specialty_id: str) -> str:
-    """The clinic code for that facility and specialty, or an empty string."""
+    """The clinic code for that facility and specialty, or an empty string.
+
+    Walk the clinic rows and return the code from the first row where both ids match.
+    """
     for row in _STATE["clinics"]:
+        # Both the facility id and the specialty id must match.
         if row["facility_id"] == facility_id and row["specialty_id"] == specialty_id:
             return row["clinic"]
     return ""
@@ -109,9 +117,14 @@ def release(referral_id: str) -> dict:
 
 
 def _events(path: Path) -> list[dict]:
-    """Parse a JSONL file. Blank lines are skipped."""
+    """Parse a JSONL file.
+
+    Read each line, skip blank lines, and append one parsed object per remaining line.
+    Blank lines are skipped.
+    """
     rows = []
     for line in path.read_text(encoding="utf-8").splitlines():
+        # A blank line is skipped.
         if line.strip():
             rows.append(json.loads(line))
     return rows
@@ -124,11 +137,16 @@ def _csv(path: Path) -> list[dict[str, str]]:
 
 
 def _criteria(text: str) -> dict:
-    """Turn one criteria page into a dict. Only lines that look like `- key: value` are read."""
+    """Turn one criteria page into a dict.
+
+    Keep dash lines that contain a colon, split each on the first colon, and store the document id, status, specialty, version, and clause id.
+    Only lines that look like `- key: value` are read.
+    """
     fields: dict[str, str] = {}
     for line in text.splitlines():
         if not line.startswith("- ") or ":" not in line:
             continue
+        # The first colon separates the field name from its value.
         key, value = line[2:].split(":", 1)
         fields[key.strip()] = value.strip()
     return {
@@ -141,7 +159,10 @@ def _criteria(text: str) -> dict:
 
 
 def _policy(text: str) -> dict:
-    """Read the working-day count and the retry count from the policy page."""
+    """Read the working-day count and the retry count from the policy page.
+
+    Find the working_days line and the retries line, and stop when either line is missing.
+    """
     days = re.search(r"(?m)^working_days:\s*(\d+)\s*$", text)
     retries = re.search(r"(?m)^retries:\s*(\d+)\s*$", text)
     if days is None or retries is None:

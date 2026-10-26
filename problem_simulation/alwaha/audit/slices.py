@@ -33,7 +33,10 @@ def evaluate(profile) -> list[dict]:
 
 
 def _one(name: str, profile) -> dict:
-    """Return whether the simpler method fails and whether the named method passes."""
+    """Return whether the simpler method fails and whether the named method passes.
+
+    The steps look up the rule for the slice, run it on the profile, and record the profile name, the simpler method's failure, and the named method's pass.
+    """
     simpler, better = _RULES[name](profile)
     return {
         "slice": name,

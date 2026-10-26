@@ -118,7 +118,10 @@ def knowledge_problems(work: Path) -> list[str]:
 
 
 def note_problems(work: Path) -> list[str]:
-    """Return the sprint, refusal, audience, and knowledge misses, each sentence at most once."""
+    """Return the sprint, refusal, audience, and knowledge misses, each sentence at most once.
+
+    The steps gather the sprint, refusal, audience, and knowledge misses and keep a repeated sentence once.
+    """
     problems: list[str] = []
     for item in sprint_problems(work):
         _once(problems, item)

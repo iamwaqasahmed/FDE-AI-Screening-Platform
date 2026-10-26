@@ -57,7 +57,11 @@ def removals(waitlist: list[dict]) -> list[str]:
 
 
 def _find(parent: dict[str, str], item: str) -> str:
-    """Find the group id, and compress the path on the way."""
+    """Find the group id, and compress the path on the way.
+
+    The steps point the current row at its grandparent and move there
+    until a row points at itself.
+    """
     while parent[item] != item:
         parent[item] = parent[parent[item]]
         item = parent[item]

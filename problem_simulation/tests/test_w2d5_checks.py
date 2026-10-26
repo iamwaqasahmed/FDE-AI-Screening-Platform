@@ -132,7 +132,11 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self._individual(), [])
 
     def test_shell_queue_promises_a_slot(self) -> None:
-        """Fails when the unfinished queue, which promises a live slot, is accepted."""
+        """Fails when the unfinished queue, which promises a live slot, is accepted.
+
+        The test copies the unfinished queue into the work tree and fails unless the queue
+        checker names the live-slot promise, and the problem list does not echo a hidden value.
+        """
         shutil.copy(W2D5_APP / "queue.py", self.work / "app" / "queue.py")
         problems = self._journey()
         self.assertEqual(problems, ["a live slot was promised"])
@@ -177,7 +181,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_banned_sentence_is_not_echoed(self) -> None:
-        """Fails when a deployment note that promises a live slot is accepted."""
+        """Fails when a deployment note that promises a live slot is accepted.
+
+        The test appends a live-slot promise to the deployment note and fails unless the deploy
+        checker names that promise, and the problem list does not echo a hidden value.
+        """
         text = (self.work / "deployment.md").read_text(encoding="utf-8")
         text += "\nAin has a live slot.\n"
         (self.work / "deployment.md").write_text(text, encoding="utf-8")

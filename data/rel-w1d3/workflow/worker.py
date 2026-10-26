@@ -121,7 +121,10 @@ def build_rows(pack: Path) -> list[dict]:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Write the scenario log as a JSON list."""
+    """Write the scenario log as a JSON list.
+
+    Read the pack path and the output path, build the rows, and write that list to the output file.
+    """
     parser = argparse.ArgumentParser(description="Run wf-intake on the event pack.")
     parser.add_argument("--pack", required=True)
     parser.add_argument("--out", required=True)

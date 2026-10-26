@@ -165,7 +165,10 @@ def extras() -> tuple[dict, dict, dict]:
 
 
 def photo() -> dict:
-    """Return the photographed page. The export is shorter than the transcription."""
+    """Return the photographed page. The export is shorter than the transcription.
+
+    The steps return the page id, the export text, and the longer transcription.
+    """
     return {
         "doc_id": "photo-prep",
         "export": "Bring your card.",

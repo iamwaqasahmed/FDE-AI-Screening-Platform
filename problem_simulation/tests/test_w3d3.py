@@ -241,7 +241,11 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn("past midnight", text)
 
     def test_lessons_do_not_state_the_held_questions(self) -> None:
-        """Fails when lesson notes or templates contain the watermark or a held question."""
+        """Fails when lesson notes or templates contain the watermark or a held question.
+
+        The test reads every lesson note and template and fails if the watermark or a held
+        question appears in that prose.
+        """
         notes = [path.read_text(encoding="utf-8") for path in W3D3_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W3D3_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -285,7 +289,11 @@ class DemoTests(unittest.TestCase):
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
-    """Run a packet's own unit tests and return the process result without raising."""
+    """Run a packet's own unit tests and return the process result without raising.
+
+    The caller runs the filled packet, which must exit cleanly, and the unfinished packet,
+    which must fail.
+    """
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,

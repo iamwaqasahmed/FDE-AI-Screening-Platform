@@ -89,7 +89,12 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self._cache(), [])
 
     def test_shell_spans_drop_the_trace(self) -> None:
-        """Fails when spans that drop the trace are accepted."""
+        """Fails when spans that drop the trace are accepted.
+
+        The test restores the unfinished spans and fails unless the incident checker says the
+        trace is missing a tool, a hash, or a token count, and the problem list does not echo a
+        hidden value.
+        """
         self._swap("spans.py")
         problems = self._incident()
         self.assertEqual(problems, [TRACE])
@@ -105,7 +110,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_meter_drops_a_hospital(self) -> None:
-        """Fails when a meter that drops a hospital's cost is accepted."""
+        """Fails when a meter that drops a hospital's cost is accepted.
+
+        The test restores the unfinished meter and fails unless the incident checker says a
+        hospital cost is missing, and the problem list does not echo a hidden value.
+        """
         self._swap("meter.py")
         problems = self._incident()
         self.assertEqual(problems, [COST])
@@ -121,14 +130,23 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_override_returns_zero(self) -> None:
-        """Fails when an override rate that collapses to nothing is accepted."""
+        """Fails when an override rate that collapses to nothing is accepted.
+
+        The test restores the unfinished override and fails unless the incident checker says the
+        override rate is missing, and the problem list does not echo a hidden value.
+        """
         self._swap("override.py")
         problems = self._incident()
         self.assertEqual(problems, [RATE])
         self._hidden(problems)
 
     def test_shell_shadow_changes_the_reply(self) -> None:
-        """Fails when a shadow run that changes the reply, or that gets promoted, is accepted."""
+        """Fails when a shadow run that changes the reply, or that gets promoted, is accepted.
+
+        The test restores the unfinished shadow run and fails unless the incident checker
+        reports both the changed reply and the promotion, and the problem list does not echo a
+        hidden value.
+        """
         self._swap("shadow.py")
         problems = self._incident()
         self.assertEqual(problems, [SHADOW, PROMOTE])
@@ -145,14 +163,23 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self._incident(), [])
 
     def test_sprint_out_of_order_fails(self) -> None:
-        """Fails when a sprint that puts the shadow run first is accepted."""
+        """Fails when a sprint that puts the shadow run first is accepted.
+
+        The test writes a sprint that puts the shadow run first and fails unless the incident
+        checker wants the replay to open the sprint, and the problem list does not echo a hidden
+        value.
+        """
         (self.work / "sprint.md").write_text("# Sprint\n\nShadow comes first.\n", encoding="utf-8")
         problems = self._incident()
         self.assertEqual(problems, [SEQUENCE])
         self._hidden(problems)
 
     def test_an_empty_runbook_fails(self) -> None:
-        """Fails when an empty runbook is accepted."""
+        """Fails when an empty runbook is accepted.
+
+        The test writes an empty runbook and fails unless the incident checker says a required
+        field is missing, and the problem list does not echo a hidden value.
+        """
         (self.work / "runbook.md").write_text("# tpl-runbook\n", encoding="utf-8")
         problems = self._incident()
         self.assertEqual(problems, [RUNBOOK])

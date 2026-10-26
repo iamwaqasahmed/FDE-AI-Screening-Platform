@@ -36,17 +36,24 @@ def bodies(text: str) -> list[str]:
 
 
 def filled(text: str) -> int:
-    """How many letter bodies contain a word from WORDS."""
+    """How many letter bodies contain a word from WORDS.
+
+    Lowercase each letter body and count it when any specialty word appears in that body.
+    """
     count = 0
     for body in bodies(text):
         lowered = body.lower()
+        # One matching specialty word counts this letter.
         if any(word in lowered for word in WORDS):
             count += 1
     return count
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print one line that starts with filled."""
+    """Print one line that starts with filled.
+
+    Read the markdown path, count the filled letters, and print that count.
+    """
     parser = argparse.ArgumentParser(description="Count letters the specialty list fills.")
     parser.add_argument("markdown")
     args = parser.parse_args(argv)

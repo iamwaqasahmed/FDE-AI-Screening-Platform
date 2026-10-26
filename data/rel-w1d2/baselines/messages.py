@@ -32,7 +32,10 @@ def show(value: float) -> str:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print the keyword share for the CSV path in the arguments."""
+    """Print the keyword share for the CSV path in the arguments.
+
+    Read that CSV, compute the share, and print it.
+    """
     parser = argparse.ArgumentParser(description="Print the share of messages containing status.")
     parser.add_argument("csv_path")
     args = parser.parse_args(argv)

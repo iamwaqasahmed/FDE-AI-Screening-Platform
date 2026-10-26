@@ -36,12 +36,16 @@ def _pairs(rows: list[dict[str, str]]) -> dict[tuple[int, int], int]:
 
 
 def seasonal(rows: list[dict[str, str]]) -> float:
-    """Average absolute error of 2026 against the same month in 2025."""
+    """Average absolute error of 2026 against the same month in 2025.
+
+    Walk each later month, take the absolute gap from the same month one year earlier, average those gaps, and stop when the later window is empty.
+    """
     by_month = _pairs(rows)
     errors = []
     for (year, month), actual in sorted(by_month.items()):
         if year != LATER:
             continue
+        # The comparison for this month is the same month one year earlier.
         errors.append(abs(actual - by_month[(year - 1, month)]))
     if not errors:
         raise SystemExit("The demand file has no later window.")
@@ -49,11 +53,15 @@ def seasonal(rows: list[dict[str, str]]) -> float:
 
 
 def mean_error(rows: list[dict[str, str]]) -> float:
-    """Average absolute error of 2026 against the mean of every earlier year."""
+    """Average absolute error of 2026 against the mean of every earlier year.
+
+    Average the visit counts from earlier years, then average how far each later month sits from that one number, and stop when either side is empty.
+    """
     history = [int(row["visits"]) for row in rows if int(row["year"]) < LATER]
     later = [int(row["visits"]) for row in rows if int(row["year"]) == LATER]
     if not history or not later:
         raise SystemExit("The demand file has no later window.")
+    # That one earlier average is the comparison for every later month.
     average = sum(history) / len(history)
     return sum(abs(value - average) for value in later) / len(later)
 
@@ -64,7 +72,10 @@ def show(value: float) -> str:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print the seasonal line, then the mean line."""
+    """Print the seasonal line, then the mean line.
+
+    Read the CSV path from the arguments, score both errors, and print each one on its own line.
+    """
     parser = argparse.ArgumentParser(description="Print the seasonal and mean errors on 2026.")
     parser.add_argument("csv_path")
     args = parser.parse_args(argv)

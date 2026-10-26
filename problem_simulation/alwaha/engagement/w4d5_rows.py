@@ -40,7 +40,10 @@ def entered_at(seed: int) -> str:
 
 
 def requests() -> dict:
-    """Return the connection requests and the systems that must confirm them."""
+    """Return the connection requests and the systems that must confirm them.
+
+    The steps list the handoff request, the warehouse request, and the leave request, and they name the bus and the identity service as the confirmers.
+    """
     return {
         "confirm": ["bus", "iam"],
         "requests": [
@@ -52,7 +55,10 @@ def requests() -> dict:
 
 
 def staff() -> dict:
-    """Return a staff actor and a service actor, so the accept rule can tell them apart."""
+    """Return a staff actor and a service actor, so the accept rule can tell them apart.
+
+    The steps return one staff coordinator and one service admin.
+    """
     return {
         "actors": [
             {"id": "coord-1", "kind": "staff", "role": "coordinator"},
@@ -62,7 +68,10 @@ def staff() -> dict:
 
 
 def events() -> list[dict]:
-    """Return the cancel events, including one already marked kept."""
+    """Return the cancel events, including one already marked kept.
+
+    The steps return one cancelled session already marked kept and one cancelled session still waiting for a disposition.
+    """
     return [
         {"disposition": "kept", "id": "evt-extra", "session": "ses-2", "topic": "session.cancelled"},
         {"id": "evt-cancel", "session": "ses-1", "topic": "session.cancelled"},
@@ -70,7 +79,10 @@ def events() -> list[dict]:
 
 
 def handoffs() -> list[dict]:
-    """Return one handoff that has a summary and one whose summary is blank."""
+    """Return one handoff that has a summary and one whose summary is blank.
+
+    The steps return one handoff with a filled summary and one handoff with an empty summary.
+    """
     return [
         {"agent": "cc-1", "id": "call-status", "summary": "Referral status, still pending."},
         {"agent": "cc-1", "id": "call-empty", "summary": ""},
@@ -78,7 +90,10 @@ def handoffs() -> list[dict]:
 
 
 def leave(seed: int) -> list[dict]:
-    """Return the published session's leave, entered after publication by this seed's lag."""
+    """Return the published session's leave, entered after publication by this seed's lag.
+
+    The steps return the published session and set the entered time from this seed's lag.
+    """
     return [
         {
             "consultant": "con-1",
@@ -92,7 +107,10 @@ def leave(seed: int) -> list[dict]:
 
 
 def feed() -> list[dict]:
-    """Return warehouse rows that carry both a booking date and a referral time. The clock uses the referral time."""
+    """Return warehouse rows that carry both a booking date and a referral time. The clock uses the referral time.
+
+    The steps return each warehouse id with a booking date and a referral time on the same row.
+    """
     return [
         {"booking_date": "2027-01-20", "id": "wh-1", "referred_at": "2027-01-02"},
         {"booking_date": "2027-01-18", "id": "wh-2", "referred_at": "2026-12-11"},
@@ -105,7 +123,10 @@ def model() -> dict:
 
 
 def readiness() -> dict:
-    """Return the readiness groups, the roles, and the skewed phone-only site."""
+    """Return the readiness groups, the roles, and the skewed phone-only site.
+
+    The steps list the patient groups and the roles, and they mark the phone-only group at the Rim site as the skew.
+    """
     return {
         "patient_groups": ["app", "caregiver", "phone-only"],
         "roles": ["coordinators", "contact-center", "phc-clerks"],
@@ -114,7 +135,10 @@ def readiness() -> dict:
 
 
 def raci() -> dict:
-    """Return the go-live chart. The clinical-safety cell has no owner yet, which is what the evidence rule fills for this gate."""
+    """Return the go-live chart. The clinical-safety cell has no owner yet, which is what the evidence rule fills for this gate.
+
+    The steps return the go-live chart and a clinical-safety cell whose owner is still empty.
+    """
     return {
         "cells": [{"id": "clinical-safety", "owner": "", "role": "clinical safety"}],
         "gate": "G4",
@@ -123,7 +147,10 @@ def raci() -> dict:
 
 
 def attack() -> dict:
-    """Return the personal direct-family event the stop rule is checked against."""
+    """Return the personal direct-family event the stop rule is checked against.
+
+    The steps return one chat event in the direct family for the stop rule to check.
+    """
     return {
         "channel": "chat",
         "family": "atk-direct",

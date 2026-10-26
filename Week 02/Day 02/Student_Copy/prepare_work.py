@@ -40,7 +40,11 @@ WORK = HERE / "work"
 
 
 def _packet_ready() -> bool:
-    """True when the drawer this script copies is still beside it."""
+    """True when the drawer this script copies is still beside it.
+
+    It checks the app folder, the compose file, the Dockerfile, the
+    namespace file, and every blank page.
+    """
     return (
         APP.is_dir()
         and (PACKET / "compose.yaml").is_file()

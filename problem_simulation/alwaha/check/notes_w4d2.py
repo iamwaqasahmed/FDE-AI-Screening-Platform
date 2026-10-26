@@ -56,7 +56,10 @@ def dashboard_problems(work: Path) -> list[str]:
 
 
 def timeline_problems(work: Path, gold: dict) -> list[str]:
-    """Return the timeline miss unless both instants from gold appear and the status tool is named."""
+    """Return the timeline miss unless both instants from gold appear and the status tool is named.
+
+    The steps lowercase the timeline note and return the timeline miss when either instant from gold or the status tool is absent.
+    """
     lowered = _text(work / "timeline.md").lower()
     first = str(gold["first_error"]).lower()
     alert = str(gold["alert_at"]).lower()
@@ -97,7 +100,10 @@ def runbook_problems(work: Path, gold: dict) -> list[str]:
 
 
 def sprint_problems(work: Path) -> list[str]:
-    """Return the sprint miss unless the replay, the dashboard, the timeline, the cache, and the shadow appear in that order."""
+    """Return the sprint miss unless the replay, the dashboard, the timeline, the cache, and the shadow appear in that order.
+
+    The steps lowercase the sprint note and return the sequence miss when those words are missing or out of order.
+    """
     lowered = _text(work / "sprint.md").lower()
     if not _ordered(lowered, ("replay", "dashboard", "timeline", "cache", "shadow")):
         return [SEQUENCE]

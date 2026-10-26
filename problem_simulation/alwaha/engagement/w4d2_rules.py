@@ -63,7 +63,10 @@ def within_slo(first: str, alert: str, minutes: int = SLO_MINUTES) -> bool:
 
 
 def cost(rows: list[dict]) -> dict[str, int]:
-    """Return the cost totaled by hospital. Rows for the same hospital add together."""
+    """Return the cost totaled by hospital. Rows for the same hospital add together.
+
+    The steps add each row's amount into a total for that hospital, and the hidden figures stay in this file and are not copied into a new comment.
+    """
     totals: dict[str, int] = {}
     for row in rows:
         hospital = str(row["hospital"])

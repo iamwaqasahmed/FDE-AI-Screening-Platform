@@ -24,7 +24,11 @@ def load_rows(path: str | Path) -> list[dict[str, str]]:
 
 
 def rate(rows: list[dict[str, str]]) -> float:
-    """Share of messages that contain the word status."""
+    """Share of messages that contain the word status.
+
+    Stop when there are no rows, otherwise count the texts that contain that word and divide by the number of rows.
+    """
+    # An empty file has no denominator, so the share stops here.
     if not rows:
         raise SystemExit("The message file has no rows.")
     hits = sum("status" in row["text"].lower() for row in rows)
@@ -37,7 +41,10 @@ def show(value: float) -> str:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print one line that starts with keyword."""
+    """Print one line that starts with keyword.
+
+    Read the CSV path, compute the share, and print that share.
+    """
     parser = argparse.ArgumentParser(description="Print the share of messages containing status.")
     parser.add_argument("csv_path")
     args = parser.parse_args(argv)

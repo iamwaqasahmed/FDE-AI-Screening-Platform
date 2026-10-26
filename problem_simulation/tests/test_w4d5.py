@@ -42,7 +42,11 @@ _TEXT = {".md", ".py", ".yml", ".yaml", ".json", ".txt"}
 
 
 def _blob(pack: Path) -> str:
-    """Join every file in a pack so a bare count cannot hide in one fixture."""
+    """Join every file in a pack so a bare count cannot hide in one fixture.
+
+    The release test joins each profile's pack and fails if a watermark, the gold file name, the
+    hidden benefit reading, or a bare count appears in that text.
+    """
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -65,7 +69,11 @@ def _bare(text: str, number: int) -> bool:
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
-    """Run a packet's own unit tests and return the process result without raising."""
+    """Run a packet's own unit tests and return the process result without raising.
+
+    The caller runs both the filled packet and the unfinished packet, both of which are supposed
+    to pass, and a run that does not exit cleanly is the failure.
+    """
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,
@@ -205,7 +213,11 @@ class ReleaseTests(unittest.TestCase):
         self.assertFalse(_bare(notes, shown["phone_only"]))
 
     def test_modules_differ_and_both_copies_pass(self) -> None:
-        """Fails when a shell module matches the filled copy, or when either suite fails."""
+        """Fails when a shell module matches the filled copy, or when either suite fails.
+
+        The test compares every shell module with the filled copy and runs both packet suites,
+        and fails if any module matches or either suite does not exit cleanly.
+        """
         for name in _APP:
             shell = (W4D5_APP / name).read_bytes()
             filled = (W4D5_WORK / "app" / name).read_bytes()

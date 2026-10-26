@@ -112,7 +112,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_codes_keep_the_catalog(self) -> None:
-        """Fails when the unfinished code map, which keeps a stale catalog entry, is accepted."""
+        """Fails when the unfinished code map, which keeps a stale catalog entry, is accepted.
+
+        The test copies the unfinished code map into the work tree and fails unless the identity
+        checker reports the stale catalog entry, and the problem list does not echo a hidden
+        value.
+        """
         shutil.copy(W3D1_APP / "codes.py", self.work / "app" / "codes.py")
         problems = self._identity()
         self.assertEqual(problems, [STALE])
@@ -137,7 +142,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_sample_copies_a_real_letter(self) -> None:
-        """Fails when the unfinished sampler, which copies a real letter, is accepted."""
+        """Fails when the unfinished sampler, which copies a real letter, is accepted.
+
+        The test copies the unfinished sampler into the work tree and fails unless the
+        synthetic-letter checker reports the missing fidelity card, the watermark, and the
+        national id, and the problem list does not echo a hidden value.
+        """
         shutil.copy(W3D1_APP / "synthetic.py", self.work / "app" / "synthetic.py")
         problems = self._synthetic()
         self.assertEqual(problems, [CARD, MARK, NID])

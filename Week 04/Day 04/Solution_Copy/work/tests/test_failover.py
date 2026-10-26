@@ -26,7 +26,10 @@ class FailoverTests(unittest.TestCase):
     """Pending approvals resumed on site-b."""
 
     def test_approvals_resume_inside_the_budget(self) -> None:
-        """The site is site-b, pending is apr-1 then apr-2, and seconds stays within 10."""
+        """The site is site-b, pending is apr-1 then apr-2, and seconds stays within 10.
+
+        It calls recover, then checks site-b, the sorted pending ids, and the budget.
+        """
         got = recover(_DRILL, _ROWS)
         self.assertEqual(got["site"], "site-b")
         self.assertEqual(got["pending"], ["apr-1", "apr-2"])

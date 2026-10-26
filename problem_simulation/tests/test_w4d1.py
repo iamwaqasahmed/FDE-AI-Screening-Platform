@@ -43,7 +43,11 @@ _APP = ("guard.py", "output.py", "supply.py", "redact.py", "limit.py", "access.p
 
 
 def _blob(pack: Path) -> str:
-    """Join every file in a pack so a hidden attack name cannot hide in one fixture."""
+    """Join every file in a pack so a hidden attack name cannot hide in one fixture.
+
+    The release test joins each profile's pack and fails if a watermark or a hidden attack name
+    appears in that text.
+    """
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -52,7 +56,11 @@ def _blob(pack: Path) -> str:
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
-    """Run a packet's own unit tests and return the process result without raising."""
+    """Run a packet's own unit tests and return the process result without raising.
+
+    The caller runs both the filled packet and the unfinished packet, both of which are supposed
+    to pass, and a run that does not exit cleanly is the failure.
+    """
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,

@@ -156,7 +156,10 @@ def spend(items: list[dict], price: float, budget_sar: float) -> list[str]:
 
 
 def fidelity_card() -> dict:
-    """Return the ranges and the rare sub-specialty the sample is judged against."""
+    """Return the ranges and the rare sub-specialty the sample is judged against.
+
+    The steps return the label margin, the phrase range, the rare sub-specialty, the sample-size range, and the specialty mix.
+    """
     return {
         "label_margin": {RARE: [0.3, 0.7]},
         "phrase": {"kindly": [0.2, 0.6]},
@@ -167,7 +170,10 @@ def fidelity_card() -> dict:
 
 
 def _find(parent: dict[str, str], item: str) -> str:
-    """Return the representative of this row, and compress the path on the way."""
+    """Return the representative of this row, and compress the path on the way.
+
+    The steps follow parent links until a row points at itself, and they point each visited row at its parent along the way.
+    """
     while parent[item] != item:
         parent[item] = parent[parent[item]]
         item = parent[item]

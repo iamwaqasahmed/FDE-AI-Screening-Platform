@@ -52,7 +52,11 @@ WORK = HERE / "work"
 
 
 def _packet_ready() -> bool:
-    """True when the drawer this script copies is still beside it."""
+    """True when the drawer this script copies is still beside it.
+
+    The steps check the app folder, the tests folder, the workflow
+    file, each blank page, and the requirements page.
+    """
     return (
         APP.is_dir()
         and TESTS.is_dir()

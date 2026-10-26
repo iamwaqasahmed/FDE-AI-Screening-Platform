@@ -52,7 +52,10 @@ def main(argv: list[str] | None = None) -> None:
 
 
 def _slices(profile) -> None:
-    """Print the slice tally and stop if any simpler method passes or any named method fails."""
+    """Print the slice tally and stop if any simpler method passes or any named method fails.
+
+    The steps evaluate the slices, print the pass tally, and stop with the names of slices whose simpler method passed or whose named method failed.
+    """
     rows = evaluate(profile)
     failed = [row["slice"] for row in rows if not row["simpler_fails"] or not row["passing_ok"]]
     print(f"Slices for {profile.name}: {len(rows) - len(failed)}/{len(rows)}")
@@ -75,7 +78,10 @@ def _assessment(seed: str):
 
 
 def _score(profile_name: str) -> None:
-    """Build truth, print the reference score, and stop when the rate is under the bar."""
+    """Build truth, print the reference score, and stop when the rate is under the bar.
+
+    The steps build the truth for the named profile, print the passed count, the total, and the rate, list each failed check, and stop when the rate is under the bar.
+    """
     build_truth(load(profile_name))
     result = score(profile_name)
     print(f"Reference score: {result['passed']}/{result['total']} ({result['rate']:.3f})")

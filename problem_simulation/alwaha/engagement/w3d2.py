@@ -91,7 +91,10 @@ def cloud(profile: Profile) -> dict:
 
 
 def labeled_letters(rows: tuple[tuple[str, str], ...]) -> list[dict]:
-    """Return each letter with the reference extraction fields added beside its text."""
+    """Return each letter with the reference extraction fields added beside its text.
+
+    The steps turn each pair into a letter and merge the reference extraction fields onto that same row.
+    """
     labeled = []
     for row in letters(rows):
         labeled.append({**row, **extract(row)})

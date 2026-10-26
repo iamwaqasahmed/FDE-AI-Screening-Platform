@@ -55,7 +55,10 @@ WORK = HERE / "work"
 
 
 def _packet_ready() -> bool:
-    """True when the drawer this script copies is still beside it."""
+    """True when the drawer this script copies is still beside it.
+
+    It checks that the packet drawer this script copies is still beside the script.
+    """
     return (
         APP.is_dir()
         and TESTS.is_dir()

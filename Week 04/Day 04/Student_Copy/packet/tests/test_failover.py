@@ -26,7 +26,10 @@ class FailoverTests(unittest.TestCase):
     """The killed site, an empty pending list, and the timeout."""
 
     def test_the_shell_drops_the_approvals_and_waits(self) -> None:
-        """The site is site-a, pending is empty, and seconds is 40."""
+        """The site is site-a, pending is empty, and seconds is 40.
+
+        It calls recover, then checks the site, the empty pending list, and the seconds.
+        """
         got = recover(_DRILL, _ROWS)
         self.assertEqual(got["site"], "site-a")
         self.assertEqual(got["pending"], [])

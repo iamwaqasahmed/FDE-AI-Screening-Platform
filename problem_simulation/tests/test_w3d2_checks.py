@@ -149,7 +149,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_extract_misses_the_floor(self) -> None:
-        """Fails when the unfinished extractor, which misses the floor, is accepted."""
+        """Fails when the unfinished extractor, which misses the floor, is accepted.
+
+        The test restores the unfinished extractor and fails unless both the model checker and
+        the adapter checker name the missed floor, and the problem list does not echo a hidden
+        value.
+        """
         self._swap("extract.py")
         problems = self._model()
         self.assertEqual(problems, [EXTRACT])
@@ -157,7 +162,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_intent_misses_the_floor(self) -> None:
-        """Fails when the unfinished intent classifier, which misses the floor, is accepted."""
+        """Fails when the unfinished intent classifier, which misses the floor, is accepted.
+
+        The test restores the unfinished intent classifier and fails unless both checkers name
+        the missed floor, and the problem list does not echo a hidden value.
+        """
         self._swap("intent.py")
         problems = self._model()
         self.assertEqual(problems, [INTENT])
@@ -165,7 +174,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_adapter_loads_the_cloud_hash(self) -> None:
-        """Fails when the unfinished adapter, which loads the cloud hash, is accepted."""
+        """Fails when the unfinished adapter, which loads the cloud hash, is accepted.
+
+        The test restores the unfinished adapter and fails unless both checkers report the
+        unregistered hash and the GPU quota, and the problem list does not echo a hidden value.
+        """
         self._swap("adapter.py")
         problems = self._model()
         self.assertEqual(problems, [HASH, GPU])
@@ -173,7 +186,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_route_allows_phi(self) -> None:
-        """Fails when the unfinished route, which allows the external model, is accepted."""
+        """Fails when the unfinished route, which allows the external model, is accepted.
+
+        The test restores the unfinished route and fails unless both checkers report the
+        external-model call and the unregistered hash, and the problem list does not echo a
+        hidden value.
+        """
         self._swap("route.py")
         problems = self._model()
         self.assertEqual(problems, [PHI, HASH])
@@ -181,7 +199,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_cost_uses_ext_large(self) -> None:
-        """Fails when the unfinished cost, which prices the external model, is accepted."""
+        """Fails when the unfinished cost, which prices the external model, is accepted.
+
+        The test restores the unfinished cost module and fails unless both checkers reject that
+        external price, and the problem list does not echo a hidden value.
+        """
         self._swap("cost.py")
         problems = self._model()
         self.assertEqual(problems, [COST])
@@ -214,7 +236,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_sprint_out_of_order_fails(self) -> None:
-        """Fails when a sprint that names the memo before the baseline is accepted."""
+        """Fails when a sprint that names the memo before the baseline is accepted.
+
+        The test writes a sprint that names the memo before the baseline and fails unless the
+        model checker says the adapter is out of sequence, and the problem list does not echo a
+        hidden value.
+        """
         (self.work / "sprint.md").write_text("# Sprint\n\nThe memo, then the baseline.\n", encoding="utf-8")
         problems = self._model()
         self.assertEqual(problems, ["sprint.md does not sequence the adapter"])

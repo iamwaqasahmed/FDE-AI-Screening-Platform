@@ -68,7 +68,10 @@ def throughput(seed: int) -> dict:
 
 
 def forecast(profile: Profile) -> dict:
-    """Return the campaign forecast, including the GPU quota this profile shares with chat."""
+    """Return the campaign forecast, including the GPU quota this profile shares with chat.
+
+    The steps copy the backlog, the campaign, the peak, the window, and the specialty, and they attach this profile's shared GPU quota.
+    """
     return {
         "backlog_referrals": BACKLOG,
         "campaign": "eye-screening",
@@ -83,7 +86,10 @@ def forecast(profile: Profile) -> dict:
 
 
 def price_today(seed: int) -> dict:
-    """Return today's external price as a sheet row that replaces the previous external price."""
+    """Return today's external price as a sheet row that replaces the previous external price.
+
+    The steps read this seed's price sheet, keep the local price, and place today's external price on the replacement row.
+    """
     sheet = rates(seed)
     return {
         "key": "price.ext_large_per_1k",
@@ -94,7 +100,10 @@ def price_today(seed: int) -> dict:
 
 
 def _adapter(name: str, digest: str) -> dict:
-    """Return an approved private-zone adapter pinned to the local base."""
+    """Return an approved private-zone adapter pinned to the local base.
+
+    The steps place the name and the digest on an approved adapter in the private zone, pinned to the local base.
+    """
     return {
         "base": "local-small",
         "hash": digest,
@@ -105,7 +114,10 @@ def _adapter(name: str, digest: str) -> dict:
 
 
 def registry(profile: Profile) -> dict:
-    """Return the three approved adapters. The local one reuses the earlier adapter hash."""
+    """Return the three approved adapters. The local one reuses the earlier adapter hash.
+
+    The steps hash the extract label and the intent label for this profile and reuse the earlier adapter hash for the local model.
+    """
     return {
         "models": [
             _adapter("lora-extract", _hash(profile.seed, "w4d3-lora-extract")),

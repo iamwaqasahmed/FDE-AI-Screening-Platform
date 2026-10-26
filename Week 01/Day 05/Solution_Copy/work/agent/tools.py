@@ -132,33 +132,50 @@ def redirect(referral_id: str) -> dict:
 
 
 def facility_id(text: str) -> str:
-    """Return the facility id when the turn names a known hospital. Otherwise empty."""
+    """Return the facility id when the turn names a known hospital.
+
+    Walk the known hospital names and return the id of the first name that appears in the text.
+    Otherwise empty.
+    """
     for name, facility in _FACILITIES.items():
+        # The first hospital name found in the text is the one returned.
         if name in text:
             return facility
     return ""
 
 
 def _read_named(root: Path, names: tuple[str, ...]) -> list[dict]:
-    """Read JSONL scenario files from root/scenarios and return the rows."""
+    """Read JSONL scenario files from root/scenarios and return the rows.
+
+    Open each named file, skip blank lines, and append one parsed object per remaining line.
+    """
     rows = []
     for name in names:
         for line in (root / "scenarios" / name).read_text(encoding="utf-8").splitlines():
+            # A blank line is skipped.
             if line.strip():
                 rows.append(json.loads(line))
     return rows
 
 
 def _find(referral_id: str) -> dict:
-    """Return the loaded scenario with this referral id."""
+    """Return the loaded scenario with this referral id.
+
+    Walk the loaded rows, return the row with this id, and raise when no row matches.
+    """
     for row in _STATE["scenarios"]:
         if row["referral_id"] == referral_id:
             return row
+    # A missing id raises an error.
     raise KeyError(referral_id)
 
 
 def _phrases(text: str) -> list[str]:
-    """Collect the bullet lines under a phrases: heading. Stop at the next other line."""
+    """Collect the bullet lines under a phrases: heading.
+
+    After that heading, keep each dash bullet, skip blank lines, and stop on a non-blank line other than a bullet.
+    Stop at the next other line.
+    """
     found: list[str] = []
     collecting = False
     for line in text.splitlines():
@@ -170,5 +187,6 @@ def _phrases(text: str) -> list[str]:
         if line.startswith("- "):
             found.append(line[2:].strip())
         elif line.strip():
+            # A non-blank line other than a bullet ends the list.
             break
     return found

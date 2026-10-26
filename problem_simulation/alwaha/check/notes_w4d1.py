@@ -55,7 +55,10 @@ def _ordered(text: str, tokens: tuple[str, ...]) -> bool:
 
 
 def sprint_problems(work: Path) -> list[str]:
-    """Return the sprint miss unless the notice, the guardrail, access, the assessment, and the request appear in that order."""
+    """Return the sprint miss unless the notice, the guardrail, access, the assessment, and the request appear in that order.
+
+    The steps lowercase the sprint note and return the sequence miss when those words are missing or out of order.
+    """
     lowered = _text(work / "sprint.md").lower()
     if not _ordered(lowered, ("notice", "guardrail", "access", "dpia", "request")):
         return [SEQUENCE]
@@ -111,7 +114,10 @@ def request_problems(work: Path) -> list[str]:
 
 
 def breach_problems(work: Path) -> list[str]:
-    """Return the clock miss unless the note contains the case instant, the engine, the change id, and the window figure that the condition checks."""
+    """Return the clock miss unless the note contains the case instant, the engine, the change id, and the window figure that the condition checks.
+
+    The steps lowercase the breach note and return the clock miss when the case instant, the engine, the change id, or the window figure is absent.
+    """
     lowered = _text(work / "breach.md").lower()
     if CASE_AT.lower() not in lowered or "int-engine" not in lowered or "chg-2025-118" not in lowered or "72" not in lowered:
         return [CLOCK]

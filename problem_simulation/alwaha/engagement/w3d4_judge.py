@@ -37,7 +37,10 @@ def subset() -> list[dict]:
 
 
 def held() -> list[dict]:
-    """Return the held-out judge item. It is fluent, it fails, and it names a document the pack does not include."""
+    """Return the held-out judge item. It is fluent, it fails, and it names a document the pack does not include.
+
+    The steps build one fluent failing item that cites the held document and span, and the hidden figures stay in this file and are not copied into a new comment.
+    """
     return [
         {
             "answer": f"Held night hours cite {HELD_SPAN} on {HELD_DOC}.",

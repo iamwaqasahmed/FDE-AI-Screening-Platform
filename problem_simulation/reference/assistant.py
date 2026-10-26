@@ -14,7 +14,10 @@ class Store:
     """In-memory pending approvals, applied results, taken slots, and the next approval counter."""
 
     def __init__(self) -> None:
-        """Start with nothing pending, nothing applied, and no taken slots."""
+        """Start with nothing pending, nothing applied, and no taken slots.
+
+        The steps create empty pending, applied, and slot maps, and they start the approval counter.
+        """
         self.pending: dict[str, dict] = {}
         self.applied: dict[str, dict] = {}
         self.slots: dict[str, str] = {}
@@ -79,7 +82,10 @@ def approve(store: Store, approval_id: str) -> dict:
 
 
 def health() -> dict:
-    """Return the registered model hash, the prompt version, and the dependency flags."""
+    """Return the registered model hash, the prompt version, and the dependency flags.
+
+    The steps return one record holding the registered hash, the prompt version, and the identity and hospital dependencies marked up.
+    """
     return {
         "model_hash": REGISTERED,
         "prompt_version": "v1",
@@ -107,7 +113,10 @@ def _book(store: Store, body: dict) -> dict:
 
 
 def _reply(text: str, tools: list[dict] | None = None, pending: list[str] | None = None) -> dict:
-    """Return the chat payload. Citations are the documents on tools that carry one."""
+    """Return the chat payload. Citations are the documents on tools that carry one.
+
+    The steps copy the reply text, keep a citation for every tool that names a document, and attach the tool list and any pending approval ids.
+    """
     return {
         "reply": text,
         "citations": [tool["document"] for tool in (tools or []) if tool.get("document")],

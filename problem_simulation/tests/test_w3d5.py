@@ -51,7 +51,11 @@ _TESTS = (
 
 
 def _blob(pack: Path) -> str:
-    """Join every file in a pack so a gate id cannot hide outside the notices."""
+    """Join every file in a pack so a gate id cannot hide outside the notices.
+
+    The release test searches that joined text and fails when a deadline phrase or the watermark
+    shows up anywhere in the pack.
+    """
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -155,7 +159,11 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_state_the_canary(self) -> None:
-        """Fails when lesson notes or templates contain the watermark."""
+        """Fails when lesson notes or templates contain the watermark.
+
+        The test reads every lesson note and template and fails if the watermark appears in that
+        prose.
+        """
         notes = [path.read_text(encoding="utf-8") for path in W3D5_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W3D5_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -202,7 +210,11 @@ class DemoTests(unittest.TestCase):
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
-    """Run a packet's own unit tests and return the process result without raising."""
+    """Run a packet's own unit tests and return the process result without raising.
+
+    The caller runs the filled packet, which must exit cleanly, and the unfinished packet,
+    which must fail.
+    """
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,

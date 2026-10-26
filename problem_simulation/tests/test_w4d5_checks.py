@@ -148,7 +148,12 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self._individual(), [])
 
     def test_shell_signin_accepts_the_service_token(self) -> None:
-        """Fails when sign-in that accepts the service token is accepted."""
+        """Fails when sign-in that accepts the service token is accepted.
+
+        The test restores the unfinished sign-in and fails unless the connection checker says
+        the service token is accepted as staff, and the problem list does not echo a hidden
+        value.
+        """
         self._swap("signin.py")
         problems = self._integrate()
         self.assertEqual(problems, [SERVICE])
@@ -164,7 +169,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_handoff_has_no_summary(self) -> None:
-        """Fails when a handoff with no summary is accepted."""
+        """Fails when a handoff with no summary is accepted.
+
+        The test restores the unfinished handoff and fails unless the connection checker says
+        the summary is missing, and the problem list does not echo a hidden value.
+        """
         self._swap("handoff.py")
         problems = self._integrate()
         self.assertEqual(problems, [SUMMARY])
@@ -180,14 +189,24 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_warehouse_uses_the_booking_date(self) -> None:
-        """Fails when the warehouse clock uses the booking date instead of the referral time."""
+        """Fails when the warehouse clock uses the booking date instead of the referral time.
+
+        The test restores the unfinished warehouse clock and fails unless the connection checker
+        says the clock starts at the booking date, and the problem list does not echo a hidden
+        value.
+        """
         self._swap("warehouse.py")
         problems = self._integrate()
         self.assertEqual(problems, [CLOCK])
         self._hidden(problems)
 
     def test_sprint_out_of_order_fails(self) -> None:
-        """Fails when a sprint that puts the proposal first is accepted."""
+        """Fails when a sprint that puts the proposal first is accepted.
+
+        The test writes a sprint that puts the proposal first and fails unless the connection
+        checker wants the requests to open the sprint, and the problem list does not echo a
+        hidden value.
+        """
         (self.work / "sprint.md").write_text("# Sprint\n\nThe proposal comes first.\n", encoding="utf-8")
         problems = self._integrate()
         self.assertEqual(problems, [SEQUENCE])
@@ -204,7 +223,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_an_empty_architecture_fails(self) -> None:
-        """Fails when an empty deployment architecture is accepted."""
+        """Fails when an empty deployment architecture is accepted.
+
+        The test writes an empty deployment architecture and fails unless the operations checker
+        says a required section is missing, and the problem list does not echo a hidden value.
+        """
         (self.work / "architecture-deploy.md").write_text("# Deployment architecture\n", encoding="utf-8")
         problems = self._ops()
         self.assertEqual(problems, [ARCH])
@@ -248,7 +271,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_a_ranking_without_a_dependency_fails(self) -> None:
-        """Fails when a ranking that rejects the dot-vote but names no dependency is accepted."""
+        """Fails when a ranking that rejects the dot-vote but names no dependency is accepted.
+
+        The test rewrites only the ranking section so it rejects the dot-vote and names no
+        dependency, leaving the rest of the proposal in place, and fails unless the proposal
+        checker says a dependency is missing and the problem list does not echo a hidden value.
+        """
         path = self.work / "rcp" / "proposal.md"
         self._section(path, "Ranking", "The dot-vote is not the value model. p-clock is first.")
         problems = self._rcp()
@@ -256,7 +284,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_a_roadmap_that_starts_with_triage_fails(self) -> None:
-        """Fails when the roadmap section builds triage first."""
+        """Fails when the roadmap section builds triage first.
+
+        The test rewrites only the roadmap section so triage is the first build, leaving the
+        rest of the proposal in place, and fails unless the proposal checker rejects that start
+        and the problem list does not echo a hidden value.
+        """
         path = self.work / "rcp" / "proposal.md"
         self._section(path, "Roadmap", "p-triage is the first build.")
         problems = self._rcp()
@@ -264,7 +297,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_unmeasured_metrics_fail(self) -> None:
-        """Fails when the metrics section hopes for a saving and does not measure one."""
+        """Fails when the metrics section hopes for a saving and does not measure one.
+
+        The test rewrites only the metrics section into a hoped-for saving, leaving the rest of
+        the proposal in place, and fails unless the proposal checker says the saving was not
+        measured and the problem list does not echo a hidden value.
+        """
         path = self.work / "rcp" / "proposal.md"
         self._section(path, "Metrics", "The team hopes for a large saving.")
         problems = self._rcp()
@@ -272,7 +310,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_adoption_without_the_phone_channel_fails(self) -> None:
-        """Fails when adoption assumes an app and never mentions the phone channel."""
+        """Fails when adoption assumes an app and never mentions the phone channel.
+
+        The test rewrites only the adoption section so it assumes an app and never mentions the
+        phone channel, leaving the rest of the proposal in place, and fails unless the proposal
+        checker says that channel is missing and the problem list does not echo a hidden value.
+        """
         path = self.work / "rcp" / "proposal.md"
         self._section(path, "Adoption", "Patients will use the app.")
         problems = self._rcp()
@@ -280,7 +323,12 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_a_proposal_for_another_client_fails(self) -> None:
-        """Fails when the client section names the board instead of the cluster."""
+        """Fails when the client section names the board instead of the cluster.
+
+        The test rewrites only the client section to name the board, leaving the rest of the
+        proposal in place, and fails unless the proposal checker says the client is not the
+        cluster and the problem list does not echo a hidden value.
+        """
         path = self.work / "rcp" / "proposal.md"
         self._section(path, "Client", "The sponsor is the board.")
         problems = self._rcp()
@@ -331,14 +379,22 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_an_empty_retro_fails(self) -> None:
-        """Fails when an empty retro is accepted. The retro needs its required headings."""
+        """Fails when an empty retro is accepted. The retro needs its required headings.
+
+        The test writes an empty retro and fails unless the readout checker says a required
+        heading is missing, and the problem list does not echo a hidden value.
+        """
         (self.work / "retro.md").write_text("# Retro\n", encoding="utf-8")
         problems = self._readout()
         self.assertEqual(problems, [RETRO_HEAD])
         self._hidden(problems)
 
     def test_shell_personal_books_the_attack(self) -> None:
-        """Fails when the unfinished personal lab, which books the attack, is accepted."""
+        """Fails when the unfinished personal lab, which books the attack, is accepted.
+
+        The test restores the unfinished personal lab and fails unless the individual-lab
+        checker says the attack was booked, and the problem list does not echo a hidden value.
+        """
         self._swap("personal.py")
         problems = self._individual()
         self.assertEqual(problems, [BOOKED])

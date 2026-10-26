@@ -162,24 +162,39 @@ class Handler(BaseHTTPRequestHandler):
         return self._by_id(self._session_id())
 
     def _by_id(self, session_id: str) -> dict | None:
-        """Find one session row by its session id."""
+        """Find one session row by its session id.
+
+        An empty id returns nothing, and any other id is compared with
+        each stored row until one matches.
+        """
         if not session_id:
             return None
+        # Keep the first row whose session id matches.
         for row in session.rows(self.database()):
             if row["session_id"] == session_id:
                 return row
         return None
 
     def _session_id(self) -> str:
-        """Read alwaha_session from the Cookie header, or return an empty string."""
+        """Read alwaha_session from the Cookie header, or return an empty string.
+
+        The header is split on semicolons, and each piece is split at
+        the first equals sign.
+        """
         for part in self.headers.get("Cookie", "").split(";"):
+            # The first equals sign separates the cookie name from its value.
             name, _, value = part.strip().partition("=")
             if name == "alwaha_session":
                 return value
         return ""
 
     def _json(self, payload: dict) -> None:
-        """Send a JSON body with status 200."""
+        """Send a JSON body with status 200.
+
+        The payload is encoded to bytes, that size is the length header,
+        and those bytes are written after the headers.
+        """
+        # Count the encoded payload so the length header matches the body.
         body = json.dumps(payload).encode()
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
@@ -188,7 +203,12 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def _html(self, text: str) -> None:
-        """Send an HTML body with status 200."""
+        """Send an HTML body with status 200.
+
+        The page is encoded to bytes, that size is the length header,
+        and those bytes are written after the headers.
+        """
+        # Count the encoded page so the length header matches the body.
         body = text.encode()
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -197,7 +217,12 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def _text(self, status: int, text: str) -> None:
-        """Send a short plain-text error. status is 401, 403, or 404."""
+        """Send a short plain-text error. status is 401, 403, or 404.
+
+        The message is encoded to bytes, the given status is sent, and
+        that size is the length header.
+        """
+        # Count the encoded message so the length header matches the body.
         body = text.encode()
         self.send_response(status)
         self.send_header("Content-Type", "text/plain; charset=utf-8")

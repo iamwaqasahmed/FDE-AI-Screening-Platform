@@ -14,7 +14,10 @@ from alwaha.world_write import write_world
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Write the world for the chosen profile and print its path, population, and fingerprint."""
+    """Write the world for the chosen profile and print its path, population, and fingerprint.
+
+    The steps parse the profile name and the optional volume count, load that profile, write its world, and print the path, the population, and the fingerprint.
+    """
     parser = argparse.ArgumentParser(description="Write the Al-Waha world for a profile.")
     parser.add_argument("--profile", default=None)
     parser.add_argument("--volume-rows", type=int, default=None)

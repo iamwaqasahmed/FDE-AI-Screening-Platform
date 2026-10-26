@@ -40,7 +40,10 @@ def _ordered(text: str, tokens: tuple[str, ...]) -> bool:
 
 
 def sprint_problems(work: Path) -> list[str]:
-    """Return the sprint miss unless the forecast, the server, the batch, the quota, scale, and capacity appear in that order."""
+    """Return the sprint miss unless the forecast, the server, the batch, the quota, scale, and capacity appear in that order.
+
+    The steps lowercase the sprint note and return the sequence miss when those words are missing or out of order.
+    """
     lowered = _text(work / "sprint.md").lower()
     if not _ordered(lowered, ("forecast", "server", "batch", "quota", "scale", "capacity")):
         return [SEQUENCE]
@@ -114,7 +117,10 @@ def knowledge_problems(work: Path) -> list[str]:
 
 
 def note_problems(work: Path) -> list[str]:
-    """Return the sprint, capacity, interview, and knowledge misses concatenated."""
+    """Return the sprint, capacity, interview, and knowledge misses concatenated.
+
+    The steps concatenate the sprint, capacity, interview, and knowledge misses in that order.
+    """
     problems = []
     problems.extend(sprint_problems(work))
     problems.extend(capacity_problems(work))

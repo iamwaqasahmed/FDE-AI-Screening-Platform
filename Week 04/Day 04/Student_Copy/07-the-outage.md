@@ -85,7 +85,10 @@ class BreakerTests(unittest.TestCase):
     """The closed breaker the starter keeps on this outage."""
 
     def test_the_shell_waits_on_insure(self) -> None:
-        """The target is insure, waited is above 0, and called is true."""
+        """The target is insure, waited is above 0, and called is true.
+
+        It calls book, then checks the target, the wait, and the call.
+        """
         got = book(_OUTAGE)
         self.assertEqual(got["target"], "insure")
         self.assertGreater(got["waited"], 0)

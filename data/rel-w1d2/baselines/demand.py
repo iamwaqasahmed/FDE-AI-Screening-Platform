@@ -25,12 +25,15 @@ def _pairs(rows: list[dict[str, str]]) -> dict[tuple[int, int], int]:
 
 
 def seasonal(rows: list[dict[str, str]]) -> float:
-    """Return the mean absolute error of forecasting each later month from the same month a year earlier."""
+    """Return the mean absolute error of forecasting each later month from the same month a year earlier.
+
+    Walk each later month, subtract the same month one year earlier, average those absolute gaps, and stop when that later window is empty.
+    """
     by_month = _pairs(rows)
     errors = []
     for (year, month), actual in sorted(by_month.items()):
         if year != LATER:
-            # Earlier years are the forecast source. Only the later year is scored.
+            # Earlier years supply the comparison. Only the later year is scored.
             continue
         errors.append(abs(actual - by_month[(year - 1, month)]))
     if not errors:
@@ -40,7 +43,10 @@ def seasonal(rows: list[dict[str, str]]) -> float:
 
 
 def mean_error(rows: list[dict[str, str]]) -> float:
-    """Return the mean absolute error of forecasting every later month with the earlier average."""
+    """Return the mean absolute error of forecasting every later month with the earlier average.
+
+    Average every visit from before the later year, then average how far each later month sits from that figure. Stop if either side is empty.
+    """
     history = [int(row["visits"]) for row in rows if int(row["year"]) < LATER]
     later = [int(row["visits"]) for row in rows if int(row["year"]) == LATER]
     if not history or not later:
@@ -56,7 +62,10 @@ def show(value: float) -> str:
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print the seasonal error and the mean error for the CSV path in the arguments."""
+    """Print the seasonal error and the mean error for the CSV path in the arguments.
+
+    Read that CSV, score both errors, and print the seasonal line and then the mean line.
+    """
     parser = argparse.ArgumentParser(description="Print the seasonal and mean errors on 2026.")
     parser.add_argument("csv_path")
     args = parser.parse_args(argv)

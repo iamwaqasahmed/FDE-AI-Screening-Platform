@@ -18,7 +18,10 @@ HIJRI_DOB = "1412-09-15"
 
 
 def build_people(profile) -> list[dict]:
-    """Return every person for this profile, then apply the cross-row defect links."""
+    """Return every person for this profile, then apply the cross-row defect links.
+
+    The steps draw one person for every index from the profile seed, then apply the cross-row defect links.
+    """
     rng = random.Random(profile.seed)
     rows = [_person(profile, rng, index) for index in range(profile.people)]
     _link(profile, rows)
@@ -46,7 +49,10 @@ def _person(profile, rng: random.Random, index: int) -> dict:
 
 
 def _dob(rng: random.Random) -> str:
-    """Return a Gregorian date string. The day stays inside the short month so every month is valid."""
+    """Return a Gregorian date string. The day stays inside the short month so every month is valid.
+
+    The steps draw a year, a month, and a day inside the short month, then join them into a date string.
+    """
     year = rng.randrange(1940, 2023)
     month = rng.randrange(1, 13)
     day = rng.randrange(1, 28)

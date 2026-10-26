@@ -43,7 +43,10 @@ def citation_accuracy(rows: list[dict]) -> float:
 
 
 def journey_pass(rows: list[dict]) -> float:
-    """Return the share of journeys whose state and approval both match. A booked step with the wrong approval fails."""
+    """Return the share of journeys whose state and approval both match. A booked step with the wrong approval fails.
+
+    The steps count a journey only when its state and its approval both equal the label, and the hidden figures stay in this file and are not copied into a new comment.
+    """
     return _rate(
         rows,
         lambda pred, label: pred.get("state") == label.get("state") and pred.get("approved") == label.get("approved"),
