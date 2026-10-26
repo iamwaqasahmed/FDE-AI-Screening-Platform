@@ -33,6 +33,7 @@ class EraseTests(unittest.TestCase):
         The person in the fixture is present in each store, so each store
         name is expected, in that order.
         """
+        # Row, then memory, then the index, then logs.
         self.assertEqual(export_categories(_STORES, "person-access"), ["row", "memory", "index", "logs"])
 
     def test_deletion_clears_every_store(self) -> None:
@@ -41,8 +42,10 @@ class EraseTests(unittest.TestCase):
         export_categories on the cleared stores is empty. The logs store is
         the single redacted row in the assertion.
         """
+        # Drop the person, then ask which stores still name them.
         cleared = drop(_STORES, "person-access")
         self.assertEqual(export_categories(cleared, "person-access"), [])
+        # Logs keep a redacted marker in place of the original row.
         self.assertEqual(cleared["logs"], [{"redacted": True}])
 
 

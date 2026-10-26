@@ -89,12 +89,14 @@ class ReleaseTests(unittest.TestCase):
             practice, small = load("practice"), load("small")
             write_w3d5(practice, root / "practice" / "pack", root / "practice-truth")
             write_w3d5(small, root / "small" / "pack", root / "small-truth")
+            # Neither pack contains its watermark, and the price sheets differ.
             self.assertNotIn(practice.canary(), _blob(root / "practice" / "pack"))
             self.assertNotIn(small.canary(), _blob(root / "small" / "pack"))
             self.assertNotEqual(
                 (root / "practice" / "pack" / "finance" / "prices.csv").read_text(encoding="utf-8"),
                 (root / "small" / "pack" / "finance" / "prices.csv").read_text(encoding="utf-8"),
             )
+            # Both gold files match the generator.
             practice_gold = json.loads((root / "practice-truth" / "w3d5_gold.json").read_text(encoding="utf-8"))
             small_gold = json.loads((root / "small-truth" / "w3d5_gold.json").read_text(encoding="utf-8"))
             self.assertEqual(practice_gold, gold(practice))
@@ -110,15 +112,18 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_w3d5(profile, pack, root / "truth")
+            # The rehearsal note keeps the case date.
             hidden = gold(profile)
             blob = _blob(pack)
             self.assertIn(hidden["case_date"], (pack / "notices" / "rehearsal.md").read_text(encoding="utf-8"))
+            # Labels, the keep mark, a gate id, and the deadline phrase stay out of the pack.
             self.assertNotIn('"label"', (pack / "slices" / "before.jsonl").read_text(encoding="utf-8"))
             self.assertNotIn("keep", (pack / "slices" / "personal.jsonl").read_text(encoding="utf-8"))
             self.assertNotIn("req-cite", (pack / "gates" / "stage-gate.md").read_text(encoding="utf-8"))
             self.assertNotIn("16 weeks", blob)
             self.assertNotIn("phc-templates still generates", blob)
             self.assertNotIn(profile.canary(), blob)
+            # The second measurement is the better of the two.
             self.assertGreater(hidden["metrics"]["after"], hidden["metrics"]["before"])
 
 
@@ -130,6 +135,7 @@ class DemoTests(unittest.TestCase):
         """Fails when the demo does not state the sponsor's triage ask beside the
         data-protection refusal, or when it prints the triage id, a price, or the watermark.
         """
+        # Run the demo. The lines are the sponsor's ask and the data-protection refusal.
         profile = load("practice")
         stdout = StringIO()
         with redirect_stdout(stdout):
@@ -143,6 +149,7 @@ class DemoTests(unittest.TestCase):
                 "the dpo keeps patient data off ext-large",
             ],
         )
+        # The triage id, the price, and the watermark stay out of the output.
         self.assertNotIn("p-triage", text)
         self.assertNotIn(str(hidden["cost"]["price"]), text)
         self.assertNotIn(profile.canary(), text)
@@ -159,6 +166,7 @@ class DemoTests(unittest.TestCase):
         rewritten, when the improvement gate is not commented in the shell and active
         in the filled copy, when the filled suite fails, or when the shell suite passes.
         """
+        # Shell modules differ from the filled copy. Packet tests were not rewritten.
         packet = W3D5_APP.parent
         for name in _APP:
             shell = (W3D5_APP / name).read_bytes()
@@ -168,10 +176,12 @@ class DemoTests(unittest.TestCase):
             shell = (packet / "tests" / name).read_bytes()
             filled = (W3D5_WORK / "tests" / name).read_bytes()
             self.assertEqual(shell, filled, name)
+        # The improvement gate is commented in the shell and active in the filled copy.
         shell_ci = (packet / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
         work_ci = (W3D5_WORK / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
         self.assertIn("# improvement-gate:", shell_ci)
         self.assertIn("\n  improvement-gate:\n", work_ci)
+        # The filled suite passes. The shell suite does not.
         work = _suite(W3D5_WORK)
         shell = _suite(packet)
         self.assertEqual(work.returncode, 0, work.stdout + work.stderr)

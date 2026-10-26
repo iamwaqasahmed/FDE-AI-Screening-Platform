@@ -31,7 +31,9 @@ def _as_persona(row: dict) -> dict:
 
     The card keeps the public fields. must_surface lists fact ids whose flag is set. The tree becomes nodes in the catalog's row order.
     """
+    # Each catalog fact becomes a record. A pair is required; a longer entry carries its own flag.
     facts = tuple(_fact(entry) for entry in row["facts"])
+    # The tree stays in catalog order, and each node keeps its parent.
     tree = tuple(
         Node(node_id, tuple(keywords), answer, tuple(releases), parent)
         for node_id, keywords, answer, releases, parent in row["tree"]
@@ -45,6 +47,7 @@ def _as_persona(row: dict) -> dict:
             "goals": tuple(row["goals"]),
         },
         "facts": facts,
+        # Required facts are the ones whose surface flag is set.
         "must_surface": tuple(fact["id"] for fact in facts if fact["must_surface"]),
         "banned": tuple(row["banned"]),
         "tree": tree,

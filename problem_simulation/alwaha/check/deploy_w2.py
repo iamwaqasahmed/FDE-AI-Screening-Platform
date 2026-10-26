@@ -36,18 +36,23 @@ def load_suite(folder: Path) -> dict:
     Each name is removed before import so the participant file is read. The path is always restored. A name that was not cached is removed. A name that was cached is put back.
     """
     folder = folder.resolve()
+    # Keep the old path and any modules already cached under these names.
     saved_path = list(sys.path)
     saved = {name: sys.modules.get(name) for name in _NAMES}
+    # The participant folder is searched first so these names resolve to the work files.
     sys.path.insert(0, str(folder))
     try:
+        # Drop a cached module before import so the participant file is read.
         for name in _NAMES:
             sys.modules.pop(name, None)
         for name in _NAMES:
             importlib.import_module(name)
         return {name: sys.modules[name] for name in _NAMES}
     finally:
+        # The path is always restored, even when an import fails.
         sys.path[:] = saved_path
         for name, module in saved.items():
+            # A name that was not cached is removed. A cached module is put back.
             if module is None:
                 sys.modules.pop(name, None)
             else:
@@ -198,19 +203,23 @@ def _run(work: Path, pack: Path, gold: dict, notes) -> list[str]:
 
     The note callable is the one the caller passed. Each probe's misses are concatenated.
     """
+    # Load the participant modules, then the log line the admission probe uses.
     app = load_suite(work / "app")
     line = json.loads((pack / "fixtures" / "log.json").read_text(encoding="utf-8"))["line"]
     problems = []
+    # Health, admission, routing, and secrets are graded as separate probes.
     problems.extend(_health(app, pack, gold))
     problems.extend(_admit(app, gold, line))
     problems.extend(_router(app, gold))
     problems.extend(_secrets(app, pack, gold))
+    # The image and the manifest can both report the root miss, so each is recorded once.
     image = (work / "deploy" / "Dockerfile").read_text(encoding="utf-8")
     if _image_is_root(image):
         _once(problems, _ROOT)
     manifest = (work / "deploy" / "deployment.yaml").read_text(encoding="utf-8")
     for item in _manifest(manifest, gold["namespace"]):
         _once(problems, item)
+    # The workflow and the notes are graded after the probes.
     problems.extend(_ci(work))
     problems.extend(notes(work, pack, gold))
     return problems

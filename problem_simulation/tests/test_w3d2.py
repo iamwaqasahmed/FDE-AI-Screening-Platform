@@ -129,6 +129,7 @@ class ReleaseTests(unittest.TestCase):
             write_w2d4(profile, week2[3], truth)
             write_w2d5(profile, week2[4], truth)
             write_w3d1(profile, root / "w3d1", truth)
+            # Fingerprints of the earlier packs, including yesterday, plus the previous gold.
             before = (
                 tuple(fingerprint(pack) for pack in packs),
                 tuple(fingerprint(pack) for pack in week2),
@@ -136,6 +137,7 @@ class ReleaseTests(unittest.TestCase):
                 (truth / "personas.json").read_bytes(),
                 (truth / "w3d1_gold.json").read_bytes(),
             )
+            # Write this day twice. The two results must agree, and the earlier days must stay as they were.
             first = write_w3d2(profile, root / "w3d2", truth)
             again = write_w3d2(profile, root / "w3d2", truth)
             self.assertEqual(first, again)
@@ -149,6 +151,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "w3d1_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "w3d2_gold.json").is_file())
             self.assertFalse((root / "w3d2" / "w3d2_gold.json").exists())
 
@@ -180,14 +183,17 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_w3d2(profile, pack, root / "truth")
+            # Read the gold, the prose, the register, and every learner file.
             hidden = json.loads((root / "truth" / "w3d2_gold.json").read_text(encoding="utf-8"))
             prose = _prose(pack)
             register = (pack / "registry" / "reg-models.json").read_text(encoding="utf-8")
             blob = "\n".join(path.read_text(encoding="utf-8") for path in pack.rglob("*") if path.is_file())
+            # Prose and the gold keep the watermark out. The register has the adapter hash and not the cloud hash.
             self.assertNotIn(profile.canary(), prose)
             self.assertNotIn(profile.canary(), json.dumps(hidden))
             self.assertNotIn(hidden["cloud_hash"], register)
             self.assertIn(hidden["adapter_hash"], register)
+            # Held letters, held messages, and the preference draft stay out of the pack.
             for row in hidden["held_letters"]:
                 self.assertNotIn(row["item_id"], blob)
                 self.assertNotIn(row["text"], blob)
@@ -250,22 +256,26 @@ class DemoTests(unittest.TestCase):
         the quota facts do not surface, or when an answer contains a digit. The memo
         must still carry the measurement block for the practice adapter.
         """
+        # Every persona's winning script still completes.
         personas = load_personas()
         for data in personas.values():
             scored = score_turns(data, run(data, winning_questions(data)))
             self.assertTrue(scored["ok"], data["id"])
+        # The privacy officer's new turns release the ruling facts and do not state the quota count.
         dpo = personas["dpo"]
         turns = run(dpo, _DPO)
         self.assertEqual(turns[1]["released"], ["unsigned-ruling"])
         self.assertEqual(turns[2]["released"], ["signed-ruling"])
         self.assertNotIn(str(gold(load("practice"))["quota"]["gpus"]), turns[2]["answer"])
         self.assertEqual(dpo["must_surface"], ("unsigned-ruling",))
+        # Finance releases the rent-or-buy and quota facts. The quota answer has no digit.
         finance = personas["finance"]
         turns = run(finance, _FINANCE)
         self.assertEqual(turns[1]["released"], ["rent-or-buy"])
         self.assertEqual(turns[2]["released"], ["gpu-quota"])
         self.assertNotRegex(turns[2]["answer"], r"\d")
         self.assertEqual(finance["must_surface"], ("rent-or-buy", "double-benefit", "unit-prices"))
+        # The memo still carries the measurement block for the practice adapter.
         practice = gold(load("practice"))
         memo = (W3D2_WORK / "approach.md").read_text(encoding="utf-8")
         self.assertIn(measurement_block(practice["adapter_hash"], practice["local_sar"]), memo.replace("\r\n", "\n"))

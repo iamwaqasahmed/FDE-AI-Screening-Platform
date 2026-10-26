@@ -93,14 +93,18 @@ def request_problems(work: Path) -> list[str]:
     Access and deletion must each name every store. The reply must say the data was removed and must mention the letter. These three can all appear.
     """
     text = _text(work / "requests.md")
+    # Access, deletion, and the reply are graded as separate sections.
     access = section(text, "Access").lower()
     deletion = section(text, "Deletion").lower()
     reply = section(text, "Reply").lower()
     problems = []
+    # Access must name every store.
     if not all(name in access for name in STORES):
         problems.append(EXPORT)
+    # Deletion must name every store. A store left out is its own miss.
     if not all(name in deletion for name in STORES):
         problems.append(DELETE_NOTE)
+    # The reply must say the data was removed and must mention the letter.
     if "removed" not in reply or "letter" not in reply:
         problems.append(REPLY)
     return problems
@@ -121,13 +125,16 @@ def knowledge_problems(work: Path) -> list[str]:
     """
     text = _text(work / "knowledge.md")
     answers = [line for line in text.splitlines() if re.match(r"\s*\d+\.\s+\S", line)]
+    # Fewer than two numbered answers is the two-answer miss.
     if len(answers) < 2 or not two_answers(text):
         return [KNOW]
     problems = []
     first = answers[0].lower()
+    # The first answer must say the clock starts at the notice and must name this release.
     if "notice" not in first or "rel-w4d1" not in first:
         problems.append(CLOCK_K)
     second = answers[1].lower()
+    # The second answer must name the intake workflow, an approval, and booking.
     if "wf-intake" not in second or "approval" not in second or "book" not in second:
         problems.append(AGENCY)
     return problems
@@ -173,12 +180,14 @@ def note_problems(work: Path) -> list[str]:
     The guardrail file is graded by the red-team and access checks, not here.
     """
     problems: list[str] = []
+    # Sprint order, the assessment, and the request note. A repeated sentence is kept once.
     for item in sprint_problems(work):
         _once(problems, item)
     for item in dpia_problems(work):
         _once(problems, item)
     for item in request_problems(work):
         _once(problems, item)
+    # The breach clock, the knowledge note, and the security interview.
     for item in breach_problems(work):
         _once(problems, item)
     for item in knowledge_problems(work):

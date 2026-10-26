@@ -40,6 +40,7 @@ def _decision(name: str, decision: str) -> dict:
 
 def _case(name: str, dataset: str, turns: list[dict], **extra: object) -> dict:
     """Return one case. Extra keywords override the blank letter, consent, preference, and constraint."""
+    # Shared fields. Consent starts on, and the letter, preference, and constraint start blank.
     row: dict = {
         "scenario": name,
         "dataset": dataset,
@@ -53,6 +54,7 @@ def _case(name: str, dataset: str, turns: list[dict], **extra: object) -> dict:
         "constraint": "",
         "turns": turns,
     }
+    # A letter, a constraint, or consent turned off arrives as an extra keyword.
     row.update(extra)
     return row
 

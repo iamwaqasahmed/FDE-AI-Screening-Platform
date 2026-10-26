@@ -1,4 +1,9 @@
-"""Patient chat page."""
+"""Patient chat page.
+
+home is the sign-in page. It has a patient button and a coordinator button.
+render is the signed-in patient page. A reply and a count are escaped and shown.
+Any other role gets an empty string, so this page stays off the console.
+"""
 
 from __future__ import annotations
 

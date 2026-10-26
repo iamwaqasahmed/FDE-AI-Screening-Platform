@@ -1,4 +1,8 @@
-"""Participant pages for rel-w4d3. The budget and the hashes stay out."""
+"""Participant pages for rel-w4d3.
+The budget and the hashes stay out.
+
+This file builds the release note and the capacity template. The release note writes the token price it is given and lists the pack files except the readme. The capacity page is empty headings for serve, batch, route, quota, scale, price, and backlog.
+"""
 
 from __future__ import annotations
 

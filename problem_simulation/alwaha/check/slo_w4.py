@@ -142,8 +142,10 @@ def slo_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
 
     A planted token returns only the watermark. The six probes run under one import. A crash of that import is the harness miss. Notes are graded afterward so they survive that crash.
     """
+    # A planted token returns only the watermark, so the probes are not run.
     if contains_canary(work, canary):
         return [WATERMARK]
+    # The registry, the candidate, the sheet, the forecast, and today's price come from the pack.
     registry = json.loads((pack / "registry" / "adapters.json").read_text(encoding="utf-8"))
     candidate = json.loads((pack / "registry" / "candidate.json").read_text(encoding="utf-8"))
     sheet = json.loads((pack / "serving" / "throughput.json").read_text(encoding="utf-8"))
@@ -152,6 +154,7 @@ def slo_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
     problems: list[str] = []
     try:
         with modules(work / "app", _MODULES) as loaded:
+            # Adapters, backlog hours, chat latency, scale, price, and the capacity table.
             for item in _adapters(loaded["adapters"], registry, candidate):
                 _once(problems, item)
             for item in _hours(loaded["batch"], sheet, forecast):
@@ -165,6 +168,7 @@ def slo_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
             for item in _table(loaded["capacity"], sheet, forecast, today):
                 _once(problems, item)
     except Exception:
+        # A crash of the import is the harness miss. Notes are still graded below.
         _once(problems, RUN)
     for item in note_problems(work):
         _once(problems, item)

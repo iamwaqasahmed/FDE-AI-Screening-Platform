@@ -24,6 +24,7 @@ class AdmitTests(unittest.TestCase):
         The shell ignores the account. started is a clean log line.
         The stand-in id is not on that line.
         """
+        # The shell ignores the account, so root is still accepted.
         self.assertEqual(admit("root", "started", "NID-sample"), "accepted")
 
     def test_log_line_is_kept(self) -> None:
@@ -32,6 +33,7 @@ class AdmitTests(unittest.TestCase):
         The stand-in id stays in the line. The fixture log stays in
         the pack. Do not copy that file here.
         """
+        # The shell returns the line with the stand-in id still in it.
         self.assertEqual(emitted_log("nid=NID-sample", "NID-sample"), "nid=NID-sample")
 
 

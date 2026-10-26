@@ -37,6 +37,7 @@ class CheckTests(unittest.TestCase):
 
         The gold file must match the generator before any test mutates the work tree.
         """
+        # A temporary pack for the small profile, and the gold the release wrote.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -44,12 +45,14 @@ class CheckTests(unittest.TestCase):
         self.truth = root / "truth"
         write_w2d3(self.profile, self.pack, self.truth)
         self.gold = json.loads((self.truth / "w2d3_gold.json").read_text(encoding="utf-8"))
+        # The filled work tree, without cached bytecode.
         self.work = root / "work"
         shutil.copytree(
             W2D3_WORK,
             self.work,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
         )
+        # The written gold must match the generator before any test changes the work tree.
         self.assertEqual(self.gold, gold(self.profile))
 
     def tearDown(self) -> None:

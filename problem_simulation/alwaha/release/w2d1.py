@@ -1,4 +1,8 @@
-"""Write rel-w2d1. Earlier packs and personas.json are left where they are."""
+"""Write rel-w2d1.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the interface notice, the assurance page, both interface documents, and the status scenario are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -46,17 +50,22 @@ def write_w2d1(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the interface notice, the assurance page, both interface documents, the status scenario, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Interface notice, assurance page, and both interface documents.
     _write(pack / "notices" / "fhir-v2.md", notice())
     _write(pack / "identity" / "loa.md", identity_note())
     _write(pack / "openapi" / "his-wadi.yaml", his_wadi_spec())
     _write(pack / "openapi" / "iam.yaml", iam_spec())
+    # Status scenario, then gold.
     _write(pack / "scenarios" / "status.json", json.dumps(scenario(profile), indent=2, sort_keys=True) + "\n")
     _write(truth / "w2d1_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w2d1_gold.json")
     _write(truth / "rel-w2d1-fingerprint.txt", digest + "\n")
     return digest

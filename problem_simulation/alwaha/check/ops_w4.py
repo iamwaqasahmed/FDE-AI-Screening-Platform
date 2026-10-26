@@ -38,9 +38,12 @@ def _architecture(work: Path) -> list[str]:
     Every zone name must appear. The flows must name the contact center, business intelligence, human resources, and the bus. The boundary must mention a clinician and urgency.
     """
     text = _text(work / "architecture-deploy.md")
+    # Zones, flows, and the boundary are read as separate sections.
     zones = section(text, "Zones").lower()
     flows = section(text, "Flows").lower()
     boundary = section(text, "Boundary").lower()
+    # Every zone name must appear. The flows must name each connected system.
+    # The boundary must mention a clinician and urgency.
     filled = (
         all(name in zones for name in _ZONES)
         and all(name in flows for name in ("cc", "bi", "hr", "bus"))

@@ -85,6 +85,7 @@ class ReleaseTests(unittest.TestCase):
             write_day5(profile, packs[4], truth)
             week2 = root / "week2"
             write_w2d1(profile, week2, truth)
+            # Fingerprints of the earlier packs, including yesterday, plus their gold files.
             before = (
                 tuple(fingerprint(pack) for pack in packs),
                 fingerprint(week2),
@@ -95,6 +96,7 @@ class ReleaseTests(unittest.TestCase):
                 (truth / "day5_gold.json").read_bytes(),
                 (truth / "w2d1_gold.json").read_bytes(),
             )
+            # Write this day twice. The two results must agree, and the earlier days must stay as they were.
             first = write_w2d2(profile, root / "w2d2", truth)
             second = write_w2d2(profile, root / "w2d2", truth)
             self.assertEqual(first, second)
@@ -111,6 +113,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "w2d1_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "w2d2_gold.json").is_file())
             self.assertFalse((root / "w2d2" / "w2d2_gold.json").exists())
 
@@ -137,16 +140,19 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_w2d2(profile, pack, root / "truth")
+            # Join every learner file. The dropped field stays out. The extra field and the clock name stay in.
             blob = "\n".join(path.read_text(encoding="utf-8") for path in pack.rglob("*") if path.is_file())
             self.assertNotIn(DROPPED, blob)
             self.assertIn(EXTRA, blob)
             self.assertIn(CLOCK, blob)
+            # The webhook and the hidden gold match the generator. The gold has no watermark.
             written = json.loads((pack / "webhooks" / "referral.submitted.json").read_text(encoding="utf-8"))
             self.assertEqual(written, webhook(profile))
             hidden = json.loads((root / "truth" / "w2d2_gold.json").read_text(encoding="utf-8"))
             self.assertEqual(hidden, gold(profile))
             self.assertEqual(hidden["dropped_field"], DROPPED)
             self.assertNotIn(profile.canary(), json.dumps(hidden))
+            # The cancelled-session feed has three rows, and the first two share an event id.
             lines = [
                 json.loads(line)
                 for line in (pack / "events" / "session.cancelled.jsonl").read_text(encoding="utf-8").splitlines()
@@ -212,6 +218,7 @@ class DemoTests(unittest.TestCase):
         contract owner, the zone, the channel, or the desk fact does not surface, or
         when a persona's required-fact list has changed.
         """
+        # The architect's new questions. A released fact here would be a first-week fact leaking out.
         personas = load_personas()
         ea = run(personas["ea"], _EA)
         self.assertEqual(ea[2]["released"], [])
@@ -219,6 +226,7 @@ class DemoTests(unittest.TestCase):
         self.assertIn("owned by eref", ea[3]["answer"])
         self.assertEqual(ea[3]["released"], [])
         self.assertIn("zone-hospital", ea[4]["answer"])
+        # The access manager's new questions. The reason mix is the fact that turn is allowed to release.
         access = run(personas["access-mgr"], _ACCESS)
         self.assertEqual(access[0]["released"], [])
         self.assertIn("reason-mix", access[1]["released"])
@@ -226,6 +234,7 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(access[2]["released"], [])
         self.assertIn("session window", access[3]["answer"])
         self.assertIn("desk", access[4]["answer"])
+        # Neither persona's required-fact list has changed.
         self.assertEqual(personas["ea"]["must_surface"], ("ain-file", "hl7-pair"))
         self.assertEqual(personas["access-mgr"]["must_surface"], ("returns-and-slots", "reason-mix"))
 

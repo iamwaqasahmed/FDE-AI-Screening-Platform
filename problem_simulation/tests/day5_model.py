@@ -84,12 +84,15 @@ def _blocked(scenario: dict, memory: object) -> dict | None:
     consent keeps is also left for the rest of respond. A blocked
     preference returns a refusal and does not copy the string into the row.
     """
+    # No stored preference means this check does not apply.
     stored = scenario["stored_preference"]
     if not stored:
         return None
+    # Consent that keeps the preference lets the rest of respond continue.
     kept = memory.preference(stored, scenario["consent"])
     if kept:
         return None
+    # A blocked preference is a refusal. The preference string is not copied into the row.
     return schema.row(
         scenario["scenario"],
         schema.reply("refusal", "Say what you need for this visit."),
@@ -160,12 +163,15 @@ def _offer(
     A timeout ends the walk. A taken slot blocks that actor and lets
     the walk continue so the other actor can still book.
     """
+    # This actor already has an offer. Do not offer again.
     if actor in offered:
         return None
+    # Record the offer on the trace, then keep the result for this actor.
     result = tools.offer(scenario["referral_id"])
     tool_trace.append("slots.offer")
     citations.append("slots.offer")
     offered[actor] = result
+    # A timeout ends the walk. A taken slot only blocks this actor.
     error = result.get("error", "")
     if error == "timeout":
         return _timeout(scenario, tool_trace)
@@ -185,20 +191,24 @@ def _patient(scenario: dict, turn: dict, memory: object, walk: dict) -> dict | N
     """
     actor = str(turn.get("actor", ""))
     session = scenario["session"]
+    # Remember a hospital named in this turn, then recall the session.
     found = tools.facility_id(turn["text"])
     if found:
         memory.remember(session, facility_id=found)
     remembered = memory.recall(session)
+    # Status is one read for the session. The count is the tool result.
     if _asks_status(turn["text"]) and not remembered.get("status_done"):
         result = tools.status(scenario["referral_id"])
         walk["tool_trace"].append("referral.status")
         walk["citations"].append("referral.status")
         walk["count"] = result["count"]
         memory.remember(session, status_done=True)
+    # A request to book offers a slot. A timeout row stops the walk here.
     if _wants_slot(turn["text"]):
         failed = _offer(scenario, actor, walk["offered"], walk["blocked"], walk["tool_trace"], walk["citations"])
         if failed is not None:
             return failed
+    # A confirmation is recorded, and offers first if this actor has not offered yet.
     if "confirm" in turn["text"].lower():
         walk["confirmed"].add(actor)
         return _offer(scenario, actor, walk["offered"], walk["blocked"], walk["tool_trace"], walk["citations"])
@@ -216,15 +226,18 @@ def _coordinator(scenario: dict, turn: dict, walk: dict) -> None:
     and does not send SMS.
     A booking that succeeds sends SMS and cites pol-approval.
     """
+    # Only a coordinator turn decides. A repeated approval id changes nothing.
     if turn["role"] != "coordinator":
         return
     approval_id = turn["approval_id"]
     if approval_id in walk["seen"]:
         return
+    # Count this decision once. A later copy of the same approval id already returned.
     walk["seen"].append(approval_id)
     walk["decisions"] += 1
     walk["approval_ids"].append(approval_id)
     actor = str(turn.get("actor", ""))
+    # A blocked actor or a rejected decision refuses and does not book.
     if actor in walk["blocked"] or turn["decision"] == "rejected":
         walk["refusal"] = True
         walk["citations"].append("pol-approval")
@@ -233,12 +246,14 @@ def _coordinator(scenario: dict, turn: dict, walk: dict) -> None:
         return
     if actor not in walk["confirmed"] or turn["decision"] != "approved":
         return
+    # Book only after this actor confirmed. The book tool can still say the slot was taken.
     result = tools.book(scenario["referral_id"], approval_id)
     if result.get("status") == "taken":
         walk["refusal"] = True
         walk["failure"] = "race-slot"
         walk["citations"].append("pol-approval")
         return
+    # A booking that succeeds sends SMS and cites the approval policy.
     walk["tool_trace"].append("slots.book")
     tools.send_sms(scenario["referral_id"])
     walk["tool_trace"].append("sms.send")
@@ -254,6 +269,7 @@ def _finish(scenario: dict, memory: object, walk: dict) -> dict:
     with no booking is intent status. The facility comes from the session.
     The reply text on this path is Done. failure is whatever the walk set.
     """
+    # Pick the intent from a booking, a refusal, a status read, or none of those.
     if walk["booked"]:
         intent = "book"
     elif walk["refusal"]:
@@ -262,6 +278,7 @@ def _finish(scenario: dict, memory: object, walk: dict) -> dict:
         intent = "status"
     else:
         intent = "answer"
+    # The facility comes from the session. failure is whatever the walk set.
     facility = memory.recall(scenario["session"]).get("facility_id", "")
     return schema.row(
         scenario["scenario"],
@@ -284,6 +301,7 @@ def _walk(scenario: dict, memory: object) -> dict:
     before a later turn can book. Any other role is treated as a
     coordinator turn. Staff turns that are not coordinators do nothing here.
     """
+    # Empty walk: no tools yet, no offers, nothing booked.
     walk = {
         "tool_trace": [],
         "citations": [],
@@ -300,12 +318,14 @@ def _walk(scenario: dict, memory: object) -> dict:
         "failure": "",
     }
     for turn in scenario["turns"]:
+        # A patient turn can end the walk early, which is how a timeout returns.
         if turn["role"] == "patient":
             failed = _patient(scenario, turn, memory, walk)
             if failed is not None:
                 return failed
         else:
             _coordinator(scenario, turn, walk)
+    # Every turn was walked. Build the row from the walk.
     return _finish(scenario, memory, walk)
 
 

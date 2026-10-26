@@ -1,4 +1,7 @@
-"""Write the rel-w1d1 pack and the facilitator truth beside it."""
+"""Write the rel-w1d1 pack and the facilitator truth beside it.
+
+The writer stops if the starter is missing or the corpus facts disagree, then clears both directories and writes the corpus, the persona pages, and the watermarked credentials. The starter is copied in, and the copied policy is checked against the corpus. The release note is added once the file list is known, and the facilitator directory receives the interview payload, the marker, and the fingerprint.
+"""
 
 from __future__ import annotations
 
@@ -70,6 +73,7 @@ def _truth_payload(personas: dict[str, dict], canary: str) -> dict:
     Surface lines, banned lines, facts, the interview tree, and the profile marker are included so grading can use them without placing them in the participant pack.
     """
     payload = {}
+    # One facilitator record per persona: what must be said, what is banned, the facts, the tree, and the card.
     for key, data in personas.items():
         payload[key] = {
             "id": key,
@@ -77,11 +81,13 @@ def _truth_payload(personas: dict[str, dict], canary: str) -> dict:
             "banned": list(data["banned"]),
             "facts": data["facts"],
             "tree": [
+                # Plain records, so the file does not depend on the node type.
                 {"node_id": node.node_id, "keywords": list(node.keywords), "answer": node.answer, "releases": list(node.releases), "parent": node.parent}
                 for node in data["tree"]
             ],
             "card": {**data["card"], "goals": list(data["card"]["goals"])},
         }
+    # The marker stays in the facilitator copy.
     payload["canary"] = canary
     return payload
 
@@ -104,6 +110,7 @@ def write_release(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the corpus, the persona pages, the watermarked credentials, the starter, the readme, and the facilitator files. It stops if the starter is missing, if the corpus facts disagree, or if the copied policy does not match the corpus.
     """
+    # Stop if the starter is missing or the corpus facts disagree.
     if not STARTER_ROOT.is_dir():
         raise SystemExit(f"Starter template is missing at {STARTER_ROOT}.")
     minutes_text, postmortem_text = minutes(), postmortem()
@@ -112,6 +119,7 @@ def write_release(profile: Profile, pack: Path, truth: Path) -> str:
         raise SystemExit("Corpus facts: " + "; ".join(problems))
     personas = load_personas()
     canary = profile.canary()
+    # Clear both directories, then write the corpus, the persona pages, and the watermarked credentials.
     reset(pack)
     reset(truth)
     documents = {
@@ -135,15 +143,18 @@ def write_release(profile: Profile, pack: Path, truth: Path) -> str:
         "history": "not-included",
     }
     _write(pack / "credentials" / "dev.json", json.dumps(credentials, indent=2) + "\n")
+    # Copy the starter, and refuse the pack if the copied policy does not match the corpus.
     copy_starter(pack / "starter")
     rule = pack / "starter" / "policy" / "pol-assistant-use.md"
     if rule.read_text(encoding="utf-8") != assistant_use():
         raise SystemExit("starter/policy/pol-assistant-use.md does not match the corpus document.")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
     _write(truth / "personas.json", json.dumps(_truth_payload(personas, canary), indent=2) + "\n")
     _write(truth / "canary.txt", canary + "\n")
+    # Fingerprint the pack and the facilitator directory, and store that digest.
     digest = fingerprint(pack, truth)
     _write(truth / "fingerprint.txt", digest + "\n")
     return digest

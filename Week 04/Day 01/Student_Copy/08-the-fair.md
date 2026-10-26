@@ -84,6 +84,7 @@ class FairTests(unittest.TestCase):
         The yes and no decisions are in the fixture. They do not change
         the result. The assertion is zero.
         """
+        # The yes row and the no row are passed in. The result is zero.
         self.assertEqual(gap(_ROWS), 0.0)
 
     def test_the_stamp_rate_is_zero(self) -> None:
@@ -91,6 +92,7 @@ class FairTests(unittest.TestCase):
 
         One row is stamped and one is not. The assertion is still zero.
         """
+        # The stamp fixture is passed in. The result is zero.
         self.assertEqual(stamp_rate(_STAMPS), 0.0)
 
 
@@ -216,6 +218,7 @@ class FairTests(unittest.TestCase):
         Each slice has a yes and a no, so the spread is the whole range
         from yes to no. The assertion is that spread.
         """
+        # The two slices are a yes and a no, so the spread covers that whole range.
         self.assertEqual(gap(_ROWS), 1.0)
 
     def test_the_stamp_rate_is_the_thursday_share(self) -> None:
@@ -223,6 +226,7 @@ class FairTests(unittest.TestCase):
 
         One row is stamped and one is not. The assertion is that share.
         """
+        # One of the two stamp rows is stamped. The share is the value below.
         self.assertEqual(stamp_rate(_STAMPS), 0.5)
 
 

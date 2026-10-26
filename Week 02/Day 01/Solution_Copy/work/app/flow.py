@@ -28,13 +28,16 @@ def load_pack(pack: Path) -> dict:
     release, where all four already sit. Do not copy the scenario
     file into work/.
     """
+    # Four release files. Chapter 07 points --pack where they already sit.
     note = pack / "identity" / "loa.md"
     spec = pack / "openapi" / "his-wadi.yaml"
     iam = pack / "openapi" / "iam.yaml"
     scenario = pack / "scenarios" / "status.json"
+    # A missing file raises without naming it. Do not copy the scenario into work/.
     missing = [path for path in (note, spec, iam, scenario) if not path.is_file()]
     if missing:
         raise FileNotFoundError("release is missing a file")
+    # The identity spec becomes the actors. The scenario file becomes the row.
     return {
         "note": note.read_text(encoding="utf-8"),
         "spec": spec.read_text(encoding="utf-8"),
@@ -51,9 +54,11 @@ def sign_in(db, token: dict, note: str) -> dict:
     and subject, then the role and the assurance level from the token.
     The page is chat or console. The server redirects to that page.
     """
+    # Ask which page this token may open. An empty page is a refusal, and nothing is written.
     page = auth.open_for(token, note)
     if not page:
         return {"ok": False, "page": ""}
+    # Store the subject as the session id, with the role and the assurance level.
     stored = {
         "session_id": token["sub"],
         "subject": token["sub"],
@@ -61,6 +66,7 @@ def sign_in(db, token: dict, note: str) -> dict:
         "loa": token.get("loa", ""),
     }
     session.save(db, stored)
+    # The page is chat or console. The caller redirects there.
     return {"ok": True, "page": page, "session": stored}
 
 

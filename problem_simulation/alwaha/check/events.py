@@ -141,15 +141,19 @@ def _prose(work: Path) -> list[str]:
     """
     problems = []
     intake = work / "intake.md"
+    # A missing intake note is its own miss. The human step is not guessed.
     if not intake.is_file():
         problems.append("intake.md is missing")
     else:
         text = intake.read_text(encoding="utf-8").lower()
+        # The human step may be named as a coordinator or as a human.
         if "coordinator" not in text and "human" not in text:
             problems.append("the diagram does not show the human step")
+        # The criteria version is kept only when in-flight, criteria, and version all appear.
         if not ("in-flight" in text and "criteria" in text and "version" in text):
             problems.append("the note does not keep the criteria version")
     knowledge = work / "knowledge.md"
+    # The knowledge note must exist and have two numbered answers.
     if not knowledge.is_file() or not _answers(knowledge.read_text(encoding="utf-8")):
         problems.append("knowledge.md needs two answers")
     return problems

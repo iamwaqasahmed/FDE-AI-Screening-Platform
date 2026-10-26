@@ -92,6 +92,7 @@ def _deployment(work: Path, pack: Path, gold: dict) -> list[str]:
     A missing file is the missing-fact miss and the other checks are skipped. A banned sentence, a boundary that does not leave urgency with a clinician, a boundary that does not name the external model, a short fact list, and a missing citation are separate misses.
     """
     text = _text(work / "deployment.md")
+    # A missing file is the missing-fact miss. The other checks are skipped.
     if text is None:
         return ["the deployment note is missing a required fact"]
     rules = gold["deployment"]
@@ -99,13 +100,16 @@ def _deployment(work: Path, pack: Path, gold: dict) -> list[str]:
     problems = []
     if _banned(text):
         problems.append("the deployment note contains a banned sentence")
+    # Urgency and the external model are both read from the boundary section.
     boundary = section(text, "Boundary").lower()
     if "clinician" not in boundary or "urgency" not in boundary:
         problems.append("the deployment note does not leave urgency with a clinician")
     if "ext-large" not in boundary:
         problems.append("the deployment note does not keep patient data off the external model")
+    # The fact list has to cover the required share.
     if not _coverage(rules, text, files):
         problems.append("the deployment note is missing a required fact")
+    # A citation is a persona, a document id, or a release path.
     if not _cited(text, rules["doc_ids"], files):
         problems.append("the deployment note does not cite a source")
     return problems

@@ -61,18 +61,22 @@ class ReleaseTests(unittest.TestCase):
         persona file changes, or when the approach gold is missing from the hidden side
         or present in the learner pack.
         """
+        # The small profile. The first day is written first so this day can be checked against it.
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             day1, day2, truth = root / "day1", root / "day2", root / "truth"
             write_release(profile, day1, truth)
+            # Fingerprints taken before this day's write. They must still match afterwards.
             before_pack = fingerprint(day1)
             before_personas = (truth / "personas.json").read_bytes()
             first = write_day2(profile, day2, truth)
             second = write_day2(profile, day2, truth)
+            # Two writes of this day agree, and the earlier pack and persona file are unchanged.
             self.assertEqual(first, second)
             self.assertEqual(fingerprint(day1), before_pack)
             self.assertEqual((truth / "personas.json").read_bytes(), before_personas)
+            # The approach gold stays on the hidden side and is not copied into the learner pack.
             self.assertTrue((truth / "approach_gold.json").is_file())
             self.assertFalse((day2 / "approach_gold.json").exists())
 
@@ -160,11 +164,13 @@ class SampleTests(unittest.TestCase):
         date or the vendor's containment claim, or when a family word or a planted rate
         leaks into any learner file.
         """
+        # Read the price sheet. Every required key is present, and each dearer price is the larger of its pair.
         with (self.pack / "finance" / "prices.csv").open(encoding="utf-8", newline="") as handle:
             prices = {row["key"]: int(row["sar"]) for row in csv.DictReader(handle)}
         self.assertEqual(set(prices), PRICE_KEYS)
         self.assertGreater(prices["price.ext_large_per_1k"], prices["price.local_per_1k"])
         self.assertGreater(prices["cost.gpu_buy"], prices["cost.gpu_hour_rent"])
+        # The access page and the leader pages keep the booking date and the vendor claim the brief is graded on.
         access = self.pack / "extracts" / "access-costs.md"
         self.assertGreater(int(grab(access, r"no-shows \| (\d+)")), int(grab(access, r"returned referrals \| (\d+)")))
         dashboard = (self.pack / "extracts" / "dashboard.md").read_text(encoding="utf-8")
@@ -172,6 +178,7 @@ class SampleTests(unittest.TestCase):
         self.assertIn("booking_date", dashboard)
         self.assertIn("not the Al-Waha Health Cluster", vendor)
         self.assertIn("70 percent", vendor)
+        # No learner file carries a planted rate or a method-family word.
         for path in self.pack.rglob("*"):
             if not path.is_file():
                 continue

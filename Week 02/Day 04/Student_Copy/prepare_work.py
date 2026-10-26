@@ -66,6 +66,7 @@ def _copy_tree() -> None:
     is not copied. The interview folder is not copied. knowledge.md is
     not copied.
     """
+    # Remove a previous app, tests, and deploy before copying the shell again.
     for source, name in ((APP, "app"), (TESTS, "tests"), (DEPLOY, "deploy")):
         destination = WORK / name
         if destination.exists():
@@ -75,9 +76,11 @@ def _copy_tree() -> None:
             destination,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
         )
+    # Put the workflow beside the trees. Chapter 08 replaces that work copy.
     workflow = WORK / ".github" / "workflows"
     workflow.mkdir(parents=True, exist_ok=True)
     shutil.copy(PACKET / ".github" / "workflows" / "ci.yml", workflow / "ci.yml")
+    # Copy the four blank pages, then ignore bytecode.
     for name in PAGES:
         shutil.copy(TEMPLATES / name, WORK / name)
     (WORK / ".gitignore").write_text(
@@ -89,10 +92,12 @@ def _copy_tree() -> None:
 
 def main() -> None:
     """Copy the workspace. This file takes no extra word."""
+    # The packet must be beside this file, and the command takes no extra word.
     if not _packet_ready():
         raise SystemExit("This file must stay next to the packet folder. Do not move it.")
     if len(sys.argv) > 1:
         raise SystemExit("Use: python prepare_work.py")
+    # Copy, then print the chapter that replaces each work file.
     WORK.mkdir(parents=True, exist_ok=True)
     _copy_tree()
     print("Created work/ from the packet.")

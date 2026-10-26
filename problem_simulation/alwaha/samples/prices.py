@@ -10,11 +10,15 @@ import random
 
 def price_rows(seed: int) -> list[dict[str, str]]:
     """Return the price keys and their amounts as strings, in sheet order."""
+    # One generator for this seed, so the same seed always prints the same sheet.
     rng = random.Random(seed)
+    # The external token price is the local price plus a further draw.
     local = rng.randint(2, 6)
     external = local + rng.randint(8, 24)
+    # The buy price is the rent price times a further draw.
     rent = rng.randint(30, 90)
     buy = rent * rng.randint(500, 800)
+    # Sheet order. Rent, buy, and the two token prices reuse the draws above.
     pairs = (
         ("cost.slot_missed", rng.randint(400, 900)),
         ("cost.return_cycle", rng.randint(120, 280)),
@@ -29,6 +33,7 @@ def price_rows(seed: int) -> list[dict[str, str]]:
         ("price.local_per_1k", local),
         ("harm.week_waiting", rng.randint(50, 150)),
     )
+    # Store each amount as a string under the sar field.
     return [{"key": key, "sar": str(value)} for key, value in pairs]
 
 

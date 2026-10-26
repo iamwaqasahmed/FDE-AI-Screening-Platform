@@ -109,6 +109,7 @@ class ContractTests(unittest.TestCase):
         The fixture is the word queued. The assertion proves holds
         accepts that word.
         """
+        # queued is the booking state this contract still accepts.
         self.assertTrue(holds("queued"))
 
     def test_live_slot_fault_fails_the_contract(self) -> None:
@@ -117,6 +118,7 @@ class ContractTests(unittest.TestCase):
         The fixture is the word booked. The assertion proves holds
         rejects that word.
         """
+        # booked is the live-slot fault. The contract does not hold.
         self.assertFalse(holds("booked"))
 
 

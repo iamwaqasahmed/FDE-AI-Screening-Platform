@@ -1,4 +1,8 @@
-"""Write rel-w3d5. Earlier packs and personas.json are left where they are."""
+"""Write rel-w3d5.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the rehearsal, the steering page, the role cards, the stage-gate page, the price table, and the slices are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -82,21 +86,27 @@ def write_w3d5(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the rehearsal, the steering page, the role cards, the stage-gate page, the price table, the label budget, the slices, the backlog, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Rehearsal, steering page, role cards, and the stage-gate page.
     _write(pack / "notices" / "rehearsal.md", rehearsal())
     _write(pack / "steering" / "steer-w3.md", steer_page())
     _write(pack / "workshop" / "role-cards.md", role_cards())
     _write(pack / "gates" / "stage-gate.md", stage_gate())
+    # Price table, label budget, slices, and the backlog.
     _csv(pack / "finance" / "prices.csv", price_rows(profile.seed), PRICE_FIELDS)
     _json(pack / "budget" / "labels.json", budget(profile))
     _jsonl(pack / "slices" / "before.jsonl", before_public())
     _jsonl(pack / "slices" / "personal.jsonl", personal_public())
     _json(pack / "backlog" / "seed.json", stories())
+    # Gold, after the pack files it is checked against.
     _write(truth / "w3d5_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w3d5_gold.json")
     _write(truth / "rel-w3d5-fingerprint.txt", digest + "\n")
     return digest

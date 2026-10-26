@@ -93,13 +93,16 @@ def knowledge_problems(work: Path) -> list[str]:
     """
     text = _text(work / "knowledge.md")
     answers = [line for line in text.splitlines() if re.match(r"\s*\d+\.\s+\S", line)]
+    # Fewer than two numbered answers is the two-answer miss.
     if len(answers) < 2 or not two_answers(text):
         return [_KNOW]
     problems = []
     first = answers[0].lower()
+    # The first answer must mention retrieval, and either hours or the information problem.
     if "retriev" not in first or not any(token in first for token in ("hour", "p-info")):
         problems.append(_RETRIEVAL)
     second = answers[1].lower()
+    # The second answer must name the local adapter and the model register.
     if "lora-local" not in second or "reg-models" not in second:
         problems.append(_LEGAL)
     return problems

@@ -63,6 +63,7 @@ def _dead(scenario: str, referral_id: str) -> dict:
     The state is a dead letter, the due date and the approval list stay empty, and
     nothing is booked or held.
     """
+    # The log row keeps every column. Empty fields mean this referral stopped.
     return {
         "scenario": scenario,
         "referral_id": referral_id,

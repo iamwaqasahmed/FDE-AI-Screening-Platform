@@ -22,12 +22,15 @@ def health(register: dict, candidate: dict) -> dict:
     skipped. candidate is the near name. It is not a registration,
     and this function does not read it.
     """
+    # candidate is the near name. This probe does not read it.
     del candidate
+    # The approved local-small row is the one this probe reports.
     approved = next(
         row
         for row in register["models"]
         if row["id"] == "local-small" and row["status"] == "approved"
     )
+    # The body carries that hash, that prompt, and the endpoint dependency.
     return {
         "dependencies": ["endpoint"],
         "model_hash": approved["hash"],

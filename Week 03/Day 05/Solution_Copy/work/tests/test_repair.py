@@ -24,6 +24,7 @@ _WRONG = {"doc_id": "circ-ramadan-unauth", "span": "hours-c1"}
 class RepairTests(unittest.TestCase):
     """Replacement of an unauthorized citation, and a kept in-force citation."""
 
+    # The unauthorized document id is replaced by the in-force id.
     def test_repair_replaces_the_unauthorized_citation(self) -> None:
         """The unauthorized document id becomes the in-force id.
 
@@ -32,6 +33,7 @@ class RepairTests(unittest.TestCase):
         """
         self.assertEqual(repair(_WRONG), _RIGHT)
 
+    # An in-force citation keeps its document id and its span.
     def test_repair_keeps_an_in_force_citation(self) -> None:
         """An in-force citation is unchanged.
 

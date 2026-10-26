@@ -36,7 +36,9 @@ class AccessTests(unittest.TestCase):
         not expect any grant to close, and it expects the audit value from
         the fixture to be unchanged.
         """
+        # Settle the four grants on the date written in the call.
         settled = {row["id"]: row for row in settle(_GRANTS, "2027-01-31")}
+        # Every status stays open, and the break-glass audit is still empty.
         self.assertTrue(all(row["status"] == "open" for row in settled.values()))
         self.assertEqual(settled["grant-glass"]["audit"], "")
 
@@ -45,6 +47,7 @@ class AccessTests(unittest.TestCase):
 
         No deploy name is expected. There is no fixture for this test.
         """
+        # controls is called with no rows. The list it returns is empty.
         self.assertEqual(controls(), [])
 
 

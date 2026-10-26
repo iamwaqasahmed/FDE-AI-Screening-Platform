@@ -22,6 +22,7 @@ class SecretTests(unittest.TestCase):
     """The shell credential test. Prod still reads the dev file."""
     def setUp(self) -> None:
         """Write two stand-in credential files under a temporary pack."""
+        # Both credential files are written. The shell still expects the dev token.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name) / "credentials"
         root.mkdir()
@@ -38,6 +39,7 @@ class SecretTests(unittest.TestCase):
 
         The prod file is present. The shell does not open it.
         """
+        # Prod is asked, and the shell returns the dev stand-in anyway.
         self.assertEqual(credential("prod", self.pack), "dev-token")
         self.assertEqual(credential("dev", self.pack), "dev-token")
 

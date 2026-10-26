@@ -22,6 +22,7 @@ class SecretTests(unittest.TestCase):
     """Prod and dev read different credential files."""
     def setUp(self) -> None:
         """Write two stand-in credential files under a temporary pack."""
+        # Write a dev file and a prod file under a temporary pack.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name) / "credentials"
         root.mkdir()
@@ -39,6 +40,7 @@ class SecretTests(unittest.TestCase):
         dev reads the dev file. prod reads the prod file. The two
         values are not equal.
         """
+        # dev and prod each return the token from their own file.
         self.assertEqual(credential("dev", self.pack), "dev-token")
         self.assertEqual(credential("prod", self.pack), "prod-token")
         self.assertNotEqual(credential("dev", self.pack), credential("prod", self.pack))

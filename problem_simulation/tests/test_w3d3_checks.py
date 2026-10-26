@@ -51,6 +51,7 @@ class CheckTests(unittest.TestCase):
         The gold object is the generator's, and one field is compared with a second
         call so a drift in the changed-document list fails before the swaps run.
         """
+        # A temporary pack. The gold object comes from the generator.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -60,6 +61,7 @@ class CheckTests(unittest.TestCase):
 
         write_w3d3(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
+        # The filled work tree. The changed-document list must already agree with a second call.
         self.work = root / "work"
         shutil.copytree(W3D3_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
         self.assertEqual(self.gold["changed"], gold(self.profile)["changed"])

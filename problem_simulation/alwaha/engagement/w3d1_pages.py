@@ -1,4 +1,8 @@
-"""Participant pages for rel-w3d1. National ids, the canary, and converted dates stay out."""
+"""Participant pages for rel-w3d1.
+National ids, the canary, and converted dates stay out.
+
+These strings are the data-request notice, the two labeling guidelines, the clinic catalog note, and the annotate interface. The guidelines say how source type and sub-specialty are read from the letter. The catalog note says which rows keep the earlier clinic code.
+"""
 
 from __future__ import annotations
 

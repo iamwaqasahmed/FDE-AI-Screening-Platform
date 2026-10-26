@@ -139,6 +139,7 @@ class ReleaseTests(unittest.TestCase):
             write_w2d5(profile, week2[4], truth)
             write_w3d1(profile, root / "w3d1", truth)
             write_w3d2(profile, root / "w3d2", truth)
+            # Fingerprints of the earlier packs, including the two previous week-3 days, plus their gold files.
             before = (
                 tuple(fingerprint(pack) for pack in packs),
                 tuple(fingerprint(pack) for pack in week2),
@@ -148,6 +149,7 @@ class ReleaseTests(unittest.TestCase):
                 (truth / "w3d1_gold.json").read_bytes(),
                 (truth / "w3d2_gold.json").read_bytes(),
             )
+            # Write this day twice. The two results must agree, and the earlier days must stay as they were.
             first = write_w3d3(profile, root / "w3d3", truth)
             again = write_w3d3(profile, root / "w3d3", truth)
             self.assertEqual(first, again)
@@ -163,6 +165,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "w3d2_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "w3d3_gold.json").is_file())
             self.assertFalse((root / "w3d3" / "w3d3_gold.json").exists())
 
@@ -196,18 +199,22 @@ class ReleaseTests(unittest.TestCase):
             hidden = json.loads((root / "truth" / "w3d3_gold.json").read_text(encoding="utf-8"))
             blob = _blob(pack)
             note = (pack / "notices" / "criteria-v4.md").read_text(encoding="utf-8")
+            # The notice names the three changed specialties and not the unchanged one.
             for name in ("endo", "ophth", "card"):
                 self.assertIn(name, note)
             self.assertNotIn("neuro", note)
+            # The draft page and the unauthorized circular are still visible. The watermark is not in the pack.
             self.assertIn("status: draft", (pack / "dms" / "crit-endo-v4.md").read_text(encoding="utf-8"))
             self.assertIn("circ-ramadan-unauth", (pack / "feed" / "changes.jsonl").read_text(encoding="utf-8"))
             self.assertNotIn(profile.canary(), blob)
+            # Each held question points at the expected document, and the question text stays out of the pack.
             expects = {row["question"]["question_id"]: row["expect"] for row in hidden["held"]}
             for question_id, doc_id in _EXPECT.items():
                 self.assertEqual(expects[question_id]["doc_id"], doc_id)
             for row in hidden["held"]:
                 self.assertNotIn(row["question"]["text"], blob)
             self.assertEqual(expects["held-none"]["refusal"], "no-document")
+            # Vector rank and hybrid rank still disagree on the question that separates them.
             current = apply(snapshot(), feed())["docs"]
             question = hidden["hybrid_question"]["text"]
             self.assertEqual(rank(question, build(current), "vector")[0]["doc_id"], hidden["vector_doc"])
@@ -247,6 +254,7 @@ class DemoTests(unittest.TestCase):
         """Fails when a shell module matches the filled copy, when a packet test was
         rewritten, when the filled suite fails, or when the shell suite passes.
         """
+        # Shell modules differ from the filled copy. Packet tests were not rewritten.
         packet = W3D3_APP.parent
         for name in _APP:
             shell = (W3D3_APP / name).read_bytes()
@@ -256,6 +264,7 @@ class DemoTests(unittest.TestCase):
             shell = (packet / "tests" / name).read_bytes()
             filled = (W3D3_WORK / "tests" / name).read_bytes()
             self.assertEqual(shell, filled, name)
+        # The filled suite passes. The shell suite does not.
         work = _suite(W3D3_WORK)
         shell = _suite(packet)
         self.assertEqual(work.returncode, 0, work.stdout + work.stderr)

@@ -36,17 +36,21 @@ def main(argv: list[str] | None = None) -> None:
 
     argv replaces the process arguments. The profile is loaded, the spec is rendered into a temporary client, and both clients read the same reference body. The printed lines name success or failure and do not print the body.
     """
+    # Read the profile argument. Omitting it uses the environment default.
     parser = argparse.ArgumentParser(description="Read his-wadi with a v1 client, then a generated client.")
     parser.add_argument("--profile", default=None)
     args = parser.parse_args(argv)
     load(args.profile)
     spec = his_wadi_spec()
+    # Load the starter client and the generator from the week 2 day 1 app.
     starter = _load(W2D1_APP / "client.py", "w2d1_v1_client")
     generate = _load(W2D1_APP / "generate.py", "w2d1_generate")
+    # Render a second client into a temporary file and load that file.
     with tempfile.TemporaryDirectory() as tmp:
         path = Path(tmp) / "client.py"
         path.write_text(generate.render(generate.fields(spec)), encoding="utf-8", newline="\n")
         generated = _load(path, "w2d1_v2_client")
+    # Both clients read the same reference. The printed lines say ok or failed.
     v1 = read(starter.read_body("ref-status"), FIELD, REMOVED)
     v2 = read(generated.read_body("ref-status"), FIELD, REMOVED)
     print("v1 client: his-wadi read failed" if not v1["ok"] else "v1 client: his-wadi read ok")

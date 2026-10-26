@@ -105,16 +105,20 @@ def _hashes(module, sites: dict) -> list[str]:
 
     A crash is the harness miss. A result that is not a list fails.
     """
+    # The surviving site has to confirm the model ids from the first site.
     site_a = sites["sites"][0]
     site_b = sites["sites"][1]
     try:
         got = module.confirm(site_b, site_a["models"])
     except Exception:
+        # A crash is the harness miss, so the ids are not compared.
         return [RUN]
+    # A result that is not a list fails the hash check.
     if not isinstance(got, list):
         return [HASH]
     names = sorted(str(item) for item in got)
     expect = sorted(str(row["id"]) for row in site_a["models"])
+    # Order does not matter. The confirmed ids must be the first site's model ids.
     if names != expect:
         return [HASH]
     return []

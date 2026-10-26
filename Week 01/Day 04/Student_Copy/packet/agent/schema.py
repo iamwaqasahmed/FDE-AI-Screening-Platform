@@ -54,6 +54,7 @@ def row(
     This starter's caller leaves citations, pending, and approval ids empty,
     and it leaves redirected and refusal_logged at their defaults.
     """
+    # Copy each list. A missing list is written empty.
     return {
         "scenario": scenario,
         "reply": reply_body,
@@ -64,6 +65,7 @@ def row(
         "booked": booked,
         "returned": returned,
         "redirected": redirected,
+        # Later flags stay at the caller's values, including the defaults.
         "sms": sms,
         "refusal_logged": refusal_logged,
         "preference_used": preference_used,

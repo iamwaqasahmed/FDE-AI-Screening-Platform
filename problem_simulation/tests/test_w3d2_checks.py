@@ -50,6 +50,7 @@ class CheckTests(unittest.TestCase):
         that block to this profile's adapter and price so the grade is about the logic,
         not about a copied practice figure.
         """
+        # A temporary pack for the small profile.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -59,9 +60,11 @@ class CheckTests(unittest.TestCase):
 
         write_w3d2(self.profile, self.pack, self.truth)
         self.gold = json.loads((self.truth / "w3d2_gold.json").read_text(encoding="utf-8"))
+        # The filled work tree is copied, then the measurement block is aligned to this profile.
         self.work = root / "work"
         shutil.copytree(W3D2_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
         self._align()
+        # The written gold must match the generator.
         self.assertEqual(self.gold, gold(self.profile))
 
     def tearDown(self) -> None:
@@ -191,6 +194,7 @@ class CheckTests(unittest.TestCase):
 
         Clearing the slice by copying is the failure the adapter checker exists to catch.
         """
+        # Build a prompt module that only copies the other modules' functions.
         extract_src = (W3D2_WORK / "app" / "extract.py").read_text(encoding="utf-8")
         intent_src = (W3D2_WORK / "app" / "intent.py").read_text(encoding="utf-8")
         intent_src = "\n".join(line for line in intent_src.splitlines() if "from __future__" not in line)
@@ -202,6 +206,7 @@ class CheckTests(unittest.TestCase):
             + "def served() -> bool:\n    return False\n\n"
             + "def target() -> dict:\n    return {'model': 'local-small', 'phi': False}\n"
         )
+        # The model checker accepts the copy. The adapter checker reports that the slice was cleared.
         (self.work / "app" / "prompt.py").write_text(body, encoding="utf-8")
         self.assertEqual(self._model(), [])
         problems = self._lora()

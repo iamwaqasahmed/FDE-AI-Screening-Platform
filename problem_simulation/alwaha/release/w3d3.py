@@ -1,4 +1,8 @@
-"""Write rel-w3d3. Earlier packs and personas.json are left where they are."""
+"""Write rel-w3d3.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the criteria notice, the document pages, the snapshot, the change feed, the questions, and the photo fixture are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -66,21 +70,27 @@ def write_w3d3(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the criteria notice, the document pages, the snapshot, the change feed, the questions, the catalog, the photo fixture, the document interface, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Criteria notice, then one page per document in the snapshot.
     _write(pack / "notices" / "criteria-v4.md", criteria_note())
     for doc in snapshot():
         _write(pack / "dms" / f"{doc['doc_id']}.md", render_doc(doc))
+    # Snapshot, change feed, questions, catalog, and the photo fixture.
     _jsonl(pack / "dms" / "snapshot.jsonl", snapshot())
     _jsonl(pack / "feed" / "changes.jsonl", feed())
     _jsonl(pack / "slices" / "retrieve.jsonl", dev_questions())
     _json(pack / "catalog" / "service-catalog.json", catalog_rows())
     _json(pack / "photos" / "prep.json", photo())
+    # Document interface, then gold.
     _write(pack / "openapi" / "dms.yaml", dms_spec())
     _write(truth / "w3d3_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w3d3_gold.json")
     _write(truth / "rel-w3d3-fingerprint.txt", digest + "\n")
     return digest

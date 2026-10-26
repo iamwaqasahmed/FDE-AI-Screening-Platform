@@ -19,12 +19,15 @@ def _mentions(count: int) -> list[dict]:
 
     The count is passed in from the measured rows, so this list does not store its own copy of how many rows moved.
     """
+    # One mention per seat, built from the seat list rather than written out.
     seats = [{"id": seat, "text": seat} for seat in _SEATS]
     return [
+        # Non-goals, the priority line, and the seats.
         {"id": "triage", "section": "Non-goals", "text": "p-triage"},
         {"id": "vendor", "section": "Non-goals", "text": "vendor-bot"},
         {"all": ["not the value model"], "id": "value", "kind": "all", "section": "Priorities"},
         *seats,
+        # Systems, the gate, and the measured count that was passed in.
         {"id": "dms", "section": "Systems", "text": "dms"},
         {"id": "gate", "section": "Gates", "text": "g1"},
         {"all": ["risk"], "id": "risk", "kind": "all", "section": "Gates"},
@@ -71,17 +74,21 @@ def gold(profile: Profile) -> dict:
     The measured count is how many predictions still name a different document from the label. That same count is handed to the mention list.
     """
     rows = before_labeled()
+    # Score the rows again, and count how many still name a different document from the label.
     scored = remeasure(rows)
     count = moved(rows)
     return {
+        # Before rows, the case date, and the label cost for this profile.
         "before": rows,
         "case_date": CASE_DATE,
         "cost": cost_for(profile),
         "gate": GATE,
+        # The measured count is the same value the mention list is given.
         "measured_count": count,
         "metrics": scored,
         "non_goals": list(NON_GOALS),
         "personal": _personal(),
+        # Readout sections and the requirement checks.
         "readout": _readout(),
         "requirement_id": REQUIREMENT,
         "requirements": {"mentions": _mentions(count), "share": 0.8},

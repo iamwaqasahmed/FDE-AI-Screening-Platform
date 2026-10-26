@@ -1,4 +1,8 @@
-"""Write rel-w2d5. Earlier packs and personas.json are left where they are."""
+"""Write rel-w2d5.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the change note, the schedule note, the steering page, the schedule interface, and the fixtures are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -55,20 +59,26 @@ def write_w2d5(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the change note, the schedule note, the steering page, the schedule interface, the fixtures, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Change note, schedule note, steering page, and the schedule interface.
     _write(pack / "notices" / "cr-ain.md", change_note())
     _write(pack / "systems" / "sched-ain.md", interface_note())
     _write(pack / "steering" / "steer-w2.md", steer_page())
     _write(pack / "openapi" / "sched-ain.yaml", schedule_spec())
+    # Fixtures: queued, the live fault, tonight's file, and the file a missed night leaves.
     _json(pack / "fixtures" / "queued.json", queued_fixture())
     _json(pack / "fixtures" / "live-slot.json", live_slot(profile))
     _json(pack / "fixtures" / "nightly.json", nightly_file(profile))
     _json(pack / "fixtures" / "missed.json", missed_file(profile))
+    # Gold, after the pack files it is checked against.
     _write(truth / "w2d5_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w2d5_gold.json")
     _write(truth / "rel-w2d5-fingerprint.txt", digest + "\n")
     return digest

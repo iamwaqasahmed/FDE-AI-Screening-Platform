@@ -67,6 +67,7 @@ def _copy_tree() -> None:
     replaced file does not survive a second run. The release drawer
     is not copied. The interview folder is not copied.
     """
+    # Replace work/app and work/tests with the copies from the packet.
     for source, name in ((APP, "app"), (TESTS, "tests")):
         destination = WORK / name
         if destination.exists():
@@ -76,11 +77,14 @@ def _copy_tree() -> None:
             destination,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
         )
+    # Copy the workflow with the evaluation gate still commented.
     workflow = WORK / ".github" / "workflows"
     workflow.mkdir(parents=True, exist_ok=True)
     shutil.copy(PACKET / ".github" / "workflows" / "ci.yml", workflow / "ci.yml")
+    # Copy each blank page into the workspace.
     for name in PAGES:
         shutil.copy(TEMPLATES / name, WORK / name)
+    # Keep Python cache files out of the workspace.
     (WORK / ".gitignore").write_text(
         "__pycache__/\n*.pyc\n",
         encoding="utf-8",
@@ -90,12 +94,16 @@ def _copy_tree() -> None:
 
 def main() -> None:
     """Copy the workspace. This file takes no extra word."""
+    # Stop when the packet drawer is not beside this file.
     if not _packet_ready():
         raise SystemExit("This file must stay next to the packet folder. Do not move it.")
+    # Stop when the command carries an extra word.
     if len(sys.argv) > 1:
         raise SystemExit("Use: python prepare_work.py")
+    # Create the workspace and fill it from the packet.
     WORK.mkdir(parents=True, exist_ok=True)
     _copy_tree()
+    # Name the file each later chapter replaces.
     print("Created work/ from the packet.")
     print("Leave the copies in packet/ unchanged.")
     print()

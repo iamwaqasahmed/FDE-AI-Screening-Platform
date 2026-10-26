@@ -1,4 +1,8 @@
-"""Write rel-w3d4. Earlier packs and personas.json are left where they are."""
+"""Write rel-w3d4.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the notices, the budgets, the score and failure slices, the calibration subset, the demand table, and the workshop files are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -82,23 +86,29 @@ def write_w3d4(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the notices, the budgets, the score and failure slices, the calibration subset, the demand table, the dot vote, the seats, the experiment, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Notices for the hidden-test protocol, the campaign, and the wording experiment.
     _write(pack / "notices" / "hidden-test.md", hidden_test())
     _write(pack / "notices" / "campaign.md", campaign())
     _write(pack / "notices" / "ab-status.md", ab_status())
     _json(pack / "budget" / "metrics.json", budgets())
+    # Score and failure slices, the calibration subset, and the demand table.
     _jsonl(pack / "slices" / "score.jsonl", dev_score())
     _jsonl(pack / "slices" / "failures.jsonl", failures())
     _jsonl(pack / "slices" / "calibration.jsonl", subset())
     _csv(pack / "demand" / "ophth.csv", series(profile.seed))
+    # Workshop ranking, seats, and the experiment record, then gold.
     _json(pack / "workshop" / "dot-vote.json", dot_vote())
     _write(pack / "workshop" / "seats.md", seats())
     _json(pack / "experiment" / "ab-status.json", experiment())
     _write(truth / "w3d4_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w3d4_gold.json")
     _write(truth / "rel-w3d4-fingerprint.txt", digest + "\n")
     return digest

@@ -25,6 +25,7 @@ class SecretTests(unittest.TestCase):
         The fixture is a temporary folder with credentials/dev.json
         and credentials/prod.json. Each file holds an endpoint field.
         """
+        # A temporary pack holds one credential file for dev and one for prod.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name) / "credentials"
         root.mkdir()
@@ -43,6 +44,7 @@ class SecretTests(unittest.TestCase):
         values are not equal. The assertions prove both reads and
         that the values differ.
         """
+        # Each environment reads its own file, so the two tokens differ.
         self.assertEqual(credential("dev", self.pack), "dev-token")
         self.assertEqual(credential("prod", self.pack), "prod-token")
         self.assertNotEqual(credential("dev", self.pack), credential("prod", self.pack))

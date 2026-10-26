@@ -26,13 +26,16 @@ class HealthTests(unittest.TestCase):
         row supplies the hash and the prompt. The candidate hash
         is not the one on the body. endpoint is a dependency.
         """
+        # Previous row first, approved row second. The first match is not the one to keep.
         register = {
             "models": [
                 {"hash": "sha256:old", "id": "local-small", "prompt": "p0", "status": "previous"},
                 {"hash": "sha256:good", "id": "local-small", "prompt": "p1", "status": "approved"},
             ]
         }
+        # sha256:near is the candidate. The probe must not report it.
         body = health(register, {"hash": "sha256:near"})
+        # Hash and prompt come from the approved row. endpoint is a dependency.
         self.assertEqual(body["model_hash"], "sha256:good")
         self.assertEqual(body["prompt_version"], "p1")
         self.assertIn("endpoint", body["dependencies"])

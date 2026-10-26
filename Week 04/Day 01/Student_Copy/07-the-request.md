@@ -94,7 +94,9 @@ class AccessTests(unittest.TestCase):
         not expect any grant to close, and it expects the audit value from
         the fixture to be unchanged.
         """
+        # Settle the four grants on the date written in the call.
         settled = {row["id"]: row for row in settle(_GRANTS, "2027-01-31")}
+        # Every status stays open, and the break-glass audit is still empty.
         self.assertTrue(all(row["status"] == "open" for row in settled.values()))
         self.assertEqual(settled["grant-glass"]["audit"], "")
 
@@ -103,6 +105,7 @@ class AccessTests(unittest.TestCase):
 
         No deploy name is expected. There is no fixture for this test.
         """
+        # controls is called with no rows. The list it returns is empty.
         self.assertEqual(controls(), [])
 
 
@@ -193,6 +196,7 @@ class EraseTests(unittest.TestCase):
         Index, memory, and logs hold the person in the fixture, and they
         are not expected in the list.
         """
+        # The export names the row store alone.
         self.assertEqual(export_categories(_STORES, "person-access"), ["row"])
 
     def test_the_index_still_holds_the_person(self) -> None:
@@ -201,7 +205,9 @@ class EraseTests(unittest.TestCase):
         The index, memory, and logs still contain the fixture row. The row
         store is empty.
         """
+        # Drop the person, then read the four stores.
         cleared = drop(_STORES, "person-access")
+        # The row is empty. Index, memory, and logs still hold the person.
         self.assertEqual(cleared["row"], [])
         self.assertEqual(cleared["index"], [{"person_id": "person-access"}])
         self.assertEqual(cleared["memory"], [{"person_id": "person-access"}])
@@ -335,10 +341,14 @@ class AccessTests(unittest.TestCase):
         are earlier close. The break-glass grant stays open, and its audit
         value is truthy, so an audit id was written.
         """
+        # Settle the four grants, then look each one up by id.
         settled = {row["id"]: row for row in settle(_GRANTS, "2027-01-31")}
+        # The staff grant that ends later stays open. The ended staff grant
+        # and the ended delegate close.
         self.assertEqual(settled["grant-open"]["status"], "open")
         self.assertEqual(settled["grant-stale"]["status"], "closed")
         self.assertEqual(settled["grant-delegate"]["status"], "closed")
+        # Break-glass stays open, and its audit field now holds an id.
         self.assertEqual(settled["grant-glass"]["status"], "open")
         self.assertTrue(settled["grant-glass"]["audit"])
 
@@ -348,6 +358,7 @@ class AccessTests(unittest.TestCase):
         There is no separate fixture. The assertion lists every name this
         module is expected to report.
         """
+        # The deploy names, in the order controls reports them.
         self.assertEqual(
             controls(),
             [
@@ -474,6 +485,7 @@ class EraseTests(unittest.TestCase):
         The person in the fixture is present in each store, so each store
         name is expected, in that order.
         """
+        # Row, then memory, then the index, then logs.
         self.assertEqual(export_categories(_STORES, "person-access"), ["row", "memory", "index", "logs"])
 
     def test_deletion_clears_every_store(self) -> None:
@@ -482,8 +494,10 @@ class EraseTests(unittest.TestCase):
         export_categories on the cleared stores is empty. The logs store is
         the single redacted row in the assertion.
         """
+        # Drop the person, then ask which stores still name them.
         cleared = drop(_STORES, "person-access")
         self.assertEqual(export_categories(cleared, "person-access"), [])
+        # Logs keep a redacted marker in place of the original row.
         self.assertEqual(cleared["logs"], [{"redacted": True}])
 
 

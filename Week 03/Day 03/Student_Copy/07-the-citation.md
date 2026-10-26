@@ -203,7 +203,14 @@ This block replaces [work/app/bind.py](work/app/bind.py). The full path is `Week
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""v4 binds for three specialties. An in-flight referral keeps its start version."""
+"""v4 binds for three specialties. An in-flight referral keeps its start version.
+
+criteria keeps the rows for one specialty. For card, endo, and ophth,
+an in-force version 4 that covers the start day wins. Otherwise a
+version 3 that is in force or superseded, and that covers the start
+day, wins. A document whose window misses the start day is skipped.
+When nothing covers that day, criteria returns an empty mapping.
+"""
 
 from __future__ import annotations
 
@@ -260,7 +267,15 @@ This block replaces [work/app/cite.py](work/app/cite.py). The full path is `Week
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Cite an in-force span the asker may see, or refuse."""
+"""Cite an in-force span the asker may see, or refuse.
+
+A specialty question binds the criteria for the start day, or the
+case date when that start day is absent. Nothing bound is a
+no-document refusal. A bound document the asker cannot see is an
+audience refusal. With no specialty, the first in-force span the
+asker may see that carries a code from the question is cited. When
+none remains, the result is the same no-document refusal.
+"""
 
 from __future__ import annotations
 

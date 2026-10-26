@@ -1,4 +1,8 @@
-"""Participant pages for rel-w2d3. The old delay stays out of these strings."""
+"""Participant pages for rel-w2d3.
+The old delay stays out of these strings.
+
+These strings are the receipt-timing notice, the clock guide, the access clauses, and the interface documents for the clock and SMS. They tell a reader to pin the case clock and advance it. The fault switch is named so a receipt that stays pending can be recognized.
+"""
 
 from __future__ import annotations
 

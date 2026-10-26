@@ -87,16 +87,20 @@ class BuildTests(unittest.TestCase):
         carries the wrong watermark, or when the starter policy page drifts from the
         corpus page that was copied into the pack.
         """
+        # Two profiles. Their watermarks must not be the same string.
         practice, small = load("practice"), load("small")
         self.assertNotEqual(practice.canary(), small.canary())
+        # Write the small profile twice into one temporary pack.
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             first = write_release(small, root / "pack", root / "truth")
             second = write_release(small, root / "pack", root / "truth")
+            # The two writes agree. The sample letter carries only the small watermark.
             self.assertEqual(first, second)
             letter = (root / "pack" / "sample" / "referral-letter.md").read_text(encoding="utf-8")
             self.assertIn(small.canary(), letter)
             self.assertNotIn(practice.canary(), letter)
+            # The starter policy page and the copy inside the pack are the same corpus page.
             policy = (STARTER_ROOT / "policy" / "pol-assistant-use.md").read_text(encoding="utf-8")
             self.assertEqual(policy, assistant_use())
             self.assertEqual((root / "pack" / "corpus" / "pol-assistant-use.md").read_text(encoding="utf-8"), policy)
@@ -111,6 +115,7 @@ class InterviewTests(unittest.TestCase):
     """
     def test_winning_script_reaches_every_fact(self) -> None:
         """Fails when the prepared question list leaves any persona's required fact unreleased."""
+        # Run each persona's winning question list. Every required fact must be released.
         for data in load_personas().values():
             result = score_turns(data, run(data, winning_questions(data)))
             self.assertTrue(result["ok"], data["id"])
@@ -120,15 +125,18 @@ class InterviewTests(unittest.TestCase):
 
         The parent has to be opened first. Keywords from the follow-up are not enough.
         """
+        # Ask only the follow-up, with its parent still closed.
         data = load_personas()["cdo"]
         child = next(node for node in data["tree"] if node.parent)
         result = score_turns(data, run(data, [" ".join(child.keywords)]))
+        # Keywords from the child are not enough. The interview stays incomplete.
         self.assertFalse(result["ok"])
 
     def test_command_prints_no_score(self) -> None:
         """Fails when the interview command hides the answer the persona would say, or when
         it prints a score or the hidden fact id.
         """
+        # Write the winning questions to a script and run the learner command, capturing its output.
         data = load_personas()["cdo"]
         with tempfile.TemporaryDirectory() as tmp:
             script = Path(tmp) / "questions.txt"
@@ -137,6 +145,7 @@ class InterviewTests(unittest.TestCase):
             with redirect_stdout(stdout):
                 interview_main(["--persona", "cdo", "--script", str(script)])
         text = stdout.getvalue()
+        # The answer is printed. A score and the hidden fact id are not.
         self.assertIn("16 weeks", text)
         self.assertNotIn("Score", text)
         self.assertNotIn("gpu-lead-time", text)
@@ -157,17 +166,20 @@ class CheckTests(unittest.TestCase):
         and two personas get a winning question file plus a short note. The persona
         truth and the watermark come from the hidden side of that release.
         """
+        # A temporary small release. The pack and the hidden persona file both come from it.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         write_release(load("small"), root / "pack", root / "truth")
         self.pack = root / "pack"
         self.personas, self.canary = load_truth(root / "truth" / "personas.json")
+        # The work tree starts as the starter, then gains the dev credential and a filled request.
         self.work = root / "work"
         shutil.copytree(self.pack / "starter", self.work)
         (self.work / "credentials").mkdir()
         shutil.copy(self.pack / "credentials" / "dev.json", self.work / "credentials" / "dev.json")
         blank = (self.pack / "forms" / "access-request.md").read_text(encoding="utf-8")
         (self.work / "access-request.md").write_text(_fill_request(blank), encoding="utf-8")
+        # Two personas get a winning question list and a short note. That is the finished hand-in.
         folder = self.work / "interviews"
         folder.mkdir()
         for persona_id in ("phc-lead", "dpo"):
@@ -201,16 +213,20 @@ class CheckTests(unittest.TestCase):
         fact. After that file is restored, a banned sentence in the other persona's note
         must be reported without the problem list quoting the sentence.
         """
+        # Replace one winning script with a line that does not finish the interview.
         (self.work / "interviews" / "phc-lead.questions.txt").write_text("hello\n", encoding="utf-8")
         problems = interview_problems(self.work, self.personas)
+        # The unfinished interview is reported, and the problem text does not name the hidden template.
         self.assertIn("phc-lead interview is incomplete", problems)
         self.assertTrue(all("templates-v3" not in item for item in problems))
+        # Restore that script, then append a banned sentence to the other persona's note.
         notes = self.work / "interviews" / "dpo.notes.md"
         notes.write_text(notes.read_text(encoding="utf-8") + "The external model may receive identified patient data.\n", encoding="utf-8")
         (self.work / "interviews" / "phc-lead.questions.txt").write_text(
             "\n".join(winning_questions(self.personas["phc-lead"])) + "\n", encoding="utf-8"
         )
         banned = interview_problems(self.work, self.personas)
+        # The note is reported, and the problem list does not quote the sentence.
         self.assertIn("notes contain a banned sentence", banned)
         self.assertNotIn("The external model may receive identified patient data.", banned)
 

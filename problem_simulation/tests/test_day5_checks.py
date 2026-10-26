@@ -41,6 +41,7 @@ def _trace_row(item: dict) -> dict:
     The reply text is a plain completion. Counts, tools, and flags are copied from
     the gold item so a test can break one field and leave the rest honest.
     """
+    # The reply is a plain completion. Counts and flags are copied so a test can break one field.
     return {
         "scenario": item["scenario"],
         "reply": {
@@ -54,6 +55,7 @@ def _trace_row(item: dict) -> dict:
         "tool_trace": list(item["tool_trace"]),
         "pending_approval_ids": list(item["pending_approval_ids"]),
         "approval_ids": list(item["approval_ids"]),
+        # Flags and the failure name come from the gold item. A missing failure is an empty string.
         "booked": item["booked"],
         "returned": item["returned"],
         "redirected": item["redirected"],
@@ -80,6 +82,7 @@ class CheckTests(unittest.TestCase):
         The filled solution path is kept so a test can compare the reference agent with
         the copy a learner is given.
         """
+        # A temporary agent pack and a failure pack for the small profile.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -88,9 +91,11 @@ class CheckTests(unittest.TestCase):
         self.truth = root / "truth"
         write_day4(self.profile, self.pack, self.truth)
         write_day5(self.profile, self.failures, self.truth)
+        # One gold list: the agent scenarios followed by this day's failure scenarios.
         agent_gold = json.loads((self.truth / "agent_gold.json").read_text(encoding="utf-8"))
         self.day5 = json.loads((self.truth / "day5_gold.json").read_text(encoding="utf-8"))
         self.gold = {"scenarios": agent_gold["scenarios"] + self.day5["scenarios"]}
+        # The work directory starts empty. Tests copy the skeleton or the prose into it.
         self.work = root / "work"
         self.work.mkdir()
         self.here = Path(__file__).resolve().parent

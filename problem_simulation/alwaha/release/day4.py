@@ -1,4 +1,8 @@
-"""Write rel-w1d4. Earlier packs are left where they are."""
+"""Write rel-w1d4.
+Earlier packs are left where they are.
+
+The writer stops if a template tree is missing, then clears the pack and writes the scenarios, the approval and safety pages, the tool catalog, and the agent tree. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -66,13 +70,17 @@ def write_day4(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the scenario files, their order, the approval and safety pages, the tool catalog, the agent tree, and the templates. A missing template stops the release before anything is replaced.
     """
+    # Stop before replacing anything when a template tree is missing.
     if not AGENT_ROOT.is_dir() or not DAY4_TEMPLATES.is_dir():
         raise SystemExit("Day 4 template is missing.")
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Group the scenarios into their datasets.
     grouped: dict[str, list[dict]] = {name: [] for name in _DATASETS}
     for row in scenarios(profile.canary()):
         grouped[row["dataset"]].append(row)
+    # Write each dataset, the order, the policy pages, and the tool catalog.
     for name in _DATASETS:
         lines = [json.dumps(row, sort_keys=True) for row in grouped[name]]
         _write(pack / "scenarios" / f"{name}.jsonl", "\n".join(lines) + "\n")
@@ -80,12 +88,15 @@ def write_day4(profile: Profile, pack: Path, truth: Path) -> str:
     _write(pack / "policy" / "pol-approval.md", approval_page())
     _write(pack / "policy" / "pol-clinical-safety.md", safety_page())
     _write(pack / "tools" / "mcp-cluster.json", catalog_page())
+    # Agent tree, templates, and gold.
     _copy_tree(AGENT_ROOT, pack / "agent")
     _copy_tree(DAY4_TEMPLATES, pack / "templates")
     _write(truth / "agent_gold.json", json.dumps(payload(profile.canary()), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "agent_gold.json")
     _write(truth / "rel-w1d4-fingerprint.txt", digest + "\n")
     return digest

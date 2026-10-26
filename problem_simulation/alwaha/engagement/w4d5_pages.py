@@ -1,4 +1,8 @@
-"""Participant pages for rel-w4d5. The lag and the survey count stay out."""
+"""Participant pages for rel-w4d5.
+The lag and the survey count stay out.
+
+This file builds the release note, the steering questions, the stage-gate list, and the closing templates. The release note names the systems that asked to be connected and lists the pack files except the readme. The templates are headings for deployment, operations, the proposal, the readout, the retro, the sprint, and knowledge.
+"""
 
 from __future__ import annotations
 

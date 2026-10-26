@@ -86,6 +86,7 @@ class CheckTests(unittest.TestCase):
         deleting those modules makes a passing tree fail. They are checked, then treated
         as optional.
         """
+        # Load the optional modules and compare them with the reference rules.
         pit = load_module(self.work / "app", "pit")
         bought = load_module(self.work / "app", "budget")
         price = budget(self.profile)
@@ -94,6 +95,7 @@ class CheckTests(unittest.TestCase):
             bought.spend(list(SPEND_ITEMS), price["price"], price["sar"]),
             spend(list(SPEND_ITEMS), price["price"], price["sar"]),
         )
+        # Remove both modules. The required checks still pass, so the modules are optional.
         (self.work / "app" / "pit.py").unlink()
         (self.work / "app" / "budget.py").unlink()
         self.assertEqual(self._identity(), [])

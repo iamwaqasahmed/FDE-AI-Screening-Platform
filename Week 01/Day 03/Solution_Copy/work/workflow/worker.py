@@ -61,7 +61,9 @@ def _dead(scenario: str, referral_id: str) -> dict:
     return {
         "scenario": scenario,
         "referral_id": referral_id,
+        # A closed row. No approval is opened and the hold is not left open.
         "state": "dead-letter",
+        # The due date, the criteria, the facility, and the clinic stay empty.
         "due": "",
         "approval_ids": [],
         "booked": False,
@@ -144,19 +146,23 @@ def build_rows(pack: Path) -> list[dict]:
     A second delivery of the same event id is skipped. That is idempotency:
     the same event changes nothing, so it cannot open a second approval.
     """
+    # Load the pack. Group events by referral, and skip an event id already seen.
     tools.load(pack)
     grouped: dict[str, list[dict]] = {}
     order: list[str] = []
     seen: set[str] = set()
     for event in tools.events():
+        # The same event id changes nothing, so it cannot open a second approval.
         if event["event_id"] in seen:
             continue
         seen.add(event["event_id"])
         referral_id = event["referral_id"]
+        # The first time this referral appears, remember its place in the log.
         if referral_id not in grouped:
             grouped[referral_id] = []
             order.append(referral_id)
         grouped[referral_id].append(event)
+    # One row per referral, using the policy, the calendar, the criteria, and open referrals.
     policy = tools.policy()
     calendar = tools.calendar()
     docs = tools.criteria()

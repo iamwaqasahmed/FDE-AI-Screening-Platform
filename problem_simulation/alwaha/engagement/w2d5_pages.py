@@ -1,4 +1,8 @@
-"""Participant pages for rel-w2d5. Clinic codes stay out of the prose."""
+"""Participant pages for rel-w2d5.
+Clinic codes stay out of the prose.
+
+These strings are the change request, the schedule note, the steering questions, and the schedule interface. They describe a nightly file and a real-time booking that stays queued. The steering page numbers the committee's questions in the stored order.
+"""
 
 from __future__ import annotations
 

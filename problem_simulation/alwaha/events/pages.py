@@ -1,4 +1,7 @@
-"""Participant-facing text for the Day 3 release."""
+"""Participant-facing text for the Day 3 release.
+
+criteria_docs returns the endocrinology criteria whose status is in_force, and a draft of the same specialty. The policy page states how the SLA clock runs, how many retries are allowed, and how events that share a referral are ordered. The remaining functions are the event contract and the two API descriptions.
+"""
 
 from __future__ import annotations
 
@@ -11,6 +14,7 @@ def criteria_docs() -> list[dict]:
     One is in force and one is a draft of the same specialty, so the release can render both and the check can tell them apart.
     """
     return [
+        # In force. A return cites the clause id on this document.
         {
             "doc_id": "crit-endo-v3",
             "status": "in_force",
@@ -19,6 +23,7 @@ def criteria_docs() -> list[dict]:
             "clause_id": "endo-v3-c1",
             "body": "A referral names the specialty and the facility. A return cites the clause id on this document.",
         },
+        # Draft of the same specialty. It is not the document a referral uses.
         {
             "doc_id": "crit-endo-v4",
             "status": "draft",

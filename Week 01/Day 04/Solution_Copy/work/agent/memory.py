@@ -27,6 +27,7 @@ class Memory:
         The copy means a caller cannot change the store by editing the dict
         it received. An unknown session returns an empty dict.
         """
+        # Hand back a copy. An unknown session is an empty dict.
         return dict(self._sessions.get(session, {}))
 
     def remember(self, session: str, **facts: object) -> None:
@@ -35,6 +36,7 @@ class Memory:
         A later remember for the same key replaces that fact.
         Other keys on the session stay.
         """
+        # The first remember creates the session. Later keys replace only themselves.
         current = self._sessions.setdefault(session, {})
         current.update(facts)
 
@@ -45,6 +47,7 @@ class Memory:
         later session may not reuse the preference. The stored string
         is not returned, so it cannot leak into the reply.
         """
+        # This session may reuse the preference only when consent allows it.
         if not allowed:
             return ""
         return stored

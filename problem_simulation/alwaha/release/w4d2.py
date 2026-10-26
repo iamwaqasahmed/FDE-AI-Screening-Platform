@@ -1,4 +1,8 @@
-"""Write rel-w4d2. Earlier packs and personas.json are left where they are."""
+"""Write rel-w4d2.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the replay spans, the replay note, the circular, the change event, the meter, the drift signals, and the runbook are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -65,21 +69,27 @@ def write_w4d2(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the replay spans, the replay note, the circular, the change event, the meter, the overrides, the drift signals, the experiment fixture, the runbook, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Replay spans, the replay note, and the hours circular.
     _jsonl(pack / "replay" / "spans.jsonl", spans(profile))
     _write(pack / "replay" / "note.md", replay_note())
     _write(pack / "dms" / "circ-ramadan-hours.md", circular())
+    # Change event, meter, overrides, and drift signals.
     _json(pack / "events" / "document-changed.json", changed())
     _jsonl(pack / "meter" / "gateway.jsonl", gateway(profile.seed))
     _jsonl(pack / "actions" / "overrides.jsonl", overrides(profile.seed))
     _jsonl(pack / "drifts" / "signals.jsonl", signals())
+    # Experiment fixture and the runbook, then gold.
     _json(pack / "experiment" / "shadow-extract.json", experiment(profile))
     _write(pack / "templates" / "runbook.md", runbook())
     _write(truth / "w4d2_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w4d2_gold.json")
     _write(truth / "rel-w4d2-fingerprint.txt", digest + "\n")
     return digest

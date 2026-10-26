@@ -43,6 +43,7 @@ class CheckTests(unittest.TestCase):
         Both gold files must match their generators. The deploy pack is the smoke
         input for the deploy checker. This day's pack is the input for the journey.
         """
+        # The deploy pack is the smoke input. This day's pack is the journey input.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -53,12 +54,14 @@ class CheckTests(unittest.TestCase):
         write_w2d5(self.profile, self.pack, self.truth)
         self.smoke_gold = json.loads((self.truth / "w2d4_gold.json").read_text(encoding="utf-8"))
         self.gold = json.loads((self.truth / "w2d5_gold.json").read_text(encoding="utf-8"))
+        # The filled work tree, without cached bytecode.
         self.work = root / "work"
         shutil.copytree(
             W2D5_WORK,
             self.work,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
         )
+        # Both gold files must match their generators before a test changes the work tree.
         self.assertEqual(self.gold, gold(self.profile))
         self.assertEqual(self.smoke_gold, deploy_gold(self.profile))
 

@@ -94,12 +94,14 @@ class ReleaseTests(unittest.TestCase):
             practice, small = load("practice"), load("small")
             write_w4d1(practice, root / "practice" / "pack", root / "practice-truth")
             write_w4d1(small, root / "small" / "pack", root / "small-truth")
+            # Join each pack. Neither watermark, nor the hidden attack names, may appear.
             practice_blob = _blob(root / "practice" / "pack")
             small_blob = _blob(root / "small" / "pack")
             self.assertNotIn(practice.canary(), practice_blob)
             self.assertNotIn(small.canary(), small_blob)
             self.assertNotIn("hid-prompt", practice_blob)
             self.assertNotIn("circ-hours-old", practice_blob)
+            # Fairness outcomes differ by profile. The bound file is the same.
             self.assertNotEqual(
                 (root / "practice" / "pack" / "fairness" / "outcomes.jsonl").read_text(encoding="utf-8"),
                 (root / "small" / "pack" / "fairness" / "outcomes.jsonl").read_text(encoding="utf-8"),
@@ -108,6 +110,7 @@ class ReleaseTests(unittest.TestCase):
                 (root / "practice" / "pack" / "fairness" / "bound.json").read_text(encoding="utf-8"),
                 (root / "small" / "pack" / "fairness" / "bound.json").read_text(encoding="utf-8"),
             )
+            # Both gold files match the generator. Each gap is positive and inside its bound.
             practice_gold = json.loads((root / "practice-truth" / "w4d1_gold.json").read_text(encoding="utf-8"))
             small_gold = json.loads((root / "small-truth" / "w4d1_gold.json").read_text(encoding="utf-8"))
             self.assertEqual(practice_gold, gold(practice))
@@ -116,6 +119,7 @@ class ReleaseTests(unittest.TestCase):
             self.assertLessEqual(practice_gold["fairness"]["gap"], practice_gold["bound"])
             self.assertLessEqual(small_gold["fairness"]["gap"], small_gold["bound"])
             self.assertGreater(practice_gold["fairness"]["gap"], 0)
+            # The breach notice carries the case time. The dev file keeps the direct case and hides the prompt case.
             self.assertIn(CASE_AT, (root / "practice" / "pack" / "notices" / "phi-logs.md").read_text(encoding="utf-8"))
             dev = (root / "practice" / "pack" / "attacks" / "dev.jsonl").read_text(encoding="utf-8")
             self.assertIn("atk-direct", dev)

@@ -23,7 +23,9 @@ class TrafficTests(unittest.TestCase):
         """Fails when the traffic run is not ok, when a required population, race, attack,
         or load case is missing, or when the wrong scaling strategy is the one that passes.
         """
+        # Run the whole traffic suite once.
         result = run()
+        # The run is ok, and the required population, race, attack, and load cases are present.
         self.assertTrue(result["ok"], result)
         names = {row["id"] for row in result["populations"] + result["attacks"] + result["load"]}
         self.assertIn("pop-status", names)
@@ -31,14 +33,17 @@ class TrafficTests(unittest.TestCase):
         self.assertIn("atk-indirect", names)
         self.assertIn("atk-hoard", names)
         self.assertIn("load-cold", names)
+        # Only the prepared scaling strategy passes. The other two must fail.
         self.assertFalse(result["strategies"]["ext-large-batch"])
         self.assertFalse(result["strategies"]["reactive-cold"])
         self.assertTrue(result["strategies"]["prescale-batch"])
 
     def test_reference_does_not_import_truth(self) -> None:
         """Fails when any reference module names the hidden truth directory."""
+        # Read every reference module as one string.
         root = Path(__file__).resolve().parents[1] / "reference"
         text = "\n".join(path.read_text(encoding="utf-8") for path in root.glob("*.py"))
+        # None of them may name the hidden truth directory.
         self.assertNotIn("truth_dir", text)
         self.assertNotIn("/truth", text)
 

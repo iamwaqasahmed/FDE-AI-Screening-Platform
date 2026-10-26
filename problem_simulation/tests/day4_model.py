@@ -84,12 +84,15 @@ def _blocked(scenario: dict, memory: object) -> dict | None:
     falls through so the walk may use it. A dropped preference is a logged refusal
     and does not call a tool.
     """
+    # Nothing was stored, so this check does not apply and the walk may continue.
     stored = scenario["stored_preference"]
     if not stored:
         return None
+    # Consent decides whether the stored string may be used. A kept string is left for the walk.
     kept = memory.preference(stored, scenario["consent"])
     if kept:
         return None
+    # Consent dropped the preference. Log a refusal and do not call a tool.
     return schema.row(
         scenario["scenario"],
         schema.reply("refusal", "Say what you need for this visit."),

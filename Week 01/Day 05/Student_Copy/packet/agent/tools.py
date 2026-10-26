@@ -41,14 +41,17 @@ def load(pack: str | Path, failures: str | Path | None = None) -> None:
     safety policy, from the lines under phrases:. taken starts empty,
     so the first booking of a slot succeeds.
     """
+    # Day 4 scenarios and their order are read first.
     root = Path(pack)
     rows = _read_named(root, _FILES)
     order = json.loads((root / "scenarios" / "order.json").read_text(encoding="utf-8"))
+    # A failure pack, when the runner passes one, is appended after Day 4.
     if failures is not None:
         fail_root = Path(failures)
         rows.extend(_read_named(fail_root, ("ds-failures.jsonl",)))
         extra = json.loads((fail_root / "scenarios" / "order.json").read_text(encoding="utf-8"))
         order = list(order) + list(extra)
+    # Store that combined order, the routing phrases, and an empty taken set.
     by_name = {row["scenario"]: row for row in rows}
     _STATE["scenarios"] = [by_name[name] for name in order]
     _STATE["phrases"] = _phrases((root / "policy" / "pol-clinical-safety.md").read_text(encoding="utf-8"))
@@ -83,11 +86,15 @@ def offer(referral_id: str) -> dict:
     A slot id already in taken returns error taken.
     Otherwise one slot id is returned and ok is true.
     """
+    # Look up the referral, then answer from its fault, its constraint, or its slot.
     row = _find(referral_id)
+    # A timeout returns no slot.
     if row.get("fault") == "timeout":
         return {"ok": False, "error": "timeout", "constraint": "", "slots": []}
+    # A constraint means no slot fits. The constraint word goes back with the answer.
     if row.get("constraint"):
         return {"ok": False, "error": "", "constraint": row["constraint"], "slots": []}
+    # A slot already booked is taken. Otherwise return that one slot.
     slot_id = row.get("slot_id") or f"slot-{referral_id}"
     if slot_id in _STATE["taken"]:
         return {"ok": False, "error": "taken", "constraint": "", "slots": []}

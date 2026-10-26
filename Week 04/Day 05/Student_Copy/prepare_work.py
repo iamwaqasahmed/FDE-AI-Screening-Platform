@@ -65,14 +65,18 @@ def _packet_ready() -> bool:
     would build a work folder the later chapters cannot finish.
     """
     return (
+        # The starter app and the shell tests are both folders.
         APP.is_dir()
         and TESTS.is_dir()
+        # Both interview pairs are on disk: the questions and the blank notes.
         and INTERVIEWS.is_dir()
         and (INTERVIEWS / "access-mgr.questions.txt").is_file()
         and (INTERVIEWS / "access-mgr.notes.md").is_file()
         and (INTERVIEWS / "ea.questions.txt").is_file()
         and (INTERVIEWS / "ea.notes.md").is_file()
+        # The workflow file is still beside the other packet files.
         and (PACKET / ".github" / "workflows" / "ci.yml").is_file()
+        # The proposal blank and every page named in PAGES are still in the packet.
         and (TEMPLATES / "proposal.md").is_file()
         and all((TEMPLATES / name).is_file() for name in PAGES)
     )

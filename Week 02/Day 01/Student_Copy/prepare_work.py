@@ -56,6 +56,7 @@ def _copy_tree() -> None:
     not survive a second run. The scenario file is not copied. The
     interview folder is not copied.
     """
+    # Remove a previous app so a generated client.py cannot survive a second run.
     destination = WORK / "app"
     if destination.exists():
         shutil.rmtree(destination)
@@ -64,21 +65,25 @@ def _copy_tree() -> None:
         destination,
         ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
     )
+    # Copy the laptop stand-in and the dev namespace with the shell.
     shutil.copy(PACKET / "compose.yaml", WORK / "compose.yaml")
     shutil.copy(PACKET / "Dockerfile", WORK / "Dockerfile")
     deploy = WORK / "deploy"
     deploy.mkdir(parents=True, exist_ok=True)
     shutil.copy(PACKET / "deploy" / "namespace.yaml", deploy / "namespace.yaml")
+    # Copy the three blank pages. This day does not write a gitignore.
     for name in PAGES:
         shutil.copy(TEMPLATES / name, WORK / name)
 
 
 def main() -> None:
     """Copy the workspace. This file takes no extra word."""
+    # Stop if the packet drawer is missing or an extra word was passed.
     if not _packet_ready():
         raise SystemExit("This file must stay next to the packet folder. Do not move it.")
     if len(sys.argv) > 1:
         raise SystemExit("Use: python prepare_work.py")
+    # Copy, then say that chapter 07 replaces client.py by running generate.py.
     WORK.mkdir(parents=True, exist_ok=True)
     _copy_tree()
     print("Created work/ from the packet.")

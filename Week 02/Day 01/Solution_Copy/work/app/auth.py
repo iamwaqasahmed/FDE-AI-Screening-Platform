@@ -16,15 +16,18 @@ def staff_roles(note: str) -> tuple[str, ...]:
     heading. Each bullet is one role. The check signs one of those
     roles in and expects the console. It does not print the list.
     """
+    # Wait for the staff heading, then collect the bullets under it.
     roles: list[str] = []
     collecting = False
     for line in note.splitlines():
         stripped = line.strip()
+        # The staff heading opens the list. The next heading closes it.
         if stripped == "# Staff roles":
             collecting = True
             continue
         if collecting and stripped.startswith("#"):
             break
+        # A bullet under that heading is one role name.
         if collecting and stripped.startswith("- "):
             roles.append(stripped[2:].strip())
     return tuple(roles)
@@ -38,10 +41,12 @@ def actors(text: str) -> dict[str, dict[str, str]]:
     offers the patient and the coordinator. The check also tries roles
     that have no button.
     """
+    # One record per actor, filled as the lines go by.
     found: dict[str, dict[str, str]] = {}
     current = ""
     for line in text.splitlines():
         stripped = line.strip()
+        # A name line starts a new actor with empty sub, role, and loa.
         if stripped.startswith("- name:"):
             current = stripped.split(":", 1)[1].strip()
             found[current] = {"sub": "", "role": "", "loa": ""}
@@ -49,6 +54,7 @@ def actors(text: str) -> dict[str, dict[str, str]]:
         if not current or ":" not in stripped:
             continue
         key, value = (part.strip() for part in stripped.split(":", 1))
+        # A later line fills only sub, role, or loa on the current actor.
         if key in {"sub", "role", "loa"}:
             found[current][key] = value
     return found

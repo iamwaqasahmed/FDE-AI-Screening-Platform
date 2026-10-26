@@ -37,6 +37,7 @@ class CheckTests(unittest.TestCase):
     """
     def setUp(self) -> None:
         """Write this day's pack and copy the filled work tree."""
+        # A temporary pack for the small profile. The gold comes from the generator.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -46,6 +47,7 @@ class CheckTests(unittest.TestCase):
 
         write_w3d5(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
+        # The filled work tree, without cached bytecode.
         self.work = root / "work"
         shutil.copytree(W3D5_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
 

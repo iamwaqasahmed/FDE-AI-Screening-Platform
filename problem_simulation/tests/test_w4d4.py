@@ -101,13 +101,16 @@ class ReleaseTests(unittest.TestCase):
             practice, small = load("practice"), load("small")
             write_w4d4(practice, root / "practice" / "pack", root / "practice-truth")
             write_w4d4(small, root / "small" / "pack", root / "small-truth")
+            # Join each pack and load each gold file.
             practice_blob = _blob(root / "practice" / "pack")
             small_blob = _blob(root / "small" / "pack")
             practice_gold = json.loads((root / "practice-truth" / "w4d4_gold.json").read_text(encoding="utf-8"))
             small_gold = json.loads((root / "small-truth" / "w4d4_gold.json").read_text(encoding="utf-8"))
+            # Watermarks and the gold file name stay out of the packs.
             self.assertNotIn(practice.canary(), practice_blob)
             self.assertNotIn(small.canary(), small_blob)
             self.assertNotIn("w4d4_gold", practice_blob)
+            # Spend and arrival dates stay out. Rent meets the deadline. Buying does not. Shares add up.
             for shown in (practice_gold, small_gold):
                 self.assertNotIn(str(shown["local_sar"]), practice_blob if shown is practice_gold else small_blob)
                 self.assertNotIn(shown["buy_arrives"], practice_blob if shown is practice_gold else small_blob)
@@ -117,30 +120,36 @@ class ReleaseTests(unittest.TestCase):
                 self.assertLessEqual(shown["rent_arrives"], shown["deadline"])
                 self.assertEqual(sum(shown["hospital_sar"].values()), shown["local_sar"])
                 self.assertEqual(sorted(shown["hospital_sar"]), sorted(HOSPITALS))
+            # The profiles differ in budget, rental length, shares, and lookalike. Both gold files match the generator.
             self.assertNotEqual(practice_gold["budget_seconds"], small_gold["budget_seconds"])
             self.assertNotEqual(practice_gold["rent_days"], small_gold["rent_days"])
             self.assertNotEqual(practice_gold["hospital_sar"], small_gold["hospital_sar"])
             self.assertNotEqual(practice_gold["lookalike_hash"], small_gold["lookalike_hash"])
             self.assertEqual(practice_gold, gold(practice))
             self.assertEqual(small_gold, gold(small))
+            # The killed site is over its timeout budget, and that budget is not in the readme.
             pack = root / "practice" / "pack"
             drill = json.loads((pack / "drill" / "site-a.json").read_text(encoding="utf-8"))
             self.assertEqual(drill["killed"], "site-a")
             self.assertGreater(drill["timeout_seconds"], drill["budget_seconds"])
             self.assertNotIn(str(drill["budget_seconds"]), (pack / "README.md").read_text(encoding="utf-8"))
+            # The lead-time note names the purchase length, the deadline, and the order date.
             note = json.loads((pack / "finance" / "lead-time.json").read_text(encoding="utf-8"))
             self.assertEqual(note["purchase_weeks"], PURCHASE_WEEKS)
             self.assertEqual(note["deadline"], "2027-02-08")
             self.assertEqual(note["ordered_on"], "2027-02-03")
+            # The four hospital counts add up to the backlog and are not all the same.
             shares = json.loads((pack / "hospitals" / "shares.json").read_text(encoding="utf-8"))
             counts = [row["referrals"] for row in shares["shares"]]
             self.assertEqual(sum(counts), BACKLOG)
             self.assertEqual(len(set(counts)), 4)
+            # The killed site is down and does not list the lookalike. The site that stays up does.
             sites = json.loads((pack / "sites" / "replicas.json").read_text(encoding="utf-8"))
             self.assertEqual(sites["sites"][0]["health"], "down")
             self.assertEqual(sites["sites"][1]["health"], "up")
             self.assertNotIn(practice_gold["lookalike_id"], [row["id"] for row in sites["sites"][0]["models"]])
             self.assertEqual(sites["sites"][1]["models"][-1]["id"], practice_gold["lookalike_id"])
+            # The readme names the order date and does not name the lookalike hash or the spend.
             readme = (pack / "README.md").read_text(encoding="utf-8")
             self.assertIn("2027-02-03", readme)
             self.assertNotIn(practice_gold["lookalike_hash"], readme)
@@ -182,6 +191,7 @@ class ReleaseTests(unittest.TestCase):
         """Fails when a lesson or packet source contains the watermark or a model hash, or
         when a lesson page contains the spend, an arrival date, or a hospital share.
         """
+        # Skip the release fixtures. Keep lesson pages apart from the other sources.
         release_trees = (
             W4D4_ROOT / "Student_Copy" / "packet" / "release",
             W4D4_ROOT / "Solution_Copy" / "sources",
@@ -201,10 +211,12 @@ class ReleaseTests(unittest.TestCase):
                 notes.append(text)
         code = "\n".join(blob)
         prose = "\n".join(notes)
+        # Sources must not contain the watermark or a model hash.
         self.assertNotIn(profile.canary(), code)
         self.assertNotIn(shown["lookalike_hash"], code)
         for row in replicas(profile)["sites"][0]["models"]:
             self.assertNotIn(row["hash"], code)
+        # Lesson pages must not contain the spend, an arrival date, or a hospital share.
         self.assertNotIn(str(shown["local_sar"]), prose)
         self.assertNotIn(shown["buy_arrives"], prose)
         self.assertNotIn(shown["rent_arrives"], prose)

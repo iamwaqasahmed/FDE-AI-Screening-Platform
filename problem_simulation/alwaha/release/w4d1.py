@@ -1,4 +1,8 @@
-"""Write rel-w4d1. Earlier packs and personas.json are left where they are."""
+"""Write rel-w4d1.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the notice, the checklist, the assessment template, the dev rows, the fairness files, and the registry are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -67,15 +71,19 @@ def write_w4d1(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the notice, the checklist, the assessment template, the dev rows, the grants, the subject requests, the held store, the fairness files, the registry, the candidate, the maps page, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Notice, checklist, and the assessment template.
     _write(pack / "notices" / "phi-logs.md", notice())
     _write(pack / "checklist" / "golive.md", checklist())
     _write(pack / "templates" / "dpia.md", dpia_template())
+    # Dev rows, grants, subject requests, and the held store.
     _jsonl(pack / "attacks" / "dev.jsonl", dev_attacks())
     _jsonl(pack / "iam" / "grants.jsonl", grants())
     _jsonl(pack / "requests" / "subjects.jsonl", subjects())
     _json(pack / "stores" / "held.json", held())
+    # Fairness files, the registry, the candidate, and the tool-text page.
     _jsonl(pack / "fairness" / "outcomes.jsonl", outcomes(profile.seed))
     _json(pack / "fairness" / "bound.json", {"bound": BOUND})
     _jsonl(pack / "fairness" / "approvals.jsonl", approvals(profile.seed))
@@ -84,8 +92,10 @@ def write_w4d1(profile: Profile, pack: Path, truth: Path) -> str:
     _write(pack / "mcp" / "maps.md", maps_page())
     _write(truth / "w4d1_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w4d1_gold.json")
     _write(truth / "rel-w4d1-fingerprint.txt", digest + "\n")
     return digest

@@ -91,14 +91,17 @@ class CheckTests(unittest.TestCase):
             the ordinary measurement, so the checker is failing the split and not the rest
             of the table.
             """
+            # Only the no-show problem is given the row-level figure. The other cells stay ordinary.
             if problem_id == "p-dna":
                 return str(self.measured["dna_row"])
             return str(self.measured.get(problem_id, "claim"))
 
+        # Grade that memo against the fitting brief, so a failure is about the split cell.
         family, _sizes = self._grade(
             approach(self.gold, self.measured, fit_family, measured_for),
             brief(self.pack, self.measured),
         )
+        # The cell is rejected, and the problem list does not print the row-level figure.
         self.assertIn("p-dna measured value does not match the baseline", family)
         self.assertNotIn(str(self.measured["dna_row"]), "\n".join(family))
 

@@ -28,8 +28,10 @@ class PromptTests(unittest.TestCase):
         sub-specialty and the same item id. The cancel message
         must still classify as status.
         """
+        # The baseline stays local and is not served.
         self.assertFalse(served())
         self.assertEqual(target(), {"model": "local-small", "phi": False})
+        # The letter and the cancel message keep the weak labels.
         row = {"item_id": "h1", "text": "Phone photo from the retina service."}
         self.assertEqual(extract(row), {"item_id": "h1", "source_type": "typed", "sub_specialty": ""})
         self.assertEqual(intent({"text": "Cancel this visit."}), "status")

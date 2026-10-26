@@ -45,18 +45,22 @@ def main(argv: list[str] | None = None) -> None:
     cancellation row is the dict apply returned. The mart section
     is whatever mart.read returns for the extract.
     """
+    # Read the pack, the database path, and where the trace should be written.
     parser = argparse.ArgumentParser(description="Run wf-session-cancelled on the release pack.")
     parser.add_argument("--pack", required=True)
     parser.add_argument("--db", required=True)
     parser.add_argument("--out", required=True)
     args = parser.parse_args(argv)
     pack = Path(args.pack)
+    # The registry, the webhook, and the SMS faults stay in the pack. They are not copied here.
     registry_text = (pack / "registry" / "topics.md").read_text(encoding="utf-8")
     body = json.loads((pack / "webhooks" / "referral.submitted.json").read_text(encoding="utf-8"))
     faults = json.loads((pack / "channels" / "sms-faults.json").read_text(encoding="utf-8"))
+    # Accept the webhook, then apply each cancellation in file order.
     accepted = intake.accept(body, registry_text)
     db = session.connect(Path(args.db))
     rows = [cancel.apply(db, event, faults) for event in _events(pack / "events" / "session.cancelled.jsonl")]
+    # Keep the intake summary, each cancellation row, and the mart read. Do not keep the webhook body.
     report = {
         "intake": {
             "mode": accepted.get("mode"),

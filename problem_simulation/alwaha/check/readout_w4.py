@@ -101,17 +101,21 @@ def _readout(text: str, gold: dict, files: set[str]) -> list[str]:
     A banned sentence is recorded and the other checks still run. The note must mention a clinician and urgency, and it must mention the external model. Each gold section that fails its rule adds the miss mapped from that section's id. An empty ask section, and a note with no citation, are misses.
     """
     problems = []
+    # A banned sentence is recorded. The other checks still run.
     if banned(text):
         problems.append(BANNED)
     lowered = text.lower()
+    # The note must mention a clinician and urgency, and it must mention the external model.
     if "clinician" not in lowered or "urgency" not in lowered:
         problems.append(URGENCY)
     if "ext-large" not in lowered:
         problems.append(EXTERNAL)
     rules = gold["readout"]
+    # Each gold section that fails its rule adds the miss mapped from that section's id.
     for rule in rules["sections"]:
         if not _section_ok(section(text, rule["heading"]), rule):
             problems.append(_MISSES[rule["id"]])
+    # An empty ask section, and a note with no citation, are misses.
     if not section(text, rules["asks"]).strip():
         problems.append(ASKS)
     if not _cited(text, files):

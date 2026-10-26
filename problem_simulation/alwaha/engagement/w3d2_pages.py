@@ -1,4 +1,8 @@
-"""Participant pages for rel-w3d2. Hashes, the quota, and the canary stay out."""
+"""Participant pages for rel-w3d2.
+Hashes, the quota, and the canary stay out.
+
+These strings are the ruling and the router interface. The ruling says where training stays, which fields stay off the external model, and which questions stay on retrieval. The router describes a call that is allowed and a call that is refused.
+"""
 
 from __future__ import annotations
 

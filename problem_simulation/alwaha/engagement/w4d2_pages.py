@@ -1,4 +1,8 @@
-"""Participant pages for rel-w4d2. The rate and the hashes stay out."""
+"""Participant pages for rel-w4d2.
+The rate and the hashes stay out.
+
+These strings are the incident-replay note, the hours circular, and the runbook template. The replay note points at spans already in the pack. The circular is the hours document, and the runbook is a set of empty headings.
+"""
 
 from __future__ import annotations
 

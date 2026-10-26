@@ -18,6 +18,7 @@ from judge import mark
 class JudgeTests(unittest.TestCase):
     """Marks for a fluent wrong citation and a terse right answer."""
 
+    # A fluent item whose pass field is false is not a pass.
     def test_a_fluent_wrong_citation_is_not_a_pass(self) -> None:
         """A fluent item with a false pass field is not a pass.
 
@@ -26,6 +27,7 @@ class JudgeTests(unittest.TestCase):
         """
         self.assertFalse(mark({"answer": "settled", "fluent": True, "pass": False}))
 
+    # A terse item whose pass field is true is a pass.
     def test_a_terse_right_answer_passes(self) -> None:
         """An item that is not fluent passes when its label is true.
 

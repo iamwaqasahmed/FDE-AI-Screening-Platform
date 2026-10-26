@@ -24,11 +24,13 @@ class SliceTests(unittest.TestCase):
         """Fails when either profile omits a slice, when a simpler method passes, or when
         the method that should pass does not.
         """
+        # Assessment refuses to load unless this seed is set. Remove it before the checks finish.
         os.environ["ALWAHA_ASSESSMENT_SEED"] = "424242"
         try:
             profiles = (load("practice"), load("assessment"))
         finally:
             os.environ.pop("ALWAHA_ASSESSMENT_SEED", None)
+        # Each profile reports every slice. The simpler method fails, and the method that should pass holds.
         for profile in profiles:
             rows = evaluate(profile)
             self.assertEqual([row["slice"] for row in rows], list(SLICES))

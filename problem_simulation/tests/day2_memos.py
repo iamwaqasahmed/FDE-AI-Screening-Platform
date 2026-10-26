@@ -87,7 +87,9 @@ def brief(pack: Path, measured: dict, ranking: tuple[str, ...] = RANK, first: st
     can move one problem to the front and, on that first line only, replace the
     plain note.
     """
+    # Claims are read from this page. A missing figure fails in grab instead of becoming a blank cell.
     access = pack / "extracts" / "access-costs.md"
+    # Each cell is the number, the page it came from, and whether it was measured or only claimed.
     sizes = {
         "p-bounce": (measured["p-bounce"], "samples/ds-letters.md", "measured"),
         "p-waitlist": (grab(access, r"returned referrals \| (\d+)"), "extracts/access-costs.md", "claim"),
@@ -99,6 +101,7 @@ def brief(pack: Path, measured: dict, ranking: tuple[str, ...] = RANK, first: st
         "p-forecast": (measured["p-forecast"], "samples/ds-demand.csv", "measured"),
         "p-triage": (grab(pack / "extracts" / "sponsor-ask.md", r"Claimed impact: (\d+)"), "extracts/sponsor-ask.md", "claim"),
     }
+    # Stakeholder lines stay fixed claims. The size table below is filled from the map above.
     lines = [
         "| Who | Their words | Kind |",
         "| --- | --- | --- |",
@@ -110,6 +113,7 @@ def brief(pack: Path, measured: dict, ranking: tuple[str, ...] = RANK, first: st
     ]
     for problem_id, (size, source, kind) in sizes.items():
         lines.append(f"| {problem_id} | {size} | {source} | {kind} |")
+    # The numbered ranking follows the tables. extra, when set, is one more note under that list.
     lines.extend(["", *_ranking(ranking, first)])
     if extra:
         lines.extend(["", extra])

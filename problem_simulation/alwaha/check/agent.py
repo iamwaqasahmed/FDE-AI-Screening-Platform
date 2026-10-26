@@ -59,6 +59,7 @@ def _scenarios(rows: list, gold: dict) -> list[str]:
 
     Rows that cannot be grouped are one missing-field miss. A scenario with no rows is missing. A scenario whose single row is incomplete is a missing field. Otherwise that row is graded.
     """
+    # Group the trace by scenario. Rows that cannot be grouped are one missing-field miss.
     found = grouped(rows)
     if found is None:
         return ["trace is missing a field"]
@@ -66,10 +67,12 @@ def _scenarios(rows: list, gold: dict) -> list[str]:
     for item in gold["scenarios"]:
         name = item["scenario"]
         group = found.get(name, [])
+        # A scenario with no rows never ran, so the rest of the list is still graded.
         if not group:
             problems.append(f"{name} is missing")
             continue
         row = one(group)
+        # An incomplete row is a missing field, so its state is not graded.
         if row is None:
             problems.append(f"{name} log is missing a field")
             continue

@@ -1,4 +1,8 @@
-"""Leader pages for rel-w1d2. Figures are claims. Causes are not on the page."""
+"""Leader pages for rel-w1d2.
+
+Figures are claims. Causes are not on the page.
+register_page lists each problem id with the symptom named for it. The dashboard, vendor, access, and sponsor functions are short notes. claim_figures derives the numbers those notes print from the seed.
+"""
 
 from __future__ import annotations
 
@@ -8,6 +12,7 @@ def register_page() -> str:
 
     Each row is a problem id and the symptom named for it. Causes stay off the page because the page is a list of claims.
     """
+    # Problem id, then the symptom named for it. Causes stay off this list.
     rows = (
         ("p-bounce", "Referrals come back to the primary care center."),
         ("p-waitlist", "Waitlist rows the coordinators do not trust."),
@@ -19,7 +24,9 @@ def register_page() -> str:
         ("p-forecast", "Session plans miss the busy months."),
         ("p-triage", "The sponsor wants the assistant to set clinical urgency."),
     )
+    # One table row per problem.
     body = "\n".join(f"| {problem_id} | {symptom} |" for problem_id, symptom in rows)
+    # The page is the heading plus that table.
     return f"""# Opportunity register
 
 Case date: 2027-01-11

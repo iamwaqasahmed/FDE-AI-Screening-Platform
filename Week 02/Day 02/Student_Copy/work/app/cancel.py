@@ -38,18 +38,22 @@ def apply(db, event: dict, faults: dict) -> dict:
     receipt was rejected and including when the event has no slot.
     The state is always notified.
     """
+    # Create the table if needed, then read any row already stored for this id.
     _prepare(db)
     event_id = str(event["event_id"])
     row = db.execute(
         "select bookings, sms from deliveries where event_id = ?",
         (event_id,),
     ).fetchone()
+    # Start from zero, or from the stored counts. The id is not a reason to stop.
     bookings = 0 if row is None else int(row[0])
     texts = 0 if row is None else int(row[1])
+    # Count this booking, and count the text only when the send was accepted.
     sent = sms.send(str(event["booking_id"]), faults)
     bookings += 1
     if sent["ok"]:
         texts += 1
+    # Store notified and an open hold, including a failed send and a missing slot.
     db.execute(
         "insert or replace into deliveries (event_id, bookings, sms, state, hold) values (?, ?, ?, ?, ?)",
         (event_id, bookings, texts, "notified", "open"),

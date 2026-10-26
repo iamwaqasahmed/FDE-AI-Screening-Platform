@@ -39,6 +39,7 @@ def render(names: list[str]) -> str:
         '"""Generated his-wadi client. Leave this file as the generator wrote it."""\n\n'
         f'FIELD = "{field}"\n\n'
         "def read_body(referral_id: str) -> dict:\n"
+        '    """Return the body for one referral. The id comes from the path. The spec field is left empty."""\n'
         '    return {"referral_id": referral_id, FIELD: ""}\n'
     )
 

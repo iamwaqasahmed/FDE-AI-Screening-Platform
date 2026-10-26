@@ -1,4 +1,9 @@
-"""Day 2 of Week 2 journey check."""
+"""Day 2 of Week 2 journey check.
+
+The fixture writes a small pack and copies the filled work tree.
+A finished tree passes. A poll, a replay, a trusted mart, or a watermark
+must fail without the problem list naming the hidden field.
+"""
 
 from __future__ import annotations
 
@@ -39,6 +44,7 @@ class CheckTests(unittest.TestCase):
 
         The written gold must match the gold builder. A drift between the release and the builder fails here, before a journey assertion runs.
         """
+        # A temporary pack for the small profile, and the gold the release wrote.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -46,12 +52,14 @@ class CheckTests(unittest.TestCase):
         self.truth = root / "truth"
         write_w2d2(self.profile, self.pack, self.truth)
         self.gold = json.loads((self.truth / "w2d2_gold.json").read_text(encoding="utf-8"))
+        # The filled work tree is the hand-in. Caches and local session files are left out.
         self.work = root / "work"
         shutil.copytree(
             W2D2_WORK,
             self.work,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "sessions.db", "trace.json"),
         )
+        # The written gold and the gold builder must already agree, before a journey assertion runs.
         self.assertEqual(self.gold, gold(self.profile))
 
     def tearDown(self) -> None:

@@ -1,4 +1,8 @@
-"""Participant pages for rel-w2d2. Hidden field names stay out of these strings."""
+"""Participant pages for rel-w2d2.
+Hidden field names stay out of these strings.
+
+These strings are the feeds notice, the schema registry, and the interface documents for referrals, SMS, and WhatsApp. The channel notes describe a template message and a session window that has closed. The document-store note says today's check does not include the change feed.
+"""
 
 from __future__ import annotations
 

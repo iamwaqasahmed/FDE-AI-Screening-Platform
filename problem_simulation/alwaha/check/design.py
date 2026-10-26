@@ -95,26 +95,32 @@ def design_problems(work: Path, gold: dict, canary: str, packs: list[Path] | Non
 
     A planted token returns only the watermark sentence. Either file missing is one miss and the contents are not graded. A banned sentence in either file is recorded. The diagram must mention a coordinator, a human, or an approval. The design must leave urgency with a clinician. The combined text must cover the required share of facts, using the stage section for topic facts. The knowledge note must exist and have two numbered answers.
     """
+    # A planted token stops the check before either note is read.
     if contains_canary(work, canary):
         return ["a watermarked sample is in the work directory"]
     architecture = work / "architecture.md"
     design = work / "design.md"
+    # Either file missing is one miss. The contents are not graded.
     if not architecture.is_file() or not design.is_file():
         return ["architecture.md or design.md is missing"]
     arch = architecture.read_text(encoding="utf-8")
     note = design.read_text(encoding="utf-8")
+    # Facts are searched in both notes together.
     combined = f"{arch}\n{note}"
     problems = []
     if banned(combined):
         problems.append("design contains a banned sentence")
+    # The human step is read from the diagram section only.
     if not any(word in section(arch, "Diagram").lower() for word in ("coordinator", "human", "approval")):
         problems.append("the diagram has no human step")
     if not _urgency(note):
         problems.append("the design does not leave urgency with a clinician")
     rules = gold["design"]
+    # Topic facts come from the stage section. Other facts use the combined text.
     if not _coverage(rules, combined, section(note, "Stage 2"), _files(packs or [])):
         problems.append("the design note is missing a required fact")
     knowledge = work / "knowledge.md"
+    # The knowledge note must exist and have two numbered answers.
     if not knowledge.is_file() or not two_answers(knowledge.read_text(encoding="utf-8")):
         problems.append("knowledge.md needs two answers")
     return problems

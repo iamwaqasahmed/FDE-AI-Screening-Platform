@@ -24,6 +24,7 @@ class ProfileTests(unittest.TestCase):
         """Fails when practice or small no longer match their named populations, when the
         team profile's seed changes, or when practice silently turns volume on.
         """
+        # Practice and small keep their named sizes. The team seed is fixed, and practice is not a volume run.
         self.assertEqual(load("practice").people, PRACTICE_PEOPLE)
         self.assertEqual(load("small").people, SMALL_PEOPLE)
         self.assertEqual(load("team-3").seed, 50303)
@@ -33,6 +34,7 @@ class ProfileTests(unittest.TestCase):
         """Fails when the volume switch does not enlarge the small profile, or when the
         same profile still looks enlarged after the switch is removed.
         """
+        # Turn the volume switch on, then load small. The profile must grow.
         os.environ["ALWAHA_VOLUME"] = "1"
         try:
             profile = load("small")
@@ -40,10 +42,12 @@ class ProfileTests(unittest.TestCase):
             self.assertGreater(volume_rows(profile), 0)
         finally:
             os.environ.pop("ALWAHA_VOLUME", None)
+        # The switch is gone, so the same profile is no longer enlarged.
         self.assertEqual(volume_rows(load("small")), 0)
 
     def test_personal_and_assessment_need_env(self) -> None:
         """Fails when personal or assessment load with their environment values missing."""
+        # Both environment values are missing. Each load must refuse.
         os.environ.pop("ALWAHA_PARTICIPANT", None)
         os.environ.pop("ALWAHA_ASSESSMENT_SEED", None)
         with self.assertRaises(SystemExit):
@@ -55,6 +59,7 @@ class ProfileTests(unittest.TestCase):
         """Fails when the same participant name produces two seeds, or when the personal
         population size drifts.
         """
+        # The same participant name, loaded twice, must keep one seed and the personal population size.
         os.environ["ALWAHA_PARTICIPANT"] = "noura"
         try:
             first = load("personal")
@@ -68,11 +73,13 @@ class ProfileTests(unittest.TestCase):
         """Fails when assessment does not rename sites, does not shift dates, or resolves
         its world directory inside the data tree.
         """
+        # Assessment loads only with this seed. The seed is removed before the checks below.
         os.environ["ALWAHA_ASSESSMENT_SEED"] = "424242"
         try:
             profile = load("assessment")
         finally:
             os.environ.pop("ALWAHA_ASSESSMENT_SEED", None)
+        # Sites are renamed, dates move, and the world directory is outside the data tree.
         self.assertTrue(profile.rename_sites)
         self.assertGreater(profile.date_shift_days, 0)
         root = world_dir("assessment")

@@ -44,23 +44,29 @@ def rag_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
 
     A planted token returns only the watermark. The written notes are graded even when the index crashes. The touched documents must be the gold change set. Each held question is cited. A crash on one question is the run miss and the loop continues. Specific leaks from the comparison are added once each.
     """
+    # A planted token returns only the watermark, so the notes are not graded after it.
     if contains_canary(work, canary):
         return [WATERMARK]
+    # Notes are graded even when the index crashes.
     problems = note_problems(work)
     try:
         modules = load_retriever(work)
+        # The change feed is applied so the touched ids can be compared with gold.
         docs, touched = current(modules, pack)
     except Exception:
         problems.append(RUN)
         return problems
+    # The touched documents must be the gold change set.
     if set(gold["changed"]) != set(touched):
         _once(problems, FEED)
     for row in gold["held"]:
         try:
             got = modules["cite"].answer(row["question"], docs)
         except Exception:
+            # A crash on one question is the run miss. The other questions are still cited.
             _once(problems, RUN)
             continue
+        # Specific leaks from the comparison are added once each.
         for item in compare(got, row["expect"], row["question"], gold["v4"]):
             _once(problems, item)
     return problems

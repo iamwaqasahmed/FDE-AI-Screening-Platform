@@ -1,4 +1,9 @@
-"""Day 3 intake check."""
+"""Day 3 intake check.
+
+The fixture writes a small pack and grades the intake prose together with the worker.
+A finished worker passes. The unfinished skeleton must name every planted miss
+without copying a hidden value into the problem list.
+"""
 
 from __future__ import annotations
 
@@ -120,15 +125,19 @@ class CheckTests(unittest.TestCase):
 
         Every planted intake miss must be named. The report must not repeat the watermark, the held state, the clinic, a due date, a criteria id, or a clause id.
         """
+        # Grade the unfinished skeleton together with the intake prose.
         self._copy_skeleton()
         self._prose()
         problems = self._grade()
+        # Every planted miss is named.
         for item in NAIVE:
             self.assertIn(item, problems)
         joined = "\n".join(problems)
+        # The report does not repeat the watermark, the held state, or the clinic.
         self.assertNotIn(self.profile.canary(), joined)
         self.assertNotIn("approval.held", joined)
         self.assertNotIn("ENDO-CLN", joined)
+        # Due dates and criteria ids from the gold stay out of the report, and so do the clause ids.
         for row in self.gold["scenarios"]:
             if row["due"]:
                 self.assertNotIn(row["due"], joined)

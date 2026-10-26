@@ -97,13 +97,16 @@ def knowledge_problems(work: Path) -> list[str]:
     """
     text = _text(work / "knowledge.md")
     answers = [line for line in text.splitlines() if re.match(r"\s*\d+\.\s+\S", line)]
+    # Fewer than two numbered answers is the two-answer miss.
     if len(answers) < 2 or not two_answers(text):
         return [KNOW]
     problems: list[str] = []
     first = answers[0].lower()
+    # The first answer must mention retrieval and an in-force spelling. That is what the second run changed.
     if "retrieval" not in first or not _in_force(first):
         problems.append(CHANGED)
     second = answers[1].lower()
+    # The second answer must name the out-of-scope requirement and must leave urgency with a clinician.
     if "p-triage" not in second or "clinician" not in second or "urgency" not in second:
         problems.append(SCOPE)
     return problems

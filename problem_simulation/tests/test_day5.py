@@ -60,6 +60,7 @@ class ReleaseTests(unittest.TestCase):
             write_day2(profile, packs[1], truth)
             write_day3(profile, packs[2], truth)
             write_day4(profile, packs[3], truth)
+            # Fingerprints of the four earlier packs, plus the gold files those days wrote.
             before = (
                 tuple(fingerprint(pack) for pack in packs[:4]),
                 (truth / "personas.json").read_bytes(),
@@ -67,6 +68,7 @@ class ReleaseTests(unittest.TestCase):
                 (truth / "events_gold.json").read_bytes(),
                 (truth / "agent_gold.json").read_bytes(),
             )
+            # Write this day twice. The two results must agree, and the earlier days must stay as they were.
             first = write_day5(profile, packs[4], truth)
             second = write_day5(profile, packs[4], truth)
             self.assertEqual(first, second)
@@ -80,6 +82,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "agent_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "day5_gold.json").is_file())
             self.assertFalse((packs[4] / "day5_gold.json").exists())
 
@@ -106,6 +109,7 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_day5(profile, pack, root / "truth")
+            # Read the failure file and compare it, and its order, with the generator.
             written = [
                 json.loads(line)
                 for line in (pack / "scenarios" / "ds-failures.jsonl").read_text(encoding="utf-8").splitlines()
@@ -113,9 +117,11 @@ class ReleaseTests(unittest.TestCase):
             ]
             self.assertEqual(written, scenarios(profile.canary()))
             self.assertEqual(json.loads((pack / "scenarios" / "order.json").read_text(encoding="utf-8")), list(FAILURE_ORDER))
+            # Join every learner file. The answer phrases must not appear there.
             blob = "\n".join(path.read_text(encoding="utf-8") for path in pack.rglob("*") if path.is_file())
             self.assertNotIn("16 weeks", blob)
             self.assertNotIn("unsigned ruling", blob)
+            # The hidden gold lists the same scenarios and does not contain the watermark.
             gold = json.loads((root / "truth" / "day5_gold.json").read_text(encoding="utf-8"))
             self.assertNotIn(profile.canary(), json.dumps(gold))
             self.assertEqual([row["scenario"] for row in gold["scenarios"]], list(FAILURE_ORDER))
@@ -142,14 +148,17 @@ class DemoTests(unittest.TestCase):
         lines are not the question list, or when the hidden deadline or the purchase
         fact appears in the output.
         """
+        # Run the readout demo and split what it prints into lines.
         stdout = StringIO()
         with redirect_stdout(stdout):
             demo_main(["--profile", "small"])
         text = stdout.getvalue()
+        # The first line is the sponsor's opening line. The rest are the question list, numbered.
         card = next(row for row in PERSONAS if row["id"] == "cdo")
         lines = text.splitlines()
         self.assertEqual(lines[0], card["says_first"])
         self.assertEqual(lines[1:], [f"{index}. {question}" for index, question in enumerate(QUESTIONS, start=1)])
+        # The hidden deadline and the purchase fact stay out of the output.
         lowered = text.lower()
         self.assertNotIn("16", text)
         self.assertNotIn("unsigned", lowered)

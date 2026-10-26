@@ -101,16 +101,19 @@ def build_rows(pack: Path) -> list[dict]:
     A repeated event id is counted as another delivery and can open
     a second approval. Sequence is not read. Chapter 06 replaces this.
     """
+    # Load the pack, then keep a count and the latest event for each referral.
     tools.load(pack)
     counts: dict[str, int] = {}
     chosen: dict[str, dict] = {}
     order: list[str] = []
     for event in tools.events():
         referral_id = event["referral_id"]
+        # Each event counts. The last one in file order is the letter this starter keeps.
         counts[referral_id] = counts.get(referral_id, 0) + 1
         if referral_id not in chosen:
             order.append(referral_id)
         chosen[referral_id] = event
+    # Build one row per referral from the letter that was kept and the count of events.
     policy = tools.policy()
     calendar = tools.calendar()
     docs = tools.criteria()

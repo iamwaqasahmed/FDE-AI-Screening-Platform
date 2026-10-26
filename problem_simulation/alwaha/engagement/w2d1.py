@@ -1,4 +1,8 @@
-"""rel-w2d1 pages. The removed field name stays in the gold."""
+"""rel-w2d1 pages.
+The removed field name stays in the gold.
+
+These builders make the interface notice, the assurance page, and the two interface documents. scenario is the status row for this profile. gold keeps the removed field name beside the status fields the checker compares.
+"""
 
 from __future__ import annotations
 
@@ -100,6 +104,7 @@ def scenario(profile: Profile) -> dict:
 
     The count comes from the seed and the letter carries the profile marker, so this row is the one the gold grades.
     """
+    # One status row. The count and the marker come from this profile.
     return {
         "scenario": "status",
         "referral_id": "ref-status",
@@ -108,6 +113,7 @@ def scenario(profile: Profile) -> dict:
         "facility_id": "h-wadi",
         "count": status_count(profile.seed),
         "state": "pending",
+        # The live clinic field. The removed name is not on this row.
         "clinic": CLINIC,
         "message": "Where is my referral?",
         "letter": profile.canary(),
@@ -119,8 +125,10 @@ def gold(profile: Profile) -> dict:
 
     It keeps the removed field name, the live field, the roles, and the status fields taken from the scenario. That is the record the check compares.
     """
+    # Read the scenario so this record and that row publish the same status fields.
     row = scenario(profile)
     return {
+        # The removed name, the live field, and who may open the assistant or book.
         "removed_field": REMOVED,
         "field": FIELD,
         "roles": list(STAFF_ROLES),
@@ -129,6 +137,7 @@ def gold(profile: Profile) -> dict:
         "patient_role": "patient",
         "staff_role": "coordinator",
         "service": "svc-integration",
+        # Status fields taken from the scenario, including the tool the check expects.
         "status": {
             "scenario": row["scenario"],
             "referral_id": row["referral_id"],

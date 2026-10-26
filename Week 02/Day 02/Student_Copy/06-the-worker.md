@@ -158,6 +158,7 @@ def apply(db, event: dict, faults: dict) -> dict:
     A rejected receipt stores compensated, zero bookings, zero
     SMS, and a released hold.
     """
+    # Create the table, then return the stored row if this event id was already applied.
     _prepare(db)
     event_id = str(event["event_id"])
     existing = db.execute(
@@ -173,8 +174,10 @@ def apply(db, event: dict, faults: dict) -> dict:
             "hold": existing[3],
             "body": "",
         }
+    # No slot means escalate: no booking, no text, and no hold.
     if not event.get("slot", True):
         return _store(db, event_id, {"state": "escalated", "bookings": 0, "sms": 0, "hold": "none", "body": ""})
+    # An accepted receipt notifies. A rejected receipt compensates and releases the hold.
     sent = sms.send(str(event["booking_id"]), faults)
     if sent["ok"]:
         stored = {"state": "notified", "bookings": 1, "sms": 1, "hold": "none", "body": sent["body"]}

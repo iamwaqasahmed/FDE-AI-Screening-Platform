@@ -60,15 +60,19 @@ def _crossings(work: Path) -> list[str]:
 
     The receipt must leave the private zone for the partner. The calendar must stay inside the private zone. Either gap fails the whole table.
     """
+    # The table needs a case, a from zone, and a to zone. A missing table fails.
     rows = dict_rows(_text(work / "crossings.md") or "", {"case", "from", "to"})
     if not rows:
         return ["a zone-crossing case is missing"]
+    # The receipt must leave the private zone for the partner.
     receipt = any(
         row["case"] == "receipt" and "zone-private" in row["from"] and "partner" in row["to"] for row in rows
     )
+    # The calendar must stay inside the private zone.
     calendar = any(
         row["case"] == "calendar" and row["from"] == "zone-private" and row["to"] == "zone-private" for row in rows
     )
+    # Either gap fails the whole table.
     if not receipt or not calendar:
         return ["a zone-crossing case is missing"]
     return []

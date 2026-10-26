@@ -33,6 +33,7 @@ def _decision(actor: str, approval_id: str) -> dict:
 
 def _case(name: str, turns: list[dict], **extra: object) -> dict:
     """Return one failure case. Extra keywords override the blank letter, fault, and slot."""
+    # Shared fields. The letter, the fault, and the slot start blank.
     row = {
         "scenario": name,
         "dataset": DATASET,
@@ -48,6 +49,7 @@ def _case(name: str, turns: list[dict], **extra: object) -> dict:
         "slot_id": "",
         "turns": turns,
     }
+    # Timeout fills the letter and the fault. Race-slot fills the slot id.
     row.update(extra)
     return row
 
@@ -77,6 +79,7 @@ def scenarios(canary: str) -> list[dict]:
 
 def _common(**extra: object) -> dict:
     """Return a comparison row with the quiet defaults, then apply the extra fields."""
+    # Nothing booked, nothing sent, and no failure name yet.
     row = {
         "booked": False,
         "returned": False,
@@ -94,6 +97,7 @@ def _common(**extra: object) -> dict:
         "failure": "",
         "bookings": 0,
     }
+    # The fields for this scenario replace those quiet defaults.
     row.update(extra)
     return row
 
@@ -104,6 +108,7 @@ def gold_rows() -> list[dict]:
     These rows are the facilitator answer. This function does not write them into a pack.
     """
     return [
+        # Timeout does not book. The trace stops at the offer, and the failure is timeout.
         _common(
             scenario="timeout",
             tool_trace=["slots.offer"],
@@ -111,6 +116,7 @@ def gold_rows() -> list[dict]:
             refusal_logged=True,
             failure="timeout",
         ),
+        # Race-slot books once, sends one message, and keeps both approval ids.
         _common(
             scenario="race-slot",
             tool_trace=["slots.offer", "slots.book", "sms.send", "slots.offer"],

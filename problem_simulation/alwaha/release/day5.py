@@ -1,4 +1,8 @@
-"""Write rel-w1d5. Earlier packs are left where they are."""
+"""Write rel-w1d5.
+Earlier packs are left where they are.
+
+The writer stops if the template tree is missing, then clears the pack and writes the failure scenarios, their order, the steering page, and the templates. Gold joins the scenario rows with the document expectations in the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -64,20 +68,26 @@ def write_day5(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the failure scenarios, their order, the steering page, and the templates. A missing template stops the release before anything is replaced.
     """
+    # Stop before replacing anything when the template tree is missing.
     if not DAY5_TEMPLATES.is_dir():
         raise SystemExit("Day 5 template is missing.")
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Failure scenarios, their order, and the steering page.
     lines = [json.dumps(row, sort_keys=True) for row in scenarios(profile.canary())]
     _write(pack / "scenarios" / "ds-failures.jsonl", "\n".join(lines) + "\n")
     _write(pack / "scenarios" / "order.json", json.dumps(list(FAILURE_ORDER), indent=2) + "\n")
     _write(pack / "steering" / "steer-w1.md", steer_page())
     _copy_tree(DAY5_TEMPLATES, pack / "templates")
+    # Templates, then gold that joins the scenario rows with the document expectations.
     payload = {"scenarios": gold_rows(), **document_gold()}
     _write(truth / "day5_gold.json", json.dumps(payload, indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "day5_gold.json")
     _write(truth / "rel-w1d5-fingerprint.txt", digest + "\n")
     return digest

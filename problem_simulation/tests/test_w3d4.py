@@ -131,12 +131,14 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_w3d4(profile, pack, root / "truth")
+            # The campaign note keeps the case date and does not print a later-visit count.
             hidden = json.loads((root / "truth" / "w3d4_gold.json").read_text(encoding="utf-8"))
             blob = _blob(pack)
             note = (pack / "notices" / "campaign.md").read_text(encoding="utf-8")
             self.assertIn(hidden["case_date"], note)
             for row in hidden["later_visits"]:
                 self.assertNotIn(str(row["visits"]), note)
+            # Labels, failure types, and the held item stay out of the pack.
             self.assertNotIn("winner", (pack / "notices" / "ab-status.md").read_text(encoding="utf-8"))
             self.assertNotIn('"label"', (pack / "slices" / "score.jsonl").read_text(encoding="utf-8"))
             failure_text = (pack / "slices" / "failures.jsonl").read_text(encoding="utf-8")
@@ -147,6 +149,7 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotIn(HELD_SPAN, blob)
             self.assertNotIn(HELD_DOC, blob)
             self.assertNotIn(profile.canary(), blob)
+            # Extraction still meets its budget. The winner and the peek winner are different arms.
             self.assertGreaterEqual(hidden["metrics"]["extraction"], hidden["budgets"]["extraction"])
             self.assertEqual(hidden["ab_status"]["winner"], "clause")
             self.assertEqual(hidden["ab_status"]["peek_winner"], "short")
@@ -162,6 +165,7 @@ class DemoTests(unittest.TestCase):
         the citation is not the in-force document, or when it prints the held answer,
         the span, the document id, or the watermark.
         """
+        # Run the demo. The two lines are the judge's mark and the citation miss.
         profile = load("practice")
         stdout = StringIO()
         with redirect_stdout(stdout):
@@ -172,6 +176,7 @@ class DemoTests(unittest.TestCase):
             text.splitlines(),
             ["the judge marked the citation correct", "the citation is not the in-force document"],
         )
+        # The held answer, the span, the document id, and the watermark stay out.
         held = hidden["calibration_held"][0]
         self.assertNotIn(held["answer"], text)
         self.assertNotIn(held["span"], text)
@@ -196,6 +201,7 @@ class DemoTests(unittest.TestCase):
         rewritten, when the evaluation gate is not commented in the shell and active
         in the filled copy, when the filled suite fails, or when the shell suite passes.
         """
+        # Shell modules differ from the filled copy. Packet tests were not rewritten.
         packet = W3D4_APP.parent
         for name in _APP:
             shell = (W3D4_APP / name).read_bytes()
@@ -205,10 +211,12 @@ class DemoTests(unittest.TestCase):
             shell = (packet / "tests" / name).read_bytes()
             filled = (W3D4_WORK / "tests" / name).read_bytes()
             self.assertEqual(shell, filled, name)
+        # The evaluation gate is commented in the shell and active in the filled copy.
         shell_ci = (packet / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
         work_ci = (W3D4_WORK / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
         self.assertIn("# evaluation-gate:", shell_ci)
         self.assertIn("\n  evaluation-gate:\n", work_ci)
+        # The filled suite passes. The shell suite does not.
         work = _suite(W3D4_WORK)
         shell = _suite(packet)
         self.assertEqual(work.returncode, 0, work.stdout + work.stderr)

@@ -1,4 +1,8 @@
-"""Participant pages for rel-w3d3. Held-out questions stay out."""
+"""Participant pages for rel-w3d3.
+Held-out questions stay out.
+
+These strings are the criteria notice, a rendered document page, and the document-store interface. The notice says a referral keeps the criteria version it started with, and that a draft or an unauthorized document is not citable. The interface covers fetch, search, and the change feed.
+"""
 
 from __future__ import annotations
 

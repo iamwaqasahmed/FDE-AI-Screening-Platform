@@ -76,6 +76,7 @@ class ReleaseTests(unittest.TestCase):
             write_release(profile, day1, truth)
             write_day2(profile, day2, truth)
             write_day3(profile, day3, truth)
+            # Fingerprints and gold files taken before this day's write.
             before = (
                 fingerprint(day1),
                 fingerprint(day2),
@@ -84,8 +85,10 @@ class ReleaseTests(unittest.TestCase):
                 (truth / "approach_gold.json").read_bytes(),
                 (truth / "events_gold.json").read_bytes(),
             )
+            # Write this day twice. The two results must agree.
             first = write_day4(profile, day4, truth)
             second = write_day4(profile, day4, truth)
+            # The two writes agree, and the earlier packs and gold files are unchanged.
             self.assertEqual(first, second)
             self.assertEqual(
                 before,
@@ -98,6 +101,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "events_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "agent_gold.json").is_file())
             self.assertFalse((day4 / "agent_gold.json").exists())
 
@@ -126,22 +130,27 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_day4(profile, pack, root / "truth")
+            # The learner files, taken together, follow the required scenario order.
             self.assertEqual(_names(pack), list(SCENARIO_ORDER))
+            # Read those files back as rows and compare them with the generator.
             written = []
             for name in _FILES:
                 for line in (pack / "scenarios" / name).read_text(encoding="utf-8").splitlines():
                     if line.strip():
                         written.append(json.loads(line))
             self.assertEqual(written, scenarios(profile.canary()))
+            # The tool catalog in the pack is the catalog the release ships.
             tools = [item["name"] for item in catalog()["tools"]]
             self.assertEqual(
                 tools,
                 ["referral.status", "referral.return", "slots.offer", "slots.book", "sms.send", "safety.redirect"],
             )
             self.assertEqual(json.loads((pack / "tools" / "mcp-cluster.json").read_text(encoding="utf-8")), catalog())
+            # The emergency wording in the scenario and on the safety page is the same phrase.
             emergency = next(row for row in written if row["scenario"] == "emergency")
             self.assertIn("chest pain", emergency["turns"][0]["text"])
             self.assertIn("chest pain", safety_page())
+            # The gold file has no watermark. Consent keeps the blocked preference, and status is one tool call.
             gold = json.loads((root / "truth" / "agent_gold.json").read_text(encoding="utf-8"))
             self.assertNotIn(profile.canary(), json.dumps(gold))
             consent = next(row for row in gold["scenarios"] if row["scenario"] == "consent")
@@ -149,6 +158,7 @@ class ReleaseTests(unittest.TestCase):
             status = next(row for row in gold["scenarios"] if row["scenario"] == "status")
             self.assertEqual(status["count"], STATUS_COUNT)
             self.assertEqual(status["tool_trace"], ["referral.status"])
+            # Agent pages must not carry the watermark.
             for path in (pack / "agent").rglob("*"):
                 if path.is_file():
                     self.assertNotIn(profile.canary(), path.read_text(encoding="utf-8"))
@@ -175,12 +185,15 @@ class DemoTests(unittest.TestCase):
         """Fails when the demo does not show the model count beside the tool count, or
         when it says the comparison failed, or when it prints the watermark.
         """
+        # Run the invented-count demo and capture what it prints.
         stdout = StringIO()
         with redirect_stdout(stdout):
             demo_main(["--profile", "small"])
         text = stdout.getvalue()
+        # The two lines are the model count and the tool count from the status scenario.
         status = next(row for row in scenarios(load("small").canary()) if row["scenario"] == "status")
         self.assertEqual(text.splitlines(), ["model count 12", f"tool count {status['count']}"])
+        # The demo does not call the comparison a failure, and it does not print the watermark.
         lowered = text.lower()
         self.assertNotIn("fail", lowered)
         self.assertNotIn("defect", lowered)

@@ -1,4 +1,8 @@
-"""Participant pages for rel-w2d4. Hashes, tokens, the quota, and the national id stay out."""
+"""Participant pages for rel-w2d4.
+Hashes, tokens, the quota, and the national id stay out.
+
+These strings are the deploy notice, the deployment checklist, the endpoint guide, and the starter dashboard. The interface documents cover health, image admission, and inference. The guide fills in the practice address, the namespace, the endpoint, and the model from the shared constants.
+"""
 
 from __future__ import annotations
 

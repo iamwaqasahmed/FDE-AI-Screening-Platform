@@ -73,6 +73,7 @@ class ReleaseTests(unittest.TestCase):
             write_w2d1(profile, week2, truth)
             second = root / "w2d2"
             write_w2d2(profile, second, truth)
+            # Fingerprints of the earlier packs, including the two week-2 days, plus their gold files.
             before = (
                 tuple(fingerprint(pack) for pack in packs),
                 fingerprint(week2),
@@ -81,6 +82,7 @@ class ReleaseTests(unittest.TestCase):
                 (truth / "w2d1_gold.json").read_bytes(),
                 (truth / "w2d2_gold.json").read_bytes(),
             )
+            # Write this day twice. The two results must agree, and the earlier days must stay as they were.
             first = write_w2d3(profile, root / "w2d3", truth)
             again = write_w2d3(profile, root / "w2d3", truth)
             self.assertEqual(first, again)
@@ -95,6 +97,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "w2d2_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "w2d3_gold.json").is_file())
             self.assertFalse((root / "w2d3" / "w2d3_gold.json").exists())
 
@@ -121,13 +124,16 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_w2d3(profile, pack, root / "truth")
+            # Join every learner file, and load the hidden gold.
             blob = "\n".join(path.read_text(encoding="utf-8") for path in pack.rglob("*") if path.is_file())
             hidden = json.loads((root / "truth" / "w2d3_gold.json").read_text(encoding="utf-8"))
+            # The gold matches the generator. The old delay and the hidden due times stay out of the pack.
             self.assertEqual(hidden, gold(profile))
             self.assertNotIn(str(OLD_DELAY_SECONDS), blob)
             self.assertNotIn(str(hidden["cases"][0]["due"]), blob)
             self.assertNotIn(str(hidden["cases"][1]["due"]), blob)
             self.assertIn(SWITCH, blob)
+            # The watermark is absent from the gold and appears once in the pack.
             self.assertNotIn(profile.canary(), json.dumps(hidden))
             self.assertEqual(_canary_count(pack, profile.canary()), 1)
 
@@ -165,6 +171,7 @@ class DemoTests(unittest.TestCase):
         filled copy. The workflow file must stay the same, because this day does not
         change the pipeline.
         """
+        # Every app module and every packet test differs between the shell and the filled copy.
         for source in W2D3_APP.glob("*.py"):
             copy = W2D3_WORK / "app" / source.name
             self.assertNotEqual(source.read_bytes(), copy.read_bytes(), source.name)
@@ -172,6 +179,7 @@ class DemoTests(unittest.TestCase):
             shell = (W2D3_TESTS / name).read_bytes()
             filled = (W2D3_WORK / "tests" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
+        # The workflow file is the same, because this day does not change the pipeline.
         shell_ci = (W2D3_ROOT / "Student_Copy" / "packet" / ".github" / "workflows" / "ci.yml").read_bytes()
         filled_ci = (W2D3_WORK / ".github" / "workflows" / "ci.yml").read_bytes()
         self.assertEqual(shell_ci, filled_ci)

@@ -16,6 +16,7 @@ from alwaha.config.scale import PERSONAL_PEOPLE, PRACTICE_PEOPLE, SMALL_PEOPLE, 
 class Profile:
     """One runnable world: its name, seed, population, and the flags that change the build."""
 
+    # Name and seed, then population and the flags that change a build.
     name: str
     seed: int
     people: int = PRACTICE_PEOPLE
@@ -23,11 +24,13 @@ class Profile:
     date_shift_days: int = 0
     rename_sites: bool = False
 
+    # Hash the seed with one label and keep a short prefix. That string is the watermark.
     def canary(self) -> str:
         """Return the watermark for this seed: a fixed prefix plus a short hash."""
         digest = hashlib.sha256(f"{self.seed}:alwaha".encode()).hexdigest()
         return f"CANARY-{digest[:12]}"
 
+    # Hash the seed with a second label, so this token does not match the watermark.
     def token(self) -> str:
         """Return the development token for this seed, from a different hash than the watermark."""
         digest = hashlib.sha256(f"{self.seed}:dev".encode()).hexdigest()

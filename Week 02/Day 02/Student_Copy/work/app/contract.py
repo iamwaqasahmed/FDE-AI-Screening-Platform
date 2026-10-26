@@ -36,6 +36,7 @@ def reply(message: str, row: dict, fhir_ok: bool) -> dict:
     from the scenario row. They are not typed by hand. pending stays
     empty. Booking is not this reply.
     """
+    # Start from an empty reply. booked stays false. Booking is not this reply.
     base = {
         "reply": "",
         "citations": [],
@@ -46,12 +47,15 @@ def reply(message: str, row: dict, fhir_ok: bool) -> dict:
         "state": "",
         "facility_id": "",
     }
+    # A message that asks to book is refused. The tool list stays empty.
     if "book" in message.lower():
         base["reply"] = "Booking is a later day."
         return base
+    # A failed hospital read is also a refusal, with the same empty tool list.
     if not fhir_ok:
         base["reply"] = "The hospital record could not be read."
         return base
+    # A successful read reports pending, cites his-wadi, and records the status tool.
     base["reply"] = "Your referral is still pending."
     base["citations"] = ["his-wadi"]
     base["tool_trace"] = ["status"]

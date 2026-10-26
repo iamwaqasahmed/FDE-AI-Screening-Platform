@@ -1,4 +1,8 @@
-"""Participant pages for rel-w4d1. Hidden attacks stay out."""
+"""Participant pages for rel-w4d1.
+Hidden attacks stay out.
+
+These strings are the integration-log notice, the go-live checklist, the assessment template, and the tool-text page. The checklist pairs each stored id with the check text. The tool-text page says tool text is data.
+"""
 
 from __future__ import annotations
 

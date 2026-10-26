@@ -29,6 +29,7 @@ def identifiers(profile: Profile) -> list[dict]:
     Each spec is one person-shaped record: ids, name, facility, birth date, clinic, and the links used to merge or supersede. The coded ids are digests, not the labels in the spec.
     """
     specs = (
+        # People who share a name, a phone, a parent, or a birth time, and must not be merged on that alone.
         ("spell-a", "spell-a", "spell", "spell-a", "Noor Al-Saleh", "h-wadi", "d-wadi", "1990-04-02", "gregorian", "", "2025-01-01", "", "", "", "ok"),
         ("spell-b", "spell-b", "spell", "spell-b", "Noura Al-Saleh", "h-wadi", "d-wadi", "1990-04-02", "gregorian", "", "2025-02-01", "", "", "", "ok"),
         ("family-a", "family-a", "family-a", "phone-family", "Huda Family", "h-nakhl", "d-nakhl", "1984-03-03", "gregorian", "", "2025-03-01", "", "", "", "ok"),
@@ -37,6 +38,7 @@ def identifiers(profile: Profile) -> list[dict]:
         ("newborn", "newborn", "mother", "newborn", "Baby Nasser", "h-wadi", "d-wadi", "2026-12-01", "gregorian", "", "2026-12-20", "newborn", "", "", "ok"),
         ("twin-a", "twin-a", "twin-a", "phone-twin", "Maha Twin", "h-safra", "d-safra", "2018-08-08", "gregorian", "", "2025-08-01", "twin", "", "", "ok"),
         ("twin-b", "twin-b", "twin-b", "phone-twin", "Hana Twin", "h-safra", "d-safra", "2018-08-08", "gregorian", "", "2025-08-01", "twin", "", "", "ok"),
+        # A superseded id, a reused record number, rows that name each other, and a move between facilities.
         ("visit", "visit", "visit", "visit", "Yusuf Visitor", "h-wadi", "d-wadi", "1988-01-09", "gregorian", "", "2024-02-01", "", "", "", "ok"),
         ("iqama", "iqama", "iqama", "iqama", "Yusuf Resident", "h-wadi", "d-wadi", "1988-01-09", "gregorian", "", "2025-09-01", "", "visit", "", "ok"),
         ("reuse-a", "mrn-reuse", "reuse-a", "reuse-a", "Ali Reuse", "h-nakhl", "d-nakhl", "1979-05-05", "gregorian", "", "2023-05-01", "", "", "", "ok"),
@@ -45,6 +47,7 @@ def identifiers(profile: Profile) -> list[dict]:
         ("safra-b", "safra-b", "safra-b", "safra-b", "Lina Safra", "h-safra", "d-safra", "1970-07-07", "gregorian", "", "2026-04-01", "", "", "safra-a", "ok"),
         ("move-a", "move-a", "move", "move-a", "Faisal Move", "phc-rim", "d-rim", "1982-02-02", "gregorian", "", "2024-01-01", "", "", "", "ok"),
         ("move-b", "move-b", "move", "move-b", "Faisal Move", "h-wadi", "d-wadi", "1982-02-02", "gregorian", "", "2026-01-01", "", "", "", "ok"),
+        # A failed check, the rows a waitlist flag points at, the month boundary, and the clinic-code change.
         ("check-fail", "check", "check", "check", "Nada Check", "h-nakhl", "d-nakhl", "1995-09-09", "gregorian", "", "2025-09-09", "", "", "", "fail"),
         ("death", "death", "death", "death", "Sami Death", "h-wadi", "d-wadi", "1948-01-01", "gregorian", "", "2026-10-01", "", "", "", "ok"),
         ("seen", "seen", "seen", "seen", "Huda Seen", "h-ain", "d-wadi", "1966-06-16", "gregorian", "", "2026-06-16", "", "", "", "ok"),
@@ -55,6 +58,7 @@ def identifiers(profile: Profile) -> list[dict]:
         ("clinic-after", "clinic-after", "clinic-after", "clinic-after", "Endo After", "h-wadi", "d-wadi", "1980-02-02", "gregorian", "ENDO-CLN", "2024-07-01", "", "", "", "ok"),
     )
     rows = []
+    # Code each spec into a row. The ids are digests of the labels.
     for spec in specs:
         row_id, mrn_label, nid_label, phone_label, name, facility, district, dob, era, clinic_code, as_of, relation, replaces, merge_with, check_digit = spec
         rows.append(
@@ -86,6 +90,7 @@ def waitlist(profile: Profile) -> list[dict]:
     The open row has an empty flag so it stays. The other flags name death, a visit elsewhere, a bounce, and a resubmission.
     """
     specs = (
+        # Who leaves the list, and one open row whose flag is empty.
         ("wl-death", "death", "death", "death-late"),
         ("wl-seen", "seen", "seen", "seen-elsewhere"),
         ("wl-bounce-a", "bounce", "bounce", "bounced"),
@@ -93,6 +98,7 @@ def waitlist(profile: Profile) -> list[dict]:
         ("wl-open", "spell", "spell-a", ""),
     )
     rows = []
+    # Code the ids from the labels. The flag is copied as given.
     for row_id, nid_label, mrn_label, flag in specs:
         rows.append(
             {

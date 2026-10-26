@@ -33,14 +33,18 @@ def eval_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
 
     A planted token returns only the watermark. Notes are graded first. A crash while loading the harness adds the run miss and returns. Otherwise the score, forecast, and failure probes each add their misses.
     """
+    # A planted token returns only the watermark, so the notes are not graded after it.
     if contains_canary(work, canary):
         return [WATERMARK]
+    # Notes are graded first so a later crash still reports them.
     problems = note_problems(work)
     try:
         modules = load_harness(work)
     except Exception:
+        # A crash while loading the harness adds the run miss and stops the probes.
         problems.append(RUN)
         return problems
+    # Score, forecast, and failure probes each add their misses once.
     for item in score_problems(modules["score"], gold):
         _once(problems, item)
     for item in forecast_problems(modules["forecast"], read_demand(pack), gold):
@@ -71,6 +75,7 @@ def score_problems(module, gold: dict) -> list[str]:
     """
     problems = []
     scored = gold["held_score"]
+    # Each metric is called on its own rows. The message is the miss for that metric.
     checks = (
         (EXTRACT, "extraction", "extraction_f1", scored["extraction"]),
         (CITE, "citation", "citation_accuracy", scored["citation"]),
@@ -80,8 +85,10 @@ def score_problems(module, gold: dict) -> list[str]:
         try:
             got = getattr(module, method)(rows)
         except Exception:
+            # A crash on one metric is the run miss. The other metrics are still graded.
             problems.append(RUN)
             continue
+        # A score that is not close to gold, or that sits under the budget floor, is that metric's miss.
         if not _close(got, gold["metrics"][metric], gold["budgets"][metric]):
             problems.append(message)
     return problems

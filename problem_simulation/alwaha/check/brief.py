@@ -106,14 +106,18 @@ def _claim_problems(text: str) -> list[str]:
 
     The table needs a who column and a kind column. There must be at least two filled rows, and every kind must be claim, request, or fact. One of them must be a claim. A banned sentence outside the claim rows is a miss.
     """
+    # The claims table needs both a who column and a kind column.
     rows = dict_rows(text, {"who", "kind"})
     if rows is None:
         return ["claims table needs a Kind column"]
+    # Blank rows are dropped. Every remaining kind must be claim, request, or fact.
     kinds = [row["kind"].lower() for row in rows if any(row.values())]
     if len(kinds) < 2 or any(kind not in KINDS for kind in kinds):
         return ["claims need at least two rows marked claim, request, or fact"]
+    # The table still needs a row marked claim.
     if "claim" not in kinds:
         return ["the claims table needs a row marked claim"]
+    # Claim rows may quote a banned sentence, so the scan looks only outside them.
     lowered = _outside_claims(text).lower()
     if any(phrase.lower() in lowered for phrase in BANNED):
         return ["brief contains a banned sentence"]

@@ -1,4 +1,8 @@
-"""Write rel-w2d3. Earlier packs and personas.json are left where they are."""
+"""Write rel-w2d3.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the timing notice, the clock guide, the access note, the interface documents, the clock and calendar data, the scripts, and the model fixture are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -64,22 +68,28 @@ def write_w2d3(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the timing notice, the clock guide, the access note, the interface documents, the clock and calendar data, the scripts, the model fixture, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Timing notice, clock guide, access note, and the interface documents.
     _write(pack / "notices" / "timing.md", timing_note())
     _write(pack / "clock" / "guide.md", clock_guide())
     _write(pack / "standards" / "access.md", access_note())
     _write(pack / "openapi" / "clock.yaml", clock_spec())
     _write(pack / "openapi" / "sms.yaml", sms_spec())
+    # Clock and calendar data, the scripts, and the model fixture.
     _json(pack / "clock" / "receipt.json", receipt_clock())
     _json(pack / "calendar" / "cases.json", cases())
     _json(pack / "calendar" / "hijri.json", hijri_rows())
     _jsonl(pack / "usability" / "scripts.jsonl", scripts())
     _json(pack / "fixtures" / "model.json", model_fixture(profile))
+    # Gold, after the pack files it is checked against.
     _write(truth / "w2d3_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w2d3_gold.json")
     _write(truth / "rel-w2d3-fingerprint.txt", digest + "\n")
     return digest

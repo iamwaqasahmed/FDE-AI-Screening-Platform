@@ -71,6 +71,7 @@ class ReleaseTests(unittest.TestCase):
             write_day3(profile, packs[2], truth)
             write_day4(profile, packs[3], truth)
             write_day5(profile, packs[4], truth)
+            # Fingerprints of the earlier packs, plus the gold files those days wrote.
             before = (
                 tuple(fingerprint(pack) for pack in packs),
                 (truth / "personas.json").read_bytes(),
@@ -80,6 +81,7 @@ class ReleaseTests(unittest.TestCase):
                 (truth / "day5_gold.json").read_bytes(),
             )
             week2 = root / "week2"
+            # Write this day twice. The two results must agree, and the earlier days must stay as they were.
             first = write_w2d1(profile, week2, truth)
             second = write_w2d1(profile, week2, truth)
             self.assertEqual(first, second)
@@ -94,6 +96,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "day5_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "w2d1_gold.json").is_file())
             self.assertFalse((week2 / "w2d1_gold.json").exists())
 
@@ -121,17 +124,20 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_w2d1(profile, pack, root / "truth")
+            # Join every learner file. The removed field and the old clinic code stay out. The replacements stay in.
             blob = "\n".join(path.read_text(encoding="utf-8") for path in pack.rglob("*") if path.is_file())
             self.assertNotIn(REMOVED, blob)
             self.assertNotIn("END-01", blob)
             self.assertIn(CLINIC, blob)
             self.assertIn(FIELD, blob)
+            # The status scenario and the hidden gold match the generator. The gold has no watermark.
             written = json.loads((pack / "scenarios" / "status.json").read_text(encoding="utf-8"))
             self.assertEqual(written, scenario(profile))
             hidden = json.loads((root / "truth" / "w2d1_gold.json").read_text(encoding="utf-8"))
             self.assertEqual(hidden, gold(profile))
             self.assertEqual(hidden["removed_field"], REMOVED)
             self.assertNotIn(profile.canary(), json.dumps(hidden))
+            # The shipped spec is the generator's spec.
             self.assertEqual((pack / "openapi" / "his-wadi.yaml").read_text(encoding="utf-8"), his_wadi_spec())
 
 
@@ -175,14 +181,17 @@ class DemoTests(unittest.TestCase):
         when any other app module differs between the generator tree and the work copy.
         The client itself must differ, because the work copy is the fixed one.
         """
+        # Load the generator from this day's app tree, not from a generate module already imported.
         import importlib.util
 
         path = W2D1_APP / "generate.py"
         spec = importlib.util.spec_from_file_location("w2d1_generate_test", path)
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
+        # The filled client is what the generator renders from the spec.
         expected = module.render(module.fields(his_wadi_spec()))
         self.assertEqual((W2D1_WORK / "app" / "client.py").read_text(encoding="utf-8"), expected)
+        # The client differs from the unfinished copy. Every other app module matches.
         for source in W2D1_APP.glob("*.py"):
             copy = W2D1_WORK / "app" / source.name
             if source.name == "client.py":

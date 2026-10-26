@@ -1,4 +1,8 @@
-"""Write rel-w2d2. Earlier packs and personas.json are left where they are."""
+"""Write rel-w2d2.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the feed notice, the topic registry, the interface documents, the channel notes, the webhook, the cancellations, and the mart extract are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -64,8 +68,10 @@ def write_w2d2(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the feed notice, the topic registry, the interface documents, the channel notes, the webhook, the cancellations, the faults, the feed, the mart, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Feed notice, topic registry, interface documents, and channel notes.
     _write(pack / "notices" / "feeds.md", notice())
     _write(pack / "registry" / "topics.md", registry())
     _write(pack / "openapi" / "eref.yaml", eref_spec())
@@ -73,15 +79,19 @@ def write_w2d2(profile: Profile, pack: Path, truth: Path) -> str:
     _write(pack / "openapi" / "wa.yaml", wa_spec())
     _write(pack / "channels" / "wa.md", wa_note())
     _write(pack / "channels" / "dms.md", dms_note())
+    # Webhook, cancellations, faults, the feed, and the mart extract.
     _json(pack / "webhooks" / "referral.submitted.json", webhook(profile))
     _jsonl(pack / "events" / "session.cancelled.jsonl", cancellations())
     _json(pack / "channels" / "sms-faults.json", faults())
     _jsonl(pack / "feeds" / "int-engine.jsonl", hl7_rows())
     _write(pack / "mart" / "waitlist.csv", mart_csv(profile))
+    # Gold, after the pack files it is checked against.
     _write(truth / "w2d2_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w2d2_gold.json")
     _write(truth / "rel-w2d2-fingerprint.txt", digest + "\n")
     return digest

@@ -28,10 +28,12 @@ class PrefTests(unittest.TestCase):
         its clause id and the expanded clinic name, and must not
         contain the date.
         """
+        # The Friday draft expands the clinic name and keeps the clause id.
         self.assertEqual(
             revise("See crit-endo-v3 at the sugar clinic on Friday."),
             "See crit-endo-v3 at the endocrinology",
         )
+        # The dated draft keeps the clause id and the clinic name, and drops the date.
         edited = revise("Book crit-ophth-v3 at the sugar clinic on 2027-03-10.")
         self.assertIn("crit-ophth-v3", edited)
         self.assertNotIn("2027-03-10", edited)

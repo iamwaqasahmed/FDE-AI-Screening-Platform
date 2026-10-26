@@ -101,15 +101,18 @@ class ReleaseTests(unittest.TestCase):
             practice, small = load("practice"), load("small")
             write_w4d2(practice, root / "practice" / "pack", root / "practice-truth")
             write_w4d2(small, root / "small" / "pack", root / "small-truth")
+            # Join each pack and load each gold file.
             practice_blob = _blob(root / "practice" / "pack")
             small_blob = _blob(root / "small" / "pack")
             practice_gold = json.loads((root / "practice-truth" / "w4d2_gold.json").read_text(encoding="utf-8"))
             small_gold = json.loads((root / "small-truth" / "w4d2_gold.json").read_text(encoding="utf-8"))
+            # Watermarks, the gold file name, and the override rate stay out of the packs.
             self.assertNotIn(practice.canary(), practice_blob)
             self.assertNotIn(small.canary(), small_blob)
             self.assertNotIn("w4d2_gold", practice_blob)
             self.assertNotIn(f"{practice_gold['override']:.6f}", practice_blob)
             self.assertNotIn(f"{small_gold['override']:.6f}", small_blob)
+            # Gateway meters differ. Both gold files match the generator, and their costs and rates differ.
             self.assertNotEqual(
                 (root / "practice" / "pack" / "meter" / "gateway.jsonl").read_text(encoding="utf-8"),
                 (root / "small" / "pack" / "meter" / "gateway.jsonl").read_text(encoding="utf-8"),
@@ -118,11 +121,13 @@ class ReleaseTests(unittest.TestCase):
             self.assertEqual(small_gold, gold(small))
             self.assertNotEqual(practice_gold["cost"], small_gold["cost"])
             self.assertNotEqual(practice_gold["override"], small_gold["override"])
+            # The alert is the named time, and it falls inside the response window.
             self.assertEqual(practice_gold["alert_at"], ALERT_AT)
             self.assertEqual(practice_gold["first_error"], FIRST_ERROR)
             self.assertEqual(practice_gold["board"]["alert_at"], ALERT_AT)
             self.assertTrue(within_slo(FIRST_ERROR, ALERT_AT))
             self.assertIn(ALERT_AT, practice_blob)
+            # The new hours equal the document event. The old hours stay out of the pack.
             self.assertIn("circ-ramadan-hours", (root / "practice" / "pack" / "README.md").read_text(encoding="utf-8"))
             self.assertEqual(
                 practice_gold["new_hours"],
@@ -159,6 +164,7 @@ class ReleaseTests(unittest.TestCase):
         """Fails when a lesson or packet source, other than the release fixtures, contains
         the watermark, either hash, or the hidden trace detail.
         """
+        # Lesson and packet sources, skipping the release fixtures.
         release_trees = (
             W4D2_ROOT / "Student_Copy" / "packet" / "release",
             W4D2_ROOT / "Solution_Copy" / "sources",
@@ -170,6 +176,7 @@ class ReleaseTests(unittest.TestCase):
             if path.is_file() and path.suffix in {".md", ".py", ".yml", ".yaml", ".json", ".txt"}:
                 lessons.append(path.read_text(encoding="utf-8"))
         blob = "\n".join(lessons)
+        # Those sources must not contain the watermark, either hash, or the hidden trace detail.
         profile = load("practice")
         self.assertNotIn(profile.canary(), blob)
         self.assertNotIn(approved_hash(profile), blob)

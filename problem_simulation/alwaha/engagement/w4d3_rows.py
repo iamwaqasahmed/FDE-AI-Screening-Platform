@@ -49,14 +49,17 @@ def throughput(seed: int) -> dict:
 
     Batched local throughput is higher than unbatched. The starved chat latency sits past the budget. The reserved chat latency sits inside it.
     """
+    # Speeds and the chat latency budget. Each one moves with the seed.
     unbatched = 20 + (seed % 41)
     batched = 80 + (seed % 121)
     budget_ms = 500 + (seed % 401)
     return {
+        # Reserved chat latency sits inside the budget. Starved chat latency sits past it.
         "chat_p95_budget_ms": budget_ms,
         "chat_p95_reserved_ms": 80 + (seed % 321),
         "chat_p95_starved_ms": budget_ms + 200 + (seed % 1801),
         "cold_start_seconds": COLD_START_SECONDS,
+        # External speed, then the batched and unbatched local speeds.
         "ext_large_tps": batched + 40 + (seed % 141),
         "local_batched_tps": batched,
         "local_unbatched_tps": unbatched,

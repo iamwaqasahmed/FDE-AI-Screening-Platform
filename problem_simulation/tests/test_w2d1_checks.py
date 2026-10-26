@@ -43,6 +43,7 @@ class CheckTests(unittest.TestCase):
         the server test starts clean. The gold file must match the generator for this
         profile.
         """
+        # A temporary pack for the small profile, and the gold the release wrote.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -50,12 +51,14 @@ class CheckTests(unittest.TestCase):
         self.truth = root / "truth"
         write_w2d1(self.profile, self.pack, self.truth)
         self.gold = json.loads((self.truth / "w2d1_gold.json").read_text(encoding="utf-8"))
+        # The filled work tree, without caches, the session database, or a leftover trace.
         self.work = root / "work"
         shutil.copytree(
             W2D1_WORK,
             self.work,
             ignore=shutil.ignore_patterns("__pycache__", "*.pyc", "sessions.db", "trace.json"),
         )
+        # The written gold must match the generator before a later assertion runs.
         self.assertEqual(self.gold, gold(self.profile))
 
     def tearDown(self) -> None:
@@ -106,17 +109,20 @@ class CheckTests(unittest.TestCase):
         The modules are loaded from that tree and then removed, so a later test does
         not keep the scratch copies.
         """
+        # Load the filled server from the scratch work tree, not from a module already imported.
         import importlib
 
         folder = str((self.work / "app").resolve())
         import sys
 
         sys.path.insert(0, folder)
+        # Drop any earlier copies of these names so the import reads the scratch tree.
         for name in ("generate", "session", "auth", "client", "his", "contract", "chat", "console", "flow", "server"):
             sys.modules.pop(name, None)
         try:
             server = importlib.import_module("server")
             db_path = self.work / "sessions.db"
+            # Serve on a free local port, then open both signed-in pages.
             httpd = server.serve(self.pack, db_path, "127.0.0.1", 0)
             thread = threading.Thread(target=httpd.serve_forever, daemon=True)
             thread.start()
@@ -124,6 +130,7 @@ class CheckTests(unittest.TestCase):
             try:
                 self._pages(port)
             finally:
+                # Stop the server even if a page check fails, and close its database.
                 httpd.shutdown()
                 thread.join(timeout=5)
                 httpd.server_close()
@@ -131,6 +138,7 @@ class CheckTests(unittest.TestCase):
                     server.Handler.database_connection.close()
                     server.Handler.database_connection = None
         finally:
+            # Take the scratch tree off the path and drop the modules it loaded.
             sys.path.remove(folder)
             for name in ("generate", "session", "auth", "client", "his", "contract", "chat", "console", "flow", "server"):
                 sys.modules.pop(name, None)
@@ -141,12 +149,15 @@ class CheckTests(unittest.TestCase):
         opens with no session.
         """
         base = f"http://127.0.0.1:{port}"
+        # Health must name the local model.
         with urllib.request.urlopen(base + "/v1/health") as response:
             health = json.loads(response.read().decode())
         self.assertEqual(health["model_hash"], "local-small")
+        # The patient page is signed in and does not show the watermark.
         patient = self._signed_in(base, "patient")
         self.assertIn("Patient chat", patient)
         self.assertNotIn(self.profile.canary(), patient)
+        # The coordinator page is the staff console. Chat with no session is refused.
         coordinator = self._signed_in(base, "coordinator")
         self.assertIn("Staff console", coordinator)
         try:

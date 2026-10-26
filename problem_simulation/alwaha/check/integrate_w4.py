@@ -114,6 +114,7 @@ def _leave(module, row: dict) -> list[str]:
 
     A crash or a non-record fails both the status and the event. The status must be cancelled. The event must be the cancellation topic. Those are separate misses.
     """
+    # The session and the leave are the records the module applies.
     session = {
         "consultant": row["consultant"],
         "id": row["session"],
@@ -124,12 +125,16 @@ def _leave(module, row: dict) -> list[str]:
     try:
         got = module.apply(session, leave)
     except Exception:
+        # A crash fails both the status and the event.
         return [RUN]
+    # A result that is not a record fails both checks together.
     if not isinstance(got, dict):
         return [LATE, EVENT]
     problems = []
+    # The status must be cancelled. That check is separate from the event.
     if got.get("status") != "cancelled":
         problems.append(LATE)
+    # The emitted event must be the cancellation topic.
     if got.get("event") != "session.cancelled":
         problems.append(EVENT)
     return problems

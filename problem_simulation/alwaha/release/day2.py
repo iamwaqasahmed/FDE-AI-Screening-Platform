@@ -1,4 +1,8 @@
-"""Write rel-w1d2. Day 1 files are left where they are."""
+"""Write rel-w1d2.
+Day 1 files are left where they are.
+
+The pack is cleared, then the leader pages, the sample tables, the baselines, and the templates are written. Gold and the measured metrics go into the truth directory. The release note is written after the file list is known, and the fingerprint covers the pack and both truth files.
+"""
 
 from __future__ import annotations
 
@@ -90,8 +94,10 @@ def write_day2(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the leader pages, the sample tables, the baselines, the templates, the approach gold, and the measured metrics. The digest is the value the caller stores for this release.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Leader pages. The letters page carries this profile's marker.
     figures = claim_figures(profile.seed)
     pages = {
         "problems.md": register_page(),
@@ -103,12 +109,14 @@ def write_day2(profile: Profile, pack: Path, truth: Path) -> str:
     }
     for relative, text in pages.items():
         _write(pack / relative, text)
+    # Sample tables, then the baseline tree and the template tree.
     _write_csv(pack / "finance" / "prices.csv", PRICE_FIELDS, price_rows(profile.seed))
     _write_csv(pack / "samples" / "ds-dna.csv", DNA_FIELDS, dna_rows(profile.seed))
     _write_csv(pack / "samples" / "ds-messages.csv", ("message_id", "text"), message_rows(profile.seed))
     _write_csv(pack / "samples" / "ds-demand.csv", DEMAND_FIELDS, demand_rows(profile.seed))
     _copy_tree(BASELINES_ROOT, pack / "baselines")
     _copy_tree(TEMPLATES_ROOT, pack / "templates")
+    # Measure the written pack, and keep each message intent beside those measurements.
     measured = measure_pack(pack)
     intents = [{"id": row["message_id"], "intent": row["intent"]} for row in message_rows(profile.seed)]
     metrics = {key: measured[key] for key in measured}
@@ -116,8 +124,10 @@ def write_day2(profile: Profile, pack: Path, truth: Path) -> str:
     _write(truth / "approach_gold.json", json.dumps(gold_payload(), indent=2) + "\n")
     _write(truth / "sample_metrics.json", json.dumps(metrics, indent=2) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and both truth files, and store that digest.
     digest = fingerprint(pack, truth / "approach_gold.json", truth / "sample_metrics.json")
     _write(truth / "rel-w1d2-fingerprint.txt", digest + "\n")
     return digest

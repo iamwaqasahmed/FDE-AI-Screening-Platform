@@ -28,6 +28,7 @@ class IntentTests(unittest.TestCase):
         must be emergency.
         """
         row = {"text": "Where is my referral? I have chest pain and I need a slot."}
+        # Chest pain in the same message makes the label emergency.
         self.assertEqual(classify(row), "emergency")
 
     def test_a_status_question_stays_status(self) -> None:
@@ -36,6 +37,7 @@ class IntentTests(unittest.TestCase):
         The fixture text asks for the status of a referral. The
         label must be status.
         """
+        # A status question with no emergency phrase stays status.
         self.assertEqual(classify({"text": "What is the status of my referral?"}), "status")
 
 

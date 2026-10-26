@@ -24,6 +24,7 @@ class AdmitTests(unittest.TestCase):
         started is a clean log line. The stand-in id is not on
         that line. The account is what fails.
         """
+        # root and 0 fail. The line itself does not carry the stand-in id.
         self.assertEqual(admit("root", "started", "NID-sample"), "rejected")
         self.assertEqual(admit("0", "started", "NID-sample"), "rejected")
 
@@ -32,6 +33,7 @@ class AdmitTests(unittest.TestCase):
 
         1000 is not root. started does not carry the stand-in id.
         """
+        # 1000 is not root, and the line is clean, so the image is accepted.
         self.assertEqual(admit("1000", "started", "NID-sample"), "accepted")
 
     def test_national_id_is_rejected_and_dropped(self) -> None:
@@ -40,6 +42,7 @@ class AdmitTests(unittest.TestCase):
         The admit call sees the id on the line. emitted_log returns
         the line without that id.
         """
+        # The id is still on the line, so admission fails, and the log drops it.
         line = "nid=NID-sample"
         self.assertEqual(admit("1000", line, "NID-sample"), "rejected")
         self.assertNotIn("NID-sample", emitted_log(line, "NID-sample"))

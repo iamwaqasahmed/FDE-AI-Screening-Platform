@@ -68,9 +68,12 @@ def registry(profile: Profile) -> dict:
     """
     return {
         "models": [
+            # External model, in the public zone.
             {"hash": external_hash(profile), "id": "ext-large", "status": "approved", "zone": ZONE_PUBLIC},
+            # Local base and the embedding model, in the private zone.
             {"hash": approved_hash(profile), "id": BASE, "status": "approved", "zone": ZONE_PRIVATE},
             {"hash": embed_hash(profile), "id": "local-embed", "status": "approved", "zone": ZONE_PRIVATE},
+            # Local adapter, pinned to that base, in the private zone.
             {
                 "base": BASE,
                 "hash": adapter_hash(profile),
@@ -115,8 +118,10 @@ def gold(profile: Profile) -> dict:
     Local and external costs scale the sheet price by the shared token count. The held-out preference is returned as the draft and the edited text, not as a computed revision.
     """
     sheet = rates(profile)
+    # Local cost and external cost, each scaled from the sheet.
     local = sheet["price.local_per_1k"] * TOKENS // 1000
     external = sheet["price.ext_large_per_1k"] * TOKENS // 1000
+    # Held-out letters and messages, labeled by the reference tools.
     held_letters = labeled_letters(HELD_LETTERS)
     held_messages = messages(HELD_MESSAGES)
     draft, edited = HELD_PREF
@@ -128,6 +133,7 @@ def gold(profile: Profile) -> dict:
         "external_sar": external,
         "held_letters": held_letters,
         "held_messages": held_messages,
+        # The preference is the draft and the edited text.
         "held_pref": {"draft": draft, "edited": edited},
         "intents": [classify(row) for row in held_messages],
         "local_sar": local,
@@ -135,6 +141,7 @@ def gold(profile: Profile) -> dict:
             "price.ext_large_per_1k": sheet["price.ext_large_per_1k"],
             "price.local_per_1k": sheet["price.local_per_1k"],
         },
+        # Adapter settings for this profile's GPU quota.
         "qlora": qlora(QLORA_RANK, gpu_quota(profile)),
         "quota": quota(profile),
     }

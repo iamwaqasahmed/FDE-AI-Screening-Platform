@@ -30,9 +30,11 @@ class EmbedTests(unittest.TestCase):
         evening must be greater than the nearness of the word
         midnight.
         """
+        # Embed the sentence that names the code, then check the code is kept.
         vector = embed("Code hrs-ramadan closes evening clinics.")
         self.assertIn("hrs-ramadan", vector)
         self.assertEqual(codes("code hrs-ramadan"), ["hrs-ramadan"])
+        # The related sentence is nearer than the unrelated word.
         self.assertGreater(nearness(embed("hrs-ramadan evening"), vector), nearness(embed("midnight"), vector))
 
 

@@ -28,6 +28,7 @@ class ExtractTests(unittest.TestCase):
         """
         row = {"item_id": "h1", "text": "Phone photo from the retina service."}
         labeled = relabel(row)
+        # The phone-photo letter is photo, and the sub-specialty is retina.
         self.assertEqual(labeled["source_type"], "photo")
         self.assertEqual(labeled["sub_specialty"], "retina")
 
@@ -40,6 +41,7 @@ class ExtractTests(unittest.TestCase):
         """
         row = {"item_id": "h2", "text": "A scanned page for the eye clinic."}
         labeled = relabel(row)
+        # The scanned page is a scan, and the sub-specialty stays blank.
         self.assertEqual(labeled["source_type"], "scan")
         self.assertEqual(labeled["sub_specialty"], "")
 

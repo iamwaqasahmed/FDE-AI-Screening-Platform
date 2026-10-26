@@ -66,6 +66,7 @@ class CheckTests(unittest.TestCase):
     """
     def setUp(self) -> None:
         """Write this day's pack and copy the filled work tree."""
+        # A temporary pack for the small profile. The gold comes from the generator.
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -75,6 +76,7 @@ class CheckTests(unittest.TestCase):
 
         write_w4d5(self.profile, self.pack, self.truth)
         self.gold = gold(self.profile)
+        # The filled work tree, without cached bytecode.
         self.work = root / "work"
         shutil.copytree(W4D5_WORK, self.work, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
 
@@ -300,8 +302,10 @@ class CheckTests(unittest.TestCase):
         model, the ranking, the handoff, the leave, the benefit, the channel, the asks,
         and a citation.
         """
+        # Replace the readout with a heading and nothing else.
         (self.work / "readout.md").write_text("# Readout\n", encoding="utf-8")
         problems = self._readout()
+        # Every required section is reported missing.
         expected = [
             URGENCY,
             EXTERNAL,
@@ -314,6 +318,7 @@ class CheckTests(unittest.TestCase):
             CITE,
         ]
         self.assertEqual(problems, expected)
+        # The problem list does not echo a hidden value.
         self._hidden(problems)
 
     def test_knowledge_needs_both_answers(self) -> None:

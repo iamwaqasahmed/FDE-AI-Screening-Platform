@@ -57,6 +57,7 @@ def row(
     This starter has no failure argument, so a row cannot name
     timeout or race-slot. Chapter 06 adds that field.
     """
+    # Copy the lists the caller passed. A missing list is written empty.
     return {
         "scenario": scenario,
         "reply": reply_body,
@@ -70,5 +71,6 @@ def row(
         "sms": sms,
         "refusal_logged": refusal_logged,
         "preference_used": preference_used,
+        # The remaining flags stay at the caller's values. There is no failure field.
         "decisions": decisions,
     }

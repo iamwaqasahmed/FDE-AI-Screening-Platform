@@ -49,6 +49,7 @@ def hours() -> tuple[dict, dict]:
 
     Both share a code. Only the status tells them apart, which is why a search that ignores status can cite the wrong one.
     """
+    # Authorized hours.
     current = doc(
         audience="public",
         body="Code hrs-ramadan closes the evening clinics at 21:00.",
@@ -59,6 +60,7 @@ def hours() -> tuple[dict, dict]:
         title="Ramadan hours",
         version=1,
     )
+    # Unauthorized copy. It shares the code and says the opposite.
     unauthorized = doc(
         audience="public",
         body=(
@@ -82,6 +84,7 @@ def leaflets() -> tuple[dict, dict, dict]:
 
     They share a code. Audience and version are what keep the staff note and the old edition from being the public answer.
     """
+    # Current public edition.
     current = doc(
         audience="public",
         body="Code prep-endo. Bring the referral card.",
@@ -92,6 +95,7 @@ def leaflets() -> tuple[dict, dict, dict]:
         title="Endocrinology preparation",
         version=2,
     )
+    # Earlier public edition.
     earlier = doc(
         audience="public",
         body="What should a patient bring to endocrinology preparation. Code prep-endo. Earlier edition.",
@@ -102,6 +106,7 @@ def leaflets() -> tuple[dict, dict, dict]:
         title="Endocrinology preparation, earlier edition",
         version=1,
     )
+    # Staff-only note. It is not the public answer.
     staff = doc(
         audience="staff",
         body=(
@@ -124,6 +129,7 @@ def extras() -> tuple[dict, dict, dict]:
 
     The site window is the local policy. The cluster window is the one the conflict helper treats as the winner.
     """
+    # Restricted safety list.
     safety = doc(
         audience="restricted",
         body="Code safety-red stays with records.",
@@ -134,6 +140,7 @@ def extras() -> tuple[dict, dict, dict]:
         title="Clinical safety list",
         version=1,
     )
+    # Cluster window. The conflict helper treats this as the winner.
     cluster = doc(
         body="The cluster booking window is 14 days. Code book-cluster.",
         clause_id="book-cluster-c1",
@@ -143,6 +150,7 @@ def extras() -> tuple[dict, dict, dict]:
         title="Cluster booking window",
         version=1,
     )
+    # Shorter window for the site.
     safra = doc(
         body="The h-safra booking window is 3 days. Code book-safra.",
         clause_id="book-safra-c1",

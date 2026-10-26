@@ -47,18 +47,21 @@ def hijri_rows() -> list[dict]:
 def scripts() -> list[dict]:
     """Return the channel scripts: a short status ask, a caregiver ask, and the same ask with no app."""
     return [
+        # A short status question at the foundation layer.
         {
             "actor": "patient",
             "id": "status-short",
             "layer": "foundation",
             "task": "Ask where the referral is. Use a short message.",
         },
+        # A caregiver asking about a family member's referral.
         {
             "actor": "caregiver",
             "id": "caregiver",
             "layer": "foundation",
             "task": "A caregiver asks about her mother's referral.",
         },
+        # The same question by phone, with no app, at the advanced layer.
         {
             "actor": "pop-literacy",
             "id": "phone-only",

@@ -24,6 +24,7 @@ class LimitTests(unittest.TestCase):
         Both events use the token family. The counts are the ones in the
         calls. The first is over the cap. The second is at the cap.
         """
+        # The larger token count is refused. The count at the cap is admitted.
         self.assertFalse(admit({"family": "atk-tokens", "tokens": 5000}))
         self.assertTrue(admit({"family": "atk-tokens", "tokens": 800}))
 
@@ -33,6 +34,7 @@ class LimitTests(unittest.TestCase):
         Both events use the hoard family. The first is over the cap.
         The second is at the cap.
         """
+        # The larger hold count is refused. The count at the cap is admitted.
         self.assertFalse(admit({"family": "atk-hoard", "holds": 12}))
         self.assertTrue(admit({"family": "atk-hoard", "holds": 3}))
 

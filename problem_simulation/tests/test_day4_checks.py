@@ -1,4 +1,9 @@
-"""Day 4 agent and trajectory checks."""
+"""Day 4 agent and trajectory checks.
+
+The fixture writes a small agent pack and grades the note, the knowledge answers,
+and the agent. A finished agent passes. The unfinished skeleton must name every
+planted miss without copying a hidden value into the problem list.
+"""
 
 from __future__ import annotations
 
@@ -129,17 +134,21 @@ class CheckTests(unittest.TestCase):
 
         Every planted agent and trajectory miss must be named. The report must not repeat the watermark, a blocked preference, an approval id, a facility id, or the status count.
         """
+        # Grade the unfinished skeleton together with the agent note and the knowledge answers.
         self._copy_skeleton()
         self._prose()
         problems = self._grade()
+        # Every planted agent and trajectory miss is named.
         for item in NAIVE:
             self.assertIn(item, problems)
         joined = "\n".join(problems)
+        # The report does not repeat the watermark, the blocked preference, an approval id, or a facility id.
         self.assertNotIn("status trace does not match", joined)
         self.assertNotIn(self.profile.canary(), joined)
         self.assertNotIn(BLOCKED_PREFERENCE, joined)
         self.assertNotIn("apr-", joined)
         self.assertNotIn("h-wadi", joined)
+        # The status count from the gold stays out of the report as well.
         status = next(row for row in self.gold["scenarios"] if row["scenario"] == "status")
         self.assertNotIn(str(status["count"]), joined)
 

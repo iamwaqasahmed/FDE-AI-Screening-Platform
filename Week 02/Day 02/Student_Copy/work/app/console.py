@@ -1,4 +1,9 @@
-"""Staff console page."""
+"""Staff console page.
+
+render is the page a signed-in coordinator sees. It says booking is a later day
+and that the queue is empty. Any other role gets an empty string, so the console
+stays off a patient session.
+"""
 
 from __future__ import annotations
 

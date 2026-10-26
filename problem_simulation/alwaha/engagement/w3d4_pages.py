@@ -1,4 +1,8 @@
-"""Participant pages for rel-w3d4. Held-out labels stay out."""
+"""Participant pages for rel-w3d4.
+Held-out labels stay out.
+
+This file builds the score budgets, the wording experiment, the dot vote, and the notices for the hidden-test protocol, the campaign, and the experiment. The experiment records the arms and the pre-registered metric. The seats page names who sits in the workshop.
+"""
 
 from __future__ import annotations
 

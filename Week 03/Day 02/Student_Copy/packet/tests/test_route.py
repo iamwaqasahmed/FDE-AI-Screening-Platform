@@ -33,9 +33,11 @@ class RouteTests(unittest.TestCase):
         an empty field list, the approved hash, and local-small.
         The first two must be false. The third must be true.
         """
+        # Build the phi call, the foreign-hash call, and the clean call.
         phi = {"fields": ["national_id"], "hash": "sha256:lora", "model": "ext-large"}
         bad = {"fields": [], "hash": "sha256:cloud", "model": "local-small"}
         legal = {"fields": [], "hash": "sha256:lora", "model": "local-small"}
+        # Refuse the phi call and the foreign hash. Allow the clean call.
         self.assertFalse(allow(phi, _REGISTRY))
         self.assertFalse(allow(bad, _REGISTRY))
         self.assertTrue(allow(legal, _REGISTRY))
@@ -46,6 +48,7 @@ class RouteTests(unittest.TestCase):
         Each call passes one task name. The three results must be
         retrieve, classical-ml, and lora, in that order.
         """
+        # Hours stay on retrieval, dna stays tabular, and extraction uses the adapter.
         self.assertEqual(task("hours"), "retrieve")
         self.assertEqual(task("dna"), "classical-ml")
         self.assertEqual(task("extraction"), "lora")

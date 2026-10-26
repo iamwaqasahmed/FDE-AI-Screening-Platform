@@ -34,6 +34,7 @@ class EraseTests(unittest.TestCase):
         Index, memory, and logs hold the person in the fixture, and they
         are not expected in the list.
         """
+        # The export names the row store alone.
         self.assertEqual(export_categories(_STORES, "person-access"), ["row"])
 
     def test_the_index_still_holds_the_person(self) -> None:
@@ -42,7 +43,9 @@ class EraseTests(unittest.TestCase):
         The index, memory, and logs still contain the fixture row. The row
         store is empty.
         """
+        # Drop the person, then read the four stores.
         cleared = drop(_STORES, "person-access")
+        # The row is empty. Index, memory, and logs still hold the person.
         self.assertEqual(cleared["row"], [])
         self.assertEqual(cleared["index"], [{"person_id": "person-access"}])
         self.assertEqual(cleared["memory"], [{"person_id": "person-access"}])

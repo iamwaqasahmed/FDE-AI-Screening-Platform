@@ -107,29 +107,35 @@ class ReleaseTests(unittest.TestCase):
             practice, small = load("practice"), load("small")
             write_w4d5(practice, root / "practice" / "pack", root / "practice-truth")
             write_w4d5(small, root / "small" / "pack", root / "small-truth")
+            # Join each pack and load each gold file.
             practice_blob = _blob(root / "practice" / "pack")
             small_blob = _blob(root / "small" / "pack")
             practice_gold = json.loads((root / "practice-truth" / "w4d5_gold.json").read_text(encoding="utf-8"))
             small_gold = json.loads((root / "small-truth" / "w4d5_gold.json").read_text(encoding="utf-8"))
+            # Watermarks, the gold file name, and the hidden benefit reading stay out.
             self.assertNotIn(practice.canary(), practice_blob)
             self.assertNotIn(small.canary(), small_blob)
             self.assertNotIn("w4d5_gold", practice_blob)
             self.assertNotIn(_ANSWER, practice_blob)
+            # The counts are not written as bare numbers, and the two profiles do not share them.
             self.assertFalse(_bare(practice_blob, practice_gold["leave_lag"]))
             self.assertFalse(_bare(practice_blob, practice_gold["phone_only"]))
             self.assertFalse(_bare(small_blob, small_gold["leave_lag"]))
             self.assertFalse(_bare(small_blob, small_gold["phone_only"]))
             self.assertNotEqual(practice_gold["leave_lag"], small_gold["leave_lag"])
             self.assertNotEqual(practice_gold["phone_only"], small_gold["phone_only"])
+            # The event is the cancelled session and the clock is the referral time. Both gold files match the generator.
             self.assertEqual(practice_gold["event"], "session.cancelled")
             self.assertEqual(practice_gold["clock"], "referred_at")
             self.assertEqual(practice_gold, gold(practice))
             self.assertEqual(small_gold, gold(small))
+            # The value model blocks one problem, and the pack does not name a currency.
             pack = root / "practice" / "pack"
             model = json.loads((pack / "value" / "model.json").read_text(encoding="utf-8"))
             blocked = [row["id"] for row in model["problems"] if row["blockers"]]
             self.assertEqual(blocked, ["p-triage"])
             self.assertNotIn("sar", practice_blob.lower())
+            # The readme names the date and does not carry the attack text or the counts.
             readme = (pack / "README.md").read_text(encoding="utf-8")
             self.assertIn("2027-02-04", readme)
             self.assertNotIn(attack()["text"], readme)
@@ -172,6 +178,7 @@ class ReleaseTests(unittest.TestCase):
         """Fails when a lesson or packet source contains the watermark, or when a lesson
         page contains the attack text or a bare count.
         """
+        # Skip the release fixtures. Keep lesson pages apart from the other sources.
         release_trees = (
             W4D5_ROOT / "Student_Copy" / "packet" / "release",
             W4D5_ROOT / "Solution_Copy" / "sources",
@@ -191,6 +198,7 @@ class ReleaseTests(unittest.TestCase):
                 prose.append(text)
         notes = "\n".join(prose)
         blob = "\n".join(code)
+        # Sources must not contain the watermark. Lesson pages must not contain the attack text or a bare count.
         self.assertNotIn(profile.canary(), blob)
         self.assertNotIn(attack()["text"], notes)
         self.assertFalse(_bare(notes, shown["leave_lag"]))

@@ -33,6 +33,7 @@ class FairTests(unittest.TestCase):
         Each slice has a yes and a no, so the spread is the whole range
         from yes to no. The assertion is that spread.
         """
+        # The two slices are a yes and a no, so the spread covers that whole range.
         self.assertEqual(gap(_ROWS), 1.0)
 
     def test_the_stamp_rate_is_the_thursday_share(self) -> None:
@@ -40,6 +41,7 @@ class FairTests(unittest.TestCase):
 
         One row is stamped and one is not. The assertion is that share.
         """
+        # One of the two stamp rows is stamped. The share is the value below.
         self.assertEqual(stamp_rate(_STAMPS), 0.5)
 
 

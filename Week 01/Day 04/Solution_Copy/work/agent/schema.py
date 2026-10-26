@@ -61,6 +61,7 @@ def row(
     preference_used is true only when a stored preference was applied.
     decisions is how many distinct approval ids were decided. A replay is 1.
     """
+    # Lists are copied so the caller can change its own lists afterward.
     return {
         "scenario": scenario,
         "reply": reply_body,
@@ -69,6 +70,7 @@ def row(
         "pending_approval_ids": list(pending or []),
         "approval_ids": list(approval_ids or []),
         "booked": booked,
+        # These flags stay false unless that action happened.
         "returned": returned,
         "redirected": redirected,
         "sms": sms,

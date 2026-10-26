@@ -1,4 +1,8 @@
-"""Write rel-w2d4. Earlier packs and personas.json are left where they are."""
+"""Write rel-w2d4.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the deployment notice, the policy, the endpoint guide, the credentials, the registry, and the fixtures are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -72,8 +76,10 @@ def write_w2d4(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the deployment notice, the policy, the endpoint guide, the dashboard starter, the interface documents, the registry, the credentials, the fixtures, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Deployment notice, policy, endpoint guide, and the dashboard starter.
     _write(pack / "notices" / "deploy.md", deploy_note())
     _write(pack / "standards" / "pol-deploy.md", policy_note())
     _write(pack / "endpoint" / "guide.md", endpoint_guide())
@@ -81,6 +87,7 @@ def write_w2d4(profile: Profile, pack: Path, truth: Path) -> str:
     _write(pack / "openapi" / "health.yaml", health_spec())
     _write(pack / "openapi" / "registry.yaml", registry_spec())
     _write(pack / "openapi" / "endpoint.yaml", endpoint_spec())
+    # Registry, credentials, and the fixtures.
     _json(pack / "registry" / "models.json", models(profile))
     _json(pack / "registry" / "quota.json", quota(profile))
     _json(pack / "credentials" / "dev.json", dev_credential(profile))
@@ -88,10 +95,13 @@ def write_w2d4(profile: Profile, pack: Path, truth: Path) -> str:
     _json(pack / "fixtures" / "candidate.json", candidate(profile))
     _json(pack / "fixtures" / "log.json", log_fixture(profile))
     _json(pack / "fixtures" / "root.json", root_spec())
+    # Gold, after the pack files it is checked against.
     _write(truth / "w2d4_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w2d4_gold.json")
     _write(truth / "rel-w2d4-fingerprint.txt", digest + "\n")
     return digest

@@ -36,10 +36,14 @@ class AccessTests(unittest.TestCase):
         are earlier close. The break-glass grant stays open, and its audit
         value is truthy, so an audit id was written.
         """
+        # Settle the four grants, then look each one up by id.
         settled = {row["id"]: row for row in settle(_GRANTS, "2027-01-31")}
+        # The staff grant that ends later stays open. The ended staff grant
+        # and the ended delegate close.
         self.assertEqual(settled["grant-open"]["status"], "open")
         self.assertEqual(settled["grant-stale"]["status"], "closed")
         self.assertEqual(settled["grant-delegate"]["status"], "closed")
+        # Break-glass stays open, and its audit field now holds an id.
         self.assertEqual(settled["grant-glass"]["status"], "open")
         self.assertTrue(settled["grant-glass"]["audit"])
 
@@ -49,6 +53,7 @@ class AccessTests(unittest.TestCase):
         There is no separate fixture. The assertion lists every name this
         module is expected to report.
         """
+        # The deploy names, in the order controls reports them.
         self.assertEqual(
             controls(),
             [

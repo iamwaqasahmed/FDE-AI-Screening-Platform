@@ -24,6 +24,7 @@ class Memory:
         The copy means a caller cannot change the store by editing the dict
         it received. An unknown session returns an empty dict.
         """
+        # A copy, so editing the result does not change the store. Unknown session: empty.
         return dict(self._sessions.get(session, {}))
 
     def remember(self, session: str, **facts: object) -> None:
@@ -32,6 +33,7 @@ class Memory:
         A later remember for the same key replaces that fact.
         Other keys on the session stay.
         """
+        # The first call creates the session. Later facts replace only their own keys.
         current = self._sessions.setdefault(session, {})
         current.update(facts)
 
@@ -41,6 +43,7 @@ class Memory:
         allowed is the consent flag. When it is false, the stored string
         is withheld. When it is true, the stored string is returned.
         """
+        # Consent false withholds the string. Consent true returns it.
         if not allowed:
             return ""
         return stored

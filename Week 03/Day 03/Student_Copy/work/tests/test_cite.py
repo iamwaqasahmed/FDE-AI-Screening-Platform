@@ -31,6 +31,7 @@ _LEAFLETS = [
 class CiteTests(unittest.TestCase):
     """answer cites the bound document, the public leaflet, or a refusal."""
 
+    # A staff question that started earlier keeps the start version.
     def test_in_flight_keeps_the_start_version(self) -> None:
         """A staff endo question that started earlier cites the endo v3 document.
 
@@ -41,6 +42,7 @@ class CiteTests(unittest.TestCase):
         question = {"asker": "staff", "case_date": "2027-01-26", "specialty": "endo", "started": "2027-01-20", "text": "endocrinology"}
         self.assertEqual(answer(question, _CRITERIA)["doc_id"], "crit-endo-v3")
 
+    # A patient who names the shared code receives the public leaflet.
     def test_a_patient_does_not_receive_the_staff_leaflet(self) -> None:
         """A patient question that names the preparation code cites the public leaflet.
 
@@ -54,6 +56,7 @@ class CiteTests(unittest.TestCase):
         self.assertEqual(cited["doc_id"], "leaflet-prep")
         self.assertEqual(cited["audience"], "public")
 
+    # A code on neither leaflet is a no-document refusal.
     def test_no_matching_code_is_a_refusal(self) -> None:
         """A patient question whose code is on neither leaflet is a no-document refusal.
 

@@ -10,7 +10,9 @@ import hashlib
 
 def render_markdown(spec: dict, body: str) -> str:
     """Return the markdown document: front matter from the spec, then the body."""
+    # Short hash of the body. A body edit changes this header.
     digest = hashlib.sha256(body.encode()).hexdigest()[:16]
+    # Copy the spec. Sunset, site, and supersedes are written empty when they are missing.
     header = "\n".join(
         [
             "---",
@@ -28,4 +30,5 @@ def render_markdown(spec: dict, body: str) -> str:
             "",
         ]
     )
+    # Header, the body with surrounding whitespace removed, and a trailing newline.
     return header + body.strip() + "\n"

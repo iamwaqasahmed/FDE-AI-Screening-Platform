@@ -56,6 +56,7 @@ def row(
     Omitted citations, traces, and approval lists stay empty. Omitted flags stay
     false. The checker uses those empties to see which tools the agent did not call.
     """
+    # Copy the lists so the caller can keep using its own. Missing lists stay empty.
     return {
         "scenario": scenario,
         "reply": reply_body,
@@ -63,6 +64,7 @@ def row(
         "tool_trace": list(tool_trace or []),
         "pending_approval_ids": list(pending or []),
         "approval_ids": list(approval_ids or []),
+        # Flags default to false, so a skipped tool is not recorded as a tool that ran.
         "booked": booked,
         "returned": returned,
         "redirected": redirected,

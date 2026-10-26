@@ -105,6 +105,7 @@ class ReleaseTests(unittest.TestCase):
             write_w2d2(profile, second, truth)
             third = root / "w2d3"
             write_w2d3(profile, third, truth)
+            # Fingerprints of the earlier packs, including the three week-2 days, plus their gold files.
             before = (
                 tuple(fingerprint(pack) for pack in packs),
                 fingerprint(week2),
@@ -115,6 +116,7 @@ class ReleaseTests(unittest.TestCase):
                 (truth / "w2d2_gold.json").read_bytes(),
                 (truth / "w2d3_gold.json").read_bytes(),
             )
+            # Write this day twice. The two results must agree, and the earlier days must stay as they were.
             first = write_w2d4(profile, root / "w2d4", truth)
             again = write_w2d4(profile, root / "w2d4", truth)
             self.assertEqual(first, again)
@@ -131,6 +133,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "w2d3_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "w2d4_gold.json").is_file())
             self.assertFalse((root / "w2d4" / "w2d4_gold.json").exists())
 
@@ -157,16 +160,19 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_w2d4(profile, pack, root / "truth")
+            # The hidden gold must match the generator and must not contain the watermark.
             hidden = json.loads((root / "truth" / "w2d4_gold.json").read_text(encoding="utf-8"))
             prose = _prose(pack)
             notice = (pack / "notices" / "deploy.md").read_text(encoding="utf-8")
             self.assertEqual(hidden, gold(profile))
             self.assertNotIn(profile.canary(), json.dumps(hidden))
+            # Prose and the notice keep every secret out, including the quota as a standalone number.
             for secret in _secrets(hidden, profile.canary()):
                 self.assertNotIn(secret, prose)
                 self.assertNotIn(secret, notice)
             self.assertIsNone(re.search(rf"(?<!\d){hidden['quota']}(?!\d)", notice))
             self.assertIsNone(re.search(rf"(?<!\d){hidden['quota']}(?!\d)", prose))
+            # The register keeps the approved hash, and the log fixture keeps the national id. The watermark appears once.
             self.assertIn(hidden["approved_hash"], (pack / "registry" / "models.json").read_text(encoding="utf-8"))
             self.assertIn(hidden["national_id"], (pack / "fixtures" / "log.json").read_text(encoding="utf-8"))
             self.assertEqual(_canary_count(pack, profile.canary()), 1)
@@ -207,6 +213,7 @@ class DemoTests(unittest.TestCase):
         pipeline is identical in the shell and the filled copy. This day changes all
         of them.
         """
+        # Every app module, packet test, image, manifest, and pipeline differs between the shell and the filled copy.
         for source in W2D4_APP.glob("*.py"):
             copy = W2D4_WORK / "app" / source.name
             self.assertNotEqual(source.read_bytes(), copy.read_bytes(), source.name)
@@ -214,6 +221,7 @@ class DemoTests(unittest.TestCase):
             shell = (W2D4_TESTS / name).read_bytes()
             filled = (W2D4_WORK / "tests" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
+        # The image, the manifest, and the pipeline are traps too. Each one differs.
         self.assertNotEqual(
             (W2D4_DEPLOY / "Dockerfile").read_bytes(),
             (W2D4_WORK / "deploy" / "Dockerfile").read_bytes(),

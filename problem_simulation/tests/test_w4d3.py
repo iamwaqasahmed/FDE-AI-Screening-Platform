@@ -104,26 +104,31 @@ class ReleaseTests(unittest.TestCase):
             practice, small = load("practice"), load("small")
             write_w4d3(practice, root / "practice" / "pack", root / "practice-truth")
             write_w4d3(small, root / "small" / "pack", root / "small-truth")
+            # Join each pack and load each gold file.
             practice_blob = _blob(root / "practice" / "pack")
             small_blob = _blob(root / "small" / "pack")
             practice_gold = json.loads((root / "practice-truth" / "w4d3_gold.json").read_text(encoding="utf-8"))
             small_gold = json.loads((root / "small-truth" / "w4d3_gold.json").read_text(encoding="utf-8"))
+            # Watermarks, the gold file name, and the spend figures stay out of the packs.
             self.assertNotIn(practice.canary(), practice_blob)
             self.assertNotIn(small.canary(), small_blob)
             self.assertNotIn("w4d3_gold", practice_blob)
             for key in ("budget_sar", "new_sar", "old_sar", "local_sar"):
                 self.assertNotIn(str(practice_gold[key]), practice_blob)
                 self.assertNotIn(str(small_gold[key]), small_blob)
+            # Throughput sheets and today's prices differ across profiles.
             practice_sheet = (root / "practice" / "pack" / "serving" / "throughput.json").read_text(encoding="utf-8")
             small_sheet = (root / "small" / "pack" / "serving" / "throughput.json").read_text(encoding="utf-8")
             practice_price = (root / "practice" / "pack" / "finance" / "price-today.json").read_text(encoding="utf-8")
             small_price = (root / "small" / "pack" / "finance" / "price-today.json").read_text(encoding="utf-8")
             self.assertNotEqual(practice_sheet, small_sheet)
             self.assertNotEqual(practice_price, small_price)
+            # Both gold files match the generator, and the profiles do not share a price or a batched rate.
             self.assertEqual(practice_gold, gold(practice))
             self.assertEqual(small_gold, gold(small))
             self.assertNotEqual(practice_gold["new_price"], small_gold["new_price"])
             self.assertNotEqual(practice_gold["local_batched_tps"], small_gold["local_batched_tps"])
+            # The new price is higher. The external rate beats the batched local rate, which beats the unbatched rate.
             for shown in (practice_gold, small_gold):
                 self.assertGreater(shown["new_price"], shown["old_price"])
                 self.assertGreater(shown["ext_large_tps"], shown["local_batched_tps"])
@@ -138,20 +143,24 @@ class ReleaseTests(unittest.TestCase):
                 self.assertEqual(shown["peak_multiple"], PEAK_MULTIPLE)
                 self.assertEqual(shown["cold_start_seconds"], COLD_START_SECONDS)
                 self.assertEqual(shown["adapters"], list(ADAPTERS))
+            # The forecast is the eye-screening backlog.
             pack = root / "practice" / "pack"
             forecast = json.loads((pack / "forecast" / "p-forecast.json").read_text(encoding="utf-8"))
             self.assertEqual(forecast["id"], "p-forecast")
             self.assertEqual(forecast["backlog_referrals"], BACKLOG)
             self.assertEqual(forecast["campaign"], "eye-screening")
+            # Reserved chat stays inside its budget. Starved chat does not.
             sheet = json.loads(practice_sheet)
             self.assertLessEqual(sheet["chat_p95_reserved_ms"], sheet["chat_p95_budget_ms"])
             self.assertGreater(sheet["chat_p95_starved_ms"], sheet["chat_p95_budget_ms"])
+            # The last adapter is the approved hash. The candidate is unregistered and not in that list.
             models = json.loads((pack / "registry" / "adapters.json").read_text(encoding="utf-8"))["models"]
             self.assertEqual([row["id"] for row in models], list(ADAPTERS))
             self.assertEqual(models[-1]["hash"], adapter_hash(practice))
             candidate = json.loads((pack / "registry" / "candidate.json").read_text(encoding="utf-8"))
             self.assertEqual(candidate["status"], "unregistered")
             self.assertNotIn(candidate["id"], [row["id"] for row in models])
+            # The readme names today's price, the price key, and the price date.
             note = (pack / "README.md").read_text(encoding="utf-8")
             self.assertIn(str(practice_gold["new_price"]), note)
             self.assertIn("price.ext_large_per_1k", note)
@@ -188,6 +197,7 @@ class ReleaseTests(unittest.TestCase):
         """Fails when a lesson or packet source contains the watermark or a model hash, or
         when a lesson page contains a spend figure or a bare price.
         """
+        # Skip the release fixtures. Keep lesson pages apart from the other sources.
         release_trees = (
             W4D3_ROOT / "Student_Copy" / "packet" / "release",
             W4D3_ROOT / "Solution_Copy" / "sources",
@@ -207,10 +217,12 @@ class ReleaseTests(unittest.TestCase):
                 notes.append(text)
         code = "\n".join(blob)
         prose = "\n".join(notes)
+        # Sources must not contain the watermark or a model hash.
         self.assertNotIn(profile.canary(), code)
         self.assertNotIn(shown["candidate_hash"], code)
         for row in registry(profile)["models"]:
             self.assertNotIn(row["hash"], code)
+        # Lesson pages must not contain a spend figure or a bare price.
         for key in ("budget_sar", "new_sar", "old_sar", "local_sar"):
             self.assertNotIn(str(shown[key]), prose)
         for key in ("new_price", "old_price"):

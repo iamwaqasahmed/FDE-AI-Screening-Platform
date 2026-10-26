@@ -29,6 +29,7 @@ _SPANS = [
 class BoardTests(unittest.TestCase):
     """Check the summary dict the board returns for the span fixture."""
 
+    # The alert span supplies the time. The other spans supply the rest.
     def test_the_board_names_latency_errors_tool_failures_and_the_alert(self) -> None:
         """Each key in the expected dict is checked.
 
@@ -36,6 +37,7 @@ class BoardTests(unittest.TestCase):
         and tool_failures come from the other spans. The assertion is the
         whole dict.
         """
+        # The four keys are checked together as one dict.
         self.assertEqual(
             board(_SPANS),
             {

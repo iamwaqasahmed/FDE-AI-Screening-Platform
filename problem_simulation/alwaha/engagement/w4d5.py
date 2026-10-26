@@ -16,13 +16,16 @@ def gold(profile: Profile) -> dict:
     The leave lag and the phone-only count move with the seed. The readout sections name what the closing page must mention. The blocked list names the work that stays out.
     """
     return {
+        # Work that stays out, the clock field, the demo question, and the cancel event.
         "blocked": ["p-triage"],
         "clock": "referred_at",
         "demo": {"question": "Which benefit is counted twice?"},
         "event": "session.cancelled",
+        # The leave lag and the phone-only count. Both come from this profile's seed.
         "leave_lag": leave_lag(profile.seed),
         "owner": "med-dir",
         "phone_only": survey_phone(profile.seed),
+        # Readout sections the closing page is checked against.
         "readout": {
             "asks": "Asks",
             "sections": [

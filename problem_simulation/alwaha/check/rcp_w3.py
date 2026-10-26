@@ -142,23 +142,29 @@ def rcp_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
 
     A planted token returns only the watermark. A missing requirements file is its own miss. The note is graded even when the backlog file cannot be read. A bad backlog file adds the backlog run miss and the modules are still called. A crash of the import adds the harness miss.
     """
+    # A planted token returns only the watermark, so the note is not graded after it.
     if contains_canary(work, canary):
         return [WATERMARK]
     path = work / "rcp" / "requirements.md"
+    # A missing requirements file stops the check.
     if not path.is_file():
         return [MISSING]
+    # The note is graded even when the backlog file cannot be read.
     problems = spec_problems(path.read_text(encoding="utf-8"), gold)
     stories = []
     try:
         stories = json.loads((pack / "backlog" / "seed.json").read_text(encoding="utf-8"))
     except Exception:
+        # A bad backlog file is the backlog run miss. The modules are still called.
         _once(problems, BACKLOG_RUN)
     try:
         with modules(work / "app", _MODULES) as loaded:
+            # The backlog filter and the stage gate each add their misses once.
             for item in backlog_problems(loaded["backlog"], stories, gold):
                 _once(problems, item)
             for item in gate_problems(loaded["gates"], gold):
                 _once(problems, item)
     except Exception:
+        # A crash of the import is the harness miss.
         _once(problems, RUN)
     return problems

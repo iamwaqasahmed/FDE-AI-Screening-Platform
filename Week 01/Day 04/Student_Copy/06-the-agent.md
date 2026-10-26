@@ -135,12 +135,15 @@ def _blocked(scenario: dict, memory: object) -> dict | None:
     When it does not, the preference string stays out of the trace.
     preference_used stays false. The refusal is logged.
     """
+    # No stored preference means this is not a consent case.
     stored = scenario["stored_preference"]
     if not stored:
         return None
+    # Consent that allows the preference lets the walk continue.
     kept = memory.preference(stored, scenario["consent"])
     if kept:
         return None
+    # Consent that does not allow it is a refusal. The preference string stays out of the row.
     return schema.row(
         scenario["scenario"],
         schema.reply("refusal", "Say what you need for this visit."),
@@ -234,16 +237,19 @@ def _decide(turn: dict, referral_id: str, walked: dict) -> None:
     confirmed, then sends SMS. The trace cites the approval policy.
     The approval id on the turn is the id the row keeps.
     """
+    # A repeated approval id changes nothing.
     approval_id = turn["approval_id"]
     if approval_id in walked["seen"]:
         return
     walked["seen"].append(approval_id)
     walked["decisions"] = 1
     walked["approval_ids"].append(approval_id)
+    # A rejection logs a refusal and does not book.
     if turn["decision"] == "rejected":
         walked["refusal"] = True
         walked["citations"].append("pol-approval")
         return
+    # An approval books only after the patient confirmed, then sends SMS.
     if walked["confirmed"] and turn["decision"] == "approved":
         tools.book(referral_id, approval_id)
         walked["tool_trace"].append("slots.book")
@@ -271,6 +277,7 @@ def _walk(scenario: dict, memory: object) -> dict:
     Patient turns can remember a facility, read status, or offer a slot.
     Coordinator turns decide. The letter is not in this loop.
     """
+    # One referral, one session, and a walk that has not called a tool yet.
     session = scenario["session"]
     referral_id = scenario["referral_id"]
     walked = {
@@ -287,12 +294,15 @@ def _walk(scenario: dict, memory: object) -> dict:
         "refusal": False,
     }
     for turn in scenario["turns"]:
+        # A patient turn may remember a hospital, read status once, or offer a slot.
         if turn["role"] == "patient":
             _remember_facility(turn, session, memory)
             _read_status(turn, referral_id, session, memory, walked)
             _offer_slot(turn, referral_id, walked)
+        # A coordinator turn records one decision.
         if turn["role"] == "coordinator":
             _decide(turn, referral_id, walked)
+    # The facility on the row is whatever the session remembered.
     facility = memory.recall(session).get("facility_id", "")
     return schema.row(
         scenario["scenario"],
@@ -394,6 +404,7 @@ def row(
     preference_used is true only when a stored preference was applied.
     decisions is how many distinct approval ids were decided. A replay is 1.
     """
+    # Lists are copied so the caller can change its own lists afterward.
     return {
         "scenario": scenario,
         "reply": reply_body,
@@ -402,6 +413,7 @@ def row(
         "pending_approval_ids": list(pending or []),
         "approval_ids": list(approval_ids or []),
         "booked": booked,
+        # These flags stay false unless that action happened.
         "returned": returned,
         "redirected": redirected,
         "sms": sms,

@@ -17,14 +17,18 @@ def _knowledge(work: Path) -> list[str]:
     A missing file, or fewer than two numbered answers, is the two-answer miss. The first answer must name the booking assurance level. The second must say the session row lives in the database.
     """
     path = work / "knowledge.md"
+    # A missing file is the two-answer miss. The answers are not read.
     if not path.is_file():
         return ["knowledge.md needs two answers"]
     answers = [line for line in path.read_text(encoding="utf-8").splitlines() if re.match(r"\s*\d+\.\s+\S", line)]
+    # Fewer than two numbered lines is the same miss.
     if len(answers) < 2:
         return ["knowledge.md needs two answers"]
     problems = []
+    # The first answer must name the booking assurance level.
     if "loa-2" not in answers[0]:
         problems.append("knowledge.md does not name the booking assurance level")
+    # The second answer must say the session row lives in the database.
     if "database" not in answers[1].lower():
         problems.append("knowledge.md does not say where the session row lives")
     return problems

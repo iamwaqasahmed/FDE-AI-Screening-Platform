@@ -1,4 +1,8 @@
-"""Write rel-w3d2. Earlier packs and personas.json are left where they are."""
+"""Write rel-w3d2.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the ruling, the registry, the quota, the price cap, the labeled slices, and the router interface are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -65,23 +69,29 @@ def write_w3d2(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the ruling, the registry, the quota, the price cap, the labeled slices, the domain rows, the preferences, the cloud fixture, the router interface, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Ruling, registry, quota, and the price cap.
     _write(pack / "notices" / "ruling.md", ruling_note())
     _json(pack / "registry" / "reg-models.json", registry(profile))
     _json(pack / "budget" / "quota.json", quota(profile))
     _json(pack / "budget" / "price-cap.json", cap())
+    # Labeled slices, domain rows, preferences, and the cloud fixture.
     _jsonl(pack / "slices" / "letters.jsonl", labeled_letters(DEV_LETTERS))
     _jsonl(pack / "slices" / "messages.jsonl", messages(DEV_MESSAGES))
     _jsonl(pack / "slices" / "hours.jsonl", hours())
     _jsonl(pack / "domain" / "ds-domain.jsonl", domain())
     _jsonl(pack / "prefs" / "ds-prefs.jsonl", dev_prefs())
     _json(pack / "fixtures" / "cloud.json", cloud(profile))
+    # Router interface, then gold.
     _write(pack / "openapi" / "router.yaml", router_spec())
     _write(truth / "w3d2_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w3d2_gold.json")
     _write(truth / "rel-w3d2-fingerprint.txt", digest + "\n")
     return digest

@@ -113,13 +113,16 @@ def knowledge_problems(work: Path) -> list[str]:
     """
     text = _text(work / "knowledge.md")
     answers = [line for line in text.splitlines() if re.match(r"\s*\d+\.\s+\S", line)]
+    # Fewer than two numbered answers is the two-answer miss.
     if len(answers) < 2 or not two_answers(text):
         return [_KNOW]
     problems: list[str] = []
     first = answers[0].lower()
+    # The first answer must use an in-force spelling and must mention a citation or a document.
     if not _in_force(first) or not any(token in first for token in ("citation", "document")):
         problems.append(_RETRIEVAL)
     second = answers[1].lower()
+    # The second answer must say the judge is fluent and must mention correct or a citation.
     if "fluent" not in second or not any(token in second for token in ("correct", "citation")):
         problems.append(_JUDGE)
     return problems

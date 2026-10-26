@@ -53,11 +53,14 @@ def failover_note(work: Path) -> list[str]:
     Replicas and the drill must name the sites. Approvals must name the workflow. The breaker must name the partner and insurance. The patient section must name status and booking.
     """
     text = _text(work / "failover.md")
+    # Each required section is read on its own.
     replicas = section(text, "Replicas").lower()
     drill = section(text, "Drill").lower()
     approvals = section(text, "Approvals").lower()
     breaker = section(text, "Breaker").lower()
     patient = section(text, "Patient").lower()
+    # Replicas and the drill must name the sites. Approvals must name the workflow.
+    # The breaker must name the partner and insurance. The patient section must name status and booking.
     filled = (
         "site-a" in replicas
         and "site-b" in replicas
@@ -79,10 +82,13 @@ def architecture_problems(work: Path) -> list[str]:
     The deadline may be named by the month or by the season in the condition.
     """
     text = _text(work / "architecture.md")
+    # Rent, the purchase, the deadline, and the hospitals are read as separate sections.
     rent = section(text, "Rent").lower()
     buy = section(text, "Buy").lower()
     deadline = section(text, "Deadline").lower()
     hospitals = section(text, "Hospitals").lower()
+    # Rent must name rent. The purchase section must name the lead time.
+    # The deadline may use the month or the season. Every hospital must appear.
     filled = (
         "rent" in rent
         and "16" in buy

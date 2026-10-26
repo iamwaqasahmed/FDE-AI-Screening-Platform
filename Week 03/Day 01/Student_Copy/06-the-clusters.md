@@ -138,10 +138,12 @@ def partition(rows: list[dict]) -> list[list[str]]:
     A newborn, a twin, and a reused MRN are merged when those fields
     match. The relation field is not read.
     """
+    # Each row starts in its own group. The buckets keep the first row id for each shared value.
     parent = {row["row_id"]: row["row_id"] for row in rows}
     buckets = {"national_id": {}, "phone": {}, "mrn": {}}
     by_mrn = {}
     for row in rows:
+        # Record this MRN. Join this row when a national id, a phone, or an MRN was already seen.
         by_mrn[row["mrn"]] = row["row_id"]
         for field, bucket in buckets.items():
             value = row[field]
@@ -152,9 +154,11 @@ def partition(rows: list[dict]) -> list[list[str]]:
             else:
                 bucket[value] = row["row_id"]
     for row in rows:
+        # Join a row whose merge_with names another row's MRN.
         other = by_mrn.get(row["merge_with"])
         if other:
             _union(parent, row["row_id"], other)
+    # Gather the row ids under each group and return those groups in order.
     groups: dict[str, list[str]] = {}
     for row in rows:
         groups.setdefault(_find(parent, row["row_id"]), []).append(row["row_id"])

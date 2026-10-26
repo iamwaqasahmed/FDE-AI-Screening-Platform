@@ -89,6 +89,7 @@ def gold(profile: Profile) -> dict:
     The deployment block starts from the earlier deployment gold, then adds the Ain documents and the mentions that must appear in the Ain and change sections.
     """
     base = deploy_gold(profile)["deployment"]
+    # Start from the deployment mentions, then add the Ain and change mentions.
     mentions = list(base["mentions"]) + [
         {"any": ["h-ain"], "id": "ain", "section": "Ain"},
         {"any": ["sched-ain"], "id": "sched", "section": "Ain"},
@@ -98,6 +99,7 @@ def gold(profile: Profile) -> dict:
         {"any": ["sequenc"], "id": "sequence", "section": "Change"},
     ]
     return {
+        # Tonight's code, the widened document list, and the previous code.
         "clinic_code": clinic_code(profile),
         "deployment": {
             "doc_ids": list(base["doc_ids"]) + list(AIN_DOCS),
@@ -105,5 +107,6 @@ def gold(profile: Profile) -> dict:
             "share": 0.8,
         },
         "previous_code": previous_code(profile),
+        # Readout sections the page is checked against.
         "readout": _readout(),
     }

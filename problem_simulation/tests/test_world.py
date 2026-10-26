@@ -34,17 +34,22 @@ class WorldTests(unittest.TestCase):
         check digit, a death recorded before it happened, or a birth date stored in the
         other calendar.
         """
+        # Build the practice population once. The checks below read planted people by index.
         people = build_people(load("practice"))
+        # The population is the practice scale, and the first two people share a phone.
         self.assertEqual(len(people), 60000)
         self.assertEqual(people[0]["phone"], people[1]["phone"])
+        # One person is carrying someone else's national id, and the next person is a visitor.
         self.assertEqual(people[2]["national_id"], people[0]["national_id"])
         self.assertNotEqual(people[2]["own_national_id"], people[0]["national_id"])
         self.assertEqual(people[3]["visitor_number"], "V-1003")
         self.assertEqual(people[4]["mrn"]["h-nakhl"], people[12]["mrn"]["h-nakhl"])
+        # A reversed merge, a shared birth date across two national ids, and a moved district.
         self.assertIn("reversed", people[5]["merge"])
         self.assertEqual(people[6]["dob"], people[7]["dob"])
         self.assertNotEqual(people[6]["national_id"], people[7]["national_id"])
         self.assertEqual(len(people[8]["district_history"]), 2)
+        # A bad check digit, a death recorded before it happened, and a birth date in the other calendar.
         self.assertFalse(check_ok(people[9]["national_id"]))
         self.assertGreater(people[10]["death_recorded_on"], people[10]["died_on"])
         self.assertEqual(people[11]["dob_era"], "hijri")
@@ -54,11 +59,13 @@ class WorldTests(unittest.TestCase):
         when the unauthorized circular or a required document kind is missing, or when
         the volume streams and the planted record-number fault are absent.
         """
+        # Write the small world twice. The two fingerprints must match.
         profile = load("small")
         root = world_dir("small")
         first = write_world(profile, root, stream_rows=30)
         second = write_world(profile, root, stream_rows=30)
         self.assertEqual(first, second)
+        # The corpus and the system export are complete, including the unauthorized circular and each document kind.
         self.assertEqual(len(list((root / "corpus").glob("*.md"))), corpus_count(profile))
         self.assertEqual(len(list((root / "systems").glob("*.json"))), len(EXPORTS))
         self.assertTrue((root / "corpus" / "circ-ramadan-unauth.md").is_file())
@@ -66,6 +73,7 @@ class WorldTests(unittest.TestCase):
         self.assertTrue(any((root / "corpus").glob("*.docx")))
         self.assertTrue(any((root / "corpus").glob("*.xlsx")))
         self.assertTrue(any((root / "corpus").glob("*.png")))
+        # Volume streams exist, and the planted record-number fault is still in the export.
         sms = list(Path(root / "volume" / "sms").glob("*.jsonl"))
         audit = list(Path(root / "volume" / "audit").glob("*.jsonl"))
         self.assertEqual(len(sms), 1)

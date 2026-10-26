@@ -1,4 +1,8 @@
-"""Write rel-w1d3. Earlier packs are left where they are."""
+"""Write rel-w1d3.
+Earlier packs are left where they are.
+
+The writer stops if a template tree is missing, then clears the pack and writes the calendar, the policy, the criteria, the event stream, and the workflow. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -81,14 +85,17 @@ def write_day3(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the calendar, the policy, the criteria pages, the event stream, the faults, the open referrals, the clinics, the contract, the interface files, the workflow tree, and the templates. A missing template stops the release before anything is replaced.
     """
+    # Stop before replacing anything when a template tree is missing.
     if not WORKFLOW_ROOT.is_dir() or not DAY3_TEMPLATES.is_dir():
         raise SystemExit("Day 3 template is missing.")
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
     _write(pack / "calendar" / "business-calendar.json", json.dumps(calendar_document(), indent=2, sort_keys=True) + "\n")
     _write(pack / "policy" / "pol-sla.md", policy_page())
     for doc in criteria_docs():
         _write(pack / "criteria" / f"{doc['doc_id']}.md", render_criteria(doc))
+    # Event stream, faults, open referrals, and clinics.
     lines = [json.dumps(row, sort_keys=True) for row in events(profile.canary())]
     _write(pack / "events" / "intake.jsonl", "\n".join(lines) + "\n")
     _write(pack / "events" / "faults.json", json.dumps(faults(), indent=2, sort_keys=True) + "\n")
@@ -97,12 +104,15 @@ def write_day3(profile: Profile, pack: Path, truth: Path) -> str:
     _write(pack / "contracts" / "referral.submitted.md", contract_page())
     _write(pack / "openapi" / "eref.yaml", eref_spec())
     _write(pack / "openapi" / "his-wadi.yaml", his_wadi_spec())
+    # Workflow, templates, and gold.
     _copy_tree(WORKFLOW_ROOT, pack / "workflow")
     _copy_tree(DAY3_TEMPLATES, pack / "templates")
     _write(truth / "events_gold.json", json.dumps(payload(profile.canary()), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "events_gold.json")
     _write(truth / "rel-w1d3-fingerprint.txt", digest + "\n")
     return digest

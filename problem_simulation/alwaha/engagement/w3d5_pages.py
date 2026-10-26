@@ -1,4 +1,8 @@
-"""Participant pages for rel-w3d5. The requirement-to-gate map stays out."""
+"""Participant pages for rel-w3d5.
+The requirement-to-gate map stays out.
+
+These strings are the rehearsal brief, the steering questions, the role cards, and the stage-gate list. role_cards writes one section per seat from the catalog and leaves hidden interview answers off the page. The gate page lists the gates and names the risk-tier gate.
+"""
 
 from __future__ import annotations
 
@@ -45,8 +49,10 @@ def role_cards() -> str:
 
     Each seat is shown with its name, role, opening line, and goals. Hidden interview answers stay out of the page.
     """
+    # Index the catalog so each seat can be looked up by id.
     by_id = {row["id"]: row for row in PERSONAS}
     parts = ["# Role cards", "", "ws-access seats. Hidden answers stay in the interview.", ""]
+    # One section per seat: the heading, the name and role, the opening line, and the goals.
     for seat in SEATS:
         row = by_id[seat]
         parts.append(f"## {seat}")

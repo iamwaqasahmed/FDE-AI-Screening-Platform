@@ -87,7 +87,9 @@ def models(profile: Profile) -> dict:
     """
     return {
         "models": [
+            # External model, approved for the public zone.
             {"hash": external_hash(profile), "id": "ext-large", "status": "approved", "zone": "zone-public"},
+            # Approved local model.
             {
                 "hash": approved_hash(profile),
                 "id": MODEL,
@@ -95,6 +97,7 @@ def models(profile: Profile) -> dict:
                 "status": "approved",
                 "zone": ZONE,
             },
+            # Previous local row. It shares the model id, so the hash is what tells it apart.
             {
                 "hash": previous_hash(profile),
                 "id": MODEL,
@@ -102,6 +105,7 @@ def models(profile: Profile) -> dict:
                 "status": "previous",
                 "zone": ZONE,
             },
+            # Embedding model. It is approved, and it is not the chat model.
             {"hash": embed_hash(profile), "id": "local-embed", "status": "approved", "zone": ZONE},
         ]
     }
@@ -142,6 +146,7 @@ def root_spec() -> dict:
 def gold(profile: Profile) -> dict:
     """Return the deployment expectations for this profile, including the hashes, both tokens, and the quota."""
     return {
+        # Approved hash, and the mentions a deployment write-up is checked against.
         "approved_hash": approved_hash(profile),
         "deployment": {
             "doc_ids": list(DOC_IDS),
@@ -159,12 +164,14 @@ def gold(profile: Profile) -> dict:
             ],
             "share": 0.8,
         },
+        # Development credential, endpoint, lookalike, model, namespace, and the id a log must not keep.
         "dev_token": dev_token(profile),
         "endpoint": ENDPOINT,
         "lookalike_hash": lookalike_hash(profile),
         "model": MODEL,
         "namespace": NAMESPACE,
         "national_id": national_id(profile),
+        # Previous hash, production credential, prompt, quota, url, and zone.
         "previous_hash": previous_hash(profile),
         "prod_token": prod_token(profile),
         "prompt": PROMPT,

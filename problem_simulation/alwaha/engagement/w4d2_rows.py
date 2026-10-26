@@ -40,8 +40,10 @@ def spans(profile: Profile) -> list[dict]:
     The first span is the model call and carries the registered hash and the tokens. The middle spans are the tool, including the errors. The last span is the alert, which is not itself a tool call.
     """
     digest = approved_hash(profile)
+    # Fields shared by every span in this trace.
     base = {"cpu": 0.2, "hospital": "h-wadi", "trace_id": TRACE}
     return [
+        # The model call carries the registered hash.
         {
             **base,
             "at": "2027-02-01T09:00:00+03:00",
@@ -54,6 +56,7 @@ def spans(profile: Profile) -> list[dict]:
             "tokens": TOKENS,
             "tool": TOOL,
         },
+        # The tool succeeds once before the errors.
         {
             **base,
             "at": "2027-02-01T09:05:00+03:00",
@@ -66,6 +69,7 @@ def spans(profile: Profile) -> list[dict]:
             "tokens": 0,
             "tool": TOOL,
         },
+        # Tool errors. The alert window starts at the first of these.
         {
             **base,
             "at": FIRST_ERROR,
@@ -102,6 +106,7 @@ def spans(profile: Profile) -> list[dict]:
             "tokens": 0,
             "tool": TOOL,
         },
+        # The alert is the last span, and it is not a tool call.
         {
             **base,
             "at": ALERT_AT,

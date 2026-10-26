@@ -353,6 +353,7 @@ class CacheTests(unittest.TestCase):
         The first assertion compares with the event body. The second checks
         that the closing time named in the assertion is absent.
         """
+        # The circular body replaces the cache, and the old closing time is absent.
         self.assertEqual(answer({"hours": _OLD}, _EVENT), _EVENT["body"])
         self.assertNotIn("21:00", answer({"hours": _OLD}, _EVENT))
 
@@ -361,6 +362,7 @@ class CacheTests(unittest.TestCase):
 
         The event body is not the answer. The assertion expects the old string.
         """
+        # The other document leaves the cached hours in place.
         self.assertEqual(answer({"hours": _OLD}, _OTHER), _OLD)
 
 

@@ -1,4 +1,8 @@
-"""Participant pages for rel-w4d4. The budget and the hashes stay out."""
+"""Participant pages for rel-w4d4.
+The budget and the hashes stay out.
+
+This file builds the release note, the failover template, and the architecture template. The release note names the drill and lists the pack files except the readme. The templates are empty headings for replicas, approvals, rent or buy, and the deadline.
+"""
 
 from __future__ import annotations
 

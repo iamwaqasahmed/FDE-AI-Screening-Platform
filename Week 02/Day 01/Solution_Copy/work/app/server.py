@@ -30,6 +30,7 @@ class Handler(BaseHTTPRequestHandler):
     reused. log_message is silent so a waiting server prints nothing.
     """
 
+    # serve fills these before the first request. The connection opens later.
     loaded: dict = {}
     db_path: Path = Path("sessions.db")
     database_connection = None
@@ -48,12 +49,15 @@ class Handler(BaseHTTPRequestHandler):
         coordinator session. Anything else is 404. A missing session
         is 401 and the body is Sign in.
         """
+        # Both health paths return the contract body.
         if self.path in {"/health", "/v1/health"}:
             self._json(contract.health())
             return
+        # Home is the sign-in page. No session is required.
         if self.path == "/":
             self._html(chat.home())
             return
+        # Chat is only for a patient session. Anyone else is asked to sign in.
         if self.path == "/chat":
             stored = self._stored()
             if stored is None or stored["role"] != "patient":
@@ -61,6 +65,7 @@ class Handler(BaseHTTPRequestHandler):
                 return
             self._html(chat.render(stored))
             return
+        # Console is only for a coordinator session.
         if self.path == "/console":
             stored = self._stored()
             if stored is None or stored["role"] != "coordinator":
@@ -68,6 +73,7 @@ class Handler(BaseHTTPRequestHandler):
                 return
             self._html(console.render(stored))
             return
+        # Any other path is missing.
         self._text(404, "Not found")
 
     def do_POST(self) -> None:
@@ -77,23 +83,29 @@ class Handler(BaseHTTPRequestHandler):
         for a later day. /v1/chat accepts JSON or a form. A form with
         no cookie is 401. Other paths are 404.
         """
+        # Read the body once. The path decides what it means.
         length = int(self.headers.get("Content-Length", "0"))
         raw = self.rfile.read(length)
+        # The actor button signs in.
         if self.path == "/sign-in":
             self._sign_in(parse_qs(raw.decode()))
             return
+        # An approval path holds that id for a later day.
         if self.path.startswith("/v1/approvals/"):
             self._json(contract.approval(self.path.rsplit("/", 1)[-1]))
             return
+        # Chat is the only other post this process accepts.
         if self.path != "/v1/chat":
             self._text(404, "Not found")
             return
+        # JSON carries the message, and maybe a session id.
         if "application/json" in self.headers.get("Content-Type", ""):
             payload = json.loads(raw.decode() or "{}")
             message = str(payload.get("message", ""))
             session_id = str(payload.get("session", "")) or self._session_id()
             self._json(self._answer(session_id, message))
             return
+        # A form needs the session cookie. The answer is drawn back on the chat page.
         message = parse_qs(raw.decode()).get("message", [""])[0]
         stored = self._stored()
         if stored is None:
@@ -113,15 +125,18 @@ class Handler(BaseHTTPRequestHandler):
         sent to /console. The cookie is alwaha_session and its value
         is the token subject. The browser follows the redirect.
         """
+        # The button names an actor. An unknown name is refused.
         actor = form.get("actor", [""])[0]
         token = self.loaded["actors"].get(actor)
         if token is None:
             self._text(403, "Refused")
             return
+        # A token that auth refuses is also refused. Nothing is stored.
         result = flow.sign_in(self.database(), token, self.loaded["note"])
         if not result["ok"]:
             self._text(403, "Refused")
             return
+        # Send the browser to chat or console, and set the session cookie to the subject.
         location = "/chat" if result["page"] == "chat" else "/console"
         host = self.headers.get("Host", "")
         target = f"http://{host}{location}" if host else location

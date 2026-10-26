@@ -1,4 +1,11 @@
-"""v4 binds for three specialties. An in-flight referral keeps its start version."""
+"""v4 binds for three specialties. An in-flight referral keeps its start version.
+
+criteria keeps the rows for one specialty. For card, endo, and ophth,
+an in-force version 4 that covers the start day wins. Otherwise a
+version 3 that is in force or superseded, and that covers the start
+day, wins. A document whose window misses the start day is skipped.
+When nothing covers that day, criteria returns an empty mapping.
+"""
 
 from __future__ import annotations
 

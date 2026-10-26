@@ -108,12 +108,14 @@ class ReleaseTests(unittest.TestCase):
             write_w2d3(profile, week2[2], truth)
             write_w2d4(profile, week2[3], truth)
             write_w2d5(profile, week2[4], truth)
+            # Fingerprints of the earlier packs, including all of week 2, plus the previous gold.
             before = (
                 tuple(fingerprint(pack) for pack in packs),
                 tuple(fingerprint(pack) for pack in week2),
                 (truth / "personas.json").read_bytes(),
                 (truth / "w2d5_gold.json").read_bytes(),
             )
+            # Write this day twice. The two results must agree, and the earlier days must stay as they were.
             first = write_w3d1(profile, root / "w3d1", truth)
             again = write_w3d1(profile, root / "w3d1", truth)
             self.assertEqual(first, again)
@@ -126,6 +128,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "w2d5_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "w3d1_gold.json").is_file())
             self.assertFalse((root / "w3d1" / "w3d1_gold.json").exists())
 
@@ -152,12 +155,15 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_w3d1(profile, pack, root / "truth")
+            # The hidden gold matches the generator and does not contain the watermark.
             hidden = json.loads((root / "truth" / "w3d1_gold.json").read_text(encoding="utf-8"))
             prose = _prose(pack)
             self.assertEqual(hidden, gold(profile))
             self.assertNotIn(profile.canary(), json.dumps(hidden))
+            # Prose keeps the watermark, the national ids, and the converted dates out.
             for secret in (profile.canary(), *hidden["national_ids"], *hidden["dates"].values()):
                 self.assertNotIn(secret, prose)
+            # The watermark appears once in the pack, and that copy is in the clerk letters.
             self.assertEqual(_canary_count(pack, profile.canary()), 1)
             self.assertIn(profile.canary(), (pack / "letters" / "clerk.jsonl").read_text(encoding="utf-8"))
 
@@ -234,6 +240,7 @@ class DemoTests(unittest.TestCase):
         list has changed. The answers may still mention the history approval and the
         phone photo. Those mentions are not new required facts.
         """
+        # The privacy officer's new questions release no fact. The required-fact list is unchanged.
         personas = load_personas()
         dpo = personas["dpo"]
         turns = run(dpo, _DPO)
@@ -241,6 +248,7 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(turns[1]["released"], [])
         self.assertIn("full history is approved", turns[1]["answer"])
         self.assertEqual(dpo["must_surface"], ("unsigned-ruling",))
+        # The coordinator's new question releases no fact. The required-fact list is unchanged.
         coord = personas["coord-lead"]
         turns = run(coord, _COORD)
         self.assertEqual(turns[2]["released"], [])

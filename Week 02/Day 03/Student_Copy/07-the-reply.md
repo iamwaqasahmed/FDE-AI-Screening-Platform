@@ -146,6 +146,7 @@ class JourneyTests(unittest.TestCase):
         The fixture text is still loaded. journey_ok does not read it.
         The state says booked is false, so the result is false.
         """
+        # Load the fixture sentence. The assertion trusts the state, not that sentence.
         reply = json.loads((_ROOT / "data" / "rel-w2d3" / "fixtures" / "model.json").read_text(encoding="utf-8"))
         self.assertFalse(journey_ok(reply, {"outcome": "status", "booked": False}))
 
@@ -155,6 +156,7 @@ class JourneyTests(unittest.TestCase):
         intent is present so the reply has a shape. The sentence is empty.
         booked on the state is what the assertion trusts.
         """
+        # An empty sentence still books when the state says booked.
         self.assertTrue(journey_ok({"intent": "status", "text": ""}, {"booked": True}))
 
 

@@ -77,14 +77,18 @@ def audience_problems(work: Path) -> list[str]:
     A patient may see public and must not see staff or restricted. Staff may see public and staff and must not see restricted. Records must see restricted. One wrong row fails the table.
     """
     rows = dict_rows(_text(work / "audience.md"), {"asker", "audiences"})
+    # A missing table fails. The askers are not guessed.
     if not rows:
         return [_AUDIENCE]
     found = {row["asker"].lower(): row["audiences"].lower() for row in rows}
     patient = found.get("patient", "")
     staff = found.get("staff", "")
     records = found.get("records", "")
+    # A patient may see public and must not see staff or restricted.
     patient_ok = "public" in patient and "staff" not in patient and "restricted" not in patient
+    # Staff may see public and staff and must not see restricted.
     staff_ok = "public" in staff and "staff" in staff and "restricted" not in staff
+    # Records must see restricted. One wrong row fails the table.
     records_ok = "restricted" in records
     if not (patient_ok and staff_ok and records_ok):
         return [_AUDIENCE]

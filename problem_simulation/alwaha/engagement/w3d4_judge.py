@@ -17,13 +17,16 @@ def subset() -> list[dict]:
     One is fluent and wrong, one is terse and right, and one is fluent and right, so fluency and correctness are not the same thing.
     """
     return [
+        # Fluent, and wrong.
         {
             "answer": "The clinic is open every night and the citation reads as settled.",
             "fluent": True,
             "item_id": FLUENT_WRONG,
             "pass": False,
         },
+        # Terse, and right.
         {"answer": "In force.", "fluent": False, "item_id": "cal-terse-right", "pass": True},
+        # Fluent, and right.
         {
             "answer": "The in-force document is the cluster circular, and the hours match that document.",
             "fluent": True,

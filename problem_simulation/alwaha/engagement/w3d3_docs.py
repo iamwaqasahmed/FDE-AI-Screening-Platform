@@ -19,6 +19,7 @@ def _criteria(specialty: str) -> tuple[dict, dict]:
     The draft has no effective date, so it does not bind until the feed fills that in.
     """
     title = _TITLES[specialty]
+    # Version in force.
     current = doc(
         body=f"Code {specialty}-v3 is the criteria in force for {title.lower()}.",
         clause_id=f"{specialty}-v3-c1",
@@ -28,6 +29,7 @@ def _criteria(specialty: str) -> tuple[dict, dict]:
         title=f"{title} criteria v3",
         version=3,
     )
+    # Draft. No effective date, so it does not bind yet.
     draft = doc(
         body=f"Code {specialty}-v4 is the draft criteria for {title.lower()}.",
         clause_id=f"{specialty}-v4-c1",

@@ -1,4 +1,8 @@
-"""Write rel-w3d1. Earlier packs and personas.json are left where they are."""
+"""Write rel-w3d1.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the data-request notice, the guidelines, the catalog, the history, the letters, and the annotate interface are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
 
 from __future__ import annotations
 
@@ -66,23 +70,29 @@ def write_w3d1(profile: Profile, pack: Path, truth: Path) -> str:
 
     It writes the data-request notice, the guidelines, the catalog, the label budget, the fidelity card, the history, the letters, the annotate interface, and the gold.
     """
+    # Clear the pack and open the truth directory.
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
+    # Data-request notice, guidelines, and the catalog note.
     _write(pack / "notices" / "data-request.md", request_note())
     _write(pack / "guidelines" / "ann-v1.md", guideline_v1())
     _write(pack / "guidelines" / "ann-v2.md", guideline_v2())
     _write(pack / "catalog" / "clinics.md", catalog_note())
     _json(pack / "budget" / "labels.json", budget(profile))
     _json(pack / "cards" / "fidelity.json", fidelity_card())
+    # History, letters, and the annotate interface.
     _jsonl(pack / "history" / "identifiers.jsonl", identifiers(profile))
     _jsonl(pack / "history" / "waitlist.jsonl", waitlist(profile))
     _jsonl(pack / "letters" / "clerk.jsonl", clerk_letters(profile, profile.canary()))
     _jsonl(pack / "letters" / "adjudicated.jsonl", [relabel(row) for row in dev_letters()])
     _write(pack / "openapi" / "annotate.yaml", annotate_spec())
+    # Gold, after the pack files it is checked against.
     _write(truth / "w3d1_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
     names.append("README.md")
     _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
     digest = fingerprint(pack, truth / "w3d1_gold.json")
     _write(truth / "rel-w3d1-fingerprint.txt", digest + "\n")
     return digest

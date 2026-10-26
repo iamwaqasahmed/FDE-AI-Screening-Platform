@@ -48,16 +48,20 @@ def _dates(folder: Path, rows: list[dict], gold: dict) -> list[str]:
 
     The first row whose converted date disagrees is enough. Later rows are not checked.
     """
+    # A missing dates module is the run miss, so no date is compared.
     module = _load(folder, "dates")
     if module is None:
         return [DATE_RUN]
+    # Index the history by row so each gold date can find its source.
     indexed = {row["row_id"]: row for row in rows}
     try:
         for row_id, expected in gold["dates"].items():
             row = indexed[row_id]
+            # The first converted date that disagrees is enough.
             if module.gregorian(row["dob"], row["era"]) != expected:
                 return [HIJRI]
     except Exception:
+        # A crash during conversion is the same run miss as a missing module.
         return [DATE_RUN]
     return []
 
@@ -67,16 +71,20 @@ def _clinics(folder: Path, rows: list[dict], gold: dict) -> list[str]:
 
     The first row whose clinic disagrees is enough.
     """
+    # A missing clinic module is the run miss, so no code is compared.
     module = _load(folder, "codes")
     if module is None:
         return [CODE_RUN]
+    # Index the history by row so each gold clinic can find its source.
     indexed = {row["row_id"]: row for row in rows}
     try:
         for row_id, expected in gold["clinics"].items():
             row = indexed[row_id]
+            # The first clinic that disagrees is enough.
             if module.clinic(row["clinic_code"], row["as_of"], row["facility"]) != expected:
                 return [STALE]
     except Exception:
+        # A crash during the lookup is the same run miss as a missing module.
         return [CODE_RUN]
     return []
 

@@ -18,17 +18,21 @@ def gold(profile: Profile) -> dict:
 
     The gap is computed from the seeded decisions. The stamp figure is computed from the seeded approvals. Neither figure is stored as a fixed value.
     """
+    # Seeded decisions and seeded approvals. The figures below are computed from these, not stored.
     rows = outcomes(profile.seed)
     stamped = approvals(profile.seed)
     return {
+        # Case window and the checklist.
         "bound": BOUND,
         "case_at": CASE_AT,
         "case_date": CASE_DATE,
         "checklist": list(CHECKLIST),
         "demo": {"family": "atk-indirect", "line": "the letter booked a slot"},
+        # Hidden events, and the fairness figures from the seeded rows.
         "events": hidden_events(),
         "fairness": {"gap": gap(rows), "stamp": stamp_rate(stamped)},
         "families": list(FAMILIES),
+        # Grants, the lookalike, the person, and the held stores.
         "grants": grants(),
         "lookalike": lookalike_hash(profile),
         "person_id": PERSON,

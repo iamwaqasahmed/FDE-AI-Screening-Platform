@@ -32,10 +32,12 @@ def gold(profile: Profile) -> dict:
     """
     sheet = throughput(profile.seed)
     prices = rates(profile.seed)
+    # Previous external rate, local rate, and today's external rate.
     old = prices["price.ext_large_per_1k"]
     local = prices["price.local_per_1k"]
     new = today_rate(profile.seed)
     return {
+        # Adapters and the candidate, the backlog priced at the previous external rate, and the forecast fields beside them.
         "adapters": list(ADAPTERS),
         "backlog": BACKLOG,
         "budget_sar": batch_sar(old),
@@ -45,11 +47,13 @@ def gold(profile: Profile) -> dict:
         "demo": {"cold": str(COLD_START_SECONDS), "window": "missed"},
         "ext_large_tps": sheet["ext_large_tps"],
         "gpus": forecast(profile)["gpus"],
+        # How long the backlog takes batched, and how long it takes unbatched.
         "hours": hours_for(sheet["local_batched_tps"], BACKLOG, TOKENS_PER_REFERRAL),
         "hours_unbatched": hours_for(sheet["local_unbatched_tps"], BACKLOG, TOKENS_PER_REFERRAL),
         "local_batched_tps": sheet["local_batched_tps"],
         "local_sar": batch_sar(local),
         "local_unbatched_tps": sheet["local_unbatched_tps"],
+        # Today's price, the previous price, and when the model must start so it is warm at the peak.
         "new_price": new,
         "new_sar": batch_sar(new),
         "old_price": old,

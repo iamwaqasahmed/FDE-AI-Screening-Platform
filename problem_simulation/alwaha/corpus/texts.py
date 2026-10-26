@@ -1,4 +1,8 @@
-"""Day 1 documents. The body is fixed. The header hash is of the body."""
+"""Day 1 documents.
+
+The body is fixed. The header hash is of the body.
+document places that header in front of a body. The functions below it are the stage gates, the assistant-use rule, the postmortem, the steering minutes, the sample letter, and the access form. zones_page describes where the cluster runs, and fact_problems compares the minutes with the postmortem.
+"""
 
 from __future__ import annotations
 
@@ -10,7 +14,9 @@ def document(doc_id: str, family: str, title: str, audience: str, body: str, eff
 
     The header records the identity, the audience, and a hash of the body. Callers share this shape, and the hash changes when the body changes.
     """
+    # Hash the body. That hash is what the header stores.
     digest = hashlib.sha256(body.encode()).hexdigest()[:16]
+    # These headers always say in_force, and sunset, site, and supersedes stay empty.
     header = "\n".join(
         [
             "---",
@@ -28,6 +34,7 @@ def document(doc_id: str, family: str, title: str, audience: str, body: str, eff
             "",
         ]
     )
+    # Header, the body with surrounding whitespace removed, and a trailing newline.
     return header + body.strip() + "\n"
 
 
@@ -143,9 +150,11 @@ def zones_page() -> str:
 
     Opening day, working days, zones, and facilities come from the world tables, so the pack page matches those tables.
     """
+    # Read the calendar and the site tables when the page is built.
     from alwaha.world.clock import ENGAGEMENT_OPENS, WORKING_DAYS
     from alwaha.world.sites import SITES, ZONES
 
+    # Title, opening day, and the weekend sentence.
     lines = [
         "# Where the cluster runs",
         "",
@@ -154,6 +163,7 @@ def zones_page() -> str:
         "## Zones",
         "",
     ]
+    # A zone line adds its sites or holds list when the table has one.
     for zone in ZONES:
         extra = zone.get("sites") or zone.get("holds") or ""
         suffix = f" ({extra})" if extra else ""
@@ -161,6 +171,7 @@ def zones_page() -> str:
             suffix = " (" + ", ".join(extra) + ")"
         lines.append(f"- `{zone['id']}`: {zone['name']}{suffix}")
     lines.extend(["", "## Facilities", ""])
+    # A facility whose zone id starts with zone- names that zone. The others are primary care centers.
     for site in SITES:
         if site["zone"].startswith("zone-"):
             where = f"in `{site['zone']}`"

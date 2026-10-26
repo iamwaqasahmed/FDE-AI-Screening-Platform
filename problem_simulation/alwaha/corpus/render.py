@@ -33,8 +33,10 @@ def write_original(path: Path, kind: str, text: str) -> None:
 
 def _pdf(text: str) -> bytes:
     """Return a one-page PDF whose visible text is a short ASCII slice of the source."""
+    # Keep a short ASCII slice. Any other character becomes a space.
     safe = "".join(char if 32 <= ord(char) < 127 else " " for char in text)[:60]
     stream = f"BT /F1 12 Tf 36 100 Td ({safe}) Tj ET".encode("ascii")
+    # Catalog, page list, the one page, the content stream, and the font.
     objects = [
         b"<< /Type /Catalog /Pages 2 0 R >>",
         b"<< /Type /Pages /Count 1 /Kids [3 0 R] >>",
@@ -42,11 +44,13 @@ def _pdf(text: str) -> bytes:
         b"<< /Length " + str(len(stream)).encode("ascii") + b" >>\nstream\n" + stream + b"\nendstream",
         b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
     ]
+    # Record the byte offset of each object so the table below can point at it.
     chunks = [b"%PDF-1.4\n"]
     offsets = [0]
     for number, body in enumerate(objects, start=1):
         offsets.append(sum(len(chunk) for chunk in chunks))
         chunks.append(f"{number} 0 obj\n".encode("ascii") + body + b"\nendobj\n")
+    # The offset table and the trailer follow the objects. The trailer points at the catalog.
     xref_at = sum(len(chunk) for chunk in chunks)
     xref = [f"xref\n0 {len(objects) + 1}\n", "0000000000 65535 f \n"]
     xref.extend(f"{offset:010d} 00000 n \n" for offset in offsets[1:])

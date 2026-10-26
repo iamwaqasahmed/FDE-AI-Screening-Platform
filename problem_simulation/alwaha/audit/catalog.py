@@ -13,6 +13,7 @@ DAY1 = paths.DAY1_WORK
 def jobs() -> list[tuple[str, str, object]]:
     """Return the check name, release id, and work directory for every readiness job."""
     return [
+        # Week 1. An empty release id means the checker supplies its own default.
         ("repo", "", DAY1),
         ("interview", "", DAY1),
         ("approach", "", paths.DAY2_WORK),
@@ -25,6 +26,7 @@ def jobs() -> list[tuple[str, str, object]]:
         ("design", "", paths.DAY5_WORK),
         ("readout", "", paths.DAY5_WORK),
         ("individual", "", paths.DAY5_WORK),
+        # Week 2. The same check name can point at a later day with a new release id.
         ("auth", "rel-w2d1", paths.W2D1_WORK),
         ("journey", "rel-w2d1", paths.W2D1_WORK),
         ("journey", "rel-w2d2", paths.W2D2_WORK),
@@ -35,6 +37,7 @@ def jobs() -> list[tuple[str, str, object]]:
         ("journey", "rel-w2d5", paths.W2D5_WORK),
         ("readout", "rel-w2d5", paths.W2D5_WORK),
         ("individual", "rel-w2d5", paths.W2D5_WORK),
+        # Week 3, from the identity work through the week readout.
         ("identity", "rel-w3d1", paths.W3D1_WORK),
         ("labels", "rel-w3d1", paths.W3D1_WORK),
         ("synthetic", "rel-w3d1", paths.W3D1_WORK),
@@ -49,6 +52,7 @@ def jobs() -> list[tuple[str, str, object]]:
         ("rcp", "rel-w3d5", paths.W3D5_WORK),
         ("readout", "rel-w3d5", paths.W3D5_WORK),
         ("individual", "rel-w3d5", paths.W3D5_WORK),
+        # Week 4, from the red-team work through the final readout.
         ("redteam", "rel-w4d1", paths.W4D1_WORK),
         ("privacy", "rel-w4d1", paths.W4D1_WORK),
         ("access", "rel-w4d1", paths.W4D1_WORK),

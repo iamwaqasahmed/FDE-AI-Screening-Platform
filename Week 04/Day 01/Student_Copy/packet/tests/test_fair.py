@@ -32,6 +32,7 @@ class FairTests(unittest.TestCase):
         The yes and no decisions are in the fixture. They do not change
         the result. The assertion is zero.
         """
+        # The yes row and the no row are passed in. The result is zero.
         self.assertEqual(gap(_ROWS), 0.0)
 
     def test_the_stamp_rate_is_zero(self) -> None:
@@ -39,6 +40,7 @@ class FairTests(unittest.TestCase):
 
         One row is stamped and one is not. The assertion is still zero.
         """
+        # The stamp fixture is passed in. The result is zero.
         self.assertEqual(stamp_rate(_STAMPS), 0.0)
 
 

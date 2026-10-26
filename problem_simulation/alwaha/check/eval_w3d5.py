@@ -108,11 +108,14 @@ def eval_problems(work: Path, gold: dict, canary: str) -> list[str]:
 
     A planted token returns only the watermark. Notes are graded first. Repair, remeasure, and cost then add their misses. A crash of the import adds the harness miss and keeps the note misses.
     """
+    # A planted token returns only the watermark, so the notes are not graded after it.
     if contains_canary(work, canary):
         return [WATERMARK]
+    # Notes are graded first so a later crash still keeps them.
     problems = note_problems(work)
     try:
         with modules(work / "app", _MODULES) as loaded:
+            # Repair, remeasure, and cost each add their misses once.
             for item in repair_problems(loaded["repair"], gold):
                 _once(problems, item)
             for item in remeasure_problems(loaded["remeasure"], gold):
@@ -120,5 +123,6 @@ def eval_problems(work: Path, gold: dict, canary: str) -> list[str]:
             for item in cost_problems(loaded["cost"], gold):
                 _once(problems, item)
     except Exception:
+        # A crash of the import adds the harness miss and keeps the note misses.
         _once(problems, RUN)
     return problems

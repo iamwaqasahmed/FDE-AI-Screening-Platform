@@ -57,6 +57,7 @@ def _copy_tree() -> None:
     cancel.py, or mart.py does not survive a second run. The webhook
     file is not copied. The interview folder is not copied.
     """
+    # Remove a previous app so an old intake.py, cancel.py, or mart.py cannot survive.
     destination = WORK / "app"
     if destination.exists():
         shutil.rmtree(destination)
@@ -65,11 +66,13 @@ def _copy_tree() -> None:
         destination,
         ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
     )
+    # Copy the laptop stand-in and the dev namespace next to the app.
     shutil.copy(PACKET / "compose.yaml", WORK / "compose.yaml")
     shutil.copy(PACKET / "Dockerfile", WORK / "Dockerfile")
     deploy = WORK / "deploy"
     deploy.mkdir(parents=True, exist_ok=True)
     shutil.copy(PACKET / "deploy" / "namespace.yaml", deploy / "namespace.yaml")
+    # Copy the blank pages, and ignore the session database and the trace.
     for name in PAGES:
         shutil.copy(TEMPLATES / name, WORK / name)
     (WORK / ".gitignore").write_text(
@@ -81,10 +84,12 @@ def _copy_tree() -> None:
 
 def main() -> None:
     """Copy the workspace. This file takes no extra word."""
+    # The packet must still be beside this file, and the command takes no extra word.
     if not _packet_ready():
         raise SystemExit("This file must stay next to the packet folder. Do not move it.")
     if len(sys.argv) > 1:
         raise SystemExit("Use: python prepare_work.py")
+    # Copy, then print which chapter replaces intake, cancel, the pages, and mart.
     WORK.mkdir(parents=True, exist_ok=True)
     _copy_tree()
     print("Created work/ from the packet.")

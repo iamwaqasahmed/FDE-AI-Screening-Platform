@@ -36,17 +36,23 @@ def model_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]
 
     Notes are graded first, with no scores, so a crash still reports the table. A crash then adds the run miss and returns. When the adapter runs, the code grader adds the budget misses and the approach table is graded again with the real scores. The second pass can add a measurement the first pass skipped.
     """
+    # A planted token returns only the watermark, so the notes are not graded after it.
     if contains_canary(work, canary):
         return [WATERMARK]
+    # Notes are graded with no scores, so a crash still reports the table.
     problems = _notes(work, gold, None, None)
     try:
         modules = _modules(work)
         pack_rows = _pack(pack)
+        # Scores, the served adapter, and the quote come from the participant modules.
         scores = _score(modules, pack_rows, gold)
     except Exception:
+        # A crash adds the run miss and skips the code grader.
         problems.append(RUN)
         return problems
+    # The code grader adds the budget misses.
     _code(problems, modules, pack_rows, gold, scores)
+    # The approach table is graded again with the real scores.
     measured = approach_problems(work, gold, scores["extraction"], scores["intent"])
     return _merge(problems, measured)
 

@@ -101,12 +101,14 @@ class ReleaseTests(unittest.TestCase):
             write_w2d2(profile, week2[1], truth)
             write_w2d3(profile, week2[2], truth)
             write_w2d4(profile, week2[3], truth)
+            # Fingerprints of the earlier packs, including the four week-2 days, plus the deploy gold.
             before = (
                 tuple(fingerprint(pack) for pack in packs),
                 tuple(fingerprint(pack) for pack in week2),
                 (truth / "personas.json").read_bytes(),
                 (truth / "w2d4_gold.json").read_bytes(),
             )
+            # Write this day twice. The two results must agree, and the earlier days must stay as they were.
             first = write_w2d5(profile, root / "w2d5", truth)
             again = write_w2d5(profile, root / "w2d5", truth)
             self.assertEqual(first, again)
@@ -119,6 +121,7 @@ class ReleaseTests(unittest.TestCase):
                     (truth / "w2d4_gold.json").read_bytes(),
                 ),
             )
+            # This day's gold stays on the hidden side.
             self.assertTrue((truth / "w2d5_gold.json").is_file())
             self.assertFalse((root / "w2d5" / "w2d5_gold.json").exists())
 
@@ -144,12 +147,14 @@ class ReleaseTests(unittest.TestCase):
             root = Path(tmp)
             pack = root / "pack"
             write_w2d5(profile, pack, root / "truth")
+            # The hidden gold matches the generator. Prose does not contain the clinic codes or the watermark.
             hidden = json.loads((root / "truth" / "w2d5_gold.json").read_text(encoding="utf-8"))
             prose = _prose(pack)
             self.assertEqual(hidden, gold(profile))
             self.assertNotIn(profile.canary(), json.dumps(hidden))
             for secret in (hidden["clinic_code"], hidden["previous_code"], profile.canary()):
                 self.assertNotIn(secret, prose)
+            # The nightly fixture keeps the clinic code. The change notice does not mention a nightly file.
             nightly = (pack / "fixtures" / "nightly.json").read_text(encoding="utf-8")
             self.assertIn(hidden["clinic_code"], nightly)
             self.assertEqual(_canary_count(pack, profile.canary()), 1)
@@ -189,10 +194,12 @@ class DemoTests(unittest.TestCase):
         """Fails when a new queue module matches the shell, or when a smoke module or the
         image file differs from the filled deploy copy. Only the new modules are traps.
         """
+        # The new queue modules differ between the shell and the filled copy.
         for name in ("queue.py", "file_ain.py", "notify.py", "contract.py"):
             shell = (W2D5_APP / name).read_bytes()
             filled = (W2D5_WORK / "app" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
+        # Smoke modules and the image file stay the same. They are not traps on this day.
         for name in _SMOKE:
             if name in {"admit.py", "health.py", "router.py", "secrets.py"}:
                 shell = (W2D5_APP / name).read_bytes()

@@ -8,8 +8,10 @@ from __future__ import annotations
 
 def styles(profile) -> list[dict]:
     """Return the two coordinator style rows for this profile."""
+    # The seed only changes the first coordinator's wait. Seven seeds share one nudge.
     nudge = profile.seed % 7
     return [
+        # Disagrees, expands shorthand, and is not marked as a rubber-stamp.
         {
             "id": "coord-1",
             "latency_minutes": 40 + nudge,
@@ -17,6 +19,7 @@ def styles(profile) -> list[dict]:
             "rubber_stamp": False,
             "style": "expand-shorthand",
         },
+        # Fast, does not disagree, leaves text as written, and is the rubber-stamp.
         {
             "id": "coord-2",
             "latency_minutes": 8,

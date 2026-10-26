@@ -26,6 +26,7 @@ class FilterTests(unittest.TestCase):
         public document must be allowed. The staff document and
         the restricted document must be refused.
         """
+        # Check a patient against public, staff, and restricted.
         self.assertTrue(allow({"audience": "public"}, "patient"))
         self.assertFalse(allow({"audience": "staff"}, "patient"))
         self.assertFalse(allow({"audience": "restricted"}, "patient"))
@@ -38,6 +39,7 @@ class FilterTests(unittest.TestCase):
         A restricted audience with a records asker must be
         allowed.
         """
+        # Check a staff document for staff, then restricted for staff and for records.
         self.assertTrue(allow({"audience": "staff"}, "staff"))
         self.assertFalse(allow({"audience": "restricted"}, "staff"))
         self.assertTrue(allow({"audience": "restricted"}, "records"))

@@ -55,6 +55,7 @@ def row(
     Empty lists are written when the caller passes nothing.
     failure is the scenario's failure name, or an empty string.
     """
+    # Copy the lists. A missing list is stored empty, not left as None.
     return {
         "scenario": scenario,
         "reply": reply_body,
@@ -69,5 +70,6 @@ def row(
         "refusal_logged": refusal_logged,
         "preference_used": preference_used,
         "decisions": decisions,
+        # The last field names this row's failure, or stays empty.
         "failure": failure,
     }

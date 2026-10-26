@@ -93,15 +93,22 @@ def main() -> None:
     A missing credential is not a hit. The message says the watermark
     was not checked, so you know the copy step is still unfinished.
     """
+    # Collect every hit. An empty list means this folder passed.
+    # Collect hits. A hit names the file and exits 1. The secret value is not printed.
     found = problems()
+    # Print the hits and leave with a failure code. The secret value is not printed.
     if found:
         print("scan failed:")
         for item in found:
             print(f"- {item}")
         raise SystemExit(1)
+    # A missing credential is not a hit. Say that the watermark was not checked.
+    # No credential yet means the watermark was not checked. Say so.
     if not (ROOT / "credentials" / "dev.json").is_file():
         print("scan passed. credentials/dev.json is not in this copy, so the watermark was not checked.")
         return
+    # No hits, and the credential was present, so the watermark was checked too.
+    # A clean folder that does contain the credential.
     print("scan passed.")
 
 
