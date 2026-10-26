@@ -8,7 +8,11 @@ The worksheets stay in `notes/`. The scan reads `work/`, so leave the worksheets
 
 1. Open [packet/kickoff/world/zones.md](packet/kickoff/world/zones.md).
 
-   A zone is a place a system can run. A facility line names the zone that facility sits in. On [notes/zones.md](notes/zones.md), place `h-nakhl`, `h-safra`, `h-wadi`, and `h-ain`. [Chapter 03](03-the-client.md) named three places. It does not place the hospitals. Copy the zone written on the same line as each id. Ain is on this page. If a primary care center has no zone on that page, leave it off the sketch. Your sketch uses this file and nothing later. You draw it yourself.
+   A zone is a place a system can run. A facility line names the zone that facility sits in. [notes/zones.md](notes/zones.md) already has three rows: `zone-hospital`, `zone-private`, and `zone-public`. The second column is what sits there. [Chapter 03](03-the-client.md) named the three places. It counts three hospitals and, separately, the diabetes and eye center. It does not place them.
+
+   Write each facility id in the second column of the zone named on that facility's own line. The four ids are `h-nakhl`, `h-safra`, `h-wadi`, and `h-ain`. Ain is the diabetes and eye center. It has its own line, and that line names a zone. Do not put the three hospitals from chapter 03 in one cell and leave Ain out. Read the zone at the end of each of the four lines.
+
+   The zone list at the top is a different list. The `zone-private` line names `site-a` and `site-b`. Those are sites, not hospitals. Write them on the `zone-private` row, next to the facility id whose own line says `zone-private`. The `zone-public` line names `ext-large`, the external model. No facility line places a hospital there. Write the external model on that row. Do not invent a hospital for it. A primary care center on that page has no zone. Leave those centers off the sketch. Your sketch uses this file and nothing later.
 
 2. Open [packet/kickoff/corpus/pol-stage-gate.md](packet/kickoff/corpus/pol-stage-gate.md).
 
@@ -39,7 +43,7 @@ The worksheets stay in `notes/`. The scan reads `work/`, so leave the worksheets
 
 Three worksheets with your own sentences in them:
 
-- [notes/zones.md](notes/zones.md) names the zone written beside each of `h-nakhl`, `h-safra`, `h-wadi`, and `h-ain`. The public-cloud line names no hospital, so that row has no hospital id
+- [notes/zones.md](notes/zones.md) has each facility id in the second column of the zone named on its line. `zone-private` also names `site-a` and `site-b`. The `zone-public` row names the external model and has no hospital id
 - [notes/my-page.md](notes/my-page.md) has a sponsor, a user, a gate, a pilot requirement, and an assistant-use note
 - [notes/reading-notes.md](notes/reading-notes.md) has two separate accounts of 2023
 

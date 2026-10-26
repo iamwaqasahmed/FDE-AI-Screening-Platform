@@ -26,9 +26,9 @@ Open `work/` and find each row. The release pages those answers cite are in [sou
 | [readout.md](work/readout.md) | The steering answers. Explained in chapter 06 |
 | [retro.md](work/retro.md) | Keep, Drop, and Open. Explained in chapter 06 |
 | [knowledge.md](work/knowledge.md) | The two answers. Explained in [chapter 07](07-knowledge.md) |
-| [cdo.notes.md](work/interviews/cdo.notes.md) | What the chief digital officer says. The checks do not read it |
+| [cdo.notes.md](work/interviews/cdo.notes.md) | A trainer note. The morning did not ask for an interview. The checks do not read it |
 | [cdo.questions.txt](work/interviews/cdo.questions.txt) | The questions that produced those notes. The checks do not read them |
-| [dpo.notes.md](work/interviews/dpo.notes.md) | What the data protection officer says. The checks do not read it |
+| [dpo.notes.md](work/interviews/dpo.notes.md) | A trainer note. The morning did not ask for an interview. The checks do not read it |
 | [dpo.questions.txt](work/interviews/dpo.questions.txt) | The questions that produced those notes. The checks do not read them |
 
 The checks print `passed` when the repair moves the unauthorized citation, the second run matches the held-out slice, the label cost matches the price sheet, the sprint sequences fix then second then spec, the benchmark names the four logs and the second run, the improvement page names `cost.label`, both knowledge answers are present, the improvement gate is uncommented, the requirements page is a rehearsal brief, the backlog drops the non-goals, the stage gate uses the risk tier, the readout answers steering, the retro has three headings, and the personal lab keeps version and audience.

@@ -79,6 +79,8 @@ Week 3 Day 3 left an index that cites an in-force document the asker is allowed 
 
 Today the hidden-test protocol is open. You leave with a draft benchmark that names the four planted failures with evidence, and with workshop notes. Labels stay on the grading service. A second measured run waits until Day 5.
 
+Week 1's forecast family compared a seasonal line with a mean. That seasonal line copies last year. Today's campaign says ophthalmology demand after the announcement is not last year's month. Week 1's calendar does not count Friday as a working day. A Friday offer is a reasoning gap, not a missing document. Week 1's booking waits for an approval. A booked slot with no approval is a workflow miss. Yesterday's citation rule is the retrieval failure: the document is not in force for the asker. A clause that is not on file is a hallucination. The four names are those four misses.
+
 You are one person, and you do all five parts of the job yourself. No part is handed to someone else.
 
 You do five things, in this order:

@@ -9,7 +9,7 @@ You replace two files under `work/`, in this order:
 
 Paste only those two blocks. The block under Read these files is a picture of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy.
 
-Scroll to the heading Replace the contract. The code block under it is the first paste. The next Replace heading is Replace the contract test. Use the four steps from [chapter 05](05-the-sprint.md) on both. Everything above Replace the contract is a picture.
+Scroll to the heading Replace the contract. The code block under it is the first paste. The next Replace heading is Replace the contract test. Use the four steps from [chapter 05](05-the-sprint.md) on both. The section How the replacement works sits above that first Replace heading. Read it. Do not paste it. Every code block above that heading is a picture.
 
 These files are Python. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. If the terminal shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 06 and 07 again from the chapter source. Do not repair the spaces by hand.
 
@@ -44,6 +44,18 @@ def holds(status: str) -> bool:
 Open [test_contract.py](packet/tests/test_contract.py). Search for `holds`. The word `holds` is in the shell test and in the work test. The shell method is `test_live_slot_fixture_holds`. That method accepts `booked`. Do not paste the shell test into `work/`.
 
 The individual check says `the contract test accepted the live-slot fault` when this shell is the file that runs. A queued booking has to stay green. The live-slot fault has to go red. The check reads [live-slot.json](packet/release/fixtures/live-slot.json) from the built pack. The test you paste does not open that file. It uses the word `booked`. The sentence inside the test, "There is no pack file," means the test has no file of its own. Do not copy the fixture into `work/` to resolve that sentence. A copy fails with `a watermarked sample is in the work directory`.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+`holds` is the contract for a booking status. It returns true only when the status is `queued`. A status of `booked` is the live-slot fault, and `holds` returns false for it. The test calls `holds` with those two words. It does not open the pack file. The individual check does open the pack file. A copy of that file under `work/` fails the check.
+
+The shell returned true for every status, including `booked`. While that shell is the file that runs, the individual check says the contract test accepted the live-slot fault.
+
+Before you paste, say which status holds and which status is the fault.
+
+This section adds no file and no command.
 
 ## Replace the contract
 

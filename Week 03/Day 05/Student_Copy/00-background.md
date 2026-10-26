@@ -83,6 +83,8 @@ Week 3 Day 4 left a draft benchmark that names the four planted failures with ev
 
 Today is the second measured run and the rehearsal brief. You leave with one moved retrieval failure, the benchmark, the improvement plan, `rcp/requirements.md`, and the readout. A requirements list that copies the sponsor sentence, including triage, is not a brief.
 
+The failure you move is yesterday's retrieval failure, `log-circular`. The hallucination, the Friday offer, and the booking with no approval stay open. Week 1 left `p-triage` blocked and left G2, the DPIA, open. Today's spec does not close G2 and does not build triage. The citation requirement sits on G1, the risk tier. Week 1's sponsor sentence is still not the plan.
+
 You are one person, and you do all five parts of the job yourself. No part is handed to someone else.
 
 You do five things, in this order:

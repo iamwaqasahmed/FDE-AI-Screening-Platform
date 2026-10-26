@@ -145,6 +145,8 @@ The live-slot fault is a booking whose status is `booked`. A queued booking is t
 
 ## What you are deciding
 
+Week 1 Day 3 already recorded this limit. The SLA policy said `h-ain` has no slot API, and a hold or a booking there returns queued. You did not book it. Today's nightly file is the path that was missing. A real-time booking still returns queued. You do not go back and change the Week 1 worker.
+
 Include `h-ain`. Sequence `cr-ain` after the smoke test. A patient at Ain sees a queued booking until the nightly file arrives. The starter dashboard still shows request rate, error rate, and model latency. Stage 2 adds the rest in Week 4.
 
 This page is done when those six demo lines are on the screen, you have read the clinic code in the nightly file and the clinic code in the missed-night file, and you have not copied a picture into `work/`.

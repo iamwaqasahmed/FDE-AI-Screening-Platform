@@ -18,7 +18,7 @@ The filled test checks a 14-day gap from `1448-07-15` to `1448-07-29`, then a 2-
 
 ## One person
 
-The history rows you opened in the morning are the inputs. A mother and a newborn can share a national id. Twins can share a phone. An MRN can be reused. `partition` links a shared national id, skips `relation` of `newborn` or `twin`, and links `replaces`. Phone, MRN, and `merge_with` are not links. A failed check digit is not read, so that person stays. `patient_count` counts groups. `removals` proposes only `death-late` and `seen-elsewhere`. The person stays in the cluster file.
+The history rows you opened in the morning are the inputs. Week 1 left this waitlist as one person stored as two rows. That shape is `replaces`. A mother and a newborn can share a national id and still be two people. Twins can share a phone. An MRN can be reused. `partition` links a shared national id, skips `relation` of `newborn` or `twin`, and links `replaces`. Phone, MRN, and `merge_with` are not links. A failed check digit is not read, so that person stays. `patient_count` counts groups. `removals` proposes only `death-late` and `seen-elsewhere`. The person stays in the cluster file.
 
 The shell merges on a shared national id, a shared phone, or a shared MRN, follows `merge_with`, counts rows, and returns every waitlist row. While that shell is the file that runs, the check says a mother and a newborn were merged, twins were merged, a reused MRN was linked, and a row count was used as a patient count. The message does not name a national id.
 

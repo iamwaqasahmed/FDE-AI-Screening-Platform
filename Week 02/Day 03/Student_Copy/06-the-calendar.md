@@ -186,6 +186,8 @@ Read the file back. You should see `2027-01-24` beside `thursday`. That is day 2
 
 The comment in the file mentions `Solution_Copy`. Leave it. That folder sits the same number of steps above `work/tests` as `Student_Copy` does. Your file is the one under `Student_Copy/work`.
 
+The test opens `data/rel-w1d3/calendar/business-calendar.json` and `data/rel-w2d3/calendar/cases.json`. Chapter 01 writes `data/rel-w2d3`. Week 1 Day 3 writes `data/rel-w1d3`. If a later command says it cannot find one of those paths, rebuild the missing release from the course folder. `cd problem_simulation`, then `python -m alwaha.build --profile practice --release rel-w1d3` for the calendar, and `python -m alwaha.build --profile practice --release rel-w2d3` for today's cases. Do not copy those files by hand. The checks in chapter 10 read the built packs. They are a different command from the suite.
+
 Do not run the suite yet. The receipt test in the shell still waits. [Chapter 08](08-the-receipt.md) runs the suite after that test is replaced.
 
 Next: [07 — The reply](07-the-reply.md).

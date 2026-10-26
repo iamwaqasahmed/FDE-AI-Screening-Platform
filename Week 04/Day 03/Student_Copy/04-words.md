@@ -79,9 +79,15 @@ This page is done when you have scanned the tables.
 
 ## A plain reading
 
-Chat and the batch share one GPU quota. Chat keeps a reserve. A cold start is the wait before a new process can serve. Adding capacity only after the peak has started misses that wait. The throughput sheet names the wait. Do not copy the number onto a page.
+`p-forecast` is the Week 1 Day 2 problem id. Week 3 Day 2 called it monthly session volumes. Today's file is the surge: a peak, and the eye-screening campaign Week 3 Day 4 said starts the next month. The backlog is that campaign. It is not last year's month.
 
-Today's external price replaces yesterday's rate. A batch sent to `ext-large` because it is faster today pays the new price. The capacity table uses today's rate.
+Chat and the batch share one GPU quota. Week 3 Day 2's quota was a count of GPUs for the adapter fit. Today's quota is the serving pool. Chat keeps a reserve on that pool. A cold start is the wait before a new process can serve. Adding capacity only after the peak has started misses that wait. The throughput sheet names the wait. Do not copy the number onto a page.
+
+Week 3 Day 2 served one adapter, `lora-local`, on `local-small`. You did not train it. Today three approved rows share one process: `lora-extract`, `lora-intent`, and `lora-local`. You still do not train them. You serve the rows whose base is `local-small`. The candidate id and `ext-large` stay off that process.
+
+`price.ext_large_per_1k` is the Week 3 Day 2 external rate. Today that key is yesterday. [price-today.json](packet/release/finance/price-today.json) replaces it. A batch sent to `ext-large` because it is faster today pays the new price. The capacity table uses today's rate.
+
+Yesterday's cache was clinic hours. Today's cache is a stored public answer. A hit spends no model call. They are different files.
 
 This section adds no file and no command.
 

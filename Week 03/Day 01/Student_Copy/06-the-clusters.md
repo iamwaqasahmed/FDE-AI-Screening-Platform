@@ -19,6 +19,8 @@ These files are Python. A styled paste can break the indentation. Copy from this
 
 Do not run the suite on this page. The suite command is in [chapter 08](08-the-advanced.md). It is not a check. The checks are only in [chapter 10](10-finish.md).
 
+`parents[1]` in a test is the path line that loads the `app` folder beside `tests`. It is not a mother, a newborn, or a patient id. When a later line says to leave `parents[1]`, leave that path line.
+
 ## Read these files
 
 You are reading. You are not pasting yet. Open these in the packet. Read the comment at the top of each one. Do not edit them. The first block you copy is under Replace the dates, further down this page.
@@ -207,11 +209,11 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 Three jobs, one person.
 
-`gregorian` leaves a Gregorian date alone. A Hijri date, empty era and a year of 1400 or later, goes through the tabular calendar. `_from_hijri` uses a Julian day number and does not shift the day by one at the month boundary. The shell added a day when the Hijri day was 1 or at least 29. The check calls that a boundary off by a day. It does not print the civil day.
+`gregorian` leaves a Gregorian date alone. A Hijri date, empty era and a year of 1400 or later, goes through the tabular calendar. That calendar gives each month a fixed length, so a computer can turn the date into a civil day. `_from_hijri` uses a Julian day number, which is only the count in that turn, and does not shift the day by one at the month boundary. The shell added a day when the Hijri day was 1 or at least 29. The check calls that a boundary off by a day. It does not print the civil day. The test checks the gap instead: 14 civil days from `1448-07-15` to `1448-07-29`, then 2 civil days to `1448-08-01`.
 
-`clinic` returns the endocrinology code in force at `h-wadi` on the row's date. Before June 2024 the code stays `END-01`. On and after that date both endocrinology codes at that hospital are `ENDO-CLN`. The shell rewrote the new code backward and ignored the date.
+`clinic` returns the endocrinology code in force at `h-wadi` on the row's date. Before June 2024 the code stays `END-01`. The file treats June 2024 as starting on `2024-06-01`. On and after that date both endocrinology codes at that hospital are `ENDO-CLN`. Another hospital keeps the code on the row. The shell rewrote the new code backward and ignored the date.
 
-`partition` is who counts as one person. A shared national id links two rows. A newborn and a twin stay out of that link. A row whose `replaces` field names another national id joins that person. A shared phone, a reused MRN, and `merge_with` are not links. `patient_count` counts groups, not rows. `removals` only proposes a removal for a late death flag or a seen-elsewhere flag. The person stays in the cluster file. The shell merged on phone and MRN and counted rows.
+`partition` is who counts as one person. Week 1's open item, one person stored as two rows, is the `replaces` link: an Iqama row joins the visitor national id it names. A shared national id also links two rows, and a newborn and a twin stay out of that link. A shared phone, a reused MRN, and `merge_with` are not links. A failed check digit is not read, so that person stays. `_find` and `_union` only keep the groups. They do not decide who belongs together. `patient_count` counts groups, not rows. `removals` only proposes a removal for a late death flag or a seen-elsewhere flag. The person stays in the cluster file. The shell merged on phone and MRN and counted rows.
 
 Before you paste, say why a mother and a newborn who share a national id are still two people, and why a row count is not the patient count.
 

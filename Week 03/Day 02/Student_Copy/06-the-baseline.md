@@ -126,9 +126,11 @@ The prompt is a baseline. It is not the model you serve.
 
 `target` stays on `local-small` and leaves phi off. `served` is false. `extract` on this file always returns typed with a blank sub-specialty, and `intent` always returns status. That weakness is the point. The real letter reading is `extract.py`. The real message reading is `intent.py`. Do not copy those into the prompt. The shell sent letter fields to `ext-large` and marked the prompt as served.
 
-`relabel` in the extract file reads the text. Phone or photo, scan, retina, and pediatric follow the same rules as Week 3 Day 1. A letter that names neither sub-specialty stays blank.
+The score this day calls F1 is the share of fields that match. It is not a precision-and-recall F1. For a letter, the two fields are source type and sub-specialty. For a message, the one field is the intent. The price cap's `f1_floor` is the line that share has to clear. The prompt's always-typed, always-status answers stay under that line. The held-out letters are not in the packet. They use the same text rules, which is why you do not need their rows.
 
-`classify` returns one intent. The first matching rule wins. An emergency phrase wins even when the same sentence also asks for status or a slot. A message that matches nothing is other. The shell called every message status, including "Cancel this visit."
+`relabel` in the extract file reads the text. Phone or photo, scan, retina, and pediatric follow the same rules as Week 3 Day 1. Phone or photo wins when the word scan is also there. A letter that names neither sub-specialty stays blank.
+
+`classify` returns one intent. The first matching rule wins. An emergency phrase wins even when the same sentence also says referral or asks for a slot. Cancel is checked before book, so a cancellation is not read as a booking. The word referral counts as status, so that rule stays last. A message that matches nothing is other. The shell called every message status, including "Cancel this visit."
 
 Before you paste, say why the prompt is allowed to be wrong, and which file is not allowed to be wrong.
 

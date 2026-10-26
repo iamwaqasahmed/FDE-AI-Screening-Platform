@@ -12,4 +12,8 @@ The live-slot fixture is not in this folder. The individual check reads it from 
 
 The suite in this `work/` folder prints `Ran 11 tests` and `OK`. The packet suite, beside the shells, prints `Ran 10 tests` and `OK`. The contract test is the extra test. The suite does not read the pages.
 
+## The path through the files
+
+The morning chapter [07-the-contract.md](../Student_Copy/07-the-contract.md) has the section How the replacement works. That section is the path through the file this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The pages](05-the-pages.md).

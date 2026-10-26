@@ -103,7 +103,9 @@ Do not copy an `mrn` or a `national_id` from this file onto a page. Finding the 
 
 ## What you are deciding
 
-A mother and a newborn who share a national id stay two people. Twins who share a phone stay two people. A reused MRN stays two people. A Hijri month boundary stays on the civil day. After June 2024, endocrinology at h-wadi is ENDO-CLN. Rows before that keep END-01.
+Week 1's open item was one person stored as two rows. Today that shape is the Iqama row. Its `replaces` field names the visitor row's national id. Those two rows are one person.
+
+The other rows are the opposite shape. A mother and a newborn who share a national id stay two people. Twins who share a phone stay two people. A reused MRN stays two people. A failed check digit does not remove a person. A Hijri month boundary stays on the civil day. After June 2024, endocrinology at h-wadi is ENDO-CLN. Rows before that keep END-01. June 2024 starts, in the clinic file, on `2024-06-01`.
 
 This page is done when those four demo lines are on the screen, you have found `1448-07-29` and `1448-08-01` in the history file, and you have not copied a picture or an id into `work/`. The other rows can wait. Later chapters name them again.
 

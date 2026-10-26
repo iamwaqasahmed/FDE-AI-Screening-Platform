@@ -137,7 +137,7 @@ An adapter, on this day, is the small set of extra weights registered as `lora-l
 
 QLoRA is the fit in `qlora.py`. It has to stay inside the GPU count you read from the quota file. The two checks do not require that file. The suite does.
 
-The prompt baseline stays weak, and it is not the model you serve. Hours questions for `p-info` stay on retrieval. DNA stays a table, `classical-ml`, not a language model.
+The prompt baseline stays weak, and it is not the model you serve. The score called F1 on this day is the share of fields that match. For a letter those fields are source type and sub-specialty. For a message the field is the intent. Hours questions for `p-info` stay on retrieval. DNA stays a table, `classical-ml`, not a language model.
 
 This section adds no file and no command.
 

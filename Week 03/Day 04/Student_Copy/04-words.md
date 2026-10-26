@@ -44,7 +44,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | `log-approval` | The booking has no approval. The benchmark names this a workflow issue |
 | Hallucination | A citation of a clause that is not on file. The log file does not contain this word |
 | Retrieval failure | A citation that is not the in-force document the asker may see |
-| Reasoning gap | The offer uses Friday when the preference says otherwise |
+| Reasoning gap | The offer uses Friday. Week 1's calendar does not count Friday as a working day. The same log line also ignores a gender preference |
 | Workflow issue | The booking has no approval. On the benchmark, this failure is a design bug |
 | Design bug | A fault in the design, recorded on the benchmark. The workflow failure is one |
 | Evidence | What the workshop stays on. A ranking is not evidence by itself |
@@ -102,6 +102,16 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | `intervals.py` and `experiment.py` | The advanced path. The two checks do not require them. The suite does. You do not delete them |
 
 This page is done when you have scanned the tables. You do not need to open every link before chapter 05. Come back when a later chapter uses a word you want in the file.
+
+## A plain reading
+
+The score called F1 is still the share of fields that match, the same share as Week 3 Day 2. It is not the harmonic mean of precision and recall. The development slice shows outputs and no labels. The grader holds the labels. You do not invent a label field in that file.
+
+A Wilson interval is a range around a count of correct rows out of a district's rows. The range stays between 0 and 1. An empty district is not a rate of zero. There is no evidence, so the range is the whole interval from 0 to 1. You do not derive the formula. The file already contains it. `1.96` in that file is the usual width for this kind of range.
+
+The experiment file has two counts. `contained` is higher for one arm. `honest_pending` is the metric named before you look. The page you write does not say which arm won.
+
+This section adds no file and no command.
 
 The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
 

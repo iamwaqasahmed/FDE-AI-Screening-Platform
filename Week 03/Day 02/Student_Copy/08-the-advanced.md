@@ -105,11 +105,11 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 The two checks do not load these files. The suite does. Do not delete them.
 
-`fit` is the QLoRA path. A wide rank has to share GPUs. Thirty-two ranks share one GPU. The GPU count is the smaller of what the rank needs and what the quota allows. The requested rank is kept. The shell spent a full LoRA rank even when the quota was smaller, and it named the method `lora`.
+`fit` is the QLoRA path. It does not train a network. It maps a rank onto a GPU count. Thirty-two ranks share one GPU. The GPU count is the smaller of what the rank needs and what the quota allows. The requested rank is kept. Rank 32 still fits the one GPU in the quota file. The shell spent a full LoRA rank even when the quota was smaller, and it named the method `lora`.
 
-`keep` keeps a domain line only when the row has no item id. An extraction letter carries an item id and is left out. The shell trained on every row, including those letters.
+`keep` keeps a domain line only when the row has no item id. A domain line is unlabeled text. An extraction letter carries an item id and is a different job, so it is left out. The shell trained on every row, including those letters.
 
-`revise` expands "sugar clinic" to endocrinology, leaves the clause id in place, and drops Friday and a date the calendar cannot keep. The shell returned the coordinator draft unchanged.
+`revise` expands "sugar clinic" to endocrinology and leaves the clause id in place. `crit-endo-v3` is the endocrinology clause from Week 1 Day 3. The function drops the word Friday and the token `2027-03-10` by replacing them with spaces. It does not call the Week 1 calendar. The word `the` stays, so the line reads `the endocrinology`. That wording is what the test expects. Do not tidy it into a smoother sentence. The shell returned the coordinator draft unchanged.
 
 Before you paste, say what `fit` is not allowed to exceed, and which rows `keep` throws away.
 

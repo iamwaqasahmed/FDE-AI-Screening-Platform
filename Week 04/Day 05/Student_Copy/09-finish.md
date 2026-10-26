@@ -119,3 +119,17 @@ The Done section above is the gate. `knowledge.md` is part of that gate. The [op
 If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
 
 The four-week rehearsal ends here. The [course guide](../../../learning/README.md) says weeks 5 and 6 are a different client. The [case folder](../../../case/README.md) says the later project is a different client. There is no Day 6 in this folder. The course guide is the map of the days you have finished.
+
+## What the four weeks leave
+
+The sponsor asked for an AI front desk that books, reschedules, answers, and chases referrals, live before Ramadan. The rehearsal did not build that sentence.
+
+Week 1 proved a small assistant. Intake stops for a coordinator. A patient can ask for status and book. A return waits. A letter cannot book. Triage stayed blocked.
+
+Week 2 signed a patient and a coordinator in, took the cluster's feeds, tested the receipt against the case clock, and deployed a private-cloud URL. A booking at Ain stayed queued for the nightly file.
+
+Week 3 separated people from rows, served a registered adapter inside the quota, cited an in-force document the asker may see, and wrote requirements that do not copy the sponsor sentence.
+
+Week 4 put a screen in front of the tools, filled the DPIA Week 1 left open, rebuilt an incident from spans, held chat's latency while a batch ran, moved traffic when site-a died, and connected the contact center, the warehouse, and HR. The proposal's client is still Al-Waha. `p-clock` is first. `p-waitlist` depends on identity. A clinician still owns urgency. Patient data stays off `ext-large`.
+
+This section adds no file and no command.

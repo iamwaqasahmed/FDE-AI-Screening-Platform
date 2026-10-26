@@ -51,7 +51,7 @@ You are done reading. The next section is How the replacement works. Read it. Th
 
 Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
 
-`cite` returns nothing when the asker is a patient and the document audience is staff. Any other row returns the audience, the document id, and the version. The shell returned only the document id, including a staff document shown to a patient.
+`cite` returns nothing when the asker is a patient and the document audience is staff. On this slice that audience word is `staff` or `patient`. It is not Day 3's `public` or `restricted`. Do not rewrite the comparison to `public`. Any other row returns the audience, the document id, and the version. The shell returned only the document id, including a staff document shown to a patient.
 
 `meets_budget` is true when the value clears the floor. A value on the floor still clears it. The shell returned true for every value and ignored the floor.
 

@@ -44,7 +44,7 @@ Chapter 01 still points at python.org, git-scm.com, and `https://github.com/iamw
 
 ## This review did not run every grader in the course
 
-An earlier pass did not run `alwaha.check`. A later pass ran the Week 1 solution checks, after building `rel-w1d1` through `rel-w1d5` for `practice`. Those Week 1 checks printed `passed`. Weeks 2 through 4 were not run in that pass. The checks write under `problem_simulation/build`, which the course tells readers to leave closed.
+An earlier pass did not run `alwaha.check`. A later pass ran the Week 1 solution checks, after building `rel-w1d1` through `rel-w1d5` for `practice`. Those Week 1 checks printed `passed`. A Week 3 pass ran the solution checks for `rel-w3d1` through `rel-w3d5` after the same kind of build. Those checks printed `passed`, and each solution suite printed `OK`. A Week 4 pass built `rel-w4d1` through `rel-w4d5` for `practice` and ran the solution checks named in each finish chapter. Each printed `passed`. Each solution suite printed `OK`: 19, 9, 9, 9, and 8 tests. The five demos printed the lines the morning chapters name. Week 2 was not run in that pass. The checks write under `problem_simulation/build`, which the course tells readers to leave closed. None of these passes pasted a fresh student `work/` from an empty folder.
 
 ## An expert read is not a classroom
 

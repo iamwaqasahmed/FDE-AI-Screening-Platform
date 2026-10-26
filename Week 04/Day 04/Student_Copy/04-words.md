@@ -94,11 +94,15 @@ This page is done when you have scanned the tables.
 
 ## A plain reading
 
-Two replicas sit behind a balancer. When site-a is killed, new traffic goes to site-b, the replica that is still healthy. In-flight approvals live in the workflow store. They are not on the pod that was killed. Rebuilding from the dead pod drops them.
+Week 2 deployed one private-cloud URL. Today's private cloud has two sites. Two replicas sit behind a balancer. When site-a is killed, new traffic goes to site-b, the replica that is still healthy. The shell places only site-a, and site-a is down.
+
+An in-flight approval is a pending approval already started. It is the same kind of hold Week 1 stopped for a coordinator. These two rows are today's drill file. They are not the Week 1 scenario log. The approval lives in the workflow store. It is not on the pod that was killed. Rebuilding from the dead pod drops it.
 
 A circuit breaker is the switch on a failing partner. Open means the booking path does not call `insure` and does not wait out the timeout. Closed means the path still waits. `insure` is a partner. It is not a third site.
 
-When the model is down, status can still be read. That is the degradation this day asks for. A GPU purchase takes the lead time in the finance file. Renting is how you meet the date before Ramadan when that purchase cannot.
+When the model is down, status can still be read. Status is the Week 1 read. It does not need the model. A booking does not wait on `insure`. It goes to the rules worker. That is the degradation this day asks for.
+
+A GPU purchase takes the lead time in the finance file. The finance interview names 16 weeks, and it names 8 February as the date a purchase started on this release misses. Renting meets that date. You do not invent either figure. Billing `h-ain` its share of the backlog does not give Ain a live slot API. Week 2 left a booking there queued for the nightly file.
 
 This section adds no file and no command.
 

@@ -11,7 +11,7 @@ Paste only those four blocks. The blocks under Read these files are pictures of 
 
 The shell test is a picture. The filled test is the paste. A deletion that clears the row and leaves the index is the shell. The paste clears the row, memory, the index, and the permitted logs. Do the app file and its test before you start the next pair.
 
-You are reading until the heading Replace access. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Everything above that heading is a picture. You do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures.
+You are reading until the heading Replace access. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures.
 
 These files are Python. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, open a terminal in the course folder and run `python "Week 04/Day 01/Student_Copy/prepare_work.py"`. Then paste chapters 05, 06, and 07 again from the chapter source. Do not repair the spaces by hand. A second run puts the shell tests back.
 

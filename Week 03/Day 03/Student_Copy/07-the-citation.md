@@ -156,7 +156,7 @@ A search hit is not yet a citation. Four functions turn it into one, or into a r
 
 `allow` is the audience rule. A patient sees `public` only. Staff see `public` and `staff`. Records also see `restricted`. Anyone else sees nothing. A missing audience matches nothing.
 
-`criteria` binds one specialty at the referral's start day. For `card`, `endo`, and `ophth`, an in-force version 4 that covers that day wins. Otherwise a version 3 that is in force or superseded, and that covers the day, wins. `_covers` rejects a day before the effective date or on or after sunset. An in-flight referral keeps the version it started on. The other specialties do not jump to v4.
+`criteria` binds one specialty at the referral's start day. Week 1 Day 3 already followed the document that was in force on that day. v4 was a draft then. Today's feed can mark v3 superseded when v4 becomes in force. A superseded v3 still covers a start day inside its window, which is why the kept statuses are `in_force` and `superseded`. For `card`, `endo`, and `ophth`, an in-force version 4 that covers that day wins. Otherwise a version 3 that is in force or superseded, and that covers the day, wins. `_covers` rejects a day before the effective date or on or after sunset. An in-flight referral keeps the version it started on. `dev-flight` started on `2027-01-20`, before the case date. Neuro is not in the v4 set. This function does not read site. Site is the booking conflict in chapter 08.
 
 `answer` cites a span the asker may see, or refuses. Nothing bound is `no-document`. A bound document the asker cannot see is an audience refusal. With no specialty, `_visible` keeps in-force spans this asker may see that carry a question code. `_cite` puts the clause id on the span.
 

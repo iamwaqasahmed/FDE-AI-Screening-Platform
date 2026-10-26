@@ -93,7 +93,7 @@ The brief is not the sponsor sentence. These two functions are how that decision
 
 `kept` drops a story whose id is in the non-goal set. Triage and the other blocked stories are that set. A story with no id is kept. The shell kept every sponsor story, including the ones the memo marked `blocked`.
 
-`gate_for` puts the citation requirement on the risk tier. Every other requirement id returns an empty gate. G1 is that tier. The shell left the citation requirement with no gate, so the spec could not say which approval it sits under.
+`gate_for` puts the citation requirement on the risk tier. Every other requirement id returns an empty gate. G1 is that tier. Week 1 left G2, the DPIA, open. This function does not close G2. The shell left the citation requirement with no gate, so the spec could not say which approval it sits under.
 
 Before you paste, say what a non-goal does to a backlog story, and which requirement receives a gate.
 

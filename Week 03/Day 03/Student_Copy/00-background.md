@@ -75,6 +75,8 @@ Week 3 Day 2 was the signed ruling. You left with a registered adapter that beat
 
 Today criteria v4 is in force for three specialties. You leave with an index that cites an in-force document the asker is allowed to see. An in-flight referral keeps the version it started on. The unauthorized circular is not a citation.
 
+Week 1 Day 3 used the criteria document that was in force when the referral started. For endocrinology that document was v3. v4 was still a draft, so the intake workflow did not use it. Today's feed is what moves v4 to in force, and only for endo, ophth, and card. A referral that started before that window still cites v3, even after the feed marks v3 superseded. Neuro is not on the notice, so neuro stays on v3. Yesterday's `local-embed` row is the name of today's token vector. It is still not a training loop. Hours questions stayed on retrieval. This index is that retrieval.
+
 You are one person, and you do all five parts of the job yourself. No part is handed to someone else.
 
 You do five things, in this order:

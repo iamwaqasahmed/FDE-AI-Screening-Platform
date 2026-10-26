@@ -94,9 +94,9 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 The draft benchmark can ship without these. The suite still imports them. Do not delete them.
 
-`bounds` is a Wilson interval around a success rate. An empty slice covers the whole range from 0 to 1. `by_district` counts the correct rows in each district and returns one interval per district. A single percentage hides a district that is far from the others.
+`bounds` is a Wilson interval around a success rate: a range that stays between 0 and 1. An empty slice covers the whole range from 0 to 1. That is not a rate of zero. There is no evidence. `1.96` is the usual width for this kind of range. You do not derive the formula. `by_district` counts the correct rows in each district and returns one interval per district. A single percentage hides a district that is far from the others.
 
-`report` reads the metric the protocol pre-registered. Each arm's rate is that metric's count divided by `n`. The winner is the highest rate. A tie keeps the earliest arm in the counts. The shell scored a metric that was not the one written down before the run.
+`report` reads the metric the protocol pre-registered, `honest_pending`. Each arm's rate is that metric's count divided by `n`. The winner is the highest rate. A tie keeps the earliest arm in the counts. The contained count is higher for the other arm. That is why the shell looks convincing. The shell scored a metric that was not the one written down before the run. The experiment page does not name a winner. Do not copy the function's winner onto that page.
 
 Before you paste, say which metric `report` is allowed to crown, and why an empty district is not a rate of zero in `bounds`.
 

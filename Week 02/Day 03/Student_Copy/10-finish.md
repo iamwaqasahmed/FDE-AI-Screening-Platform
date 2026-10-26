@@ -42,6 +42,10 @@ A failed check prints `failed`, then one or more lines that start with a dash. T
 
 | What it prints | Where to go |
 | --- | --- |
+| `python` is not recognized | [Chapter 01](01-setup.md). Use `py` instead of `python` in the command |
+| `No module named alwaha` | The terminal is not inside `problem_simulation`. Open a new terminal in the course folder, run `cd problem_simulation`, and run the check again |
+| `Build rel-w2d3 first.` | [Chapter 01](01-setup.md). Run the build again with `--profile practice` and `--release rel-w2d3` |
+| `No such file or directory` and the message names `data/rel-w1d3` or `data/rel-w2d3` | That line is from the suite in [chapter 08](08-the-receipt.md), not from these two checks. Rebuild the missing pack. From the course folder, run `cd problem_simulation`, then `python -m alwaha.build --profile practice --release rel-w1d3` for the calendar, and `python -m alwaha.build --profile practice --release rel-w2d3` for today's cases, clock file, and fixture. Then run the suite again |
 | `the calendar does not match` | [Chapter 06](06-the-calendar.md). The message does not name a date. Open the business calendar and the case list. Count Sunday through Thursday and skip the holiday list. Paste both blocks from chapter 06 again |
 | `the receipt test sleeps` | [Chapter 08](08-the-receipt.md). The letters `sleep` are in `receipt.py` or `test_receipt.py`, including inside a comment. The message does not mean the suite is still waiting. Paste both files again. The replacement blocks do not contain those letters |
 | `the suite accepted the receipt fault` | [Chapter 08](08-the-receipt.md). The receipt still treats every receipt as due. Paste `receipt.py` from chapter 08. The demo's second line is the switch |

@@ -6,7 +6,7 @@ The blank page has empty lists. [guardrails.json](work/guardrails.json) lists th
 
 ## DPIA
 
-The blank page has five empty headings. [dpia.md](work/dpia.md) keeps those headings. Purpose is the patient access assistant. Residency keeps PHI off `ext-large`. The risk tier is G1. Stores cover the row, memory, the index, and the logs. The breach clock starts at the timestamp on [phi-logs.md](sources/release/notices/phi-logs.md), and the log is `int-engine`. A missing field makes the privacy check say `the DPIA misses a required field`. The message does not name the field.
+The blank page has five empty headings. [dpia.md](work/dpia.md) keeps those headings. Purpose is the patient access assistant. Residency keeps PHI off `ext-large`. The risk tier is G1. G2 is this DPIA, the gate Week 1 left open. Naming G1 on Week 3 Day 5 did not close it. Stores cover the row, memory, the index, and the logs. The breach clock starts at the timestamp on [phi-logs.md](sources/release/notices/phi-logs.md), and the log is `int-engine`. A missing field makes the privacy check say `the DPIA misses a required field`. The message does not name the field.
 
 ## Requests
 

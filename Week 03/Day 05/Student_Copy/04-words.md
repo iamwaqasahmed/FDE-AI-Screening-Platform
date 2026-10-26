@@ -93,6 +93,16 @@ A miss on a page fails only the check in that row. You do not run a check until 
 
 This page is done when you have scanned the tables.
 
+## A plain reading
+
+Week 1 left G2, the DPIA, open. Naming G1 on the citation requirement does not close G2. G1 is the risk tier. The personal-data assessment is still later.
+
+`cost.label` on the price sheet is the price of one label. `labels.json` has a different `price` and a `sar` budget. The function multiplies the count by the price it is given. It does not read `2` out of `labels.json`.
+
+On the personal slice, a document's audience is the word `staff` or `patient`. That is not Day 3's `public` or `restricted`. A patient asking for a `staff` document is refused. A kept citation still carries audience, document id, and version.
+
+This section adds no file and no command.
+
 The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
 
 Next: [05 — The sprint](05-the-sprint.md).

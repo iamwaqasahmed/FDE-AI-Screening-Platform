@@ -67,6 +67,10 @@ Week 2 Day 5 was the change to include Ain. You left with a smoke-tested URL, `d
 
 Today the data request is approved. You leave with one person-level waitlist, a label sample under ann-v2, and a synthetic sample that passes the fidelity card.
 
+Week 1 left `p-waitlist` open. The diagram called that open item a split identity: duplicate rows, and one person stored as two. Week 2 Day 1 used the word identity for the sign-in note. That note is not today's job. Today's identity check is the waitlist person.
+
+The full history has both shapes. An Iqama row whose `replaces` field names a visitor number is one person stored as two rows. A mother and a newborn can share a national id and stay two people. Twins can share a phone. An MRN can be reused. Linking every shared national id, phone, or MRN would merge those people. The cluster job links only the rows that are the same person.
+
 You are one person, and you do all five parts of the job yourself. No part is handed to someone else.
 
 You do five things, in this order:

@@ -42,6 +42,9 @@ A failed check prints `failed`, then one or more lines that start with a dash. T
 
 | What it prints | Where to go |
 | --- | --- |
+| `python` is not recognized | [Chapter 01](01-setup.md). Use `py` instead of `python` in the command |
+| `No module named alwaha` | The terminal is not inside `problem_simulation`. Open a new terminal in the course folder, run `cd problem_simulation`, and run the check again |
+| `Build rel-w2d4 first.` | [Chapter 01](01-setup.md). Run the build again with `--profile practice` and `--release rel-w2d4` |
 | `the health probe does not report the registered hash` | [Chapter 07](07-the-probe.md). The message does not name the hash. Open `models.json`. The row you want has id `local-small` and status `approved`. The previous row stays in the file. Paste `health.py` and `test_health.py` again. The candidate argument can remain on the function line |
 | `the image runs as root` | [Chapter 06](06-the-image.md) and [chapter 07](07-the-probe.md). The Dockerfile must end on `USER 1000`. Admission must reject `root` and `0`. The manifest must set `runAsNonRoot`. The demo's first line is `root image: rejected` |
 | `a national id is in the deploy log` | [Chapter 06](06-the-image.md). The message does not name the id. Paste `admit.py` again. `emitted_log` removes the id. Leave `log.json` in the packet |

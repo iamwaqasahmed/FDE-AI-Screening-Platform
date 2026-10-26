@@ -111,7 +111,7 @@ key,sar
 
 Find the row whose key is `cost.label`. Read the sar on that row from the file. This item is done when you have found that row. Close the file.
 
-7. Open [labels.json](packet/release/budget/labels.json). Search for `price`. The file has two keys, `price` and `sar`. This item has no picture. A picture would copy the numbers, and the numbers stay in the file. Do not copy them onto a page. This item is done when you have seen both keys. Close the file.
+7. Open [labels.json](packet/release/budget/labels.json). Search for `price`. The file has two keys, `price` and `sar`. This item has no picture. A picture would copy the numbers, and the numbers stay in the file. Do not copy them onto a page. The `price` key is not `cost.label` from the previous file. Chapter 06 uses `cost.label` as the price of one label. This file's `sar` is the budget that spend is not allowed to pass. The two amounts are different. This item is done when you have seen both keys and you have not treated them as the label price. Close the file.
 
 8. Open [before.jsonl](packet/release/slices/before.jsonl). Search for `hours-c1`. A jsonl row is one long line. Word wrap can make it look like several lines. It is still one row. The file has outputs and no label field. The file has more rows. Several of them repeat the first line. The next block is a picture of two rows from that file. Do not paste it. This block replaces nothing.
 

@@ -27,9 +27,9 @@ Open `work/` and find each row.
 | [patients.md](work/patients.md) | One patient. Explained in [chapter 06](06-the-pages.md) |
 | [classes.md](work/classes.md) | Four phi rows, and a scan before sharing. Explained in chapter 06 |
 | [knowledge.md](work/knowledge.md) | The two answers. Explained in [chapter 07](07-knowledge.md) |
-| [dpo.notes.md](work/interviews/dpo.notes.md) | What the Data Protection Officer says. The checks do not read it |
+| [dpo.notes.md](work/interviews/dpo.notes.md) | A trainer note. The morning did not ask for an interview. The checks do not read it. Do not go back and add one |
 | [dpo.questions.txt](work/interviews/dpo.questions.txt) | The questions that produced those notes. The checks do not read them |
-| [coord-lead.notes.md](work/interviews/coord-lead.notes.md) | What the coordinator lead says. The checks do not read it |
+| [coord-lead.notes.md](work/interviews/coord-lead.notes.md) | A trainer note. The morning did not ask for an interview. The checks do not read it |
 | [coord-lead.questions.txt](work/interviews/coord-lead.questions.txt) | The questions that produced those notes. The checks do not read them |
 
 The checks print `passed` when the Hijri boundary stays on the civil day, h-wadi endocrinology follows June 2024, a mother and a newborn stay apart, twins stay apart, a reused MRN stays two people, the count is people, the sprint sequences cluster then relabel then sample then scan and mentions adjudication, the patient page defines one patient, a phone photo is a photo, a named sub-specialty is filled, the guideline is ann-v2, the sample sits inside the fidelity card with no history id and no watermark, the scan refuses a mark and a history id, the class table has the four phi rows and the word scan, and both knowledge answers are present.

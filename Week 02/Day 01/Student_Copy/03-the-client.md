@@ -8,6 +8,8 @@ The case date on today's drop is 17 January 2027. The note is from the enterpris
 
 [fhir-v2.md](packet/release/notices/fhir-v2.md) says `his-wadi` has moved to FHIR v2. The spec is [his-wadi.yaml](packet/release/openapi/his-wadi.yaml). You generate the client from that file. You do not keep the hand-written client. Booking is a later day. A status question can be answered now.
 
+On Week 1 Day 3, `his-wadi.yaml` listed `holdSlot` and `bookSlot`. Today's file is a referral read. Hold and book are not on it. You do not edit the Day 3 file. The hand-written client in this folder is not a copy of that Day 3 file. It still asks for a field today's spec does not list. [Chapter 07](07-the-status.md) shows that read failing. The demo does not print the field name.
+
 [loa.md](packet/release/identity/loa.md) is the assurance note. A patient at the first level can open the assistant. The note says which level may book. That step-up is not today's lab. You copy the booking sentence in [chapter 08](08-finish.md).
 
 [iam.yaml](packet/release/openapi/iam.yaml) names the patient and the coordinator, and it names the issuer and the token endpoint. [Chapter 04](04-words.md) calls that pair the discovery document.

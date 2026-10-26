@@ -15,4 +15,6 @@ The trainer's session is [chapter 07](07-trainer.md). Students can skip it.
 
 You leave Week 4 Day 5 with staff sign-in and the bus still up after the drill, a handoff that has a summary, a late leave that cancels a session, and a proposal that can be presented. The rehearsal ends here.
 
+The sponsor asked for an AI front desk that books, reschedules, answers, and chases referrals, live before Ramadan. The finished proposal does not build that sentence. `p-clock` is first. `p-waitlist` depends on identity. A clinician still owns urgency. Patient data stays off `ext-large`. A booking at Ain stays queued. The client on the proposal is still Al-Waha.
+
 There is no next morning in this rehearsal. Weeks 5 and 6 are a different client. The trainer chapter, if this page links one, is optional.

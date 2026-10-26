@@ -17,4 +17,8 @@ pt-200,14,2026-06-01
 
 The sprint in [chapter 02](02-the-sprint.md) reads this extract only after the subscriptions are in place. That order is why the mart sentence sits under Later.
 
+## The path through the files
+
+The morning chapter [08-the-mart.md](../Student_Copy/08-the-mart.md) has the section How the replacement works. That section is the path through the file this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [06 — Knowledge](06-knowledge.md).

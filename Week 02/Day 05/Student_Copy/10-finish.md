@@ -48,6 +48,9 @@ A failed check prints `failed`, then one or more lines that start with a dash. T
 
 | What it prints | Where to go |
 | --- | --- |
+| `python` is not recognized | [Chapter 01](01-setup.md). Use `py` instead of `python` in the command |
+| `No module named alwaha` | The terminal is not inside `problem_simulation`. Open a new terminal in the course folder, run `cd problem_simulation`, and run the check again |
+| `Build rel-w2d4 and rel-w2d5 first.` | [Chapter 01](01-setup.md). Run both builds again with `--profile practice` |
 | `the health probe does not report the registered hash` | The message does not name the hash. Open [models.json](packet/day4/registry/models.json). The row you want has id `local-small` and status `approved`. Open [work/app/health.py](work/app/health.py) and search for `approved["hash"]`. You should find it. That file is a smoke file. It was copied and not replaced. If the search fails, run `prepare_work.py` from the course folder, then paste chapters 05 through 10 again |
 | `the image runs as root` | Open [work/deploy/Dockerfile](work/deploy/Dockerfile) and search for `USER 1000`. Open [work/app/admit.py](work/app/admit.py) and search for `return "rejected"`. Open [work/deploy/deployment.yaml](work/deploy/deployment.yaml) and search for `runAsNonRoot`. Those files are smoke files. If a search fails, run `prepare_work.py`, then paste chapters 05 through 10 again |
 | `a national id is in the deploy log` | The message does not name the id. Open [work/app/admit.py](work/app/admit.py) and search for `emitted_log`. That function removes the id from the line. Leave the deploy log out of `work/` |

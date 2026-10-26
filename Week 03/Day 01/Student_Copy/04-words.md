@@ -92,6 +92,22 @@ The history ids, the two MRNs, and the shared national id stay in the history fi
 
 This page is done when you have scanned the tables. You have not pasted a file. You have not run a command.
 
+## A plain reading
+
+Week 2 Day 1's identity note is how strongly sign-in checked the person. Today's identity check is the waitlist. Week 1 left that waitlist open as duplicate rows and one person stored as two. The Iqama row is that case: `replaces` joins the visitor number. A shared national id, phone, or MRN is not automatically the same case. A mother and a newborn stay two people.
+
+Hijri is the calendar on the two history rows whose `era` is empty. A tabular Hijri date uses fixed month lengths, so the file can turn it into a civil day. A Julian day number is only the count the two helpers use for that turn. You do not compute it by hand. The shell adds one day when the Hijri day is 1 or at least 29. The replacement does not. The check does not print the civil day.
+
+The fidelity card's pairs are a low and a high. A share is a count divided by the number of invented rows. Four rows, half endocrinology, half ophthalmology, half saying Kindly, and half naming retina, sit inside the pairs on the card. The check does not print those shares. Kindly is the greeting the real letters use. The invented rows have to use it about as often, without copying a real letter.
+
+The mark the scan refuses starts with `CANARY-`. Week 1's watermark was a line in a letter or in the dev credentials. Today's clerk file carries its own mark. The check message does not print it. `CANARY-x` in a test is a stand-in. It is not that clerk mark.
+
+`parents[1]` in a test is the path line that loads the `app` folder beside `tests`. It is not a mother, a newborn, or a patient id.
+
+The invite date is the moment a decision was made. A row dated after that moment was not known yet. Using it is the Week 1 leakage problem moved onto the clock: the score looks informed by a fact that had not happened. Uncertainty is how unsure the current label is. The budget buys the highest of those numbers first and stops when the next label would not fit. Outside this folder that spend is sometimes called active learning. The file's word is uncertainty.
+
+This section adds no file and no command.
+
 The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
 
 Next: [05 — The sprint](05-the-sprint.md).

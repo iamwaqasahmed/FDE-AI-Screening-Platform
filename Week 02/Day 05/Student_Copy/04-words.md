@@ -13,7 +13,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | Referral | A request from a local clinic for a hospital appointment |
 | Patient | The person the referral is about |
 | Ain | Ain Diabetes and Eye Center. The facility id is `h-ain`. [zones.md](packet/kickoff/world/zones.md) puts it in `zone-hospital` |
-| `h-ain` | The facility id for Ain |
+| `h-ain` | The facility id for Ain. Week 1 Day 3: no slot API, and a booking there returns queued. Today's nightly file is the path. A real-time booking still returns queued |
 | `h-wadi` | Wadi Specialist Hospital. A booking there is not today's file path |
 | Chief Information Security Officer | [Omar Al-Zahrani](packet/kickoff/personas/ciso.md). His id is `ciso`. Yesterday's drop is from him |
 | Enterprise architect | [Huda Al-Ghamdi](packet/kickoff/personas/ea.md). Her id is `ea`. The checks do not read an interview |

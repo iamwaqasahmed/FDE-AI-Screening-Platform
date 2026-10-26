@@ -73,9 +73,13 @@ This page is done when you have scanned the tables.
 
 A trace is the spans. A metric is a count you put on the board: latency, errors, tool failures. CPU can stay flat while those move. A board that only has CPU misses the incident.
 
-Drift, here, means what you serve no longer matches the world. The three kinds in the file are hours, criteria, and clinic. A cached answer drops when `document.changed` names the Ramadan hours circular. A different document does not clear that cache.
+`referral.status` is the Week 1 status tool. Week 2 Day 1 recorded that same read on the trace as `status`. Today's spans use the Week 1 name again. It is not a new tool.
 
-Shadow traffic compares a candidate with the registered reply. It must not change what the patient is sent.
+Drift, here, means what you serve no longer matches the world. The three kinds in the file are hours, criteria, and clinic. The criteria row is `crit-endo-v4` seen as `crit-endo-v3`. Week 1 Day 3 held intake on v3 while v4 was a draft. Week 3 Day 3 put v4 in force for three specialties. An in-flight referral kept the version it started on. The clinic row's current id is `ophth-screen`. The eye-screening campaign Week 3 Day 4 announced is ophthalmology demand. This row does not rename that campaign. Read the ids on the drift file.
+
+The hours page on Week 3 Day 3, `circ-ramadan`, was in force and closed evening clinics at 21:00. That page is in the Week 3 folder. Today's `circ-ramadan-hours` supersedes it and closes them at 01:00. A cached answer drops when `document.changed` names `circ-ramadan-hours`. A different document does not clear that cache. Yesterday's supply module, in the Week 4 Day 1 folder, used the string `circ-ramadan` as a fallback citation id. Do not go back and edit it.
+
+Shadow traffic compares a candidate with the registered reply. It must not change what the patient is sent. Promotion waits until the comparison was both compared and matched. The shadow file has no `compared` field, so the shell that promotes anyway is the miss.
 
 This section adds no file and no command.
 

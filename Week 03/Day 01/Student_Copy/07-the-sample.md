@@ -169,11 +169,11 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 Three gates between a clerk file and a file you may share.
 
-`relabel` reads the letter text under ann-v2. Phone or photo in the text is source type photo, even when the word scan is also there. Scan is the source type only when the text says scan and does not say phone or photo. Anything else is typed. Retina and pediatric come from the text. The shell copied the clerk fields and kept the old guideline, so a phone photo stayed a scan and the sub-specialty stayed blank.
+`relabel` reads the letter text under ann-v2. Phone or photo in the text is source type photo, even when the word scan is also there. Scan is the source type only when the text says scan and does not say phone or photo. Anything else is typed. Retina and pediatric come from the text. A blank sub-specialty stays blank when the text names neither. The shell copied the clerk fields and kept the old guideline, so a phone photo stayed a scan and the sub-specialty stayed blank.
 
-`sample` returns four invented rows. It does not copy `letters`. Two are endocrinology and two are ophthalmology. Two name the rare sub-specialty from the fidelity card. The shell returned the first real letter. The check then says the sample misses the card and contains a real letter.
+`sample` is the file you may share. The clerk file carries a watermark and history ids, so it cannot be the sample. Retina is the rare sub-specialty on the card. The function returns four invented rows and does not copy `letters`. Two are endocrinology and two are ophthalmology. Two name the rare sub-specialty. Two say Kindly, the greeting the card measures. The card's pairs are a low and a high. Four rows is inside 4 to 8. Half the rows are endocrinology and half are ophthalmology, inside the specialty pairs. Half say Kindly, inside the phrase pair. Half name retina, inside the label-margin pair. The check does not print the shares. The shell returned the first real letter. The check then says the sample misses the card and contains a real letter.
 
-`accept` returns false when the text contains the watermark prefix or a national id from the history. A clean invented sentence is accepted. The shell accepted every file.
+`accept` returns false when the text contains the mark prefix `CANARY-`, and false when a history id is in the text. A clean invented sentence is accepted. Week 1's watermark was a different line. Today's scan looks for this prefix. The shell accepted every file.
 
 Before you paste, say how a phone photo is labeled, and what `sample` must not copy.
 

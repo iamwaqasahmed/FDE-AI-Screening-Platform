@@ -207,7 +207,7 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-That was a picture. Do not paste it. This item is done when the search finds that shell name in the packet file. Close the packet file. The six pictures are done. The next heading is Replace the ranking. That heading is the first paste.
+That was a picture. Do not paste it. This item is done when the search finds that shell name in the packet file. Close the packet file. The six pictures are done. Do not paste any block above this line. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the ranking.
 
 ## How the replacement works
 
@@ -215,7 +215,7 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 The proposal is a ranking you can defend, a gate with an owner, and one attack that still must not book.
 
-`first` walks the value model in the order it is written. It returns the first id whose blocker list is empty. It does not sort again, and it does not start at `p-triage`. A problem with a blocker cannot open. The shell put the blocked problem first because it was the sponsor's sentence.
+`first` walks the value model in the order it is written. It returns the first id whose blocker list is empty. It does not sort again, and it does not start at `p-triage`. A problem with a blocker cannot open. On this file that first open id is `p-clock`. `p-waitlist` stays behind identity, the one-person rule from Week 3 Day 1. The shell put the blocked problem first because it was the sponsor's sentence. Week 3 Day 5 already kept that sentence out of the requirements.
 
 `evidence` names `med-dir` in the clinical safety cell when the item is G4, go-live. Any other gate leaves that cell blank. The shell left the cell empty at go-live, so nobody owned clinical safety on the day the system would be allowed to run.
 

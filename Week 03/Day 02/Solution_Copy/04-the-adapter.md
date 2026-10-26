@@ -8,7 +8,7 @@ Open the finished [adapter.py](work/app/adapter.py), [route.py](work/app/route.p
 
 The shell loads that cloud hash and asks for one more GPU than [quota.json](sources/release/budget/quota.json). While that shell is the file that runs, the check says the hash is not on reg-models, and the gpu count is over the quota. The message does not print a hash or a GPU count.
 
-The filled file selects the approved `lora-local` row and returns that row's hash. The GPU count it returns fits the quota. The rank on that return is 8.
+The filled file selects the approved `lora-local` row and returns that row's hash. It takes the quota and the cloud fixture as arguments and does not read either one. The return is one GPU and rank 8. The quota file is one GPU, so that return fits.
 
 ## Router
 

@@ -45,7 +45,7 @@ Each item tells you when you are done with that file. Finish that item before yo
 16. [crit-neuro-v3.md](packet/release/dms/crit-neuro-v3.md). Search for `neuro`. You are done with this file when status is `in_force`. The notice in item 2 does not name this specialty.
 17. [crit-neuro-v4.md](packet/release/dms/crit-neuro-v4.md). Search for `draft`. You are done with this file when status is `draft`. The feed does not have to promote every v4.
 18. [leaflet-prep.md](packet/release/dms/leaflet-prep.md). Search for `in_force`. You are done with this file when status is `in_force` and audience is `public`.
-19. [leaflet-prep-old.md](packet/release/dms/leaflet-prep-old.md). Search for `in_force`. You are done with this file when status is `in_force`. This is the earlier file. The demo says one of the pair is superseded.
+19. [leaflet-prep-old.md](packet/release/dms/leaflet-prep-old.md). Search for `in_force`. You are done with this file when status is `in_force`. This page and the snapshot are the store before the feed. Both leaflets are in force there. Open [changes.jsonl](packet/release/feed/changes.jsonl) and search for `leaflet-prep-old`. That row sets status `superseded` and sunset `2027-01-26`. The demo's last line is that result. The two titles are the pair. Do not copy them.
 20. [leaflet-staff.md](packet/release/dms/leaflet-staff.md). Search for `staff`. You are done with this file when audience is `staff`.
 21. [pol-booking-cluster.md](packet/release/dms/pol-booking-cluster.md). Search for `cluster`. You are done with this file when site is `cluster`.
 22. [pol-booking-h-safra.md](packet/release/dms/pol-booking-h-safra.md). Search for `h-safra`. You are done with this file when site is `h-safra`.
@@ -76,7 +76,7 @@ You should see two titles, then the line above. The demo does not print the wate
 
 ## What you are deciding
 
-The index has to cite an in-force document the asker is allowed to see. An in-flight referral keeps the version it started on. The unauthorized circular is not a citation. A patient does not see a staff document. Those decisions are the sprint, the code, and the pages in the later chapters. You do not run a check from this page.
+The index has to cite an in-force document the asker is allowed to see. Week 1 Day 3 already used the criteria that was in force on the referral's start day. v4 was a draft then. Today's feed promotes v4 for endo, ophth, and card. A referral whose start day is before that window keeps v3. Neuro is not on the notice. The unauthorized circular is not a citation. A patient does not see a staff document. The markdown status is the snapshot. The feed is the update. Those decisions are the sprint, the code, and the pages in the later chapters. You do not run a check from this page.
 
 This page is done when item 23 is done and the demo printed two titles and then `one is superseded`.
 

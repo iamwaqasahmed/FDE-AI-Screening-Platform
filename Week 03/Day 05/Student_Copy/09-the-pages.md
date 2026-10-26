@@ -72,7 +72,7 @@ Chapter 01 copied [requirements.md](packet/templates/requirements.md) to [work/r
 1. Open the work file named here, [work/rcp/requirements.md](work/rcp/requirements.md). The path contains `Student_Copy\work`. On macOS it shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy.
 2. Select the whole file. Ctrl+A on Windows, Command+A on macOS. Delete it.
 3. Copy from this chapter file, not from a preview. A preview can drop indentation, and it can drop the pipe characters in a table. Open the `.md` file, then copy. To open it, Ctrl+click the link on Windows or Command+click it on macOS. Copy the lines inside the block. Do not copy the line of three backticks that opens the block, and do not copy the line of three backticks that closes it. If the editor offers a styled paste, use Paste Without Formatting.
-4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `not the value model`.
+4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `not the value model`. The evidence line already says the second run moved 1 citation. Leave that count. Do not replace it with a price or with a row count you computed. G1 on this page is the risk tier. It does not say G2 has passed.
 
 ```text
 # Requirements

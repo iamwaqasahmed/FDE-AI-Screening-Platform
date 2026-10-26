@@ -14,7 +14,7 @@ After the generator runs, search the work copy for `Generated his-wadi client`. 
 
 The session row is the table `session.py` names: session id, subject, role, and assurance level. It lives in the application database, not in `his-wadi`.
 
-`contract.py` is the boundary for today. A status question uses the Week 1 status tool and cites `his-wadi`. A message that asks to book does not book. The reply says booking is a later day.
+`contract.py` is the boundary for today. A status question uses the Week 1 status tool and cites `his-wadi`. On the trace, `tool_trace` contains `status`. That short name is this week's record of the same read. On Week 1 Day 4 the catalog called it `referral.status`. A message that asks to book does not book. The reply says booking is a later day.
 
 Before you generate, name the hand-written client. It is [packet/app/client.py](packet/app/client.py). That file still speaks the previous spec. There is no older spec file in this folder. Today's spec is [his-wadi.yaml](packet/release/openapi/his-wadi.yaml). The command under Replace the client is what replaces only `work/app/client.py`.
 

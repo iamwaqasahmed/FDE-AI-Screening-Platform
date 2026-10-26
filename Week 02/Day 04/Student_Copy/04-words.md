@@ -47,6 +47,8 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 
 | Word | Meaning |
 | --- | --- |
+| Image | The packaged program a Dockerfile builds. Week 1 Day 1 left a Dockerfile in the folder and did not build it. Today you still do not start a cluster. You change the account that image would run as |
+| Container | One running copy of that image. [pol-deploy.md](packet/release/standards/pol-deploy.md) rejects a container whose account is root |
 | Root | The account in [root.json](packet/release/fixtures/root.json). The shell image still uses it. The filled image does not |
 | Non-root | The container user is not root. `pol-deploy` names this check. The deployment note uses this word |
 | `USER 1000` | The last account line on the filled Dockerfile. `1000` is not root |
@@ -64,7 +66,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | Word | Meaning |
 | --- | --- |
 | Sprint | The order of the work. The deploy comes before the readout |
-| Readout | The later meeting. It is booked after the deploy |
+| Readout | The meeting booked after the deploy. It is the Later line of the sprint. It is not the steering page from Week 1 Day 5. You do not open that file today |
 | Deployment note | [deployment.md](work/deployment.md). The headings are URL, Zone, Probe, Credentials, Monitoring, Boundary, and Operator steps |
 | Zone row | [zones.md](work/zones.md). The columns are `surface` and `zone`. The surface cell is `url` |
 | Operator steps | How someone reads the health probe with the prod credential |
@@ -93,6 +95,18 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | Pages | The URL on `zone-private`. The deploy before the readout. Monitoring names Week 4. A clinician assigns urgency |
 
 The hash, the two credentials, and the quota number stay in the pack files. This page does not store them.
+
+## A plain reading
+
+On Week 1 Day 1 the folder held a Dockerfile. That file was the shape of a later deploy. You did not build it. Today is that later deploy, as files the check can read. You still do not start a cluster, and you do not apply the manifest to a live namespace.
+
+An image is the packaged program that Dockerfile would build. A container is one running copy of the image. The shell image uses the root account. The filled image ends on `USER 1000`. Admission rejects root. The manifest tells the namespace to call `/v1/health` before it sends traffic.
+
+On Week 2 Day 1 the stand-in health body put the model id `local-small` in a field named `model_hash`. Today's register keeps the id and the hash as two fields. The probe reports the hash from the approved `local-small` row. The previous `local-small` row stays on the register. A rollback would serve that previous hash. It would not rewrite patient records. The probe does not report the previous row today.
+
+Readout on this page is a meeting you book after the deploy. It is the sprint's Later line. It is not the steering page you wrote on Week 1 Day 5.
+
+This section adds no file and no command.
 
 The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
 

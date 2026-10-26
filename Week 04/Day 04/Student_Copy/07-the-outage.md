@@ -320,7 +320,7 @@ Insurance is a partner, not a third site. A purchase is a date, not a preference
 
 `book` opens the breaker when status is `down`. Called is false, waited is 0, and the target is `rules-worker`. The partner is not called, so the booking does not sit until the timeout. Any other status leaves the breaker closed and calls the partner. The shell waited on `insure` until the request died.
 
-`reply` uses the model when the model is up, even for a status row. When the model is down and the kind is status, the mode is status and the body is still the row text. Any other kind, with the model down, goes to `rules-worker` and does not pretend the model answered. Status still works. Booking does not wait.
+`reply` uses the model when the model is up, even for a status row. When the model is down and the kind is status, the mode is status and the body is still the row text. Status is the Week 1 read. It does not need the model. Any other kind, with the model down, goes to `rules-worker` and does not pretend the model answered. Booking does not wait.
 
 `choice` adds `purchase_weeks` to the order date and `rent_days` as days. Buy wins when the purchase date is on or before the deadline. When the purchase misses and the rental still meets the deadline, the result is rent. If the rental also misses, the result is buy. The shell bought every note, including the one that cannot arrive before Ramadan.
 

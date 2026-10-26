@@ -123,13 +123,13 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 Nothing in this chapter trains a network. The files choose a legal row and refuse an illegal call.
 
-`serve` selects the register row whose id is `lora-local` and whose status is approved. It copies that row's hash. The cloud fixture is an argument and is not used. The GPU count it returns fits the quota. The shell loaded the cloud-tune hash and asked for one more GPU than the quota.
+`serve` selects the register row whose id is `lora-local` and whose status is approved. It copies that row's hash. It takes the quota and the cloud fixture as arguments and does not read either one. The return is one GPU and rank 8. The quota file you opened says one GPU, so that return fits. The shell loaded the cloud-tune hash and asked for one more GPU than the quota.
 
 `allow` permits a call only when a present hash is on the register and no phi field is sent to `ext-large`. The four phi names are national id, date of birth, name, and phone. A missing hash is not treated as an unregistered hash. The shell allowed every call.
 
 `task` sends hours to retrieval and DNA to `classical-ml`. Other names go to the adapter. The shell sent every name to `ext-large`.
 
-`quote` prices the published token count with `price.local_per_1k` and names `local-small`. The shell priced the same count on the external rate.
+`quote` prices the published token count with `price.local_per_1k` and names `local-small`. The cap's token count is 1000, so the quote is one block of a thousand times that local rate. `seconds` stays 1, and the cap's `max_seconds` is 2. The local rate on this sheet stays under `max_sar`. The external rate does not. You do not type either rate. The shell priced the same count on the external rate.
 
 Before you paste, say which argument `serve` must ignore, and which two tasks must not go to the adapter.
 

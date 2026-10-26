@@ -19,7 +19,7 @@ The first line is the hand-written client. The second line is a client generated
 
 ## The reply
 
-[contract.py](work/app/contract.py) answers a successful read with the Week 1 status tool. `tool_trace` is `status`. `citations` contains `his-wadi`. `booked` is false. The reply says the referral is still pending. Count, state, and facility come from the scenario row. A message that asks to book returns "Booking is a later day." and does not call the status tool. An approval stays `later`.
+[contract.py](work/app/contract.py) answers a successful read with the Week 1 status tool. `tool_trace` is `status`. On Week 1 Day 4 the catalog called this same read `referral.status`. Today's trace uses the short name. `citations` contains `his-wadi`. `booked` is false. The reply says the referral is still pending. Count, state, and facility come from the scenario row. A message that asks to book returns "Booking is a later day." and does not call the status tool. An approval stays `later`.
 
 The journey check says `status count does not match`, `status state does not match`, or `facility does not match` when those copies are wrong. It does not print the count. It says `status tool is missing` when the tool list dropped `status`, and `a book call was made` when booking ran.
 

@@ -21,6 +21,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | OpenAPI | The spec format. [his-wadi.yaml](packet/release/openapi/his-wadi.yaml) is the record spec. [iam.yaml](packet/release/openapi/iam.yaml) is the identity spec |
 | Spec | The file you generate the client from. A field from the hand-written client is gone. The notice says that. It does not ask you to type the old name into a page |
 | Level of assurance | How strongly the cluster has checked the person. The levels are the bullets in [loa.md](packet/release/identity/loa.md). Open that file for the sentences |
+| Identity note | [loa.md](packet/release/identity/loa.md). On Week 1 Day 5, the word identity meant the waitlist: one person stored as two. This file is sign-in. It says which level may open the assistant, and which level may book |
 | `loa-1` | The first level in the identity note. One-time code. A patient at `loa-1` can open the assistant |
 | `nid` | The identity note's short name for a national id. `loa-2` is checked against it. You do not type the id |
 | Booking level | The level the identity note requires before a patient may book or cancel. You write that sentence in [chapter 08](08-finish.md). Do not invent a shorter one |
@@ -31,8 +32,8 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | Staff roles | The bullets under the staff heading in [loa.md](packet/release/identity/loa.md): coordinator, contact-center, records, and audit. A role on that list may open the console. The auth check does not print the list |
 | Session | The signed-in visit. The id is the token subject |
 | Session row | One row in the application database: session id, subject, role, and assurance level |
-| Application database | The SQLite file the shell creates. The session row is written there, not in `his-wadi` |
-| Status | The Week 1 tool. A status question reads `his-wadi`, then answers with this tool. The tool name on the trace is `status` |
+| Application database | The file the shell creates for session rows. SQLite means that database is the one file `sessions.db`. The session row is written there. It is not written in `his-wadi` |
+| Status | The Week 1 status tool. A status question reads `his-wadi`, then answers with this tool. The tool name on today's trace is `status`. On Week 1 Day 4 the catalog called this same read `referral.status` |
 | Citation | The name of what the reply relied on. A successful status reply cites `his-wadi` |
 | Booking | Making the appointment. It waits. A message that asks to book is answered with "Booking is a later day." |
 | Sprint | The order of the work. The client is generated before anyone books |
@@ -52,7 +53,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | `/chat` | The patient | The heading Patient chat, and the line "You are signed in." |
 | `/console` | The coordinator | The heading Staff console, and the line that booking is a later day |
 
-A patient who opens `/console` is refused. A coordinator who opens `/chat` is refused. Opening `/chat` with no cookie is refused. The body of that refusal is `Sign in`.
+A patient who opens `/console` is refused. A coordinator who opens `/chat` is refused. Opening `/chat` with no cookie is refused. A cookie is the note the browser keeps after you click a sign-in button, so the next page knows who you are. You do not set it by hand. The button does. The body of that refusal is `Sign in`.
 
 ## The shell
 
@@ -65,11 +66,11 @@ A patient who opens `/console` is refused. A coordinator who opens `/chat` is re
 
 ## A plain reading
 
-`his-wadi` publishes records in a shape called FHIR. Version 2 is today's spec. A client written against version 1 still asks for a field the new spec removed. Generate the client from the spec. Do not type the old field name back in.
+`his-wadi` publishes records in a shape called FHIR. The file you opened on Week 1 Day 3 was already OpenAPI. It listed a hold and a booking. Today's OpenAPI file is a referral read, and the notice calls the record shape FHIR. You generate the client from today's file. A client written against the previous field list still asks for a field this spec removed. Do not type the old field name back in. Do not go looking for it in the Day 3 file. That file does not contain it.
 
 Sign-in checks a token against the issuer and the token endpoint in the identity spec. That pattern is often called OpenID Connect. This day does not ask you to add a second protocol. A patient token and a staff token are different people. `svc-integration` is a system token. It does not sign a patient in.
 
-A level of assurance is how strongly the cluster has checked the person. Opening the assistant and booking are not the same level. The identity note has the sentence. Booking waits.
+A level of assurance is how strongly the cluster has checked the person. Opening the assistant and booking are not the same level. The identity note has the sentence. On Week 1 Day 5, the word identity meant the waitlist: one person stored as two. Today's identity note is the sign-in file. Booking waits.
 
 This section adds no file and no command.
 

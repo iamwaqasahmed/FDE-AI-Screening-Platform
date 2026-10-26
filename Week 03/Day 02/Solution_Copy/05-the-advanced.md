@@ -14,7 +14,7 @@ The shell spends a full LoRA rank even when the quota is smaller. It counts GPUs
 
 ## Preferences
 
-[ds-prefs.jsonl](sources/release/prefs/ds-prefs.jsonl) is one `draft` and one `edited` line. The clause id is in the draft. The shell returns the draft unchanged. The filled edit expands `sugar clinic` to endocrinology, drops `Friday` and the date the calendar cannot keep, and drops the tokens `on` and a bare period. The clause id stays. `Friday` remains on the replace line. That is expected.
+[ds-prefs.jsonl](sources/release/prefs/ds-prefs.jsonl) is one `draft` and one `edited` line. The clause id is in the draft. The shell returns the draft unchanged. The filled edit expands `sugar clinic` to endocrinology, drops `Friday` and the date token `2027-03-10`, and drops the tokens `on` and a bare period. It does not call the Week 1 calendar. The word `the` stays, so the line reads `the endocrinology`. That wording is what the test expects. The clause id stays. `Friday` remains on the replace line. That is expected.
 
 The suite from this `work/` folder prints `Ran 12 tests` and `OK`.
 

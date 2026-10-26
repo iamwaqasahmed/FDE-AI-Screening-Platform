@@ -134,11 +134,11 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 Three scores, one forecast, one name for each planted failure.
 
-`extraction_f1` scores each field on its own. One wrong field lowers the score even when the others match. `citation_accuracy` counts a row only when document and span both match. `journey_pass` counts a row only when state and approval both match. An empty slice scores zero. A fluent sentence is not one of these fields.
+`extraction_f1` scores each field on its own. One wrong field lowers the score even when the others match. The share is the same kind of score as Week 3 Day 2. It is not the harmonic mean of precision and recall. The comment in the file says true positive because a matching field is counted. The development slice has outputs and no label field. The function reads `label` when the grader supplies the row. You do not add labels to `score.jsonl`. `citation_accuracy` counts a row only when document and span both match. `journey_pass` counts a row only when state and approval both match. An empty slice scores zero. A fluent sentence is not one of these fields.
 
-`predict` keeps rows from the later year whose month is in the window, and it keeps the visits written on those rows. The campaign sits in that later window. The shell forecast used the earlier year and missed it.
+`predict` keeps rows from the later year whose month is in the window, and it keeps the visits written on those rows. Week 1's seasonal line copied last year. The campaign sits in the later window, year 2027, months 2 and 3. The shell forecast used the earlier year and missed it.
 
-`classify` reads the failure name from the reply text. It is not a column you add. A document that is not in force is retrieval. An offer that uses Friday is reasoning. A booking with no approval is workflow. A clause that is not on file is hallucination. Anything else is `pass`.
+`classify` reads the failure name from the reply text. It is not a column you add. A document that is not in force is retrieval, the Day 3 citation rule. An offer that uses Friday is reasoning, because Week 1's calendar does not count Friday as a working day. The same log line ignores a gender preference. A booking with no approval is workflow, because Week 1's booking waits for an approval. A clause that is not on file is hallucination. Anything else is `pass`.
 
 Before you paste, say why a right document with a wrong span still fails citation accuracy, and which year the forecast has to keep.
 

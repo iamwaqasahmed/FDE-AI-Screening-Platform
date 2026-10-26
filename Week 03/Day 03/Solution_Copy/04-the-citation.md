@@ -10,7 +10,7 @@ Open the finished files and put them beside yours.
 
 ## Bind
 
-[bind.py](work/app/bind.py). The shell ignores the start day and returns the first v4 for the specialty. Rag then says an in-flight referral is restarted on v4, a draft is cited, and v4 is applied outside its specialties. Hybrid and acl still pass. The filled file uses the start day. For card, endo, and ophth, an in-force v4 that covers that day wins. Otherwise a v3 that is in force or superseded, and that covers that day, wins. A day before effective, or on or after sunset, is outside the window. `started` is still the argument name. That is expected. You should not see `del started`.
+[bind.py](work/app/bind.py). The shell ignores the start day and returns the first v4 for the specialty. Rag then says an in-flight referral is restarted on v4, a draft is cited, and v4 is applied outside its specialties. Hybrid and acl still pass. The filled file uses the start day. Week 1 stopped on the document in force at the start. After the feed, v3 can be superseded and still cover an earlier start day. For card, endo, and ophth, an in-force v4 that covers that day wins. Otherwise a v3 that is in force or superseded, and that covers that day, wins. The function does not read site. A day before effective, or on or after sunset, is outside the window. `started` is still the argument name. That is expected. You should not see `del started`.
 
 The `dev-flight` row in [retrieve.jsonl](sources/release/slices/retrieve.jsonl) has `started` of `2027-01-20`. Label that day against the window. The notice is [criteria-v4.md](sources/release/notices/criteria-v4.md).
 

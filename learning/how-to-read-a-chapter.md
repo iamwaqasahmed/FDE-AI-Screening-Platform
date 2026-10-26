@@ -23,6 +23,8 @@ You do not need to memorize every helper. You need the path:
 
 The section How the replacement works on the chapter is that path, in the order the file actually uses. It adds no file and no command.
 
+A line that starts with "Before you paste, say" is a question you answer in your head. It is not a file, and it is not a command. The next heading that starts with Replace is the paste.
+
 ## When the paste breaks
 
 `SyntaxError` or `IndentationError` means the spaces moved. The chapter says to run `prepare_work.py` and paste again from the chapter file. Do not repair the spaces by hand. A styled paste is the usual cause.

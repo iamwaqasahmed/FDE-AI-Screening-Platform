@@ -29,9 +29,9 @@ Open `work/` and find each row.
 | [approach.md](work/approach.md) | The Week 1 families and the customization table. Explained in [chapter 06](06-the-pages.md) |
 | [residency.md](work/residency.md) | Four phi fields in `zone-private`. Clinic hours public. Explained in chapter 06 |
 | [knowledge.md](work/knowledge.md) | The two answers. Explained in [chapter 07](07-knowledge.md) |
-| [dpo.notes.md](work/interviews/dpo.notes.md) | What the Data Protection Officer says. The checks do not read it |
+| [dpo.notes.md](work/interviews/dpo.notes.md) | A trainer note. The morning did not ask for an interview. The checks do not read it |
 | [dpo.questions.txt](work/interviews/dpo.questions.txt) | The questions that produced those notes. The checks do not read them |
-| [finance.notes.md](work/interviews/finance.notes.md) | What finance says. The checks do not read it |
+| [finance.notes.md](work/interviews/finance.notes.md) | A trainer note. The morning did not ask for an interview. The checks do not read it |
 | [finance.questions.txt](work/interviews/finance.questions.txt) | The questions that produced those notes. The checks do not read them |
 
 The checks print `passed` when the prompt is not served, extraction and intent clear the floor, the served hash is the approved `lora-local` row, the GPU count fits the quota, phi stays off `ext-large`, the local price and the latency fit the cap, the sprint sequences baseline then adapter then register then memo and closes the cloud fine-tune, the approach families fit, hours stay on retrieval, DNA stays tabular, the customization cells match the adapter, residency keeps the four phi fields private, and both knowledge answers are present.

@@ -33,9 +33,9 @@ Open `work/` and find each row. The release pages those answers cite are in [sou
 | [refusal.md](work/refusal.md) | No document binds, or the asker cannot see it. Explained in [chapter 06](06-the-pages.md) |
 | [audience.md](work/audience.md) | Patient public, staff public and staff, records include restricted. Explained in chapter 06 |
 | [knowledge.md](work/knowledge.md) | The two answers. Explained in [chapter 07](07-knowledge.md) |
-| [phc-lead.notes.md](work/interviews/phc-lead.notes.md) | What the PHC network lead says. The checks do not read it |
+| [phc-lead.notes.md](work/interviews/phc-lead.notes.md) | A trainer note. The morning did not ask for an interview. The checks do not read it |
 | [phc-lead.questions.txt](work/interviews/phc-lead.questions.txt) | The questions that produced those notes. The checks do not read them |
-| [coord-lead.notes.md](work/interviews/coord-lead.notes.md) | What the referral coordinator lead says. The checks do not read it |
+| [coord-lead.notes.md](work/interviews/coord-lead.notes.md) | A trainer note. The morning did not ask for an interview. The checks do not read it |
 | [coord-lead.questions.txt](work/interviews/coord-lead.questions.txt) | The questions that produced those notes. The checks do not read them |
 
 The checks print `passed` when the index cites an in-force span the asker may see, an in-flight referral keeps the version it started on, a draft is not cited, the unauthorized circular is not cited, v4 stays inside endo, ophth, and card, a patient does not see a staff document, the change feed is applied, hybrid does not treat vector as the same path, the sprint sequences index then filter then cite then sync and limits v4 to three specialties, the refusal has both sentences, the audience table keeps the pipe characters, and both knowledge answers are present.

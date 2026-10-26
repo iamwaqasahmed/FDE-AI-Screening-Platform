@@ -175,7 +175,7 @@ Four steps from a document to a ranked list.
 
 `clauses` splits the body on a blank line. Each non-empty piece becomes a row. The document fields, including the clause id, are copied onto every piece. The shell dropped the clause id and kept the body as one chunk, so a citation had no span.
 
-`embed` splits lower-case text into tokens. A hyphen keeps a code in one token. Each token's weight is its share of the text. `nearness` is the cosine similarity of two of those maps. An empty side scores zero. The shell returned the same one-key vector for every text, so every document looked equally near. `codes` is the list of hyphenated tokens. The search uses them as a boost.
+`embed` splits lower-case text into tokens. A hyphen keeps a code such as `endo-v3` in one token. Each token's weight is its share of the text. `nearness` is the cosine similarity of two of those maps: shared tokens pull them the same way, and an empty side scores zero. You do not compute it by hand. The name `local-embed` is the register row from yesterday. This file writes the map. It does not train a model. The shell returned the same one-key vector for every text, so every document looked equally near. `codes` is the list of hyphenated tokens. The search uses them as a boost.
 
 `build` stores one vector on each clause, in document order.
 

@@ -26,7 +26,7 @@ Open `work/` and find each row. The release pages those answers cite are in [sou
 | [workshop.md](work/workshop.md) | The four seats, and the note that the dot-vote is not the value model. Explained in chapter 06 |
 | [experiment.md](work/experiment.md) | `honest_pending` only. The checks do not read it. Explained in chapter 06 |
 | [knowledge.md](work/knowledge.md) | The two answers. Explained in [chapter 07](07-knowledge.md) |
-| [cdo.notes.md](work/interviews/cdo.notes.md) | What the chief digital officer says. The checks do not read it |
+| [cdo.notes.md](work/interviews/cdo.notes.md) | A trainer note. The morning did not ask for an interview. The checks do not read it |
 | [cdo.questions.txt](work/interviews/cdo.questions.txt) | The questions that produced those notes. The checks do not read them |
 
 The checks print `passed` when extraction, citation, and journey match the held-out slice, the forecast returns the later window, the four failure names match the log, the sprint sequences score then failure then workshop and keeps the workshop on evidence, the benchmark names the four logs and the three budgets, the workshop names the four seats and says the ranking is not the value model, both knowledge answers are present, the evaluation gate is uncommented, and the judge follows the calibration label.

@@ -15,6 +15,18 @@ Three columns. `person_key` is the person. `wait_days` is the wait figure. The n
 
 The mart note names `booking_date`. It does not contain the number 14, and it does not contain any other wait figure. The check says the wait number was used as truth when that number is in the note or when the shell still trusts the wait column. The message does not print the figure. It says the mart clock is not named when the date column's name is missing. The message does not print the column.
 
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+`read` names the clock and refuses to treat the wait figure as truth. The extract has three columns. `booking_date` is the date column Week 1 already found on the wait chart, problem `p-clock`. That name is the clock. `wait_days` is still read, so a trace can show the figure. `trusted` is false.
+
+The shell set the clock to `wait_days` and set `trusted` true. While that shell is the file that runs, the check says the wait number was used as truth. It does not print the figure.
+
+Before you paste, say which column is the clock.
+
+This section adds no file and no command.
+
 ## Replace mart.py
 
 Chapter 01 copied the shell to [work/app/mart.py](work/app/mart.py). The full path is `Week 02/Day 02/Student_Copy/work/app/mart.py`. The packet copy, [packet/app/mart.py](packet/app/mart.py), stays the shell. Search that packet file for `trusted` if you want to see the shell: it marks the wait column trusted.

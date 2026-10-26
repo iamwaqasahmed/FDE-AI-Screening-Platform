@@ -86,11 +86,11 @@ The pictures end here. The next heading is How the replacement works. Read it. I
 
 Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
 
-The two checks do not call these files. The suite does. Do not delete them.
+The three checks do not call these files. The suite does. Do not delete them.
 
-`features` keeps the latest row whose date is on or before the invite. A row after the invite is left out. The shell kept the latest row in the file and ignored the invite, so a June district leaked into a March decision. The result is the district and the insurance on the chosen row.
+`features` keeps the latest row whose date is on or before the invite. A row after the invite is left out. The invite is the decision moment. A later district was not known then. Week 1 called that kind of cheat leakage: the result looks informed by a fact that had not happened. The shell kept the latest row in the file and ignored the invite, so a June district leaked into a March decision. The test's invite is `2026-03-01`. The January district `d-rim` is the one on or before that date. The result is the district and the insurance on the chosen row. No row early enough means an empty result.
 
-`spend` buys the least certain items until the next label would not fit the budget. The sort is uncertainty descending, then item id. The shell returned every item and ignored the price.
+`spend` buys labels where the current label is least sure. Uncertainty is that number on the item. The sort is uncertainty descending, then item id. The price of one label comes from the budget file. The function stops before the next price would pass the budget. At price 2 and budget 6, that is three items: `higher`, `high`, and `mid`. `low` stays in the list and stays out of the result. Outside this folder that spend is sometimes called active learning. The file's word is uncertainty. The shell returned every item and ignored the price.
 
 Before you paste, say which date `features` is not allowed to see, and when `spend` stops.
 

@@ -42,7 +42,7 @@ Your answer.
 | zone-public | |
 ```
 
-The zone rows come from [packet/kickoff/world/zones.md](packet/kickoff/world/zones.md) only. `zone-hospital` holds `h-nakhl`, `h-safra`, and `h-ain`. `zone-private` holds `h-wadi`. `zone-public` is the external model. That row has no hospital. Do not invent one.
+The zone rows come from [packet/kickoff/world/zones.md](packet/kickoff/world/zones.md) only. `zone-hospital` holds `h-nakhl`, `h-safra`, and `h-ain`. Ain is the diabetes and eye center, not a fourth hospital. `zone-private` holds `h-wadi`, and the zone line also names `site-a` and `site-b`. `zone-public` is the external model. That row has no hospital. Do not invent one.
 
 ## You should now see
 

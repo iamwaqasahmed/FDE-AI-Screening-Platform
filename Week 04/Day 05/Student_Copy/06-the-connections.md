@@ -369,7 +369,7 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-That was a picture. Do not paste it. This item is done when the search finds that shell name in the packet file. Close the packet file. The ten pictures are done. The next heading is Replace the sign-in. That heading is the first paste.
+That was a picture. Do not paste it. This item is done when the search finds that shell name in the packet file. Close the packet file. The ten pictures are done. Do not paste any block above this line. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the sign-in.
 
 ## How the replacement works
 
@@ -377,7 +377,7 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 Five connections. Each one refuses a shortcut the shell took.
 
-`accept` counts a login as staff only when `kind` is staff. Role is not read. A service token with role admin is still a machine. It does not open the staff console. The shell treated every token as staff.
+`accept` counts a login as staff only when `kind` is staff. Role is not read. A service token with role admin is still a machine. It does not open the staff console. Week 2 signed a patient and a coordinator in, and kept `svc-integration` from signing a patient in. This function is the staff console. The same service id is still not staff. The shell treated every token as staff.
 
 `consume` keeps the event, including a field this consumer does not know. Dropping an unfamiliar field also dropped `session.cancelled`, and the clinic session stayed on the book. A cancellation is an ordinary topic. It is kept.
 
@@ -385,7 +385,7 @@ Five connections. Each one refuses a shortcut the shell took.
 
 `apply` cancels the published session when the leave names the same consultant and the leave time is later than the publish time. The row then names the bus event `session.cancelled`. Leave for a different consultant does not cancel this session. The shell ignored late leave.
 
-`clock` returns `referred_at`. `booking_date` is on the row and is not the referral clock. Week 1 already found that the wait chart's date column was the wrong clock. This is the same mistake on the warehouse feed.
+`clock` returns `referred_at`. `booking_date` is on the row and is not the referral clock. Week 1 already found that the wait chart's date column was the wrong clock. Week 2 Day 2's mart read that same `booking_date` column. This is the same mistake on the warehouse feed.
 
 Before you paste, say which token is refused, what a handoff must contain, and which date the warehouse clock returns.
 

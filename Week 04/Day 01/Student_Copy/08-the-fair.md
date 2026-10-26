@@ -9,7 +9,7 @@
 
 Paste only those two blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged.
 
-The shell test is a picture. The filled test is the paste. You are reading until the heading Replace the fair measure. It is the first heading on this page that starts with Replace. Everything above that heading is a picture. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading. Do not go back to the pictures.
+The shell test is a picture. The filled test is the paste. You are reading until the heading Replace the fair measure. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The section How the replacement works sits above that heading. Read it. Do not paste it. Every code block above that heading is a picture. You do not paste a picture. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading. Do not go back to the pictures.
 
 These files are Python. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, open a terminal in the course folder and run `python "Week 04/Day 01/Student_Copy/prepare_work.py"`. Then paste chapters 05 through 08 again from the chapter source. Do not repair the spaces by hand.
 
@@ -187,7 +187,7 @@ def stamp_rate(rows: list[dict]) -> float:
     return sum(1 for row in rows if row.get("stamped")) / len(rows)
 ```
 
-Open [work/app/fair.py](work/app/fair.py). You should see `setdefault`. You should not see `Report no gap and no stamp rate`. If you still see that shell sentence, you pasted the picture. Stay on this page. The next heading is Replace the fair test.
+Open [work/app/fair.py](work/app/fair.py). You should see `setdefault`. You should not see `Report no gap and no stamp rate`. If you still see that shell sentence, you pasted the picture. The first line of the filled file says Thursday. The function under that line counts every row whose `stamped` field is true. Thursday-only on the pack is the failure the section above already named. Stay on this page. The next heading is Replace the fair test.
 
 ## Replace the fair test
 
@@ -251,7 +251,7 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-Open [work/tests/test_fair.py](work/tests/test_fair.py). You should see `test_the_gap_is_the_spread_across_both_slices`. You should not see `test_the_gap_is_zero`. If you still see that shell name, you pasted the picture. Stay on this page. The next heading is Search before the suite. That table is not a paste.
+Open [work/tests/test_fair.py](work/tests/test_fair.py). You should see `test_the_gap_is_the_spread_across_both_slices`. You should not see `test_the_gap_is_zero`. If you still see that shell name, you pasted the picture. The stamp test name contains Thursday. The fixture is one stamped row and one row that is not. The assertion `0.5` is that pair. It is not the pack rate. Stay on this page. The next heading is Search before the suite. That table is not a paste.
 
 ## Search before the suite
 

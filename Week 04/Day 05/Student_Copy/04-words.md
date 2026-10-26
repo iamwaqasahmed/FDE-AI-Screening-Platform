@@ -122,6 +122,26 @@ Do not copy the attack text, a minute count, or a survey count onto a page from 
 
 This page is done when you have scanned the tables.
 
+## A plain reading
+
+Week 2 signed a patient and a coordinator in. Today's sign-in is the staff console. `coord-1` has kind `staff`. `svc-integration` is the same integration service Week 2 kept from signing a patient in. Role `admin` does not make that service token staff. It may still post events. It does not open the console.
+
+`session.cancelled` is the Week 2 clinic-session event. It is not a sign-in logout. Late consultant leave creates that same event, and the bus has to keep it, including a field this consumer does not already know.
+
+`booking_date` is the column `p-clock` already distrusted, and the column Week 2 Day 2's mart read. `referred_at` is the referral clock. The warehouse module returns that date.
+
+`p-clock` is first because its blocker list is empty. `p-waitlist` still depends on identity, the one-person rule from Week 3 Day 1. `p-triage` stays blocked. A clinician still owns urgency. The dot-vote is not the value model.
+
+G4 is go-live. Week 4 Day 1 already listed the checklist the security office uses at that gate. The clinical safety cell is empty until this day names `med-dir`.
+
+The zones are the Week 1 zones. The assistant sits in `zone-private`, on site-a and on site-b from yesterday. `int-engine` sits in `zone-hospital`. The path to `ext-large` is `zone-public`. Patient data stays off `ext-large`.
+
+The demo asks which benefit is counted twice. It does not name the two lines. Those lines are the vendor saving and the contact-center saving. They count the same calls. Chapter 08 writes that sentence. You do not hunt a second file for a number.
+
+The proposal's client is still Al-Waha. The rent route is yesterday's draft. The incident path is Day 2's replay. There is no Day 6 in this folder.
+
+This section adds no file and no command.
+
 The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
 
 Next: [05 — The sprint](05-the-sprint.md).

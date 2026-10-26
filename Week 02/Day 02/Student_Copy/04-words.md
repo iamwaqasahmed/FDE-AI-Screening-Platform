@@ -18,7 +18,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | `referral.submitted` | The event that says a referral was submitted. [topics.md](packet/release/registry/topics.md) names `eref` as the owner |
 | Webhook | A push. `eref` sends the event to you. You do not poll for it |
 | Subscription | The registration that asks for that push. The path is on [eref.yaml](packet/release/openapi/eref.yaml) |
-| Polling | The old intake. The shell in [intake.py](packet/app/intake.py) still does this until [chapter 06](06-the-worker.md) |
+| Polling | The old intake on today's [eref.yaml](packet/release/openapi/eref.yaml), the path `readReferral`. The shell in [intake.py](packet/app/intake.py) still does this until [chapter 06](06-the-worker.md). Week 1 Day 3 read a file of events that was already on disk. That file was not this poll |
 | Schema registry | [topics.md](packet/release/registry/topics.md). The fields a consumer may trust. A field that is not listed is ignored |
 | Owner | The system named on a registry row. `eref` owns `referral.submitted`. The hospital owns `session.cancelled` |
 | Consumer | The worker that reads an event. It stores the listed fields and ignores the rest |
@@ -28,6 +28,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | Hold | A reserved place that is not yet a booking. When the text fails, the hold is released and nothing is booked |
 | Slot | The `slot` field on the cancellation. True means a place exists. False means there is no place to book |
 | SMS | The text message this day's check scores. The spec is [sms.yaml](packet/release/openapi/sms.yaml) |
+| Receipt | The SMS partner's answer for one booking. An accepted answer is a sentence that names the booking. A rejected answer is an empty body. [Chapter 06](06-the-worker.md) calls that empty body a rejected receipt. Tomorrow times that answer. Today you only need accept and reject |
 | Booking reference | The booking id in the text, such as `bkg-1`. The patient SMS names the booking |
 | National id | A long number that identifies a person. The SMS page does not carry one. Ten digits in a row fail the check |
 | WhatsApp | The channel beside SMS. [wa.md](packet/release/channels/wa.md) says a template message needs a registered template. You do not write a WhatsApp page today |
@@ -76,6 +77,8 @@ A webhook is a push. `eref` sends `referral.submitted` to you. Polling is the ol
 HL7 v2 is the older hospital message still sent by Nakhl and Safra. It is a feed. It is not the referral event `eref` owns. The demo prints order lines. It does not ask you to invent a field the sample dropped.
 
 WhatsApp sits beside SMS. A template message needs a registered template, and a reply is only accepted inside a session window. That window is not the sign-in session from yesterday. `session.cancelled` is a clinic session on a hospital calendar. It is not that sign-in session either.
+
+A receipt, on this day, is only the partner's yes or no for one text. An accepted text is stored as `notified`. A rejected text releases the hold. The clock that says when a receipt becomes due arrives tomorrow.
 
 This section adds no file and no command.
 

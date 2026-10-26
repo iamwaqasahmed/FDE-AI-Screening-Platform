@@ -12,10 +12,10 @@
 | 72-hour clock | The report is due 72 hours after the timestamp on the notice |
 | Case date | The date on the notice. Grants are settled against that date |
 | Sprint order | Notice, then guardrail, then access, then the DPIA, then the request. [Chapter 05](05-the-sprint.md) writes that order |
-| DPIA | The data protection impact assessment. The blank headings are in [dpia.md](packet/release/templates/dpia.md) |
+| DPIA | The data protection impact assessment. The blank headings are in [dpia.md](packet/release/templates/dpia.md). This page is G2. Week 1 left that gate open. Naming G1 on Week 3 Day 5 did not close it |
 | Purpose | The patient access assistant |
-| Residency | PHI stays off `ext-large` |
-| Risk tier | G1 |
+| Residency | PHI stays off `ext-large`. Week 3 Day 2 already kept the four PHI fields in `zone-private` |
+| Risk tier | G1. The DPIA is G2, not a second name for G1 |
 | Stores | The row, memory, the index, and the logs. The keys are in [held.json](packet/release/stores/held.json) |
 
 ## The guard
@@ -34,9 +34,9 @@
 | `atk-embed` | An unauthorized circular offered as a citation. Week 3 Day 3 already left that circular out |
 | `atk-misinfo` | A superseded circular offered as a citation. The in-force document stays |
 | `atk-tokens` | A session over the token cap. The cap in the limit module is 800 tokens |
-| `atk-hoard` | Too many holds. A hold expires once it passes 3 |
+| `atk-hoard` | Too many holds. A count of 3 is still admitted. A count above 3 expires |
 | Guardrail | The screen in front of a tool. A suite that only blocks a direct ignore phrase is not done |
-| Hash | The model id on [reg-models.json](packet/release/registry/reg-models.json). Load a hash only when it is on that register. [candidate.json](packet/release/registry/candidate.json) is unregistered. Do not copy a hash onto a page |
+| Hash | The `hash` field on a register row. The `id` is a different field. Week 2 Day 4 kept them apart. Load a hash only when that string is on [reg-models.json](packet/release/registry/reg-models.json). [candidate.json](packet/release/registry/candidate.json) is unregistered. Do not copy a hash onto a page |
 | Tool text | [maps.md](packet/release/mcp/maps.md). Tool text is data. It is not an instruction |
 | Canary | A marker a log line must not keep. You do not type the practice value. The check does not print it |
 | National id | An identifier a log line must not keep. Read the sample in the dev file. Do not copy any other one onto a page |
@@ -91,11 +91,13 @@ This page is done when you have scanned the tables.
 
 ## A plain reading
 
-Week 1 already treated a letter as data. A sentence inside the letter does not get to book. Today that rule has families. A direct attack is a chat line that says to ignore policy. An indirect attack is the same instruction inside a letter. Excessive agency is a booking or a return with no coordinator approval. Disclosure is a log line that carries a national id. The guardrail is the screen in front of the tool. Blocking only the direct phrase is not done.
+Week 1 already treated a letter as data. A sentence inside the letter does not get to book. Today that rule has families. A direct attack is a chat line that says to ignore policy. An indirect attack is the same instruction inside a letter. Excessive agency is a booking or a return with no coordinator approval. In `wf-intake` that action is held for a coordinator. Week 1 Day 3 already stopped there. Disclosure is a log line that carries a national id. The guardrail is the screen in front of the tool. Blocking only the direct phrase is not done.
 
-Deletion has to clear every store that still holds the person: the row, memory, the index, and the logs. Clearing the row and leaving the index is not done.
+The register still has two fields on each row, the same split Week 2 Day 4 used. `lora-local` is an id. The hash is the other field. A load uses the hash string. It does not treat the id as the hash.
 
-The 72-hour clock starts at the timestamp on the notice. It does not start at a model. The notice names a log.
+Deletion has to clear every store that still holds the person: the row, memory, the index, and the logs. The index is the Week 3 retrieval store. Clearing the database row and leaving that index is not done.
+
+The 72-hour clock starts at the timestamp on the notice. It does not start at a model, and it does not start when the team noticed. The notice names a log. Filling the DPIA is G2, the gate Week 1 left open.
 
 This section adds no file and no command.
 
