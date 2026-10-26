@@ -2,12 +2,13 @@
 
 [Chapter 05](05-the-reading.md) was the reading. This chapter replaces three scripts and runs them. The checks run the agent again, so the trace has to come from these files.
 
-Do these four things, in this order. The file blocks are long. Keep scrolling until you reach Run it.
+Do these steps in order. Do not jump to Run it. The paste blocks are long, and Run it is after them.
 
 1. Read what the starter gets wrong.
-2. Replace `model.py`, save it, then `schema.py`, save it, then `memory.py`, and save it. One file at a time.
-3. Run the command under Run it.
-4. Fill the worksheet with three rows from the trace.
+2. Read How the replacement works. Do not paste that section.
+3. Replace `model.py`, save it, then `schema.py`, save it, then `memory.py`, and save it. One file at a time.
+4. Run the command under Run it.
+5. Fill the worksheet with three rows from the trace.
 
 The starter copies are [model.py](packet/agent/model.py), [schema.py](packet/agent/schema.py), [memory.py](packet/agent/memory.py), [tools.py](packet/agent/tools.py), and [run.py](packet/agent/run.py). Chapter 01 copied them to `work/agent`. Read the packet copies. The comments say what the starter does. Leave [tools.py](packet/agent/tools.py) and [run.py](packet/agent/run.py) as the runner and the mock. You edit the copies under `work/agent`.
 
@@ -30,6 +31,24 @@ The check names the case. It does not name the count, the slot, or an interview 
 - The starter does not redirect, and it does not log the emergency refusal.
 - The starter has no `failure` field, so timeout and race-slot do not name the failure. The check says the case does not name the failure.
 - The starter books once as soon as the word book appears, including on race-slot, and it does not offer first. The finished row offers, books once, and names race-slot. A second `slots.book` on that case is what the check calls booked twice. It does not print the slot.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on a later day is a picture and which block you paste. This page has no picture. The three blocks under Replace the three files are the files you paste.
+
+This is the Day 4 agent plus two failures. The first five steps of `respond` are unchanged: redirect, consent, constraint, waiting return, then the walk. Two more rules sit on the walk.
+
+`_timeout` runs when the offer does not return. The row's failure is `timeout`. Nothing is booked and SMS is not sent. A patient turn can return that row immediately, so a later turn cannot book after the timeout.
+
+`_offer` offers once per actor. A second request from the same actor does not offer again. When the slot is already taken, that actor is blocked and the walk continues, so the other actor can still book. `_coordinator` names `race-slot` on the actor whose offer was taken. One slot, two patients, one booking.
+
+`schema.row` now carries `failure`. The starter schema had no such field. `reply` still keeps the count it is given, including an empty count when status was not called. Paste the schema block. It is not a picture.
+
+The Day 4 cases still have to pass. Emergency still redirects. A letter is still data.
+
+Before you paste, say what the row records when the offer does not return, and what it records when two patients are offered one slot.
+
+This section adds no file and no command.
 
 ## Replace the three files
 

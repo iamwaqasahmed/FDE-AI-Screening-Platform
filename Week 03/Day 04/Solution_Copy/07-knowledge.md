@@ -21,3 +21,11 @@ If the line is missing those facts, the eval check says knowledge.md does not sa
 The two checks print `passed` when this file and the rest of the folder match the day. `slice-judge` does not read this file. A miss here fails only the eval check.
 
 [08 — Trainer session](08-trainer.md) is for the trainer. Students can skip it.
+
+## Carry this forward
+
+You leave Week 3 Day 4 with a draft benchmark that names the four planted failures with evidence, and with workshop notes. The second measured run waited.
+
+Tomorrow you ship one fix, remeasure it, and write requirements a later team could start from.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 3, Day 5 student copy](../../Day%2005/Student_Copy/README.md), starting at its background.

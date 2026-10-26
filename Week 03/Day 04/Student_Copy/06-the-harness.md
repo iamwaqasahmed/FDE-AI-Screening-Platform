@@ -10,7 +10,7 @@ You replace three files under `work/`, in this order:
 
 Paste only those three blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged. Do not paste a test. The tests are copied and not replaced.
 
-Scroll down to the heading Replace the score. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it.
+Scroll down to the heading Replace the score. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05 and 06 again from the chapter source. Do not repair the spaces by hand.
 
@@ -126,7 +126,23 @@ def classify(row: dict) -> str:
     return "pass"
 ```
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Three scores, one forecast, one name for each planted failure.
+
+`extraction_f1` scores each field on its own. One wrong field lowers the score even when the others match. `citation_accuracy` counts a row only when document and span both match. `journey_pass` counts a row only when state and approval both match. An empty slice scores zero. A fluent sentence is not one of these fields.
+
+`predict` keeps rows from the later year whose month is in the window, and it keeps the visits written on those rows. The campaign sits in that later window. The shell forecast used the earlier year and missed it.
+
+`classify` reads the failure name from the reply text. It is not a column you add. A document that is not in force is retrieval. An offer that uses Friday is reasoning. A booking with no approval is workflow. A clause that is not on file is hallucination. Anything else is `pass`.
+
+Before you paste, say why a right document with a wrong span still fails citation accuracy, and which year the forecast has to keep.
+
+This section adds no file and no command.
 
 ## Replace the score
 

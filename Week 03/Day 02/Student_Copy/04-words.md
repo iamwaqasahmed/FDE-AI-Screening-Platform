@@ -129,4 +129,18 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 
 This page is done when you can find a word in the table and open its file. You do not need to memorize the rows.
 
+## A plain reading
+
+Week 1 Day 2 separated fine-tuning from retrieval. Fine-tuning changes weights. Retrieval looks up a document. The ruling closed a fine-tune on the external model. Patient data stays off `ext-large`.
+
+An adapter, on this day, is the small set of extra weights registered as `lora-local` on `local-small`. That style of small added weights is called LoRA. Parameter-efficient fine-tuning is the family name: you do not change every weight. You do not run a training loop in this folder. `adapter.py` selects the approved row and copies its hash. Rank is how wide that adapter is. A wider rank can ask for more GPUs.
+
+QLoRA is the fit in `qlora.py`. It has to stay inside the GPU count you read from the quota file. The two checks do not require that file. The suite does.
+
+The prompt baseline stays weak, and it is not the model you serve. Hours questions for `p-info` stay on retrieval. DNA stays a table, `classical-ml`, not a language model.
+
+This section adds no file and no command.
+
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

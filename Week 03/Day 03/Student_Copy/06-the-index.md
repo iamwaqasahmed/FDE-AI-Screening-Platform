@@ -11,7 +11,7 @@ You replace four files under `work/`, in this order:
 
 Paste only those four blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged. Do not paste a test. The tests are copied and not replaced.
 
-Scroll down to the heading Replace the chunk split. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Three more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it.
+Scroll down to the heading Replace the chunk split. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Three more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05 and 06 again from the chapter source. Do not repair the spaces by hand.
 
@@ -165,7 +165,25 @@ def rank(question: str, chunks: list[dict], mode: str) -> list[dict]:
 ```
 
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Four steps from a document to a ranked list.
+
+`clauses` splits the body on a blank line. Each non-empty piece becomes a row. The document fields, including the clause id, are copied onto every piece. The shell dropped the clause id and kept the body as one chunk, so a citation had no span.
+
+`embed` splits lower-case text into tokens. A hyphen keeps a code in one token. Each token's weight is its share of the text. `nearness` is the cosine similarity of two of those maps. An empty side scores zero. The shell returned the same one-key vector for every text, so every document looked equally near. `codes` is the list of hyphenated tokens. The search uses them as a boost.
+
+`build` stores one vector on each clause, in document order.
+
+`rank` embeds the question and scores each chunk. Vector mode keeps every status, including a draft. Hybrid mode keeps a chunk only when its status is in force, and adds one to the score when a code from the question is a key in the chunk's vector. The shell scored every chunk and ignored the mode.
+
+Before you paste, say what hybrid search refuses to rank, and what a chunk must still carry so a citation can name a span.
+
+This section adds no file and no command.
 
 ## Replace the chunk split
 

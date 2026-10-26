@@ -10,4 +10,8 @@ The suite, from this folder, prints a line that starts with `Ran 19 tests`, then
 
 A `fair.py` miss fails only the fair check.
 
+## The path through the files
+
+The morning chapter [08-the-fair.md](../Student_Copy/08-the-fair.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [06 — The pages](06-the-pages.md).

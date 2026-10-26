@@ -75,7 +75,7 @@ def credential(env: str, pack: Path) -> str:
     return payload["endpoint"]
 ```
 
-3. [ci.yml](packet/.github/workflows/ci.yml). Search for `setup-python`. You should see checkout and the Python setup. You should not see `unittest`. The next block is a picture of that file. Do not paste it over the work file. The block that replaces the work workflow is under the heading Replace the work pipeline, later on this page.
+3. [ci.yml](packet/.github/workflows/ci.yml). Search for `setup-python`. You should see checkout and the Python setup. You should not see `unittest`. The next block is a picture of that file. Do not paste it over the work file. Read How the replacement works before the paste. It is not a paste. The block that replaces the work workflow is under the heading Replace the work pipeline.
 
 ```text
 # Shell workflow. Chapter 08 replaces the work copy.
@@ -97,6 +97,22 @@ jobs:
 5. [guide.md](packet/release/endpoint/guide.md). Search for `ep-local-small`. Search for `zone-private`.
 
 The deploy check says `the router leaves the private endpoint` when the route is still the external model. It says `prod uses the dev credential` when prod still reads the dev file. It says `the pipeline is not in CI` when the work workflow does not run the suite. None of those messages names a token.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Three decisions, three files.
+
+`route` returns the same place for dev and for prod: endpoint `ep-local-small`, model `local-small`, zone `zone-private`. The environment argument is on the function so callers can pass it. It does not change the route. The assistant does not point at the public model because the environment name says prod.
+
+`credential` is where dev and prod differ. Prod reads `credentials/prod.json`. Any other name reads `credentials/dev.json`. The value is the `endpoint` field in that file. It is read, not typed into the function.
+
+The work pipeline is the workflow that runs this suite. It is replaced so the work copy actually runs the tests. The shell pipeline did not.
+
+Before you paste, say what is the same in dev and prod, and what is different.
+
+This section adds no file and no command.
 
 ## Replace the router
 

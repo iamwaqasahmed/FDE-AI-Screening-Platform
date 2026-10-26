@@ -92,4 +92,16 @@ Do not copy a hash, a budget, a timeout, a week count, a date, or a price onto a
 
 This page is done when you have scanned the tables.
 
+## A plain reading
+
+Two replicas sit behind a balancer. When site-a is killed, new traffic goes to site-b, the replica that is still healthy. In-flight approvals live in the workflow store. They are not on the pod that was killed. Rebuilding from the dead pod drops them.
+
+A circuit breaker is the switch on a failing partner. Open means the booking path does not call `insure` and does not wait out the timeout. Closed means the path still waits. `insure` is a partner. It is not a third site.
+
+When the model is down, status can still be read. That is the degradation this day asks for. A GPU purchase takes the lead time in the finance file. Renting is how you meet the date before Ramadan when that purchase cannot.
+
+This section adds no file and no command.
+
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

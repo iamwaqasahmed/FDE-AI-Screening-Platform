@@ -26,4 +26,8 @@ The three tests match those three results. `test_ain_stays_queued` still expects
 
 The journey check scores those three files when they are present. The work is to replace the work copies. The packet copies stay the shells.
 
+## The path through the files
+
+The morning chapter [06-the-booking.md](../Student_Copy/06-the-booking.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The contract](04-the-contract.md).

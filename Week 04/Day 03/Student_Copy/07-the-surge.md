@@ -15,7 +15,7 @@ Paste only those eight blocks. The blocks under Read these files are pictures of
 
 The shell test is a picture. The filled test is the paste. A filled app beside a shell test fails the suite. A shell app beside a filled test fails the suite.
 
-You are reading until the heading Replace the quota. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it. If the block in front of you is above Replace the quota, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite until the heading Run the suite.
+You are reading until the heading Replace the quota. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture. If the code block in front of you is above Replace the quota, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite until the heading Run the suite.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, paste that block again from this chapter file. Do not repair the spaces by hand. Run `prepare_work.py` again only when a failure row in [chapter 09](09-finish.md) says so. A second run puts the shell tests back.
 
@@ -289,7 +289,25 @@ if __name__ == "__main__":
 
 That was a picture. Do not paste it.
 
-You are done reading. Do not paste any block above this line. The next heading, Replace the quota, is the first paste on this page.
+You are done reading. Do not paste any block above this line. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the quota.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Chat and the batch share one pool. Four functions keep the chat reserve, the cold start, today's price, and the table the readout will show.
+
+`latency` returns the reserved chat latency from the sheet, the figure that holds when a chat reserve remains. The starved latency is on the same sheet and is not the result. The shell returned the starved number because the batch had taken the whole pool.
+
+`started` reads the peak time and the cold-start seconds and moves the start earlier by that many seconds. Scaling only after the peak has already begun misses those seconds. The shell started at the peak.
+
+`rate` returns today's `sar` and discards yesterday's record. Yesterday's key can still be `price.ext_large_per_1k`. It is not today's price. The shell priced the batch at yesterday's rate.
+
+`table` copies four fields the other functions already computed: tokens per second, SAR, chat latency, and hours. It does not recompute them. A plan that is missing one field is not a capacity table.
+
+Before you paste, say why the start time is earlier than the peak, and which price record is ignored.
+
+This section adds no file and no command.
 
 ## Replace the quota
 

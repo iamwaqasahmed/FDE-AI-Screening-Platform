@@ -28,7 +28,7 @@ On Windows, the file sometimes saves as `knowledge.md.txt`. In File Explorer, op
 
 Open [work/knowledge.md](work/knowledge.md). Two numbered lines. The first says the clock starts at the `rel-w4d1` notice, not when the team noticed. The second says excessive agency in `wf-intake` is a return or a booking with no coordinator approval, and the approval queue holds the action. Both answers stay on their numbered lines. A second sentence on the next line, without a number, does not count as the second answer.
 
-Then run the checks. Open a terminal in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python lines. `--work` is required. The path is the work folder you filled in. `--profile practice` is required.
+Then run the checks. The suite window is inside `work/`. Leave it. Open a new terminal in the course folder. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python lines. `--work` is required. The path is the work folder you filled in. `--profile practice` is required.
 
 ```text
 cd problem_simulation
@@ -99,9 +99,19 @@ A guard, output, supply, redact, limit, or guardrail-family miss fails only the 
 | `the disparity is outside the published bound` | This line is from the fair check. The message does not print a rate or the bound. Open [outcomes.jsonl](packet/release/fairness/outcomes.jsonl) and [bound.json](packet/release/fairness/bound.json). Do not copy the bound onto a page. [Chapter 08](08-the-fair.md). Paste `fair.py` again. Label the spread: it has to sit inside the bound you read in that file |
 | `the harness did not run` | The message does not name the line. Run `python "Week 04/Day 01/Student_Copy/prepare_work.py"` from the course folder, then paste chapters 05 through 10 again from the chapter source. Do not repair the spaces by hand. Do not delete any of the eight app files. The suite imports all eight |
 | `a watermarked sample is in the work directory` | A file that carries the mark is under `work/`. Delete that copy. The message does not print the watermark. Do not delete `guard.py`, `output.py`, `supply.py`, `redact.py`, `limit.py`, `access.py`, `erase.py`, or `fair.py`. This line can come from any of the four checks |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python lines |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 04`, and run the block from the `cd` line |
 | `SyntaxError` or `IndentationError` or a JSON error | Run `python "Week 04/Day 01/Student_Copy/prepare_work.py"` from the course folder. Then paste chapters 05 through 10 again from the chapter source. Do not repair the spaces or the commas by hand. A second run puts the shell tests back |
 
 ## Done
 
 The four checks print `passed`, and `knowledge.md` answers both questions. The first says the clock starts at the `rel-w4d1` notice, not when the team noticed. The second says excessive agency in `wf-intake` is a return or a booking with no coordinator approval, and the approval queue holds the action.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the replay is open. You rebuild the incident from spans, and cached hours have to drop when the Ramadan circular changes.
+
+Open [Week 4, Day 2](../../Day%2002/Student_Copy/README.md) and read `00-background.md` before any command.

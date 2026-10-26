@@ -30,4 +30,8 @@ Turns drive the tools. A sentence in the letter is data.
 
 The starter returned an empty recall, dropped every fact, and returned the stored preference anyway. `memory` then lost the facility. `consent` reused a blocked preference. The check names the case and does not print the facility id or the preference.
 
+## The path through the files
+
+The morning chapter [06-the-agent.md](../Student_Copy/06-the-agent.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The diagram](04-the-diagram.md).

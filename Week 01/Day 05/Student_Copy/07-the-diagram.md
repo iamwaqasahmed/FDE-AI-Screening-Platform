@@ -21,7 +21,7 @@ That copies four files:
 - [work/readout.md](work/readout.md)
 - [work/trace-note.md](work/trace-note.md)
 
-This chapter fills the first two. [Chapter 08](08-the-readout.md) fills the other two. A second run of that command replaces all four, including a page you already filled. Run it once.
+This chapter fills the first two. [Chapter 08](08-the-readout.md) fills the other two. The copied files are blank headings. Do not type into the blanks. The paste in this chapter replaces `architecture.md` and `design.md`. Chapter 08 replaces `readout.md` and `trace-note.md`. A second run of that command replaces all four, including a page you already filled. Run it once.
 
 If the command says to run `prepare_work.py` first with no extra word, do that from the course folder, then run the `pages` command again.
 

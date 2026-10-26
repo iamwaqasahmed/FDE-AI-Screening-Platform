@@ -24,4 +24,8 @@ The shell merges on a shared national id, a shared phone, or a shared MRN, follo
 
 `the clusters do not match` is the line the check uses when the groups, the removals, or the count disagree and none of those four lines were added. The message does not name the groups.
 
+## The path through the files
+
+The morning chapter [06-the-clusters.md](../Student_Copy/06-the-clusters.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The sample](04-the-sample.md).

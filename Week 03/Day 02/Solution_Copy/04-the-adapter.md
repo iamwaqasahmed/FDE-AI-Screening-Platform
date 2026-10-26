@@ -22,4 +22,8 @@ The shell allows every call and sends every task to `ext-large`. While that shel
 
 The shell prices the token count with `price.ext_large_per_1k` and names the model `ext-large`. While that shell is the file that runs, the check says the cost is over the price cap. The message does not print a price. The filled quote uses `price.local_per_1k`, names `local-small`, and keeps `seconds` inside the cap. If the model is still `ext-large` while the spend is inside the cap, `slice-lora` says ext-large at the price cap does not clear the slice.
 
+## The path through the files
+
+The morning chapter [07-the-adapter.md](../Student_Copy/07-the-adapter.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The advanced path](05-the-advanced.md).

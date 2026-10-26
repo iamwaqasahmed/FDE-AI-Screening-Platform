@@ -4,6 +4,22 @@
 
 You do not paste into a Python file. [generate.py](packet/app/generate.py) writes `client.py`. If a paste into a Python file was a mistake, and the terminal shows `SyntaxError` or `IndentationError`, do not repair the spaces by hand. Go to "If the shell was edited" at the bottom of this chapter.
 
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+You do not paste a client on this page. `generate.py` writes `work/app/client.py` from today's OpenAPI file. The hand-written client still speaks the previous spec. The demo's first line is that client failing the read. The second line is a generated client succeeding. The demo does not print the field name that was removed.
+
+After the generator runs, search the work copy for `Generated his-wadi client`. If you still see the hand-written sentence, the command did not write the file.
+
+The session row is the table `session.py` names: session id, subject, role, and assurance level. It lives in the application database, not in `his-wadi`.
+
+`contract.py` is the boundary for today. A status question uses the Week 1 status tool and cites `his-wadi`. A message that asks to book does not book. The reply says booking is a later day.
+
+Before you generate, name the hand-written client. It is [packet/app/client.py](packet/app/client.py). That file still speaks the previous spec. There is no older spec file in this folder. Today's spec is [his-wadi.yaml](packet/release/openapi/his-wadi.yaml). The command under Replace the client is what replaces only `work/app/client.py`.
+
+This section adds no file and no command.
+
 ## Read four files
 
 Open these in the packet. Read the comment at the top of each one. Do not edit them. Do not edit the copies under `work/app` except by the generate command later on this page.

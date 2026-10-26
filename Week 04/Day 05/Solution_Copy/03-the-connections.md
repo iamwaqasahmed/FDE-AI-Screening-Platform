@@ -34,4 +34,8 @@ The shell reads the booking date. That shell makes the integrate check say `the 
 
 A sign-in miss, a bus miss, a handoff miss, a leave miss, and a warehouse miss all fail the same check, `chk-w4-integrate`.
 
+## The path through the files
+
+The morning chapter [06-the-connections.md](../Student_Copy/06-the-connections.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The proposal](04-the-proposal.md).

@@ -21,7 +21,7 @@ Use the failure table at the bottom only when a check fails. It is not more work
 
 Open [work/knowledge.md](work/knowledge.md). Search inside that file, not inside this chapter. You should see two numbered lines. Line 2 contains `fidelity`. If the search fails, you pasted into the wrong file. The path has to contain `Student_Copy\work`. On macOS it shows as `Student_Copy/work`.
 
-2. Open a terminal in the course folder, the same way as chapter 01. `dir` should list `problem_simulation` and `Week 03`. If chapter 01 told you to use `py`, use `py` here. If that window is already inside `problem_simulation`, skip the `cd` line and run the python lines.
+2. The suite window is inside `work/`. Leave it. Open a new terminal in the course folder, the same way as chapter 01. `dir` should list `problem_simulation` and `Week 03`. If chapter 01 told you to use `py`, use `py` here. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python lines.
 
 ```text
 cd problem_simulation
@@ -75,7 +75,7 @@ A failed check prints `failed`, then one or more lines that start with a dash. T
 | `knowledge.md does not say why a row is not a patient` | The message does not name the missing fact. Line 1 of the block above says a mother and a newborn can share a national id, twins can share a phone, and an MRN can be reused |
 | `knowledge.md does not say what a fidelity card compares` | Line 2 of the block above says a fidelity card compares a synthetic sample with the real specialty mix, the phrase frequencies, and the label margins |
 | `a watermarked sample is in the work directory` | A copy of the clerk file, or another file that carries the mark, is under `work/`. Delete that copy. Leave the clerk file in the built pack. The message does not print the watermark. Do not delete `pit.py` or `budget.py` |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python lines |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 03`, and run the block from the `cd` line |
 | `SyntaxError` or `IndentationError` | Run `python "Week 03/Day 01/Student_Copy/prepare_work.py"` from the course folder. Then paste chapters 05 through 10 again from the chapter source. Do not repair the spaces by hand |
 
 ## Done
@@ -83,3 +83,13 @@ A failed check prints `failed`, then one or more lines that start with a dash. T
 The day is done when the three checks print `passed` and `work/knowledge.md` answers both questions.
 
 Keep `work/`. The solution copy, when you receive it, is how you compare your pages with a finished set. Leave `problem_simulation/build` closed.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the ruling is signed. You serve a registered adapter inside the quota and the price cap. The cloud fine-tune is closed.
+
+Open [Week 3, Day 2](../../Day%2002/Student_Copy/README.md) and read `00-background.md` before any command.

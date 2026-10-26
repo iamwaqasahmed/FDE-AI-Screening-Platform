@@ -13,7 +13,7 @@ You replace six files under `work/`, in this order:
 
 Paste only those six blocks. The blocks under Read these files are pictures. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged.
 
-Scroll down to the heading Replace the relabel. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Use the four steps from [chapter 05](05-the-sprint.md) on each Replace heading. Everything above that first Replace heading is a picture or a check. You do not paste it.
+Scroll down to the heading Replace the relabel. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Use the four steps from [chapter 05](05-the-sprint.md) on each Replace heading. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture or a check. You do not paste those.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05, 06, and 07 again from the chapter source. Do not repair the spaces by hand.
 
@@ -161,7 +161,23 @@ def accept(text: str, national_ids: list[str]) -> bool:
     return True
 ```
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Three gates between a clerk file and a file you may share.
+
+`relabel` reads the letter text under ann-v2. Phone or photo in the text is source type photo, even when the word scan is also there. Scan is the source type only when the text says scan and does not say phone or photo. Anything else is typed. Retina and pediatric come from the text. The shell copied the clerk fields and kept the old guideline, so a phone photo stayed a scan and the sub-specialty stayed blank.
+
+`sample` returns four invented rows. It does not copy `letters`. Two are endocrinology and two are ophthalmology. Two name the rare sub-specialty from the fidelity card. The shell returned the first real letter. The check then says the sample misses the card and contains a real letter.
+
+`accept` returns false when the text contains the watermark prefix or a national id from the history. A clean invented sentence is accepted. The shell accepted every file.
+
+Before you paste, say how a phone photo is labeled, and what `sample` must not copy.
+
+This section adds no file and no command.
 
 ## Replace the relabel
 

@@ -33,7 +33,7 @@ That first line is the claim on [cdo.md](packet/kickoff/personas/cdo.md). It is 
 
 Read this table once. Each row is one heading in [readout.md](work/readout.md). The sentence is what goes under that heading. Do not rebuild the file from the table. The block in Replace the readout is the file you paste.
 
-| Heading | What you write under it |
+| Heading | Sentence in the paste |
 | --- | --- |
 | Deadline | The board has named a date just before Ramadan. That date assumes a purchase that takes 16 weeks. Citation: cdo. |
 | Data | Patient data stays off the external model ext-large and on the private cloud. Citation: dpo. |

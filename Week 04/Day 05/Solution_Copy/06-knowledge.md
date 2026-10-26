@@ -10,3 +10,9 @@ Both answers stay on their numbered lines. The first numbered line contains `ses
 A first line that misses `session.cancelled` makes the readout check say `knowledge.md does not say which event leave creates`. That line is the leave-event line. It is not `leave does not emit session.cancelled`. A second line that misses a first problem or a dependency makes the readout check say `knowledge.md does not name a first problem and a dependency`. A knowledge miss fails `chk-readout`.
 
 The trainer's session is [chapter 07](07-trainer.md). Students can skip it.
+
+## Carry this forward
+
+You leave Week 4 Day 5 with staff sign-in and the bus still up after the drill, a handoff that has a summary, a late leave that cancels a session, and a proposal that can be presented. The rehearsal ends here.
+
+There is no next morning in this rehearsal. Weeks 5 and 6 are a different client. The trainer chapter, if this page links one, is optional.

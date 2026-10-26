@@ -28,7 +28,7 @@ On Windows, the file sometimes saves as `knowledge.md.txt`. In File Explorer, op
 
 Open [work/knowledge.md](work/knowledge.md). Two numbered lines. The first says a retrieval failure is a citation that is not the in-force document the asker may see. The second says calibrate a judge because a fluent wrong citation can be marked correct. A second sentence on the next line, without a number, does not count as the second answer.
 
-Then run the checks. Open a terminal in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python lines. `--work` is required. The path is the work folder you filled in. `--profile practice` is required.
+Then run the checks. The suite window is inside `work/`. Leave it. Open a new terminal in the course folder. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python lines. `--work` is required. The path is the work folder you filled in. `--profile practice` is required.
 
 ```text
 cd problem_simulation
@@ -78,9 +78,19 @@ A failed check prints `failed`, then one or more lines that start with a dash. T
 | `the judge is not checked on the calibration set` | This line is from `slice-judge`. The message does not print the item. Open [calibration.jsonl](packet/release/slices/calibration.jsonl) and [judge.py](work/app/judge.py). The mark follows `pass`, not fluent. [Chapter 07](07-the-gate.md). Paste `judge.py` again. You should see `Mark a citation with the calibration label.` You should not see `when it is fluent`. Label the fluent row whose pass field is false: that row is not a pass |
 | `the judge did not run` | This line is from `slice-judge`. `judge.py` is missing or the paste broke it. [Chapter 07](07-the-gate.md). Paste `judge.py` again. Do not delete `gate.py` |
 | `a watermarked sample is in the work directory` | A file that carries the mark is under `work/`. Delete that copy. The message does not print the watermark. Do not delete `intervals.py`, `experiment.py`, or `gate.py`. This line can come from either check |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python lines |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 03`, and run the block from the `cd` line |
 | `SyntaxError` or `IndentationError` | Run `python "Week 03/Day 04/Student_Copy/prepare_work.py"` from the course folder. Then paste chapters 05 through 10 again from the chapter source. Do not repair the spaces by hand |
 
 ## Done
 
 The two checks print `passed`, and `knowledge.md` answers both questions. The first says a retrieval failure is a citation that is not the in-force document the asker may see. The second says calibrate a judge because a fluent wrong citation can be marked correct.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow you ship one fix, remeasure it, and write requirements a later team could start from.
+
+Open [Week 3, Day 5](../../Day%2005/Student_Copy/README.md) and read `00-background.md` before any command.

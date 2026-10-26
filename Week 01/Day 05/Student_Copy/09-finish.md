@@ -105,3 +105,13 @@ A failed scenario names the case. It does not print the count, the slot, or an i
 The day is done when the five checks print `passed` and `work/knowledge.md` answers both questions.
 
 Keep `work/` and the trace worksheet. The solution copy, when you receive it, is how you compare your pages with a finished set. Leave `problem_simulation/build` closed.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow is the first morning of Week 2. `his-wadi` publishes a new spec. You leave with a patient and a coordinator who can open the assistant. Booking waits.
+
+Open [Week 2, Day 1](../../../Week%2002/Day%2001/Student_Copy/README.md) and read `00-background.md` before any command.

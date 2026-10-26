@@ -4,6 +4,18 @@ Open [00 — Background](00-background.md) first. That page says what the four w
 
 `packet/` is the file drawer those chapters open. Do not start there.
 
+## Where you are
+
+This is Week 1, Day 1 of the four-week rehearsal. Today is the arrival: who asked, an access request, a pipeline that rejects a secret, and two interviews.
+
+The [course guide](../../../learning/README.md) says how a day is shaped. [This week](../../README.md) says how the five days move. The [concept index](../../../learning/concept-index.md) is a lookup. It is not the next chapter.
+
+This is the first morning. There is no earlier day.
+
+Read the chapters in the order table below. `packet/` is the drawer those chapters open. Leave `Solution_Copy` closed until the finish chapter says the day is done.
+
+When this day is done, the next student copy is [Week 1, Day 2](../../Day%2002/Student_Copy/README.md).
+
 ## What you will hold at the end
 
 `work/` contains:
@@ -28,7 +40,7 @@ Open [00 — Background](00-background.md) first. That page says what the four w
 | 8 | [The interviews](08-the-interviews.md) |
 | 9 | [Finish](09-finish.md) |
 
-The trainer's debrief comes after this attempt. It uses the solution copy, which you do not have this morning.
+The trainer's debrief comes after this attempt. It uses the solution copy, which you do not have this morning. If that folder is already beside this one, leave it closed until the finish chapter. The Closed section says the same thing.
 
 ## Closed
 

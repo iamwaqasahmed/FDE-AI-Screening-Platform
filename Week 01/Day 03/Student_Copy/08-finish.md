@@ -6,14 +6,7 @@ Use the failure table at the bottom only when a check fails. It is not more work
 
 ## Do this
 
-1. Open a terminal in the course folder, the same way as chapter 01. Then run:
-
-```text
-cd problem_simulation
-python -m alwaha.check events --work "../Week 01/Day 03/Student_Copy/work" --profile practice
-```
-
-2. In the same `work` folder as `intake.md`, create a new file named `knowledge.md`. Save it as `Week 01/Day 03/Student_Copy/work/knowledge.md`. Paste the block below. Then replace each numbered line with your own sentence. Delete the words `Your answer` and write the sentence on that same line.
+1. In the same `work` folder as `intake.md`, create a new file named `knowledge.md`. Save it as `Week 01/Day 03/Student_Copy/work/knowledge.md`. Paste the block below. Then replace each numbered line with your own sentence. Delete the words `Your answer` and write the sentence on that same line.
 
 - Line 1 is the clock. [pol-sla.md](packet/release/policy/pol-sla.md) says the SLA clock starts at `referral.submitted`. It does not start at booking. Your line 1 says that, and it names `referral.submitted`.
 - Line 2 is a second delivery. The same page says a second delivery of the same event id changes nothing. The referral keeps the one approval it already has. Your line 2 says that.
@@ -25,6 +18,15 @@ python -m alwaha.check events --work "../Week 01/Day 03/Student_Copy/work" --pro
 
 2. Your answer. Say what a second delivery of the same event id should do.
 ```
+
+2. Save `knowledge.md` before the check. The check reads that file. Open a terminal in the course folder, the same way as chapter 01. Then run:
+
+```text
+cd problem_simulation
+python -m alwaha.check events --work "../Week 01/Day 03/Student_Copy/work" --profile practice
+```
+
+If you already ran that command and it said `knowledge.md needs two answers`, the file was missing or the answers were still the words `Your answer`. Save the two sentences and run the same command again.
 
 ## You should now see
 
@@ -70,3 +72,13 @@ A failed scenario names the case. It does not print the due date, the clause, or
 The day is done when the check prints `passed` and `work/knowledge.md` answers both questions.
 
 Keep `work/` and the scenario worksheet. The solution copy, when you receive it, is how you compare your pages with a finished set. Leave `problem_simulation/build` closed.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the medical director's rules arrive. A patient can ask for status and book a slot. A return cannot leave without a coordinator.
+
+Open [Week 1, Day 4](../../Day%2004/Student_Copy/README.md) and read `00-background.md` before any command.

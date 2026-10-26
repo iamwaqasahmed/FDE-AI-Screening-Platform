@@ -20,4 +20,8 @@ Open the finished files and put them beside yours. The packet copies are the she
 
 The dev rows you can read are in [retrieve.jsonl](sources/release/slices/retrieve.jsonl). The check does not print a doc id, a span, or a clause.
 
+## The path through the files
+
+The morning chapter [06-the-index.md](../Student_Copy/06-the-index.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The citation](04-the-citation.md).

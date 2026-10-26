@@ -19,3 +19,11 @@ The session row lives in the application database.
 That is the `sessions` table in [session.py](work/app/session.py). It is not the hospital record. [token-flow.md](work/token-flow.md) says the same thing.
 
 You have the finished day. The trainer's session is [06 — Trainer session](06-trainer.md).
+
+## Carry this forward
+
+You leave Week 2 Day 1 with a patient and a coordinator who can open the assistant, a session row in the application database, and a status question that still uses the Week 1 tool. Booking waited.
+
+Tomorrow `eref` pushes `referral.submitted`, and a cancelled clinic session arrives as its own event.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 2, Day 2 student copy](../../Day%2002/Student_Copy/README.md), starting at its background.

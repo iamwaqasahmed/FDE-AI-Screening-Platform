@@ -115,4 +115,6 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 
 The hash, the two credentials, the quota number, and the two clinic codes stay in the pack files. This page does not store them.
 
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

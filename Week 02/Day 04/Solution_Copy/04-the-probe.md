@@ -12,4 +12,8 @@ The test stand-ins are `sha256:old`, `sha256:good`, and `sha256:near`. They are 
 
 The shell probe returns `candidate["hash"]` and an empty dependency list. The shell manifest has no namespace line and no probe. While that shell is the file that runs, the check says `the health probe does not report the registered hash`, `the manifest is not in the team namespace`, `the health probe is missing`, and `the image runs as root`. The hash message does not name the hash.
 
+## The path through the files
+
+The morning chapter [07-the-probe.md](../Student_Copy/07-the-probe.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The endpoint](05-the-endpoint.md).

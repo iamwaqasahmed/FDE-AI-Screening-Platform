@@ -8,7 +8,7 @@ Do not copy a scenario file into `work/`. Do not paste a scenario line into a pr
 
 Open [steer-w1.md](packet/release/steering/steer-w1.md).
 
-There are five questions. You will answer them in [chapter 08](08-the-readout.md). This page names the questions. It does not say how many weeks the purchase takes, which gate is still open, or where patient data sits. Those answers are in the later sections of this chapter and in the trace you write in chapter 06. You do not need them yet.
+There are five questions. You will answer them in [chapter 08](08-the-readout.md). This page names the questions. It does not say how many weeks the purchase takes. You do not need that number yet. Chapter 08 pastes the Deadline sentence, and that sentence has the weeks. Chapter 04 already said G2 is still open. Section 9 of this chapter shows the gate list. The words "is accepted" say what G2 does when it passes. It has not passed. Where patient data sits is on the zones page in section 8, and on Sara Al-Mutairi's card in section 13. The trace does not contain the weeks or the gate.
 
 ## 2. The approval policy
 

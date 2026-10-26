@@ -10,7 +10,7 @@ You replace three files under `work/`, in this order:
 
 Paste only those three blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged. Do not paste a test.
 
-Scroll down to the heading Replace the adapter. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. Everything above that first Replace heading is a picture or a check. You do not paste it.
+Scroll down to the heading Replace the adapter. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture or a check. You do not paste those.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05 through 07 again from the chapter source. Do not repair the spaces by hand.
 
@@ -115,7 +115,25 @@ def quote(cap: dict, prices: dict) -> dict:
     return {"model": "ext-large", "sar": sar, "seconds": 1}
 ```
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Nothing in this chapter trains a network. The files choose a legal row and refuse an illegal call.
+
+`serve` selects the register row whose id is `lora-local` and whose status is approved. It copies that row's hash. The cloud fixture is an argument and is not used. The GPU count it returns fits the quota. The shell loaded the cloud-tune hash and asked for one more GPU than the quota.
+
+`allow` permits a call only when a present hash is on the register and no phi field is sent to `ext-large`. The four phi names are national id, date of birth, name, and phone. A missing hash is not treated as an unregistered hash. The shell allowed every call.
+
+`task` sends hours to retrieval and DNA to `classical-ml`. Other names go to the adapter. The shell sent every name to `ext-large`.
+
+`quote` prices the published token count with `price.local_per_1k` and names `local-small`. The shell priced the same count on the external rate.
+
+Before you paste, say which argument `serve` must ignore, and which two tasks must not go to the adapter.
+
+This section adds no file and no command.
 
 ## Replace the adapter
 

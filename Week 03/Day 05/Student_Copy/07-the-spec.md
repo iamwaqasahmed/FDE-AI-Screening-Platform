@@ -10,7 +10,7 @@ You replace three files under `work/`, in this order:
 
 Paste only those three blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged. Do not paste a test. The tests are copied and not replaced.
 
-Scroll down to the heading Replace the backlog. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it.
+Scroll down to the heading Replace the backlog. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture.
 
 The first two files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. The workflow is YAML. `improvement-gate:` starts with two spaces. If the terminal later shows `SyntaxError` or `IndentationError`, open a terminal in the course folder and run `python "Week 03/Day 05/Student_Copy/prepare_work.py"`. Then paste chapters 05, 06, and 07 again from the chapter source. Do not repair the spaces by hand. A second run of that command puts the commented gate back. Paste this chapter's workflow again after that.
 
@@ -84,6 +84,20 @@ jobs:
 ```
 
 You are done reading. The next heading, Replace the backlog, is the first paste on this page.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+The brief is not the sponsor sentence. These two functions are how that decision shows up in code. The pages you paste later are where a reader sees it.
+
+`kept` drops a story whose id is in the non-goal set. Triage and the other blocked stories are that set. A story with no id is kept. The shell kept every sponsor story, including the ones the memo marked `blocked`.
+
+`gate_for` puts the citation requirement on the risk tier. Every other requirement id returns an empty gate. G1 is that tier. The shell left the citation requirement with no gate, so the spec could not say which approval it sits under.
+
+Before you paste, say what a non-goal does to a backlog story, and which requirement receives a gate.
+
+This section adds no file and no command.
 
 ## Replace the backlog
 

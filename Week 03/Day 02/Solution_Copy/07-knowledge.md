@@ -19,3 +19,11 @@ The legal hash is lora-local on reg-models.
 The checks do not read the interview notes.
 
 Next: [08 — Trainer session](08-trainer.md). Students can skip that page.
+
+## Carry this forward
+
+You leave Week 3 Day 2 with a registered adapter that beats the prompt baseline inside the quota and the price cap. The cloud fine-tune is closed. Hours stayed on retrieval.
+
+Tomorrow criteria v4 is in force for three specialties. You cite an in-force document the asker may see.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 3, Day 3 student copy](../../Day%2003/Student_Copy/README.md), starting at its background.

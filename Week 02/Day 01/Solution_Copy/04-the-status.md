@@ -33,4 +33,8 @@ The journey check says `status count does not match`, `status state does not mat
 
 The scenario file is not in this folder. [pol-assistant-use.md](sources/kickoff/corpus/pol-assistant-use.md) says the watermark stays out of prompts, tickets, and the work you submit. A copy of the scenario in `work/` fails the check. The message does not print the watermark.
 
+## The path through the files
+
+The morning chapter [07-the-status.md](../Student_Copy/07-the-status.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — Knowledge](05-knowledge.md).

@@ -26,7 +26,7 @@ Stay on this page. The next heading is Run the checks. Do not open the failure t
 
 ## Run the checks
 
-Open a terminal in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python lines. `--work` is required. `--profile practice` is required.
+The suite window is inside `work/`. Leave it. Open a new terminal in the course folder. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python lines. `--work` is required. `--profile practice` is required.
 
 ```text
 cd problem_simulation
@@ -73,9 +73,19 @@ An adapters miss fails only the slo check. A batch miss fails both checks. A rou
 | `knowledge.md does not say what the price change punished` | This line is from the slo check. Line 2 of the block above says the price change punished sending the batch to `ext-large` |
 | `the harness did not run` | The message does not name the module. This line can come from either check. A traceback from the suite names a test file. The app file is the same name without `test_`. Open that module and the pack file that feeds it. Adapters read [adapters.json](packet/release/registry/adapters.json) and [candidate.json](packet/release/registry/candidate.json). Batch, quota, and scale read [throughput.json](packet/release/serving/throughput.json). Batch and scale also read [p-forecast.json](packet/release/forecast/p-forecast.json). Price reads [price-today.json](packet/release/finance/price-today.json). The route reads [mixed.jsonl](packet/release/load/mixed.jsonl). The public cache reads [public.json](packet/release/serving/public.json). Paste that module again from the chapter that replaces it. Do not repair the spaces by hand. Do not delete any of the eight app files. The suite imports all eight |
 | `a watermarked sample is in the work directory` | A file that carries the mark is under `work/`. Delete that copy. The message does not print the watermark. Do not delete `adapters.py`, `batch.py`, `route.py`, `public.py`, `quota.py`, `scale.py`, `price.py`, or `capacity.py`. This line can come from either check |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python lines |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 04`, and run the block from the `cd` line |
 | `SyntaxError` or `IndentationError` | Run `python "Week 04/Day 03/Student_Copy/prepare_work.py"` from the course folder. Then paste chapters 05 through 09 again from the chapter source. Do not repair the spaces by hand. A second run puts the shell tests back |
 
 ## Done
 
 The two checks print `passed`, and `knowledge.md` answers both questions. The first says the cold start is still running. The second says the price change punished sending the batch to `ext-large`.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the site drill is open. Traffic moves when site-a dies, and the rent-versus-buy note has a date to meet.
+
+Open [Week 4, Day 4](../../Day%2004/Student_Copy/README.md) and read `00-background.md` before any command.

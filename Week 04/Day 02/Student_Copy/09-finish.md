@@ -28,7 +28,7 @@ Open [work/knowledge.md](work/knowledge.md). Line 1 names ramadan hours, criteri
 
 ## Run the checks
 
-Then run the checks. Open a terminal in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python lines. `--work` is required. The path is the work folder you filled in. `--profile practice` is required.
+Then run the checks. The suite window is inside `work/`. Leave it. Open a new terminal in the course folder. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python lines. `--work` is required. The path is the work folder you filled in. `--profile practice` is required.
 
 ```text
 cd problem_simulation
@@ -77,9 +77,19 @@ A spans, dashboard, meter, drift, override, shadow, sprint, dashboard-page, time
 | `the patient-rep notes miss the old hours` | This line is from the incident check. [Chapter 08](08-the-pages.md). Paste `patient-rep.notes.md` again. Keep the pipes. You should see `evening` and `circular`. The question file is not the note |
 | `the harness did not run` | The message does not name the module. This line can come from either check. A traceback from the suite names a test file. The app file is the same name without `test_`. Open that module and the pack file that feeds it. Spans and the board read [spans.jsonl](packet/release/replay/spans.jsonl). The meter reads [gateway.jsonl](packet/release/meter/gateway.jsonl). Drift reads [signals.jsonl](packet/release/drifts/signals.jsonl). The override reads [overrides.jsonl](packet/release/actions/overrides.jsonl). Shadow reads [shadow-extract.json](packet/release/experiment/shadow-extract.json). The cache reads [document-changed.json](packet/release/events/document-changed.json). Paste that module again from the chapter that replaces it. Do not repair the spaces by hand. Do not delete any of the seven app files. The suite imports all seven |
 | `a watermarked sample is in the work directory` | A file that carries the mark is under `work/`. Delete that copy. The message does not print the watermark. Do not delete `spans.py`, `dashboard.py`, `meter.py`, `cache.py`, `drift.py`, `override.py`, or `shadow.py`. This line can come from either check |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python lines |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 04`, and run the block from the `cd` line |
 | `SyntaxError` or `IndentationError` | Run `python "Week 04/Day 02/Student_Copy/prepare_work.py"` from the course folder. Then paste chapters 05 through 09 again from the chapter source. Do not repair the spaces by hand. A second run puts the shell tests back |
 
 ## Done
 
 The two checks print `passed`, and `knowledge.md` answers both questions. The first names ramadan hours, criteria v4, and the campaign clinic. The second says `document.changed` invalidates a cached answer.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the surge is on the forecast. Chat and the batch share one quota, and today's external price replaces yesterday's.
+
+Open [Week 4, Day 3](../../Day%2003/Student_Copy/README.md) and read `00-background.md` before any command.

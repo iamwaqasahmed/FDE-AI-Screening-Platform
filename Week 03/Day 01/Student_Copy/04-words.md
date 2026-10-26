@@ -92,4 +92,6 @@ The history ids, the two MRNs, and the shared national id stay in the history fi
 
 This page is done when you have scanned the tables. You have not pasted a file. You have not run a command.
 
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

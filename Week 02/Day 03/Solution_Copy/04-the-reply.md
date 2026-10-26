@@ -12,4 +12,8 @@ The shell `schema_ok` is true when the sentence is non-empty. The shell `journey
 
 [pol-assistant-use.md](sources/kickoff/corpus/pol-assistant-use.md) keeps the watermark out of prompts and out of the work you submit. The fixture carries that watermark. The check message does not print it.
 
+## The path through the files
+
+The morning chapter [07-the-reply.md](../Student_Copy/07-the-reply.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The receipt](05-the-receipt.md).

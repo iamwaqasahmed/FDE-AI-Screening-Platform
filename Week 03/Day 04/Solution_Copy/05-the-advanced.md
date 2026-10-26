@@ -12,4 +12,8 @@ The shell reports the contained count. [experiment.py](work/app/experiment.py) r
 
 The suite in this folder prints `Ran 11 tests` and then `OK`. The seven test files match the packet byte for byte. Do not add a comment to a test. The same tests fail beside the shells.
 
+## The path through the files
+
+The morning chapter [08-the-advanced.md](../Student_Copy/08-the-advanced.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [06 — The pages](06-the-pages.md).

@@ -17,7 +17,7 @@ Paste only those ten blocks. The blocks under Read these files are pictures of t
 
 The shell test is a picture. The filled test is the paste. A filled app beside a shell test fails the suite. A shell app beside a filled test fails the suite. Do the app file and its test before you start the next pair.
 
-You are reading until the heading Replace the guard. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures.
+You are reading until the heading Replace the guard. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, open a terminal in the course folder and run `python "Week 04/Day 01/Student_Copy/prepare_work.py"`. Then paste chapters 05 and 06 again from the chapter source. Do not repair the spaces by hand. A second run of that command puts the shell tests back. Paste this chapter's tests again after that.
 
@@ -416,7 +416,27 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-You are done reading. The next heading, Replace the guard, is the first paste on this page.
+You are done reading. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the guard.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Week 1 already refused to book from a sentence in a letter. This file sorts the ways that sentence can arrive.
+
+`screen` looks at the family, the tool, and the approval id. Direct, indirect, and prompt are blocked. They are not held, and they are given no tool. An agency tool, book or return, with no approval id is blocked and held. The same tool with an approval id keeps the tool. The shell blocked only a direct ignore phrase and still let a letter book.
+
+`escape` runs the text through the standard-library HTML escape before it reaches the staff console. Model HTML is data. It is not markup the console should run.
+
+`accept_hash` returns a candidate only when that exact string is on the approved list. Otherwise it returns empty. `run_tool` discards the tool description and returns no tool name, so wording inside a tool catalog cannot name a tool to call. `keep_label` drops a row marked poison. `cite` cites an in-force public or staff document by its own id, and otherwise cites the in-force id. An unauthorized or superseded circular does not get to be the citation.
+
+`clean` replaces canary tokens and national-id tokens with `[redacted]`. The prefix is case sensitive.
+
+`admit` holds a token family to the token cap and a hoard family to the hold cap. A count above the cap is refused. A count at the cap is admitted.
+
+Before you paste, say which families are blocked with no tool, and which stores a deletion on the next chapter still has to clear. The guard does not delete. It stops the call.
+
+This section adds no file and no command.
 
 ## Replace the guard
 

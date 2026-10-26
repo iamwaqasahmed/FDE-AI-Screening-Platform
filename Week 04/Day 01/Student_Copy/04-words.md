@@ -89,4 +89,16 @@ A guard, output, supply, redact, limit, or guardrail-family miss fails only the 
 
 This page is done when you have scanned the tables.
 
+## A plain reading
+
+Week 1 already treated a letter as data. A sentence inside the letter does not get to book. Today that rule has families. A direct attack is a chat line that says to ignore policy. An indirect attack is the same instruction inside a letter. Excessive agency is a booking or a return with no coordinator approval. Disclosure is a log line that carries a national id. The guardrail is the screen in front of the tool. Blocking only the direct phrase is not done.
+
+Deletion has to clear every store that still holds the person: the row, memory, the index, and the logs. Clearing the row and leaving the index is not done.
+
+The 72-hour clock starts at the timestamp on the notice. It does not start at a model. The notice names a log.
+
+This section adds no file and no command.
+
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

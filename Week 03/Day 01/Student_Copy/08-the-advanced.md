@@ -13,7 +13,7 @@ You replace four files under `work/`, in this order:
 
 Paste only those four blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy.
 
-Scroll down to the heading Replace the features. It is the first heading on this page that starts with Replace. Use the four steps from [chapter 05](05-the-sprint.md) on each one. Everything above that first Replace heading is a picture or a check. You do not paste it.
+Scroll down to the heading Replace the features. It is the first heading on this page that starts with Replace. Use the four steps from [chapter 05](05-the-sprint.md) on each one. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture or a check. You do not paste those.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05 through 08 again from the chapter source. Do not repair the spaces by hand.
 
@@ -80,7 +80,21 @@ def spend(items: list[dict], price: float, budget_sar: float) -> list[str]:
 
 Open [ci.yml](work/.github/workflows/ci.yml) and search inside that file, not inside this chapter. Press Ctrl+F there and type `unittest`. You should find it. The packet copy has the same line. You do not edit either file. If you cannot see the `.github` folder, it is hidden. The link still opens the file.
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+The two checks do not call these files. The suite does. Do not delete them.
+
+`features` keeps the latest row whose date is on or before the invite. A row after the invite is left out. The shell kept the latest row in the file and ignored the invite, so a June district leaked into a March decision. The result is the district and the insurance on the chosen row.
+
+`spend` buys the least certain items until the next label would not fit the budget. The sort is uncertainty descending, then item id. The shell returned every item and ignored the price.
+
+Before you paste, say which date `features` is not allowed to see, and when `spend` stops.
+
+This section adds no file and no command.
 
 ## Replace the features
 

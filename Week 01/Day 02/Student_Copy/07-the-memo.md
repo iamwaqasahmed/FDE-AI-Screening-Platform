@@ -28,6 +28,8 @@ The measured cell for a sample is the whole printed line from [notes/baseline-li
 
 The measured cell for the other five ids is the word `claim`, a space, and the digits from the file. Both sit in that one cell.
 
+The cost note calls `510000` returned referrals. That figure is not the bounce measurement. Leave it on `p-waitlist`. `p-bounce` keeps the `filled` line from the letter baseline. Moving `510000` onto `p-bounce` makes the check say `measured value does not match the baseline`. That message also appears when a sample row uses the `row` line or the `mean` line. The check does not say which of those mistakes it saw.
+
 ```text
 | p-bounce | extract+retrieve | filled 5 | samples/ds-letters.md | referral letters | The specialty is a field in the letter, and a return still has to name the rule that is in force. See samples/ds-letters.md. |
 | p-waitlist | no-model | claim 510000 | extracts/access-costs.md | waitlist | Rows the coordinators do not trust are a matching rule. 510000 is the director's figure for returned referrals, and it is a claim. See extracts/access-costs.md. |

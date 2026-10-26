@@ -19,3 +19,11 @@ The journey asserts the mock state from a recorded fixture, not the model's sent
 The fixture stays in the pack. [test_journey.py](work/tests/test_journey.py) loads it and passes a state. [schema.py](work/app/schema.py) ignores the reply and reads `booked`. A sentence that says the visit is booked is not the result.
 
 You have the finished day. The trainer's session is [08 — Trainer session](08-trainer.md).
+
+## Carry this forward
+
+You leave Week 2 Day 3 with a suite that goes red when the receipt switch is on, and with `status-short` and `caregiver` finished.
+
+Tomorrow the deployment standard arrives. You leave with a private-cloud URL and a health probe that reports the registered hash.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 2, Day 4 student copy](../../Day%2004/Student_Copy/README.md), starting at its background.

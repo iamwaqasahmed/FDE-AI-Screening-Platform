@@ -34,4 +34,8 @@ The criteria id is `crit-endo-v3`, the document whose status is in force. The dr
 
 Every live row stops at `approval.held` with one approval id. That is the held approval a coordinator still has to decide.
 
+## The path through the files
+
+The morning chapter [06-the-worker.md](../Student_Copy/06-the-worker.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The note](04-the-note.md).

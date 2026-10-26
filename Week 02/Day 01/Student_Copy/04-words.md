@@ -62,4 +62,16 @@ A patient who opens `/console` is refused. A coordinator who opens `/chat` is re
 | Generator | [generate.py](packet/app/generate.py). It reads the spec and writes a new `client.py` beside itself |
 | Dev stand-in | [his.py](packet/app/his.py). It is not the hospital. It accepts a body whose keys match the spec |
 
+## A plain reading
+
+`his-wadi` publishes records in a shape called FHIR. Version 2 is today's spec. A client written against version 1 still asks for a field the new spec removed. Generate the client from the spec. Do not type the old field name back in.
+
+Sign-in checks a token against the issuer and the token endpoint in the identity spec. That pattern is often called OpenID Connect. This day does not ask you to add a second protocol. A patient token and a staff token are different people. `svc-integration` is a system token. It does not sign a patient in.
+
+A level of assurance is how strongly the cluster has checked the person. Opening the assistant and booking are not the same level. The identity note has the sentence. Booking waits.
+
+This section adds no file and no command.
+
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The notice](05-the-notice.md).

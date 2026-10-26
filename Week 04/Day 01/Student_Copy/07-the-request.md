@@ -219,7 +219,25 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-You are done reading. The next heading, Replace access, is the first paste on this page.
+You are done reading. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace access.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Two requests, four stores.
+
+`settle` copies each grant and writes a status. It does not mutate the input list. A break-glass grant with no audit value is given an audit id and left open. That check runs before the end-date check, so a late end does not close a bare break-glass grant. A staff or delegate grant whose end is before the case date is closed. The shell left stale grants open and wrote no audit id.
+
+`controls` returns the deploy check names in checklist order. The caller can change the list it receives. The checklist constant stays as it is.
+
+`export_categories` walks the stores in a fixed order and names each one that still holds the person. A missing store is treated as empty. `drop` removes the person from the row, memory, and the index by copying the other rows. Logs that contain the person become a single row whose redacted field is true. Clearing the database row and leaving the index is the failure this function is written to make impossible.
+
+The 72-hour clock is not in these functions. It is the timestamp on the notice, which the breach page records. These functions are what you can show an auditor after that clock has started: who still had access, and whether the person is gone from every store.
+
+Before you paste, name the four stores `drop` has to touch, and say which grant stays open.
+
+This section adds no file and no command.
 
 ## Replace access
 

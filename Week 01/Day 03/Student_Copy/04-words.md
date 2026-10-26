@@ -78,4 +78,6 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 
 You have the words the later chapters use.
 
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The stream](05-the-stream.md).

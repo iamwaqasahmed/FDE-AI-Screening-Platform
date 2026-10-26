@@ -24,4 +24,8 @@ The `dev-flight` row in [retrieve.jsonl](sources/release/slices/retrieve.jsonl) 
 
 The feed is [changes.jsonl](sources/release/feed/changes.jsonl). The snapshot is the store before that feed. A row is one long line.
 
+## The path through the files
+
+The morning chapter [07-the-citation.md](../Student_Copy/07-the-citation.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The advanced path](05-the-advanced.md).

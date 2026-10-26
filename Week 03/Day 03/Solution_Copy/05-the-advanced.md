@@ -16,4 +16,8 @@ Open the finished files and put them beside yours. The three checks do not requi
 
 The suite, from `Solution_Copy/work`, prints `Ran 14 tests` and then `OK`. The same tests beside the packet shells fail. Do not edit a test. The eleven test files match the packet byte for byte.
 
+## The path through the files
+
+The morning chapter [08-the-advanced.md](../Student_Copy/08-the-advanced.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [06 — The pages](06-the-pages.md).

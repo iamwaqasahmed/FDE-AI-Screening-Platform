@@ -266,7 +266,25 @@ if __name__ == "__main__":
 
 That was a picture. Do not paste it.
 
-You are done reading. Do not paste any block above this line. The next heading, Replace the cache, is the first paste on this page.
+You are done reading. Do not paste any block above this line. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the cache.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Four small decisions that keep a stale answer from surviving the afternoon.
+
+`answer` returns the event body when the topic is `document.changed` and the document id is the Ramadan hours circular. Both have to match. Any other event returns the hours string already on the cache. A different circular does not clear the hours. The shell returned the cache for every event, so evening clinics stayed open after the circular moved them.
+
+`name` maps a drift kind to its label. The three kinds are hours, criteria, and clinic. An unknown kind is an error, not a silent extra drift.
+
+`rate` is the share of coordinator rows whose `stamped` field is true. That is the override rate. An empty list returns zero.
+
+`reply` returns the registered reply. The shadow reply is not read, so a candidate cannot change what the patient is sent. `promote` returns the candidate hash only when the comparison was both compared and matched. Either flag missing or false yields an empty string. Promotion waits.
+
+Before you paste, say which event drops the cached hours, and what a patient is sent while a shadow comparison is still running.
+
+This section adds no file and no command.
 
 ## Replace the cache
 

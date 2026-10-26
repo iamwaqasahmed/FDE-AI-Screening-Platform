@@ -10,7 +10,7 @@ You replace three files under `work/`, in this order:
 
 Paste only those three blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged. The tests are copied and not replaced. Do not paste a test.
 
-Scroll down to the heading Replace the prompt. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. Everything above that first Replace heading is a picture or a check. You do not paste it.
+Scroll down to the heading Replace the prompt. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture or a check. You do not paste those.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste this chapter again from the chapter source. Do not repair the spaces by hand.
 
@@ -116,7 +116,23 @@ def classify(row: dict) -> str:
     return "status"
 ```
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+The prompt is a baseline. It is not the model you serve.
+
+`target` stays on `local-small` and leaves phi off. `served` is false. `extract` on this file always returns typed with a blank sub-specialty, and `intent` always returns status. That weakness is the point. The real letter reading is `extract.py`. The real message reading is `intent.py`. Do not copy those into the prompt. The shell sent letter fields to `ext-large` and marked the prompt as served.
+
+`relabel` in the extract file reads the text. Phone or photo, scan, retina, and pediatric follow the same rules as Week 3 Day 1. A letter that names neither sub-specialty stays blank.
+
+`classify` returns one intent. The first matching rule wins. An emergency phrase wins even when the same sentence also asks for status or a slot. A message that matches nothing is other. The shell called every message status, including "Cancel this visit."
+
+Before you paste, say why the prompt is allowed to be wrong, and which file is not allowed to be wrong.
+
+This section adds no file and no command.
 
 ## Replace the prompt
 

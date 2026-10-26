@@ -4,6 +4,18 @@ Open [00 — Background](00-background.md) first. That page says what the four w
 
 `packet/` is the file drawer those chapters open. Do not start there.
 
+## Where you are
+
+This is Week 2, Day 3 of the four-week rehearsal. Today the receipt follows the case clock, and two usability tasks get finished.
+
+The [course guide](../../../learning/README.md) says how a day is shaped. [This week](../../README.md) says how the five days move. The [concept index](../../../learning/concept-index.md) is a lookup. It is not the next chapter.
+
+The previous day is [Week 2, Day 2](../../Day%2002/Student_Copy/README.md).
+
+Read the chapters in the order table below. `packet/` is the drawer those chapters open. Leave `Solution_Copy` closed until the finish chapter says the day is done.
+
+When this day is done, the next student copy is [Week 2, Day 4](../../Day%2004/Student_Copy/README.md).
+
 ## What you will hold at the end
 
 `work/` contains:
@@ -34,7 +46,7 @@ Open [00 — Background](00-background.md) first. That page says what the four w
 | 9 | [The pages](09-the-pages.md) |
 | 10 | [Finish](10-finish.md) |
 
-The trainer's debrief comes after this attempt. It uses the solution copy, which you do not have this morning.
+The trainer's debrief comes after this attempt. It uses the solution copy, which you do not have this morning. If that folder is already beside this one, leave it closed until the finish chapter. The Closed section says the same thing.
 
 ## Closed
 

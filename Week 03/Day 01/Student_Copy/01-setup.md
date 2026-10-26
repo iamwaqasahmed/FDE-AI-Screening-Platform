@@ -69,7 +69,7 @@ You should see Python 3.12 or a newer 3.x.
 
 ## Step 2 — Prepare the grader
 
-The checks for today read one pack: `rel-w3d1`. Build it. The terminal is still in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python line.
+The checks for today read one pack: `rel-w3d1`. Build it. The terminal is still in the course folder. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python line. If `dir` shows neither `alwaha` nor `Week 03`, open a new terminal in the course folder.
 
 ```text
 cd problem_simulation
@@ -121,7 +121,7 @@ The links in later chapters open files inside `work/`. If a link does not open, 
 | `python` is not recognized | Run `py --version`. If that prints Python 3.12 or newer, use `py` instead of `python` for the rest of the day |
 | You cannot see `problem_simulation` in `dir` | The window is not the course folder. Open a terminal there, using the steps at the top of this chapter |
 | `No module named alwaha` | The terminal is not inside `problem_simulation`. Open a new terminal in the course folder, run `cd problem_simulation`, and then the build command again |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python line |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 03`, and run the block from the `cd` line |
 | `Build rel-w3d1 first.` | The build in step 2 did not finish, or the grader's gold file is missing. Run the build command again, then come back |
 | The prepare script says it must stay next to `packet` | Run it as `python "Week 03/Day 01/Student_Copy/prepare_work.py"` from the course folder. Do not move the script |
 | `can't open file` or `No such file or directory` on `prepare_work.py` | This window is not the course folder. `dir` should list `problem_simulation` and `Week 03`. Open a terminal there and run the command again |

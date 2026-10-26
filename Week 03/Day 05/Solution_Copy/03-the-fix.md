@@ -20,4 +20,8 @@ The shell charges nothing for the fix. That shell makes the eval check say the i
 
 [cost.py](work/app/cost.py) multiplies the label count by the label price, and returns nothing when that total is over the budget. [prices.csv](sources/release/finance/prices.csv) holds `cost.label`. [labels.json](sources/release/budget/labels.json) holds the annotation budget. Read the amounts there. GPU hours are not the cost of this fix.
 
+## The path through the files
+
+The morning chapter [06-the-fix.md](../Student_Copy/06-the-fix.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The spec](04-the-spec.md).

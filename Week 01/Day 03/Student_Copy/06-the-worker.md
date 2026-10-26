@@ -2,7 +2,7 @@
 
 [Chapter 05](05-the-stream.md) was the reading. This chapter replaces two scripts and runs them. The check runs the worker again, so the log has to come from these files.
 
-This page has three parts. Read what the starter gets wrong. Replace the two files. Then run the command and fill the worksheet. The file blocks are long. Keep scrolling until you reach Run it.
+Read what the starter gets wrong. Then read How the replacement works. Then replace the two files and run the command. The file blocks are long. Keep scrolling until you reach Run it.
 
 The starter copies are [worker.py](packet/workflow/worker.py), [calendar_count.py](packet/workflow/calendar_count.py), and [tools.py](packet/workflow/tools.py). Chapter 01 copied them to `work/workflow`. Read the packet copies. The comments say what the starter does. Leave [tools.py](packet/workflow/tools.py) as the mock. You edit the copies under `work/workflow`.
 
@@ -19,6 +19,28 @@ The check names the case. It does not name the due date, the clause, or the stat
 - The starter picks the highest criteria version. Pick the document whose status is in force.
 - The starter never flags a duplicate. An open row with the same patient and specialty is flagged. The referral still waits for a coordinator, and it is not booked.
 - The starter ignores finish. A compensate fault releases the hold. A retry fault is tried the policy's count of times, then recorded as a dead letter and not applied.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on a later day is a picture and which block you paste. This page has no picture. The calendar block and the worker block are the two files you paste.
+
+One referral arrives as `referral.submitted`. Several lines in the file can share it, and the file can arrive out of order. `build_rows` is the top of the path. A second copy of the same `event_id` is skipped there. That is the idempotency rule: the same delivery cannot open a second approval.
+
+Inside one referral, `_row` sorts by sequence. The letter you keep is the higher sequence. The clock starts from the earliest sequence's date, the first ten characters of `occurred_at`, not from the later letter.
+
+`add_working_days` turns that date into a due date. Weekend names and holiday dates come from the calendar argument. A day counts when its name is not in the calendar's weekend and its date is not a holiday. Friday is in that weekend. The tuple of weekday names only translates Python's weekday number. The submitted day counts when it is a working day. Otherwise counting starts on the next one. The number of days is passed in from the policy. It is not copied into the function as a second constant.
+
+`extract` reads the specialty and the hospital words in the letter and turns the hospital into a facility id. `_in_force` selects the criteria document whose status is in force for that specialty. A higher version that is still a draft loses.
+
+Every live row stops at `approval.held`. This file does not accept, return, or book. `h-ain` does not take a hold, because this release has no slot API there. A duplicate, the same patient and specialty already open, is flagged and still waits.
+
+`_retry` calls finish until the policy's count is used. `_dead` then records a dead letter and does not apply the event: no approval, no booking, no open hold. A compensate fault releases a hold that was already taken. The referral still waits for a person.
+
+`main` writes the scenario log. The check runs this file again.
+
+Before you paste, name the function that skips a repeated event id, and the function that decides the due date. When a check names a scenario, those two are the first place to look. The message does not print the date.
+
+This section adds no file and no command.
 
 ## Replace the two files
 

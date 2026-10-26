@@ -101,7 +101,23 @@ if __name__ == "__main__":
     unittest.main()
 ```
 
-You are done reading. The next heading, Replace the fair measure, is the first paste on this page.
+You are done reading. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the fair measure.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+The guard can be perfect and still approve one district far more often than another. `gap` measures that.
+
+A yes decision is the decision text `yes`. `_rates` groups rows by a key and returns each group's share of yes. `gap` computes that spread for district and again for insurance. The result is the wider of the two spreads. A missing group does not invent a rate. The shell returned zero because it never grouped the rows.
+
+`stamp_rate` is the share of rows whose `stamped` field is true. A missing field counts as not stamped. An empty list returns zero. Thursday's rubber stamp is this rate. A high rate means a person approved without looking. The shell ignored the field.
+
+The checks read these two numbers. They do not ask you to copy a rate onto a page.
+
+Before you paste, say what `gap` compares, and what a stamped row is evidence of.
+
+This section adds no file and no command.
 
 ## Replace the fair measure
 

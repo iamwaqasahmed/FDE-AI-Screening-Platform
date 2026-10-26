@@ -20,7 +20,7 @@ A forward deployed engineer works on the client's problem, inside the client's c
 
 You used these three kinds on Day 1. You will use them again in the brief.
 
-A claim is their sentence. A figure on today's pages is a claim until a baseline prints the number, or until you can point at the number in a file and still call it their figure.
+A claim is their sentence. A figure on today's pages stays a claim even after you can point at it in a file. A baseline that prints the number is a measurement. The size they wrote is still their figure.
 
 A request is what you will do next.
 

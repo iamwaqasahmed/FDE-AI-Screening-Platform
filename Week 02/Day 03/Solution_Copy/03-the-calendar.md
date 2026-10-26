@@ -14,4 +14,8 @@ The shell deletes the calendar argument and counts Monday through Friday. While 
 
 The test reads the business calendar from `data/rel-w1d3` and the cases from `data/rel-w2d3`. `parents[5]` is the course folder, because this file sits in `work/tests` inside this solution copy.
 
+## The path through the files
+
+The morning chapter [06-the-calendar.md](../Student_Copy/06-the-calendar.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The reply](04-the-reply.md).

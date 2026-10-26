@@ -13,7 +13,7 @@ You replace six files under `work/`, in this order:
 
 Paste only those six blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged.
 
-Scroll down to the heading Replace the dates. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Five more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. Everything above that first Replace heading is a picture or a check. You do not paste it.
+Scroll down to the heading Replace the dates. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Five more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture or a check. You do not paste those.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste this chapter again from the chapter source. Do not repair the spaces by hand.
 
@@ -199,7 +199,23 @@ def _union(parent: dict[str, str], left: str, right: str) -> None:
 
 The shell tests sit beside those files in `packet/tests`. Leave them. You replace the work copies below, not these pictures.
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Three jobs, one person.
+
+`gregorian` leaves a Gregorian date alone. A Hijri date, empty era and a year of 1400 or later, goes through the tabular calendar. `_from_hijri` uses a Julian day number and does not shift the day by one at the month boundary. The shell added a day when the Hijri day was 1 or at least 29. The check calls that a boundary off by a day. It does not print the civil day.
+
+`clinic` returns the endocrinology code in force at `h-wadi` on the row's date. Before June 2024 the code stays `END-01`. On and after that date both endocrinology codes at that hospital are `ENDO-CLN`. The shell rewrote the new code backward and ignored the date.
+
+`partition` is who counts as one person. A shared national id links two rows. A newborn and a twin stay out of that link. A row whose `replaces` field names another national id joins that person. A shared phone, a reused MRN, and `merge_with` are not links. `patient_count` counts groups, not rows. `removals` only proposes a removal for a late death flag or a seen-elsewhere flag. The person stays in the cluster file. The shell merged on phone and MRN and counted rows.
+
+Before you paste, say why a mother and a newborn who share a national id are still two people, and why a row count is not the patient count.
+
+This section adds no file and no command.
 
 ## Replace the dates
 

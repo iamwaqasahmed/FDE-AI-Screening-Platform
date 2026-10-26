@@ -10,7 +10,7 @@ You replace three files under `work/`, in this order:
 
 Paste only those three blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged. Do not paste a test. The tests are copied and not replaced.
 
-Scroll down to the heading Replace the repair. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it.
+Scroll down to the heading Replace the repair. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, open a terminal in the course folder and run `python "Week 03/Day 05/Student_Copy/prepare_work.py"`. Then paste chapters 05 and 06 again from the chapter source. Do not repair the spaces by hand.
 
@@ -110,6 +110,22 @@ def spend(count: int, price: float, budget_sar: float):
 ```
 
 You are done reading. The next heading, Replace the repair, is the first paste on this page.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+One repair, then the same slice scored twice.
+
+`repair` copies a citation. When the document id is the unauthorized id, the copy uses the in-force id. Every other field, including the span, is kept. Any other document id is copied unchanged. You can edit the copy without editing the original row. The shell left the unauthorized id in place.
+
+`remeasure` scores the slice before that repair and after it. A hit is the same document id and the same span. The label stays the grader's label. An empty slice scores zero. The second number has to move, because a requirements story that claims an improvement without a second measurement is not this chapter.
+
+`spend` multiplies the label count by the label price. A product above the budget is not priced. The improvement plan has to be able to say what the fix cost.
+
+Before you paste, say which id `repair` is allowed to change, and what the two numbers from `remeasure` are.
+
+This section adds no file and no command.
 
 ## Replace the repair
 

@@ -103,4 +103,6 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 
 This page is done when you have scanned the tables. You do not need to open every link before chapter 05. Come back when a later chapter uses a word you want in the file.
 
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

@@ -69,3 +69,13 @@ A failed check names the problem id and the kind of miss. It does not name the f
 The day is done when both checks print `passed` and `work/knowledge.md` answers both questions.
 
 Keep `work/` and the worksheets. The solution copy, when you receive it, is how you compare your pages with a finished set. Leave `problem_simulation/build` closed.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the event stream, the SLA policy, and the business calendar arrive. Intake runs from `referral.submitted` to a held approval. It does not book.
+
+Open [Week 1, Day 3](../../Day%2003/Student_Copy/README.md) and read `00-background.md` before any command.

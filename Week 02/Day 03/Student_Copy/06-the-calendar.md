@@ -57,6 +57,18 @@ Day 3 is the date the test stores under `eid`.
 
 The tests check says `the calendar does not match` when the shell is still the file that runs. The message does not name a date. These tables are the count. They do not replace a file. The two blocks under the next headings replace the files.
 
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+This is the same working-day count as Week 1, now under test. `add_working_days` reads `working_days` and `holidays` from the calendar you pass in. `NAMES` still contains Friday, because Python's weekday number has to become a name. Friday counts only when that name is in the calendar's working set. On this calendar it is not. A holiday date is skipped even when the weekday would otherwise count. The start day counts when it is a working day and not a holiday. A count below 1 is refused.
+
+The shell counted a fixed Monday-to-Friday list and ignored the holiday list. The test is red while that shell is the file that runs. The message says the calendar does not match. It does not print the due date.
+
+Before you paste, say where Friday is still written, and why that does not make Friday a working day.
+
+This section adds no file and no command.
+
 ## Replace the calendar
 
 This block replaces [work/app/calendar_count.py](work/app/calendar_count.py). The full path is `Week 02/Day 03/Student_Copy/work/app/calendar_count.py`. It does not replace [packet/app/calendar_count.py](packet/app/calendar_count.py).

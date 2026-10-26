@@ -15,7 +15,7 @@ Paste only those eight blocks. The numbers in that list are the pastes. The numb
 
 The shell test is a picture. The filled test is the paste. A filled app beside a shell test fails the suite. A shell app beside a filled test fails the suite.
 
-You are reading until the heading Replace the breaker. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it. If the block in front of you is above Replace the breaker, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite until the heading Run the suite.
+You are reading until the heading Replace the breaker. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture. If the code block in front of you is above Replace the breaker, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite until the heading Run the suite.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, paste that block again from this chapter file. Do not repair the spaces by hand. Run `prepare_work.py` again only when a failure row in [chapter 09](09-finish.md) says so. A second run puts the shell tests back.
 
@@ -310,7 +310,25 @@ if __name__ == "__main__":
 
 That was a picture. Do not paste it. This item is done when the search finds that shell sentence in the packet file. Close the packet file. The shell test is a picture. The filled test is the paste.
 
-You are done reading. Do not paste any block above this line. If you are lost, you are still in the pictures. The next heading, Replace the breaker, is the first paste on this page. Go there. Do not scroll back up to paste a picture.
+You are done reading. Do not paste any block above this line. If you are lost, you are still in the pictures. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the breaker. Do not scroll back up to paste a picture.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Insurance is a partner, not a third site. A purchase is a date, not a preference.
+
+`book` opens the breaker when status is `down`. Called is false, waited is 0, and the target is `rules-worker`. The partner is not called, so the booking does not sit until the timeout. Any other status leaves the breaker closed and calls the partner. The shell waited on `insure` until the request died.
+
+`reply` uses the model when the model is up, even for a status row. When the model is down and the kind is status, the mode is status and the body is still the row text. Any other kind, with the model down, goes to `rules-worker` and does not pretend the model answered. Status still works. Booking does not wait.
+
+`choice` adds `purchase_weeks` to the order date and `rent_days` as days. Buy wins when the purchase date is on or before the deadline. When the purchase misses and the rental still meets the deadline, the result is rent. If the rental also misses, the result is buy. The shell bought every note, including the one that cannot arrive before Ramadan.
+
+`split` bills each hospital from the referrals on its own share row. The shell billed the full backlog to every hospital.
+
+Before you paste, say what the patient can still do when the model is down, and when rent wins.
+
+This section adds no file and no command.
 
 ## Replace the breaker
 

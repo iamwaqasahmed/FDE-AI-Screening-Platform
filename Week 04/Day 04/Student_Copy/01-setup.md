@@ -71,7 +71,7 @@ You should see Python 3.12 or a newer 3.x.
 
 ## Step 2 — Prepare the grader
 
-The check for today reads one pack: `rel-w4d4`. Build it. The terminal is still in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python line.
+The check for today reads one pack: `rel-w4d4`. Build it. The terminal is still in the course folder. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python line. If `dir` shows neither `alwaha` nor `Week 04`, open a new terminal in the course folder.
 
 ```text
 cd problem_simulation
@@ -141,7 +141,7 @@ That pass is the shell. The app is still the shell. The tests are still the shel
 | `python` is not recognized | Run `py --version`. If that prints Python 3.12 or newer, use `py` instead of `python` for the rest of the day |
 | You cannot see `problem_simulation` in `dir` | The window is not the course folder. Open a terminal there, using the steps at the top of this chapter |
 | `No module named alwaha` | The terminal is not inside `problem_simulation`. Open a new terminal in the course folder, run `cd problem_simulation`, and then the build command again |
-| `The system cannot find the path specified` or `No such file or directory` on `cd problem_simulation` | This window is already inside `problem_simulation`. Skip that `cd` line and run the python line |
+| `The system cannot find the path specified` or `No such file or directory` on `cd problem_simulation` | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 04`, and run the block from the `cd` line |
 | `The system cannot find the path specified` or `No such file or directory` on `cd "Week 04/Day 04/Student_Copy/work"` | This window is still inside `problem_simulation`. Open a new terminal in the course folder and run both lines of that step. Do not skip that `cd` and run the suite inside `problem_simulation` |
 | `Build rel-w4d4 first.` | The build in step 2 did not finish, or the grader's gold file is missing. Run the build command again, then come back |
 | The prepare script says it must stay next to `packet` | Run it as `python "Week 04/Day 04/Student_Copy/prepare_work.py"` from the course folder. Do not move the script |

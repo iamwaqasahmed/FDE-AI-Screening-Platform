@@ -65,7 +65,7 @@ A failed check prints `failed`, then one or more lines that start with a dash. T
 | `knowledge.md does not name the zone` | Line 1 of the block above names `zone-private` |
 | `knowledge.md does not say what a rollback changes` | Line 2 of the block above says a rollback changes the model hash |
 | `a watermarked sample is in the work directory` | A copy of `log.json` is in `work/`. Delete that copy. The message does not print the watermark |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python line |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 02`, and run the block from the `cd` line |
 | `SyntaxError` or `IndentationError` | Run `python "Week 02/Day 04/Student_Copy/prepare_work.py"` from the course folder. Then paste chapters 05 through 09 again from the chapter source. Do not repair the spaces by hand |
 
 ## Done
@@ -73,3 +73,13 @@ A failed check prints `failed`, then one or more lines that start with a dash. T
 The day is done when the check prints `passed` and `work/knowledge.md` answers both questions.
 
 Keep `work/`. The solution copy, when you receive it, is how you compare your pages with a finished set. Leave `problem_simulation/build` closed.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow steering asks to include Ain. A booking at Ain stays queued for the nightly file.
+
+Open [Week 2, Day 5](../../Day%2005/Student_Copy/README.md) and read `00-background.md` before any command.

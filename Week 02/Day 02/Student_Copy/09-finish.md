@@ -43,7 +43,7 @@ A failed check can print more than one line. Fix every line, then run the comman
 | `python` is not recognized | [Chapter 01](01-setup.md). Use `py` instead of `python` in the command |
 | `SyntaxError` or `IndentationError` | A Python file lost its spaces. Do not repair it by hand. From the course folder, run `python "Week 02/Day 02/Student_Copy/prepare_work.py"`, then paste again from [chapter 05](05-the-sprint.md), [chapter 06](06-the-worker.md), [chapter 07](07-the-pages.md), and [chapter 08](08-the-mart.md) |
 | `No module named alwaha` | The terminal is not inside `problem_simulation`. Open a new terminal in the course folder, run `cd problem_simulation`, and run the check again |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python line |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 02`, and run the block from the `cd` line |
 | `can't open file` or `No such file or directory` on `run.py` | That window is not the course folder. [Chapter 06](06-the-worker.md). Run `dir`. You should see `problem_simulation` and `Week 02` |
 | `Build rel-w2d2 first.` | [Chapter 01](01-setup.md). Run the build again with `--profile practice` and `--release rel-w2d2` |
 | `journey needs --release rel-w2d1, rel-w2d2, or rel-w2d5.` | Add `--release rel-w2d2` to the journey command above |
@@ -74,3 +74,13 @@ A failed check can print more than one line. Fix every line, then run the comman
 The day is done when the check prints `passed` and `work/knowledge.md` answers both questions.
 
 Keep `work/` and the feed-lines worksheet. The solution copy, when you receive it, is how you compare your pages with a finished set. Leave `problem_simulation/build` closed.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the SMS receipt follows the case clock. The suite goes red when the receipt switch is on.
+
+Open [Week 2, Day 3](../../Day%2003/Student_Copy/README.md) and read `00-background.md` before any command.

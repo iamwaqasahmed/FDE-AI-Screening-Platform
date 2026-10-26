@@ -9,7 +9,7 @@ You replace two files under `work/`: [receipt.py](work/app/receipt.py) and [test
 Open these in the packet. Read the comment at the top of each one. Do not edit them.
 
 1. [receipt.py](packet/app/receipt.py). Search for `return "due"`. That line is the shell. Every receipt is due. The sent time, the clock, the minutes, and the switch are ignored.
-2. [test_receipt.py](packet/tests/test_receipt.py). Search for `time.sleep`. The shell test waits on the wall clock, then expects due while the switch is on. The next block is a picture of that file. Do not paste it. Pasting it puts the wait back into `work/`. The block that replaces the work test is under the heading Replace the receipt test, later on this page.
+2. [test_receipt.py](packet/tests/test_receipt.py). Search for `time.sleep`. The shell test waits on the wall clock, then expects due while the switch is on. The next block is a picture of that test. Do not paste it. Pasting it puts the wait back into `work/`. Keep reading. How the replacement works is not a paste. The first paste on this page is under Replace the receipt. That file is `receipt.py`. The test paste is under Replace the receipt test, after it. Do not jump to the test while `receipt.py` still returns due for every receipt.
 
 ```text
 """The shell receipt test. It waits, then expects every receipt to be due.
@@ -75,6 +75,20 @@ jobs:
 The tests check says `the receipt test sleeps` when `time.sleep` is still in the receipt test or in `receipt.py`. It says `the suite accepted the receipt fault` when a late receipt is still due. It says `the receipt test does not match the clock` when the result does not follow the clock file. None of those messages names an interval or a delay.
 
 The demo in [chapter 03](03-the-notice.md) already printed `switch off: passed` and `switch on: failed`. Those lines do not print `pending` or `due`. The test under Replace the receipt test does use those two words. That is expected. The demo and the test are different.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+`receipt_state` returns `pending` or `due`. The inputs are when the message was accepted, the pinned case clock, the minutes from the clock file, and the late switch. While the switch is on, the result stays `pending` even after the clock has moved. While the switch is off, the result is `due` only after the case clock has moved by those minutes. A clock that has not moved stays `pending`.
+
+The shell slept on the wall clock and then expected every receipt to be due. A fixed sleep follows the wall clock. The receipt follows the case clock, and the switch can hold it. The replacement test reads the minutes from the clock file. It does not call `time.sleep`.
+
+The clock guide says to advance the pinned time. That is the move this function is waiting for.
+
+Before you paste, say what stays `pending` after the clock has moved, and which call must be absent from the test.
+
+This section adds no file and no command.
 
 ## Replace the receipt
 

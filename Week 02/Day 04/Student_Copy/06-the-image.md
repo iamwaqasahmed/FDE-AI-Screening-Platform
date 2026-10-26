@@ -16,7 +16,7 @@ Do not run the suite on this page. The suite command is in [chapter 08](08-the-e
 
 Open these in the packet. Read the comment at the top of each one. Do not edit them.
 
-1. [admit.py](packet/app/admit.py). Search for `return "accepted"`. That line is the shell. Every image is accepted. The user, the log line, and the national id are ignored. The next block is a picture of that file. Do not paste it. Pasting it puts the shell back into `work/`. The block that replaces the work file is under the heading Replace the admission, later on this page.
+1. [admit.py](packet/app/admit.py). Search for `return "accepted"`. That line is the shell. Every image is accepted. The user, the log line, and the national id are ignored. The next block is a picture of that file. Do not paste it. Pasting it puts the shell back into `work/`. Read How the replacement works before the paste. It is not a paste. The block that replaces the work file is under the heading Replace the admission.
 
 ```text
 """Accept every image and keep the log line.
@@ -75,6 +75,20 @@ CMD ["python", "app.py"]
 The deploy check says `the image runs as root` when a root account is still accepted, or when the image account is still root. It says `a national id is in the deploy log` when the id stays on the emitted line. It says `the deploy rejected a registered image` when a clean account with a clean line is rejected. None of those messages names the id.
 
 The demo in [chapter 03](03-the-standard.md) already printed `root image: rejected` and `registered image: accepted`. Those lines do not print a hash or a national id. The test under Replace the admission test uses the stand-in `NID-sample`. That is expected. The demo and the test are different.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+`admit` is the door of the image. An account named root, or named `0`, is rejected. A log line that still contains the national id is rejected. A clean account with a clean line is accepted.
+
+`emitted_log` returns the line with that id removed. The fixture file in the pack stays as it is. You do not copy the id into a note to prove you removed it.
+
+The shell ran as root and left the id on the line. While it does, the deploy check fails those two ways. The test uses a stand-in id, not a value read out of the pack.
+
+Before you paste, say the two reasons `admit` rejects an image.
+
+This section adds no file and no command.
 
 ## Replace the admission
 

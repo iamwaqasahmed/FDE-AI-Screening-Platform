@@ -10,7 +10,7 @@ You replace three files under `work/`, in this order:
 
 Paste only those three blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged. Do not paste a test. The tests are copied and not replaced.
 
-Scroll down to the heading Replace the rank fit. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. Everything above that first Replace heading is a picture or a check. You do not paste it.
+Scroll down to the heading Replace the rank fit. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture or a check. You do not paste those.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05 through 08 again from the chapter source. Do not repair the spaces by hand.
 
@@ -97,7 +97,23 @@ def revise(draft: str) -> str:
     return draft
 ```
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+The two checks do not load these files. The suite does. Do not delete them.
+
+`fit` is the QLoRA path. A wide rank has to share GPUs. Thirty-two ranks share one GPU. The GPU count is the smaller of what the rank needs and what the quota allows. The requested rank is kept. The shell spent a full LoRA rank even when the quota was smaller, and it named the method `lora`.
+
+`keep` keeps a domain line only when the row has no item id. An extraction letter carries an item id and is left out. The shell trained on every row, including those letters.
+
+`revise` expands "sugar clinic" to endocrinology, leaves the clause id in place, and drops Friday and a date the calendar cannot keep. The shell returned the coordinator draft unchanged.
+
+Before you paste, say what `fit` is not allowed to exceed, and which rows `keep` throws away.
+
+This section adds no file and no command.
 
 ## Replace the rank fit
 

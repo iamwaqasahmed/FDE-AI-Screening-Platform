@@ -28,4 +28,8 @@ The reply count in the walk is `result["count"]` from `referral.status`. It is n
 
 `decisions` is set to 1 for the first new approval id. It is not a count of coordinator turns. That is why `replay` stays at 1.
 
+## The path through the files
+
+The morning chapter [06-the-agent.md](../Student_Copy/06-the-agent.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The note](04-the-note.md).

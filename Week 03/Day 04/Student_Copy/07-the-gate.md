@@ -10,7 +10,7 @@ You replace three files under `work/`, in this order:
 
 Paste only those three blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged. The packet workflow stays commented. Do not paste a test. The tests are copied and not replaced.
 
-Scroll down to the heading Replace the judge. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it.
+Scroll down to the heading Replace the judge. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Two more Replace headings follow it. The four steps from [chapter 05](05-the-sprint.md) are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture.
 
 These files are Python, and the workflow is YAML. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. The workflow job line `evaluation-gate:` starts with two spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05 through 07 again from the chapter source. Do not repair the spaces by hand. A second run of `prepare_work.py` puts the commented gate back. Paste this chapter's workflow again after that.
 
@@ -84,7 +84,23 @@ jobs:
   #   Week 3 fills this job. It stays commented until the evaluation set exists.
 ```
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+A judge that likes fluent text will mark a wrong citation correct. These two functions refuse that.
+
+`mark` returns the calibration label, the `pass` field. A missing label is not a pass. The shell marked the citation correct because the sentence was fluent.
+
+`accepts` returns that same label as a boolean. False is rejected. True is accepted. A missing label is rejected. That is the regression: a citation the calibration set calls wrong must fail even when it reads well.
+
+The evaluation-gate job in the workflow is the placeholder Week 1 left commented. This chapter fills the job so the suite has somewhere to put this check. You still do not grade by hand.
+
+Before you paste, say what the judge is required to copy, and what it is required to ignore.
+
+This section adds no file and no command.
 
 ## Replace the judge
 

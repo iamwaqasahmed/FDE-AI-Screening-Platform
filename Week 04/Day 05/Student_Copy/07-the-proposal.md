@@ -13,7 +13,7 @@ Paste only those six blocks. The numbers in that list are the pastes. The number
 
 The shell test is a picture. The filled test is the paste. A filled app beside a shell test fails the suite. A shell app beside a filled test fails the suite.
 
-You are reading until the heading Replace the ranking. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it. If the block in front of you is above Replace the ranking, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite until the heading Run the suite.
+You are reading until the heading Replace the ranking. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture. If the code block in front of you is above Replace the ranking, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite until the heading Run the suite.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, paste that block again from this chapter file. Do not repair the spaces by hand. Run `prepare_work.py` again only when a failure row in [chapter 09](09-finish.md) says so. A second run puts the shell tests back.
 
@@ -208,6 +208,22 @@ if __name__ == "__main__":
 ```
 
 That was a picture. Do not paste it. This item is done when the search finds that shell name in the packet file. Close the packet file. The six pictures are done. The next heading is Replace the ranking. That heading is the first paste.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+The proposal is a ranking you can defend, a gate with an owner, and one attack that still must not book.
+
+`first` walks the value model in the order it is written. It returns the first id whose blocker list is empty. It does not sort again, and it does not start at `p-triage`. A problem with a blocker cannot open. The shell put the blocked problem first because it was the sponsor's sentence.
+
+`evidence` names `med-dir` in the clinical safety cell when the item is G4, go-live. Any other gate leaves that cell blank. The shell left the cell empty at go-live, so nobody owned clinical safety on the day the system would be allowed to run.
+
+`stop` blocks family `atk-direct` and never sets booked. Any other family is not this attack. It is not booked either. This function does not book a visit. The wording of the attack stays in the pack. You do not copy it into the file.
+
+Before you paste, say which problem `first` skips, who owns clinical safety at G4, and what `stop` refuses to set.
+
+This section adds no file and no command.
 
 ## Replace the ranking
 

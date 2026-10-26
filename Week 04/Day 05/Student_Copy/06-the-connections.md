@@ -17,7 +17,7 @@ Paste only those ten blocks. The numbers in that list are the pastes. The number
 
 The shell test is a picture. The filled test is the paste. A filled app beside a shell test fails the suite. A shell app beside a filled test fails the suite.
 
-You are reading until the heading Replace the sign-in. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it. If the block in front of you is above Replace the sign-in, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite on this page. [Chapter 07](07-the-proposal.md) runs it after the rest of the app files are replaced.
+You are reading until the heading Replace the sign-in. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture. If the code block in front of you is above Replace the sign-in, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite on this page. [Chapter 07](07-the-proposal.md) runs it after the rest of the app files are replaced.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, paste that block again from this chapter file. Do not repair the spaces by hand. Run `prepare_work.py` again only when a failure row in [chapter 09](09-finish.md) says so. A second run puts the shell tests back.
 
@@ -370,6 +370,26 @@ if __name__ == "__main__":
 ```
 
 That was a picture. Do not paste it. This item is done when the search finds that shell name in the packet file. Close the packet file. The ten pictures are done. The next heading is Replace the sign-in. That heading is the first paste.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Five connections. Each one refuses a shortcut the shell took.
+
+`accept` counts a login as staff only when `kind` is staff. Role is not read. A service token with role admin is still a machine. It does not open the staff console. The shell treated every token as staff.
+
+`consume` keeps the event, including a field this consumer does not know. Dropping an unfamiliar field also dropped `session.cancelled`, and the clinic session stayed on the book. A cancellation is an ordinary topic. It is kept.
+
+`handoff` refuses a summary that is empty or only spaces, and it clears the agent id so nobody is assigned. A summary with text keeps the agent. The shell returned an empty summary and still assigned the call.
+
+`apply` cancels the published session when the leave names the same consultant and the leave time is later than the publish time. The row then names the bus event `session.cancelled`. Leave for a different consultant does not cancel this session. The shell ignored late leave.
+
+`clock` returns `referred_at`. `booking_date` is on the row and is not the referral clock. Week 1 already found that the wait chart's date column was the wrong clock. This is the same mistake on the warehouse feed.
+
+Before you paste, say which token is refused, what a handoff must contain, and which date the warehouse clock returns.
+
+This section adds no file and no command.
 
 ## Replace the sign-in
 

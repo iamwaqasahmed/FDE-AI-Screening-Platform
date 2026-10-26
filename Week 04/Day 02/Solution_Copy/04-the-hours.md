@@ -30,4 +30,8 @@ The shell shows the shadow reply and promotes a hash with no comparison. That sh
 
 A cache miss fails only the cache check. A drift, override, or shadow miss fails only the incident check. The packet workflow and this folder's workflow are the same test job. There is no second job.
 
+## The path through the files
+
+The morning chapter [07-the-hours.md](../Student_Copy/07-the-hours.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The pages](05-the-pages.md).

@@ -14,4 +14,8 @@ The shell export names only the row. Drop clears the row and leaves memory, the 
 
 An erase miss fails only the privacy check. An access-module miss fails only the access check. A checklist miss in `guardrails.json` also fails only the access check. A missing family does not fail the access check.
 
+## The path through the files
+
+The morning chapter [07-the-request.md](../Student_Copy/07-the-request.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The fair measure](05-the-fair.md).

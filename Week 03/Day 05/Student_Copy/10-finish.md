@@ -28,7 +28,7 @@ On Windows, the file sometimes saves as `knowledge.md.txt`. In File Explorer, op
 
 Open [work/knowledge.md](work/knowledge.md). Two numbered lines. The first says the second run moves the retrieval citation onto the in-force document. The second says `p-triage` is out of scope because a clinician owns urgency. Both answers stay on their numbered lines. A second sentence on the next line, without a number, does not count as the second answer.
 
-Then run the checks. Open a terminal in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python lines. `--work` is required. The path is the work folder you filled in. `--profile practice` is required.
+Then run the checks. The suite window is inside `work/`. Leave it. Open a new terminal in the course folder. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python lines. `--work` is required. The path is the work folder you filled in. `--profile practice` is required.
 
 ```text
 cd problem_simulation
@@ -105,9 +105,19 @@ A sprint, benchmark, improvement, knowledge, or commented-gate miss fails only t
 | `the personal lab did not run` | This line is from the individual check. `personal.py` is missing a name the check calls, or the paste broke the indentation. [Chapter 08](08-the-personal.md). Paste `personal.py` again. Do not delete it |
 | `the harness did not run` | The message does not name the line. From the eval check, `repair.py`, `remeasure.py`, or `cost.py` is missing or the paste broke it. From the rcp check, `backlog.py` or `gates.py` failed to load. Run `prepare_work.py` from the course folder, then paste chapters 05 through 10 again from the chapter source. Do not repair the spaces by hand. Do not delete any of the six app files |
 | `a watermarked sample is in the work directory` | A file that carries the mark is under `work/`. Delete that copy. The message does not print the watermark. Do not delete `repair.py`, `remeasure.py`, `cost.py`, `backlog.py`, `gates.py`, or `personal.py`. This line can come from any of the four checks |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python lines |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 03`, and run the block from the `cd` line |
 | `SyntaxError` or `IndentationError` | Run `python "Week 03/Day 05/Student_Copy/prepare_work.py"` from the course folder. Then paste chapters 05 through 10 again from the chapter source. Do not repair the spaces by hand |
 
 ## Done
 
 The four checks print `passed`, and `knowledge.md` answers both questions. The first says the second run moves the retrieval citation onto the in-force document. The second says `p-triage` is out of scope because a clinician owns urgency.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the attack window is open. A suite that only blocks a direct ignore phrase is not done, and a deletion that clears only the row is not done.
+
+Open [Week 4, Day 1](../../../Week%2004/Day%2001/Student_Copy/README.md) and read `00-background.md` before any command.

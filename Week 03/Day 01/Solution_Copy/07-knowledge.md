@@ -19,3 +19,11 @@ A fidelity card compares a synthetic sample with the real specialty mix, the phr
 [fidelity.json](sources/release/cards/fidelity.json) is the card. The second knowledge line names the three comparisons. It does not print a rate.
 
 You have the finished day. The trainer's session is [08 — Trainer session](08-trainer.md).
+
+## Carry this forward
+
+You leave Week 3 Day 1 with one person-level waitlist, a label sample under ann-v2, and a synthetic sample that passes the fidelity card. A mother and a newborn stayed two people.
+
+Tomorrow the ruling is signed. You serve a registered adapter inside the quota and the price cap. The cloud fine-tune is closed.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 3, Day 2 student copy](../../Day%2002/Student_Copy/README.md), starting at its background.

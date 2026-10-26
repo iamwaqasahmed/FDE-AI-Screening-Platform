@@ -93,4 +93,6 @@ A miss on a page fails only the check in that row. You do not run a check until 
 
 This page is done when you have scanned the tables.
 
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

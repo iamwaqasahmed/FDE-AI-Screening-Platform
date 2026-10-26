@@ -23,4 +23,8 @@ Those lines do not print `pending`, `due`, the switch name, or a watermark. The 
 
 The workflow [ci.yml](work/.github/workflows/ci.yml) runs `python -m unittest discover -s tests -q`. It was copied and not edited. From `work/`, that command prints `Ran 6 tests` and then `OK` when the suite passes. The time on the `Ran` line can differ. There is no `FAIL`.
 
+## The path through the files
+
+The morning chapter [08-the-receipt.md](../Student_Copy/08-the-receipt.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [06 — The pages](06-the-pages.md).

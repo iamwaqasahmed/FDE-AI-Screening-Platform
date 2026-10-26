@@ -99,4 +99,14 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 
 The date a calendar case lands on is in [chapter 06](06-the-calendar.md). This page does not store it.
 
+## A plain reading
+
+The receipt becomes due when the case clock moves. The shell test sleeps on the wall clock and then expects the receipt to be due. A fixed sleep follows the wall clock. The receipt follows the case clock, and the switch can hold it. The clock guide says to advance the pinned time. It says not to sleep.
+
+The journey trusts the mock's final state. The model's sentence is a fixture you load. The journey does not treat that sentence as the result.
+
+This section adds no file and no command.
+
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

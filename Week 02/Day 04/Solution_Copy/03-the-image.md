@@ -14,4 +14,8 @@ The shell accepts every account and returns the log line unchanged. The shell im
 
 The demo prints `root image: rejected`, then `registered image: accepted`. Those lines do not print a hash or a national id.
 
+## The path through the files
+
+The morning chapter [06-the-image.md](../Student_Copy/06-the-image.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The probe](04-the-probe.md).

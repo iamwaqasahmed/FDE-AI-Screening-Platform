@@ -22,4 +22,8 @@ The shell returns the first real letter. While that shell is the file that runs,
 
 The clerk file stays in the built pack. A copy under `work/` makes every check say `a watermarked sample is in the work directory`. The message does not print the watermark.
 
+## The path through the files
+
+The morning chapter [07-the-sample.md](../Student_Copy/07-the-sample.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The advanced path](05-the-advanced.md).

@@ -30,4 +30,8 @@ The shell leaves the price and the backlog off the table. That shell makes the s
 
 A quota, scale, price, or capacity-module miss fails only the slo check. The packet workflow and this folder's workflow are the same test job. There is no second job.
 
+## The path through the files
+
+The morning chapter [07-the-surge.md](../Student_Copy/07-the-surge.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The pages](05-the-pages.md).

@@ -13,7 +13,7 @@ Paste only those six blocks. The blocks under Read these files are pictures of t
 
 The shell test is a picture. The filled test is the paste. A filled app beside a shell test fails the suite. A shell app beside a filled test fails the suite.
 
-You are reading until the heading Replace the trace. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures.
+You are reading until the heading Replace the trace. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, paste that block again from this chapter file. Do not repair the spaces by hand. Run `prepare_work.py` again only when a failure row in [chapter 09](09-finish.md) says so. A second run puts the shell tests back.
 
@@ -234,7 +234,23 @@ if __name__ == "__main__":
 
 That was a picture. Do not paste it.
 
-You are done reading. Do not paste any block above this line. The next heading, Replace the trace, is the first paste on this page.
+You are done reading. Do not paste any block above this line. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the trace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+The incident is in the spans, not in the CPU.
+
+`read` copies hash, tokens, and tool off one span. A missing token count becomes zero. CPU and every other field are left behind. The span itself is not changed. The shell kept CPU and dropped the tool.
+
+`board` separates the alert span from the body. The body is every span whose name is not `alert`. `latency_p95` is a high percentile of the body latencies. `error_rate` is the share of body spans whose status is error. Tool failures are those error spans that also name a tool. `alert_at` is the time on the alert span. A board of CPU stays flat through this replay and misses all four numbers.
+
+`cost` sums `sar` by hospital, in the order hospitals first appear. A hospital with no rows is omitted. The total is every hospital, not one hospital billed for the cluster.
+
+Before you paste, say which span is left out of the latency and the error rate, and which three fields `read` keeps.
+
+This section adds no file and no command.
 
 ## Replace the trace
 

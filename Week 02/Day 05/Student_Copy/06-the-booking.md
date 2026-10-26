@@ -13,7 +13,7 @@ You replace six files under `work/`, in this order:
 
 Paste only those six blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged.
 
-Scroll down to the heading Replace the booking. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Five more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. Everything above that first Replace heading is a picture or a check. You do not paste it.
+Scroll down to the heading Replace the booking. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Five more Replace headings follow it. Use the four steps from [chapter 05](05-the-sprint.md) on each one. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture or a check. You do not paste those.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste this chapter again from the chapter source. Do not repair the spaces by hand.
 
@@ -130,6 +130,24 @@ def notify(status: str, sent: bool) -> str:
 6. [test_notify.py](packet/tests/test_notify.py). Search for `test_failed_notice_confirms_a_slot`. Do not paste that file into `work/`.
 
 The journey check says `a live slot was promised` when the shell booking is the file that runs. It says `a missed night cleared the slots` when the shell file is the file that runs. It says `a failed notice confirmed a slot` when the shell notice is the file that runs. None of those messages names a clinic code.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Ain still has no live slot API. Three functions keep that true after the change request.
+
+`book` queues `h-ain` until the nightly file arrives. The fault named `live-slot` is the case that must not be confirmed as a live booking. Any other hospital can book. The shell returned booked for every hospital, including Ain. While it does, the journey says a live slot was promised.
+
+`apply_file` keeps yesterday's schedule when tonight's file did not arrive. `arrived is None` means the night drop is missing, and the function returns `previous`. The shell returned nothing, which wiped the slots. The check calls that a missed night that cleared the slots.
+
+`notify` leaves a queued booking queued whether or not the notice was sent. A failed notice does not flip the state to booked. The shell did that flip.
+
+The smoke files from yesterday stay. This chapter does not replace the probe or the router.
+
+Before you paste, say what Ain returns, what a missing night file returns, and what a failed notice does to a queued booking.
+
+This section adds no file and no command.
 
 ## Replace the booking
 

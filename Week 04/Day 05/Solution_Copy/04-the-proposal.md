@@ -24,4 +24,8 @@ A ranking miss fails `chk-w4-rcp`. A gates miss fails `chk-w4-ops`. A personal m
 
 The suite prints `Ran 8 tests` and `OK` only after the filled tests are pasted beside the filled app. The shell suite prints the same count. That earlier pass is the shell.
 
+## The path through the files
+
+The morning chapter [07-the-proposal.md](../Student_Copy/07-the-proposal.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The pages](05-the-pages.md).

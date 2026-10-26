@@ -26,7 +26,7 @@ Stay on this page. The next heading is Run the check. Do not open the failure ta
 
 ## Run the check
 
-Open a terminal in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python line. `--work` is required. `--profile practice` is required. There is one check.
+The suite window is inside `work/`. Leave it. Open a new terminal in the course folder. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python line. `--work` is required. `--profile practice` is required. There is one check.
 
 ```text
 cd problem_simulation
@@ -72,9 +72,19 @@ A route miss is one line. A failover miss is three lines. Do not treat the one l
 | `knowledge.md does not say why renting wins the deadline` | Line 2 of the block on this page. That line contains rent |
 | `the harness did not run` | The message does not name the module. A traceback from the suite names a test file. The app file is the same name without `test_`. Replicas, route, and hashes read [replicas.json](packet/release/sites/replicas.json). Failover reads [site-a.json](packet/release/drill/site-a.json) and [inflight.jsonl](packet/release/workflow/inflight.jsonl). The breaker reads [outage.json](packet/release/insure/outage.json). Degradation reads [model-down.json](packet/release/serving/model-down.json). The purchase reads [lead-time.json](packet/release/finance/lead-time.json). The hospitals read [shares.json](packet/release/hospitals/shares.json). Paste that module again from the chapter that replaces it. Do not repair the spaces by hand. Do not delete any of the eight app files. The suite imports all eight |
 | `a watermarked sample is in the work directory` | A file that carries the mark is under `work/`. Delete that copy. The message does not print the watermark. Do not delete `replicas.py`, `route.py`, `failover.py`, `hashes.py`, `breaker.py`, `degrade.py`, `procure.py`, or `hospitals.py` |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python line |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 04`, and run the block from the `cd` line |
 | `SyntaxError` or `IndentationError` | Run `python "Week 04/Day 04/Student_Copy/prepare_work.py"` from the course folder. Then paste chapters 05 through 09 again from the chapter source. Do not repair the spaces by hand. A second run puts the shell tests back |
 
 ## Done
 
 The check prints `chk-w4-slo passed.`, and `knowledge.md` answers both questions. The first says status reads still work. The second says renting wins the deadline.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the contact center, the warehouse, and HR connect. The proposal's client is still Al-Waha.
+
+Open [Week 4, Day 5](../../Day%2005/Student_Copy/README.md) and read `00-background.md` before any command.

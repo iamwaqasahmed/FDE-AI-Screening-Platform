@@ -26,7 +26,7 @@ Stay on this page. The next heading is Run the checks. Do not open the failure t
 
 ## Run the checks
 
-Open a terminal in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python lines. `--work` is required. `--profile practice` is required. Run one python line, read the line it prints, then run the next python line. Do that five times, in this order. There is no sixth command. The first line, `chk-w4-integrate passed.`, is not the end. Stop when a line says `failed` and use the table for that line. You are done with the checks only when all five passed lines are on the screen.
+The suite window is inside `work/`. Leave it. Open a new terminal in the course folder. If `dir` already shows `alwaha`, you are inside `problem_simulation`. Skip the `cd` line and run the python lines. `--work` is required. `--profile practice` is required. Run one python line, read the line it prints, then run the next python line. Do that five times, in this order. There is no sixth command. The first line, `chk-w4-integrate passed.`, is not the end. Stop when a line says `failed` and use the table for that line. You are done with the checks only when all five passed lines are on the screen.
 
 ```text
 cd problem_simulation
@@ -105,9 +105,17 @@ A bus miss is two lines. A late-leave miss on the integrate check is two lines. 
 | `the personal lab did not run` | This is `chk-individual-w4`. Paste `personal.py` again from [chapter 07](07-the-proposal.md). Do not repair the spaces by hand |
 | `the harness did not run` | The failed line names the check. The message does not name the module. A traceback from the suite names a test file. The app file is the same name without `test_`. Sign-in reads [staff.json](packet/release/iam/staff.json). The bus reads [events.jsonl](packet/release/bus/events.jsonl). The handoff reads [handoff.jsonl](packet/release/cc/handoff.jsonl). Leave reads [leave.jsonl](packet/release/hr/leave.jsonl). The warehouse reads [feed.jsonl](packet/release/warehouse/feed.jsonl). The ranking reads [model.json](packet/release/value/model.json). The gates read [assistant.json](packet/release/raci/assistant.json). Paste that module again from the chapter that replaces it. Do not repair the spaces by hand. Do not delete any of the eight app files. The suite imports all eight |
 | `a watermarked sample is in the work directory` | A file that carries the mark is under `work/`. Delete that copy. The message does not print the watermark. Do not delete `signin.py`, `bus.py`, `handoff.py`, `leave.py`, `warehouse.py`, `rank.py`, `gates.py`, or `personal.py` |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python lines |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. If it shows neither, this window is not the course folder. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 04`, and run the block from the `cd` line |
 | `SyntaxError` or `IndentationError` | Run `python "Week 04/Day 05/Student_Copy/prepare_work.py"` from the course folder. Then paste chapters 05 through 09 again from the chapter source. Do not repair the spaces by hand. A second run puts the shell tests back |
 
 ## Done
 
 The five checks print `chk-w4-integrate passed.`, then `chk-w4-ops passed.`, then `chk-w4-rcp passed.`, then `chk-readout passed.`, then `chk-individual-w4 passed.` There is no sixth passed line. `knowledge.md` answers both questions. The first says a new consultant leave creates `session.cancelled`. The second says `p-clock` is first and `p-waitlist` depends on identity.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+The four-week rehearsal ends here. The case folder says weeks 5 and 6 are a different client. There is no Day 6 in this folder. The [course guide](../../../learning/README.md) is the map of the days you have finished.

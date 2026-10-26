@@ -22,4 +22,8 @@ The shell calls every message a status question. While that shell is the file th
 
 The same tests sit beside the shell and beside this copy. They fail on the shell. They pass here. They were not replaced.
 
+## The path through the files
+
+The morning chapter [06-the-baseline.md](../Student_Copy/06-the-baseline.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The adapter](04-the-adapter.md).

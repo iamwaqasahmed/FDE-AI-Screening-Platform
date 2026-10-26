@@ -15,7 +15,7 @@ Paste only those eight blocks. The blocks under Read these files are pictures of
 
 The shell test is a picture. The filled test is the paste. A filled app beside a shell test fails the suite. A shell app beside a filled test fails the suite.
 
-You are reading until the heading Replace the adapters. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it. If the block in front of you is above Replace the adapters, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures.
+You are reading until the heading Replace the adapters. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture. If the code block in front of you is above Replace the adapters, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, paste that block again from this chapter file. Do not repair the spaces by hand. Run `prepare_work.py` again only when a failure row in [chapter 09](09-finish.md) says so. A second run puts the shell tests back.
 
@@ -311,7 +311,25 @@ if __name__ == "__main__":
 
 That was a picture. Do not paste it.
 
-You are done reading. Do not paste any block above this line. The next heading, Replace the adapters, is the first paste on this page.
+You are done reading. Do not paste any block above this line. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the adapters.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+One process, several adapters, and a rule for which traffic may leave the building.
+
+`loaded` keeps registry rows whose status is approved and whose base is `local-small`. The candidate id and `ext-large` are excluded. Blank ids are skipped. The names come back sorted. The shell loaded the unregistered candidate because the name looked close.
+
+`rate` reads the batched tokens per second. `hours` turns the forecast backlog into hours at that rate: referrals times tokens per referral, divided by the rate, divided by 3600. The unbatched rate is on the sheet and is not the one this function uses.
+
+`target` keeps a phi row on the adapter named on that row. A missing adapter becomes `lora-local`. A row that is not phi goes to `ext-large`. Public text may leave. A referral batch may not, even when the external model is faster today.
+
+`answer` returns a cached public body with zero model calls when the id is already in the store. A miss returns the row text and a call count of 1. The leaflet is the miss. The hours page is the hit.
+
+Before you paste, say which rows `loaded` refuses, and which rows `target` refuses to send outside.
+
+This section adds no file and no command.
 
 ## Replace the adapters
 

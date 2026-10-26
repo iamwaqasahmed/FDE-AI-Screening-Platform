@@ -15,3 +15,11 @@ G2 is still open.
 [pol-stage-gate.md](sources/kickoff/corpus/pol-stage-gate.md) names G2 as the DPIA. The personal-data assessment is accepted when that gate passes. The readout cites the same gate and the same document.
 
 You have the finished day. The trainer's session is [07 — Trainer session](07-trainer.md).
+
+## Carry this forward
+
+You leave Day 5 with a score, a diagram, a design, and a readout. A timeout does not book. G2 is still open.
+
+Tomorrow is the first morning of Week 2. `his-wadi` publishes a new spec. You leave with a patient and a coordinator who can open the assistant. Booking waits.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 2, Day 1 student copy](../../../Week%2002/Day%2001/Student_Copy/README.md), starting at its background.

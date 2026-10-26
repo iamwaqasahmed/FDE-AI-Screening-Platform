@@ -42,7 +42,7 @@ Your answer.
 | zone-public | |
 ```
 
-The zone rows come from [packet/kickoff/world/zones.md](packet/kickoff/world/zones.md) only.
+The zone rows come from [packet/kickoff/world/zones.md](packet/kickoff/world/zones.md) only. `zone-hospital` holds `h-nakhl`, `h-safra`, and `h-ain`. `zone-private` holds `h-wadi`. `zone-public` is the external model. That row has no hospital. Do not invent one.
 
 ## You should now see
 
@@ -60,7 +60,7 @@ A failed check names the problem. An incomplete interview does not name the miss
 | What it prints | Where to go |
 | --- | --- |
 | `access request is missing` a field | [Chapter 06](06-the-access-request.md). The value sits on the same line as the label |
-| `credentials/dev.json is missing` or `credentials do not match this profile` | [Chapter 01](01-setup.md). Copy the dev credentials from the packet, and build with `--profile practice` |
+| `credentials/dev.json is missing` or `credentials do not match this profile` | [Chapter 01](01-setup.md). From `Week 01/Day 01/Student_Copy`, run `python prepare_work.py` again. Then run the chapter 01 build with `--profile practice` |
 | `health test failed` or `secret scan failed` | [Chapter 07](07-the-pipeline.md). Run the two commands inside `work/` and remove the file the scan names |
 | `assistant-use rule is not the cluster document` | Restore `work/policy/pol-assistant-use.md` from `packet/starter/policy/pol-assistant-use.md` |
 | `ci workflow is missing the scan or the evaluation-gate placeholder` | Restore `work/.github/workflows/ci.yml` from the starter. Leave the `evaluation-gate` comment in the file |
@@ -74,6 +74,16 @@ A failed check names the problem. An incomplete interview does not name the miss
 
 ## Done
 
-The day is done when both checks print `passed` and `work/knowledge.md` answers both questions and names the hospital in each zone.
+The day is done when both checks print `passed` and `work/knowledge.md` answers both questions and fills the three zone rows from `zones.md`. `zone-public` has no hospital.
 
 Keep `work/` and the worksheets. The solution copy, when you receive it, is how you compare your pages with a finished set. Leave `problem_simulation/build` closed.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow the leaders' numbers arrive. You run four baselines and write an approach memo. You are still not building the assistant.
+
+Open [Week 1, Day 2](../../Day%2002/Student_Copy/README.md) and read `00-background.md` before any command.

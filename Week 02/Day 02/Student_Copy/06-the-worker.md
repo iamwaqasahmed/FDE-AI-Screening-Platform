@@ -41,6 +41,22 @@ Open [sms-faults.json](packet/release/channels/sms-faults.json). It is one objec
 
 The check also sends one event that is not in the file. On that event `slot` is false. The result is `escalated`, with no booking and no SMS. You will not see that row in the trace. The paste below still handles it.
 
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Two workers, two events.
+
+`intake.accept` takes `referral.submitted` from the webhook. The mode is webhook, not the old poll. `registry.keep` keeps only the fields the schema registry lists for that topic. Any other key comes back as ignored. The stored record drops the letter, so a watermark in the letter is not what you submit. The owner of this topic is `eref`.
+
+`cancel.apply` takes `session.cancelled`. That is a clinic session on a hospital calendar, not yesterday's sign-in session. The deliveries table holds one row per event id. A second call with the same id returns the stored row and does not send SMS again. When the text fails, the hold is released and nothing is booked. When `slot` is false there is nothing to book, and the row is escalated.
+
+The shell booked every cancellation and still polled for referrals. These two files are the correction.
+
+Before you paste, say which function ignores a field the registry does not list, and what a second `session.cancelled` with the same id does.
+
+This section adds no file and no command.
+
 ## Replace intake.py
 
 This block replaces [work/app/intake.py](work/app/intake.py). The full path is `Week 02/Day 02/Student_Copy/work/app/intake.py`. It does not replace [packet/app/intake.py](packet/app/intake.py).

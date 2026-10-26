@@ -28,4 +28,8 @@ The shell calls the model again for a cached public answer. That shell makes the
 
 An adapters miss fails only the slo check. A batch miss fails both checks. A route or public miss fails only the surge check.
 
+## The path through the files
+
+The morning chapter [06-the-server.md](../Student_Copy/06-the-server.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The surge](04-the-surge.md).

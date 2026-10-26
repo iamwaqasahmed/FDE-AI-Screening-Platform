@@ -15,6 +15,22 @@ Open these in the packet. Read the comment at the top of each one. Do not edit t
 
 The tests check says `the reply schema is missing` when a sentence with no intent still passes, or when an empty sentence with intent fails. It says `the journey followed the sentence` when the sentence is treated as the result. Neither message names a field.
 
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Two small functions, two different mistakes.
+
+`schema_ok` looks at `intent`. A non-empty string passes. The sentence can be empty. A sentence with no intent fails. The shell treated a fluent sentence as proof the reply was well formed.
+
+`journey_ok` does not read the reply at all. `del reply` is that decision, written down. The result is `booked` on the mock state. A fluent sentence can sit on a state that was not booked. The journey follows the state.
+
+The shell followed the sentence. While it does, the check says the journey followed the sentence, or that the reply schema is missing.
+
+Before you paste, say which function is allowed to ignore the model's words, and which field the schema actually requires.
+
+This section adds no file and no command.
+
 ## Replace the schema
 
 This block replaces [work/app/schema.py](work/app/schema.py). The full path is `Week 02/Day 03/Student_Copy/work/app/schema.py`. It does not replace [packet/app/schema.py](packet/app/schema.py).

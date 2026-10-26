@@ -77,4 +77,14 @@ Do not copy a rate, a hash, a tokens-per-second figure, the backlog count, the p
 
 This page is done when you have scanned the tables.
 
+## A plain reading
+
+Chat and the batch share one GPU quota. Chat keeps a reserve. A cold start is the wait before a new process can serve. Adding capacity only after the peak has started misses that wait. The throughput sheet names the wait. Do not copy the number onto a page.
+
+Today's external price replaces yesterday's rate. A batch sent to `ext-large` because it is faster today pays the new price. The capacity table uses today's rate.
+
+This section adds no file and no command.
+
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

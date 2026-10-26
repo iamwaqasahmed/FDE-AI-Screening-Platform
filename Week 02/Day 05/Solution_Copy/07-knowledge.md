@@ -19,3 +19,11 @@ Stage 2 adds the operations stack beyond request rate, error rate, and model lat
 [starter.md](sources/day4/dashboard/starter.md) shows those three lines and says the rest of the operations stack arrives in Week 4. The second knowledge line names Stage 2 and Week 4.
 
 You have the finished day. The trainer's session is [08 — Trainer session](08-trainer.md).
+
+## Carry this forward
+
+You leave Week 2 Day 5 with a smoke-tested URL, `deployment.md` sequencing `cr-ain`, the readout, and the retro notes. A booking at Ain stayed queued for the nightly file.
+
+Tomorrow the data request is approved. You separate people from rows, relabel to the current guideline, and check a synthetic sample.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 3, Day 1 student copy](../../../Week%2003/Day%2001/Student_Copy/README.md), starting at its background.

@@ -69,4 +69,16 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | Rejected receipt | The hold is released. Nothing is booked. The state is `compensated` |
 | No slot | The state is `escalated`. Nothing is booked and no SMS is sent. That event is not a line in the file. The check sends it |
 
+## A plain reading
+
+A webhook is a push. `eref` sends `referral.submitted` to you. Polling is the old path, where you keep asking. The schema registry is the list of fields a consumer may trust. A field that is not listed is ignored.
+
+HL7 v2 is the older hospital message still sent by Nakhl and Safra. It is a feed. It is not the referral event `eref` owns. The demo prints order lines. It does not ask you to invent a field the sample dropped.
+
+WhatsApp sits beside SMS. A template message needs a registered template, and a reply is only accepted inside a session window. That window is not the sign-in session from yesterday. `session.cancelled` is a clinic session on a hospital calendar. It is not that sign-in session either.
+
+This section adds no file and no command.
+
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

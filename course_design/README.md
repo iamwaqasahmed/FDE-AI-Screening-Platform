@@ -2,6 +2,8 @@
 
 Facilitators only. Participants never receive this folder. It turns the [simulation](../problem_simulation/README.md) into twenty days of teaching. Lesson notes and lab steps are in the week folders. Facilitator slides are in [slides](slides/README.md). The readiness record is `python -m alwaha.audit` from `problem_simulation`.
 
+The author record of the self-paced pages is [../instructional/README.md](../instructional/README.md). Participants do not receive that folder.
+
 ## Day template
 
 Each day in the week maps has the same fields:

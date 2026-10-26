@@ -20,4 +20,8 @@ The packet workflow contains `# improvement-gate:`. Copying that file over the w
 
 This folder's workflow contains the line `  improvement-gate:`. The job runs `python -m unittest tests.test_remeasure -q`. The `test` job stays. That is expected. The two workflow files are not the same.
 
+## The path through the files
+
+The morning chapter [07-the-spec.md](../Student_Copy/07-the-spec.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The personal lab](05-the-personal.md).

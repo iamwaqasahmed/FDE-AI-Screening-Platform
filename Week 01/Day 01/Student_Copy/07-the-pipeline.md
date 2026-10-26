@@ -6,7 +6,7 @@ Coding assistants may be used on code you wrote, on the tests, and on the publis
 
 ## Do this
 
-1. Read [packet/kickoff/sample/referral-letter.md](packet/kickoff/sample/referral-letter.md) where it already sits. It is a synthetic letter. It carries a marker and the same watermark as the dev credentials.
+1. Read [packet/kickoff/sample/referral-letter.md](packet/kickoff/sample/referral-letter.md) where it already sits. It is a synthetic letter. The line that starts with `Marker:` is the marker. The line that starts with `Reference:` is the watermark, the same value the dev credentials carry. Leave `credentials/dev.json` closed. You do not open it to compare.
 2. Leave that file out of `work/` and out of any prompt. If a coding assistant's reply is saved into `work/`, the scan reads the reply too.
 3. Chapter 06 added `access-request.md` inside `work/`, and the scan reads that file. Open a terminal in the course folder and run:
 

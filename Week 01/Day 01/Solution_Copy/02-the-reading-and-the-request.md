@@ -35,7 +35,7 @@ Compare your morning request, `Student_Copy/work/access-request.md`, with the [f
 - Classification: internal
 ```
 
-The data line asks for the kickoff and the dev credentials. The full history stays outside the request. `internal` means staff material: not a patient record, and not a public release.
+The data line asks for the kickoff and the dev credentials. The morning chapter says `the kickoff files`. This example says `the kickoff corpus`. Both ask for the kickoff and the dev credentials. Your morning wording can stay. The full history stays outside the request. `internal` means staff material: not a patient record, and not a public release.
 
 A form that looks finished and still fails has the value on the next line, or nothing after the colon. Each value sits on the same line as its label.
 

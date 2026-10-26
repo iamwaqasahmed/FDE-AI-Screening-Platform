@@ -19,3 +19,11 @@ A replay does not book a second time.
 The cancellation file delivers `evt-can-1` twice. [cancel.py](work/app/cancel.py) returns the stored row on the second call. The booking count stays at one. The shell added a second booking. [Chapter 03](03-the-worker.md) is that worker.
 
 You have the finished day. The trainer's session is [07 — Trainer session](07-trainer.md).
+
+## Carry this forward
+
+You leave Week 2 Day 2 with intake from the `eref` webhook, `wf-session-cancelled`, and a mart read labeled with the clock the team already distrusts.
+
+Tomorrow the SMS receipt follows the case clock. The suite goes red when the receipt switch is on.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 2, Day 3 student copy](../../Day%2003/Student_Copy/README.md), starting at its background.

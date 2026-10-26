@@ -28,4 +28,8 @@ The shell admits every session and every hold. That shell makes the redteam chec
 
 A families list that is only `atk-direct` makes the redteam check say `the guardrail config misses a family`. That page is in chapter 06. A guard miss fails only the redteam check.
 
+## The path through the files
+
+The morning chapter [06-the-guard.md](../Student_Copy/06-the-guard.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The request](04-the-request.md).

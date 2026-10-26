@@ -4,6 +4,18 @@ Open [00 — Background](00-background.md) first. That page says what the four w
 
 `packet/` is the file drawer those chapters open. Do not start there.
 
+## Where you are
+
+This is Week 2, Day 4 of the four-week rehearsal. Today you deploy on the private cloud, with a health probe and a named model hash.
+
+The [course guide](../../../learning/README.md) says how a day is shaped. [This week](../../README.md) says how the five days move. The [concept index](../../../learning/concept-index.md) is a lookup. It is not the next chapter.
+
+The previous day is [Week 2, Day 3](../../Day%2003/Student_Copy/README.md).
+
+Read the chapters in the order table below. `packet/` is the drawer those chapters open. Leave `Solution_Copy` closed until the finish chapter says the day is done.
+
+When this day is done, the next student copy is [Week 2, Day 5](../../Day%2005/Student_Copy/README.md).
+
 ## What you will hold at the end
 
 `work/` contains:
@@ -38,7 +50,7 @@ Chapters 00 through 04 are reading and one demo. You do not paste a file on thos
 
 On a page that says Replace, paste only the block under that heading. A block under Read these files is a picture of the shell. Pasting a picture puts the shell back.
 
-The trainer's debrief comes after this attempt. It uses the solution copy, which you do not have this morning.
+The trainer's debrief comes after this attempt. It uses the solution copy, which you do not have this morning. If that folder is already beside this one, leave it closed until the finish chapter. The Closed section says the same thing.
 
 ## Closed
 

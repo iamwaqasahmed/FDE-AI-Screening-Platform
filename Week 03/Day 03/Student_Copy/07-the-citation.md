@@ -11,7 +11,7 @@ You replace four files under `work/`, in this order:
 
 Paste only those four blocks. The blocks under Read these files are pictures of the shell. Pasting a picture puts the shell back. Each work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copies in `packet/` unchanged. Do not paste a test. The tests are copied and not replaced.
 
-Scroll down to the heading Replace the audience filter. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Three more Replace headings follow it. The four steps are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it.
+Scroll down to the heading Replace the audience filter. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. Three more Replace headings follow it. The four steps are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05 through 07 again from the chapter source. Do not repair the spaces by hand.
 
@@ -146,7 +146,27 @@ def apply(snapshot: list[dict], feed: list[dict]) -> dict:
 ```
 
 
-The pictures end here. The next heading is the first paste.
+The pictures end here. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the next heading that starts with Replace.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+A search hit is not yet a citation. Four functions turn it into one, or into a refusal.
+
+`allow` is the audience rule. A patient sees `public` only. Staff see `public` and `staff`. Records also see `restricted`. Anyone else sees nothing. A missing audience matches nothing.
+
+`criteria` binds one specialty at the referral's start day. For `card`, `endo`, and `ophth`, an in-force version 4 that covers that day wins. Otherwise a version 3 that is in force or superseded, and that covers the day, wins. `_covers` rejects a day before the effective date or on or after sunset. An in-flight referral keeps the version it started on. The other specialties do not jump to v4.
+
+`answer` cites a span the asker may see, or refuses. Nothing bound is `no-document`. A bound document the asker cannot see is an audience refusal. With no specialty, `_visible` keeps in-force spans this asker may see that carry a question code. `_cite` puts the clause id on the span.
+
+`apply` copies the snapshot and plays the change feed. An add inserts the document. Any other op writes the event fields onto the stored id. Only the touched ids are listed, so you do not rebuild the world for one change.
+
+The unauthorized circular can be in the feed and still not be a citation. It is not in force, or the asker cannot see it, or both.
+
+Before you paste, say who may see a staff document, and which date chooses between v3 and v4.
+
+This section adds no file and no command.
 
 ## Replace the audience filter
 

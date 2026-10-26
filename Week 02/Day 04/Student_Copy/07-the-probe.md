@@ -14,7 +14,7 @@ Paste only those three blocks. The blocks under Read these files are pictures of
 
 Open these in the packet. Read the comment at the top of each one. Do not edit them.
 
-1. [health.py](packet/app/health.py). Search for `candidate["hash"]`. That line is the shell. The register is ignored. The next block is a picture of that file. Do not paste it. The block that replaces the work file is under the heading Replace the probe, later on this page.
+1. [health.py](packet/app/health.py). Search for `candidate["hash"]`. That line is the shell. The register is ignored. The next block is a picture of that file. Do not paste it. Read How the replacement works before the paste. It is not a paste. The block that replaces the work file is under the heading Replace the probe.
 
 ```text
 """Report the candidate hash.
@@ -81,6 +81,18 @@ spec:
 4. [models.json](packet/release/registry/models.json). Search for `"status": "approved"` together with `"id": "local-small"`. That row also has `"prompt": "p1"`. A second `local-small` row has `"status": "previous"` and `"prompt": "p0"`. That previous row stays in the file. That is expected. The probe uses the approved row. You do not type the hash.
 
 The deploy check says `the health probe does not report the registered hash` when the body still uses the candidate, or when the prompt or the endpoint dependency is missing. It does not name the hash. It says `the manifest is not in the team namespace` when `ns-team` is missing. It says `the health probe is missing` when readiness does not call `/v1/health`. It says `the image runs as root` when the manifest does not refuse a root account. None of those messages names a hash.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+`health` reads the model register and reports one row: id `local-small`, status approved. The body carries that row's hash, that row's prompt, and the endpoint dependency. A previous row for the same id is skipped. A near name, the candidate, is not a registration and is not reported.
+
+The shell reported the candidate, or a hash that was not the approved row. The test uses stand-in hashes so you can see which row was selected. Those stand-ins are not the hashes in the register file. Do not copy a register hash onto a page.
+
+Before you paste, say which row the probe is allowed to report, and which near name it must leave out.
+
+This section adds no file and no command.
 
 ## Replace the probe
 

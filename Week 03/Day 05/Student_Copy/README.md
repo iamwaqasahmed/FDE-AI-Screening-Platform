@@ -6,6 +6,18 @@ Open [00 — Background](00-background.md) first. That page says what the four w
 
 To open a link in a chapter, Ctrl+click it on Windows, or Command+click it on macOS. To search, Ctrl+F on Windows or Command+F on macOS, inside the file the chapter names. A search inside the chapter does not count.
 
+## Where you are
+
+This is Week 3, Day 5 of the four-week rehearsal. Today you remeasure one fix and write the requirements. Copying the sponsor sentence is not a brief.
+
+The [course guide](../../../learning/README.md) says how a day is shaped. [This week](../../README.md) says how the five days move. The [concept index](../../../learning/concept-index.md) is a lookup. It is not the next chapter.
+
+The previous day is [Week 3, Day 4](../../Day%2004/Student_Copy/README.md).
+
+Read the chapters in the order table below. `packet/` is the drawer those chapters open. Leave `Solution_Copy` closed until the finish chapter says the day is done.
+
+When this day is done, the next student copy is [Week 4, Day 1](../../../Week%2004/Day%2001/Student_Copy/README.md).
+
 ## What you will hold at the end
 
 `work/` contains:
@@ -41,11 +53,11 @@ You leave with one moved retrieval failure, the benchmark, the improvement plan,
 
 Chapters 00 through 04 are reading and one demo. You do not paste a file on those pages. Chapter 05 is the first page that replaces a file. Chapters 06, 07, and 08 replace code. Chapter 07 also replaces the workflow. Chapter 09 replaces pages. Chapter 10 is the only page that runs the checks.
 
-On a page that says Replace, paste only the block under that heading. On chapters 06, 07, and 08, the first code block is a picture of the shell. Scroll to the first heading that starts with Replace. The block under that heading is the first paste. A search inside the chapter does not count. Search the work file you just saved.
+On a page that says Replace, paste only the block under that heading. On chapters 06, 07, and 08, the first code block is a picture of the shell. Read the section How the replacement works on that chapter, then scroll to the first heading that starts with Replace. The block under that heading is the first paste. The reading section is not a picture and it is not a paste. A search inside the chapter does not count. Search the work file you just saved.
 
 If you are in the middle of the day and you are not sure what to do, stay on the chapter you have open. Finish it through the line that starts with Next. The only files you change are under `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. A file whose path contains `packet` is the drawer. Close it if you started typing there.
 
-The trainer's debrief comes after this attempt. It uses the solution copy, which you do not have this morning.
+The trainer's debrief comes after this attempt. It uses the solution copy, which you do not have this morning. If that folder is already beside this one, leave it closed until the finish chapter. The Closed section says the same thing.
 
 ## Closed
 

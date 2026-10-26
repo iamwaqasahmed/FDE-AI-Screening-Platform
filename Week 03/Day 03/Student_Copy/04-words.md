@@ -88,4 +88,16 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 
 This page is done when you can find a word in the tables and open its file.
 
+## A plain reading
+
+This day is retrieval over the cluster's documents. You will also hear that job called RAG, retrieval-augmented generation: the answer has to come from a retrieved span, and the span has to be in force for the person who asked. The chapters say index, filter, and cite.
+
+A chunk is one clause, cut at a blank line, with its clause id kept. An embedding, here, is the token vector `local-embed` writes. The text is split into tokens. A hyphenated code stays one token. Each token gets a weight equal to its share of the text. Nearness compares two of those maps. The replacement file calls that comparison cosine similarity. A vector score can still rank a document you are not allowed to cite. Hybrid search adds the code boost and keeps `in_force` only.
+
+A patient sees `public` only. Staff also see `staff`. Records also see `restricted`. A draft can be found by search and still not be a citation.
+
+This section adds no file and no command.
+
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

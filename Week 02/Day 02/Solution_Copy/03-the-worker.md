@@ -28,4 +28,8 @@ The check then sends one event that is not in the file. `slot` is false. The fin
 
 The webhook file is not in this folder. The check reads it from the built pack. A copy under `work/` fails. The message is `a watermarked sample is in the work directory`, and it does not print the watermark.
 
+## The path through the files
+
+The morning chapter [06-the-worker.md](../Student_Copy/06-the-worker.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The pages](04-the-pages.md).

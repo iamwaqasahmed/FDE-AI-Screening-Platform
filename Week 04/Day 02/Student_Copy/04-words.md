@@ -69,4 +69,16 @@ Do not copy a hash, a rate, a cost, or the error detail onto a page.
 
 This page is done when you have scanned the tables.
 
+## A plain reading
+
+A trace is the spans. A metric is a count you put on the board: latency, errors, tool failures. CPU can stay flat while those move. A board that only has CPU misses the incident.
+
+Drift, here, means what you serve no longer matches the world. The three kinds in the file are hours, criteria, and clinic. A cached answer drops when `document.changed` names the Ramadan hours circular. A different document does not clear that cache.
+
+Shadow traffic compares a candidate with the registered reply. It must not change what the patient is sent.
+
+This section adds no file and no command.
+
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

@@ -19,3 +19,11 @@ A rollback changes the model hash.
 [models.json](sources/release/registry/models.json) has a previous `local-small` row beside the approved row. [rollback.md](work/rollback.md) says a rollback changes the served hash to that previous registered hash, and that it does not rewrite patient records. The check does not read `rollback.md`. The knowledge line is what the check reads. The second sentence says a rollback changes the model hash.
 
 You have the finished day. The trainer's session is [08 — Trainer session](08-trainer.md).
+
+## Carry this forward
+
+You leave Week 2 Day 4 with a private-cloud URL, a health probe that reports the registered hash, and `deployment.md`.
+
+Tomorrow steering asks to include Ain. A booking at Ain stays queued for the nightly file.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 2, Day 5 student copy](../../Day%2005/Student_Copy/README.md), starting at its background.

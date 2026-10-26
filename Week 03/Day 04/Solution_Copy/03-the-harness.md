@@ -22,4 +22,8 @@ The shell names every log row a pass. That shell makes the eval check say a plan
 
 [failures.py](work/app/failures.py) reads the reply text. `return "pass"` stays on the last line. That is expected. It is the row that is not one of the four. [failures.jsonl](sources/release/slices/failures.jsonl) has `log_id` and `output` only. The file does not contain hallucination, retrieval, reasoning, or workflow. Those names are on the benchmark page. A miss does not print a log id.
 
+## The path through the files
+
+The morning chapter [06-the-harness.md](../Student_Copy/06-the-harness.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The gate](04-the-gate.md).

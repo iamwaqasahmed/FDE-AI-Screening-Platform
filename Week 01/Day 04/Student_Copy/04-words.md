@@ -92,4 +92,6 @@ A turn that contains either phrase is a redirect, even when the same turn also a
 
 You have the words the later chapters use.
 
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The rules](05-the-rules.md).

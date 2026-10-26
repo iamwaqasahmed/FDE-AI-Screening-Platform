@@ -2,7 +2,7 @@
 
 [Chapter 05](05-the-rules.md) was the reading. This chapter replaces three scripts and runs them. The checks run the agent again, so the trace has to come from these files.
 
-This page has three parts. Read what the starter gets wrong. Replace the three files. Then run the command, read the demo, and fill the worksheet. The file blocks are long. Keep scrolling until you reach Run it.
+Read what the starter gets wrong. Then read How the replacement works. Then replace the three files, run the command, and fill the worksheet. The file blocks are long. Keep scrolling until you reach Run it.
 
 The starter copies are [model.py](packet/agent/model.py), [schema.py](packet/agent/schema.py), [memory.py](packet/agent/memory.py), [tools.py](packet/agent/tools.py), and [run.py](packet/agent/run.py). Chapter 01 copied them to `work/agent`. Read the packet copies. The comments say what the starter does. Leave [tools.py](packet/agent/tools.py) and [run.py](packet/agent/run.py) as the runner and the mock. You edit the copies under `work/agent`.
 
@@ -23,6 +23,30 @@ The check names the case. It does not name the count, the slot, the constraint, 
 - The starter copies a stored preference into the reply. Consent reuses a blocked preference, and the trace contains it. The message does not print the preference.
 - The starter does not put a constraint on the refusal. The message does not print the constraint.
 - The starter does not redirect, and it does not log the emergency refusal.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on a later day is a picture and which block you paste. This page has no picture. The three blocks under Replace the three files are the files you paste.
+
+`respond` in `model.py` is the whole policy, in order. The first rule that matches returns. A later rule does not also run.
+
+1. A phrase on the routing list redirects. `_redirect` cites `safety.redirect` and the safety document. Nothing is booked. The letter is not scanned for that phrase. A turn is.
+2. A stored preference is used only when consent allows it. `_blocked` refuses when it does not, and the preference string stays out of the trace.
+3. A named constraint is offered through `slots.offer` and then the walk stops. Nothing is booked.
+4. A return waits. The approval id stays pending. `referral.return` is not called.
+5. Anything else walks the turns. A patient turn can remember a facility, read status once, or offer a slot. A coordinator turn decides. The letter is not a turn in that loop.
+
+Status is one call to `referral.status` per session. `_read_status` does not call it again on a later question in the same session. The count on the reply is the tool result. `schema.reply` keeps the count it is given. The starter `schema.py` wrote 12 into every reply and ignored the count. Paste the schema block too. Leaving the starter in place keeps every count at 12.
+
+A booking needs an offer, the patient's confirmation, and one coordinator approval, then SMS. `_decide` treats a repeated approval id as a no-op. A rejection logs a refusal and does not book.
+
+`memory.py` keeps facts inside one session. Another session cannot see them. A preference comes back only when consent allows it.
+
+The runner writes the trace. A trace you type is not the trace the check grades.
+
+Before you paste, say the five steps of `respond` in order, and say why a sentence inside the letter cannot book.
+
+This section adds no file and no command.
 
 ## Replace the three files
 

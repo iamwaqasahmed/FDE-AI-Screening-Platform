@@ -22,4 +22,8 @@ The shell costs one hospital. That shell makes the incident check say `cost is m
 
 A trace, board, or meter miss fails only the incident check.
 
+## The path through the files
+
+The morning chapter [06-the-board.md](../Student_Copy/06-the-board.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The hours](04-the-hours.md).

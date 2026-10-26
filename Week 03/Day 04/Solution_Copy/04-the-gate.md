@@ -18,4 +18,8 @@ The shell workflow contains `# evaluation-gate:`. Copying that file over the fil
 
 [ci.yml](work/.github/workflows/ci.yml) keeps the `test` job. That job still runs `python -m unittest discover -s tests -q`. That is expected. The new job line is `evaluation-gate:`, with two spaces and no hash. It runs `python -m unittest tests.test_gate -q`.
 
+## The path through the files
+
+The morning chapter [07-the-gate.md](../Student_Copy/07-the-gate.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The advanced path](05-the-advanced.md).

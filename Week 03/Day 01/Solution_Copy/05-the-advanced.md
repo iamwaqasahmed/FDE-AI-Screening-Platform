@@ -18,4 +18,8 @@ The shell returns every item and ignores the price and the budget.
 
 The workflow file is the same bytes as the packet. It runs the suite. It was copied and not replaced.
 
+## The path through the files
+
+The morning chapter [08-the-advanced.md](../Student_Copy/08-the-advanced.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [06 — The pages](06-the-pages.md).

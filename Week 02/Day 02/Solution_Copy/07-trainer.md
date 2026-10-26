@@ -29,7 +29,7 @@ file order: sequence 1 stands
 sequence order: sequence 2 stands
 ```
 
-The file lists sequence 2 and then sequence 1. File order keeps the last row in the file, sequence 1. Sequence order sorts by the sequence number and keeps sequence 2. The lines do not print the dropped field, the extra field, thyroid, or ZSS.
+The file lists sequence 2, then sequence 1, then a mapping row with no sequence. File order keeps the last of those two sequenced rows, sequence 1. It does not keep the mapping row. Sequence order sorts by the sequence number and keeps sequence 2. The lines do not print the dropped field, the extra field, thyroid, or ZSS.
 
 ## Block 1 — The sprint
 

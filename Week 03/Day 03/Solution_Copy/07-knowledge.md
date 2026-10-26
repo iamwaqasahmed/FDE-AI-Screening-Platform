@@ -17,3 +17,11 @@ That is the second numbered line. Staff may also see public. Records may see res
 The checks do not read the interview notes.
 
 Next: [08 — Trainer session](08-trainer.md). Students can skip that page.
+
+## Carry this forward
+
+You leave Week 3 Day 3 with an index that cites an in-force document the asker is allowed to see. An in-flight referral keeps the version it started on.
+
+Tomorrow you name the planted failures with evidence and open the workshop. The second measured run waits one more day.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 3, Day 4 student copy](../../Day%2004/Student_Copy/README.md), starting at its background.

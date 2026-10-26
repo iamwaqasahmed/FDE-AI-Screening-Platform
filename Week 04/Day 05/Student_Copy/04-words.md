@@ -122,4 +122,6 @@ Do not copy the attack text, a minute count, or a survey count onto a page from 
 
 This page is done when you have scanned the tables.
 
+The [concept index](../../../learning/concept-index.md) lists words from the whole course and points back to the page that introduced each one. It is a lookup. It is not the next chapter.
+
 Next: [05 — The sprint](05-the-sprint.md).

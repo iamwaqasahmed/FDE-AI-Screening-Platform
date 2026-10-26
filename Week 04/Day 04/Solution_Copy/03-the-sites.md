@@ -28,4 +28,8 @@ The shell accepts every hash the site advertises, including the unregistered one
 
 A replicas miss, a route miss, a failover miss, and a hash miss all fail the same check, `chk-w4-slo`.
 
+## The path through the files
+
+The morning chapter [06-the-sites.md](../Student_Copy/06-the-sites.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [04 — The outage](04-the-outage.md).

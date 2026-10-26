@@ -45,7 +45,7 @@ A failed auth check does not print the role list or the assurance level. A faile
 | `python` is not recognized | [Chapter 01](01-setup.md). Use `py` instead of `python` in the command |
 | `SyntaxError` or `IndentationError` | A Python file lost its spaces. Do not repair it by hand. From the course folder, run `python "Week 02/Day 01/Student_Copy/prepare_work.py"`, paste the three pages again from chapters 05 and 06, then run the generate command in [chapter 07](07-the-status.md) |
 | `No module named alwaha` | The terminal is not inside `problem_simulation`. Open a new terminal in the course folder, run `cd problem_simulation`, and run the check again |
-| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | This window is already inside `problem_simulation`. Skip the `cd` line and run the python lines |
+| `The system cannot find the path specified` or `No such file or directory` on the `cd` line | Run `dir`. If the list shows `alwaha`, you are already inside `problem_simulation`. Skip the `cd` line. If the list shows `app` and `tests`, this window is inside `work/`. Open a new terminal in the course folder, the one whose `dir` lists `problem_simulation` and `Week 02`, and run the block from the `cd` line |
 | `can't open file` or `No such file or directory` on `generate.py`, `run.py`, or `server.py` | That window is not the course folder. [Chapter 07](07-the-status.md). Run `dir`. You should see `problem_simulation` and `Week 02` |
 | `Build rel-w2d1 first.` | [Chapter 01](01-setup.md). Run the build again with `--profile practice` and `--release rel-w2d1` |
 | `auth needs --release rel-w2d1.` | Add `--release rel-w2d1` to the auth command above |
@@ -72,3 +72,13 @@ A failed auth check does not print the role list or the assurance level. A faile
 The day is done when both checks print `passed` and `work/knowledge.md` answers both questions.
 
 Keep `work/` and the client worksheet. The solution copy, when you receive it, is how you compare your pages with a finished set. Leave `problem_simulation/build` closed.
+
+## What you open next
+
+The Done section above is the gate. `knowledge.md` is part of that gate. The [optional review](../../../learning/review.md) is not filed. The checks do not read it.
+
+If `Solution_Copy` is already on disk beside this folder, this is the moment it is for. Open [the solution README](../Solution_Copy/README.md) only after Done is true. Do not start in its `work/` folder. The trainer chapter there is optional.
+
+Tomorrow `eref` pushes `referral.submitted`, and a cancelled clinic session arrives as its own event.
+
+Open [Week 2, Day 2](../../Day%2002/Student_Copy/README.md) and read `00-background.md` before any command.

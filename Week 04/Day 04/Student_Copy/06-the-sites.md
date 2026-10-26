@@ -15,7 +15,7 @@ Paste only those eight blocks. The numbers in that list are the pastes. The numb
 
 The shell test is a picture. The filled test is the paste. A filled app beside a shell test fails the suite. A shell app beside a filled test fails the suite.
 
-You are reading until the heading Replace the replicas. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. Everything above that first Replace heading is a picture. You do not paste it. If the block in front of you is above Replace the replicas, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite on this page. [Chapter 07](07-the-outage.md) runs it after the rest of the app files are replaced.
+You are reading until the heading Replace the replicas. It is the first heading on this page that starts with Replace. The code block directly under it is the first paste. The four steps from chapter 05 are repeated above each paste. The section How the replacement works sits above the first Replace heading. Read it. Do not paste it. Every code block above that Replace heading is a picture. You do not paste a picture. If the code block in front of you is above Replace the replicas, it is a picture. Do not paste it. If you are lost after that heading, stay on the Replace heading you have open. Finish it. Then do the next Replace heading down the page. Do not go back to the pictures. Do not run the suite on this page. [Chapter 07](07-the-outage.md) runs it after the rest of the app files are replaced.
 
 These files are Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, paste that block again from this chapter file. Do not repair the spaces by hand. Run `prepare_work.py` again only when a failure row in [chapter 09](09-finish.md) says so. A second run puts the shell tests back.
 
@@ -289,7 +289,25 @@ if __name__ == "__main__":
 
 That was a picture. Do not paste it. This item is done when the search finds that shell sentence in the packet file. Close the packet file. The shell test is a picture. The filled test is the paste.
 
-You are done reading. Do not paste any block above this line. If you are lost, you are still in the pictures. The next heading, Replace the replicas, is the first paste on this page. Go there. Do not scroll back up to paste a picture.
+You are done reading. Do not paste any block above this line. If you are lost, you are still in the pictures. The next heading is How the replacement works. Read it. It is not a paste. The first paste is the heading Replace the replicas. Do not scroll back up to paste a picture.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+Site-a dies. The approvals do not.
+
+`placed` returns every replica id, sorted, including the one that is down. Both sites sit behind the balancer. The shell returns only `site-a`. `site-a` is down, so `site-b` never enters the set. The filled file places both.
+
+`choose` sends new traffic to a replica that is still healthy. When site-a is not up and site-b is up, the choice is site-b. Otherwise it takes the first healthy id. No healthy site returns an empty string. Health has to be the string `up`.
+
+`recover` keeps approval ids whose status is pending, sorts them, and returns them with the drill budget and `site-b`. Those rows live in the workflow store. They are not on the pod that was killed. The shell rebuilt from the dead pod and dropped them.
+
+`confirm` keeps a site model only when that id is on the register and the hash strings are equal. An extra id that site-b advertises is dropped. A matching id with a different hash is dropped.
+
+Before you paste, say where a pending approval is read from, and which site receives new traffic.
+
+This section adds no file and no command.
 
 ## Replace the replicas
 

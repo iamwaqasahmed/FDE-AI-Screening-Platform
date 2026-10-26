@@ -13,3 +13,11 @@ A model is the wrong tool for `p-clock`. [dashboard.md](sources/release/extracts
 `p-slots` is the same kind of decision. Empty chairs are a workflow on the session book. A sentence must not hold the slot. The finished file names the clock first and the empty chairs second. Either problem answers the question.
 
 You have the finished day. The trainer's session is [06 — Trainer session](06-trainer.md).
+
+## Carry this forward
+
+You leave Day 2 with an approach memo and a draft brief. The person split is the DNA line the memo uses. `p-triage` stays blocked. `p-info` stays retrieval.
+
+Tomorrow the event stream, the SLA policy, and the business calendar arrive. Intake runs from `referral.submitted` to a held approval. It does not book.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Week 1, Day 3 student copy](../../Day%2003/Student_Copy/README.md), starting at its background.

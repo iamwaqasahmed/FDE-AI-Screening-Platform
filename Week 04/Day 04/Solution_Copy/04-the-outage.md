@@ -30,4 +30,8 @@ The shell suite prints `Ran 8 tests` and `OK`. That pass is the shell. This fold
 
 A breaker miss, a degradation miss, a purchase miss, and a hospital miss all fail the same check, `chk-w4-slo`.
 
+## The path through the files
+
+The morning chapter [07-the-outage.md](../Student_Copy/07-the-outage.md) has the section How the replacement works. That section is the path through the files this page compares. Read it beside the finished file. The notes above are the decisions the check names.
+
 Next: [05 — The pages](05-the-pages.md).
