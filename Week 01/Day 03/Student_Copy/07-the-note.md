@@ -41,7 +41,7 @@ The workflow stops when a coordinator holds the approval. It does not book.
 An in-flight referral keeps the criteria version it started with.
 ```
 
-Step 6 is the human step. The acceptance line is the product decision: stop for that coordinator, and do not book. The in-flight line is the architect's rule for a referral that has already started. A later criteria page does not replace the version that referral started with.
+Step 6 is the human step. The acceptance line is the product decision: stop for that coordinator, and do not book. The in-flight line is a rule you are writing down. A referral that has already started keeps the criteria version it started with. A later criteria page does not replace that version. The worker you pasted does not store an old version. No event today changes the document after a referral has started. The check looks for the words in-flight, criteria, and version in this note.
 
 The check does not score the wording beyond those pieces. If you add a sentence, keep the three headings and keep those words in the file.
 

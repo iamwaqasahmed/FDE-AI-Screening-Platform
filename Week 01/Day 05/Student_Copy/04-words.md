@@ -87,10 +87,10 @@ A turn that contains either phrase is a redirect, even when the same turn also a
 | `p-status` | Patients ask where a referral stands. [problems.md](packet/carried/problems.md). An assistant with a status tool |
 | `p-clock` | The board's wait chart. It needs no model |
 | `p-slots` | Sessions go out with empty chairs. It needs no model |
-| `p-waitlist` | Waitlist rows the coordinators do not trust. Identity still splits people there: duplicate rows, and one person stored as two |
+| `p-waitlist` | Waitlist rows the coordinators do not trust. [problems.md](packet/carried/problems.md) says that and does not say duplicate or split. [Chapter 07](07-the-diagram.md) calls the open item a split identity: duplicate rows, and one person stored as two |
 | `p-triage` | The sponsor wants the assistant to set clinical urgency. This proof will not build it |
 | Stage 2 | The table of what is still open. The columns are `topic`, `what is still open`, and `citation` |
-| Identity | The stage 2 topic for the waitlist. Duplicate rows and a split identity on `p-waitlist` |
+| Identity | The stage 2 topic for the waitlist. The open item is duplicate rows and a split identity. The register names `p-waitlist` and does not say duplicate or split. The paste cites that register. [ea.md](packet/kickoff/personas/ea.md) supports the hospital row, where `h-ain` has no slot API. The check looks for `p-waitlist`, `split`, or `duplicate` in the identity cell |
 | Criteria | The rules for a specialty. [crit-endo-v4.md](packet/carried/criteria/crit-endo-v4.md) is `crit-endo-v4`. Its status is draft |
 | Draft | A document that is not in force. The v4 criteria are still a draft |
 

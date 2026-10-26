@@ -61,7 +61,7 @@ You do five things, in this order:
 4. You write what the patient sees, where two pieces sit, the SMS line, and the mart clock.
 5. You answer two questions: who owns `referral.submitted`, and what a replay of `session.cancelled` does.
 
-At the end, one check runs. It loads the worker in `work/app` and the pages from the sprint, the states, the zones, the SMS, and the mart. A miss says the intake still polls, the replay booked again, or the wait number was used as truth. It does not name a field, a figure, or an owner.
+At the end, one check runs. It loads the worker in `work/app` and the pages from the sprint, the states, the zones, the SMS, and the mart. It also reads the two answers in `knowledge.md`. A miss says the intake still polls, the replay booked again, the wait number was used as truth, or the knowledge file does not name the owner. It does not print the extra field, the wait figure, or the owner id.
 
 ## The five parts, all yours
 

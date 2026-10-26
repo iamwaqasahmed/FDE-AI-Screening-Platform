@@ -60,7 +60,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | Request | What you will do next |
 | Fact | A sentence you can point at in a file in this folder |
 | System of record | The system that holds the fact. A number on a slide is not the system of record. The architect column in the memo is this name |
-| `ext-large` | The public-cloud model. [zones.md](packet/kickoff/world/zones.md) calls that place `zone-public`. The price key on the price sheet is `price.ext_large_per_1k` |
+| `ext-large` | The public-cloud model. [zones.md](packet/kickoff/world/zones.md) calls that place `zone-public`. Patient data stays off it. Day 1's unsigned ruling already says so. The price key on the price sheet is `price.ext_large_per_1k` |
 | `local-small` | The smaller local price on the same sheet. The key is `price.local_per_1k`. You need these two keys only if you fill the optional cost lines |
 
 ## Baselines
@@ -70,7 +70,7 @@ A baseline is the simple score a heavier method has to beat. Each script today i
 | Word | Meaning |
 | --- | --- |
 | Row split | In [dna.py](packet/baselines/dna.py), keep every row whose position is a multiple of 5. The same person can sit on both sides. The printed line starts with `row`. The memo does not use it |
-| Person split | Hold back the last 30 percent of the sorted person ids, and score only those people. A person is entirely in or entirely out. The printed line starts with `person`. The memo uses it |
+| Person split | Hold back the last 30 percent of the sorted person ids, and score only those people. A person is entirely in or entirely out. The printed line starts with `person`. On the practice file that line is `person 0.0000`. [Chapter 06](06-the-baselines.md) says why a zero is still the line the memo uses |
 | `prior_dna` | How many earlier missed visits are already on the row. The script guesses a miss when this value is at least 1 |
 | `did_not_attend` | `1` if the patient missed that visit, `0` if they came. This is the label the DNA score is checked against |
 | Keyword | The share of messages whose text contains the word status. The printed line starts with `keyword` |
@@ -103,6 +103,8 @@ You have the words the later chapters use.
 ## A plain reading
 
 The row split and the person split are the two DNA scores. The row split can place the same person on both sides. The person split cannot. In machine-learning practice that gap is called leakage: the score looks strong because the people you are scoring were already visible on the other side. The memo uses the person line. This page already says which line that is.
+
+On the practice file the person line is `0.0000`. That zero is the score, not a broken script. The split keeps the last 30 percent of the sorted person ids, `p16` through `p23`. On every row for those people, a guess from `prior_dna` does not match `did_not_attend`. The row line stays high because `p00` through `p15` match the rule, and the same person can sit on both sides of that split.
 
 The family words are the choice you write down. Join two with `+` only when the memo chapter says the problem needs both. Fine-tuning changes weights. Retrieval leaves the weights alone. `no-model` is a query, a rule, or a workflow. `blocked` means a person already owns the decision.
 

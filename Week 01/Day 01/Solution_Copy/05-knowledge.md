@@ -10,7 +10,7 @@ The users and the pilot gate are written out in [chapter 02](02-the-reading-and-
 
 ## What may a coding assistant be shown on this engagement?
 
-From [pol-assistant-use.md](sources/kickoff/corpus/pol-assistant-use.md): a coding assistant may be shown code we wrote, the tests, and the published assistant-use rule. Patient data, secrets, unpublished cluster documents, the sample referral letter, and the watermark in the dev credentials stay out of the prompt and out of `work/`.
+[pol-assistant-use.md](sources/kickoff/corpus/pol-assistant-use.md) says a coding assistant may be used, and it lists what stays out: patient data, secrets, unpublished cluster documents, the sample referral letter, and the watermark in the dev credentials. The morning chapter narrows what may be shown to code you wrote, the tests, and that published rule. The policy file does not itself name those three. The prohibitions are the policy. The allow-list is the chapter. Both belong in the answer.
 
 ## Zones
 

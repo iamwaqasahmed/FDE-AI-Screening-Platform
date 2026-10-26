@@ -104,7 +104,7 @@ You hold every part. Later chapters tell you how. You write the graded pieces in
 | Lead | Sequence the score, then the failures, then the workshop, and keep the workshop on evidence | [05](05-the-sprint.md) |
 | AI or data engineer | Score extraction, citation, and journey, forecast the later window, and name the failures, then the intervals and the experiment | [06](06-the-harness.md) and [08](08-the-advanced.md) |
 | Application engineer | Mark with the calibration label, reject a fluent wrong citation, and uncomment the evaluation gate | [07](07-the-gate.md) |
-| Product manager | Write the workshop notes from the seats and the dot-vote | [09](09-the-pages.md) |
+| Product manager | Write the workshop notes from the seats and the dot-vote. Do not copy a seat's wish that triage goes live | [09](09-the-pages.md) |
 | Architect | Record which failure is a design bug, and answer what a retrieval failure is and why a judge is calibrated | [09](09-the-pages.md) and [10](10-finish.md) |
 
 ## Words this folder uses

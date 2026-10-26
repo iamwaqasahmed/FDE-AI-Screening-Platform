@@ -43,7 +43,7 @@ A failed check prints `failed`, then one or more lines that start with a dash. T
 | What it prints | Where to go |
 | --- | --- |
 | `the calendar does not match` | [Chapter 06](06-the-calendar.md). The message does not name a date. Open the business calendar and the case list. Count Sunday through Thursday and skip the holiday list. Paste both blocks from chapter 06 again |
-| `the receipt test sleeps` | [Chapter 08](08-the-receipt.md). The shell test still waits. Paste `receipt.py` and `test_receipt.py` from chapter 08. The replacement blocks do not wait |
+| `the receipt test sleeps` | [Chapter 08](08-the-receipt.md). The letters `sleep` are in `receipt.py` or `test_receipt.py`, including inside a comment. The message does not mean the suite is still waiting. Paste both files again. The replacement blocks do not contain those letters |
 | `the suite accepted the receipt fault` | [Chapter 08](08-the-receipt.md). The receipt still treats every receipt as due. Paste `receipt.py` from chapter 08. The demo's second line is the switch |
 | `the receipt test does not match the clock` | [Chapter 08](08-the-receipt.md). Open `receipt.json` and read `minutes`. The test reads that field. Paste both receipt blocks again. The message does not name an interval or a delay |
 | `the reply schema is missing` | [Chapter 07](07-the-reply.md). A sentence with no intent still passes, or an empty sentence with intent fails. Paste `schema.py` and `test_schema.py` |

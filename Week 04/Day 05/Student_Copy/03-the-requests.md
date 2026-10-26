@@ -47,7 +47,9 @@ Files:
 - [warehouse/feed.jsonl](warehouse/feed.jsonl)
 ```
 
-That was a picture. Do not paste it. This file is done when the search finds `connected` and you have read that the contact center, the warehouse feed, and HR asked to be connected. Close the file. The next item is number 2.
+That was a picture. Do not paste it. The day-notes link in that file does not open. It points inside this student copy. You do not need it. This chapter is the lesson.
+
+This file is done when the search finds `connected` and you have read that the contact center, the warehouse feed, and HR asked to be connected. Close the file. The next item is number 2.
 
 2. Open [requests.json](packet/release/connect/requests.json). Search for `cc`.
 

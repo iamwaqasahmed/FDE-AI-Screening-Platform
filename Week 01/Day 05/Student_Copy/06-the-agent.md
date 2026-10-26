@@ -40,7 +40,9 @@ This is the Day 4 agent plus two failures. The first five steps of `respond` are
 
 `_timeout` runs when the offer does not return. The row's failure is `timeout`. Nothing is booked and SMS is not sent. A patient turn can return that row immediately, so a later turn cannot book after the timeout.
 
-`_offer` offers once per actor. A second request from the same actor does not offer again. When the slot is already taken, that actor is blocked and the walk continues, so the other actor can still book. `_coordinator` names `race-slot` on the actor whose offer was taken. One slot, two patients, one booking.
+`_offer` offers once per actor. A second request from the same actor does not offer again. When the slot is already taken, that actor is blocked and the walk continues, so the other actor can still book. The taken offer is still written on the trace. `_coordinator` names `race-slot` on the actor whose offer was taken. One slot, two patients, one booking.
+
+For `race-slot`, `tool_trace` is `slots.offer`, then `slots.book`, then `sms.send`, then `slots.offer` again. The last offer is the second patient, after the first booking and the SMS. `slots.book` appears once. Do not delete the second offer. A second `slots.book` is what the check calls booked twice. The message does not print the list.
 
 `schema.row` now carries `failure`. The starter schema had no such field. `reply` still keeps the count it is given, including an empty count when status was not called. Paste the schema block. It is not a picture.
 
@@ -517,7 +519,7 @@ This block replaces `work/agent/memory.py` only.
 
 `recall` returns the facts stored for that session, or an empty dict. `remember` keeps the facts on that session. `preference` returns the stored string when consent allows it, and returns an empty string when consent does not. The block below is the file the check runs. The packet copy of `memory.py` explains the starter, which keeps nothing.
 
-The first line of the block mentions Day 4 tests. Leave that line in. It is part of the file.
+The first line of the block says the Day 4 tests copy this file over a skeleton. That label is how the test suite finds the file. It does not change what `Memory` does. Leave the line in so the paste stays the file the check runs.
 
 ```text
 """Session store that keeps a session and honors consent. The Day 4 tests copy this over the skeleton.
@@ -616,7 +618,7 @@ On that object, read `failure`, `booked`, `tool_trace`, `citations`, and `refusa
 
 For `timeout`, `failure` is `timeout`, `booked` is false, and `tool_trace` is `slots.offer`. `slots.book` is not in that list.
 
-For `race-slot`, `failure` is `race-slot`, `booked` is true, `slots.book` appears once, and `sms.send` appears once.
+For `race-slot`, `failure` is `race-slot`, `booked` is true, and `tool_trace` is `slots.offer`, `slots.book`, `sms.send`, `slots.offer`. The last offer is the second patient. `slots.book` appears once, and `sms.send` appears once. Leave that second offer in the trace.
 
 For `emergency`, `tool_trace` is `safety.redirect`, `citations` includes `pol-clinical-safety`, `redirected` is true, `refusal_logged` is true, and `booked` is false.
 

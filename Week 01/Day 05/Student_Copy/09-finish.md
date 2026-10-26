@@ -1,6 +1,6 @@
 # 09 — Finish
 
-The checks grade the agent, the trace it writes when they run it, the architecture, the design, the readout, the trace note, and the shape of the knowledge file. They run the agent again. A trace you typed by hand is not the trace they grade. The sentences in `knowledge.md` are still part of done. The trainer reads them. The design check only checks that both answers are there.
+The checks grade the agent, the trace it writes when they run it, the architecture, the design, the readout, the trace note, and the shape of the knowledge file. They run the agent again. A trace you typed by hand is not the trace they grade. The sentences in `knowledge.md` are still part of done. The trainer reads them. The design check grades the diagram, the urgency section, and the stage-2 facts. On `knowledge.md` it only requires two numbered lines with a word after the number. It does not grade those sentences.
 
 Use the failure table at the bottom only when a check fails. It is not more work.
 

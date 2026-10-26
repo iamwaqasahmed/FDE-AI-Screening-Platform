@@ -16,7 +16,7 @@ Stay on the list until item 10. Then run the demo, then the two interviews. Fini
 
    There is no picture of this file. There is no block under this item. A picture would copy a date.
 
-   This file is done when the search finds `site-b` and you have read that site-b is the second private-cloud site. Do not copy the date. Close the file. The next item is number 2.
+   This file is done when the search finds `site-b` and you have read that site-b is the second private-cloud site. Do not copy the date. The day-notes link in that file does not open. You do not need it. Close the file. The next item is number 2.
 
 2. Open [site-a.json](packet/release/drill/site-a.json). Search for `killed`.
 

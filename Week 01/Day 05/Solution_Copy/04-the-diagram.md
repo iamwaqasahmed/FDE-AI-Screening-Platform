@@ -31,7 +31,7 @@ The table keeps the columns `topic`, `what is still open`, and `citation`.
 | topic | what is still open | where it sits |
 | --- | --- | --- |
 | residency | Patient data stays off ext-large | [zones.md](sources/kickoff/world/zones.md) names `ext-large` on `zone-public`. The cell cites `dpo` |
-| identity | Duplicate rows and a split identity on p-waitlist | [problems.md](sources/carried/problems.md) names `p-waitlist`. The cell cites `ea` |
+| identity | Duplicate rows and a split identity on p-waitlist | [problems.md](sources/carried/problems.md) names `p-waitlist` and does not say duplicate or split. The cell cites that register. Duplicate and split are the open item, not a sentence from the register. [ea.md](sources/kickoff/personas/ea.md) supports the hospital row, not this one. The check looks for `p-waitlist`, `split`, or `duplicate`. It does not match the citation to her card |
 | criteria | The v4 criteria are still a draft | [crit-endo-v4.md](sources/carried/criteria/crit-endo-v4.md) says draft. The cell cites `crit-endo-v4` |
 | hospital | h-ain has no live slot API | [pol-sla.md](sources/carried/policy/pol-sla.md) says `h-ain` has no slot API. [ea.md](sources/kickoff/personas/ea.md) will not promise a live slot where none exists. The cell cites `ea` |
 

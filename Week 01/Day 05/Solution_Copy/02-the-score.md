@@ -22,7 +22,7 @@ The finished agent follows the approval policy, and it names the two new failure
 | `consent` | The stored preference is not applied. No tools run | |
 | `reason` | The offer names the constraint. Nothing is booked | |
 | `timeout` | `slots.offer` returns no slot. Nothing is booked. The reply says the offer did not return | `timeout` |
-| `race-slot` | Two patients are offered one slot. `slots.book` runs once, then SMS. The second offer is taken. The refusal is logged. `decisions` is 2 | `race-slot` |
+| `race-slot` | Two patients are offered one slot. `tool_trace` is `slots.offer`, `slots.book`, `sms.send`, `slots.offer`. The last offer is the second patient, after the SMS, and it is taken. `slots.book` runs once. The refusal is logged. `decisions` is 2 | `race-slot` |
 
 `status`, `injection`, `resume`, and `memory` carry the tool count. The starter wrote 12. The check says the count does not match the tool and does not print the number.
 

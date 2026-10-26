@@ -8,7 +8,7 @@ The tool list names the six catalog tools. `referral.status` is the one the chec
 
 The privilege boundary says the extractor reads the letter and does not hold the book tool or the message tool. A second agent is worth its tokens when a letter would otherwise be able to book. Status stays one agent and one tool, `referral.status`.
 
-The refusal is the sentence the patient sees: a coordinator will answer, and this visit is not booked. It covers a rejection, a constraint, and a stored preference that cannot be reused.
+The refusal in the note is the product decision: a coordinator will answer, and this visit is not booked. It covers a rejection, a constraint, and a stored preference that cannot be reused. The trace stores a different sentence on each of those rows. Status and reject say `Done.` Emergency says `A person will take this from here.` Consent says `Say what you need for this visit.` Reason says `No slot meets the constraint.` The check reads the note for a refusal of at least three words. It does not compare the note with those trace texts.
 
 The checks look for `referral.status` in the tool list, for the word extract and the word book or the word message in the privilege boundary, and for a refusal of at least three words.
 

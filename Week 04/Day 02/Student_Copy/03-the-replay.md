@@ -35,6 +35,8 @@ Files:
 - [templates/runbook.md](templates/runbook.md)
 ```
 
+The day-notes link in that file does not open. It points inside this student copy. You do not need it. This chapter is the lesson.
+
 This file is done when the search finds `circ-ramadan-hours` and you have read the case date. Close the file. The next item is number 2.
 
 2. Open [note.md](packet/release/replay/note.md). Search for `flat`. The next block is a picture of that file. Do not paste it. This block replaces nothing.

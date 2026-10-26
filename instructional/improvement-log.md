@@ -69,6 +69,52 @@ A later pass walked Week 3 as a student who had just sequenced Ain. The days wer
 
 A later pass walked Week 4 as a student who had just written the requirements brief. The days were already in order, and the last page already says the rehearsal ends. The stalls were a sentence that sent the reader to the first paste and skipped How the replacement works, a finish-page recovery that treated a terminal inside `work/` as if it were already inside `problem_simulation`, and a site-drill sentence that said the shell placed the healthy site. The shell places only `site-a`, which is down. Those sentences were corrected. Paste blocks and check commands were left as they were.
 
+## Week 1 learner-audit pass
+
+A sequential read of Week 1 found stalls that were wrong pointers or recovery text, not a different assignment. Paste blocks, check commands, packet files, and Python were left as they were.
+
+| Day | What the page now says |
+| --- | --- |
+| 1 | Twelve people and a twelve-question cap are separate. The fact row is not in the interview output. The two banned note sentences are named, and a claim row does not hide them. `status: in_force` with an empty site is still in force. The solution knowledge chapter no longer attributes the allow-list to the policy file. |
+| 2 | `person 0.0000` is the score for `p16` through `p23`, not a broken script. `510000` stays on `p-waitlist` because `p-bounce` already uses `filled 5`. The brief's banned sentences are listed. |
+| 3 | The letters name hospitals and do not print `h-wadi` or `h-ain`. `Your answer` can pass the knowledge check. The human-step miss is `intake.md`, not a diagram. |
+| 4 | Retention has no scenario field. `cannot breathe` is on the list and in no scenario. |
+| 5 | `replay`, `resume`, and `reject` are in `ds-agent.jsonl`. The race-slot trace keeps a second `slots.offer` after the SMS. The identity citation `ea` is not on her card, and the check does not require it to be. The unsigned ruling is not on the Day 5 card. |
+
+## Week 2 learner-audit pass
+
+The Week 1 pass left Week 2's paste blocks in place. This pass corrected explanations that disagreed with the checkers.
+
+| Day | What the page now says |
+| --- | --- |
+| 1 | `nid` is the identity note's short name for a national id. The status check runs the other app modules. It does not compare bytes. "Replace the client" is a command. |
+| 2 | A stored `letter` and a copied webhook file are the two watermark causes. `an unknown field was stored` is the extra key, not `letter`. `rebooked` is what the patient sees. The worker stores `notified`. The namespace file does not print `zone-private`. |
+| 3 | The letters `sleep` anywhere in the receipt files fail the check, including a comment. A line of dashes can sit above `Ran 6 tests`. |
+| 5 | `booked` on the live-slot line is the fault, and the same journey message covers a wrong return on any of the three calls. The pasted contract test does not open the pack file. The check does. |
+
+## Week 3 learner-audit pass
+
+Paste blocks stayed. The explanations that pointed at the wrong field were corrected.
+
+| Day | What the page now says |
+| --- | --- |
+| 2 | The score called F1 is the share of fields that match. |
+| 3 | `criteria` does not read site. Site is the booking conflict, where the cluster window wins. The suite is eleven test files and `Ran 14 tests`. |
+| 4 | A seat's wish that triage goes live is not copied into the workshop notes. |
+| 5 | The label price is `cost.label` in the price sheet. The `price` key in `labels.json` is a different number. The personal lab has a How the replacement works section. |
+
+## Week 4 learner-audit pass
+
+Paste blocks and packet files stayed. The release README links that do not open were left in the client file. The chapters now say not to follow them.
+
+| Day | What the page now says |
+| --- | --- |
+| 1 | A log list that contains the person becomes one redacted row, including other people's rows. On this file the district spread and the insurance spread are the same number. `stamp_rate` counts every approval row, not Thursday only. |
+| 2 | `the alert is outside the SLO` wants the alert span's timestamp. That time is already inside the five-minute window. Do not move it. `the dashboard only has CPU` is also a wrong latency, error, or tool-failure number. |
+| 3 | `the batch is on ext-large` can be the first phi row, `chat-1`, which is a chat row. |
+| 4 | A rent sentence on knowledge line 1, with line 2 empty, is the rent miss. There is no separate two-answer miss. |
+| 5 | `the roadmap starts with p-triage` is the function or the Roadmap heading, not the Ranking sentence that names `p-triage` and then rejects that ranking. `Ran 8 tests` after `prepare_work.py` is the shell again. Weeks 5 and 6 are named in the course guide. The case folder says the later project is a different client. |
+
 ## References added
 
 Internal links only: earlier and later student copies, the words pages, the course guide, the concept index, and the optional review. No new external URL. The Python, Git, and clone links already in chapter 01 were left as written and were not re-fetched in this pass.

@@ -37,6 +37,8 @@ Copy every line inside the block, including the lines that begin with three back
 
 After you save, search the file for `Coordinator` and for `zone-hospital`. Both have to be there. If `Coordinator` is missing, paste the block again.
 
+Then open the preview of `work/architecture.md`. In Cursor and VS Code the preview is the icon at the top right of the editor, or Ctrl+Shift+V. You should see `referral.submitted` flowing to `wf-intake`, and the patient flowing to `wf-self-service`, with Coordinator between that service and `slots.book`. The check does not open the preview. It looks for the word Coordinator in the diagram section. The preview is how you know the inner fence survived the paste. If the preview shows the diagram words as an ordinary paragraph and no boxes, the three-backtick lines were dropped. Paste the block again from this chapter file.
+
 This block replaces `work/architecture.md` only.
 
 ````text
@@ -87,9 +89,11 @@ The four cells below are for reading. Do not paste this table into the file. The
 | topic | what is still open | citation |
 | --- | --- | --- |
 | residency | Patient data stays off ext-large. [zones.md](packet/kickoff/world/zones.md) names that model on `zone-public`. [dpo.md](packet/kickoff/personas/dpo.md) keeps patient data in the private cloud. | dpo |
-| identity | Duplicate rows and a split identity on p-waitlist. [problems.md](packet/carried/problems.md) names `p-waitlist`. | ea |
+| identity | Duplicate rows and a split identity on p-waitlist. [problems.md](packet/carried/problems.md) names `p-waitlist`. It does not say duplicate or split. | problems.md |
 | criteria | The v4 criteria are still a draft. [crit-endo-v4.md](packet/carried/criteria/crit-endo-v4.md) says draft. | crit-endo-v4 |
 | hospital | h-ain has no live slot API. [pol-sla.md](packet/carried/policy/pol-sla.md) says `h-ain` has no slot API. [ea.md](packet/kickoff/personas/ea.md) will not promise a live slot where none exists. | ea |
+
+The identity citation in the paste is `problems.md`. That register names `p-waitlist`. It does not say duplicate or split. Those two words are the open item, not a sentence from the register. [ea.md](packet/kickoff/personas/ea.md) does not say duplicate rows either. Her card supports the hospital row, and that row cites `ea`. The check looks for `p-waitlist`, `split`, or `duplicate` in the identity cell. It does not check the citation against her card.
 
 The approach uses `p-status`, `p-clock`, `p-slots`, and `p-waitlist` from [problems.md](packet/carried/problems.md). It cites `cdo` and `pol-approval`. What this proof will not build is `p-triage`. A clinician assigns every clinical urgency.
 
@@ -115,7 +119,7 @@ This proof will not build `p-triage`. A clinician assigns every clinical urgency
 | topic | what is still open | citation |
 | --- | --- | --- |
 | residency | Patient data stays off ext-large. | dpo |
-| identity | Duplicate rows and a split identity on p-waitlist. | ea |
+| identity | Duplicate rows and a split identity on p-waitlist. | problems.md |
 | criteria | The v4 criteria are still a draft. | crit-endo-v4 |
 | hospital | h-ain has no live slot API. | ea |
 

@@ -16,7 +16,7 @@ Stay on the list until item 9. Then run the demo, then the two interviews. Finis
 
    There is no picture of this file. There is no block under this item. A picture would copy the rate.
 
-   This file is done when the search finds `p-forecast` and you have read that today's price replaces yesterday's `price.ext_large_per_1k`. Do not copy the rate. Close the file. The next item is number 2.
+   This file is done when the search finds `p-forecast` and you have read that today's price replaces yesterday's `price.ext_large_per_1k`. Do not copy the rate. The day-notes link in that file does not open. You do not need it. Close the file. The next item is number 2.
 
 2. Open [p-forecast.json](packet/release/forecast/p-forecast.json). Search for `eye-screening`.
 

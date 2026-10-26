@@ -1,6 +1,6 @@
 # 08 — Finish
 
-The checks grade the agent, the trace it writes when they run it, the agent note, and the shape of the knowledge file. They run the agent again. A trace you typed by hand is not the trace they grade. The sentences in `knowledge.md` are still part of done. The trainer reads them. The checks only check that both answers are there.
+The checks grade the agent, the trace it writes when they run it, the agent note, and the shape of the knowledge file. They run the agent again. A trace you typed by hand is not the trace they grade. The sentences in `knowledge.md` are still part of done. The trainer reads them. On that file the checks only require two numbered lines with a word after the number. They do not grade those sentences.
 
 Use the failure table at the bottom only when a check fails. It is not more work.
 

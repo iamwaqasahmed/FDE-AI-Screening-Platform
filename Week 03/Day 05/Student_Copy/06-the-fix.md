@@ -20,7 +20,7 @@ Do not run a check on this page. The checks are only in [chapter 10](10-finish.m
 
 You are reading. You are not pasting yet. Open these in the packet. Read the comment at the top of each one. Do not edit them.
 
-Open [before.jsonl](packet/release/slices/before.jsonl). Search for `hours-c1`. That file has outputs and no label field. One row uses a document id that is not in force. Open [prices.csv](packet/release/finance/prices.csv). Search for `cost.label`. Read the sar from the file. Do not copy that amount onto this page. Open [labels.json](packet/release/budget/labels.json). Search for `price`. Do not copy the numbers onto this page. The three blocks below are pictures. The first paste is the heading Replace the repair, further down.
+Open [before.jsonl](packet/release/slices/before.jsonl). Search for `hours-c1`. That file has outputs and no label field. One row uses a document id that is not in force. Open [prices.csv](packet/release/finance/prices.csv). Search for `cost.label`. The `sar` on that row is the label price the grader passes into `spend`. On the practice sheet that sar is 3. Open [labels.json](packet/release/budget/labels.json). `sar` on that file is the budget. On the practice file it is 6. The key `price` on that same file is a different number. It is 2. It is not the label price. Do not copy any of those amounts into `cost.py`. `spend` multiplies the arguments it is given. The three blocks below are pictures. The first paste is the heading Replace the repair, further down.
 
 1. [repair.py](packet/app/repair.py). Search for `Leave every citation`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/repair.py](work/app/repair.py) is under the Replace heading for this file.
 
@@ -121,7 +121,7 @@ One repair, then the same slice scored twice.
 
 `remeasure` scores the slice before that repair and after it. A hit is the same document id and the same span. The label stays the grader's label. An empty slice scores zero. The second number has to move, because a requirements story that claims an improvement without a second measurement is not this chapter.
 
-`spend` multiplies the label count by the label price. A product above the budget is not priced. The improvement plan has to be able to say what the fix cost.
+`spend` multiplies the label count by the label price it is given. That price is the `sar` on `cost.label`, not the `price` key in `labels.json`. The budget argument is the `sar` in `labels.json`. A product above that budget is not priced. Typing `2` into this function, because that key says `price`, misses the price sheet. The improvement plan has to be able to say what the fix cost.
 
 Before you paste, say which id `repair` is allowed to change, and what the two numbers from `remeasure` are.
 

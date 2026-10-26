@@ -55,6 +55,8 @@ Leave the packet copy of `client.py` unchanged. The next command replaces the co
 
 ## Replace the client
 
+The heading starts with Replace. This one is the exception. The block under it is a command. Do not paste the command into `client.py`.
+
 The demo window is inside `problem_simulation`. Do not run the next command there. Close it, or leave it and open a new terminal in the course folder, the same way as chapter 01. In the new window, run `dir`. You should see `problem_simulation` and `Week 02`. If you see `alwaha` and `tests` instead, this window is still inside `problem_simulation`. Close it and open the terminal from the course folder.
 
 This command does not use `cd`. It runs the generator that chapter 01 copied into `work/app`, and it points `--spec` at the packet. The generator writes `client.py` beside itself. That is `work/app/client.py`. This block is the command, not a file you paste.
@@ -67,7 +69,7 @@ A successful run prints no line of its own. The prompt comes back, and there is 
 
 If the terminal says `can't open file` or `No such file or directory`, the window is not the course folder, or chapter 01 has not created `work/` yet. Open a terminal in the course folder. If `Week 02/Day 01/Student_Copy/work` is missing, run the prepare command from chapter 01, paste the three pages again from chapters 05 and 06, then run this command again.
 
-Leave every other file under `work/app` as the copy from the packet. The checks compare those files with the packet. [his.py](packet/app/his.py) accepts the generated body. [contract.py](packet/app/contract.py) answers with the status tool and refuses a book call. [session.py](packet/app/session.py) writes the row. [auth.py](packet/app/auth.py) chooses chat or console.
+Leave every other file under `work/app` as the copy from the packet. The checks import those modules and run them. They do not compare the file bytes with the packet. A comment you add can still pass. A broken helper in one of those files can still fail. [his.py](packet/app/his.py) accepts the generated body. [contract.py](packet/app/contract.py) answers with the status tool and refuses a book call. [session.py](packet/app/session.py) writes the row. [auth.py](packet/app/auth.py) chooses chat or console.
 
 ## Write the trace
 

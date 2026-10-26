@@ -44,7 +44,7 @@ You do four things, in this order:
 3. You keep the scenario log the worker writes, and you write a one-page intake note.
 4. You answer two questions: which clock starts an SLA, and what a second delivery of the same event should do.
 
-At the end, one check runs the worker again and reads the intake note and the knowledge file. The trainer reads the sentences in `knowledge.md`. The check only checks that both answers are there.
+At the end, one check runs the worker again and reads the intake note and the knowledge file. The trainer reads the sentences in `knowledge.md`. On that file the check only requires two numbered lines with a word after the number. It does not grade those sentences. It does grade the worker and the note.
 
 ## The five parts, all yours
 

@@ -51,7 +51,7 @@ Open [intake.jsonl](packet/release/events/intake.jsonl). Read it where it sits.
 Each line is one event. The line is long. The names in quotes are the fields. Search the file. In most editors the search box is Ctrl+F. On macOS it is Command+F. Type the text below, including the quotes, and press Enter.
 
 1. Search for `"scenario": "replay"`. Two lines. Read `event_id` on each line. It is the same id. That is a second delivery. A second delivery changes nothing.
-2. Search for `"scenario": "order"`. Two lines, one referral, two sequences. The higher `sequence` is the earlier of the two lines. Its letter names Wadi Specialist Hospital. The lower `sequence` is the later line. Its letter names Ain Diabetes and Eye Center. Keep the higher sequence. The clock uses the date on the lower sequence. That date is the ten characters of `occurred_at` before the letter T.
+2. Search for `"scenario": "order"`. Two lines, one referral, two sequences. The higher `sequence` is the earlier of the two lines. Its letter names Wadi Specialist Hospital. The lower `sequence` is the later line. Its letter names Ain Diabetes and Eye Center. Keep the higher sequence. The clock uses the date on the lower sequence. That date is the ten characters of `occurred_at` before the letter T. Both of those timestamps fall on 2027-01-12, so the due date will not show which sequence started the clock. The facility will. The higher sequence names Wadi, so the row's facility is `h-wadi`.
 3. Search for `"scenario": "ain"`. One line. The letter names Ain Diabetes and Eye Center and no other hospital.
 
 The other lines are one referral, one sequence, and Wadi Specialist Hospital. You will match the duplicate in the next section, after the open-referrals file is open.

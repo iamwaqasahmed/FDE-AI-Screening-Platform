@@ -24,7 +24,8 @@ def main(argv: list[str] | None = None) -> None:
         # Stop before any question is asked, and list the names the loader actually has.
         known = ", ".join(sorted(personas))
         raise SystemExit(f"Unknown persona {args.persona}. Known personas: {known}.")
-    questions = Path(args.script).read_text(encoding="utf-8").splitlines()
+    # utf-8-sig drops a byte-order mark. A Notepad save otherwise glues that mark to question 1, and a Windows console then crashes before any answer is printed.
+    questions = Path(args.script).read_text(encoding="utf-8-sig").splitlines()
     for number, turn in enumerate(run(personas[args.persona], questions), start=1):
         print(f"Q{number}: {turn['question']}")
         print(f"A: {turn['answer']}")

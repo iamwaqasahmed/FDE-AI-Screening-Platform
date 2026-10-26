@@ -60,14 +60,14 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 
 ## The hospitals and the systems
 
-[zones.md](packet/kickoff/world/zones.md) is the map. Today's letters use two of the facility ids. The clinic catalog uses one.
+[zones.md](packet/kickoff/world/zones.md) is the map. Today's letters use the hospital names. They do not print the facility ids. This table is the map. A search of the letters for `h-wadi` finds nothing. The clinic catalog uses one id.
 
 | Id | Meaning |
 | --- | --- |
 | `h-nakhl` | Nakhl General Hospital, in `zone-hospital` |
 | `h-safra` | Safra General Hospital, in `zone-hospital` |
-| `h-wadi` | Wadi Specialist Hospital, in `zone-private`. The letters that say Wadi Specialist Hospital use this id. [clinics.csv](packet/release/catalog/clinics.csv) has its endocrinology clinic |
-| `h-ain` | Ain Diabetes and Eye Center, in `zone-hospital`. [pol-sla.md](packet/release/policy/pol-sla.md) says it has no slot API in this release. A hold or a booking there returns queued. Do not hold and do not book |
+| `h-wadi` | Wadi Specialist Hospital, in `zone-private`. A letter that says Wadi Specialist Hospital means this id. The letter does not print the id. [clinics.csv](packet/release/catalog/clinics.csv) has its endocrinology clinic |
+| `h-ain` | Ain Diabetes and Eye Center, in `zone-hospital`. A letter that says Ain Diabetes and Eye Center means this id. The letter does not print the id. [pol-sla.md](packet/release/policy/pol-sla.md) says it has no slot API in this release. A hold or a booking there returns queued. Do not hold and do not book |
 | `phc-nakhl-01` | Nakhl Central PHC, a primary health care center |
 | `phc-safra-03` | Safra South PHC, a primary health care center |
 | `phc-wadi-02` | Wadi Family PHC, a primary health care center |

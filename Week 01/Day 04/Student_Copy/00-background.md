@@ -48,7 +48,7 @@ You do four things, in this order:
 3. You keep the trace the runner writes, and you write a one-page agent note.
 4. You answer two questions: when a second agent is worth its tokens, and what must be true before a slot is booked.
 
-At the end, two checks run the agent again and read the agent note and the knowledge file. The trainer reads the sentences in `knowledge.md`. The checks only check that both answers are there.
+At the end, two checks run the agent again and read the agent note and the knowledge file. The trainer reads the sentences in `knowledge.md`. On that file the checks only require two numbered lines with a word after the number. They do not grade those sentences. They do grade the trace and the note.
 
 ## The five parts, all yours
 

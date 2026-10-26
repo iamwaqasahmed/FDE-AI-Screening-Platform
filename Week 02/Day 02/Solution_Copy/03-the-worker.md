@@ -2,7 +2,7 @@
 
 This is the intake and the cancellation worker from the morning. Open [intake.py](work/app/intake.py) and [cancel.py](work/app/cancel.py) and put them beside yours.
 
-Every other file under `work/app` matches the starter. The check compares those bytes. `intake.py`, `cancel.py`, and `mart.py` are the three that differ. `mart.py` is explained in [chapter 05](05-the-mart.md).
+Every other file under `work/app` matches the starter. The check imports those modules and calls them. It does not compare the bytes. `intake.py`, `cancel.py`, and `mart.py` are the three that differ. `mart.py` is explained in [chapter 05](05-the-mart.md).
 
 ## Intake
 

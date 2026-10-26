@@ -40,7 +40,7 @@ Open [work/benchmark.md](work/benchmark.md). Search inside that file, not inside
 
 Chapter 01 copied [workshop.md](packet/templates/workshop.md) to [work/workshop.md](work/workshop.md). The full path is `Week 03/Day 04/Student_Copy/work/workshop.md`. This block replaces the whole file. It does not replace the template in `packet/templates`. This block has no pipe table.
 
-Open [seats.md](packet/release/workshop/seats.md) and [dot-vote.json](packet/release/workshop/dot-vote.json). The seat ids are whole ids. The dot-vote ranks `p-triage` first. The file writes the second id as `vendor-bot`. The notes you paste say `the vendor bot`. Leave that sentence as it is. That ranking is not the value model.
+Open [seats.md](packet/release/workshop/seats.md) and [dot-vote.json](packet/release/workshop/dot-vote.json). The seat ids are whole ids. A seat can wish that the virtual front desk, including triage, goes live before Ramadan. Do not copy that wish into the notes. The check fails if the notes say triage is in scope, triage is already approved, the assistant may set clinical urgency, the assistant sets clinical urgency, or the external model may receive identified patient data. The dot-vote ranks `p-triage` first. The file writes the second id as `vendor-bot`. The notes you paste say `the vendor bot`. Leave that sentence as it is. That ranking is not the value model.
 
 1. Open the work file named under this heading, [work/workshop.md](work/workshop.md). The path contains `Student_Copy\work`. On macOS it shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy.
 2. Select the whole file. Ctrl+A on Windows, Command+A on macOS. Delete it.

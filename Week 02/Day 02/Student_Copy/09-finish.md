@@ -47,12 +47,12 @@ A failed check can print more than one line. Fix every line, then run the comman
 | `can't open file` or `No such file or directory` on `run.py` | That window is not the course folder. [Chapter 06](06-the-worker.md). Run `dir`. You should see `problem_simulation` and `Week 02` |
 | `Build rel-w2d2 first.` | [Chapter 01](01-setup.md). Run the build again with `--profile practice` and `--release rel-w2d2` |
 | `journey needs --release rel-w2d1, rel-w2d2, or rel-w2d5.` | Add `--release rel-w2d2` to the journey command above |
-| `a watermarked sample is in the work directory` | Delete the webhook file from `work/`. It stays in [packet/release/webhooks](packet/release/webhooks/referral.submitted.json). The message does not print the watermark |
+| `a watermarked sample is in the work directory` | Two causes, and the message does not say which. If a copy of [referral.submitted.json](packet/release/webhooks/referral.submitted.json) is under `work/`, delete that copy. Leave the original in the packet. If that file is not under `work/`, the intake record stored `letter`. The letter value is the watermark. Paste `intake.py` again from [chapter 06](06-the-worker.md). The record leaves `letter` off. The message does not print the watermark |
 | `the worker is missing` | [Chapter 01](01-setup.md). Run `prepare_work.py` again, then repeat chapters 05, 06, 07, and 08 |
 | `the worker did not run` | [Chapter 06](06-the-worker.md). Restore the shell with `prepare_work.py`, paste the pages and the three Python files again, and run `run.py` again |
 | `intake still polls` | [Chapter 06](06-the-worker.md). Paste `intake.py` again. The shell still returns poll. The message does not name a field |
 | `an unknown field stopped intake` | [Chapter 06](06-the-worker.md). Paste `intake.py` again. A key the registry does not list is ignored. The event is not rejected. The message does not name the field |
-| `an unknown field was stored` | [Chapter 06](06-the-worker.md). Paste `intake.py` again. The record keeps the listed fields and leaves `letter` off. The message does not name the field |
+| `an unknown field was stored` | [Chapter 06](06-the-worker.md). Paste `intake.py` again. The webhook has one key that [topics.md](packet/release/registry/topics.md) does not list. That key was copied onto the record. The message does not name the key. It is not `letter`. `letter` is on the list, and the record still leaves it off because its value is the watermark |
 | `the referral was not recorded` | [Chapter 06](06-the-worker.md). `referral_id` is copied from the fields the registry kept |
 | `replay booked again` | [Chapter 06](06-the-worker.md). Paste `cancel.py` again. A repeated event id returns the stored row |
 | `the hold was left open` | [Chapter 06](06-the-worker.md). Paste `cancel.py` again. A rejected receipt releases the hold and books nothing |

@@ -51,7 +51,7 @@ Two patients are offered one slot. `slots.book` runs once. SMS runs once. The se
 
 Open [chapter 05](05-the-readout.md) beside their `readout.md`.
 
-The deadline is a purchase that takes 16 weeks, cited `cdo`. The public card still says the front desk, including triage, goes live before Ramadan. That sentence is a claim. The demo prints the claim and does not print the lead time. The check says `the readout does not answer the deadline` and does not print the number.
+The deadline is a purchase that takes 16 weeks, cited `cdo`. The public card still says the front desk, including triage, goes live before Ramadan. That sentence is a claim. The demo prints the claim and does not print the lead time. Chapter 08 of the student copy has them interview `cdo` before the paste. The second answer is the 16 weeks. No kickoff file contains that number, so it stays a claim. The check says `the readout does not answer the deadline` and does not print the number.
 
 Patient data stays off `ext-large` and on the private cloud, cited `dpo`. The ruling stays open until it is signed. The note in `work/interviews` is yours. Students were not asked to write it.
 

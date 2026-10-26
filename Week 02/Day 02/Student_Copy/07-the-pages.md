@@ -34,7 +34,7 @@ If the paste lands as one long line, or a column is missing, select the whole fi
 | escalated | A person will call |
 ```
 
-`rebooked` is the moved session, the same news the SMS sentence carries. `notified` is the row the worker stores when the text is accepted. `compensated` is the row it stores when the receipt is rejected and the hold is released. `escalated` is the row it stores when `slot` is false, and a person calls.
+`rebooked` is what the patient is told: the session moved. You will not find `rebooked` in the trace. The worker stores `notified` when the text is accepted. `compensated` is the row it stores when the receipt is rejected and the hold is released. `escalated` is the row it stores when `slot` is false, and a person calls. The states page still names all four, because those are the words the patient can see.
 
 The check looks for those four states, and for a sentence in the second column of each row. It does not name the state when one is missing.
 
@@ -53,7 +53,7 @@ Open `work/zones.md`. Select the whole file. Delete it. Copy the lines inside th
 | wf-session-cancelled | zone-private |
 ```
 
-The engine follows `h-nakhl` and `h-safra`, which the zones page places in `zone-hospital`. The worker follows `h-wadi` and the dev namespace, which sit in `zone-private`.
+The engine follows `h-nakhl` and `h-safra`. [zones.md](packet/kickoff/world/zones.md) places those hospitals in `zone-hospital`. The worker is the container named `wf-session-cancelled` in [namespace.yaml](packet/deploy/namespace.yaml). That file does not print a zone. It sits beside `h-wadi`, and the zones page places `h-wadi` in `zone-private`, so the worker row is `zone-private`.
 
 The check looks for `int-engine` in `zone-hospital`, and for a row in `zone-private`. It does not name the piece when a row is missing.
 

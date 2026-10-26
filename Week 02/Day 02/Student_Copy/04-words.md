@@ -43,7 +43,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | `zone-private` | The private cloud. `h-wadi` sits here. Week 2 ends with the assistant deployed here. Today you do not deploy |
 | `zone-public` | The public cloud. The zones page names it. Today's two pieces are not placed there |
 | `wf-session-cancelled` | The worker for a cancelled clinic session. [namespace.yaml](packet/deploy/namespace.yaml) names it beside chat and the console. [compose.yaml](packet/compose.yaml) is the laptop stand-in |
-| `rebooked` | The patient sees that the session moved to a new time |
+| `rebooked` | The patient sees that the session moved to a new time. The worker does not store this word. An accepted text is stored as `notified` |
 | `notified` | The patient sees a message that names the booking |
 | `compensated` | The patient sees that the new hold was released |
 | `escalated` | The patient sees that a person will call |

@@ -8,7 +8,7 @@ The cluster runs three hospitals, a diabetes and eye center, and about 24 primar
 
 Your engagement opens on 10 January 2027. The cluster's weekend is Friday and Saturday. A few weeks after these four weeks, Ramadan begins, and the cluster will change its clinic hours.
 
-You are on patient access: referrals, appointments, reminders, and the contact center.
+You are on patient access: referrals, appointments, reminders, and the contact center. Those four words name the work. The people are the patients, the staff in the contact center, the coordinators who handle referrals now, and the primary-care clinicians who send the referrals. [Chapter 05](05-the-kickoff.md) asks you to write those people on the worksheet. "Every hospital" is how far the wish reaches. It is not a person.
 
 ## The ask
 

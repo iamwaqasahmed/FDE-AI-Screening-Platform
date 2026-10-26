@@ -21,7 +21,7 @@ The worksheets stay in `notes/`. The scan reads `work/`, so leave the worksheets
    - which gate you are in today
    - one thing that document requires before anyone calls the work a pilot
 
-   This file does not name the sponsor or the users. The sponsor is the person whose sentence you copied in [chapter 03](03-the-client.md). The users are the people that chapter put on patient access: referrals, appointments, reminders, and the contact center.
+   This file does not name the sponsor or the users. The sponsor is Layla Al-Harbi, the person whose sentence you copied in [chapter 03](03-the-client.md). The users are people. Name these three groups: patients who need a booking, a reschedule, an answer, or a referral chased; the contact-center staff and the coordinators who do that work now; and the primary-care clinicians who send referrals. Referrals, appointments, reminders, and the contact center are the work those people do. They are not the users.
 
    Match your day to the list. You can name a problem, the users, and a sponsor. You do not have a risk class, a personal-data assessment (the file calls that a DPIA), or a pilot approval. The gate in front of you is the list item that asks only for the problem, the users, and the sponsor. Write that item's code, G0 or whichever code the file prints on that line.
 

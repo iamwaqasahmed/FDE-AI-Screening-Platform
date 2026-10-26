@@ -86,7 +86,7 @@ def interview_problems(work: Path, personas: dict[str, dict]) -> list[str]:
         if not notes_path.is_file():
             problems.append(f"missing notes for {persona_id}")
             continue
-        result = score_turns(data, run(data, script.read_text(encoding="utf-8").splitlines()))
+        result = score_turns(data, run(data, script.read_text(encoding="utf-8-sig").splitlines()))
         # An incomplete interview is reported without printing the fact that failed to surface.
         if not result["ok"]:
             problems.append(f"{persona_id} interview is incomplete")

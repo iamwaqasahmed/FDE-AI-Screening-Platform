@@ -6,7 +6,7 @@
 
 The board has named a date just before Ramadan. That date assumes a purchase that takes 16 weeks. The citation is `cdo`.
 
-[cdo.md](sources/kickoff/personas/cdo.md) says the virtual front desk, including triage, goes live before Ramadan. That sentence is a claim. It is not this answer. The demo that prints the claim does not print the lead time. The check says `the readout does not answer the deadline` and does not print the number of weeks.
+[cdo.md](sources/kickoff/personas/cdo.md) says the virtual front desk, including triage, goes live before Ramadan. That sentence is a claim. It is not this answer. The demo that prints the claim does not print the lead time. The morning chapter asks her before the paste. The second answer is a GPU purchase that takes 16 weeks. No kickoff file contains that number, so the interview note marks it as a claim. The readout cites `cdo` because she said it. The check says `the readout does not answer the deadline` and does not print the number of weeks.
 
 [cdo.notes.md](work/interviews/cdo.notes.md) is the longer note. You were not asked to write it. The checks do not read it.
 

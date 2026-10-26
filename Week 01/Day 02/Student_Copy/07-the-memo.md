@@ -22,13 +22,15 @@ Keep every `|` in the tables. Do not turn a table into a list. Do not add commas
 
 Keep the header row and the `| --- |` line in [work/approach.md](work/approach.md). The blank file already has one row per id. Replace each empty row with the matching line from this block. Paste the line with the `|` characters. Do not paste a second header.
 
-The family cell is only the word, or `extract+retrieve` for the return. The why sentence is the reason cell. A second family word on `p-slots`, `p-clock`, or `p-triage` fails, and the message says the family does not fit. It does not name the word to remove.
+The family cell is only the word, or `extract+retrieve` for the return. The why sentence is the reason cell. Use the family word from the block below. If a family is wrong, the check says `family does not fit` and does not name the word that would fit. A second family word on `p-slots`, `p-clock`, or `p-triage` fails the same way. It does not name the word to remove.
 
 The measured cell for a sample is the whole printed line from [notes/baseline-lines.md](notes/baseline-lines.md). On the practice files those lines are the ones below. If your notes show a different line, paste your line. Use the person line, the keyword line, the filled line, and the seasonal line. The row line and the mean line stay in the notes.
 
 The measured cell for the other five ids is the word `claim`, a space, and the digits from the file. Both sit in that one cell.
 
-The cost note calls `510000` returned referrals. That figure is not the bounce measurement. Leave it on `p-waitlist`. `p-bounce` keeps the `filled` line from the letter baseline. Moving `510000` onto `p-bounce` makes the check say `measured value does not match the baseline`. That message also appears when a sample row uses the `row` line or the `mean` line. The check does not say which of those mistakes it saw.
+Read this before you paste the `p-waitlist` row. `510000` is the director's money figure for returned referrals in the cost note. It is not a count of untrusted waitlist rows. The waitlist has no baseline of its own, and `p-bounce` already uses the filled line, so the memo parks this figure on `p-waitlist` and marks it `claim`.
+
+`p-bounce` already has a measurement: the `filled` line, how many letters name a specialty. The brief has one size for that id, and a measured size has to be the baseline. `510000` cannot replace `filled 5`. The waitlist row has no baseline, so the memo records the money figure there and marks it `claim`. Putting `510000` in the bounce cell, instead of the filled line, makes the check say `measured value does not match the baseline`. That same message appears when a sample row uses the `row` line or the `mean` line. The check does not say which of those mistakes it saw.
 
 ```text
 | p-bounce | extract+retrieve | filled 5 | samples/ds-letters.md | referral letters | The specialty is a field in the letter, and a return still has to name the rule that is in force. See samples/ds-letters.md. |
@@ -42,7 +44,7 @@ The cost note calls `510000` returned referrals. That figure is not the bounce m
 | p-triage | blocked | claim 3000000 | extracts/sponsor-ask.md | clinician | A clinician assigns urgency. The claimed impact is a claim. We do not build this. See extracts/sponsor-ask.md. |
 ```
 
-`measured value does not match the baseline` means the row line or the mean line was used for a sample. The check does not print the line it wanted. `needs a system and a reason` means one of those two cells is blank. `citation is not a release file or a persona` means the citation cell is not one of the short paths in the table.
+`measured value does not match the baseline` means a sample row used the `row` line or the `mean` line, or `p-bounce` has `510000` instead of the `filled` line. The check does not print the line it wanted. `needs a system and a reason` means one of those two cells is blank. `citation is not a release file or a persona` means the citation cell is not one of the short paths in the table.
 
 ### Tools
 
@@ -106,7 +108,7 @@ The blank file already has one size row per id. Replace each empty row with the 
 
 ### Ranking
 
-Delete the empty `1.` and paste these nine lines. This order passes. You may reorder the lines. Each id stays once. The last line already says that a clinician assigns urgency, so it still passes if you move it to line 1.
+Delete the empty `1.` and paste these nine lines. `p-clock` is first because the column `booking_date` has to be named before any other number is used as a baseline. Any order of the nine ids also passes. Each id stays once. If you move `p-triage` to line 1, that same line has to say that a clinician assigns urgency. The last line already says it.
 
 ```text
 1. p-clock — the median is a claim, and the column is booking_date.

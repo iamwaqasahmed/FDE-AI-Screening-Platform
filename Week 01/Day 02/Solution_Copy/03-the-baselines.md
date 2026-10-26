@@ -15,7 +15,7 @@ mean 12.0324
 
 | Problem | Line | Why |
 | --- | --- | --- |
-| `p-dna` | `person 0.0000` | The person split keeps a person entirely in the score or entirely out of it. The row split can place the same person on both sides, and that line prints `row 0.7692`. The memo keeps the person line |
+| `p-dna` | `person 0.0000` | The person split keeps a person entirely in the score or entirely out of it. On the practice file that split is `p16` through `p23`, and on every one of those rows `prior_dna` disagrees with `did_not_attend`, so the score is zero. The row split can place the same person on both sides, and that line prints `row 0.7692` because `p00` through `p15` match the rule. The memo keeps the person line, zero included |
 | `p-status` | `keyword 0.3125` | The share of messages that contain the word status. "Where is my referral?" asks where a referral stands and does not contain that word, so the keyword is only a baseline |
 | `p-bounce` | `filled 5` | The specialty list fills 5 letters. The retina letter and the sugar-clinic letter use wording the list does not contain, so they stay uncounted |
 | `p-forecast` | `seasonal 2.1667` | The seasonal error is smaller than the mean error, `mean 12.0324`. A heavier model has to beat the seasonal line |

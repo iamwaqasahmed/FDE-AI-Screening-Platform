@@ -137,7 +137,7 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 Ain still has no live slot API. Three functions keep that true after the change request.
 
-`book` queues `h-ain` until the nightly file arrives. The fault named `live-slot` is the case that must not be confirmed as a live booking. Any other hospital can book. The shell returned booked for every hospital, including Ain. While it does, the journey says a live slot was promised.
+`book` queues `h-ain` when the fault is empty. That queued return is the booking that waits for the nightly file. The fault named `live-slot` is not a confirmed Ain slot. The function still returns `booked` for that fault, and for any hospital that is not `h-ain`. `booked` on that line is the fault the contract rejects. The shell returned `booked` for every call, including Ain with an empty fault. While that shell is the file that runs, the journey says a live slot was promised. The same message appears if the live-slot fault returns `queued` instead of `booked`. The message does not say which of the three calls disagreed.
 
 `apply_file` keeps yesterday's schedule when tonight's file did not arrive. `arrived is None` means the night drop is missing, and the function returns `previous`. The shell returned nothing, which wiped the slots. The check calls that a missed night that cleared the slots.
 

@@ -38,6 +38,8 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 Status is one call to `referral.status` per session. `_read_status` does not call it again on a later question in the same session. The count on the reply is the tool result. `schema.reply` keeps the count it is given. The starter `schema.py` wrote 12 into every reply and ignored the count. Paste the schema block too. Leaving the starter in place keeps every count at 12.
 
+The injection row is where you can see that a letter is not a tool call. The letter tells the agent to ignore the policy and book. The turn asks for status. `respond` does not read the letter for a tool. The row calls `referral.status` and does not book. A second agent is worth its tokens only when a letter would otherwise be able to book. A status question stays this one tool.
+
 A booking needs an offer, the patient's confirmation, and one coordinator approval, then SMS. `_decide` treats a repeated approval id as a no-op. A rejection logs a refusal and does not book.
 
 `memory.py` keeps facts inside one session. Another session cannot see them. A preference comes back only when consent allows it.

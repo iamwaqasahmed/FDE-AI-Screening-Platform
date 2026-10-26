@@ -4,7 +4,7 @@
 
 You replace one file: [personal.py](work/app/personal.py), under Replace the personal lab. The block under Read these files is a picture of the shell. Pasting a picture puts the shell back. The work path must contain `Student_Copy\work`. On macOS that folder shows as `Student_Copy/work`. If the path contains `packet`, close it and open the work copy. Leave the copy in `packet/` unchanged. Do not paste a test. The tests are copied and not replaced. Do not delete `personal.py`. The suite imports it. Do not delete `repair.py`, `remeasure.py`, `cost.py`, `backlog.py`, or `gates.py`. The suite imports all six.
 
-Scroll down to the heading Replace the personal lab. It is the first heading on this page that starts with Replace. The code block directly under it is the paste. The four steps from [chapter 05](05-the-sprint.md) are repeated above that paste. Everything above that heading is a picture. You do not paste it.
+Scroll down to the heading Replace the personal lab. It is the first heading on this page that starts with Replace. The code block directly under it is the paste. The four steps from [chapter 05](05-the-sprint.md) are repeated above that paste. How the replacement works, below, is the exception. Read it. Do not paste it. Everything else above that Replace heading is a picture. You do not paste it.
 
 This file is Python. A styled paste can break the indentation. Copy from this chapter file, not from a preview. If the editor offers a styled paste, use Paste Without Formatting. A `def` line starts at the left edge. The lines inside a function are indented four spaces. If the terminal later shows `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05 through 08 again from the chapter source. Do not repair the spaces by hand.
 
@@ -45,7 +45,19 @@ def meets_budget(value: float, floor: float) -> bool:
     return True
 ```
 
-You are done reading. The next heading, Replace the personal lab, is the paste on this page.
+You are done reading. The next section is How the replacement works. Read it. The paste is the heading after that.
+
+## How the replacement works
+
+Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter.md) if you are not sure which block on this page is a picture and which block you paste.
+
+`cite` returns nothing when the asker is a patient and the document audience is staff. Any other row returns the audience, the document id, and the version. The shell returned only the document id, including a staff document shown to a patient.
+
+`meets_budget` is true when the value clears the floor. A value on the floor still clears it. The shell returned true for every value and ignored the floor.
+
+Before you paste, say which asker is refused a staff document, and what a citation that is kept still has to carry.
+
+This section adds no file and no command.
 
 ## Replace the personal lab
 

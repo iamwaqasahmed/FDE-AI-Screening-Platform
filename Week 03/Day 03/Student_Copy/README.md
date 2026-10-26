@@ -23,7 +23,7 @@ When this day is done, the next student copy is [Week 3, Day 4](../../Day%2004/S
 `work/` contains:
 
 - the shell copied from the packet, with `app/chunk.py`, `app/embed.py`, `app/index.py`, `app/search.py`, `app/filter.py`, `app/bind.py`, `app/cite.py`, `app/sync.py`, `app/vision.py`, `app/conflict.py`, and `app/catalog.py` replaced
-- the eleven tests, copied and not replaced
+- eleven test files, copied and not replaced. The suite prints `Ran 14 tests`
 - `.github/workflows/ci.yml`, copied and not replaced
 - `sprint.md`, the order of the work
 - `refusal.md`, what to say when nothing binds or the asker cannot see it

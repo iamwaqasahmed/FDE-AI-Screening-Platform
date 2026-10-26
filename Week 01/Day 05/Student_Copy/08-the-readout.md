@@ -27,7 +27,29 @@ Then the five questions, numbered:
 5. What will this proof not build?
 ```
 
-That first line is the claim on [cdo.md](packet/kickoff/personas/cdo.md). It is not the plan. The demo does not print how many weeks the purchase takes. The deadline check says `the readout does not answer the deadline` and does not print that number.
+That first line is the claim on [cdo.md](packet/kickoff/personas/cdo.md). It is not the plan. The demo does not print how many weeks the purchase takes. Her card does not either. The deadline check says `the readout does not answer the deadline` and does not print that number.
+
+## Hear the weeks
+
+Ask Layla Al-Harbi before you paste the deadline. Her id is `cdo`. Create [notes/cdo.questions.txt](notes/cdo.questions.txt) if it is not already there, and paste these two lines. The order matters. The second question is about the purchase. Asked first, it only gets her opening line.
+
+```text
+When is the deadline for going live, relative to Ramadan?
+Does that date assume a GPU purchase?
+```
+
+Open a terminal in the course folder. If that window is already inside `problem_simulation`, skip the `cd` line and run the python line.
+
+```text
+cd problem_simulation
+python -m alwaha.interview --persona cdo --script "../Week 01/Day 05/Student_Copy/notes/cdo.questions.txt"
+```
+
+The second answer says the board date assumes a GPU purchase, and that purchase takes 16 weeks. The deadline sentence below uses that number and cites `cdo`. If the second answer is her opening line, run the two questions again in this order.
+
+No kickoff file contains the 16 weeks. Her sentence is a claim. You cite `cdo` because she said it. Day 1's rule still holds: a fact is a sentence you can point at in a file.
+
+The Asks line says the ruling is still unsigned. That is the second answer from the Day 1 data-protection interview, not a line on her card. [Chapter 05](05-the-reading.md) quotes it.
 
 ## The six answers
 

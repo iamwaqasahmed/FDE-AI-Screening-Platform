@@ -7,7 +7,7 @@ Open [approach.md](work/approach.md) and [brief.md](work/brief.md). This page sa
 | id | Family | Measured | Why |
 | --- | --- | --- | --- |
 | `p-bounce` | `extract+retrieve` | `filled 5` | The specialty is a field in the letter, cited as `samples/ds-letters.md`. A return still has to name the clause that is in force. The system is the referral letters |
-| `p-waitlist` | `no-model` | `claim 510000` | Untrusted rows are a matching rule. 510000 SAR is the director's figure for returned referrals in [access-costs.md](sources/release/extracts/access-costs.md). It is a claim. The system is the waitlist |
+| `p-waitlist` | `no-model` | `claim 510000` | Untrusted rows are a matching rule. 510000 SAR is the director's figure for returned referrals in [access-costs.md](sources/release/extracts/access-costs.md). It is not a count of those rows. `p-bounce` already uses `filled 5`, so this money figure cannot go there. It is a claim. The system is the waitlist |
 | `p-dna` | `classical-ml` | `person 0.0000` | A table with a label. The citation is `samples/ds-dna.csv`. The system is the appointment list |
 | `p-status` | `agent` | `keyword 0.3125` | Status has to be a tool call against the referral record. The citation is `samples/ds-messages.csv` |
 | `p-slots` | `no-model` | `claim 230000` | Empty chairs are a workflow on the session book. 230000 SAR is the director's figure for empty sessions, and it is a claim. Adding a model word beside `no-model` makes the family fail |

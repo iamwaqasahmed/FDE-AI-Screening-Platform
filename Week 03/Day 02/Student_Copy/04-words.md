@@ -23,7 +23,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | Retrieval | Look up an answer in a document. Hours questions for `p-info` stay here |
 | GPU quota | A count of GPUs. The field is `gpus` in [quota.json](packet/release/budget/quota.json). You read the count from that file |
 | Price cap | The spend and latency limits in [price-cap.json](packet/release/budget/price-cap.json) |
-| F1 floor | The `f1_floor` field in the price cap. A score under it is outside the budget. You read the number from the file |
+| F1 floor | The `f1_floor` field in the price cap. A score under it is outside the budget. You read the number from the file. On this day the score called F1 is the share of fields that match. It is not a precision-and-recall F1 |
 | Token count | The `tokens` field in the price cap. The quote prices that count |
 | Data Protection Officer | The person who signed the ruling. The checks do not ask you to interview them |
 | Finance | The seat that holds the quota and the cap. The checks do not ask you to interview them |

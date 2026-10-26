@@ -231,7 +231,7 @@ Two requests, four stores.
 
 `controls` returns the deploy check names in checklist order. The caller can change the list it receives. The checklist constant stays as it is.
 
-`export_categories` walks the stores in a fixed order and names each one that still holds the person. A missing store is treated as empty. `drop` removes the person from the row, memory, and the index by copying the other rows. Logs that contain the person become a single row whose redacted field is true. Clearing the database row and leaving the index is the failure this function is written to make impossible.
+`export_categories` walks the stores in a fixed order and names each one that still holds the person. A missing store is treated as empty. `drop` removes the person from the row, memory, and the index by copying the other rows. When any log row is this person, the whole logs list becomes one row, `{"redacted": true}`. Other people's rows in that same list are not kept. The pack and the test hold only this person, so the check cannot show that wipe. Do not change the function so other people's logs survive. The test expects the single redacted row. Clearing the database row and leaving the index is the failure this function is written to make impossible.
 
 The 72-hour clock is not in these functions. It is the timestamp on the notice, which the breach page records. These functions are what you can show an auditor after that clock has started: who still had access, and whether the person is gone from every store.
 

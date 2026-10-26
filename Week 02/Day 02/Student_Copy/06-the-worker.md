@@ -204,7 +204,7 @@ def apply(db, event: dict, faults: dict) -> dict:
 
 Read the file back. The first line of the docstring says `Apply session.cancelled once.` If you still see `Apply every delivery`, this paste did not replace the file. Select the whole file, delete it, and paste the block again.
 
-Leave every other file under `work/app` as the copy from the packet. The check compares those files with the packet. [registry.py](packet/app/registry.py) and [sms.py](packet/app/sms.py) stay as they are. [mart.py](packet/app/mart.py) stays the shell until [chapter 08](08-the-mart.md).
+Leave every other file under `work/app` as the copy from the packet. The check imports those modules and calls them. It does not compare the file bytes with the packet. [registry.py](packet/app/registry.py) and [sms.py](packet/app/sms.py) stay as they are. [mart.py](packet/app/mart.py) stays the shell until [chapter 08](08-the-mart.md).
 
 ## Write the trace
 

@@ -45,7 +45,7 @@ These words appear in today's briefing, on the persona cards, and in the sample 
 | --- | --- |
 | Protected health information (PHI) | Information that identifies a patient in the context of care. The cluster decides which fields count |
 | Classification | The label on an access request. The labels you may write today are below |
-| In force | A document whose status, dates, and site make it the rule today. A draft is not in force |
+| In force | `status: in_force` on a page that is inside its dates. A draft is not in force. Today's kickoff pages leave `site` empty. An empty site does not take them out of force |
 | Stage gate | A required approval point on the path from idea to go-live |
 | Human approval | A person accepts or changes an assistant suggestion before it takes effect |
 | Red-flag phrase | Wording the assistant must hand to a human. The assistant does not grade urgency |

@@ -109,9 +109,9 @@ Read [how to read a replacement chapter](../../../learning/how-to-read-a-chapter
 
 The guard can be perfect and still approve one district far more often than another. `gap` measures that.
 
-A yes decision is the decision text `yes`. `_rates` groups rows by a key and returns each group's share of yes. `gap` computes that spread for district and again for insurance. The result is the wider of the two spreads. A missing group does not invent a rate. The shell returned zero because it never grouped the rows.
+A yes decision is the decision text `yes`. `_rates` groups rows by a key and returns each group's share of yes. `gap` computes that spread for district and again for insurance. The result is the wider of the two spreads. On [outcomes.jsonl](packet/release/fairness/outcomes.jsonl) every `d-nakhl` row is `class-a` and every `d-rim` row is `class-b`, so the two spreads are the same number. The function still computes both and returns that number. A missing group does not invent a rate. The shell returned zero because it never grouped the rows.
 
-`stamp_rate` is the share of rows whose `stamped` field is true. A missing field counts as not stamped. An empty list returns zero. Thursday's rubber stamp is this rate. A high rate means a person approved without looking. The shell ignored the field.
+`stamp_rate` is the share of rows whose `stamped` field is true, counting every row in [approvals.jsonl](packet/release/fairness/approvals.jsonl). It does not keep only Thursday. Thursday-only would be 1, because both Thursday rows are stamped, and that rate fails the check. A missing field counts as not stamped. An empty list returns zero. A high rate means a person approved without looking. The shell ignored the field.
 
 The checks read these two numbers. They do not ask you to copy a rate onto a page.
 

@@ -69,7 +69,7 @@ The sentence with `booking_date` belongs on their mart page and in this mart fil
 
 ## Block 6 — The three files
 
-`intake.py`, `cancel.py`, and `mart.py` differ from the starter. Every other file under `work/app` matches the starter byte for byte.
+`intake.py`, `cancel.py`, and `mart.py` differ from the starter. Every other file under `work/app` in this folder matches the starter. The check calls those modules. It does not compare the bytes.
 
 The starter intake still polls. The check says `intake still polls`.
 

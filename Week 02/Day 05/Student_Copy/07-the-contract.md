@@ -43,7 +43,7 @@ def holds(status: str) -> bool:
 
 Open [test_contract.py](packet/tests/test_contract.py). Search for `holds`. The word `holds` is in the shell test and in the work test. The shell method is `test_live_slot_fixture_holds`. That method accepts `booked`. Do not paste the shell test into `work/`.
 
-The individual check says `the contract test accepted the live-slot fault` when this shell is the file that runs. A queued booking has to stay green. The live-slot fault has to go red. The test reads the fixture from the built pack. Do not copy [live-slot.json](packet/release/fixtures/live-slot.json) into `work/`.
+The individual check says `the contract test accepted the live-slot fault` when this shell is the file that runs. A queued booking has to stay green. The live-slot fault has to go red. The check reads [live-slot.json](packet/release/fixtures/live-slot.json) from the built pack. The test you paste does not open that file. It uses the word `booked`. The sentence inside the test, "There is no pack file," means the test has no file of its own. Do not copy the fixture into `work/` to resolve that sentence. A copy fails with `a watermarked sample is in the work directory`.
 
 ## Replace the contract
 

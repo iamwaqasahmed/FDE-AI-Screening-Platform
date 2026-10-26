@@ -18,6 +18,6 @@ The workflow does not accept the referral. It does not return the referral. It d
 
 Day 2's memo still stands. A leader's wish is a claim until a file supports it. The sponsor still wants a front desk that books. Today's policy is the file. It says the workflow stops for the coordinator.
 
-The hospitals and the zones are on [zones.md](packet/kickoff/world/zones.md). Two of those facility ids appear in today's letters: `h-wadi` and `h-ain`. The others stay on the map. You do not book any of them today.
+The hospitals and the zones are on [zones.md](packet/kickoff/world/zones.md). Today's letters name Wadi Specialist Hospital and Ain Diabetes and Eye Center. They do not print `h-wadi` or `h-ain`. [Chapter 04](04-words.md) is the map from those names to the ids. A search of the letters for the ids finds nothing. You do not book any of them today.
 
 Next: [04 — Words](04-words.md).

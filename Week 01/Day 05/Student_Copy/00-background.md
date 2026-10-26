@@ -53,7 +53,7 @@ You do five things, in this order:
 4. You answer the steering questions in a readout, and you write a trace note for the emergency scenario.
 5. You answer two questions: one failure the scenario set exposed, and which stage gate is still open.
 
-At the end, five checks run. Two of them run the agent again. The trainer reads the sentences in `knowledge.md`. The design check only checks that both answers are there.
+At the end, five checks run. Two of them run the agent again. The trainer reads the sentences in `knowledge.md`. The design check grades the diagram, the urgency section, and the stage-2 facts. On `knowledge.md` it only requires two numbered lines with a word after the number. It does not grade those sentences.
 
 ## The five parts, all yours
 

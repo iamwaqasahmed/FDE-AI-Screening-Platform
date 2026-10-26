@@ -1,6 +1,6 @@
 # 06 — Knowledge
 
-This answers the knowledge file from the morning. Open the [finished knowledge.md](work/knowledge.md) and put it beside yours. The checks do not grade the sentences in this file. The trainer does. The design check only checks that both answers are there.
+This answers the knowledge file from the morning. Open the [finished knowledge.md](work/knowledge.md) and put it beside yours. The checks do not grade the sentences in this file. The trainer does. The design check still grades the diagram, the urgency section, and the stage-2 facts. On this file it only requires two numbered lines with a word after the number.
 
 ## One failure the scenario set exposed
 

@@ -8,7 +8,7 @@ Do not copy a scenario file into `work/`. Do not paste a scenario line into a pr
 
 Open [steer-w1.md](packet/release/steering/steer-w1.md).
 
-There are five questions. You will answer them in [chapter 08](08-the-readout.md). This page names the questions. It does not say how many weeks the purchase takes. You do not need that number yet. Chapter 08 pastes the Deadline sentence, and that sentence has the weeks. Chapter 04 already said G2 is still open. Section 9 of this chapter shows the gate list. The words "is accepted" say what G2 does when it passes. It has not passed. Where patient data sits is on the zones page in section 8, and on Sara Al-Mutairi's card in section 13. The trace does not contain the weeks or the gate.
+There are five questions. You will answer them in [chapter 08](08-the-readout.md). This page names the questions. It does not say how many weeks the purchase takes. Her card does not say it either. Chapter 08 asks her, with the interview command, before you paste the deadline. The second answer is the number of weeks. Chapter 04 already said G2 is still open. Section 9 of this chapter shows the gate list. The words "is accepted" say what G2 does when it passes. It has not passed. Where patient data sits is on the zones page in section 8, and on Sara Al-Mutairi's card in section 13. The trace does not contain the weeks or the gate.
 
 ## 2. The approval policy
 
@@ -40,8 +40,8 @@ The names, in order, are `status`, `book`, `return`, `emergency`, `injection`, `
 
 Open these three files and search with Ctrl+F. On Windows that is Ctrl+F. On macOS it is Command+F. Search for the scenario name, read that row, and close the file. Do not copy the row.
 
-- [ds-agent.jsonl](packet/day4/scenarios/ds-agent.jsonl). Search `status`, `book`, `return`, `emergency`, and `injection`. One letter in this file carries a watermark. Read it where it sits. Leave it there.
-- [ds-sessions.jsonl](packet/day4/scenarios/ds-sessions.jsonl). Search `replay`, `resume`, `reject`, `memory`, and `consent`.
+- [ds-agent.jsonl](packet/day4/scenarios/ds-agent.jsonl). Search `status`, `book`, `return`, `emergency`, `injection`, `replay`, `resume`, and `reject`. Those eight names are in this file. `replay`, `resume`, and `reject` are not in the sessions file. One letter in this file carries a watermark. Read it where it sits. Leave it there.
+- [ds-sessions.jsonl](packet/day4/scenarios/ds-sessions.jsonl). Search `memory` and `consent`. Those two names are the whole file. A search here for `replay` finds nothing. That name is in the agent file.
 - [ds-reason.jsonl](packet/day4/scenarios/ds-reason.jsonl). Search `reason`.
 
 `emergency` is the row whose turn matches the routing list. You will write the trace note for that scenario. `injection` is the letter that tells the agent to book. The letter is data. The turn is the question.
@@ -72,7 +72,7 @@ The document id is `pol-stage-gate`. The gates run from G0 to G5. G2 is the DPIA
 
 Open [problems.md](packet/carried/problems.md).
 
-Search `p-status`, `p-clock`, `p-slots`, `p-waitlist`, and `p-triage`. `p-waitlist` is waitlist rows the coordinators do not trust. That is the identity split: duplicate rows, and one person stored as two. `p-triage` is the sponsor wanting the assistant to set clinical urgency.
+Search `p-status`, `p-clock`, `p-slots`, `p-waitlist`, and `p-triage`. `p-waitlist` is waitlist rows the coordinators do not trust. The file does not say duplicate, and it does not say one person stored as two. [Chapter 07](07-the-diagram.md) uses those words for the open item. The check looks for `p-waitlist`, `split`, or `duplicate` on that row. `p-triage` is the sponsor wanting the assistant to set clinical urgency.
 
 ## 11. The hospital with no slot API
 
@@ -93,7 +93,7 @@ The document id is `crit-endo-v4`. The status is draft. It is not in force.
 Open the cards and read the first sentence of each.
 
 - [cdo.md](packet/kickoff/personas/cdo.md). Layla Al-Harbi. The virtual front desk, including triage, goes live before Ramadan. That is the claim. It is not the deadline answer.
-- [dpo.md](packet/kickoff/personas/dpo.md). Sara Al-Mutairi. Patient data needs care. Her goals keep patient data in the private cloud.
+- [dpo.md](packet/kickoff/personas/dpo.md). Sara Al-Mutairi. Patient data needs care. Her goals keep patient data in the private cloud. The Asks sentence in [chapter 08](08-the-readout.md) says the ruling is still unsigned. That sentence is not on this card. It is the second answer from the Day 1 interview: an unsigned ruling says patient data stays off the external model ext-large, and training stays on the private cloud. If you still have `Week 01/Day 01/Student_Copy/work/interviews/dpo.notes.md`, that claim row is the same sentence. You do not interview her again today.
 - [med-dir.md](packet/kickoff/personas/med-dir.md). A clinician decides every clinical urgency.
 
 You have read the pack the agent uses, and the pages the design cites.

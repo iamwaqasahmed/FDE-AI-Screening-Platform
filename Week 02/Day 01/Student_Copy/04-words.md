@@ -22,6 +22,7 @@ These are the words this day uses. A definition here is the everyday meaning. Wh
 | Spec | The file you generate the client from. A field from the hand-written client is gone. The notice says that. It does not ask you to type the old name into a page |
 | Level of assurance | How strongly the cluster has checked the person. The levels are the bullets in [loa.md](packet/release/identity/loa.md). Open that file for the sentences |
 | `loa-1` | The first level in the identity note. One-time code. A patient at `loa-1` can open the assistant |
+| `nid` | The identity note's short name for a national id. `loa-2` is checked against it. You do not type the id |
 | Booking level | The level the identity note requires before a patient may book or cancel. You write that sentence in [chapter 08](08-finish.md). Do not invent a shorter one |
 | Token | The proof a person presents at sign-in. The patient presents a patient token. A coordinator presents a staff token |
 | Discovery document | The issuer and the token endpoint in [iam.yaml](packet/release/openapi/iam.yaml). The token is checked against that pair |

@@ -16,8 +16,8 @@ python -m alwaha.check interview --work "../Week 01/Day 01/Student_Copy/work" --
 
 2. Create `work/knowledge.md` and answer both questions in your own sentences. You already have the answers in files you read today:
 
-- Question 1 is the G0 line in [pol-stage-gate.md](packet/kickoff/corpus/pol-stage-gate.md), which you wrote about in [chapter 05](05-the-kickoff.md).
-- Question 2 is [pol-assistant-use.md](packet/kickoff/corpus/pol-assistant-use.md), which you also wrote about in chapter 05 and applied in [chapter 07](07-the-pipeline.md).
+- Question 1 is the G0 line in [pol-stage-gate.md](packet/kickoff/corpus/pol-stage-gate.md), which you wrote about in [chapter 05](05-the-kickoff.md). To pass G0, the problem, the users, and the sponsor are named. Naming them is not the same as accepting the sponsor's sentence.
+- Question 2 needs both pages. [pol-assistant-use.md](packet/kickoff/corpus/pol-assistant-use.md) is what stays out: patient data, secrets, unpublished cluster documents, the sample referral letter, and the watermark. [Chapter 07](07-the-pipeline.md) is what may be shown: code you wrote, the tests, and that published rule. The policy file does not name those three. Your answer includes the allow-list and the prohibitions.
 - The zone rows are the ones you already put in [notes/zones.md](notes/zones.md), from [zones.md](packet/kickoff/world/zones.md).
 
 Copy the zone sketch from [notes/zones.md](notes/zones.md) into the bottom of `knowledge.md`.
@@ -70,11 +70,16 @@ A failed check names the problem. An incomplete interview does not name the miss
 | `<id> interview is incomplete` | The questions have not yet reached what that person will say. Ask a narrower question. Ask the topic before its follow-up. The check will not name the missing fact |
 | `notes need a table with a Kind column` | Use the header in chapter 08, with `Kind` as a column |
 | `each note needs at least two rows marked claim, request, or fact` | Add rows until there are two, and use only those three words in the Kind column |
-| `notes contain a banned sentence` | Remove the row that grants the assistant a permission the kickoff documents do not give, or that sends patient data somewhere those documents forbid |
+| `notes contain a banned sentence` | The check reads the whole note, including a row marked `claim`. It does not print the sentence. On the medical director's note the sentence is `The assistant may set clinical urgency.` On the data protection officer's note the sentence is `The external model may receive identified patient data.` Delete that row. A claim row does not make it safe |
 
 ## Done
 
-The day is done when both checks print `passed` and `work/knowledge.md` answers both questions and fills the three zone rows from `zones.md`. `zone-public` has no hospital.
+The day is done when all four of these are true. The two checks are only the first.
+
+- Both checks print `passed`. The interview check can print `passed` when a notes file has only two rows. [Chapter 08](08-the-interviews.md) says which rows still have to be there. Search `med-dir.notes.md` for `pol-clinical-safety` and `pol-stage-gate`. Search `dpo.notes.md` for `unsigned` and `pol-assistant-use`.
+- `work/knowledge.md` answers question 1 with the problem, the users, and the sponsor.
+- The same file answers question 2 with what a coding assistant may be shown and what stays out.
+- The three zone rows are filled from `zones.md`. `zone-public` has no hospital.
 
 Keep `work/` and the worksheets. The solution copy, when you receive it, is how you compare your pages with a finished set. Leave `problem_simulation/build` closed.
 

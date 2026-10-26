@@ -1,6 +1,8 @@
 # 08 — Two interviews
 
-You talk to two people. Each person answers the question you ask. They do not volunteer the constraint that would change your design. Twelve questions is the budget for one person. You submit two. You do not interview all twelve.
+You talk to two people. Each person answers the question you ask. They do not volunteer the constraint that would change your design.
+
+Twelve is two different counts. There are twelve people on the list. You interview two of them. The command also stops after twelve questions for one person. A thirteenth question is not asked. The scripts below are shorter than that. You do not fill the rest.
 
 ## How an answer is earned
 
@@ -60,7 +62,7 @@ The other cards are listed so you know who they are. You do not interview them t
 
 ## Do this
 
-1. In the file list, open `work/interviews`. Create `med-dir.questions.txt` and paste these three lines. The order matters. The first question is about urgency. The next two ask what that answer is made of.
+1. In the file list, open `work/interviews`. Create `med-dir.questions.txt` in this editor and paste these three lines. Save it as UTF-8. The interview command ignores a byte-order mark if a save adds one. If the command still raises `UnicodeEncodeError` before it prints `Q1:`, delete the file, create it again in this editor, and paste the lines again. The order matters. The first question is about urgency. The next two ask what that answer is made of.
 
 ```text
 Who assigns clinical urgency, and does triage sit with a clinician?
@@ -83,14 +85,14 @@ python -m alwaha.interview --persona med-dir --script "../Week 01/Day 01/Student
 python -m alwaha.interview --persona dpo --script "../Week 01/Day 01/Student_Copy/work/interviews/dpo.questions.txt"
 ```
 
-4. Create `med-dir.notes.md` and `dpo.notes.md` in that same `work/interviews` folder. For every answer the command printed, add a row. Use this rule, in this order, so the Kind column is decided by the page and not by a guess:
+4. Create `med-dir.notes.md` and `dpo.notes.md` in that same `work/interviews` folder. Write them after the command has printed. The check can print `passed` when a file has only two rows. The notes are finished when every item below is present, one row each, in this order:
 
-- The sentence is the opening line on their card. Kind is `claim`.
-- You can find that same sentence in a file under [packet/kickoff](packet/kickoff/README.md). Kind is `fact`. For the medical director, that sentence is in [pol-stage-gate.md](packet/kickoff/corpus/pol-stage-gate.md): the assistant routes emergency wording to a human and does not grade urgency. For the data protection officer, that sentence is in [pol-assistant-use.md](packet/kickoff/corpus/pol-assistant-use.md): patient data, secrets, unpublished cluster documents, and the sample referral letter stay out of prompts and out of the repository. The interview command does not print those two sentences. Add each one as its own fact row.
-- The sentence is the next thing you will do. Kind is `request`. Write one request row for each person. For the medical director: read pol-stage-gate before anyone writes an urgency grade. For the data protection officer: keep the sample letter out of any prompt while her ruling is unsigned.
-- Any other sentence they said, including the red-flag document and the unsigned ruling, is `claim`. Those documents are not in today's kickoff.
+- The opening line on the card. Kind is `claim`. Medical director: `Clinicians own urgency.` Data protection officer: `Patient data needs care.`
+- One request, the next thing you will do. Kind is `request`. Medical director: read pol-stage-gate before anyone writes an urgency grade. Data protection officer: keep the sample letter out of any prompt while her ruling is unsigned.
+- One fact from a kickoff file. Kind is `fact`. The command does not print this sentence. Add it anyway. Medical director, from [pol-stage-gate.md](packet/kickoff/corpus/pol-stage-gate.md): the assistant routes emergency wording to a human and does not grade urgency. Data protection officer, from [pol-assistant-use.md](packet/kickoff/corpus/pol-assistant-use.md): patient data, secrets, unpublished cluster documents, and the sample referral letter stay out of prompts and out of the repository.
+- Every answer the command printed. Kind is `claim`. The red-flag document and the unsigned ruling are not in today's kickoff, so those answers stay claims. A confident sentence is a fact only when you can point at it in a kickoff file.
 
-Keep the header and the `| --- |` row. Two rows is the minimum. This shape is enough to start the medical director's file. Add a row for each answer you actually saw:
+Keep the header and the `| --- |` row. This shape is enough to start the medical director's file. It is not the finished file:
 
 ```text
 | Who | Their words | Kind |
@@ -105,12 +107,14 @@ A third `*.questions.txt` file makes the check fail. These two files are the who
 
 The interview command prints `Q1:` and `A:` for each question, and it prints no score. When an answer repeats the opening line, go back to the question.
 
-Each notes file has a header row whose last column is `Kind`, a separator row, and at least two data rows. Each kind is one of `claim`, `request`, or `fact`.
+Each notes file has a header row whose last column is `Kind`, a separator row, and a data row for the opening line, the request, the fact from the kickoff, and each answer the command printed. Each kind is one of `claim`, `request`, or `fact`. Search the medical director's file for `pol-clinical-safety` and for `pol-stage-gate`. Search the data protection officer's file for `unsigned` and for `pol-assistant-use`. The check can print `passed` before those searches succeed. Stop when they do.
 
 ## If the answer keeps repeating
 
-Ask about something written on the card. Ask the goal before the detail that goal is made of. Spend the twelve questions on one person before you switch. The command is safe to run again after you edit the file.
+Ask about something written on the card. Ask the goal before the detail that goal is made of. Edit that person's questions and run that person again. Do not add a third questions file. The command stops after twelve questions for that person. It is safe to run again after you edit the file.
 
 If the command says `Unknown persona`, the id is wrong. Use the short id from the table, such as `med-dir`, not the person's full name. The file name and the `--persona` value have to be that same id.
+
+If the command raises `UnicodeEncodeError` before it prints `Q1:`, delete that person's question file, create it again in this editor, paste the lines, and run that person again.
 
 Next: [09 — Finish](09-finish.md).

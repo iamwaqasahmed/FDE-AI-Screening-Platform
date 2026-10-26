@@ -20,7 +20,7 @@ The case keeps a longer care-word list at [access_language.md](../case/access_la
 | Stage gate | A required approval on the path from idea to go-live. The list is G0 through G5 | [Week 1 Day 1, words](<../Week 01/Day 01/Student_Copy/04-words.md>) |
 | Zone | One of the three places a system can run: hospital data centers, the private cloud, or the public-cloud model | [Week 1 Day 1, the client](<../Week 01/Day 01/Student_Copy/03-the-client.md>) |
 | PHI | Information that identifies a patient in the context of care. The cluster decides which fields count | [Week 1 Day 1, words](<../Week 01/Day 01/Student_Copy/04-words.md>) |
-| In force | A document whose status, dates, and site make it the rule today. A draft is not in force | [Week 1 Day 1, words](<../Week 01/Day 01/Student_Copy/04-words.md>) |
+| In force | `status: in_force` on a page that is inside its dates. A draft is not in force. An empty site on the Day 1 kickoff does not take the page out of force | [Week 1 Day 1, words](<../Week 01/Day 01/Student_Copy/04-words.md>) |
 | `rel-wNdN` | The name of that morning's file drop. Week 1 Day 1 is `rel-w1d1` | [Week 1 Day 1, background](<../Week 01/Day 01/Student_Copy/00-background.md>) |
 | `practice` | The shared classroom world the build and the checks use | [Week 1 Day 1, background](<../Week 01/Day 01/Student_Copy/00-background.md>) |
 | Watermark | A marker planted so a copy can be recognized. It stays out of prompts and out of `work/` | [Week 1 Day 1, the pipeline](<../Week 01/Day 01/Student_Copy/07-the-pipeline.md>) |
@@ -37,8 +37,8 @@ The case keeps a longer care-word list at [access_language.md](../case/access_la
 | Fine-tuning | Changing a model's weights on the cluster's own examples | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
 | Retrieval | Leaving the weights alone and looking up a document that is in force | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
 | System of record | The system that holds the fact. A number on a slide is not that system | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
-| `ext-large` | The public-cloud model. Patient data stays off it once the ruling is signed | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
-| `local-small` | The smaller local model the later adapter is based on | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
+| `ext-large` | The public-cloud model on `zone-public`. Patient data stays off it | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
+| `local-small` | On Day 2, the smaller local price, `price.local_per_1k`. Later, the local model the adapter is based on | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
 
 ## Workflow and the agent
 

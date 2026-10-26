@@ -106,7 +106,7 @@ The test prints `OK` under a line that says one test ran. The scan prints:
 scan passed.
 ```
 
-`work/` now contains `app.py`, `scan.py`, `tests/test_health.py`, `policy/pol-assistant-use.md`, `.gitignore`, `.github/workflows/ci.yml`, and `credentials/dev.json`.
+`work/` now contains `app.py`, `scan.py`, `tests/test_health.py`, `policy/pol-assistant-use.md`, `.gitignore`, `.github/workflows/ci.yml`, `credentials/dev.json`, and an empty `interviews/` folder. It also contains `Dockerfile`, `compose.yaml`, and `deploy/namespace.yaml`. Those three are the shape of a later deploy. You do not run them today. Chapter 07 says what each file is for.
 
 If the scan says that `credentials/dev.json` is not in this copy, you are not inside `work`, or step 3 did not finish. Run step 3 again from `Week 01/Day 01/Student_Copy`.
 

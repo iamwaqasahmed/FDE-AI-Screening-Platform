@@ -72,7 +72,7 @@ jobs:
         run: python -m unittest discover -s tests -q
 ```
 
-The tests check says `the receipt test sleeps` when `time.sleep` is still in the receipt test or in `receipt.py`. It says `the suite accepted the receipt fault` when a late receipt is still due. It says `the receipt test does not match the clock` when the result does not follow the clock file. None of those messages names an interval or a delay.
+The tests check says `the receipt test sleeps` when the letters `sleep` appear anywhere in `receipt.py` or `test_receipt.py`. A comment that says not to sleep fails the same way. The message does not mean the suite is still waiting. It says `the suite accepted the receipt fault` when a late receipt is still due. It says `the receipt test does not match the clock` when the result does not follow the clock file. None of those messages names an interval or a delay.
 
 The demo in [chapter 03](03-the-notice.md) already printed `switch off: passed` and `switch on: failed`. Those lines do not print `pending` or `due`. The test under Replace the receipt test does use those two words. That is expected. The demo and the test are different.
 
@@ -205,7 +205,7 @@ cd "Week 02/Day 03/Student_Copy/work"
 python -m unittest discover -s tests -q
 ```
 
-You should see a line that starts with `Ran 6 tests`, then a blank line, then `OK`. The time on the `Ran` line can differ. There is no `FAIL` and no `ERROR`. That is the suite you want. This command is not the check. The workflow runs this same command. You already saw `unittest` and `tests` in `ci.yml`. Leave that file as it is.
+You should see a line that starts with `Ran 6 tests`, then a blank line, then `OK`. A line of dashes can sit above `Ran`. The time on the `Ran` line can differ. There is no `FAIL` and no `ERROR`. That is the suite you want. This command is not the check. The workflow runs this same command. You already saw `unittest` and `tests` in `ci.yml`. Leave that file as it is.
 
 If you see `The system cannot find the path specified` or `No such file or directory` on the `cd` line, this window is not the course folder. Open a new terminal in the course folder and run both lines. If the count is not 6, or you see `FAIL` or `ERROR`, a paste from chapter 06, chapter 07, or this page did not land. Do not repair the file by hand. Paste that chapter's block again from the chapter file. If you see `SyntaxError` or `IndentationError`, run `prepare_work.py` from the course folder and paste chapters 05, 06, 07, and this page again from the chapter files.
 

@@ -41,7 +41,9 @@ You should see:
 - one line that starts with `filled`
 - two lines from the demand script, `seasonal` and then `mean`
 
-The row line and the person line are different numbers. On the worksheet, under DNA, write one sentence: the row split can place the same person on both sides. The function `shared` in [dna.py](packet/baselines/dna.py) is that count. Today's commands do not print it. The memo uses the person line, because that split keeps a person entirely in or entirely out.
+The row line and the person line are different numbers. The person line on the practice file is `person 0.0000`. A zero is not a broken script. The person split scores only the last 30 percent of the sorted person ids. Those ids are `p16` through `p23`. On every row for those people, `prior_dna` and `did_not_attend` disagree, so the guess matches none of them. The row line stays high because `p00` through `p15` agree with the rule, and the same person can sit on both sides of that split.
+
+On the worksheet, under DNA, write one sentence: the row split can place the same person on both sides. The function `shared` in [dna.py](packet/baselines/dna.py) is that count. Today's commands do not print it. The memo uses the person line, including when that line is `0.0000`, because that split keeps a person entirely in or entirely out.
 
 The memo uses these four lines:
 
