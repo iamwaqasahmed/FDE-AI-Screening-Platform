@@ -57,7 +57,7 @@ You hold every part. Later chapters tell you how. You write every piece into the
 | `work/` | The folder you fill in. This is the folder the checks read |
 | Course folder | The folder on your computer that contains `problem_simulation` and `Week 01`. This student copy sits inside it, at `Week 01/Day 01/Student_Copy`. Chapter 01 checks that you can see it |
 | `practice` | The shared classroom world. Everyone in the room uses it today |
-| `rel-w1d1` | The name of today's file drop. It means week 1, day 1 |
+| `rel-w1d1` | The name of today's file drop. It means week 1, day 1. Later mornings keep this shape, with the week and the day in the name |
 | The grader | The checks in `problem_simulation`. Chapter 01 turns them on. The folder they write, `problem_simulation/build`, stays closed |
 
 The cluster's care words, such as referral, triage, and specialty, are in [chapter 04](04-words.md). Read that chapter when you reach it.

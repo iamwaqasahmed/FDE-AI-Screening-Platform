@@ -30,6 +30,8 @@ If you are working alone, the solution folder is already on disk. Leave it close
 
 The [concept index](concept-index.md) is a lookup. Open it when a word from an earlier day comes back. It is not the next chapter. [Review questions](review.md) are optional. Nothing on that page is filed. The checks do not read it.
 
+Several finish pages say the trainer reads `knowledge.md`. Working alone, you do that comparison yourself. After Done is true, open the solution knowledge chapter and set your sentences beside it. The checks still do not grade those sentences.
+
 From Week 1 Day 3, many chapters ask you to paste a finished Python file. [How to read a replacement chapter](how-to-read-a-chapter.md) says which block is a picture of the shell and which block you paste. The section How the replacement works, on the chapter itself, is the path through that file. Read it before you paste. It adds no command.
 
 ## What to leave closed
@@ -45,7 +47,13 @@ The case write-up is [../case/README.md](../case/README.md). The longer word lis
 
 The syllabus asks for working English and some familiarity with programming, databases, APIs, cloud basics, or machine learning. Not every person needs all of those. Chapter 01 of each day checks for Python 3.12 or newer and tells you how to install it. Later days tell you to skip the installer when `python --version` already prints 3.12 or newer.
 
+On macOS and Linux, `python3 --version` is the command to try when `python` is not found. Chapter 01 of each day says the same thing. Use whichever command prints 3.12 or newer for the rest of that day.
+
+Read the chapters in a text editor that can show the file itself, not only a preview. The preview can drop the spaces Python needs. When a chapter says to paste, paste without formatting. Any editor with a file list and a terminal is enough. [Terminal and Python basics](terminal-and-python-basics.md) is there if the words `cd`, `python -m`, or `Ran 1 test` are new. It adds no file and no command.
+
 You do not need a cluster on the first morning. The chapter says when a file is only the shape of a later deploy.
+
+If you keep this folder under git, copy `Student_Copy/work` somewhere safe before you pull a newer copy of the course. From Week 2 Day 2 on, `work/` is already in the published tree as the blank starter. A pull can meet the files you edited. Week 1 Days 1 to 3 ignore `work/` instead. The checks read the folder either way.
 
 ## How the weeks move
 

@@ -14,5 +14,6 @@ Participants start at [../learning/README.md](../learning/README.md), then [Week
 | [Content preservation report](content-preservation-report.md) | Evidence the exercises, code, and data were left as they were |
 | [Documentation validation report](documentation-validation-report.md) | Link and consistency checks after the edit |
 | [Remaining issues](remaining-issues.md) | Problems that were not fixed, because fixing them would change the course |
+| [Student journey](student-journey/README.md) | The self-paced simulation record: method, day notes, and the reports |
 
 The student-facing additions live in [../learning](../learning/README.md), in the four week pages, and in small sections added to the day chapters. Packet files, Python, datasets, and reference implementations were not edited.

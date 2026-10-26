@@ -56,3 +56,7 @@ The Week 3 Day 3 words table still says an embedding is "a vector of tokens." Th
 ## Issues seen and not patched
 
 Recorded in [remaining-issues.md](remaining-issues.md). None of them were "fixed" by changing a check, a paste block, or a client file.
+
+## Later execution pass
+
+A hash compare after the setup notes, the learning guide, and the basics page: 0 protected files missing, 0 changed, 0 new. The twenty new failure-table rows are additions. The rows that were already there were not reworded. Fenced blocks were not rewritten.

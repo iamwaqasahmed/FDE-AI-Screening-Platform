@@ -4,6 +4,8 @@
 
 You need Python 3.12 or newer, and the course folder from chapter 00. This student copy lives at `Week 01/Day 01/Student_Copy` inside that course folder. The two sections below get you both. Skip a section when you already have that piece.
 
+Read these pages in a text editor that can open the file itself. A preview can hide the spaces a later paste needs. If `cd` or `python -m` is new, read [terminal and Python basics](../../../learning/terminal-and-python-basics.md) once. That page adds no command.
+
 ## If `python` is not a command
 
 On Windows:
@@ -16,6 +18,8 @@ On Windows:
 On macOS, use [python.org/downloads/macos](https://www.python.org/downloads/macos/) and run the installer. Then quit Terminal and open it again.
 
 Check with `python --version`. You should see Python 3.12 or a newer 3.x. If Windows still says `python` is not recognized, run `py --version`. When that prints a version, use `py` instead of `python` in every command today.
+
+On macOS and Linux the python.org installer provides `python3`, and it often does not provide `python`. If `python --version` says the command is not found, run `python3 --version`. When that prints Python 3.12 or newer, use `python3` in place of `python` for every command that day. The same commands work in an editor terminal. On Windows that includes PowerShell.
 
 ## If you cannot see the course folder
 
@@ -115,6 +119,7 @@ If the scan says that `credentials/dev.json` is not in this copy, you are not in
 | What you see | What to do |
 | --- | --- |
 | `python` is not recognized | Run `py --version`. If that prints Python 3.12 or newer, use `py` instead of `python` for the rest of the day |
+| `command not found: python` | On macOS or Linux, run `python3 --version`. If that prints Python 3.12 or newer, use `python3` instead of `python` for the rest of the day |
 | You cannot see `problem_simulation` in `dir` | The window is not the course folder. Open a terminal there, using the steps at the top of this chapter |
 | `No module named alwaha` | The terminal is not inside `problem_simulation`. From the course folder, run `cd problem_simulation` and then the build command again |
 | `No truth for practice. Build rel-w1d1 first.` | Run step 2 again |

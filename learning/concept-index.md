@@ -21,7 +21,7 @@ The case keeps a longer care-word list at [access_language.md](../case/access_la
 | Zone | One of the three places a system can run: hospital data centers, the private cloud, or the public-cloud model | [Week 1 Day 1, the client](<../Week 01/Day 01/Student_Copy/03-the-client.md>) |
 | PHI | Information that identifies a patient in the context of care. The cluster decides which fields count | [Week 1 Day 1, words](<../Week 01/Day 01/Student_Copy/04-words.md>) |
 | In force | `status: in_force` on a page that is inside its dates. A draft is not in force. An empty site on the Day 1 kickoff does not take the page out of force | [Week 1 Day 1, words](<../Week 01/Day 01/Student_Copy/04-words.md>) |
-| `rel-wNdN` | The name of that morning's file drop. Week 1 Day 1 is `rel-w1d1` | [Week 1 Day 1, background](<../Week 01/Day 01/Student_Copy/00-background.md>) |
+| `rel-w1d1` | The name of that morning's file drop. Later mornings keep the same shape, with the week and the day in the name | [Week 1 Day 1, background](<../Week 01/Day 01/Student_Copy/00-background.md>) |
 | `practice` | The shared classroom world the build and the checks use | [Week 1 Day 1, background](<../Week 01/Day 01/Student_Copy/00-background.md>) |
 | Watermark | A marker planted so a copy can be recognized. It stays out of prompts and out of `work/` | [Week 1 Day 1, the pipeline](<../Week 01/Day 01/Student_Copy/07-the-pipeline.md>) |
 

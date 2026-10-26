@@ -174,3 +174,11 @@ A later pass walked Week 4 as a student who had finished Week 3, then walked the
 | 5 | Staff sign-in is not the Week 2 patient sign-in. `session.cancelled` is the clinic session. `booking_date` is the `p-clock` column. Chapters 06 and 07 point at How the replacement works before the first paste. The finish page says what the four weeks leave, and that the sponsor sentence was not built. |
 
 The Week 4 solution checks were run after `python -m alwaha.build --profile practice` for `rel-w4d1` through `rel-w4d5`. Each named check printed `passed`. Each solution suite printed `OK`. The five demos printed the lines the morning chapters name. This did not paste a fresh student `work/` from an empty folder. The Day 1 CISO interview and the Day 2 patient-representative interview printed the answers the notes chapters paste.
+
+## Full-journey execution pass
+
+A scratch clone ran every setup build, every `prepare_work.py`, the Replace blocks, and every finish-page check, then the same checks on `Solution_Copy/work`. Solution checks passed for all twenty days. Student pastes passed from Week 2 Day 1 through Week 4 Day 5. The record is [student-journey/README.md](student-journey/README.md).
+
+Prose added in that pass: a `python3` note and one failure row in each of the twenty setup chapters, a short basics page, and solo-reader notes in the learning guide. Paste blocks and protected files were not changed. Protected hashes after the edit: 0 changed.
+
+A later export filled the Week 1 handwritten pages from the chapter fences. Week 1 Days 1, 2, and 5 then passed their finish checks. No further chapter prose was added. The record is in [student-journey/days](student-journey/days/).

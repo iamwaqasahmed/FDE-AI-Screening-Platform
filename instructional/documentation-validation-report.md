@@ -39,3 +39,7 @@ The concept index definitions were taken from the words pages and the plain read
 ## Checksums
 
 Non-Markdown preservation is in [the preservation report](content-preservation-report.md). 3,459 files matched their pre-edit digest.
+
+## Later execution pass
+
+The learning guide, the twenty setup chapters, and Week 1 Day 1's background were edited again. A fresh hash compare of protected files found none missing and none changed. The published clone URL answered `git ls-remote`, and `main` was `a9899f4`. Details are in [student-journey/technical-validation.md](student-journey/technical-validation.md).
