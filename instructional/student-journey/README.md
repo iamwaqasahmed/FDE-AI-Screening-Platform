@@ -18,4 +18,4 @@ Phase 0 tools and the baseline are in the scratch folder outside this repo. The 
 
 The practical pass runs in the scratch clone: build, `prepare_work.py`, the chapter paste blocks, then the finish-page checks. Solution checks use `Solution_Copy/work`.
 
-Resume point: the handwritten Week 1 pages are closed. Days 1, 2, and 5 passed their finish checks from the chapter fences. The day notes are run records, not a SHA-256 row for every file. The scratch logs stay outside the repo. The export used for those three days was deleted after the run.
+Resume point: closed. A scratch clone outside this repo ran Week 1 Days 3 to 5 and Week 2 Day 1 through Week 4 Day 5 from the chapter fences. Student checks and solution checks passed. Week 1 Days 1 and 2 stay the earlier handwritten pass. Each day note now has the knowledge record, the file hashes, the run, and the six passes. The logs are in `_student_sim/logs/pass-finish/`, next to this repository, not inside it.

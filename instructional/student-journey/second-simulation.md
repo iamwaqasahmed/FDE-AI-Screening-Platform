@@ -22,3 +22,17 @@ The Python 3.12 summary matches the cold start for Week 2 Day 1 through Week 4 D
 The added prose was read again from `git diff` on Markdown (99 added lines, 4 removed) and from `learning/terminal-and-python-basics.md`, which is untracked and was read in full. The additions are the `python3` note, one failure-table row, the editor and solo-reader notes, the `rel-w1d1` wording, and the author records. They do not contradict each other. They do not name a facilitator trap. The Day 2 chapter already tells the reader which family fails for `p-clock`, `p-slots`, and `p-triage`. That text was already in the chapter. It was not part of this diff.
 
 The handwritten export then passed Week 1 Days 1, 2, and 5. Details are in [technical validation](technical-validation.md).
+
+## Integrated read
+
+A later pass read each background's "What today is" against the previous solution chapter's "Carry this forward", then the finish page's "What you open next".
+
+Week 1 runs from arrival to a scored agent. Day 1 does not build the assistant. Day 2 measures the leaders' numbers and keeps triage blocked. Day 3 stops intake at a held approval. Day 4 lets a patient ask for status, and a letter stays data. Day 5 scores a timeout that does not book and leaves G2 open. The Week 2 Day 1 background opens on that same result: a new `his-wadi` spec, and booking still waits.
+
+Week 2 reuses Week 1's status tool under the name `status`, and it says so. Day 1 is sign-in. Day 2 replaces polling with the `eref` webhook and keeps the mart clock off the truth. Day 3 moves the receipt onto the case clock. Day 4 is a private-cloud URL and a probe, not a live cluster. Day 5 queues Ain for the nightly file. The Week 3 Day 1 background separates that sign-in note from the waitlist person.
+
+Week 3 builds on leakage and retrieval. Day 1 is one person, not one row. Day 2 selects a registered adapter and does not train it. Day 3 cites an in-force span. Day 4 names the planted failures and does not pick a winner. Day 5 remeasures one retrieval failure and leaves G2 open. The Week 4 Day 1 background opens the attack window on that result.
+
+Week 4 can be told as one engagement. Guardrails and the DPIA, then a board that is not CPU, then chat holding a reserve while a batch runs, then site-b after site-a dies, then a proposal that does not start with triage and does not build the sponsor sentence. Week 4 Day 5 does not open a Day 21.
+
+The outside names added in this pass sit on the day that already teaches the idea: RAG on Week 1 Day 2, tool calling and prompt injection on Week 1 Day 4, unit test and end-to-end test on Week 2 Day 3, PEFT on Week 3 Day 2, vector database on Week 3 Day 3, prompt injection again on Week 4 Day 1, SLI on Week 4 Day 2, batching on Week 4 Day 3, and load balancing on Week 4 Day 4. None of those sentences names a facilitator trap.

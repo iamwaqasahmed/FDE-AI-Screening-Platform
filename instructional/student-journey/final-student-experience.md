@@ -25,4 +25,4 @@ Week 1 still asks the reader to write the access request, the interviews, the me
 
 ## Limit
 
-This is one simulated run plus the scanners. It is not a classroom. A reader can still miss a sentence. The failure tables remain the recovery path.
+This is one simulated run plus a later scratch clone, not a classroom. A reader can still miss a sentence. The failure tables remain the recovery path. Week 1 Days 1 and 2 are still written by hand. Packet files were hashed in the day notes. They were not re-read line by line in the closing pass.

@@ -103,7 +103,9 @@ The date a calendar case lands on is in [chapter 06](06-the-calendar.md). This p
 
 The receipt becomes due when the case clock moves. The shell test sleeps on the wall clock and then expects the receipt to be due. A fixed sleep follows the wall clock. The receipt follows the case clock, and the switch can hold it. The clock guide says to advance the pinned time. It says not to sleep.
 
-The journey trusts the mock's final state. The model's sentence is a fixture you load. The journey does not treat that sentence as the result.
+The calendar test and the reply test are unit tests. Each one checks one function and one expected result. The journey test is the end-to-end check. It walks the booking path. The model's sentence is a fixture you load. The journey does not treat that sentence as the result.
+
+CI is continuous integration. [ci.yml](packet/.github/workflows/ci.yml) is the workflow that runs this suite. You copy it. You do not edit it.
 
 This section adds no file and no command.
 

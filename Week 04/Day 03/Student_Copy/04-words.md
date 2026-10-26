@@ -81,7 +81,7 @@ This page is done when you have scanned the tables.
 
 `p-forecast` is the Week 1 Day 2 problem id. Week 3 Day 2 called it monthly session volumes. Today's file is the surge: a peak, and the eye-screening campaign Week 3 Day 4 said starts the next month. The backlog is that campaign. It is not last year's month.
 
-Chat and the batch share one GPU quota. Week 3 Day 2's quota was a count of GPUs for the adapter fit. Today's quota is the serving pool. Chat keeps a reserve on that pool. A cold start is the wait before a new process can serve. Adding capacity only after the peak has started misses that wait. The throughput sheet names the wait. Do not copy the number onto a page.
+Chat and the batch share one GPU quota. Week 3 Day 2's quota was a count of GPUs for the adapter fit. Today's quota is the serving pool. Chat keeps a reserve on that pool. Grouping the referral load so more of it finishes in the window is batching. A cold start is the wait before a new process can serve. Adding capacity only after the peak has started misses that wait. That early start is the scale step. It is not an autoscaler you configure. The forecast file names when to start. The throughput sheet names the wait. Do not copy the number onto a page.
 
 Week 3 Day 2 served one adapter, `lora-local`, on `local-small`. You did not train it. Today three approved rows share one process: `lora-extract`, `lora-intent`, and `lora-local`. You still do not train them. You serve the rows whose base is `local-small`. The candidate id and `ext-large` stay off that process.
 

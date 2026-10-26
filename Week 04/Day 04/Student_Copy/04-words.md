@@ -94,7 +94,7 @@ This page is done when you have scanned the tables.
 
 ## A plain reading
 
-Week 2 deployed one private-cloud URL. Today's private cloud has two sites. Two replicas sit behind a balancer. When site-a is killed, new traffic goes to site-b, the replica that is still healthy. The shell places only site-a, and site-a is down.
+Week 2 deployed one private-cloud URL. Today's private cloud has two sites. Two replicas sit behind a balancer. That balancer is load balancing: new traffic goes to the replica that is still healthy. When site-a is killed, new traffic goes to site-b. The shell places only site-a, and site-a is down.
 
 An in-flight approval is a pending approval already started. It is the same kind of hold Week 1 stopped for a coordinator. These two rows are today's drill file. They are not the Week 1 scenario log. The approval lives in the workflow store. It is not on the pod that was killed. Rebuilding from the dead pod drops it.
 

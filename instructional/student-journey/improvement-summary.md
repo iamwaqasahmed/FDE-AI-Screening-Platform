@@ -23,6 +23,23 @@ The chapters already carried the path, the pass line, and the failure table. Thi
 | Week 3 Day 1 to Day 5 | Student pastes passed, including `slice-lora`, `slice-hybrid`, `slice-acl`, and `slice-judge`. |
 | Week 4 Day 1 to Day 5 | Student pastes passed, including the five checks on the last day. |
 
+## Outside names
+
+A later pass added the syllabus name on the page that already taught the idea. No command and no paste block changed.
+
+| Page | Name added |
+| --- | --- |
+| Week 1 Day 2 words | Retrieval is also called RAG |
+| Week 1 Day 4 words | Tool calling, human in the loop, prompt injection |
+| Week 2 Day 3 words | Unit test, end-to-end test, CI |
+| Week 3 Day 2 words | PEFT |
+| Week 3 Day 3 words | Vector database, as a store this folder does not start |
+| Week 4 Day 1 words | Prompt injection |
+| Week 4 Day 2 words | SLI, beside the SLO |
+| Week 4 Day 3 words | Batching, and the scale step rather than an autoscaler |
+| Week 4 Day 4 words | Load balancing |
+| [learning/concept-index.md](../../learning/concept-index.md) | A row for each of those names |
+
 ## Left as they are
 
 Packet files, solution code, datasets, and paste blocks. The release README links that do not resolve are in [remaining issues](../remaining-issues.md).

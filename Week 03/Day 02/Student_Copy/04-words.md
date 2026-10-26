@@ -133,7 +133,7 @@ This page is done when you can find a word in the table and open its file. You d
 
 Week 1 Day 2 separated fine-tuning from retrieval. Fine-tuning changes weights. Retrieval looks up a document. The ruling closed a fine-tune on the external model. Patient data stays off `ext-large`.
 
-An adapter, on this day, is the small set of extra weights registered as `lora-local` on `local-small`. That style of small added weights is called LoRA. Parameter-efficient fine-tuning is the family name: you do not change every weight. You do not run a training loop in this folder. `adapter.py` selects the approved row and copies its hash. Rank is how wide that adapter is. A wider rank can ask for more GPUs.
+An adapter, on this day, is the small set of extra weights registered as `lora-local` on `local-small`. That style of small added weights is called LoRA. Parameter-efficient fine-tuning, PEFT, is the family name: you do not change every weight. You do not run a training loop in this folder. `adapter.py` selects the approved row and copies its hash. Rank is how wide that adapter is. A wider rank can ask for more GPUs.
 
 QLoRA is the fit in `qlora.py`. It has to stay inside the GPU count you read from the quota file. The two checks do not require that file. The suite does.
 

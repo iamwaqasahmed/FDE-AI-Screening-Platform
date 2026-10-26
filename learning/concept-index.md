@@ -35,7 +35,7 @@ The case keeps a longer care-word list at [access_language.md](../case/access_la
 | Leakage | The gap between those two splits. The score looks strong because the people being scored were already on the other side | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
 | Family words | `classical-ml`, `extract`, `retrieve`, `agent`, `forecast`, `no-model`, `blocked`. Join two with `+` only when the memo chapter says so | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
 | Fine-tuning | Changing a model's weights on the cluster's own examples | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
-| Retrieval | Leaving the weights alone and looking up a document that is in force | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
+| Retrieval | Leaving the weights alone and looking up a document that is in force. Also called RAG | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
 | System of record | The system that holds the fact. A number on a slide is not that system | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
 | `ext-large` | The public-cloud model on `zone-public`. Patient data stays off it | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
 | `local-small` | On Day 2, the smaller local price, `price.local_per_1k`. Later, the local model the adapter is based on | [Week 1 Day 2, words](<../Week 01/Day 02/Student_Copy/04-words.md>) |
@@ -51,9 +51,11 @@ The case keeps a longer care-word list at [access_language.md](../case/access_la
 | Hold | A short reservation of a slot, not a booking. If the next step fails, the hold is released | [Week 1 Day 3, words](<../Week 01/Day 03/Student_Copy/04-words.md>) |
 | Dead letter | A record that an event was not applied after the policy's retry count | [Week 1 Day 3, words](<../Week 01/Day 03/Student_Copy/04-words.md>) |
 | Tool | One action the agent may call. Status is a tool. It is not a sentence in the prompt. Day 4's catalog name is `referral.status`. Week 2 Day 1 records that same read on the trace as `status` | [Week 1 Day 4, words](<../Week 01/Day 04/Student_Copy/04-words.md>) |
+| Tool calling | Asking a named tool to run. The name is on the trace. The letter is not a tool | [Week 1 Day 4, words](<../Week 01/Day 04/Student_Copy/04-words.md>) |
+| Human in the loop | A write that waits for the coordinator. The assistant does not book past that person | [Week 1 Day 4, words](<../Week 01/Day 04/Student_Copy/04-words.md>) |
 | Approval | A coordinator's decision. A return and a booking wait for it | [Week 1 Day 4, words](<../Week 01/Day 04/Student_Copy/04-words.md>) |
 | Redirect | A handoff when the turn matches the routing list. The visit is not booked | [Week 1 Day 4, words](<../Week 01/Day 04/Student_Copy/04-words.md>) |
-| Injection | A letter that tells the agent to ignore policy and book. The letter is data | [Week 1 Day 4, words](<../Week 01/Day 04/Student_Copy/04-words.md>) |
+| Injection | A letter that tells the agent to ignore policy and book. Also called prompt injection. The letter is data | [Week 1 Day 4, words](<../Week 01/Day 04/Student_Copy/04-words.md>) |
 | Trace | The rows the runner writes. A trace typed by hand is not the one the checks grade | [Week 1 Day 4, words](<../Week 01/Day 04/Student_Copy/04-words.md>) |
 | Memory | Facts kept for one session. A later session reuses a preference only when consent and retention allow | [Week 1 Day 4, words](<../Week 01/Day 04/Student_Copy/04-words.md>) |
 
@@ -64,6 +66,10 @@ The case keeps a longer care-word list at [access_language.md](../case/access_la
 | FHIR | The record shape `his-wadi` publishes. Version 2 removes a field the old client still asks for | [Week 2 Day 1, words](<../Week 02/Day 01/Student_Copy/04-words.md>) |
 | Level of assurance | How strongly the cluster has checked the person. Reading status and booking are not the same level | [Week 2 Day 1, words](<../Week 02/Day 01/Student_Copy/04-words.md>) |
 | Token | The proof a person presents at sign-in. A service token does not sign a patient in. Week 4 Day 5: the same service id does not open the staff console | [Week 2 Day 1, words](<../Week 02/Day 01/Student_Copy/04-words.md>), then [Week 4 Day 5, words](<../Week 04/Day 05/Student_Copy/04-words.md>) |
+| OpenID Connect | The sign-in pattern on this day: the token is checked against the issuer and the token endpoint. This day does not add a second protocol | [Week 2 Day 1, words](<../Week 02/Day 01/Student_Copy/04-words.md>) |
+| Unit test | One function and one expected result. On Week 2 Day 3, the calendar test and the reply test | [Week 2 Day 3, words](<../Week 02/Day 03/Student_Copy/04-words.md>) |
+| End-to-end test | The journey. It walks the booking path and loads the model sentence from a fixture | [Week 2 Day 3, words](<../Week 02/Day 03/Student_Copy/04-words.md>) |
+| CI | Continuous integration. The workflow file runs the suite. You copy it. You do not edit it | [Week 2 Day 3, words](<../Week 02/Day 03/Student_Copy/04-words.md>) |
 | Identity note | How strongly sign-in has checked the person. The Week 1 word identity, on the waitlist, is a different problem: one person stored as two | [Week 2 Day 1, words](<../Week 02/Day 01/Student_Copy/04-words.md>) |
 | Session row | One row in the application database: session id, subject, role, and assurance level | [Week 2 Day 1, words](<../Week 02/Day 01/Student_Copy/04-words.md>) |
 | Webhook | A push. `eref` sends the event. Polling is the old path | [Week 2 Day 2, words](<../Week 02/Day 02/Student_Copy/04-words.md>) |
@@ -86,11 +92,13 @@ The case keeps a longer care-word list at [access_language.md](../case/access_la
 | Fidelity card | The comparison a synthetic sample has to pass: specialty mix, phrase frequencies, and label margins | [Week 3 Day 1, words](<../Week 03/Day 01/Student_Copy/04-words.md>) |
 | Adapter | The small set of extra weights registered as `lora-local` on `local-small`. This day selects that row. It does not run a training loop | [Week 3 Day 2, words](<../Week 03/Day 02/Student_Copy/04-words.md>) |
 | LoRA | The name for that small set of extra weights. Rank is how wide it is | [Week 3 Day 2, words](<../Week 03/Day 02/Student_Copy/04-words.md>) |
+| PEFT | Parameter-efficient fine-tuning. The family name for adding a small set of weights instead of changing every weight. This day does not run a training loop | [Week 3 Day 2, words](<../Week 03/Day 02/Student_Copy/04-words.md>) |
 | QLoRA | The fit in `qlora.py` that has to stay inside the GPU quota | [Week 3 Day 2, words](<../Week 03/Day 02/Student_Copy/04-words.md>) |
 | Register | `reg-models`. Only an approved hash may be served | [Week 3 Day 2, words](<../Week 03/Day 02/Student_Copy/04-words.md>) |
 | Residency | Where a field is allowed to be processed. The four PHI fields stay in `zone-private` | [Week 3 Day 2, words](<../Week 03/Day 02/Student_Copy/04-words.md>) |
 | Chunk | One clause cut from a document at a blank line. The clause id stays on it | [Week 3 Day 3, words](<../Week 03/Day 03/Student_Copy/04-words.md>) |
 | Embedding | On this day, the token vector `local-embed` writes: each token, including a hyphenated code, gets a weight. Nearness compares two of those maps | [Week 3 Day 3, words](<../Week 03/Day 03/Student_Copy/04-words.md>) |
+| Vector database | A store other systems use for maps like these. This folder keeps the maps in the files already opened. It does not start a separate database | [Week 3 Day 3, words](<../Week 03/Day 03/Student_Copy/04-words.md>) |
 | Hybrid | Vector nearness, plus a code boost, keeping only what is in force | [Week 3 Day 3, words](<../Week 03/Day 03/Student_Copy/04-words.md>) |
 | Citation | The in-force span the asker may see. A search hit is not yet a citation | [Week 3 Day 3, words](<../Week 03/Day 03/Student_Copy/04-words.md>) |
 | Audience | Who a document is for: `public`, `staff`, or `restricted`. A patient sees `public` only | [Week 3 Day 3, words](<../Week 03/Day 03/Student_Copy/04-words.md>) |
@@ -111,11 +119,14 @@ The case keeps a longer care-word list at [access_language.md](../case/access_la
 | 72-hour clock | The report is due 72 hours after the timestamp on the notice, not after a model call | [Week 4 Day 1, words](<../Week 04/Day 01/Student_Copy/04-words.md>) |
 | Deletion | Clears the row, memory, the index, and the logs. The row alone is not done | [Week 4 Day 1, words](<../Week 04/Day 01/Student_Copy/04-words.md>) |
 | Span | One row of telemetry. Latency, errors, and tool failures are read from spans | [Week 4 Day 2, words](<../Week 04/Day 02/Student_Copy/04-words.md>) |
+| SLO | The service level objective. On this day, five minutes from the first tool error | [Week 4 Day 2, words](<../Week 04/Day 02/Student_Copy/04-words.md>) |
+| SLI | A service level indicator. On this day, the board counts: latency, errors, and tool failures | [Week 4 Day 2, words](<../Week 04/Day 02/Student_Copy/04-words.md>) |
 | Drift | The thing being served no longer matches the world. The three kinds here are hours, criteria, and clinic | [Week 4 Day 2, words](<../Week 04/Day 02/Student_Copy/04-words.md>) |
 | Cache | On Week 4 Day 2, stored clinic hours. `document.changed` for the Ramadan circular drops them. On Week 4 Day 3, a stored public answer. A hit spends no model call | [Week 4 Day 2, words](<../Week 04/Day 02/Student_Copy/04-words.md>), then [Week 4 Day 3, words](<../Week 04/Day 03/Student_Copy/04-words.md>) |
 | Cold start | The wait before a new process can serve. Scaling only after the peak starts misses that wait | [Week 4 Day 3, words](<../Week 04/Day 03/Student_Copy/04-words.md>) |
 | Quota | On Week 3 Day 2, a count of GPUs for the adapter fit. On Week 4 Day 3, the shared serving pool. Chat and the batch use one pool. Chat keeps a reserve | [Week 3 Day 2, words](<../Week 03/Day 02/Student_Copy/04-words.md>), then [Week 4 Day 3, words](<../Week 04/Day 03/Student_Copy/04-words.md>) |
 | Failover | New traffic moves to site-b after site-a is killed | [Week 4 Day 4, words](<../Week 04/Day 04/Student_Copy/04-words.md>) |
+| Load balancing | The balancer in front of the two replicas. New traffic goes to the replica that is still healthy | [Week 4 Day 4, words](<../Week 04/Day 04/Student_Copy/04-words.md>) |
 | Circuit breaker | Open means the booking path does not call the failing partner and does not wait out the timeout | [Week 4 Day 4, words](<../Week 04/Day 04/Student_Copy/04-words.md>) |
 | Degrade | What still works when the model is down. Status is the Week 1 read. It can still be read | [Week 4 Day 4, words](<../Week 04/Day 04/Student_Copy/04-words.md>) |
 | Handoff | The contact-center transfer. It needs a summary. Week 1's redirect was a different handoff: the routing list, not this call | [Week 4 Day 5, words](<../Week 04/Day 05/Student_Copy/04-words.md>) |

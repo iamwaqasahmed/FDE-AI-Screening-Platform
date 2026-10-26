@@ -106,7 +106,7 @@ The row split and the person split are the two DNA scores. The row split can pla
 
 On the practice file the person line is `0.0000`. That zero is the score, not a broken script. The split keeps the last 30 percent of the sorted person ids, `p16` through `p23`. On every row for those people, a guess from `prior_dna` does not match `did_not_attend`. The row line stays high because `p00` through `p15` match the rule, and the same person can sit on both sides of that split.
 
-The family words are the choice you write down. Join two with `+` only when the memo chapter says the problem needs both. Fine-tuning changes weights. Retrieval leaves the weights alone. `no-model` is a query, a rule, or a workflow. `blocked` means a person already owns the decision.
+The family words are the choice you write down. Join two with `+` only when the memo chapter says the problem needs both. Fine-tuning changes weights. Retrieval leaves the weights alone. You will also hear retrieval called RAG: the answer comes from a document, not from changed weights. `no-model` is a query, a rule, or a workflow. `blocked` means a person already owns the decision.
 
 This section adds no file and no command.
 

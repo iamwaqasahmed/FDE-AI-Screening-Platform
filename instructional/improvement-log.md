@@ -182,3 +182,9 @@ A scratch clone ran every setup build, every `prepare_work.py`, the Replace bloc
 Prose added in that pass: a `python3` note and one failure row in each of the twenty setup chapters, a short basics page, and solo-reader notes in the learning guide. Paste blocks and protected files were not changed. Protected hashes after the edit: 0 changed.
 
 A later export filled the Week 1 handwritten pages from the chapter fences. Week 1 Days 1, 2, and 5 then passed their finish checks. No further chapter prose was added. The record is in [student-journey/days](student-journey/days/).
+
+## Closing pass
+
+The syllabus name was added where the page already taught the idea and did not say the outside word: RAG, tool calling, a human in the loop, prompt injection, unit test, end-to-end test, CI, PEFT, vector database, SLI, batching, and load balancing. The concept index gained a row for each. Paste blocks were not changed.
+
+A new scratch clone then ran Week 1 Days 3 to 5 and Week 2 Day 1 through Week 4 Day 5 from those fences. Student and solution checks passed. The day notes hold the hashes and the pass lines.

@@ -91,7 +91,7 @@ This page is done when you have scanned the tables.
 
 ## A plain reading
 
-Week 1 already treated a letter as data. A sentence inside the letter does not get to book. Today that rule has families. A direct attack is a chat line that says to ignore policy. An indirect attack is the same instruction inside a letter. Excessive agency is a booking or a return with no coordinator approval. In `wf-intake` that action is held for a coordinator. Week 1 Day 3 already stopped there. Disclosure is a log line that carries a national id. The guardrail is the screen in front of the tool. Blocking only the direct phrase is not done.
+Week 1 already treated a letter as data. A sentence inside the letter does not get to book. That hidden instruction is prompt injection. Today that rule has families. A direct attack is a chat line that says to ignore policy. An indirect attack is the same instruction inside a letter. Excessive agency is a booking or a return with no coordinator approval. In `wf-intake` that action is held for a coordinator. Week 1 Day 3 already stopped there. Disclosure is a log line that carries a national id. The guardrail is the screen in front of the tool. Blocking only the direct phrase is not done.
 
 The register still has two fields on each row, the same split Week 2 Day 4 used. `lora-local` is an id. The hash is the other field. A load uses the hash string. It does not treat the id as the hash.
 

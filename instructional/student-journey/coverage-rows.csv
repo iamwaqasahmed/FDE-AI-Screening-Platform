@@ -1,5 +1,5 @@
 path,week,day,category,lines,sha256,status
-FDE Program Syllabus.md,,,syllabus,647,a29b3c3baa4b0a94cfd6ea56ac8468bd0e95e4efa705d4cfebc72873ac4094b4,entry-or-author
+FDE Program Syllabus.md,,,syllabus,647,274637f7032f8df45b6c413bd6fe458847988678934d2e198ff5798692b6bad0,entry-or-author
 README.md,,,root,103,6071daef89846af63c1dbfaadb5ed3ff0037ec7915d2564426312006ed1c5f91,entry-or-author
 Week 01/Day 01/README.md,Week 01,Day 01,day-readme,11,1ca815c03f4bee8b134c6d8caf24991b0a4347b33c0985e7c122e2069f4e7aaa,checks-ran-for-the-day
 Week 01/Day 01/Solution_Copy/01-what-done-is.md,Week 01,Day 01,chapter,19,cfb203998fb8555f1ceee0f794667bebe34f61ce22d06d424f938cb014f6d949,checks-ran-for-the-day
@@ -92,7 +92,7 @@ Week 01/Day 02/Student_Copy/00-background.md,Week 01,Day 02,chapter,69,3d4c3d121
 Week 01/Day 02/Student_Copy/01-setup.md,Week 01,Day 02,chapter,107,5fd3be87b14db29e56d077b8a3492704def987695bbcca90666cafd1c7145fa5,edited-setup-note
 Week 01/Day 02/Student_Copy/02-the-role.md,Week 01,Day 02,chapter,37,ba471d4e2fbd9a09ca19a7683b6066fd9044b5a0eb5e333bc587bc269e9f906d,checks-ran-for-the-day
 Week 01/Day 02/Student_Copy/03-the-client.md,Week 01,Day 02,chapter,40,691cae232a8291015c2a527889fb943e04071c0dffb475096c608f591905b208,checks-ran-for-the-day
-Week 01/Day 02/Student_Copy/04-words.md,Week 01,Day 02,chapter,115,152a3e8de03effe2bb75322f1b687ee7ec74d2d2bbd95e3302acc34edb947f6d,checks-ran-for-the-day
+Week 01/Day 02/Student_Copy/04-words.md,Week 01,Day 02,chapter,115,a682da75cc5b1b7d28ba262de6f828af771575faa4083f803f4a7f063ea564b7,checks-ran-for-the-day
 Week 01/Day 02/Student_Copy/05-the-extracts.md,Week 01,Day 02,chapter,39,052e148e14a1c38f6cb2c9e918a1d8ac7a1433f9372651ccb48de63e1ac80ed8,checks-ran-for-the-day
 Week 01/Day 02/Student_Copy/06-the-baselines.md,Week 01,Day 02,chapter,67,26ea889acf9d359e2ae0f1c0fe0feb134636f2eb3fc3f3d5e6436844d762540b,checks-ran-for-the-day
 Week 01/Day 02/Student_Copy/07-the-memo.md,Week 01,Day 02,chapter,127,90b57c10e96a7a5b57538cf9a2e705857844fc021404fd4c5a8d02cef1aa7872,checks-ran-for-the-day
@@ -183,7 +183,7 @@ Week 01/Day 04/Student_Copy/00-background.md,Week 01,Day 04,chapter,79,154bedc17
 Week 01/Day 04/Student_Copy/01-setup.md,Week 01,Day 04,chapter,109,5a5ec9efae0888f6fe320f808314e5fd1f87ea54c34a857115910c9ac28c93e1,edited-setup-note
 Week 01/Day 04/Student_Copy/02-the-role.md,Week 01,Day 04,chapter,31,494a80723208054af535cfa470126003fbec723911813dce82783126b0465e21,checks-ran-for-the-day
 Week 01/Day 04/Student_Copy/03-the-client.md,Week 01,Day 04,chapter,25,f9b64f57390d1bc32c9db8ab7a7d45b4671380e722e2546e8437eb24ca8c1423,checks-ran-for-the-day
-Week 01/Day 04/Student_Copy/04-words.md,Week 01,Day 04,chapter,97,5fed536deab5a59b334222001648c91cdaa7e701efa35adfb912202d4e6bc2e7,checks-ran-for-the-day
+Week 01/Day 04/Student_Copy/04-words.md,Week 01,Day 04,chapter,99,d3e4ee1f40100db37ee043e729cd1b5a04e13296707475cffe1c727abbcc26f0,checks-ran-for-the-day
 Week 01/Day 04/Student_Copy/05-the-rules.md,Week 01,Day 04,chapter,87,dd77c23ffd0743e3ca69d7a535085df964ca9c429ffbaac745c446f070ab3bdf,checks-ran-for-the-day
 Week 01/Day 04/Student_Copy/06-the-agent.md,Week 01,Day 04,chapter,599,6420f3faab61846cf48885b3009f84bedced4d7d82587c9a32f9d1d534f5140a,checks-ran-for-the-day
 Week 01/Day 04/Student_Copy/07-the-note.md,Week 01,Day 04,chapter,50,0e9dd2dc1d87a130c6dd9cae93da4676618d1d13e7c208e43605f0fb7458bb09,checks-ran-for-the-day
@@ -398,7 +398,7 @@ Week 02/Day 03/Student_Copy/00-background.md,Week 02,Day 03,chapter,96,ab85f883c
 Week 02/Day 03/Student_Copy/01-setup.md,Week 02,Day 03,chapter,125,e7d91b773a756d4ca73faa9baeae3da51815a42e75a207f8438cf697488274a7,edited-setup-note
 Week 02/Day 03/Student_Copy/02-the-role.md,Week 02,Day 03,chapter,31,14ac0e226c9a950e5ac2c71e3de9b9b50708aae430b317b335159bbbfb4466da,checks-ran-for-the-day
 Week 02/Day 03/Student_Copy/03-the-notice.md,Week 02,Day 03,chapter,115,8829833fc96d9548640e2e10ad1d1d2e7c866c55cf04b9ba49b86795ddd98265,checks-ran-for-the-day
-Week 02/Day 03/Student_Copy/04-words.md,Week 02,Day 03,chapter,112,f41f60545247faadf0e65012702de1e9981b1722a32d80571d40f255fc7cc338,checks-ran-for-the-day
+Week 02/Day 03/Student_Copy/04-words.md,Week 02,Day 03,chapter,114,a443321f2e62c8feed32be150165ec589d141d1f4b10b22edb4dbd9a24866eab,checks-ran-for-the-day
 Week 02/Day 03/Student_Copy/05-the-sprint.md,Week 02,Day 03,chapter,33,43e90b98c7044844281ef73a1d43acbcd2a5ce1f06d1719f02cc34078273075d,checks-ran-for-the-day
 Week 02/Day 03/Student_Copy/06-the-calendar.md,Week 02,Day 03,chapter,193,629a58161c99d0e5c6ee6426c76e89e7fea4349f7a505828fedaa041b75e2b4e,checks-ran-for-the-day
 Week 02/Day 03/Student_Copy/07-the-reply.md,Week 02,Day 03,chapter,187,d200f5ccbddfcdeb265249ae9c80fa2bcdc2e12c02787ebe6b4ae988e935febf,checks-ran-for-the-day
@@ -639,7 +639,7 @@ Week 03/Day 02/Student_Copy/00-background.md,Week 03,Day 02,chapter,116,03eca372
 Week 03/Day 02/Student_Copy/01-setup.md,Week 03,Day 02,chapter,139,2449433c0db7b6147a568767a8e5f7e608b1f5817838dcda0c13e03562844ed2,edited-setup-note
 Week 03/Day 02/Student_Copy/02-the-role.md,Week 03,Day 02,chapter,33,56515b4464bde722d9d393058727ba9a28fb7d67db35839da8cfeaa03d01f0bf,checks-ran-for-the-day
 Week 03/Day 02/Student_Copy/03-the-ruling.md,Week 03,Day 02,chapter,66,eeeb24a8356a282781f68f65a3a272d531c98d798ffdd1538d53c17a90f61334,checks-ran-for-the-day
-Week 03/Day 02/Student_Copy/04-words.md,Week 03,Day 02,chapter,146,75f1900ce7b3cf738719f239dc24087c7b66f7ee2a65a54cbb133a84b48197d1,checks-ran-for-the-day
+Week 03/Day 02/Student_Copy/04-words.md,Week 03,Day 02,chapter,146,63f1f69f732ef29a3a5546d3a84030bac0d6cc436a70bfc2dc7ff56898e4935d,checks-ran-for-the-day
 Week 03/Day 02/Student_Copy/05-the-sprint.md,Week 03,Day 02,chapter,40,58b18a48abd522b7f4939b2d8db746752fcdb7dd9b9d54f3c0b3a809d6716e8d,checks-ran-for-the-day
 Week 03/Day 02/Student_Copy/06-the-baseline.md,Week 03,Day 02,chapter,302,9a6a7833b929c874ae33a41e71dda953f2b35f082ae67ed395946b8b4c9f8697,checks-ran-for-the-day
 Week 03/Day 02/Student_Copy/07-the-adapter.md,Week 03,Day 02,chapter,269,9d7fdcaddb2851e38d152be6437273f9b762e9a77658e3795404a9717f6c6c13,checks-ran-for-the-day
@@ -696,7 +696,7 @@ Week 03/Day 03/Student_Copy/00-background.md,Week 03,Day 03,chapter,122,de283719
 Week 03/Day 03/Student_Copy/01-setup.md,Week 03,Day 03,chapter,139,50230bf59d196422efc90f39f6db2db84d6ee2fb0bf52dd766530b06b336f879,edited-setup-note
 Week 03/Day 03/Student_Copy/02-the-role.md,Week 03,Day 03,chapter,33,dec98caffb915e4b6d209858c3a3037cc49e33f14fc38039bfbf335f715bcb89,checks-ran-for-the-day
 Week 03/Day 03/Student_Copy/03-the-criteria.md,Week 03,Day 03,chapter,83,7519bdc78a1bb7564382f17de5f4c9f4e26651054360134364e5201808c95bcb,checks-ran-for-the-day
-Week 03/Day 03/Student_Copy/04-words.md,Week 03,Day 03,chapter,103,5abbb2edbd706171d5318c0300b21bf008d2d4c05e0c1c519c7a94d71126821f,checks-ran-for-the-day
+Week 03/Day 03/Student_Copy/04-words.md,Week 03,Day 03,chapter,103,9d32f10366621caf33403a6f3f69db54f41cdc1bd858ffa487151c054385292c,checks-ran-for-the-day
 Week 03/Day 03/Student_Copy/05-the-sprint.md,Week 03,Day 03,chapter,43,f8f7322f75d4dce6e0e2f7518845c9b692140480d97bf23c012505bc7aec0834,checks-ran-for-the-day
 Week 03/Day 03/Student_Copy/06-the-index.md,Week 03,Day 03,chapter,412,bf9f40f6b74ec65a89781e9d4243556cc38af3726e35a722fae2ea6f3374b58b,checks-ran-for-the-day
 Week 03/Day 03/Student_Copy/07-the-citation.md,Week 03,Day 03,chapter,419,a3459a27e938fe29ea0e4b5fdab981d1329712b80f52b3a930e5e50b68c3eb7f,checks-ran-for-the-day
@@ -864,7 +864,7 @@ Week 04/Day 01/Student_Copy/00-background.md,Week 04,Day 01,chapter,134,14459d1d
 Week 04/Day 01/Student_Copy/01-setup.md,Week 04,Day 01,chapter,155,fdf71d3c9328b42ffb62dc728ec1107c3636bb18cecd48be13e1c607f1d6858a,edited-setup-note
 Week 04/Day 01/Student_Copy/02-the-role.md,Week 04,Day 01,chapter,33,b8087480cb99a27d0814000d2e95a6685d3e6ca0ba4f6ccbeef756c94cf438db,checks-ran-for-the-day
 Week 04/Day 01/Student_Copy/03-the-notice.md,Week 04,Day 01,chapter,218,325486cadaa2e55eb55254aea193d3f46d5f6c4abeacd5a866ebf3559ac25f72,checks-ran-for-the-day
-Week 04/Day 01/Student_Copy/04-words.md,Week 04,Day 01,chapter,106,80f5ab3eb9271be3824381716fdcb362c9ff63c00ce3e96c9a8e1208a49d2343,checks-ran-for-the-day
+Week 04/Day 01/Student_Copy/04-words.md,Week 04,Day 01,chapter,106,7b36eb0837793bcbbe4f4e0c4b9a115ebb9458c7d867ed3ebede3dba7ceb8c8e,checks-ran-for-the-day
 Week 04/Day 01/Student_Copy/05-the-sprint.md,Week 04,Day 01,chapter,51,943b3a369c916914e97ba9d59c108eb6ecc9a947318d2a443acd87886395a3fe,checks-ran-for-the-day
 Week 04/Day 01/Student_Copy/06-the-guard.md,Week 04,Day 01,chapter,996,9951f7dd791e90c9c163b802a7c69a3edbdb674a09962f0399390e040af5dd35,checks-ran-for-the-day
 Week 04/Day 01/Student_Copy/07-the-request.md,Week 04,Day 01,chapter,531,55c7a59ec3f7686894df853fba59e21b1009e7a038938729fe137f7ef2d56d25,checks-ran-for-the-day
@@ -915,7 +915,7 @@ Week 04/Day 02/Student_Copy/00-background.md,Week 04,Day 02,chapter,140,d95714e0
 Week 04/Day 02/Student_Copy/01-setup.md,Week 04,Day 02,chapter,156,5880c8d15787bdc7c83daf57d5ac340192c12d939033ad030e7ff3decc2f8d10,edited-setup-note
 Week 04/Day 02/Student_Copy/02-the-role.md,Week 04,Day 02,chapter,35,fbf383c41101bda1bb39105857ad206079f8e50aeccc0a90c39d54db0d2d89ca,checks-ran-for-the-day
 Week 04/Day 02/Student_Copy/03-the-replay.md,Week 04,Day 02,chapter,161,a53f55299f341aafe83d739375a4d16e62d50170e06a47f27e46f30fd2b558bd,checks-ran-for-the-day
-Week 04/Day 02/Student_Copy/04-words.md,Week 04,Day 02,chapter,88,8f5b54b01ca3b257914284aee7c1e30db4845c66d7d961ccc120358dfe4c04ae,checks-ran-for-the-day
+Week 04/Day 02/Student_Copy/04-words.md,Week 04,Day 02,chapter,88,f8afb231c5cb798398f2d62574d8d13ae0bb5fe0221991d1d260f4e32fa5712c,checks-ran-for-the-day
 Week 04/Day 02/Student_Copy/05-the-sprint.md,Week 04,Day 02,chapter,47,b1a5ac87d5d4cf24bbf1e4cc869c73b0081d77c6931797e5a2ce514fdf98fa7c,checks-ran-for-the-day
 Week 04/Day 02/Student_Copy/06-the-board.md,Week 04,Day 02,chapter,563,d16358bf077c23437cc2f790cea7529b515da881f8ccd17c95ab4c73c28d50fb,checks-ran-for-the-day
 Week 04/Day 02/Student_Copy/07-the-hours.md,Week 04,Day 02,chapter,706,7a401befd9734bc0cc2f089ca5ff4ce419d2e603381f2d73c5b650bf3abe2cda,checks-ran-for-the-day
@@ -962,7 +962,7 @@ Week 04/Day 03/Student_Copy/00-background.md,Week 04,Day 03,chapter,144,df0cc094
 Week 04/Day 03/Student_Copy/01-setup.md,Week 04,Day 03,chapter,157,71af1195559136c264ff8fad03c6e9f1e2ac3edaa5b66adf43f7e33c343c0c02,edited-setup-note
 Week 04/Day 03/Student_Copy/02-the-role.md,Week 04,Day 03,chapter,35,dc024abf20ae40815d9cfca384935c276146e93f50aa98f4bd50ac89b92d1eef,checks-ran-for-the-day
 Week 04/Day 03/Student_Copy/03-the-forecast.md,Week 04,Day 03,chapter,139,582cbf60e268ad45df9875f78923e5e73a42bd7b1f2991dd7567df8ed1f4a8d4,checks-ran-for-the-day
-Week 04/Day 03/Student_Copy/04-words.md,Week 04,Day 03,chapter,96,56efab477acbb0d429097def1aaebbe8450365f5df1f1e238a3b3e371b5a47eb,checks-ran-for-the-day
+Week 04/Day 03/Student_Copy/04-words.md,Week 04,Day 03,chapter,96,e356beec38232a9164a01377c026abe7bbb6344ed907d7914cd6838c3b9298e0,checks-ran-for-the-day
 Week 04/Day 03/Student_Copy/05-the-sprint.md,Week 04,Day 03,chapter,52,25ce48b44bd3484e282698187ca878bd8231a624723d8234018a50a12e8939c8,checks-ran-for-the-day
 Week 04/Day 03/Student_Copy/06-the-server.md,Week 04,Day 03,chapter,739,612a54ba11d8da0eb0a379d8203927a2d223e78ab86e1a44fa389311abf444be,checks-ran-for-the-day
 Week 04/Day 03/Student_Copy/07-the-surge.md,Week 04,Day 03,chapter,718,bb29d15589af38da681adc2f821aa57e083c1f8110393e1ef521dcba3ae3af34,checks-ran-for-the-day
@@ -1005,7 +1005,7 @@ Week 04/Day 04/Student_Copy/00-background.md,Week 04,Day 04,chapter,148,609688f7
 Week 04/Day 04/Student_Copy/01-setup.md,Week 04,Day 04,chapter,155,6fa4f6b5a780c679591f63a4bcdd25cfcb4918dad9cb2c1cac8f17b8a1402044,edited-setup-note
 Week 04/Day 04/Student_Copy/02-the-role.md,Week 04,Day 04,chapter,35,bc31511d300b15b28f4344b9c09695ea68587a0a50db1cad5a02113b63dabaa0,checks-ran-for-the-day
 Week 04/Day 04/Student_Copy/03-the-drill.md,Week 04,Day 04,chapter,163,35b6083caa5c119874b3bbddc66fa5d50839537bb040be6107a01e37b1d5f603,checks-ran-for-the-day
-Week 04/Day 04/Student_Copy/04-words.md,Week 04,Day 04,chapter,111,eca8a7539dfa234da62e3f65a1c4b573f53d1e76d046d494189c3a80992fb075,checks-ran-for-the-day
+Week 04/Day 04/Student_Copy/04-words.md,Week 04,Day 04,chapter,111,4027b8ca1796f4176a3a38d406da9d462ec8f6c5615ad91ef87ca7930ce6cad2,checks-ran-for-the-day
 Week 04/Day 04/Student_Copy/05-the-sprint.md,Week 04,Day 04,chapter,52,6a78253466139ea8add61b0a3ccfd123d9ab1e05053f883299cb707067a2700b,checks-ran-for-the-day
 Week 04/Day 04/Student_Copy/06-the-sites.md,Week 04,Day 04,chapter,687,3823b748b57b8e41cbdf0206e9e5eedb4afc7b227888a912ac47ee28cc480867,checks-ran-for-the-day
 Week 04/Day 04/Student_Copy/07-the-outage.md,Week 04,Day 04,chapter,798,c951794102c74be361ccfcbb86ab18b37948352c6cec09664153ebc120d86c07,checks-ran-for-the-day
@@ -1263,38 +1263,38 @@ instructional/curriculum-understanding-map.md,,,instructional,350,c802bb7909ee27
 instructional/documentation-standards.md,,,instructional,64,4c46fd6297eacfd0a3f230a8acd54a6a327133639e9011401cce7337ae3f2d5a,entry-or-author
 instructional/documentation-validation-report.md,,,instructional,45,b91b4a653eda9fbdf29ca656103a3f5de1fde41301cf4e7ce92fd84b54e1fa1b,edited-or-written
 instructional/educational-experience-audit.md,,,instructional,77,8ca7210aa504018ae188f7cfbdbb28dc93f72aaf2a5848e4129db8fd78927dd0,entry-or-author
-instructional/improvement-log.md,,,instructional,184,0bdc0b61e7b71d87b0b92462db918b093465fb7c6513b47de5b2c7d998dbecc4,edited-or-written
+instructional/improvement-log.md,,,instructional,190,7adfd8105505e1ebe62e09d1cc000b705ff3a2d3bc47d882756f388d89d4c785,edited-or-written
 instructional/remaining-issues.md,,,instructional,87,9f94b668a4fc016bd026ff069360284ee853ce7d1d357c18caf890fba3905453,edited-or-written
-instructional/student-journey/README.md,,,instructional,21,f44ed8f72f3c49b8ab0bfddbe96c52bfc2e2a9fcd174fb5fcf011d38eff76996,edited-or-written
+instructional/student-journey/README.md,,,instructional,21,f7622ae51f9303b29d5e6b35da82606a2c9f5e3a7acf46b86f4a9ae31ba964d5,edited-or-written
 instructional/student-journey/coverage-summary.md,,,instructional,18,89e6fc7e4094dd61a33a580ed731ad22f8e98d674a4cd3faca5b21602521217e,edited-or-written
-instructional/student-journey/days/w1d1.md,,,instructional,20,a082cefa6013299242fc0883c62e2e45b47cc62cda906d8408e8566e5e046428,edited-or-written
-instructional/student-journey/days/w1d2.md,,,instructional,20,fd314876c6f886b25ab71ead511bc07162eb2d3c6a0c5f18708b14f2bbe8cb94,edited-or-written
-instructional/student-journey/days/w1d3.md,,,instructional,13,d91cd830036f743d5fe8e1b9251f0bffca4397f266ffe3b34d47a5e9aeba848b,edited-or-written
-instructional/student-journey/days/w1d4.md,,,instructional,13,040851179d7441737512bb8b2d9fb290978a60396dcf3e21e4b46a0c4e210d89,edited-or-written
-instructional/student-journey/days/w1d5.md,,,instructional,23,a93c1482be88c442f26fdd621ad1088b85587e32a54ccc090a9285db970a048a,edited-or-written
-instructional/student-journey/days/w2d1.md,,,instructional,13,e8e90c42f2057b6d56da43af9445901f452778bd6bd30faa12492d64be88f725,edited-or-written
-instructional/student-journey/days/w2d2.md,,,instructional,13,657d32ce5796c7487283b026f0f37643c777e3b02e93b012d16a32cec0f355a1,edited-or-written
-instructional/student-journey/days/w2d3.md,,,instructional,13,5acef20c6ca52578cf9272304bfb2a8a1dfa7bae28ed86598189943252ba864c,edited-or-written
-instructional/student-journey/days/w2d4.md,,,instructional,13,0846640f53b017c986a5c3815c0f10671d821aaafbe91c5fc7ce65094d43ffaa,edited-or-written
-instructional/student-journey/days/w2d5.md,,,instructional,20,c941548b2b2cac3fc723e7587d1e5ee73d9e8422a576e633b1870780e2b91d2e,edited-or-written
-instructional/student-journey/days/w3d1.md,,,instructional,13,826e97873235f38b67d8daf6252611a4b09f328c2c00ea653f9d6e78eb5f467f,edited-or-written
-instructional/student-journey/days/w3d2.md,,,instructional,13,7e9198cea6758c14b6f695bdb1b03ecbb276b55c942c8b7f674b1bd6e13178a4,edited-or-written
-instructional/student-journey/days/w3d3.md,,,instructional,13,26f4c3444c6a580ff75e3fc036de36a8e4d9de98ead5a4d18ac7025ff46e9260,edited-or-written
-instructional/student-journey/days/w3d4.md,,,instructional,13,232d1626a08148b3df85e5bb4a32be0315242109467e88f02b76dcf89d151ba0,edited-or-written
-instructional/student-journey/days/w3d5.md,,,instructional,13,cd7202731a0ef6f9acb3d7dfafe4e8793b5eea054efe158380df6f2fdaeb9050,edited-or-written
-instructional/student-journey/days/w4d1.md,,,instructional,13,40b44a9bdd5d300f35e61e50f246a0b224aa3cc3ba6e58cd80b1e0fcf1e6f6e4,edited-or-written
-instructional/student-journey/days/w4d2.md,,,instructional,13,571503451d95d7ccd5c751d0d08efc476fb09a6de651964fbf94bde7a9708c4f,edited-or-written
-instructional/student-journey/days/w4d3.md,,,instructional,13,19e98553e6f146e351444686a8f6e50912d4db732ed7964c9df3a48e40f30253,edited-or-written
-instructional/student-journey/days/w4d4.md,,,instructional,13,a730d9dfe66e79c2183ef4e87d2754fd8b3a0ec5a9a934517b77102589a5d5ba,edited-or-written
-instructional/student-journey/days/w4d5.md,,,instructional,13,82fea438da720423b079e9bbd2bea56ab0e090b57e3e6146b8e7caa16b0d753a,edited-or-written
-instructional/student-journey/final-student-experience.md,,,instructional,28,6d1fc0281c99dc9996135e9eb24f2942e00d178832d52108868e12f4ead24eea,edited-or-written
-instructional/student-journey/improvement-summary.md,,,instructional,28,f181ed22782b7ec2a66bb0b313a00c0190a6f410d003a2e77fb14e921f63e3fb,edited-or-written
+instructional/student-journey/days/w1d1.md,,,instructional,129,52e430f38e441e8a6b4cb2621c218e3e887dcd07cc4515fff04883c8596974c0,edited-or-written
+instructional/student-journey/days/w1d2.md,,,instructional,113,c7ce20b9571ea483c882c2189ae4754a7fcf6e7854a806ff79082262ae3cd784,edited-or-written
+instructional/student-journey/days/w1d3.md,,,instructional,103,c0acb154715056c866c7bceb10fc3db4ff1f29999935a5ebf14f5ec264f1f4ab,edited-or-written
+instructional/student-journey/days/w1d4.md,,,instructional,103,ee263a14af8c606c787b346fac4d059c5d36b1b1f11f404dea6749dd20ba8658,edited-or-written
+instructional/student-journey/days/w1d5.md,,,instructional,131,ac63bf06104a6f548a9b6615f11d5a4a4d1dd7cd057b8d3e413df5ea52fcf4ce,edited-or-written
+instructional/student-journey/days/w2d1.md,,,instructional,112,e84a8097e9806fb8a216e4d639f24d426a2f4af4869c01f4ad3fb06ec4ed35c4,edited-or-written
+instructional/student-journey/days/w2d2.md,,,instructional,137,e116f3b70827dc52659cda49cec3e9749f5b35645482537b4220831f850ce976,edited-or-written
+instructional/student-journey/days/w2d3.md,,,instructional,138,7c0d14f75632e497ea66699ec5652728bd057de5992241eb27c5b500d4b9f238,edited-or-written
+instructional/student-journey/days/w2d4.md,,,instructional,149,da0936bd53d5fb4a2aa3f46365d9f0125456160d07826e5b2b314ab927f695b0,edited-or-written
+instructional/student-journey/days/w2d5.md,,,instructional,160,5e3801b8d296d3090faaefa75556a676f3ba6655e6cf968285d203ccc5a46ed2,edited-or-written
+instructional/student-journey/days/w3d1.md,,,instructional,161,de410d2620b8af936f7db2f6ce4964df16209a75500b05dc5465c33c6e2aa398,edited-or-written
+instructional/student-journey/days/w3d2.md,,,instructional,129,d43a47452d98092eece438ca1f2f94dce226c4f87c387a0b5ec912daa6c29b58,edited-or-written
+instructional/student-journey/days/w3d3.md,,,instructional,164,7e59a009262e78ebe54248a18a9dfdd36ca051f1d2952935ba90a10f08a87d60,edited-or-written
+instructional/student-journey/days/w3d4.md,,,instructional,134,82fb67d42ab1d61ea58abe16adda58db154784f34f0ea3eee4d9ec8c21d800fb,edited-or-written
+instructional/student-journey/days/w3d5.md,,,instructional,137,7b52f8306f43ee18c67cf0c1efb8f873c20902fc732f621d84fa8ab68550203f,edited-or-written
+instructional/student-journey/days/w4d1.md,,,instructional,147,5cb0588a68d16406d52e0faaf64030c27d439f5628cf6d581c9bcaa1b08d8199,edited-or-written
+instructional/student-journey/days/w4d2.md,,,instructional,145,4cf18ed51349fa5a35b0e9ae9e658ddc3736ecc6c81cc7c31e4f2d9643cd0c79,edited-or-written
+instructional/student-journey/days/w4d3.md,,,instructional,142,985d2f4b107e649d39b70b648a212cb3cdb0a06d7483920a07d17fd7c3482134,edited-or-written
+instructional/student-journey/days/w4d4.md,,,instructional,147,b996940d1f86804972be47620b6af32215ecd51e1c8f70956b0e03a82a1dc685,edited-or-written
+instructional/student-journey/days/w4d5.md,,,instructional,170,98bbfb014bb9e37a5a720d7bbffa93b32c678b832afd10b33b83c51bf7356621,edited-or-written
+instructional/student-journey/final-student-experience.md,,,instructional,28,02139513f93bcfd15f2132618c00737785f77ea9da93d3f7e55db328737b5481,edited-or-written
+instructional/student-journey/improvement-summary.md,,,instructional,45,d781f8069acc67aaa7417141c460f554271cf42f1bb08f8c9240a06a5292019c,edited-or-written
 instructional/student-journey/method.md,,,instructional,98,f1a042ca5f9bd2c7b70f1b091f3ccacf61d557127d9904e468b842f098f409c3,edited-or-written
-instructional/student-journey/second-simulation.md,,,instructional,24,c8f2e74385d058199dcb688d4c87926e77564a43a7ccc04687c5be8a105aace2,edited-or-written
+instructional/student-journey/second-simulation.md,,,instructional,38,d76c0e64d3d64276593d84ff70f02d22b6d294a959ff1ac1b43260c902277121,edited-or-written
 instructional/student-journey/support-files.md,,,instructional,19,7e9776fb2f1ae8cd07d3a0213548425b271166d1d1247cb4f0870a2d46863082,edited-or-written
-instructional/student-journey/technical-validation.md,,,instructional,67,39c530fdfe9ae23230becfd3abc6ede1bf72825e91509499849d7a2cffa8bdda,edited-or-written
+instructional/student-journey/technical-validation.md,,,instructional,77,07fe27ac83e48aa6e7241fe7b4eda2b7c7ba9ca592879babbf393b5bda118aff,edited-or-written
 learning/README.md,,,learning,104,7dad8d29bc15017b49d9dcf2e677eb9aa5ab2d6e30a772c16f1561bdd5e0224f,edited-or-written
-learning/concept-index.md,,,learning,123,177040b619d873f2193266318109e32ff9ea5f3a28a6f325815afa6db8ea745d,edited-or-written
+learning/concept-index.md,,,learning,134,4799103253bb191fa531d50318361daed51822e03eb51636647aca2694fd395a,edited-or-written
 learning/how-to-read-a-chapter.md,,,learning,38,a46303213174b003384170574a5aae78dcc271a76f791bff539a68a9b1998834,entry-or-author
 learning/review.md,,,learning,53,bba38f6b4760c0f80420c5a54f73164cd5d0c75b702c12f1ba27bad0b995bf53,entry-or-author
 learning/terminal-and-python-basics.md,,,learning,41,5ab372b3a16a4232c6ca33c6e2dd38d2a7e5e68cf75486d51777812d7447a2e1,edited-or-written

@@ -62,6 +62,16 @@ In the same export, `python -m alwaha.worldbuild --profile practice` wrote a wor
 
 Run once on Week 2 Day 2, after a passing paste, in a separate export. The log is `logs/gap/neg-w2d2.log`. The map is in [remaining issues](../remaining-issues.md). The picture paste printed `NameError` from `run.py`. The finish table had no row for that word, so one prose row was added. The check for that same file printed `the worker did not run`, which already had a row. The other six cases matched rows that were already on the page.
 
+## Closing run
+
+On 26 October 2026 the same path was run again in a new scratch clone of `5d552df`, with Python 3.14.6. The runner pasted each "This block replaces" fence, then ran the chapter commands through `cmd`. Logs: `_student_sim/logs/pass-finish/`.
+
+Week 1 Days 3, 4, and 5 and Week 2 Day 1 through Week 4 Day 5 printed their finish pass lines on the student `work/` and again on `Solution_Copy/work`. Week 2 Day 1 also opened `http://127.0.0.1:8080/` and the page contained Patient Access Assistant. The server was then stopped.
+
+Two negatives were repeated. A copy of `referral.submitted.json` under Week 2 Day 2 `work/` printed `a watermarked sample is in the work directory`. After it was deleted, `chk-w2-journey passed.` A comment containing `sleep` in Week 2 Day 3 `receipt.py` printed `the receipt test sleeps`. After the paste was restored, `chk-w2-tests passed.` and `chk-w2-ux passed.`
+
+Week 1 Days 1 and 2 were not handwritten again. Their earlier pass lines remain the evidence for those two days.
+
 ## Not run
 
 macOS, Linux, and Docker. The clone URL was fetched with `git ls-remote` and matched local `a9899f4`.

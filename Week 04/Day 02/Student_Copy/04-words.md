@@ -71,7 +71,7 @@ This page is done when you have scanned the tables.
 
 ## A plain reading
 
-A trace is the spans. A metric is a count you put on the board: latency, errors, tool failures. CPU can stay flat while those move. A board that only has CPU misses the incident.
+A trace is the spans. A metric is a count you put on the board: latency, errors, tool failures. Those counts are the indicators, often called SLIs. The five-minute window on the note is the objective, the SLO. CPU can stay flat while those move. A board that only has CPU misses the incident.
 
 `referral.status` is the Week 1 status tool. Week 2 Day 1 recorded that same read on the trace as `status`. Today's spans use the Week 1 name again. It is not a new tool.
 
