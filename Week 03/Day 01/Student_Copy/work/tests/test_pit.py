@@ -22,6 +22,7 @@ ROWS = (
 
 
 class PitTests(unittest.TestCase):
+    """The shell feature test."""
     def test_latest_row_is_used(self) -> None:
         """June is kept even though the invite is in March."""
         self.assertEqual(features(list(ROWS), "2026-03-01")["district"], "d-wadi")

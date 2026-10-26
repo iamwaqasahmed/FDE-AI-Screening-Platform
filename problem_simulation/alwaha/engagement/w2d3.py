@@ -1,4 +1,8 @@
-"""rel-w2d3 fixtures. The old receipt delay stays in the gold."""
+"""rel-w2d3 fixtures.
+The old receipt delay stays in the gold.
+
+The receipt clock, the working-day cases, the Hijri samples, and the channel scripts live here. gold turns each case start into a due date on working days and keeps the old delay beside the new interval so a submission that still uses the old delay can be seen.
+"""
 
 from __future__ import annotations
 
@@ -23,14 +27,17 @@ CASES = (
 
 
 def receipt_clock() -> dict:
+    """Return the interval and the switch name the new receipt path uses."""
     return {"minutes": INTERVAL_MINUTES, "switch": SWITCH}
 
 
 def cases() -> list[dict]:
+    """Return a copy of each working-day case so a caller cannot change the constant."""
     return [dict(row) for row in CASES]
 
 
 def hijri_rows() -> list[dict]:
+    """Return the month-end and month-start samples the calendar conversion is checked with."""
     return [
         {"id": "month-end", "value": "1448-07-29"},
         {"id": "month-start", "value": "1448-08-01"},
@@ -38,6 +45,7 @@ def hijri_rows() -> list[dict]:
 
 
 def scripts() -> list[dict]:
+    """Return the channel scripts: a short status ask, a caregiver ask, and the same ask with no app."""
     return [
         {
             "actor": "patient",
@@ -61,10 +69,16 @@ def scripts() -> list[dict]:
 
 
 def model_fixture(profile: Profile) -> dict:
+    """Return a booked-visit reply that includes this profile's canary."""
     return {"intent": "status", "text": f"The visit is booked. {profile.canary()}"}
 
 
 def gold(profile: Profile) -> dict:
+    """Return the due dates, the required clauses, the old delay, and the script outcomes.
+
+    Each due date walks the case start forward by that case's working-day count and skips holidays. The profile is unused because none of these expectations move with the seed.
+    """
+    # Nothing here depends on the profile. The name is kept so every gold function has the same signature.
     del profile
     holidays = set(holiday_dates())
     rows = []

@@ -1,4 +1,8 @@
-"""Public rows for rel-w4d2. The override rate stays out of the pack."""
+"""Public rows for rel-w4d2.
+The override rate stays out of the pack.
+
+spans is the trace, in time order, ending with the alert. gateway and overrides vary with the seed so cost and the override rate are computed rather than stored. experiment pairs the registered reply with the shadow reply that a patient must not see.
+"""
 
 from __future__ import annotations
 
@@ -25,11 +29,16 @@ TRACE = "tr-replay"
 
 
 def shadow_hash(profile: Profile) -> str:
+    """Return the shadow adapter hash for this profile. It is not the registered model hash."""
     digest = hashlib.sha256(f"{profile.seed}:w4d2-shadow".encode()).hexdigest()[:16]
     return "sha256:" + digest
 
 
 def spans(profile: Profile) -> list[dict]:
+    """Return the trace in time order.
+
+    The first span is the model call and carries the registered hash and the tokens. The middle spans are the tool, including the errors. The last span is the alert, which is not itself a tool call.
+    """
     digest = approved_hash(profile)
     base = {"cpu": 0.2, "hospital": "h-wadi", "trace_id": TRACE}
     return [
@@ -109,6 +118,7 @@ def spans(profile: Profile) -> list[dict]:
 
 
 def changed() -> dict:
+    """Return the document-changed event for the hours circular, including the new body."""
     return {
         "body": NEW_HOURS,
         "doc_id": CIRCULAR,
@@ -119,6 +129,7 @@ def changed() -> dict:
 
 
 def gateway(seed: int) -> list[dict]:
+    """Return gateway rows whose cost moves with the seed on two of the hospitals."""
     extra = 1 + (seed % 3)
     return [
         {"hospital": "h-wadi", "sar": 10 + extra, "tokens": 400},
@@ -129,6 +140,7 @@ def gateway(seed: int) -> list[dict]:
 
 
 def overrides(seed: int) -> list[dict]:
+    """Return stamped rows, then unstamped rows. How many are stamped moves with the seed."""
     stamped = 2 + (seed % 5)
     rows = [{"id": f"stamp-{index}", "stamped": True} for index in range(stamped)]
     rows.extend({"id": f"plain-{index}", "stamped": False} for index in range(6))
@@ -136,6 +148,7 @@ def overrides(seed: int) -> list[dict]:
 
 
 def signals() -> list[dict]:
+    """Return the drift signals: hours, criteria, and the campaign clinic, each with what was seen and what is current."""
     return [
         {"current": CIRCULAR, "id": "drift-hours", "kind": "hours", "seen": "circ-ramadan"},
         {"current": "crit-endo-v4", "id": "drift-criteria", "kind": "criteria", "seen": "crit-endo-v3"},
@@ -144,6 +157,10 @@ def signals() -> list[dict]:
 
 
 def experiment(profile: Profile) -> dict:
+    """Return the shadow comparison: both hashes and both replies.
+
+    The note says the patient must not see the shadow text. reply in the rules module returns only the registered reply.
+    """
     return {
         "candidate_hash": shadow_hash(profile),
         "id": "shadow-extract",

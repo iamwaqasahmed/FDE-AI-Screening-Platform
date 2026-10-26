@@ -1,4 +1,7 @@
-"""Write release gold into truth/ and the pack bytes into a throwaway directory."""
+"""Write release gold into truth/ and the pack bytes into a throwaway directory.
+
+Every writer is called with its own pack directory under a temporary root. That root is removed when the block ends. The truth directory is the real one, shared by every writer, so the gold files remain after the packs are discarded.
+"""
 
 from __future__ import annotations
 
@@ -52,9 +55,11 @@ WRITERS = (
 
 
 def build_truth(profile) -> Path:
+    """Write every release into a throwaway pack and leave the gold in the profile truth directory."""
     truth = truth_dir(profile.name)
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
         for index, writer in enumerate(WRITERS):
+            # Each writer gets a fresh pack directory. They all share the truth directory.
             writer(profile, root / f"pack-{index}", truth)
     return truth

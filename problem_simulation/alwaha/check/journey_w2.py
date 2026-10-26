@@ -1,6 +1,8 @@
 """chk-w2-journey for webhooks and session.cancelled.
 
 A miss does not name the extra field, the dropped field, the wait figure, or the owner.
+
+This check grades webhook intake, cancellation, and the mart. An unknown field must be ignored, not stored and not allowed to stop intake. A replay must not book again. A failed notice must release the hold. A cancellation with no slot must escalate without booking. The mart clock must be trusted instead of the wait figure. A planted token replaces every other miss. The written notes are graded after the worker.
 """
 
 from __future__ import annotations
@@ -22,6 +24,10 @@ _NAMES = ("intake", "cancel", "sms", "registry", "mart", "session")
 
 
 def load_worker(folder: Path) -> dict:
+    """Import the worker modules and return them by name.
+
+    Each name is removed before import. The path is always restored. A name that was not cached is removed. A name that was cached is put back.
+    """
     folder = folder.resolve()
     saved_path = list(sys.path)
     saved = {name: sys.modules.get(name) for name in _NAMES}
@@ -35,6 +41,7 @@ def load_worker(folder: Path) -> dict:
     finally:
         sys.path[:] = saved_path
         for name, module in saved.items():
+            # Nothing was cached under this name, so it is removed rather than restored.
             if module is None:
                 sys.modules.pop(name, None)
             else:
@@ -42,10 +49,15 @@ def load_worker(folder: Path) -> dict:
 
 
 def _intake(result: dict, body: dict, gold: dict) -> list[str]:
+    """Return the intake misses, stopping at the first one.
+
+    The mode must be a webhook. The unknown field must not be stored. The referral must not be rejected, and the unknown field must be listed as ignored. The recorded referral id must be the one the reference kept.
+    """
     kept, _ignored = keep(body, set(gold["referral_fields"]))
     record = result.get("record", {})
     if result.get("mode") != "webhook":
         return ["intake still polls"]
+    # Storing the unknown field is a miss. Rejecting the whole referral because of it is a different miss, checked next.
     if gold["extra_field"] in record:
         return ["an unknown field was stored"]
     if result.get("rejected") or gold["extra_field"] not in result.get("ignored", []):
@@ -56,6 +68,10 @@ def _intake(result: dict, body: dict, gold: dict) -> list[str]:
 
 
 def _cancel(app: dict, events: list[dict], faults: dict, gold: dict) -> tuple[list[str], list[dict]]:
+    """Return the cancellation misses and the row results.
+
+    A repeated event id must keep a single booking and a single message. Any other count means the replay ran the side effect again. A failed notice must release the hold and must not book. A successful notice must land in the notified state with one booking and one message. The leftover cancellation has no slot, so it must escalate without booking or messaging.
+    """
     problems = []
     rows = []
     seen: set[str] = set()
@@ -65,9 +81,11 @@ def _cancel(app: dict, events: list[dict], faults: dict, gold: dict) -> tuple[li
             result = app["cancel"].apply(db, event, faults)
             rows.append(result)
             event_id = str(event["event_id"])
+            # A repeated event id must keep a single booking and a single message. Any other count means the replay ran again.
             if event_id in seen:
                 if result.get("bookings") != 1 or result.get("sms") != 1:
                     problems.append("replay booked again")
+            # A failed notice must release the hold and must not book. The next branch is a notice that succeeded.
             elif not send(str(event["booking_id"]), faults)["ok"]:
                 if result.get("hold") != "released" or result.get("bookings") != 0:
                     problems.append("the hold was left open")
@@ -83,6 +101,10 @@ def _cancel(app: dict, events: list[dict], faults: dict, gold: dict) -> tuple[li
 
 
 def _run(work: Path, pack: Path, gold: dict, canary: str) -> list[str] | None:
+    """Return the worker misses, or nothing when a planted token was found in the results.
+
+    Nothing here means the watermark. The caller turns that into the watermark miss and drops the other problems. A trusted mart, or a clock other than the mart's own clock, means the wait figure was used as truth. The same miss is added when the wait figure appears in the cancellation rows, unless the token was found first.
+    """
     app = load_worker(work / "app")
     body = json.loads((pack / "webhooks" / "referral.submitted.json").read_text(encoding="utf-8"))
     registry = (pack / "registry" / "topics.md").read_text(encoding="utf-8")
@@ -101,6 +123,7 @@ def _run(work: Path, pack: Path, gold: dict, canary: str) -> list[str] | None:
         problems.append("wait number was used as truth")
     blob = json.dumps({"intake": accepted, "rows": rows, "mart": found})
     if canary in blob or str(gold["wait"]) in json.dumps(rows):
+        # A token in the results replaces every other miss. The caller turns this empty result into the watermark.
         if canary in blob:
             return None
         problems.append("wait number was used as truth")
@@ -108,6 +131,10 @@ def _run(work: Path, pack: Path, gold: dict, canary: str) -> list[str] | None:
 
 
 def journey_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
+    """Return the worker misses plus the written-note misses.
+
+    A planted token in the tree returns only the watermark. A missing intake or cancel module is the missing-worker miss. A crash is the did-not-run miss. A token found in the results is the watermark. Otherwise the written notes are appended.
+    """
     if contains_canary(work, canary):
         return [WATERMARK]
     if not (work / "app" / "intake.py").is_file() or not (work / "app" / "cancel.py").is_file():

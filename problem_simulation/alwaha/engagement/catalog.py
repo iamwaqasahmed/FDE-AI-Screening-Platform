@@ -1,10 +1,16 @@
-"""Twelve persona records. Public card, hidden facts, and the question tree."""
+"""Twelve persona records.
+Public card, hidden facts, and the question tree.
+
+This is the first roster. Each record is one persona. The card is what a reader can see: name, role, opening line, and goals. Facts are hidden text an interview may release. A fact pair is the id and the text. A third value says whether the checker requires that fact to surface. Banned holds sentences that must not be attributed to the persona. PERSONAS is this roster followed by the second roster.
+"""
 
 from __future__ import annotations
 
 from alwaha.engagement.roster_b import ROSTER_B
 
 # A tree row is (node_id, keywords, answer, releases, parent).
+# An empty parent is a root. Releases may be empty when the answer carries no hidden fact.
+# A fact may end with a false flag when the checker does not require it to surface.
 
 ROSTER_A: tuple[dict, ...] = (
     {

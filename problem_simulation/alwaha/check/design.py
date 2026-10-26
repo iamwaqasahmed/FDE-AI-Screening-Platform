@@ -1,4 +1,7 @@
-"""chk-w1-design. A miss does not name the missing token."""
+"""chk-w1-design. A miss does not name the missing token.
+
+This check grades the architecture and the design note together. It looks for a banned sentence, a human step on the diagram, urgency left with a clinician, enough of the required facts, and two knowledge answers. A planted token or a missing file stops the check. A miss does not name the missing token.
+"""
 
 from __future__ import annotations
 
@@ -12,6 +15,10 @@ _PERSONAS = tuple(row["id"] for row in PERSONAS)
 
 
 def _files(packs: list[Path]) -> set[str]:
+    """Return the relative paths of files in the packs.
+
+    A pack that is not a directory adds nothing.
+    """
     found: set[str] = set()
     for pack in packs:
         if not pack.is_dir():
@@ -23,6 +30,10 @@ def _files(packs: list[Path]) -> set[str]:
 
 
 def _cited(text: str, doc_ids: list[str], files: set[str]) -> bool:
+    """Return true when the text cites a persona, a document id, or a release path.
+
+    Any one of the three is enough.
+    """
     if any(has_id(text, persona) for persona in _PERSONAS):
         return True
     if any(has_id(text, doc_id) for doc_id in doc_ids):
@@ -31,6 +42,10 @@ def _cited(text: str, doc_ids: list[str], files: set[str]) -> bool:
 
 
 def _topic_text(stage: str, topic: str) -> str:
+    """Return the open-item cell and its citation for one topic, or an empty string.
+
+    The stage table must have the topic, the open item, and the citation columns. A topic that is not in the table is empty, so the fact fails.
+    """
     rows = dict_rows(stage, {"topic", "what is still open", "citation"})
     if rows is None:
         return ""
@@ -41,8 +56,14 @@ def _topic_text(stage: str, topic: str) -> str:
 
 
 def _hit(fact: dict, text: str, stage: str, doc_ids: list[str], files: set[str]) -> bool:
+    """Return true when one required fact is present.
+
+    A citation fact is satisfied by a persona, a document id, or a release path anywhere in the text. A topic fact looks only in that topic's stage-table cell. Any other fact is a token in the combined text.
+    """
+    # A citation fact is satisfied by a persona, a document id, or a release path, not by a token.
     if fact.get("kind") == "citation":
         return _cited(text, doc_ids, files)
+    # A topic fact is read from that row of the stage table, not from the whole note.
     if "topic" in fact:
         cell = _topic_text(stage, fact["topic"]).lower()
         return any(token.lower() in cell for token in fact["any"])
@@ -50,17 +71,30 @@ def _hit(fact: dict, text: str, stage: str, doc_ids: list[str], files: set[str])
 
 
 def _coverage(rules: dict, text: str, stage: str, files: set[str]) -> bool:
+    """Return true when enough required facts were hit.
+
+    The share is turned into a whole-count cutoff so a fractional rule does not drift. The hit count has to reach that cutoff.
+    """
     mentions = rules["mentions"]
     hits = sum(1 for fact in mentions if _hit(fact, text, stage, rules["doc_ids"], files))
+    # The share is scaled to a whole-count cutoff so a fractional rule does not drift.
     return hits * 100 >= int(rules["share"] * 100) * len(mentions)
 
 
 def _urgency(text: str) -> bool:
+    """Return true when the withheld section names both a clinician and urgency.
+
+    The search is limited to that section, so the words elsewhere in the note do not count.
+    """
     body = section(text, "What we will not build").lower()
     return "clinician" in body and "urgency" in body
 
 
 def design_problems(work: Path, gold: dict, canary: str, packs: list[Path] | None = None) -> list[str]:
+    """Return the design misses.
+
+    A planted token returns only the watermark sentence. Either file missing is one miss and the contents are not graded. A banned sentence in either file is recorded. The diagram must mention a coordinator, a human, or an approval. The design must leave urgency with a clinician. The combined text must cover the required share of facts, using the stage section for topic facts. The knowledge note must exist and have two numbered answers.
+    """
     if contains_canary(work, canary):
         return ["a watermarked sample is in the work directory"]
     architecture = work / "architecture.md"

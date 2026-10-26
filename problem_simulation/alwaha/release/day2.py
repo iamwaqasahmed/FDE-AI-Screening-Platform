@@ -31,11 +31,19 @@ RELEASE = "rel-w1d2"
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _write_csv(path: Path, fields: tuple[str, ...], rows: list[dict[str, str]]) -> None:
+    """Write a CSV file with the given columns and rows.
+
+    Parent directories are created. A key that is not a column is left out, so a sample row can carry fields this file does not publish.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n", extrasaction="ignore")
@@ -44,6 +52,10 @@ def _write_csv(path: Path, fields: tuple[str, ...], rows: list[dict[str, str]]) 
 
 
 def _copy_tree(source: Path, destination: Path) -> None:
+    """Copy a source tree onto the destination.
+
+    Caches are skipped. A missing source stops the release so a half-built pack is not left behind.
+    """
     if not source.is_dir():
         raise SystemExit(f"Missing {source}.")
     shutil.copytree(
@@ -55,6 +67,10 @@ def _copy_tree(source: Path, destination: Path) -> None:
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from patient access and says a figure on the pages is a claim.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w1d2
 
@@ -70,6 +86,10 @@ Files:
 
 
 def write_day2(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and its truth files.
+
+    It writes the leader pages, the sample tables, the baselines, the templates, the approach gold, and the measured metrics. The digest is the value the caller stores for this release.
+    """
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
     figures = claim_figures(profile.seed)

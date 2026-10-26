@@ -19,6 +19,10 @@ from cluster import partition, patient_count, removals
 
 
 def _row(row_id: str, national_id: str, phone: str, mrn: str, relation: str = "", replaces: str = "") -> dict:
+    """Return one cluster row, including an optional replaces link.
+
+    The ids, the relation, and the replaces value are stored. Merge stays empty. The finished test uses replaces to join two rows and leaves the other pairs apart.
+    """
     return {
         "merge_with": "",
         "mrn": mrn,
@@ -31,6 +35,10 @@ def _row(row_id: str, national_id: str, phone: str, mrn: str, relation: str = ""
 
 
 class ClusterTests(unittest.TestCase):
+    """Finished expectations for rows that stay split.
+
+    A shared stand-in id stays apart. A replaces link joins the named rows. Only flagged removals are dropped. This is not the packet shell.
+    """
     def test_newborn_twins_and_a_reused_mrn_stay_split(self) -> None:
         """People stay apart unless replaces names the other id."""
         mother = [_row("mother", "N", "1", "A"), _row("newborn", "N", "2", "B", relation="newborn")]

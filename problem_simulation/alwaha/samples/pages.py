@@ -4,6 +4,10 @@ from __future__ import annotations
 
 
 def register_page() -> str:
+    """Return the opportunity register.
+
+    Each row is a problem id and the symptom named for it. Causes stay off the page because the page is a list of claims.
+    """
     rows = (
         ("p-bounce", "Referrals come back to the primary care center."),
         ("p-waitlist", "Waitlist rows the coordinators do not trust."),
@@ -84,6 +88,10 @@ Claimed impact: {impact} SAR a year.
 
 
 def claim_figures(seed: int) -> dict[str, int]:
+    """Return the claimed figures for this seed.
+
+    The leader pages read this mapping, so every figure on those pages stays tied to the same seed.
+    """
     return {
         "median": 14 + (seed % 5),
         "chats": 600 + (seed % 90),

@@ -1,4 +1,16 @@
-"""Day 4 of Week 4: the site drill, the insurance outage, and rent versus buy."""
+"""Day 4 of Week 4: the site drill, the insurance outage, and rent versus buy.
+
+Guards the site drill, the insurance outage, and the rent-versus-buy choice.
+
+The previous surge day must survive the write. Packs must not carry a watermark,
+the gold name, the local spend, or the arrival dates. Rent must be the route
+that lands in time, and the hospital shares must add up to that spend. The drill
+must kill one site and use a timeout longer than the budget. The readme may
+show the order date and must not show the lookalike hash or the spend. The
+architect and finance interviews must reach the site and the deadline. The demo
+may show the failover and must not print a budget, a hash, or a spend. Both
+suites must pass.
+"""
 
 from __future__ import annotations
 
@@ -24,11 +36,13 @@ from alwaha.release.fingerprint import fingerprint
 from alwaha.release.w4d3 import write_w4d3
 from alwaha.release.w4d4 import write_w4d4
 
+# Shell modules that must differ from the filled copy.
 _APP = ("replicas.py", "route.py", "failover.py", "hashes.py", "breaker.py", "degrade.py", "procure.py", "hospitals.py")
 _TEXT = {".md", ".py", ".yml", ".yaml", ".json", ".txt"}
 
 
 def _blob(pack: Path) -> str:
+    """Join every file in a pack so a spend figure cannot hide outside the readme."""
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -37,10 +51,15 @@ def _blob(pack: Path) -> str:
 
 
 def _lines(path: Path) -> list[str]:
+    """Return the non-empty lines of a question file.
+
+    The interview runner wants the questions without blank lines or surrounding space.
+    """
     return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
+    """Run a packet's own unit tests and return the process result without raising."""
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,
@@ -51,7 +70,13 @@ def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites the previous day, leaks the buy-versus-rent dates,
+    or places the lookalike on the surviving site.
+    """
     def test_same_seed_matches_and_day_3_stays(self) -> None:
+        """Fails when a second write disagrees, when the previous pack changes, or when
+        this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -66,6 +91,11 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w4d4" / "w4d4_gold.json").exists())
 
     def test_profiles_differ_and_the_split_stays_out(self) -> None:
+        """Fails when a spend or an arrival date leaks, when rent is not the route that
+        meets the deadline, or when the hospital shares do not add up. The two profiles
+        must differ in budget, rental length, shares, and lookalike. The killed site
+        must not list the lookalike, and the site that stays up must.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -117,6 +147,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotIn(str(practice_gold["local_sar"]), readme)
 
     def test_the_interviews_reach_the_site_and_the_deadline(self) -> None:
+        """Fails when the architect script does not release the site, the workflow store,
+        and the insurance partner, or when finance does not release the rent-or-buy
+        choice and the purchase deadline. The required-fact lists must stay as they were.
+        """
         questions = W4D4_ROOT / "Student_Copy" / "packet" / "interviews"
         ea = run(load_personas()["ea"], _lines(questions / "ea.questions.txt"))
         released = [fact_id for turn in ea for fact_id in turn["released"]]
@@ -128,6 +162,10 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(load_personas()["finance"]["must_surface"], ("rent-or-buy", "double-benefit", "unit-prices"))
 
     def test_demo_prints_the_failover(self) -> None:
+        """Fails when the demo does not show the killed site down and the other site
+        serving, or when it prints the budget, the lookalike hash, the spend, or the
+        watermark.
+        """
         profile = load("practice")
         stdout = StringIO()
         with redirect_stdout(stdout):
@@ -141,6 +179,9 @@ class ReleaseTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_state_the_canary_or_the_split(self) -> None:
+        """Fails when a lesson or packet source contains the watermark or a model hash, or
+        when a lesson page contains the spend, an arrival date, or a hospital share.
+        """
         release_trees = (
             W4D4_ROOT / "Student_Copy" / "packet" / "release",
             W4D4_ROOT / "Solution_Copy" / "sources",
@@ -171,6 +212,7 @@ class ReleaseTests(unittest.TestCase):
             self.assertIsNone(re.search(rf"(?<!\d){value}(?!\d)", prose))
 
     def test_modules_differ_and_both_copies_pass(self) -> None:
+        """Fails when a shell module matches the filled copy, or when either suite fails."""
         for name in _APP:
             shell = (W4D4_APP / name).read_bytes()
             filled = (W4D4_WORK / "app" / name).read_bytes()

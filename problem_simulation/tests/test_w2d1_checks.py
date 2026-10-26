@@ -1,4 +1,15 @@
-"""Day 1 of Week 2 auth and status checks."""
+"""Day 1 of Week 2 auth and status checks.
+
+Guards the sign-in checker and the status-journey checker, then opens both pages
+on a local server.
+
+The fixture is this day's pack plus a copy of the filled work tree. The filled
+copy must pass. Swapping in the unfinished client must fail the journey without
+naming the removed field, and must leave sign-in green. A copied scenario must
+fail as a watermark without echoing it. A knowledge page with one thin answer
+must fail without revealing the booking assurance level. The server test signs
+in as both roles and rejects a chat with no session.
+"""
 
 from __future__ import annotations
 
@@ -22,7 +33,16 @@ from alwaha.release.w2d1 import write_w2d1
 
 
 class CheckTests(unittest.TestCase):
+    """Catches a grader that accepts the unfinished client, echoes a hidden field, or
+    serves a page to someone who has not signed in.
+    """
     def setUp(self) -> None:
+        """Write this day's pack and copy the filled work tree into a scratch folder.
+
+        Cached bytecode, the session database, and a leftover trace are not copied, so
+        the server test starts clean. The gold file must match the generator for this
+        profile.
+        """
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -39,14 +59,19 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self.gold, gold(self.profile))
 
     def tearDown(self) -> None:
+        """Delete the temporary pack and work tree."""
         self.tmp.cleanup()
 
     def test_filled_work_passes(self) -> None:
+        """Fails when the filled work tree still produces an auth problem or a journey problem."""
         canary = self.profile.canary()
         self.assertEqual(auth_problems(self.work, self.pack, self.gold, canary), [])
         self.assertEqual(journey_problems(self.work, self.pack, self.gold, canary), [])
 
     def test_v1_client_fails_without_naming_the_field(self) -> None:
+        """Fails when the unfinished client is accepted, when the problem names the removed
+        field or the clinic or the hidden count, or when sign-in starts failing too.
+        """
         shutil.copy(W2D1_APP / "client.py", self.work / "app" / "client.py")
         problems = journey_problems(self.work, self.pack, self.gold, self.profile.canary())
         self.assertIn("his-wadi read failed", problems)
@@ -57,18 +82,30 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(auth_problems(self.work, self.pack, self.gold, self.profile.canary()), [])
 
     def test_watermark_is_not_echoed(self) -> None:
+        """Fails when a copied scenario file is ignored, or when the problem text contains
+        the watermark.
+        """
         shutil.copy(self.pack / "scenarios" / "status.json", self.work / "status.json")
         problems = auth_problems(self.work, self.pack, self.gold, self.profile.canary())
         self.assertEqual(problems, [WATERMARK])
         self.assertNotIn(self.profile.canary(), problems[0])
 
     def test_knowledge_needs_both_answers(self) -> None:
+        """Fails when a one-line knowledge page is accepted, or when the problem reveals
+        the booking assurance level.
+        """
         (self.work / "knowledge.md").write_text("# Knowledge\n\n1. Soon.\n", encoding="utf-8")
         problems = journey_problems(self.work, self.pack, self.gold, self.profile.canary())
         self.assertIn("knowledge.md needs two answers", problems)
         self.assertNotIn(self.gold["booking_loa"], "\n".join(problems))
 
     def test_server_opens_both_uis(self) -> None:
+        """Fails when the filled server cannot be imported from the scratch work tree or
+        does not serve both signed-in pages.
+
+        The modules are loaded from that tree and then removed, so a later test does
+        not keep the scratch copies.
+        """
         import importlib
 
         folder = str((self.work / "app").resolve())
@@ -99,6 +136,10 @@ class CheckTests(unittest.TestCase):
                 sys.modules.pop(name, None)
 
     def _pages(self, port: int) -> None:
+        """Fails when health does not name the local model, when either signed-in role
+        misses its page, when the watermark appears on the patient page, or when chat
+        opens with no session.
+        """
         base = f"http://127.0.0.1:{port}"
         with urllib.request.urlopen(base + "/v1/health") as response:
             health = json.loads(response.read().decode())
@@ -117,6 +158,11 @@ class CheckTests(unittest.TestCase):
             self.fail("chat opened without a session")
 
     def _signed_in(self, base: str, actor: str) -> str:
+        """Sign in as one actor and return the page body.
+
+        The cookie jar is local to the call, so the patient session cannot leak into
+        the coordinator session.
+        """
         opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor())
         data = urllib.parse.urlencode({"actor": actor}).encode()
         with opener.open(base + "/sign-in", data=data) as response:

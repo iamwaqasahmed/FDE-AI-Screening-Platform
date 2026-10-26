@@ -1,4 +1,7 @@
-"""Every export named in the systems note."""
+"""Every export named in the systems note.
+
+EXPORTS is the order the exports are reported. faults() asks each of those modules for its record. record.py is not itself an export; the export modules call it.
+"""
 
 from __future__ import annotations
 
@@ -52,4 +55,8 @@ EXPORTS = (
 
 
 def faults(profile) -> list[dict]:
+    """Return one fault record per export, in EXPORTS order.
+
+    The profile is passed through to each module. The list has one record for every export.
+    """
     return [module.fault(profile) for module in EXPORTS]

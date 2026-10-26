@@ -6,6 +6,10 @@ from alwaha.engagement.w3d3_docs import CASE_DATE, V4
 
 
 def criteria_note() -> str:
+    """Return the criteria notice.
+
+    It names the specialties on v4, says an in-flight referral keeps the version it started with, and says a draft or an unauthorized document is not citable.
+    """
     names = f"{', '.join(V4[:-1])}, and {V4[-1]}"
     return f"""# Criteria v4
 

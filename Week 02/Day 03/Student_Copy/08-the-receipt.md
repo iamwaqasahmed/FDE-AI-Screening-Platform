@@ -36,6 +36,7 @@ OLD_SECONDS = 30
 
 
 class ReceiptTests(unittest.TestCase):
+    """The shell receipt test. It waits, then expects every receipt to be due."""
     def test_receipt_follows_the_wait(self) -> None:
         """Wait, then accept a due receipt while the switch is on.
 
@@ -157,6 +158,7 @@ _SENT = "2027-01-19T09:00:00"
 
 
 class ReceiptTests(unittest.TestCase):
+    """The receipt follows the case clock and the switch."""
     def test_clock_and_switch(self) -> None:
         """Pending at the sent time, due after the move, pending when the switch is on.
 

@@ -18,6 +18,7 @@ from dates import gregorian
 
 
 class DateTests(unittest.TestCase):
+    """The shell date test."""
     def test_month_boundary_shifts_forward(self) -> None:
         """The 29th is one day later than the tabular gap from the 15th."""
         middle = date.fromisoformat(gregorian("1448-07-15", ""))

@@ -24,6 +24,7 @@ ITEMS = (
 
 
 class BudgetTests(unittest.TestCase):
+    """The shell budget test."""
     def test_every_item_is_bought(self) -> None:
         """Price and budget do not remove an item."""
         self.assertEqual(spend(list(ITEMS), 2, 6), ["low", "mid", "high", "higher"])

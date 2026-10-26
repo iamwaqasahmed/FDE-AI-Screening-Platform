@@ -20,6 +20,7 @@ from scan import accept
 
 
 class ScanTests(unittest.TestCase):
+    """A mark or a listed token is refused. A clean line is accepted."""
     def test_watermark_and_national_id_are_refused(self) -> None:
         """The mark and a listed token fail. A clean sentence passes."""
         self.assertFalse(accept("CANARY-x", ["clerk-row"]))

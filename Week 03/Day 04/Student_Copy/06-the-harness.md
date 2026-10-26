@@ -25,22 +25,41 @@ Open [metrics.json](packet/release/budget/metrics.json). Search for `extraction`
 1. [score.py](packet/app/score.py). Search for `perfect score`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/score.py](work/app/score.py) is under the Replace heading for this file.
 
 ```text
-"""Report a perfect score for every slice."""
+"""Report a perfect score for every slice.
+
+extraction_f1, citation_accuracy, and journey_pass each discard
+the rows and return a perfect score.
+"""
 
 from __future__ import annotations
 
 
 def extraction_f1(rows: list[dict]) -> float:
+    """Return a perfect extraction score.
+
+    rows is discarded.
+    """
+    # The slice does not change this score.
     del rows
     return 1.0
 
 
 def citation_accuracy(rows: list[dict]) -> float:
+    """Return a perfect citation score.
+
+    rows is discarded.
+    """
+    # The slice does not change this score.
     del rows
     return 1.0
 
 
 def journey_pass(rows: list[dict]) -> float:
+    """Return a perfect journey score.
+
+    rows is discarded.
+    """
+    # The slice does not change this score.
     del rows
     return 1.0
 ```
@@ -48,24 +67,40 @@ def journey_pass(rows: list[dict]) -> float:
 2. [forecast.py](packet/app/forecast.py). Search for `Copy last year's month`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/forecast.py](work/app/forecast.py) is under the Replace heading for this file.
 
 ```text
-"""Copy last year's month into the later window."""
+"""Copy last year's month into the later window.
+
+Months in the window are read from the prior year. Each district and
+month keeps the prior year's visits, and the result is labeled with
+the later year. The rows come back in district order, then month.
+"""
 
 from __future__ import annotations
 
+# Months in the window, the year the visits are copied from, and the year written on the result.
 _MONTHS = {2, 3}
 _PRIOR = 2026
 _LATER = 2027
 
 
 def predict(rows: list[dict]) -> list[dict]:
+    """Build later-year rows from the prior year's visits in the window.
+
+    rows are visit records. A prior-year row is stored when its month
+    is in the window. The result uses that visit count, the same
+    district and month, and the later year.
+    """
+    # Visits from the prior year, keyed by district and month.
     prior = {}
     for row in rows:
         year = int(row["year"])
         month = int(row["month"])
+        # Store the prior year only, and only months in the window.
         if year == _PRIOR and month in _MONTHS:
             prior[(row["district"], month)] = int(row["visits"])
     chosen = []
+    # District, then month, so the result order is stable.
     for (district, month), visits in sorted(prior.items()):
+        # The later year is written on the result. The visits stay the prior count.
         chosen.append({"district": district, "month": month, "visits": visits, "year": _LATER})
     return chosen
 ```
@@ -73,12 +108,20 @@ def predict(rows: list[dict]) -> list[dict]:
 3. [failures.py](packet/app/failures.py). Search for `Name every log row a pass`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/failures.py](work/app/failures.py) is under the Replace heading for this file.
 
 ```text
-"""Name every log row a pass."""
+"""Name every log row a pass.
+
+classify discards the row and returns the same name on every call.
+"""
 
 from __future__ import annotations
 
 
 def classify(row: dict) -> str:
+    """Return a pass for the row.
+
+    row is discarded. The name does not change from call to call.
+    """
+    # The row is unused. Every call gets the same name.
     del row
     return "pass"
 ```
@@ -95,7 +138,10 @@ This block replaces [work/app/score.py](work/app/score.py). The full path is `We
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Field F1, citation accuracy, and journey pass rate."""
+"""Field F1, citation accuracy, and journey pass rate.
+
+Each extraction field is scored on its own. Citation accuracy and the journey rate count a row only when every field they compare matches. An empty slice has no rate.
+"""
 
 from __future__ import annotations
 
@@ -104,6 +150,10 @@ _FIELDS = ("source_type", "specialty", "sub_specialty")
 
 
 def extraction_f1(rows: list[dict]) -> float:
+    """Return the share of extraction fields that match.
+
+    Each field is its own trial, so one mismatch lowers the score even when the other fields match. When no field matches, the score is zero.
+    """
     # A matching field is a true positive. A mismatch counts against it.
     true_positive = false = 0
     for row in rows:
@@ -119,6 +169,10 @@ def extraction_f1(rows: list[dict]) -> float:
 
 
 def _rate(rows: list[dict], same) -> float:
+    """Return the share of rows that same accepts.
+
+    same decides whether the prediction matches the label. An empty slice returns zero, because there is no rate to report.
+    """
     # An empty slice has no rate.
     if not rows:
         return 0.0
@@ -127,6 +181,10 @@ def _rate(rows: list[dict], same) -> float:
 
 
 def citation_accuracy(rows: list[dict]) -> float:
+    """Return the share of rows whose document and span both match.
+
+    A row that matches only one of those fields is a miss. The shared rate helper turns an empty slice into zero.
+    """
     # Both the document id and the span have to match.
     return _rate(
         rows,
@@ -135,6 +193,10 @@ def citation_accuracy(rows: list[dict]) -> float:
 
 
 def journey_pass(rows: list[dict]) -> float:
+    """Return the share of rows whose state and approval both match.
+
+    A row that matches only one of those fields is a miss. The shared rate helper turns an empty slice into zero.
+    """
     # Both the state and the approval have to match.
     return _rate(
         rows,
@@ -154,7 +216,13 @@ This block replaces [work/app/forecast.py](work/app/forecast.py). The full path 
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Return the later window, which includes the campaign."""
+"""Return the later window, which includes the campaign.
+
+A row is kept when its year is the later year and its month is in
+the window. District, month, visits, and year on the result come
+from that same row. A row from another year is left out, and a
+month outside the window is left out.
+"""
 
 from __future__ import annotations
 
@@ -164,13 +232,21 @@ _MONTHS = {2, 3}
 
 
 def predict(rows: list[dict]) -> list[dict]:
+    """Keep later-year rows in the month window, with their own visits.
+
+    rows are visit records with district, month, visits, and year.
+    Year, month, and visits are read as integers. A kept row copies
+    the visits written on that row.
+    """
     # Keep a row only when its own year is the later year and its month is in the window.
     # The visits stay the visits written on that row.
     chosen = []
     for row in rows:
+        # Year and month are compared as integers.
         year = int(row["year"])
         month = int(row["month"])
         if year == _LATER and month in _MONTHS:
+            # Visits are copied from this row and stored as an integer.
             chosen.append({"district": row["district"], "month": month, "visits": int(row["visits"]), "year": year})
     return chosen
 ```
@@ -187,12 +263,19 @@ This block replaces [work/app/failures.py](work/app/failures.py). The full path 
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Name each planted failure from the log text."""
+"""Name each planted failure from the log text.
+
+The name is read from the reply text. A row that is not a planted case returns pass.
+"""
 
 from __future__ import annotations
 
 
 def classify(row: dict) -> str:
+    """Return the planted failure name for this row.
+
+    The type is not a field on the row. It is read from the reply text. A document that is not in force is retrieval. An offer that uses Friday is reasoning. A booking that has no approval is workflow. A clause that is not on file is hallucination. Anything else returns pass.
+    """
     # The type is not a field on the row. It is read from the reply text.
     text = str(row.get("output", "")).lower()
     # A document that is not in force.

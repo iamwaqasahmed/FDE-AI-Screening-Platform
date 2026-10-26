@@ -19,11 +19,19 @@ _DATASETS = ("ds-agent", "ds-sessions", "ds-reason")
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _copy_tree(source: Path, destination: Path) -> None:
+    """Copy a source tree onto the destination.
+
+    Caches are skipped. A missing source stops the release so a half-built pack is not left behind.
+    """
     if not source.is_dir():
         raise SystemExit(f"Missing {source}.")
     shutil.copytree(
@@ -35,6 +43,10 @@ def _copy_tree(source: Path, destination: Path) -> None:
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from the medical director and points at the approval rules, the scenarios, and the tool catalog.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w1d4
 
@@ -50,6 +62,10 @@ Files:
 
 
 def write_day4(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and the agent gold.
+
+    It writes the scenario files, their order, the approval and safety pages, the tool catalog, the agent tree, and the templates. A missing template stops the release before anything is replaced.
+    """
     if not AGENT_ROOT.is_dir() or not DAY4_TEMPLATES.is_dir():
         raise SystemExit("Day 4 template is missing.")
     reset(pack)

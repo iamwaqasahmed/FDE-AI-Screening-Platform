@@ -25,12 +25,20 @@ Open [seed.json](packet/release/backlog/seed.json). Search for `story_id`. Open 
 1. [backlog.py](packet/app/backlog.py). Search for `Keep every sponsor story`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/backlog.py](work/app/backlog.py) is under the Replace heading for this file.
 
 ```text
-"""Keep every sponsor story."""
+"""Keep every sponsor story.
+
+kept discards the story and returns true.
+"""
 
 from __future__ import annotations
 
 
 def kept(story: dict) -> bool:
+    """Keep the story.
+
+    story is discarded. The return is true.
+    """
+    # Every story is kept.
     del story
     return True
 ```
@@ -38,12 +46,20 @@ def kept(story: dict) -> bool:
 2. [gates.py](packet/app/gates.py). Search for `Send the citation requirement to go-live`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/gates.py](work/app/gates.py) is under the Replace heading for this file.
 
 ```text
-"""Send the citation requirement to go-live."""
+"""Send the citation requirement to go-live.
+
+gate_for discards the requirement id and returns the go-live gate.
+"""
 
 from __future__ import annotations
 
 
 def gate_for(requirement_id: str) -> str:
+    """Return the go-live gate.
+
+    requirement_id is discarded. The gate does not depend on the id.
+    """
+    # Every requirement id gets this same gate.
     del requirement_id
     return "G4"
 ```
@@ -79,7 +95,12 @@ This block replaces [work/app/backlog.py](work/app/backlog.py). The full path is
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Drop the sponsor stories that are non-goals.`
 
 ```text
-"""Drop the sponsor stories that are non-goals."""
+"""Drop the sponsor stories that are non-goals.
+
+The non-goal set holds the story ids that are dropped. kept returns
+false for those ids. Any other story id is kept. A story with no id
+is kept.
+"""
 
 from __future__ import annotations
 
@@ -88,6 +109,10 @@ _NON_GOALS = {"p-triage", "vendor-bot"}
 
 
 def kept(story: dict) -> bool:
+    """Return whether the story stays on the backlog.
+
+    story may carry a story_id. An id in the non-goal set is dropped.
+    """
     # A non-goal is not kept. Every other story id is kept.
     return story.get("story_id") not in _NON_GOALS
 ```
@@ -104,12 +129,21 @@ This block replaces [work/app/gates.py](work/app/gates.py). The full path is `We
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Put the citation requirement on the risk tier.`
 
 ```text
-"""Put the citation requirement on the risk tier."""
+"""Put the citation requirement on the risk tier.
+
+The citation requirement id returns the risk tier. Every other
+requirement id returns an empty gate.
+"""
 
 from __future__ import annotations
 
 
 def gate_for(requirement_id: str) -> str:
+    """Return the gate name for a requirement id.
+
+    requirement_id is the id being placed. The citation requirement
+    returns the risk tier. Any other id returns an empty string.
+    """
     # The citation requirement sits on the risk tier named in the stage-gate file.
     if requirement_id == "req-cite":
         return "G1"

@@ -1,9 +1,13 @@
-"""The conflicts the retrieval labs are built to meet. These rows are on every profile."""
+"""The conflicts the retrieval labs are built to meet. These rows are on every profile.
+
+Each row is a fixed document spec: id, family, title, status, audience, dates, and optional site or supersedes link. A few ids have a body written for the conflict. Every other id gets the generic teaching sentence.
+"""
 
 from __future__ import annotations
 
 
 def planted() -> list[dict]:
+    """Return the fixed conflict documents, in the order the corpus keeps them first."""
     return [
         _doc("crit-endo-v3", "criteria", "Endocrine criteria v3", "superseded", "staff", "2024-06-01", sunset="2027-01-20"),
         _doc("crit-endo-v4", "criteria", "Endocrine criteria v4", "in_force", "staff", "2027-01-20", supersedes="crit-endo-v3"),
@@ -25,6 +29,7 @@ def planted() -> list[dict]:
 
 
 def _doc(doc_id, family, title, status, audience, effective, sunset="", site="", supersedes="") -> dict:
+    """Return one document spec, with the body looked up from the id."""
     return {
         "doc_id": doc_id,
         "family": family,
@@ -40,6 +45,7 @@ def _doc(doc_id, family, title, status, audience, effective, sunset="", site="",
 
 
 def _body(doc_id: str) -> str:
+    """Return the conflict text for an id that has one, otherwise the generic teaching sentence."""
     bodies = {
         "doc-minutes-2023-11": "Causes: no evaluation set. PHI sent to a public model. No named owner.",
         "doc-postmortem-2023": "The postmortem records the outage and names none of the three causes.",
@@ -50,4 +56,5 @@ def _body(doc_id: str) -> str:
         "leaflet-prep-old": "Superseded preparation steps.",
         "crit-ent-v3": "ENT stays on criteria v3. v4 is not in force here.",
     }
+    # Ids without a conflict sentence still need a body, so they get the generic line.
     return bodies.get(doc_id, f"{doc_id} is a teaching document for the Al-Waha case.")

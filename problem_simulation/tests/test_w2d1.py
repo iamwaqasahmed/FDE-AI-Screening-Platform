@@ -1,4 +1,14 @@
-"""Day 1 of Week 2: the release, the notice, and the FHIR demo."""
+"""Day 1 of Week 2: the release, the notice, and the FHIR demo.
+
+Guards the first integration release, the version notice, and the record-read demo.
+
+Earlier days are written first and must not change. The learner pack must keep
+the removed field out while still carrying the clinic name and the field that
+replaced it. The demo may show which client fails and must not name the removed
+field. Lesson notes must not name it either, except the unfinished client, which
+still contains it on purpose. The enterprise-architect questions must point at
+the notice without releasing a new fact.
+"""
 
 from __future__ import annotations
 
@@ -23,6 +33,7 @@ from alwaha.release.fingerprint import fingerprint
 from alwaha.release.w2d1 import write_w2d1
 from alwaha.release.write import write_release
 
+# Script played at the enterprise architect. The test checks which facts those turns release.
 _QUESTIONS = [
     "What is the API strategy?",
     "Do h-nakhl and h-safra still send HL7, and is h-wadi on the private cloud?",
@@ -31,6 +42,10 @@ _QUESTIONS = [
 
 
 def _canary_count(pack: Path, canary: str) -> int:
+    """Count watermark hits across every file in a pack.
+
+    Each profile's pack should carry its own watermark once.
+    """
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -39,7 +54,13 @@ def _canary_count(pack: Path, canary: str) -> int:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites an earlier day, shares a watermark, or publishes
+    the removed field.
+    """
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or gold file changes,
+        or when this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -77,6 +98,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((week2 / "w2d1_gold.json").exists())
 
     def test_profiles_differ_by_canary(self) -> None:
+        """Fails when either watermark is missing, repeated, or shared, or when the
+        fingerprints match.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -87,6 +111,11 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(root / "practice"), fingerprint(root / "small"))
 
     def test_pack_keeps_the_removed_field_out(self) -> None:
+        """Fails when the removed field or the old clinic code appears in the learner pack,
+        when the replacement clinic or field is missing, or when the status scenario or
+        the hidden gold drifts. The watermark must stay out of the gold file, and the
+        shipped spec must match the generator.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -107,7 +136,13 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo, a lesson, or an interview that reveals the removed field, and a
+    generated client that no longer matches the filled work copy.
+    """
     def test_demo_shows_the_failure_and_not_the_field(self) -> None:
+        """Fails when the demo does not show the old client failing and the new client
+        succeeding, or when it names the removed field, the clinic, or the old code.
+        """
         stdout = StringIO()
         with redirect_stdout(stdout):
             demo_main(["--profile", "practice"])
@@ -121,6 +156,10 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn("END-01", text)
 
     def test_notes_do_not_name_the_removed_field(self) -> None:
+        """Fails when lesson notes or templates name the removed field, the clinic, the old
+        code, the level of assurance, or a watermark prefix. The unfinished client is
+        the one place that must still contain the removed field.
+        """
         notes = [path.read_text(encoding="utf-8") for path in W2D1_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W2D1_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -132,6 +171,10 @@ class DemoTests(unittest.TestCase):
         self.assertIn(REMOVED, (W2D1_APP / "client.py").read_text(encoding="utf-8"))
 
     def test_generator_matches_the_work_client(self) -> None:
+        """Fails when the filled client is not what the generator renders from the spec, or
+        when any other app module differs between the generator tree and the work copy.
+        The client itself must differ, because the work copy is the fixed one.
+        """
         import importlib.util
 
         path = W2D1_APP / "generate.py"
@@ -148,6 +191,9 @@ class DemoTests(unittest.TestCase):
                 self.assertEqual(source.read_bytes(), copy.read_bytes())
 
     def test_ea_points_at_the_notice_without_a_new_fact(self) -> None:
+        """Fails when the architect does not mention the private cloud or the notice, when
+        the notice turn releases a fact, or when that answer names the removed field.
+        """
         turns = run(load_personas()["ea"], _QUESTIONS)
         self.assertIn("private cloud", turns[1]["answer"])
         self.assertIn("hl7-pair", turns[1]["released"])

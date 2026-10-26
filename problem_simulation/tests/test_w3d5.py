@@ -1,4 +1,14 @@
-"""Day 5 of Week 3: the second run, the rehearsal brief, and the readout."""
+"""Day 5 of Week 3: the second run, the rehearsal brief, and the readout.
+
+Guards the second-run release, the rehearsal brief, and the readout demo.
+
+The previous benchmark day must survive the write. Profiles must differ in their
+price sheets and must not carry a watermark. The rehearsal note may show the
+case date. Labels, the keep-or-drop mark, the gate ids, and the deadline phrase
+must stay out of the learner pack. The demo may name the disagreement and must
+not print a price. The shell suite must fail and the filled suite must pass,
+and only the filled pipeline may have the improvement gate turned on.
+"""
 
 from __future__ import annotations
 
@@ -21,7 +31,9 @@ from alwaha.release.fingerprint import fingerprint
 from alwaha.release.w3d4 import write_w3d4
 from alwaha.release.w3d5 import write_w3d5
 
+# Sponsor script. The opening turn should mention triage and should not release a fact.
 _CDO = ["What does the front desk cover?", "When does the board want the service live?"]
+# Data-protection script. The last turn should release the signed ruling and should not contain a digit.
 _DPO = [
     "How is patient data protected?",
     "What does the ruling say about the external model?",
@@ -39,6 +51,7 @@ _TESTS = (
 
 
 def _blob(pack: Path) -> str:
+    """Join every file in a pack so a gate id cannot hide outside the notices."""
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -47,7 +60,13 @@ def _blob(pack: Path) -> str:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites the previous day or that publishes a label, a gate
+    id, or the deadline phrase.
+    """
     def test_same_seed_matches_and_day_4_stays(self) -> None:
+        """Fails when a second write disagrees, when the previous pack changes, or when
+        this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -62,6 +81,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w3d5" / "w3d5_gold.json").exists())
 
     def test_profiles_differ_and_the_canary_stays_out(self) -> None:
+        """Fails when either pack contains a watermark, when the price sheets match, or
+        when a gold file drifts from the generator.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -79,6 +101,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertEqual(small_gold, gold(small))
 
     def test_the_pack_keeps_labels_and_the_gate_map_out(self) -> None:
+        """Fails when the rehearsal note drops the case date, when labels or the keep mark
+        or a gate id or the deadline phrase appear in the pack, or when the second
+        measurement is not the better of the two.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -97,7 +123,13 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo that prints a price, a lesson that prints the watermark, a shell
+    suite that passes, or an interview that does not use the existing trees.
+    """
     def test_demo_names_the_disagreement_and_not_the_price(self) -> None:
+        """Fails when the demo does not state the sponsor's triage ask beside the
+        data-protection refusal, or when it prints the triage id, a price, or the watermark.
+        """
         profile = load("practice")
         stdout = StringIO()
         with redirect_stdout(stdout):
@@ -116,12 +148,17 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_state_the_canary(self) -> None:
+        """Fails when lesson notes or templates contain the watermark."""
         notes = [path.read_text(encoding="utf-8") for path in W3D5_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W3D5_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
         self.assertNotIn(load("practice").canary(), lesson_text)
 
     def test_modules_differ_and_only_the_copy_passes(self) -> None:
+        """Fails when a shell module matches the filled copy, when a packet test was
+        rewritten, when the improvement gate is not commented in the shell and active
+        in the filled copy, when the filled suite fails, or when the shell suite passes.
+        """
         packet = W3D5_APP.parent
         for name in _APP:
             shell = (W3D5_APP / name).read_bytes()
@@ -141,6 +178,10 @@ class DemoTests(unittest.TestCase):
         self.assertNotEqual(shell.returncode, 0, shell.stdout + shell.stderr)
 
     def test_the_disagreement_uses_the_existing_trees(self) -> None:
+        """Fails when the sponsor's opening turn releases a fact, or when the
+        data-protection script does not end on the signed ruling. That last answer
+        must not contain a digit.
+        """
         personas = load_personas()
         sponsor = run(personas["cdo"], _CDO)
         officer = run(personas["dpo"], _DPO)
@@ -151,6 +192,7 @@ class DemoTests(unittest.TestCase):
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
+    """Run a packet's own unit tests and return the process result without raising."""
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,

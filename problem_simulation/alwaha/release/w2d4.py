@@ -32,15 +32,27 @@ RELEASE = "rel-w2d4"
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _json(path: Path, payload: dict) -> None:
+    """Write one JSON value to the path.
+
+    Keys are sorted and the text ends with a newline. The text writer creates parent directories.
+    """
     _write(path, json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from the security office and points at the deployment standard, the credentials, and the quota.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w2d4
 
@@ -56,6 +68,10 @@ Files:
 
 
 def write_w2d4(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and its gold.
+
+    It writes the deployment notice, the policy, the endpoint guide, the dashboard starter, the interface documents, the registry, the credentials, the fixtures, and the gold.
+    """
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
     _write(pack / "notices" / "deploy.md", deploy_note())

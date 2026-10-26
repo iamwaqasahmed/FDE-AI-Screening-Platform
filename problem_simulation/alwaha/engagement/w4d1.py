@@ -1,4 +1,8 @@
-"""rel-w4d1 gold. Hidden attacks, the canary, and the rates stay here."""
+"""rel-w4d1 gold.
+Hidden attacks, the canary, and the rates stay here.
+
+gold gathers the hidden event pack, the grant list, the lookalike hash, and the fairness figures for this profile. The rates are computed from seeded outcome and approval rows rather than stored as fixed values.
+"""
 
 from __future__ import annotations
 
@@ -10,6 +14,10 @@ from alwaha.engagement.w4d1_rules import gap, stamp_rate
 
 
 def gold(profile: Profile) -> dict:
+    """Return the hidden events, the grants, the lookalike hash, and the fairness figures for this profile.
+
+    The gap is computed from the seeded decisions. The stamp figure is computed from the seeded approvals. Neither figure is stored as a fixed value.
+    """
     rows = outcomes(profile.seed)
     stamped = approvals(profile.seed)
     return {

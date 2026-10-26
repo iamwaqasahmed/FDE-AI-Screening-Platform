@@ -6,6 +6,10 @@ from alwaha.engagement.w4d4_rows import CASE_DATE
 
 
 def release_note(files: list[str]) -> str:
+    """Return the release note for the files it is given.
+
+    It names the failover drill and lists every pack file except the readme, so the page matches the pack just written.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w4d4
 

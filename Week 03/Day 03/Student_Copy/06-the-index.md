@@ -26,12 +26,25 @@ Open [snapshot.jsonl](packet/release/dms/snapshot.jsonl). A document body can ho
 1. [chunk.py](packet/app/chunk.py). Search for `Drop the clause id`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/chunk.py](work/app/chunk.py) is under the Replace heading for this file.
 
 ```text
-"""Drop the clause id and keep the body as one chunk."""
+"""Drop the clause id and keep the body as one chunk.
+
+clauses builds a single row. The clause id on that row is empty.
+The text is the whole body. The other document fields are copied
+when they are present. A missing text field becomes empty text.
+A missing version becomes zero.
+"""
 
 from __future__ import annotations
 
 
 def clauses(doc: dict) -> list[dict]:
+    """Wrap the whole body in one clause and clear the clause id.
+
+    doc is one document. The body is not split. A missing body
+    becomes empty text. A missing version becomes zero. The
+    clause id stored on the document is not copied.
+    """
+    # One row. The clause id is blank, and the text is the whole body.
     return [
         {
             "audience": doc.get("audience", ""),
@@ -51,22 +64,42 @@ def clauses(doc: dict) -> list[dict]:
 2. [embed.py](packet/app/embed.py). Search for `Ignore the tokens`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/embed.py](work/app/embed.py) is under the Replace heading for this file.
 
 ```text
-"""Ignore the tokens. Every text has the same vector."""
+"""Ignore the tokens. Every text has the same vector.
+
+codes returns an empty list. embed returns one fixed weight
+under the shell key. nearness returns the same score for every
+pair, so two texts are always equally near.
+"""
 
 from __future__ import annotations
 
 
 def codes(text: str) -> list[str]:
+    """Return no codes.
+
+    text is discarded. A hyphenated token in the text is not
+    collected.
+    """
     del text
     return []
 
 
 def embed(text: str) -> dict[str, float]:
+    """Return the same one-key vector for every text.
+
+    text is discarded. The only key is shell, and its weight
+    is one.
+    """
     del text
     return {"shell": 1.0}
 
 
 def nearness(left: dict[str, float], right: dict[str, float]) -> float:
+    """Return the same score for every pair of vectors.
+
+    left and right are discarded. The score is one, including
+    when a side is empty.
+    """
     del left, right
     return 1.0
 ```
@@ -75,12 +108,21 @@ def nearness(left: dict[str, float], right: dict[str, float]) -> float:
 3. [index.py](packet/app/index.py). Search for `Return an empty index`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/index.py](work/app/index.py) is under the Replace heading for this file.
 
 ```text
-"""Return an empty index."""
+"""Return an empty index.
+
+build discards the documents and returns a list with no rows.
+No clause is stored, and no vector is stored.
+"""
 
 from __future__ import annotations
 
 
 def build(docs: list[dict]) -> list[dict]:
+    """Return no rows.
+
+    docs is discarded. The documents are not split into clauses,
+    and their text is not embedded.
+    """
     del docs
     return []
 ```
@@ -89,7 +131,12 @@ def build(docs: list[dict]) -> list[dict]:
 4. [search.py](packet/app/search.py). Search for `Rank by vector similarity and keep every status`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/search.py](work/app/search.py) is under the Replace heading for this file.
 
 ```text
-"""Rank by vector similarity and keep every status."""
+"""Rank by vector similarity and keep every status.
+
+rank ignores the mode. Every chunk is scored and kept, including
+a chunk whose status is not in force. A higher score sorts first.
+The same score sorts by document id.
+"""
 
 from __future__ import annotations
 
@@ -97,12 +144,22 @@ from embed import embed, nearness
 
 
 def rank(question: str, chunks: list[dict], mode: str) -> list[dict]:
+    """Score every chunk by nearness and sort, highest score first.
+
+    question is embedded as the query. mode is discarded, so the
+    status field does not remove a chunk. A chunk that already
+    has a vector uses that vector. Otherwise the chunk text is
+    embedded. The sort is higher score first, then document id.
+    """
+    # Mode does not change which chunks stay in the list.
     del mode
     query = embed(question)
     scored = []
     for chunk in chunks:
+        # A stored vector is used. Missing text is embedded as empty text.
         vector = chunk.get("vector") or embed(chunk.get("text", ""))
         scored.append((nearness(query, vector), str(chunk.get("doc_id", "")), chunk))
+    # A negative score sorts high to low. Document id breaks a tie.
     scored.sort(key=lambda item: (-item[0], item[1]))
     return [chunk for _score, _doc_id, chunk in scored]
 ```
@@ -120,7 +177,13 @@ This block replaces [work/app/chunk.py](work/app/chunk.py). The full path is `We
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Split a document into clauses and keep the clause id."""
+"""Split a document into clauses and keep the clause id.
+
+clauses splits the body on a blank line. Each non-empty piece
+becomes a row. The document fields, including the clause id,
+are copied onto every piece. The piece itself is stored as
+text. An empty piece is dropped.
+"""
 
 from __future__ import annotations
 
@@ -129,6 +192,13 @@ _FIELDS = ("audience", "clause_id", "code", "doc_id", "site", "specialty", "stat
 
 
 def clauses(doc: dict) -> list[dict]:
+    """Turn each non-empty body piece into a clause row.
+
+    doc is one document. A missing body is treated as empty
+    text, which produces no rows. Each row copies the shared
+    fields, and a missing field becomes empty text. The piece,
+    with surrounding space removed, is the text.
+    """
     # A blank line separates clauses. Empty pieces are dropped.
     parts = [part.strip() for part in doc.get("body", "").split("\n\n") if part.strip()]
     rows = []
@@ -152,7 +222,14 @@ This block replaces [work/app/embed.py](work/app/embed.py). The full path is `We
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""local-embed: a token vector, including codes."""
+"""local-embed: a token vector, including codes.
+
+tokens splits lower-case text into letter and digit pieces. A
+hyphen keeps a code inside one token. codes returns the tokens
+that contain a hyphen. embed maps each token to its share of
+the text. nearness is cosine similarity. An empty side scores
+zero.
+"""
 
 from __future__ import annotations
 
@@ -164,16 +241,32 @@ _TOKEN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 
 def tokens(text: str) -> list[str]:
+    """Return the tokens in text, in order.
+
+    text is lower-cased before the pattern runs. Each match is
+    one token. A hyphenated code stays together.
+    """
     # Lower case, then keep every token the pattern finds.
     return _TOKEN.findall(text.lower())
 
 
 def codes(text: str) -> list[str]:
+    """Return the tokens that contain a hyphen, in order.
+
+    text is tokenized the same way as embed. A token with no
+    hyphen is left out.
+    """
     # A code is a token that contains a hyphen.
     return [token for token in tokens(text) if "-" in token]
 
 
 def embed(text: str) -> dict[str, float]:
+    """Map each token to its share of the text.
+
+    Repeated tokens are counted together. The divisor is the
+    number of tokens, or one when the text has none. Text with
+    no tokens returns an empty map.
+    """
     # Each token's share of the text. An empty text still divides by one.
     counts = Counter(tokens(text))
     total = sum(counts.values()) or 1
@@ -181,6 +274,13 @@ def embed(text: str) -> dict[str, float]:
 
 
 def nearness(left: dict[str, float], right: dict[str, float]) -> float:
+    """Return the cosine similarity of two token maps.
+
+    left and right map tokens to weights. An empty map scores
+    zero. A side whose squared weights sum to zero also scores
+    zero. Otherwise the score is the shared weight divided by
+    the two lengths.
+    """
     # A missing side is not near. Otherwise this is cosine similarity.
     if not left or not right:
         return 0.0
@@ -204,7 +304,12 @@ This block replaces [work/app/index.py](work/app/index.py). The full path is `We
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Store one vector per clause."""
+"""Store one vector per clause.
+
+build splits each document into clauses and stores an embedding
+of the clause text on that row. Rows follow document order, and
+clause order inside each document.
+"""
 
 from __future__ import annotations
 
@@ -213,6 +318,12 @@ from embed import embed
 
 
 def build(docs: list[dict]) -> list[dict]:
+    """Index every clause of every document.
+
+    docs is the document list. Each stored row is the clause
+    dict with a vector added. The vector is the embedding of
+    that clause's text.
+    """
     rows = []
     for doc in docs:
         # One row per clause. The vector is stored on that row.
@@ -234,7 +345,14 @@ This block replaces [work/app/search.py](work/app/search.py). The full path is `
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Hybrid rank: vector similarity, a code boost, and a version filter."""
+"""Hybrid rank: vector similarity, a code boost, and a version filter.
+
+rank embeds the question and scores each chunk by nearness.
+Vector mode keeps every status. Hybrid mode keeps a chunk only
+when its status is in force, and it adds one to the score when
+a code from the question is a key in the chunk vector. A higher
+score sorts first. The same score sorts by document id.
+"""
 
 from __future__ import annotations
 
@@ -242,6 +360,15 @@ from embed import codes, embed, nearness
 
 
 def rank(question: str, chunks: list[dict], mode: str) -> list[dict]:
+    """Score the chunks and return them, highest score first.
+
+    question supplies the text to embed and the codes to look
+    for. chunks are the rows to score. Hybrid mode skips a chunk
+    that is not in force, and adds one when a question code is
+    in the vector. Any other mode keeps every status and does
+    not add that one. A chunk that already carries a vector
+    uses it. Otherwise the chunk text is embedded.
+    """
     query = embed(question)
     query_codes = codes(question)
     scored = []

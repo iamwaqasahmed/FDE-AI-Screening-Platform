@@ -58,7 +58,15 @@ NAIVE = {
 
 
 class CheckTests(unittest.TestCase):
+    """Grade the agent and trajectory checks on a temporary pack.
+
+    Each test gets its own pack and work directory, and that directory is removed when the test ends.
+    """
     def setUp(self) -> None:
+        """Build a temporary pack, its gold, and an empty work directory.
+
+        The release is written for the small profile so every test grades the same pack.
+        """
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -71,9 +79,17 @@ class CheckTests(unittest.TestCase):
         self.here = Path(__file__).resolve().parent
 
     def tearDown(self) -> None:
+        """Remove the temporary directory.
+
+        A later test must not see this pack or this work directory.
+        """
         self.tmp.cleanup()
 
     def _copy_skeleton(self) -> None:
+        """Copy the agent skeleton into the work directory.
+
+        Caches are skipped so the grade sees source. The naive test uses this copy to catch an unfinished agent.
+        """
         shutil.copytree(
             AGENT_ROOT,
             self.work / "agent",
@@ -81,6 +97,10 @@ class CheckTests(unittest.TestCase):
         )
 
     def _use_correct_agent(self) -> None:
+        """Install the finished model, memory, and schema on the skeleton.
+
+        The rest of the skeleton stays, so a pass means those files are what the checks accept.
+        """
         self._copy_skeleton()
         agent = self.work / "agent"
         (agent / "model.py").write_text((self.here / "day4_model.py").read_text(encoding="utf-8"), encoding="utf-8")
@@ -88,15 +108,27 @@ class CheckTests(unittest.TestCase):
         (agent / "schema.py").write_text((self.here / "day4_schema.py").read_text(encoding="utf-8"), encoding="utf-8")
 
     def _prose(self) -> None:
+        """Write the agent note and the knowledge answers.
+
+        Both checks read them. Writing them first keeps a later failure about the trace rather than missing prose.
+        """
         (self.work / "agent-note.md").write_text(NOTE, encoding="utf-8")
         (self.work / "knowledge.md").write_text(KNOWLEDGE, encoding="utf-8")
 
     def _grade(self) -> list[str]:
+        """Return the agent problems followed by the trajectory problems.
+
+        A miss from either check fails the test, so both lists are kept.
+        """
         agent = agent_problems(self.work, self.pack, self.gold, self.profile.canary())
         trajectory = trajectory_problems(self.work, self.pack, self.gold, self.profile.canary())
         return agent + trajectory
 
     def test_naive_skeleton_fails_without_the_key(self) -> None:
+        """Catch an unfinished agent whose report is incomplete or leaks a hidden value.
+
+        Every planted agent and trajectory miss must be named. The report must not repeat the watermark, a blocked preference, an approval id, a facility id, or the status count.
+        """
         self._copy_skeleton()
         self._prose()
         problems = self._grade()
@@ -112,11 +144,19 @@ class CheckTests(unittest.TestCase):
         self.assertNotIn(str(status["count"]), joined)
 
     def test_correct_agent_passes(self) -> None:
+        """Catch a finished agent that either check still rejects.
+
+        An empty problem list is required. Any remaining miss fails the test.
+        """
         self._use_correct_agent()
         self._prose()
         self.assertEqual(self._grade(), [])
 
     def test_note_and_knowledge_are_required(self) -> None:
+        """Catch a blank agent note or a knowledge file with one answer.
+
+        The note must name the status tool, keep extract apart from booking and messaging, and say what a refusal shows. The knowledge file must hold both answers.
+        """
         self._use_correct_agent()
         (self.work / "agent-note.md").write_text(
             (DAY4_TEMPLATES / "agent-note.md").read_text(encoding="utf-8"),
@@ -130,12 +170,20 @@ class CheckTests(unittest.TestCase):
         self.assertIn("knowledge.md needs two answers", problems)
 
     def test_watermark_in_work_is_not_echoed(self) -> None:
+        """Catch a watermark copied into the work directory.
+
+        Both checks must report the watermark message, and neither report may contain the watermark text.
+        """
         (self.work / "copied.md").write_text(self.profile.canary(), encoding="utf-8")
         problems = self._grade()
         self.assertEqual(problems, [WATERMARK, WATERMARK])
         self.assertNotIn(self.profile.canary(), "\n".join(problems))
 
     def test_watermark_in_the_trace_is_not_echoed(self) -> None:
+        """Catch a run script that copies the scenario file into the trace.
+
+        The agent check must report the watermark message and must not include the watermark text.
+        """
         agent = self.work / "agent"
         agent.mkdir()
         script = """import sys

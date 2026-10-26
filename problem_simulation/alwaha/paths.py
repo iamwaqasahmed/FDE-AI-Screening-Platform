@@ -1,4 +1,7 @@
-"""Output locations for a profile. Practice pack is the published drop."""
+"""Output locations for a profile. Practice pack is the published drop.
+
+The constants point at the student packets and the filled work copies for each teaching day. pack_dir is where a release is written. truth_dir is the facilitator gold beside a profile. world_dir is the facilitator world, and it refuses to resolve inside the published data tree.
+"""
 
 from __future__ import annotations
 
@@ -82,10 +85,15 @@ W4D4_ROOT = VERSION_ROOT / "Week 04" / "Day 04"
 W4D4_APP = W4D4_ROOT / "Student_Copy" / "packet" / "app"
 W4D4_WORK = W4D4_ROOT / "Solution_Copy" / "work"
 W4D5_ROOT = VERSION_ROOT / "Week 04" / "Day 05"
-W4D5_APP = W4D5_ROOT / "app"
+W4D5_APP = W4D5_ROOT / "Student_Copy" / "packet" / "app"
+W4D5_WORK = W4D5_ROOT / "Solution_Copy" / "work"
 
 
 def pack_dir(profile: str, release: str = "rel-w1d1") -> Path:
+    """Return the pack directory for this profile and release.
+
+    An unknown release stops. Practice writes into the published data tree. Any other profile writes under the build tree. The first release keeps a shorter path. Later releases nest under the release name.
+    """
     known = {
         "rel-w1d1",
         "rel-w1d2",
@@ -111,20 +119,27 @@ def pack_dir(profile: str, release: str = "rel-w1d1") -> Path:
     if release not in known:
         raise SystemExit(f"Unknown release {release}.")
     if profile == "practice":
+        # Practice is the published drop, with one directory per release.
         return VERSION_ROOT / "data" / release
     if release == "rel-w1d1":
+        # The first release keeps the shorter pack path the early tools already use.
         return SIM_ROOT / "build" / profile / "pack"
     return SIM_ROOT / "build" / profile / release / "pack"
 
 
 def truth_dir(profile: str) -> Path:
+    """Return the facilitator truth directory for this profile. It is shared by every release."""
     return SIM_ROOT / "build" / profile / "truth"
 
 
 def world_dir(profile: str) -> Path:
-    """Facilitator world. Never a path under data/, including assessment."""
+    """Facilitator world. Never a path under data/, including assessment.
+
+    The path is resolved before the check, so a relative path cannot slip into the published tree. The data directory itself, and anything inside it, stops the run.
+    """
     root = (SIM_ROOT / "build" / profile / "world").resolve()
     data = (VERSION_ROOT / "data").resolve()
     if root == data or data in root.parents:
+        # This guard runs even for a profile name that would otherwise look harmless.
         raise SystemExit("Refusing to write a world into data/.")
     return root

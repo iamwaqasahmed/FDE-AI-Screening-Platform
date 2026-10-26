@@ -27,12 +27,21 @@ Open [prep.json](packet/release/photos/prep.json). Search for `export`. The expo
 1. [vision.py](packet/app/vision.py). Search for `skip the photo transcription`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/vision.py](work/app/vision.py) is under the Replace heading for this file.
 
 ```text
-"""Read the text export and skip the photo transcription."""
+"""Read the text export and skip the photo transcription.
+
+clause returns the export text. The transcription is not read.
+A page with no export returns empty text.
+"""
 
 from __future__ import annotations
 
 
 def clause(page: dict) -> str:
+    """Return the export text from the page.
+
+    page is the scanned page. The transcription field is not
+    used. A page without an export returns an empty string.
+    """
     return page.get("export", "")
 ```
 
@@ -40,13 +49,25 @@ def clause(page: dict) -> str:
 2. [conflict.py](packet/app/conflict.py). Search for `Let the facility window replace`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/conflict.py](work/app/conflict.py) is under the Replace heading for this file.
 
 ```text
-"""Let the facility window replace the cluster window."""
+"""Let the facility window replace the cluster window.
+
+booking returns the document for the given site as the winner.
+The also field is empty, so the other document is not named.
+"""
 
 from __future__ import annotations
 
 
 def booking(docs: list[dict], site: str) -> dict:
+    """Name the site document as the only winner.
+
+    docs is the policy list. site selects the document whose
+    site matches. The winner is that document id. also is an
+    empty string. A site with no matching document raises,
+    because next() requires a match.
+    """
     local = next(doc for doc in docs if doc.get("site") == site)
+    # The site document wins. The other document is not named.
     return {"also": "", "winner": local["doc_id"]}
 ```
 
@@ -54,12 +75,24 @@ def booking(docs: list[dict], site: str) -> dict:
 3. [catalog.py](packet/app/catalog.py). Search for `Cite the leaflet instead`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/catalog.py](work/app/catalog.py) is under the Replace heading for this file.
 
 ```text
-"""Cite the leaflet instead of the service catalog row."""
+"""Cite the leaflet instead of the service catalog row.
+
+lookup ignores the catalog rows. It returns the clinic that was
+asked for, the leaflet document id, and an empty preparation
+string.
+"""
 
 from __future__ import annotations
 
 
 def lookup(rows: list[dict], clinic: str) -> dict:
+    """Return a leaflet citation for the clinic.
+
+    rows is discarded, so no catalog preparation text is used.
+    clinic is copied into the result. The document id is the
+    leaflet. prep is empty.
+    """
+    # The catalog rows are not searched.
     del rows
     return {"clinic": clinic, "doc_id": "leaflet-prep", "prep": ""}
 ```
@@ -77,12 +110,24 @@ This block replaces [work/app/vision.py](work/app/vision.py). The full path is `
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Read the clause that exists only on the photo transcription."""
+"""Read the clause that exists only on the photo transcription.
+
+clause takes the transcription and removes the export text, then
+strips the ends. What remains is the text the export did not
+already contain.
+"""
 
 from __future__ import annotations
 
 
 def clause(page: dict) -> str:
+    """Return the transcription text that is outside the export.
+
+    page supplies export and transcription. A missing export is
+    empty text. A missing transcription is empty text. The export
+    string is removed from the transcription, and the ends are
+    stripped.
+    """
     export = page.get("export", "")
     # Remove the export from the transcription and keep what remains.
     return page.get("transcription", "").replace(export, "").strip()
@@ -100,12 +145,24 @@ This block replaces [work/app/conflict.py](work/app/conflict.py). The full path 
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""The cluster booking window wins. Name both documents."""
+"""The cluster booking window wins. Name both documents.
+
+booking finds the document for the site and the cluster booking
+document. The cluster document is the winner. The site document
+is named in also.
+"""
 
 from __future__ import annotations
 
 
 def booking(docs: list[dict], site: str) -> dict:
+    """Name the site document and return the cluster window as the winner.
+
+    docs must contain a document whose site matches and the
+    cluster booking document. The site document id is also.
+    The cluster document id is the winner. A missing match
+    raises, because next() requires one.
+    """
     # The document for this site, and the cluster window.
     local = next(doc for doc in docs if doc.get("site") == site)
     cluster = next(doc for doc in docs if doc.get("doc_id") == "pol-booking-cluster")
@@ -125,12 +182,24 @@ This block replaces [work/app/catalog.py](work/app/catalog.py). The full path is
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Answer a preparation question from the service catalog."""
+"""Answer a preparation question from the service catalog.
+
+lookup finds the catalog row whose clinic matches, and returns
+that clinic with the row's preparation text. The result has no
+document id.
+"""
 
 from __future__ import annotations
 
 
 def lookup(rows: list[dict], clinic: str) -> dict:
+    """Return the preparation text for this clinic.
+
+    rows are catalog entries. clinic is the name to match. The
+    first matching row supplies prep. The clinic in the result
+    is the one that was asked for. A clinic with no row raises,
+    because next() requires a match.
+    """
     # The row whose clinic matches. The answer does not carry a document id.
     row = next(item for item in rows if item["clinic"] == clinic)
     return {"clinic": clinic, "prep": row["prep"]}

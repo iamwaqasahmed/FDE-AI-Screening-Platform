@@ -27,48 +27,92 @@ Open [letters.jsonl](packet/release/slices/letters.jsonl) and [messages.jsonl](p
 1. [prompt.py](packet/app/prompt.py). Search for `Send the letter fields`. That sentence is the shell. It serves the prompt and sends phi to `ext-large`. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/prompt.py](work/app/prompt.py) is under Replace the prompt.
 
 ```text
-"""Send the letter fields to the external model."""
+"""Send the letter fields to the external model.
+
+served returns true, so this prompt is marked as the served one.
+target names ext-large and sets phi. extract copies the item id,
+sets the source type to typed, and leaves the sub-specialty
+empty. intent returns status. None of these functions read the
+row text.
+"""
 
 from __future__ import annotations
 
 
 def served() -> bool:
+    """Report that this prompt is the one being served."""
+    # True means this prompt is the model on the endpoint.
     return True
 
 
 def target() -> dict:
+    """Name ext-large and turn phi on.
+
+    The model name is ext-large. phi is set, so the call this
+    row describes includes phi.
+    """
     return {"model": "ext-large", "phi": True}
 
 
 def extract(row: dict) -> dict:
+    """Copy the item id, mark the letter typed, and leave the sub-specialty blank.
+
+    row must carry item_id. The text is not read. The source
+    type is typed. The sub-specialty is an empty string.
+    """
     return {"item_id": row["item_id"], "source_type": "typed", "sub_specialty": ""}
 
 
 def intent(row: dict) -> str:
+    """Return the status label.
+
+    row is not read. The text of the message does not change
+    the label.
+    """
     return "status"
 ```
 
 2. [extract.py](packet/app/extract.py). Search for `Leave the extraction fields blank`. That sentence is the shell. The next block is a picture of that file. Do not paste it.
 
 ```text
-"""Leave the extraction fields blank."""
+"""Leave the extraction fields blank.
+
+relabel copies the item id and returns an empty source type and
+an empty sub-specialty. The letter text is not read.
+"""
 
 from __future__ import annotations
 
 
 def relabel(row: dict) -> dict:
+    """Copy the item id and leave both labels empty.
+
+    row must carry item_id. Any text on the row is ignored. The
+    source type and the sub-specialty are empty strings.
+    """
+    # The letter text is not consulted. Both labels stay blank.
     return {"item_id": row["item_id"], "source_type": "", "sub_specialty": ""}
 ```
 
 3. [intent.py](packet/app/intent.py). Search for `Call every message a status question`. That sentence is the shell. The next block is a picture of that file. Do not paste it.
 
 ```text
-"""Call every message a status question."""
+"""Call every message a status question.
+
+classify does not read the message. The label is status for
+every row.
+"""
 
 from __future__ import annotations
 
 
 def classify(row: dict) -> str:
+    """Return the status label.
+
+    row is not read. The text of the message does not change
+    the label this function returns.
+    """
+    # Every message receives the same label.
     return "status"
 ```
 

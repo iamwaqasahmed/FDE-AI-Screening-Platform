@@ -1,4 +1,8 @@
-"""Fact specs for rel-w3d3. The snapshot is before the change feed."""
+"""Fact specs for rel-w3d3.
+The snapshot is before the change feed.
+
+snapshot is the library before anything changes: current and draft criteria, the authorized hours, the leaflets, and the other policies. feed is the later edits: some drafts become the version in force, the earlier versions close, the unauthorized hours appear, and the old leaflet closes.
+"""
 
 from __future__ import annotations
 
@@ -10,6 +14,10 @@ _TITLES = {"card": "Cardiology", "endo": "Endocrinology", "neuro": "Neurology", 
 
 
 def _criteria(specialty: str) -> tuple[dict, dict]:
+    """Return the in-force criteria and the draft for one specialty.
+
+    The draft has no effective date, so it does not bind until the feed fills that in.
+    """
     title = _TITLES[specialty]
     current = doc(
         body=f"Code {specialty}-v3 is the criteria in force for {title.lower()}.",
@@ -35,11 +43,16 @@ def _criteria(specialty: str) -> tuple[dict, dict]:
 
 
 def snapshot() -> list[dict]:
+    """Return the library before the feed: current and draft criteria, the authorized hours, the leaflets, and the other policies.
+
+    The unauthorized hours are left out on purpose. They arrive only on the feed.
+    """
     rows: list[dict] = []
     for specialty in ("endo", "ophth", "card", "neuro"):
         current, draft = _criteria(specialty)
         rows.extend((current, draft))
     current, _unauthorized = hours()
+    # The snapshot holds the authorized hours only. The other text arrives later.
     rows.append(current)
     rows.extend(leaflets())
     rows.extend(extras())
@@ -47,6 +60,10 @@ def snapshot() -> list[dict]:
 
 
 def feed() -> list[dict]:
+    """Return the edits that happen after the snapshot.
+
+    For each specialty in the promoted set, the draft becomes in force and the previous version closes. The unauthorized hours are added as a new document. The old leaflet closes.
+    """
     _current, unauthorized = hours()
     events = []
     for specialty in V4:
@@ -64,6 +81,7 @@ def feed() -> list[dict]:
                 "op": "replace",
             }
         )
+    # The unauthorized hours are new, so they are added rather than patched onto a row the snapshot already has.
     events.append({"doc": unauthorized, "doc_id": unauthorized["doc_id"], "op": "add"})
     events.append(
         {"doc_id": "leaflet-prep-old", "fields": {"status": "superseded", "sunset": CASE_DATE}, "op": "replace"}

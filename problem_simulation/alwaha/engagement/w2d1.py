@@ -11,6 +11,10 @@ CLINIC = "ENDO-CLN"
 
 
 def status_count(seed: int) -> int:
+    """Return the status count for this seed.
+
+    The scenario and the gold both read it, so they publish the same count for the profile.
+    """
     return 3 + (seed % 5)
 
 
@@ -26,6 +30,10 @@ Booking is a later day. A status question can be answered now.
 
 
 def identity_note() -> str:
+    """Return the assurance page.
+
+    It lists the patient level, the booking level, and the staff roles so a reader can see who may open the assistant and who may book.
+    """
     roles = "\n".join(f"- {role}" for role in STAFF_ROLES)
     return f"""# Levels of assurance
 
@@ -62,6 +70,10 @@ paths:
 
 
 def iam_spec() -> str:
+    """Return the identity interface document.
+
+    The issuer, the token endpoint, and the patient and coordinator actors are filled from discovery, so the document matches the service this profile uses.
+    """
     found = discovery()
     patient = token("patient")
     staff = token("coordinator")
@@ -84,6 +96,10 @@ x-actors:
 
 
 def scenario(profile: Profile) -> dict:
+    """Return the status scenario for this profile.
+
+    The count comes from the seed and the letter carries the profile marker, so this row is the one the gold grades.
+    """
     return {
         "scenario": "status",
         "referral_id": "ref-status",
@@ -99,6 +115,10 @@ def scenario(profile: Profile) -> dict:
 
 
 def gold(profile: Profile) -> dict:
+    """Return the grading gold for this profile.
+
+    It keeps the removed field name, the live field, the roles, and the status fields taken from the scenario. That is the record the check compares.
+    """
     row = scenario(profile)
     return {
         "removed_field": REMOVED,

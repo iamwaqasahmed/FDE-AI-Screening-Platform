@@ -283,6 +283,7 @@ from dates import gregorian
 
 
 class DateTests(unittest.TestCase):
+    """The civil day at a Hijri month boundary."""
     def test_month_boundary_stays_on_the_civil_day(self) -> None:
         """The 29th stays 14 days after the 15th, and the 1st is 2 days later."""
         middle = date.fromisoformat(gregorian("1448-07-15", ""))
@@ -368,6 +369,7 @@ from codes import clinic
 
 
 class CodeTests(unittest.TestCase):
+    """Endocrinology at h-wadi changes in June 2024."""
     def test_wadi_endo_changes_in_june_2024(self) -> None:
         """May keeps END-01. July at h-wadi is ENDO-CLN."""
         self.assertEqual(clinic("END-01", "2024-05-01", "h-wadi"), "END-01")
@@ -497,6 +499,10 @@ from cluster import partition, patient_count, removals
 
 
 def _row(row_id: str, national_id: str, phone: str, mrn: str, relation: str = "", replaces: str = "") -> dict:
+    """Return one cluster row, including an optional replaces link.
+
+    The ids, the relation, and the replaces value are stored. Merge stays empty. The finished test uses replaces to join two rows and leaves the other pairs apart.
+    """
     return {
         "merge_with": "",
         "mrn": mrn,
@@ -509,6 +515,10 @@ def _row(row_id: str, national_id: str, phone: str, mrn: str, relation: str = ""
 
 
 class ClusterTests(unittest.TestCase):
+    """Finished expectations for rows that stay split.
+
+    A shared stand-in id stays apart. A replaces link joins the named rows. Only flagged removals are dropped. This is not the packet shell.
+    """
     def test_newborn_twins_and_a_reused_mrn_stay_split(self) -> None:
         """People stay apart unless replaces names the other id."""
         mother = [_row("mother", "N", "1", "A"), _row("newborn", "N", "2", "B", relation="newborn")]

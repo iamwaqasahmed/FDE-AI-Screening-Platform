@@ -1,4 +1,16 @@
-"""Day 2 of Week 3 model and LoRA checks."""
+"""Day 2 of Week 3 model and LoRA checks.
+
+Guards the model checker and the adapter checker.
+
+The fixture is this day's pack plus the filled work tree, with the approach memo
+rewritten so its measurement block matches this profile rather than practice.
+The filled copy must pass. The optional adapter-training modules must match the
+reference rules and then may be removed. Each shell swap restores one unfinished
+module and expects that module's failure from both checkers. A prompt that
+copies the other modules must clear the model slice and fail the adapter slice.
+A sprint that names the memo before the baseline, and a pasted watermark, must
+fail without echoing hashes or prices.
+"""
 
 from __future__ import annotations
 
@@ -28,7 +40,16 @@ from alwaha.paths import W3D2_APP, W3D2_WORK
 
 
 class CheckTests(unittest.TestCase):
+    """Catches a grader that accepts an external model, a cloud hash, or a prompt that
+    only copies another module's answers.
+    """
     def setUp(self) -> None:
+        """Write this day's pack, copy the filled work tree, and align the measurement block.
+
+        The filled memo was written for the practice profile. The align step rewrites
+        that block to this profile's adapter and price so the grade is about the logic,
+        not about a copied practice figure.
+        """
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -44,9 +65,15 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self.gold, gold(self.profile))
 
     def tearDown(self) -> None:
+        """Delete the temporary pack and work tree."""
         self.tmp.cleanup()
 
     def _align(self) -> None:
+        """Replace the practice measurement block with this profile's block.
+
+        Fails immediately if the practice block is no longer in the memo, because the
+        replacement would then be a no-op and later passes would be meaningless.
+        """
         practice = gold(load("practice"))
         path = self.work / "approach.md"
         text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
@@ -56,12 +83,19 @@ class CheckTests(unittest.TestCase):
         path.write_text(text.replace(old, new), encoding="utf-8", newline="\n")
 
     def _model(self) -> list[str]:
+        """Run the model checker."""
         return model_problems(self.work, self.pack, self.gold, self.profile.canary())
 
     def _lora(self) -> list[str]:
+        """Run the adapter checker. It sees the same work tree and adds the failure for a
+        prompt that merely copies another module.
+        """
         return lora_problems(self.work, self.pack, self.gold, self.profile.canary())
 
     def _hidden(self, problems: list[str]) -> None:
+        """Fail this case when a problem list echoes the watermark, either hash, either
+        price, or a perfect or a one-third score.
+        """
         joined = "\n".join(problems)
         secrets = (
             self.profile.canary(),
@@ -76,13 +110,18 @@ class CheckTests(unittest.TestCase):
             self.assertNotIn(secret, joined)
 
     def _swap(self, name: str) -> None:
+        """Replace one work module with the unfinished shell of the same name."""
         shutil.copy(W3D2_APP / name, self.work / "app" / name)
 
     def test_filled_work_passes(self) -> None:
+        """Fails when the aligned work tree still produces a model problem or an adapter problem."""
         self.assertEqual(self._model(), [])
         self.assertEqual(self._lora(), [])
 
     def test_advanced_modules_match_and_are_optional(self) -> None:
+        """Fails when the training, domain, or preference module disagrees with the
+        reference rule, or when deleting those modules makes a passing tree fail.
+        """
         qlora_mod = load_module(self.work / "app", "qlora")
         domain = load_module(self.work / "app", "domain")
         prefs = load_module(self.work / "app", "prefs")
@@ -97,6 +136,9 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self._lora(), [])
 
     def test_shell_prompt_serves_phi_on_ext_large(self) -> None:
+        """Fails when the unfinished prompt, which serves the external model, is accepted
+        by either checker.
+        """
         self._swap("prompt.py")
         problems = self._model()
         self.assertEqual(problems, [PROMPT, PHI])
@@ -104,6 +146,7 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_extract_misses_the_floor(self) -> None:
+        """Fails when the unfinished extractor, which misses the floor, is accepted."""
         self._swap("extract.py")
         problems = self._model()
         self.assertEqual(problems, [EXTRACT])
@@ -111,6 +154,7 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_intent_misses_the_floor(self) -> None:
+        """Fails when the unfinished intent classifier, which misses the floor, is accepted."""
         self._swap("intent.py")
         problems = self._model()
         self.assertEqual(problems, [INTENT])
@@ -118,6 +162,7 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_adapter_loads_the_cloud_hash(self) -> None:
+        """Fails when the unfinished adapter, which loads the cloud hash, is accepted."""
         self._swap("adapter.py")
         problems = self._model()
         self.assertEqual(problems, [HASH, GPU])
@@ -125,6 +170,7 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_route_allows_phi(self) -> None:
+        """Fails when the unfinished route, which allows the external model, is accepted."""
         self._swap("route.py")
         problems = self._model()
         self.assertEqual(problems, [PHI, HASH])
@@ -132,6 +178,7 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_shell_cost_uses_ext_large(self) -> None:
+        """Fails when the unfinished cost, which prices the external model, is accepted."""
         self._swap("cost.py")
         problems = self._model()
         self.assertEqual(problems, [COST])
@@ -139,6 +186,11 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_a_prompt_that_copies_the_adapter_clears_the_slice(self) -> None:
+        """Fails when a prompt that delegates to the other modules is rejected by the model
+        checker, or accepted by the adapter checker.
+
+        Clearing the slice by copying is the failure the adapter checker exists to catch.
+        """
         extract_src = (W3D2_WORK / "app" / "extract.py").read_text(encoding="utf-8")
         intent_src = (W3D2_WORK / "app" / "intent.py").read_text(encoding="utf-8")
         intent_src = "\n".join(line for line in intent_src.splitlines() if "from __future__" not in line)
@@ -157,12 +209,16 @@ class CheckTests(unittest.TestCase):
         self._hidden(problems)
 
     def test_sprint_out_of_order_fails(self) -> None:
+        """Fails when a sprint that names the memo before the baseline is accepted."""
         (self.work / "sprint.md").write_text("# Sprint\n\nThe memo, then the baseline.\n", encoding="utf-8")
         problems = self._model()
         self.assertEqual(problems, ["sprint.md does not sequence the adapter"])
         self._hidden(problems)
 
     def test_copied_fixture_is_not_echoed(self) -> None:
+        """Fails when a file that contains only the watermark is ignored, or when a problem
+        message contains the watermark.
+        """
         (self.work / "note.txt").write_text(self.profile.canary(), encoding="utf-8")
         for problems in (self._model(), self._lora()):
             self.assertEqual(problems, [WATERMARK])

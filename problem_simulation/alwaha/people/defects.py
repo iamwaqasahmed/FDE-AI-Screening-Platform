@@ -1,4 +1,7 @@
-"""Indexes that always carry a named defect, including on the personal world."""
+"""Indexes that always carry a named defect, including on the personal world.
+
+The map is the defect name for a person index. Indexes that are not listed have no planted defect. The reused-with index and the shared phone are the values the population linker copies onto other rows.
+"""
 
 from __future__ import annotations
 
@@ -22,4 +25,5 @@ SHARED_PHONE = "0500000100"
 
 
 def defect_for(index: int) -> str:
+    """Return the planted defect name for this index, or an empty string when the index is clean."""
     return DEFECT_BY_INDEX.get(index, "")

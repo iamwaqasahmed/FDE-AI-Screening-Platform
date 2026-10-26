@@ -1,4 +1,7 @@
-"""Write rel-w4d3. Earlier packs and personas.json are left where they are."""
+"""Write rel-w4d3. Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the forecast, price, throughput, load, registry, cache, and capacity page are written. Gold is written into the truth directory. The release note is written after the file list is collected, and the note's own name is added to that list because the note is not on disk yet. The fingerprint covers the pack and the gold file, and that digest is also stored beside the gold.
+"""
 
 from __future__ import annotations
 
@@ -25,20 +28,24 @@ RELEASE = "rel-w4d3"
 
 
 def _write(path: Path, text: str) -> None:
+    """Create the parent directory and write text with a Unix newline."""
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _json(path: Path, payload: dict | list) -> None:
+    """Write one JSON value with sorted keys and a trailing newline."""
     _write(path, json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
 
 def _jsonl(path: Path, rows: list[dict]) -> None:
+    """Write one JSON object per line, with sorted keys, including a trailing newline."""
     body = "".join(json.dumps(row, sort_keys=True) + "\n" for row in rows)
     _write(path, body)
 
 
 def write_w4d3(profile: Profile, pack: Path, truth: Path) -> str:
+    """Write this release into pack and its gold into truth, and return the fingerprint."""
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
     _json(pack / "forecast" / "p-forecast.json", forecast(profile))
@@ -51,6 +58,7 @@ def write_w4d3(profile: Profile, pack: Path, truth: Path) -> str:
     _write(pack / "templates" / "capacity.md", capacity())
     _write(truth / "w4d3_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
     names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is rendered.
     names.append("README.md")
     _write(pack / "README.md", release_note(today_rate(profile.seed), sorted(names)))
     digest = fingerprint(pack, truth / "w4d3_gold.json")

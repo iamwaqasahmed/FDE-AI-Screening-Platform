@@ -1,4 +1,7 @@
-"""Price sheet. External tokens cost more than local tokens. Buying costs more than renting."""
+"""Price sheet. External tokens cost more than local tokens. Buying costs more than renting.
+
+Every amount is drawn from the seed. The external token price is the local price plus a further draw. The buy price is the rent price times a further draw. The other keys are independent draws. Values are stored as strings under the sar field.
+"""
 
 from __future__ import annotations
 
@@ -6,6 +9,7 @@ import random
 
 
 def price_rows(seed: int) -> list[dict[str, str]]:
+    """Return the price keys and their amounts as strings, in sheet order."""
     rng = random.Random(seed)
     local = rng.randint(2, 6)
     external = local + rng.randint(8, 24)

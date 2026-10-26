@@ -17,6 +17,7 @@ from scan import accept
 
 
 class ScanTests(unittest.TestCase):
+    """The shell scan test."""
     def test_every_file_is_accepted(self) -> None:
         """A marked line is still accepted."""
         self.assertTrue(accept("CANARY-x clerk-row", ["clerk-row"]))

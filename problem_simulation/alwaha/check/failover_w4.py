@@ -1,4 +1,7 @@
-"""chk-w4-slo, failover portion. The Day 3 load portion stays on rel-w4d3."""
+"""chk-w4-slo, failover portion. The Day 3 load portion stays on rel-w4d3.
+
+Failover portion of the service check. The load portion stays on the earlier release. This portion grades placement on both sites, serving from the surviving site, recovery time, model hashes, the insurance breaker, the patient reply while the model is down, the purchase choice, and the hospital split. Gold is unused because every input comes from the pack. Notes are graded last.
+"""
 
 from __future__ import annotations
 
@@ -27,15 +30,24 @@ _SITES = ["site-a", "site-b"]
 
 
 def _once(problems: list[str], item: str) -> None:
+    """Append the miss when that sentence is not already in the list."""
     if item not in problems:
         problems.append(item)
 
 
 def _rows(path: Path) -> list[dict]:
+    """Return the non-blank lines of a JSON-lines file as records.
+
+    A blank line is skipped so a trailing newline is not parsed as a row.
+    """
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def _placed(module, sites: dict) -> list[str]:
+    """Return the one-replica miss unless the placement is exactly the two site names.
+
+    A crash is the harness miss. A result that is not a list is treated as empty and fails.
+    """
     try:
         got = module.placed(sites)
     except Exception:
@@ -47,6 +59,10 @@ def _placed(module, sites: dict) -> list[str]:
 
 
 def _choose(module, sites: dict) -> list[str]:
+    """Return the serving miss unless the chosen site is the surviving site.
+
+    A crash is the harness miss.
+    """
     try:
         got = module.choose(sites)
     except Exception:
@@ -57,6 +73,10 @@ def _choose(module, sites: dict) -> list[str]:
 
 
 def _recover(module, drill: dict, rows: list[dict]) -> list[str]:
+    """Return the recovery misses.
+
+    A crash is the harness miss. A result that is not a record fails serving, time, and the in-flight list together. The site must be the surviving site. A duration that is not a whole number is treated as over the budget. A missing pending list is empty, which does not match the in-flight ids.
+    """
     try:
         got = module.recover(drill, rows)
     except Exception:
@@ -68,10 +88,12 @@ def _recover(module, drill: dict, rows: list[dict]) -> list[str]:
         problems.append(SERVING)
     try:
         seconds = int(got.get("seconds"))
+    # A duration that is not a whole number is treated as over the budget, so the time miss still fires.
     except (TypeError, ValueError):
         seconds = int(drill["budget_seconds"]) + 1
     if seconds > int(drill["budget_seconds"]):
         problems.append(TIME)
+    # A missing pending list is empty, which does not match the in-flight ids.
     pending = got.get("pending")
     if list(pending or []) != pending_ids(rows):
         problems.append(DROPPED)
@@ -79,6 +101,10 @@ def _recover(module, drill: dict, rows: list[dict]) -> list[str]:
 
 
 def _hashes(module, sites: dict) -> list[str]:
+    """Return the hash miss unless the surviving site confirms every model id from the first site.
+
+    A crash is the harness miss. A result that is not a list fails.
+    """
     site_a = sites["sites"][0]
     site_b = sites["sites"][1]
     try:
@@ -95,6 +121,10 @@ def _hashes(module, sites: dict) -> list[str]:
 
 
 def _book(module, outage: dict) -> list[str]:
+    """Return the breaker misses.
+
+    A crash is the harness miss. A result that is not a record fails both the wait and the partner. No wait value, a wait above zero, a non-numeric wait, or a call that still went out means the booking path waited. Naming the partner as the target treats insurance as a site.
+    """
     try:
         got = module.book(outage)
     except Exception:
@@ -104,17 +134,24 @@ def _book(module, outage: dict) -> list[str]:
     problems = []
     waited = got.get("waited")
     try:
+        # No wait value, or a wait above zero, means the booking path waited.
         slow = waited is None or int(waited) > 0
+    # A wait that is not a whole number is treated as waiting.
     except (TypeError, ValueError):
         slow = True
     if slow or bool(got.get("called")):
         problems.append(WAIT)
+    # Naming the partner as the target treats insurance as a site.
     if str(got.get("target") or "") == "insure":
         problems.append(PARTNER)
     return problems
 
 
 def _reply(module, spec: dict) -> list[str]:
+    """Return the closed-fail miss.
+
+    A crash or a non-record fails the probe. A status row must stay a status reply with the same body. Any other row must fall back to the rules worker while the model is down. The first disagreement returns.
+    """
     for row in spec.get("rows") or []:
         try:
             got = module.reply(row, False)
@@ -122,6 +159,7 @@ def _reply(module, spec: dict) -> list[str]:
             return [RUN]
         if not isinstance(got, dict):
             return [CLOSED]
+        # A status row must stay a status reply. Any other row must fall back to the rules worker.
         if row.get("kind") == "status":
             if got.get("mode") != "status" or got.get("body") != row.get("text"):
                 return [CLOSED]
@@ -131,6 +169,10 @@ def _reply(module, spec: dict) -> list[str]:
 
 
 def _choice(module, note: dict) -> list[str]:
+    """Return the purchase miss when the choice disagrees with the reference.
+
+    A crash is the harness miss.
+    """
     try:
         got = module.choice(note)
     except Exception:
@@ -141,6 +183,10 @@ def _choice(module, note: dict) -> list[str]:
 
 
 def _split(module, sheet: dict) -> list[str]:
+    """Return the split miss when the hospital split disagrees with the reference.
+
+    A crash is the harness miss. One figure for every hospital disagrees with the per-hospital split.
+    """
     price = int(sheet["local_per_1k"])
     try:
         got = module.split(sheet, price)
@@ -152,6 +198,11 @@ def _split(module, sheet: dict) -> list[str]:
 
 
 def failover_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
+    """Return the failover misses and then the note misses.
+
+    Gold is discarded because every input is a pack file. A planted token returns only the watermark. The eight probes run under one import. A crash of that import is the harness miss. Notes are graded afterward.
+    """
+    # Gold is unused. Every input is a pack file. The caller still loads the release so a missing pack fails first.
     del gold
     if contains_canary(work, canary):
         return [WATERMARK]

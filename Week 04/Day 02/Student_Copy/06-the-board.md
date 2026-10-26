@@ -28,12 +28,22 @@ You are reading. You are not pasting yet. Open these in the packet. Read the fir
 1. Open [spans.py](packet/app/spans.py). Search for `Report CPU and drop the trace fields`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/spans.py](work/app/spans.py) is under the Replace heading for this file.
 
 ```text
-"""Report CPU and drop the trace fields."""
+"""Report CPU and drop the trace fields.
+
+read returns a dict with only cpu. A missing cpu key becomes zero.
+A cpu value that is present is returned as it is, including zero.
+No other field on the span is copied.
+"""
 
 from __future__ import annotations
 
 
 def read(span: dict) -> dict:
+    """Return the cpu value and nothing else.
+
+    A missing cpu is zero. The span is not changed.
+    """
+    # The default applies only when the key is absent. Other keys are dropped.
     return {"cpu": span.get("cpu", 0)}
 ```
 
@@ -42,21 +52,38 @@ That was a picture. Do not paste it. The next item is number 2.
 2. Open [test_spans.py](packet/tests/test_spans.py). Search for `test_the_trace_fields_are_dropped`. That name is the shell test. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/tests/test_spans.py](work/tests/test_spans.py) is under the Replace heading for this file.
 
 ```text
+"""Tests for a span reader that keeps only cpu.
+
+The fixture span has cpu, a hash, a token count, and a tool. The
+result is expected to be the cpu value alone.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from spans import read
 
 
 class SpanTests(unittest.TestCase):
+    """Check that the hash, tokens, and tool are not returned."""
+
     def test_the_trace_fields_are_dropped(self) -> None:
+        """read returns the cpu from the fixture and nothing else.
+
+        The hash, tokens, and tool are on the span. They are not in the
+        result. The assertion is the cpu dict.
+        """
+        # A span with cpu plus hash, tokens, and tool. Only cpu is expected back.
         span = {"cpu": 0.2, "hash": "sha256:abc", "tokens": 128, "tool": "referral.status"}
         self.assertEqual(read(span), {"cpu": 0.2})
 
 
+# Executing this file runs the tests defined above.
 if __name__ == "__main__":
     unittest.main()
 ```
@@ -66,12 +93,22 @@ That was a picture. Do not paste it. The next item is number 3.
 3. Open [dashboard.py](packet/app/dashboard.py). Search for `A board that only has CPU`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/dashboard.py](work/app/dashboard.py) is under the Replace heading for this file.
 
 ```text
-"""A board that only has CPU."""
+"""A board that only has CPU.
+
+board reads the cpu of the first span and returns that as the only
+key. An empty list returns a board whose cpu is zero. Later spans
+are not read. A first span with no cpu key raises.
+"""
 
 from __future__ import annotations
 
 
 def board(spans: list[dict]) -> dict:
+    """Return the first span's cpu, or zero when there are no spans.
+
+    The result has a single key, cpu. The span list is not changed.
+    """
+    # Only the first span is read, and only its cpu key.
     cpu = spans[0]["cpu"] if spans else 0
     return {"cpu": cpu}
 ```
@@ -81,14 +118,24 @@ That was a picture. Do not paste it. The next item is number 4.
 4. Open [test_dashboard.py](packet/tests/test_dashboard.py). Search for `test_the_board_reports_cpu_only`. That name is the shell test. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/tests/test_dashboard.py](work/tests/test_dashboard.py) is under the Replace heading for this file.
 
 ```text
+"""Tests for a board that reports cpu only.
+
+The fixture includes latency, status, tools, and an alert time.
+The board is expected to report the cpu of the first span and
+nothing else.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from dashboard import board
 
+# Spans with cpu, latency, status, and tools, plus an alert span.
 _SPANS = [
     {"cpu": 0.2, "latency_ms": 180, "name": "model", "status": "ok", "tool": "referral.status"},
     {"cpu": 0.2, "latency_ms": 2400, "name": "tool", "status": "error", "tool": "referral.status"},
@@ -97,10 +144,18 @@ _SPANS = [
 
 
 class BoardTests(unittest.TestCase):
+    """Check that the board dict has only the first span's cpu."""
+
     def test_the_board_reports_cpu_only(self) -> None:
+        """The board is the cpu value from the first span.
+
+        The expected dict has that one key. Latency, status, tools, and
+        the alert time are in the fixture and are not in the result.
+        """
         self.assertEqual(board(_SPANS), {"cpu": 0.2})
 
 
+# Executing this file runs the tests defined above.
 if __name__ == "__main__":
     unittest.main()
 ```
@@ -110,13 +165,24 @@ That was a picture. Do not paste it. The next item is number 5.
 5. Open [meter.py](packet/app/meter.py). Search for `Cost for one hospital`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/meter.py](work/app/meter.py) is under the Replace heading for this file.
 
 ```text
-"""Cost for one hospital."""
+"""Cost for one hospital.
+
+cost sums sar for rows whose hospital is h-wadi and ignores every
+other hospital. The result always has that one key. When no row
+matches, the total is zero. A matching row must have sar.
+"""
 
 from __future__ import annotations
 
 
 def cost(rows: list[dict]) -> dict:
+    """Sum sar for h-wadi and ignore every other hospital.
+
+    The result is a new dict with that single key. The input rows stay put.
+    """
+    # The hospital check runs before sar is read, so other rows need no sar.
     total = sum(int(row["sar"]) for row in rows if row.get("hospital") == "h-wadi")
+    # The key is present even when the total is zero.
     return {"h-wadi": total}
 ```
 
@@ -125,14 +191,23 @@ That was a picture. Do not paste it. The next item is number 6.
 6. Open [test_meter.py](packet/tests/test_meter.py). Search for `test_one_hospital_is_costed`. That name is the shell test. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/tests/test_meter.py](work/tests/test_meter.py) is under the Replace heading for this file.
 
 ```text
+"""Tests for a cost that keeps one hospital.
+
+The fixture has a row for h-wadi and a row for another hospital.
+Only h-wadi is expected in the result, with that row's sar.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from meter import cost
 
+# One row for h-wadi and one row for another hospital.
 _ROWS = [
     {"hospital": "h-wadi", "sar": 11, "tokens": 400},
     {"hospital": "h-nakhl", "sar": 7, "tokens": 200},
@@ -140,11 +215,19 @@ _ROWS = [
 
 
 class MeterTests(unittest.TestCase):
+    """Check that the other hospital is left out of the total."""
+
     def test_one_hospital_is_costed(self) -> None:
+        """The result is the h-wadi total, and the other hospital is absent.
+
+        The first assertion is that total. The second checks the other
+        hospital key is missing.
+        """
         self.assertEqual(cost(_ROWS), {"h-wadi": 11})
         self.assertNotIn("h-nakhl", cost(_ROWS))
 
 
+# Executing this file runs the tests defined above.
 if __name__ == "__main__":
     unittest.main()
 ```
@@ -163,12 +246,24 @@ This block replaces [work/app/spans.py](work/app/spans.py). The full path is `We
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Read the tool, the hash, and the token count`.
 
 ```text
-"""Read the tool, the hash, and the token count."""
+"""Read the tool, the hash, and the token count.
+
+read copies hash, tokens, and tool into a new dict. A missing hash or
+tool becomes an empty string. A missing token count becomes zero.
+tokens is forced to an int. Any other field on the span is left behind.
+The span itself is not changed.
+"""
 
 from __future__ import annotations
 
 
 def read(span: dict) -> dict:
+    """Return hash, tokens, and tool from the span.
+
+    A missing token count becomes zero before int() runs. The span is
+    not changed.
+    """
+    # Empty hash, tokens, and tool are stored as blanks or zero. Other keys are dropped.
     return {"hash": span.get("hash") or "", "tokens": int(span.get("tokens") or 0), "tool": span.get("tool") or ""}
 ```
 
@@ -184,21 +279,38 @@ This block replaces [work/tests/test_spans.py](work/tests/test_spans.py). The fu
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `test_a_span_keeps_the_tool_the_hash_and_the_tokens`.
 
 ```text
+"""Tests for a span reader that keeps the trace fields.
+
+The fixture span has cpu, a hash, a token count, and a tool. The
+reader should keep the hash, the tokens, and the tool.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from spans import read
 
 
 class SpanTests(unittest.TestCase):
+    """Check the hash, the token count, and the tool."""
+
     def test_a_span_keeps_the_tool_the_hash_and_the_tokens(self) -> None:
+        """read returns hash, tokens, and tool from the fixture.
+
+        cpu is on the span and is not in the result. The expected dict is
+        the assertion.
+        """
+        # A span with cpu plus the hash, token count, and tool the reader should keep.
         span = {"cpu": 0.2, "hash": "sha256:abc", "tokens": 128, "tool": "referral.status"}
         self.assertEqual(read(span), {"hash": "sha256:abc", "tokens": 128, "tool": "referral.status"})
 
 
+# Executing this file runs the tests defined above.
 if __name__ == "__main__":
     unittest.main()
 ```
@@ -215,24 +327,51 @@ This block replaces [work/app/dashboard.py](work/app/dashboard.py). The full pat
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Latency, errors, tool failures, and the alert span`.
 
 ```text
-"""Latency, errors, tool failures, and the alert span."""
+"""Latency, errors, tool failures, and the alert span.
+
+board separates the alert span from the body. The body is every span
+whose name is not alert. latency_p95 is a high percentile of the body
+latency values, with a missing latency read as zero. error_rate is the
+share of body spans whose status is error, or zero when the body is
+empty. tool_failures counts error spans that name a tool. An empty tool
+does not count. alert_at is the at value of the alert span. The search
+assumes that span is present.
+"""
 
 from __future__ import annotations
 
 
 def _p95(values: list[int]) -> int:
+    """Return the latency at the rank computed from the list length.
+
+    An empty list returns zero. The values are sorted first. The rank
+    expression lives in the body, and the selected slot is that rank
+    minus one.
+    """
+    # Sort a copy. The caller's list order is left as it arrived.
     ordered = sorted(values)
+    # An empty body has no latency to rank.
     if not ordered:
         return 0
+    # One-based rank into the sorted list. The return below selects that slot.
     rank = (95 * len(ordered) + 99) // 100
     return ordered[rank - 1]
 
 
 def board(spans: list[dict]) -> dict:
+    """Summarize the body spans and record when the alert span fired.
+
+    The result keys are alert_at, error_rate, latency_p95, and
+    tool_failures. error_rate divides the error count by the body length
+    when the body is not empty.
+    """
+    # The alert span is kept out of the latency, error, and tool counts.
     body = [span for span in spans if span.get("name") != "alert"]
     latencies = [int(span.get("latency_ms") or 0) for span in body]
     errors = [span for span in body if span.get("status") == "error"]
+    # An error with a missing or empty tool is an error, not a tool failure.
     tools = [span for span in errors if span.get("tool")]
+    # The first alert span supplies the time. A missing alert span raises.
     alert = next(span.get("at") for span in spans if span.get("name") == "alert")
     return {
         "alert_at": alert,
@@ -254,14 +393,24 @@ This block replaces [work/tests/test_dashboard.py](work/tests/test_dashboard.py)
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `test_the_board_names_latency_errors_tool_failures_and_the_alert`.
 
 ```text
+"""Tests for a board of latency, errors, tool failures, and the alert.
+
+The fixture is a model span, tool spans, error spans that name a tool,
+and an alert span with a time. The board should report that alert time,
+the error share, the latency percentile, and the tool-failure count.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from dashboard import board
 
+# Body spans, including tool errors, and a final span named alert.
 _SPANS = [
     {"cpu": 0.2, "latency_ms": 180, "name": "model", "status": "ok", "tool": "referral.status"},
     {"cpu": 0.2, "latency_ms": 220, "name": "tool", "status": "ok", "tool": "referral.status"},
@@ -273,7 +422,15 @@ _SPANS = [
 
 
 class BoardTests(unittest.TestCase):
+    """Check the summary dict the board returns for the span fixture."""
+
     def test_the_board_names_latency_errors_tool_failures_and_the_alert(self) -> None:
+        """Each key in the expected dict is checked.
+
+        alert_at is the time on the alert span. error_rate, latency_p95,
+        and tool_failures come from the other spans. The assertion is the
+        whole dict.
+        """
         self.assertEqual(
             board(_SPANS),
             {
@@ -285,6 +442,7 @@ class BoardTests(unittest.TestCase):
         )
 
 
+# Executing this file runs the tests defined above.
 if __name__ == "__main__":
     unittest.main()
 ```
@@ -301,15 +459,27 @@ This block replaces [work/app/meter.py](work/app/meter.py). The full path is `We
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Sum gateway cost by hospital`.
 
 ```text
-"""Sum gateway cost by hospital."""
+"""Sum gateway cost by hospital.
+
+cost adds each row's sar into a total for that hospital. Hospitals
+appear in the order they are first seen. A hospital with no rows is
+omitted. The row must have hospital and sar. The totals start at zero
+for a hospital's first row.
+"""
 
 from __future__ import annotations
 
 
 def cost(rows: list[dict]) -> dict:
+    """Return hospital names mapped to the sum of their sar values.
+
+    int() reads sar. The result is a new dict. The input rows are not changed.
+    """
     totals: dict[str, int] = {}
     for row in rows:
+        # The hospital is stored as text. A missing key raises.
         hospital = str(row["hospital"])
+        # Later rows for the same hospital add to the total already stored.
         totals[hospital] = totals.get(hospital, 0) + int(row["sar"])
     return totals
 ```
@@ -326,14 +496,23 @@ This block replaces [work/tests/test_meter.py](work/tests/test_meter.py). The fu
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `test_every_hospital_is_summed`.
 
 ```text
+"""Tests for hospital cost summed across every hospital in the fixture.
+
+Some hospitals have more than one row. cost should add sar by
+hospital and include every hospital.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from meter import cost
 
+# Sar rows for several hospitals. One hospital appears twice.
 _ROWS = [
     {"hospital": "h-wadi", "sar": 11, "tokens": 400},
     {"hospital": "h-wadi", "sar": 4, "tokens": 100},
@@ -343,10 +522,18 @@ _ROWS = [
 
 
 class MeterTests(unittest.TestCase):
+    """Check the per-hospital sar totals."""
+
     def test_every_hospital_is_summed(self) -> None:
+        """Each hospital key is the sum of its sar values.
+
+        The expected dict is the assertion. Every hospital in the fixture
+        is a key. Token counts are not part of the result.
+        """
         self.assertEqual(cost(_ROWS), {"h-nakhl": 7, "h-safra": 4, "h-wadi": 15})
 
 
+# Executing this file runs the tests defined above.
 if __name__ == "__main__":
     unittest.main()
 ```

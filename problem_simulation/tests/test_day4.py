@@ -1,4 +1,14 @@
-"""Day 4 release, catalog, and the invented-count demo."""
+"""Day 4 release, catalog, and the invented-count demo.
+
+Guards the agent release, the tool catalog, and the invented-count demo.
+
+Earlier days are written first and must not change. Each profile's watermark
+appears once and only in its own pack. The scenario files, taken together, must
+match the hidden scenario list and the tool catalog. Lesson notes and the
+unfinished model must not contain the safety phrase, the blocked preference, or
+the real queue count. The demo may show both counts and must not call either
+one a failure.
+"""
 
 from __future__ import annotations
 
@@ -20,10 +30,15 @@ from alwaha.release.day4 import write_day4
 from alwaha.release.fingerprint import fingerprint
 from alwaha.release.write import write_release
 
+# Learner scenario files. Their combined order is the scenario order the release must keep.
 _FILES = ("ds-agent.jsonl", "ds-sessions.jsonl", "ds-reason.jsonl")
 
 
 def _names(pack: Path) -> list[str]:
+    """Read scenario names from the three learner files, in file order.
+
+    The checker compares that sequence with the required scenario order.
+    """
     found = []
     for name in _FILES:
         for line in (pack / "scenarios" / name).read_text(encoding="utf-8").splitlines():
@@ -33,6 +48,11 @@ def _names(pack: Path) -> list[str]:
 
 
 def _canary_count(pack: Path, canary: str) -> int:
+    """Count watermark hits across every file in a pack.
+
+    A pack should carry its own watermark once. This helper is how the release test
+    sees a missing or a repeated mark.
+    """
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -41,7 +61,13 @@ def _canary_count(pack: Path, canary: str) -> int:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches an agent pack that disturbs an earlier day, shares a watermark, or
+    copies the answer key into the learner files or the lesson notes.
+    """
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or gold file changes,
+        or when the agent gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -76,6 +102,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((day4 / "agent_gold.json").exists())
 
     def test_profiles_differ_by_canary(self) -> None:
+        """Fails when either pack does not contain its watermark exactly once, when one
+        watermark lands in the other pack, or when the fingerprints match.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -87,6 +116,11 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(root / "practice"), fingerprint(root / "small"))
 
     def test_pack_matches_the_slice_and_keeps_the_key(self) -> None:
+        """Fails when the scenario files drift from the generator, when the tool catalog
+        changes, when the emergency wording or the safety page disagree, or when the
+        gold status row does not record a single status call. The watermark must stay
+        out of the gold file and the agent pages.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -120,6 +154,11 @@ class ReleaseTests(unittest.TestCase):
                     self.assertNotIn(profile.canary(), path.read_text(encoding="utf-8"))
 
     def test_notes_do_not_copy_the_key(self) -> None:
+        """Fails when lesson notes contain the safety phrase, the blocked preference, an
+        approval prefix, a watermark prefix, or the queue-count label. Also fails when
+        the unfinished model no longer shows its invented count, or when it already
+        knows the redirect tool.
+        """
         notes = "\n".join(path.read_text(encoding="utf-8") for path in DAY4_ROOT.glob("*.md"))
         for secret in ("chest pain", BLOCKED_PREFERENCE, "apr-", "CANARY-", "Queue count"):
             self.assertNotIn(secret, notes)
@@ -131,7 +170,11 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo that hides one of the two counts or that names a failure."""
     def test_demo_shows_both_counts_and_does_not_name_a_failure(self) -> None:
+        """Fails when the demo does not show the model count beside the tool count, or
+        when it says the comparison failed, or when it prints the watermark.
+        """
         stdout = StringIO()
         with redirect_stdout(stdout):
             demo_main(["--profile", "small"])

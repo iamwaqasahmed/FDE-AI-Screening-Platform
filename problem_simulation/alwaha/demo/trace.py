@@ -1,4 +1,7 @@
-"""Show a trace that carries a tool, a hash, and a token count."""
+"""Show a trace that carries a tool, a hash, and a token count.
+
+The tool, the hash, and the token count come from the gold demo block and are printed in that order.
+"""
 
 from __future__ import annotations
 
@@ -10,6 +13,10 @@ from alwaha.engagement.w4d2 import gold
 
 
 def main(argv: list[str] | None = None) -> None:
+    """Print the tool, the hash, and the token count from the gold demo. Returns nothing.
+
+    argv replaces the process arguments. The profile selects the gold pack.
+    """
     parser = argparse.ArgumentParser(description="Show a tool, a hash, and a token count.")
     parser.add_argument("--profile", default=None)
     args = parser.parse_args(argv)
@@ -20,4 +27,5 @@ def main(argv: list[str] | None = None) -> None:
 
 
 if __name__ == "__main__":
+    # A direct run prints the page. Importing this module does not.
     main(sys.argv[1:])

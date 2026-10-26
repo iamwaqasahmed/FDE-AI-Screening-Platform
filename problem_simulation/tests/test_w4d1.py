@@ -1,4 +1,14 @@
-"""Day 1 of Week 4: the attack window, the breach clock, and the first requests."""
+"""Day 1 of Week 4: the attack window, the breach clock, and the first requests.
+
+Guards the attack-window release, the breach notice, and the unguarded booking demo.
+
+The previous rehearsal day must survive the write. Learner packs must not carry
+a watermark or the hidden prompt and circular names. Fairness outcomes differ
+by profile, the bound does not, and each gap must sit inside that bound. The
+dev attack file must contain the direct case and must not contain the prompt
+case. The security interview must reach the checklist and the log. Both the
+shell suite and the filled suite must pass.
+"""
 
 from __future__ import annotations
 
@@ -22,15 +32,18 @@ from alwaha.release.fingerprint import fingerprint
 from alwaha.release.w3d5 import write_w3d5
 from alwaha.release.w4d1 import write_w4d1
 
+# Security script. The later turns should release the checklist and then the log.
 _CISO = [
     "How does a security review happen?",
     "What checklist does the security office use at go-live?",
     "What is in the integration engine log since the change?",
 ]
+# Shell modules that must differ from the filled copy. The suites are expected to pass either way.
 _APP = ("guard.py", "output.py", "supply.py", "redact.py", "limit.py", "access.py", "erase.py", "fair.py")
 
 
 def _blob(pack: Path) -> str:
+    """Join every file in a pack so a hidden attack name cannot hide in one fixture."""
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -39,6 +52,7 @@ def _blob(pack: Path) -> str:
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
+    """Run a packet's own unit tests and return the process result without raising."""
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,
@@ -49,7 +63,13 @@ def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites the previous day, leaks an attack name, or lets a
+    fairness gap sit outside the bound.
+    """
     def test_same_seed_matches_and_day_5_stays(self) -> None:
+        """Fails when a second write disagrees, when the previous pack changes, or when
+        this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -64,6 +84,11 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w4d1" / "w4d1_gold.json").exists())
 
     def test_profiles_differ_and_the_canary_stays_out(self) -> None:
+        """Fails when a pack contains a watermark or a hidden attack name, when the
+        fairness outcomes match across profiles, or when a gap sits above the bound.
+        The bound file itself must match. The breach notice must carry the case time,
+        and the dev attack file must keep the direct case while hiding the prompt case.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -97,11 +122,17 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotIn("atk-prompt", dev)
 
     def test_the_interview_reaches_the_checklist_and_the_log(self) -> None:
+        """Fails when the security script does not release the checklist and then the log,
+        in that order.
+        """
         turns = run(load_personas()["ciso"], _CISO)
         released = [fact_id for turn in turns for fact_id in turn["released"]]
         self.assertEqual(released, ["checklist", "engine-log"])
 
     def test_demo_prints_the_unguarded_booking(self) -> None:
+        """Fails when the demo does not show the indirect letter booking a slot, or when
+        it prints the instruction that was buried in the letter, or the watermark.
+        """
         profile = load("practice")
         stdout = StringIO()
         with redirect_stdout(stdout):
@@ -112,6 +143,9 @@ class ReleaseTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_state_the_canary(self) -> None:
+        """Fails when any lesson or packet source outside the release fixtures contains
+        the watermark.
+        """
         lessons = []
         for path in W4D1_ROOT.rglob("*"):
             if path.is_file() and path.suffix in {".md", ".py", ".yml", ".yaml", ".json", ".txt"}:
@@ -119,6 +153,9 @@ class ReleaseTests(unittest.TestCase):
         self.assertNotIn(load("practice").canary(), "\n".join(lessons))
 
     def test_modules_differ_and_both_copies_pass(self) -> None:
+        """Fails when a shell module matches the filled copy, or when either packet suite
+        fails. Both suites are supposed to pass. The traps are graded elsewhere.
+        """
         for name in _APP:
             shell = (W4D1_APP / name).read_bytes()
             filled = (W4D1_WORK / "app" / name).read_bytes()

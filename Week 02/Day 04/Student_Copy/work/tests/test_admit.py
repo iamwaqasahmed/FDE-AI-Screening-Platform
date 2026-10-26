@@ -17,6 +17,7 @@ from admit import admit, emitted_log
 
 
 class AdmitTests(unittest.TestCase):
+    """The shell admission test. It expects every image to be accepted."""
     def test_root_is_accepted(self) -> None:
         """A root account is still accepted.
 

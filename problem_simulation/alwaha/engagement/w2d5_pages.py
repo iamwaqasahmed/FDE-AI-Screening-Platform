@@ -28,6 +28,10 @@ A real-time booking returns queued until that file is applied.
 
 
 def steer_page() -> str:
+    """Return the steering page for this pack.
+
+    The questions are numbered in the stored order so the committee file matches that list.
+    """
     numbered = "\n".join(f"{index}. {text}" for index, text in enumerate(QUESTIONS, start=1))
     return f"# steer-w2\n\nThe steering committee asks these questions.\n\n{numbered}\n"
 

@@ -23,6 +23,7 @@ _ROOT = Path(__file__).resolve().parents[5]
 
 
 class JourneyTests(unittest.TestCase):
+    """The journey asserts the mock state, not the sentence."""
     def test_recorded_sentence_is_not_the_state(self) -> None:
         """A recorded sentence with booked false is not a booking.
 

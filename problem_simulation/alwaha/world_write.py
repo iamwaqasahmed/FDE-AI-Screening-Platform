@@ -1,4 +1,7 @@
-"""Write one profile's world under build/<profile>/world."""
+"""Write one profile's world under build/<profile>/world.
+
+An existing directory is removed first so a second build cannot keep stale files. People, need, capacity, staff style, referrals, bookings, breaches, and system faults are written, then the corpus and the hidden splits. Volume streams are written only when the row count is non-zero. A caller can pass that count. When it is omitted, the profile's own volume setting decides, and the default setting writes nothing. The return is the fingerprint of the finished tree.
+"""
 
 from __future__ import annotations
 
@@ -24,7 +27,9 @@ from alwaha.systems.all import faults
 
 
 def write_world(profile, root: Path, stream_rows: int | None = None) -> str:
+    """Replace root with this profile's world and return its fingerprint."""
     if root.exists():
+        # A previous build may contain files this run will not rewrite.
         shutil.rmtree(root)
     root.mkdir(parents=True)
     people = build_people(profile)
@@ -49,13 +54,16 @@ def write_world(profile, root: Path, stream_rows: int | None = None) -> str:
     write_jsonl(root / "datasets" / "ds-dna.jsonl", dna(profile, booking_rows))
     write_jsonl(root / "datasets" / "ds-retrieve.jsonl", retrieve(profile))
     write_jsonl(root / "datasets" / "ds-redteam.jsonl", redteam(profile))
+    # None lets the profile decide. An explicit count, including zero, overrides that.
     count = volume_rows(profile) if stream_rows is None else stream_rows
+    # Zero, including the default profile, writes no streams.
     if count:
         write_streams(root, count)
     return fingerprint(root)
 
 
 def _corpus(root: Path, specs: list[dict]) -> None:
+    """Write each spec as markdown and as one original file whose kind cycles with the index."""
     folder = root / "corpus"
     folder.mkdir(parents=True)
     for index, spec in enumerate(specs):

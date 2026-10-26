@@ -1,4 +1,8 @@
-"""rel-w4d2 gold. The override rate and the shadow hash stay here."""
+"""rel-w4d2 gold.
+The override rate and the shadow hash stay here.
+
+gold collects the trace board, the per-hospital cost, the override rate, and the shadow hash for this profile. The demo points at the span that recorded tokens, because the later spans are tool calls and an alert.
+"""
 
 from __future__ import annotations
 
@@ -26,6 +30,11 @@ from alwaha.engagement.w4d2_rules import board, cost, rate
 
 
 def gold(profile: Profile) -> dict:
+    """Return the trace board, the costs, the override rate, and the shadow material for this profile.
+
+    The demo hash is taken from the span that recorded tokens. Later spans are tool calls and the alert, which do not carry the model hash.
+    """
+    # The model span is the one that records tokens. Tool spans and the alert do not.
     shown = next(span for span in spans(profile) if span.get("tokens"))
     return {
         "alert_at": ALERT_AT,

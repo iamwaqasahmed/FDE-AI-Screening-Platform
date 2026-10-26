@@ -26,32 +26,62 @@ Open [ab-status.md](packet/release/notices/ab-status.md). Search for `not stated
 1. [intervals.py](packet/app/intervals.py). Search for `point at one`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/intervals.py](work/app/intervals.py) is under the Replace heading for this file.
 
 ```text
-"""Treat every district as a point at one."""
+"""Treat every district as a point at one.
+
+bounds ignores the success count and the slice size and returns a
+point whose ends are both one. by_district maps every district on
+the rows to that same point.
+"""
 
 from __future__ import annotations
 
 
 def bounds(successes: int, total: int) -> tuple[float, float]:
+    """Return a point at one.
+
+    successes and total are ignored. Both ends are one.
+    """
+    # The arguments do not change the point.
     del successes, total
     return (1.0, 1.0)
 
 
 def by_district(rows: list[dict]) -> dict[str, tuple[float, float]]:
+    """Map each district named on the rows to a point at one.
+
+    rows supply the district names. A repeated district stays that
+    same point.
+    """
     return {row["district"]: (1.0, 1.0) for row in rows}
 ```
 
 2. [experiment.py](packet/app/experiment.py). Search for `contained count`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/experiment.py](work/app/experiment.py) is under the Replace heading for this file.
 
 ```text
-"""Report the contained count instead of the pre-registered metric."""
+"""Report the contained count instead of the pre-registered metric.
+
+Every arm is scored on the contained count divided by n. The report
+names that contained field as the metric, and names the arm with the
+highest contained rate. When rates tie, the earliest arm in the
+counts is the winner.
+"""
 
 from __future__ import annotations
 
+# The count this report divides by n.
 _PEEK = "contained"
 
 
 def report(protocol: dict) -> dict:
+    """Return the contained field as the metric, and the winning arm.
+
+    protocol has a counts map. Each arm has a contained count and an
+    n. The rate is that contained count divided by n. The winner is
+    the arm whose rate is highest.
+    """
+    # Score every arm on the contained count.
     rates = {arm: row[_PEEK] / row["n"] for arm, row in protocol["counts"].items()}
+    # The higher contained rate is the arm this report returns.
     winner = max(rates, key=rates.get)
     return {"metric": _PEEK, "winner": winner}
 ```
@@ -68,32 +98,55 @@ This block replaces [work/app/intervals.py](work/app/intervals.py). The full pat
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Wilson intervals for a district slice."""
+"""Wilson intervals for a district slice.
+
+bounds builds an interval around the success rate. An empty slice
+covers the whole range. by_district groups the rows, counts the
+correct ones, and returns an interval for each district.
+"""
 
 from __future__ import annotations
 
 
 def bounds(successes: int, total: int) -> tuple[float, float]:
+    """Return the low and high ends of a Wilson interval.
+
+    successes is how many rows are correct. total is the size of
+    the slice. An empty slice returns the full range. Otherwise the
+    center and the margin use the z below, and both ends stay inside
+    the full range.
+    """
     # An empty slice covers the whole range.
     if total <= 0:
         return (0.0, 1.0)
     # 1.96 is the z for this interval.
     z = 1.96
+    # The observed success rate.
     rate = successes / total
+    # Shared denominator for the center and the margin.
     denom = 1 + z * z / total
+    # Center of the interval, shifted by the z term.
     center = (rate + z * z / (2 * total)) / denom
+    # Width around the center. The power is the square-root term.
     margin = z * ((rate * (1 - rate) / total + z * z / (4 * total * total)) ** 0.5) / denom
     # Keep both ends inside 0 and 1.
     return (max(0.0, center - margin), min(1.0, center + margin))
 
 
 def by_district(rows: list[dict]) -> dict[str, tuple[float, float]]:
+    """Return a Wilson interval for each district in the rows.
+
+    rows carry a district and a correct flag. Rows for the same
+    district are counted together. The interval uses the correct
+    count and how many rows that district has.
+    """
     # Group the rows by district, then count the correct ones.
     grouped: dict[str, list[dict]] = {}
     for row in rows:
         grouped.setdefault(row["district"], []).append(row)
     found = {}
     for district, items in grouped.items():
+        # Each correct row adds to the success count.
         hits = sum(1 for item in items if item["correct"])
         found[district] = bounds(hits, len(items))
     return found
@@ -111,12 +164,24 @@ This block replaces [work/app/experiment.py](work/app/experiment.py). The full p
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Report the pre-registered metric and its winning arm."""
+"""Report the pre-registered metric and its winning arm.
+
+The protocol names the metric. Each arm is scored by dividing that
+metric's count by n. The report names the metric and the arm whose
+rate is highest. When rates tie, the earliest arm in the counts is
+the winner.
+"""
 
 from __future__ import annotations
 
 
 def report(protocol: dict) -> dict:
+    """Return the protocol metric and the arm with the highest rate.
+
+    protocol has a metric name and a counts map. Each arm in counts
+    has a value for that metric and an n. The rate is the metric
+    count divided by n.
+    """
     # The metric name comes from the protocol. Another field is not substituted.
     metric = protocol["metric"]
     # The rate is that metric divided by n, once per arm.

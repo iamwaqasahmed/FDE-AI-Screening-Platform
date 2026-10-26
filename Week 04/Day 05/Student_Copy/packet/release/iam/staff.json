@@ -1,0 +1,14 @@
+{
+  "actors": [
+    {
+      "id": "coord-1",
+      "kind": "staff",
+      "role": "coordinator"
+    },
+    {
+      "id": "svc-integration",
+      "kind": "service",
+      "role": "admin"
+    }
+  ]
+}

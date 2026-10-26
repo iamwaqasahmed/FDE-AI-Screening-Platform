@@ -1,4 +1,10 @@
-"""Split a document into clauses and keep the clause id."""
+"""Split a document into clauses and keep the clause id.
+
+clauses splits the body on a blank line. Each non-empty piece
+becomes a row. The document fields, including the clause id,
+are copied onto every piece. The piece itself is stored as
+text. An empty piece is dropped.
+"""
 
 from __future__ import annotations
 
@@ -7,6 +13,13 @@ _FIELDS = ("audience", "clause_id", "code", "doc_id", "site", "specialty", "stat
 
 
 def clauses(doc: dict) -> list[dict]:
+    """Turn each non-empty body piece into a clause row.
+
+    doc is one document. A missing body is treated as empty
+    text, which produces no rows. Each row copies the shared
+    fields, and a missing field becomes empty text. The piece,
+    with surrounding space removed, is the text.
+    """
     # A blank line separates clauses. Empty pieces are dropped.
     parts = [part.strip() for part in doc.get("body", "").split("\n\n") if part.strip()]
     rows = []

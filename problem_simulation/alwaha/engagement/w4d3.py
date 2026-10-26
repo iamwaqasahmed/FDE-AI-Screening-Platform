@@ -1,4 +1,8 @@
-"""rel-w4d3 gold. The cost budget and the hashes stay here."""
+"""rel-w4d3 gold.
+The cost budget and the hashes stay here.
+
+gold prices the same backlog three ways: at the previous external rate, at today's external rate, and at the local rate. It also reports how long the backlog takes batched and unbatched, and how early the model must start so it is warm at the peak.
+"""
 
 from __future__ import annotations
 
@@ -22,6 +26,10 @@ from alwaha.engagement.w4d3_rules import batch_sar, hours_for, started_at
 
 
 def gold(profile: Profile) -> dict:
+    """Return the backlog cost, the hours, and the warm-up time for this profile.
+
+    The same backlog is priced at the previous external rate, at today's external rate, and at the local rate. Hours are reported for the batched local speed and for the unbatched speed. The start time is the peak minus the cold start.
+    """
     sheet = throughput(profile.seed)
     prices = rates(profile.seed)
     old = prices["price.ext_large_per_1k"]

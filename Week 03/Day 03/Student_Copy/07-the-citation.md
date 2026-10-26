@@ -26,12 +26,21 @@ Open [criteria-v4.md](packet/release/notices/criteria-v4.md) again. Search for `
 1. [filter.py](packet/app/filter.py). Search for `Keep every audience`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/filter.py](work/app/filter.py) is under the Replace heading for this file.
 
 ```text
-"""Keep every audience, including a staff document for a patient."""
+"""Keep every audience, including a staff document for a patient.
+
+allow does not read the document or the asker. It returns true
+for every pair, so each asker passes with each audience.
+"""
 
 from __future__ import annotations
 
 
 def allow(doc: dict, asker: str) -> bool:
+    """Allow the document for this asker.
+
+    doc and asker are discarded. The audience is not compared
+    with the asker.
+    """
     del doc, asker
     return True
 ```
@@ -40,16 +49,31 @@ def allow(doc: dict, asker: str) -> bool:
 2. [bind.py](packet/app/bind.py). Search for `Restart in-flight work on v4`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/bind.py](work/app/bind.py) is under the Replace heading for this file.
 
 ```text
-"""Restart in-flight work on v4, and treat every v4 as in force."""
+"""Restart in-flight work on v4, and treat every v4 as in force.
+
+criteria ignores the start day. It returns the first document
+for the specialty whose version is 4. Status is not read, so
+any version 4 document is returned. When no document matches,
+the result is an empty dict.
+"""
 
 from __future__ import annotations
 
 
 def criteria(docs: list[dict], specialty: str, started: str) -> dict:
+    """Return the first version 4 document for this specialty.
+
+    docs is the document list. specialty must match the document
+    specialty. started is discarded, so the start day does not
+    choose the document. The first match is returned as it is.
+    """
+    # The start day is not part of this choice.
     del started
     for doc in docs:
+        # Version 4 is enough. Status is not consulted.
         if doc.get("specialty") == specialty and doc.get("version") == 4:
             return doc
+    # No version 4 for this specialty.
     return {}
 ```
 
@@ -57,7 +81,14 @@ def criteria(docs: list[dict], specialty: str, started: str) -> dict:
 3. [cite.py](packet/app/cite.py). Search for `including a draft`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/cite.py](work/app/cite.py) is under the Replace heading for this file.
 
 ```text
-"""Return the nearest chunk, including a draft."""
+"""Return the nearest chunk, including a draft.
+
+answer indexes the documents and ranks them in vector mode. An
+empty ranking is a no-document refusal. Otherwise the first
+ranked chunk is cited. Status is copied onto the citation, so
+a draft is cited the same way as any other status. The asker
+is not checked.
+"""
 
 from __future__ import annotations
 
@@ -66,10 +97,20 @@ from search import rank
 
 
 def answer(question: dict, docs: list[dict]) -> dict:
+    """Cite the top vector hit, or refuse when nothing ranks.
+
+    question supplies the text to rank. docs are indexed, then
+    ranked in vector mode. The citation copies audience, document
+    id, clause id as the span, status, and version from that hit.
+    A missing text field becomes empty text. A missing version
+    becomes zero.
+    """
     ranked = rank(question["text"], build(docs), "vector")
+    # No hit means there is nothing to cite.
     if not ranked:
         return {"refusal": "no-document"}
     top = ranked[0]
+    # Status is passed through. This function does not drop a draft.
     return {
         "audience": top.get("audience", ""),
         "doc_id": top.get("doc_id", ""),
@@ -83,12 +124,23 @@ def answer(question: dict, docs: list[dict]) -> dict:
 4. [sync.py](packet/app/sync.py). Search for `ignore the change feed`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/sync.py](work/app/sync.py) is under the Replace heading for this file.
 
 ```text
-"""Rebuild from the snapshot and ignore the change feed."""
+"""Rebuild from the snapshot and ignore the change feed.
+
+apply copies the snapshot documents and returns an empty touched
+list. Events in the feed are not applied.
+"""
 
 from __future__ import annotations
 
 
 def apply(snapshot: list[dict], feed: list[dict]) -> dict:
+    """Copy the snapshot and report that nothing was touched.
+
+    Each snapshot document is copied, so a later edit to a result
+    dict does not change the caller's dict. feed is discarded.
+    touched is an empty list.
+    """
+    # The change feed is not applied.
     del feed
     return {"docs": [dict(doc) for doc in snapshot], "touched": []}
 ```
@@ -106,12 +158,25 @@ This block replaces [work/app/filter.py](work/app/filter.py). The full path is `
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""A patient sees public documents. Staff do not see restricted ones."""
+"""A patient sees public documents. Staff do not see restricted ones.
+
+allow compares the document audience with the asker. A patient
+sees a public document only. Staff see a public or staff
+document. Records see a public, staff, or restricted document.
+Any other asker sees nothing.
+"""
 
 from __future__ import annotations
 
 
 def allow(doc: dict, asker: str) -> bool:
+    """Return whether this asker may see the document.
+
+    doc supplies the audience. A missing audience is empty text,
+    which matches none of the allowed sets. asker selects the
+    set. patient, staff, and records are the askers that can
+    pass.
+    """
     audience = doc.get("audience", "")
     # A patient sees public only. Staff and restricted stay off this path.
     if asker == "patient":
@@ -149,6 +214,10 @@ _V4 = {"card", "endo", "ophth"}
 
 
 def _covers(doc: dict, day: str) -> bool:
+    """Return whether the day sits inside the document window.
+
+    A day before the effective date is outside. A day on or after sunset is outside. An empty bound does not close that side.
+    """
     effective = doc.get("effective") or ""
     sunset = doc.get("sunset") or ""
     # A day before the effective date is outside the window.
@@ -161,6 +230,10 @@ def _covers(doc: dict, day: str) -> bool:
 
 
 def criteria(docs: list[dict], specialty: str, started: str) -> dict:
+    """Return the criteria document that covers this start day.
+
+    For a specialty in the v4 set, an in-force v4 that covers the day wins. Otherwise a v3 that is in force or superseded, and that covers the day, wins. Nothing that covers the day returns an empty mapping so the caller can refuse.
+    """
     rows = [doc for doc in docs if doc.get("specialty") == specialty]
     # For the three specialties, an in-force v4 that covers the start day wins.
     if specialty in _V4:
@@ -199,6 +272,10 @@ from search import rank
 
 
 def answer(question: dict, docs: list[dict]) -> dict:
+    """Return a citation the asker may see, or a refusal.
+
+    A specialty question binds criteria for the start day, or the case date when the start day is absent. Nothing bound returns a no-document refusal. A bound document the asker cannot see returns an audience refusal. With no specialty, the first in-force span the asker may see is cited, or the same no-document refusal when none remains.
+    """
     # A specialty question binds the criteria for the start day, or the case date.
     if question.get("specialty"):
         chosen = criteria(docs, question["specialty"], question.get("started") or question["case_date"])
@@ -217,6 +294,10 @@ def answer(question: dict, docs: list[dict]) -> dict:
 
 
 def _visible(question: dict, docs: list[dict]) -> list[dict]:
+    """Return in-force spans this asker may see that carry a question code.
+
+    Hybrid rank supplies the order. A span that is not in force, or that this asker cannot see, is dropped. A span whose vector contains none of the question codes is dropped.
+    """
     query_codes = codes(question["text"])
     kept = []
     for chunk in rank(question["text"], build(docs), "hybrid"):
@@ -231,6 +312,10 @@ def _visible(question: dict, docs: list[dict]) -> list[dict]:
 
 
 def _cite(doc: dict) -> dict:
+    """Return the citation fields for one document.
+
+    The span is the clause id. Audience, document id, status, and version travel with it so the citation can be checked without the rest of the document. A missing text field is empty, and a missing version is zero.
+    """
     # The span is the clause id. The other fields travel with the citation.
     return {
         "audience": doc.get("audience", ""),
@@ -253,12 +338,27 @@ This block replaces [work/app/sync.py](work/app/sync.py). The full path is `Week
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Apply document.changed and touch only the changed ids."""
+"""Apply document.changed and touch only the changed ids.
+
+apply starts from a copy of the snapshot. Each feed event appends
+its document id to touched. An add inserts the event document.
+Any other op writes the event fields onto the stored document
+with that id.
+"""
 
 from __future__ import annotations
 
 
 def apply(snapshot: list[dict], feed: list[dict]) -> dict:
+    """Copy the snapshot, apply each event, and list the touched ids.
+
+    snapshot is copied one document at a time, so the caller's
+    dicts stay as they were. feed is walked in order. An add
+    appends a copy of the event document and indexes it by
+    document id. Any other op writes the event fields onto the
+    document already stored under that id. touched gains one id
+    per event.
+    """
     # Start from a copy of the snapshot. The snapshot list itself stays unchanged.
     docs = [dict(doc) for doc in snapshot]
     by_id = {doc["doc_id"]: doc for doc in docs}

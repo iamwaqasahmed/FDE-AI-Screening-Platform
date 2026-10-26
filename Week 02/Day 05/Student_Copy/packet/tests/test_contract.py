@@ -16,6 +16,7 @@ from contract import holds
 
 
 class ContractTests(unittest.TestCase):
+    """Shell tests. Chapter 07 replaces the copy under work/tests."""
     def test_live_slot_fixture_holds(self) -> None:
         """The shell accepts the booked status."""
         self.assertTrue(holds("booked"))

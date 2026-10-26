@@ -1,4 +1,7 @@
-"""Family constraints for chk-w1-approach. This module stays out of the participant pack."""
+"""Family constraints for chk-w1-approach. This module stays out of the participant pack.
+
+ALLOWED is the family vocabulary. Each problem maps to the families it requires and the families it forbids. Two problems require no model and forbid every model family. The triage problem requires the blocked family and forbids every other allowed family. The payload sorts those sets so the written JSON is stable.
+"""
 
 from __future__ import annotations
 
@@ -21,6 +24,7 @@ RULES: dict[str, tuple[frozenset[str], frozenset[str]]] = {
 
 
 def gold_payload() -> dict:
+    """Return the allowed vocabulary and, for each problem, the sorted required and forbidden families."""
     problems = {}
     for problem_id, (required, forbidden) in RULES.items():
         problems[problem_id] = {"required": sorted(required), "forbidden": sorted(forbidden)}

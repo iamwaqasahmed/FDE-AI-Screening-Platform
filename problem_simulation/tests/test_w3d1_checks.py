@@ -1,4 +1,15 @@
-"""Day 1 of Week 3 identity, label, and synthetic checks."""
+"""Day 1 of Week 3 identity, label, and synthetic checks.
+
+Guards the identity, label, and synthetic checkers.
+
+The fixture is this day's pack plus the filled work tree. The filled copy must
+pass, and the optional pit and budget modules must match the reference rules
+before they are removed. Each shell swap restores one unfinished module and
+expects that module's own failure: a shifted calendar boundary, a stale code, a
+bad merge, labels that follow the old scheme, a sample that copies a real
+letter, or a scan that accepts the file. A copied clerk fixture must fail as a
+watermark. Problem text must not echo ids or dates.
+"""
 
 from __future__ import annotations
 
@@ -21,7 +32,14 @@ from alwaha.release.w3d1 import write_w3d1
 
 
 class CheckTests(unittest.TestCase):
+    """Catches a grader that accepts a merged identity, an old label, or a synthetic
+    letter that still contains a real person.
+    """
     def setUp(self) -> None:
+        """Write this day's pack and copy the filled work tree.
+
+        The gold file must match the generator before any shell module is copied back.
+        """
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -34,28 +52,40 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self.gold, gold(self.profile))
 
     def tearDown(self) -> None:
+        """Delete the temporary pack and work tree."""
         self.tmp.cleanup()
 
     def _identity(self) -> list[str]:
+        """Run the identity checker."""
         return identity_problems(self.work, self.pack, self.gold, self.profile.canary())
 
     def _labels(self) -> list[str]:
+        """Run the label checker."""
         return labels_problems(self.work, self.gold, self.profile.canary())
 
     def _synthetic(self) -> list[str]:
+        """Run the synthetic-letter checker."""
         return synthetic_problems(self.work, self.pack, self.gold, self.profile.canary())
 
     def _hidden(self, problems: list[str]) -> None:
+        """Fail this case when a problem list echoes the watermark, a national id, or a
+        converted date.
+        """
         joined = "\n".join(problems)
         for secret in (self.profile.canary(), *self.gold["national_ids"], *self.gold["dates"].values()):
             self.assertNotIn(secret, joined)
 
     def test_filled_work_passes(self) -> None:
+        """Fails when the filled work tree still produces an identity, label, or synthetic problem."""
         self.assertEqual(self._identity(), [])
         self.assertEqual(self._labels(), [])
         self.assertEqual(self._synthetic(), [])
 
     def test_advanced_modules_match_and_are_optional(self) -> None:
+        """Fails when the pit or budget module disagrees with the reference rule, or when
+        deleting those modules makes a passing tree fail. They are checked, then treated
+        as optional.
+        """
         pit = load_module(self.work / "app", "pit")
         bought = load_module(self.work / "app", "budget")
         price = budget(self.profile)
@@ -71,42 +101,59 @@ class CheckTests(unittest.TestCase):
         self.assertEqual(self._synthetic(), [])
 
     def test_shell_dates_shift_the_boundary(self) -> None:
+        """Fails when the unfinished date conversion, which moves the calendar boundary,
+        is accepted.
+        """
         shutil.copy(W3D1_APP / "dates.py", self.work / "app" / "dates.py")
         problems = self._identity()
         self.assertEqual(problems, [HIJRI])
         self._hidden(problems)
 
     def test_shell_codes_keep_the_catalog(self) -> None:
+        """Fails when the unfinished code map, which keeps a stale catalog entry, is accepted."""
         shutil.copy(W3D1_APP / "codes.py", self.work / "app" / "codes.py")
         problems = self._identity()
         self.assertEqual(problems, [STALE])
         self._hidden(problems)
 
     def test_shell_cluster_merges_the_traps(self) -> None:
+        """Fails when the unfinished clusterer is accepted. It merges the mother and the
+        newborn, the twins, and the reused record, and it collapses distinct rows.
+        """
         shutil.copy(W3D1_APP / "cluster.py", self.work / "app" / "cluster.py")
         problems = self._identity()
         self.assertEqual(problems, [MOTHER, TWINS, REUSED, ROWS])
         self._hidden(problems)
 
     def test_shell_labels_follow_ann_v1(self) -> None:
+        """Fails when the unfinished labels, which follow the old scheme, are accepted.
+        A photo, a blank, and an old mark should each be caught.
+        """
         shutil.copy(W3D1_APP / "labels.py", self.work / "app" / "labels.py")
         problems = self._labels()
         self.assertEqual(problems, [PHOTO, BLANK, OLD])
         self._hidden(problems)
 
     def test_shell_sample_copies_a_real_letter(self) -> None:
+        """Fails when the unfinished sampler, which copies a real letter, is accepted."""
         shutil.copy(W3D1_APP / "synthetic.py", self.work / "app" / "synthetic.py")
         problems = self._synthetic()
         self.assertEqual(problems, [CARD, MARK, NID])
         self._hidden(problems)
 
     def test_shell_scan_accepts_the_file(self) -> None:
+        """Fails when the unfinished scan, which accepts the planted file, is accepted.
+        The card failure belongs to the sampler, so this swap must not report it.
+        """
         shutil.copy(W3D1_APP / "scan.py", self.work / "app" / "scan.py")
         problems = self._synthetic()
         self.assertEqual(problems, [MARK, NID])
         self._hidden(problems)
 
     def test_copied_fixture_is_not_echoed(self) -> None:
+        """Fails when a copied clerk file is ignored by any of the three checkers, or when
+        a problem message contains the watermark.
+        """
         shutil.copy(self.pack / "letters" / "clerk.jsonl", self.work / "clerk.jsonl")
         for problems in (self._identity(), self._labels(), self._synthetic()):
             self.assertEqual(problems, [WATERMARK])

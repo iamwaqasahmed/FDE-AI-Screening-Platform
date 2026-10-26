@@ -1,4 +1,7 @@
-"""Foundation and advanced checks, pointed at each day's filled work copy."""
+"""Foundation and advanced checks, pointed at each day's filled work copy.
+
+Each job is a check name, a release id, and the work directory that check reads. An empty release id means the checker supplies its own default. The same check name can appear on more than one day, with a different release id and a different directory.
+"""
 
 from __future__ import annotations
 
@@ -8,6 +11,7 @@ DAY1 = paths.DAY1_WORK
 
 
 def jobs() -> list[tuple[str, str, object]]:
+    """Return the check name, release id, and work directory for every readiness job."""
     return [
         ("repo", "", DAY1),
         ("interview", "", DAY1),
@@ -54,9 +58,9 @@ def jobs() -> list[tuple[str, str, object]]:
         ("slo", "rel-w4d3", paths.W4D3_WORK),
         ("surge", "rel-w4d3", paths.W4D3_WORK),
         ("slo", "rel-w4d4", paths.W4D4_WORK),
-        ("integrate", "rel-w4d5", paths.W4D5_ROOT / "work"),
-        ("ops", "rel-w4d5", paths.W4D5_ROOT / "work"),
-        ("rcp", "rel-w4d5", paths.W4D5_ROOT / "work"),
-        ("readout", "rel-w4d5", paths.W4D5_ROOT / "work"),
-        ("individual", "rel-w4d5", paths.W4D5_ROOT / "work"),
+        ("integrate", "rel-w4d5", paths.W4D5_WORK),
+        ("ops", "rel-w4d5", paths.W4D5_WORK),
+        ("rcp", "rel-w4d5", paths.W4D5_WORK),
+        ("readout", "rel-w4d5", paths.W4D5_WORK),
+        ("individual", "rel-w4d5", paths.W4D5_WORK),
     ]

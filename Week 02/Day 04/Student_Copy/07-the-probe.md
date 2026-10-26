@@ -163,6 +163,7 @@ from health import health
 
 
 class HealthTests(unittest.TestCase):
+    """The probe reports the approved row, not the candidate."""
     def test_health_reports_the_registered_hash(self) -> None:
         """The approved local-small row wins over the previous row.
 

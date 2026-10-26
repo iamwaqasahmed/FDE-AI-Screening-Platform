@@ -1,4 +1,7 @@
-"""One original rendering beside the markdown: PDF, DOCX, XLSX, or a one-pixel PNG."""
+"""One original rendering beside the markdown: PDF, DOCX, XLSX, or a one-pixel PNG.
+
+kind_for cycles those four kinds by index. write_original dispatches on the kind. The office files are zip packages with a fixed archive timestamp, so a second build does not change the bytes. The PDF keeps only a short ASCII slice of the text. The PNG does not carry the text. Markup is escaped before it is placed in XML.
+"""
 
 from __future__ import annotations
 
@@ -11,10 +14,12 @@ KINDS = ("pdf", "docx", "xlsx", "png")
 
 
 def kind_for(index: int) -> str:
+    """Return the original-file kind for this document index, cycling through the four kinds."""
     return KINDS[index % len(KINDS)]
 
 
 def write_original(path: Path, kind: str, text: str) -> None:
+    """Write one original file at path. A kind other than pdf, docx, or xlsx is the image."""
     if kind == "pdf":
         path.write_bytes(_pdf(text))
     elif kind == "docx":
@@ -22,10 +27,12 @@ def write_original(path: Path, kind: str, text: str) -> None:
     elif kind == "xlsx":
         _xlsx(path, text)
     else:
+        # The remaining kind is the one-pixel image. It does not embed the text.
         path.write_bytes(_png())
 
 
 def _pdf(text: str) -> bytes:
+    """Return a one-page PDF whose visible text is a short ASCII slice of the source."""
     safe = "".join(char if 32 <= ord(char) < 127 else " " for char in text)[:60]
     stream = f"BT /F1 12 Tf 36 100 Td ({safe}) Tj ET".encode("ascii")
     objects = [
@@ -48,6 +55,7 @@ def _pdf(text: str) -> bytes:
 
 
 def _docx_xml(text: str) -> str:
+    """Return a word document XML body containing a short escaped slice of the text."""
     safe = _xml(text)[:200]
     return (
         '<?xml version="1.0" encoding="UTF-8"?>'
@@ -57,6 +65,7 @@ def _docx_xml(text: str) -> str:
 
 
 def _office(path: Path, part: str, xml: str, content_type: str) -> None:
+    """Write a zip package with content types and one XML part."""
     types = (
         '<?xml version="1.0" encoding="UTF-8"?>'
         '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'
@@ -71,11 +80,14 @@ def _office(path: Path, part: str, xml: str, content_type: str) -> None:
 
 
 def _store(archive: zipfile.ZipFile, name: str, text: str) -> None:
+    """Add one zip entry with a fixed timestamp so the archive bytes do not depend on the clock."""
+    # The date is pinned. A real clock would change the zip and break a second build.
     info = zipfile.ZipInfo(filename=name, date_time=(2027, 1, 10, 0, 0, 0))
     archive.writestr(info, text)
 
 
 def _xlsx(path: Path, text: str) -> None:
+    """Write a spreadsheet package whose first cell is a short escaped slice of the text."""
     sheet = (
         '<?xml version="1.0" encoding="UTF-8"?>'
         '<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
@@ -91,7 +103,9 @@ def _xlsx(path: Path, text: str) -> None:
 
 
 def _png() -> bytes:
+    """Return a one-pixel PNG. The text is not stored in the image."""
     def chunk(tag: bytes, data: bytes) -> bytes:
+        """Wrap one PNG chunk with its length and a checksum of the tag plus the data."""
         return struct.pack(">I", len(data)) + tag + data + struct.pack(">I", zlib.crc32(tag + data) & 0xFFFFFFFF)
 
     raw = b"\x00\xff\xff\xff"
@@ -100,4 +114,5 @@ def _png() -> bytes:
 
 
 def _xml(text: str) -> str:
+    """Escape the three markup characters so the text cannot close an XML element."""
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")

@@ -1,4 +1,14 @@
-"""Day 2 of Week 2: the release, the feeds, and the HL7 demo."""
+"""Day 2 of Week 2: the release, the feeds, and the HL7 demo.
+
+Guards the feed release, the dropped webhook field, and the ordering demo.
+
+The previous integration day is written first and must survive. The learner pack
+must keep the dropped field out while still showing the extra field and the
+clock, and the cancelled-session feed must contain a repeated event id. The demo
+may show which order wins and must not name the dropped field. Only the trap
+modules may differ between the shell and the filled copy. New interview
+questions must not release a fact that belongs to the first week.
+"""
 
 from __future__ import annotations
 
@@ -24,6 +34,7 @@ from alwaha.release.w2d1 import write_w2d1
 from alwaha.release.w2d2 import write_w2d2
 from alwaha.release.write import write_release
 
+# Architect script for this day. New questions must not release a fact that belongs to the first week.
 _EA = [
     "What is the API strategy?",
     "Do h-nakhl and h-safra still send HL7, and is h-wadi on the private cloud?",
@@ -31,6 +42,7 @@ _EA = [
     "Who owns the referral.submitted contract?",
     "Which zone is the integration engine in?",
 ]
+# Access-manager script. The test checks which of these turns release a fact and which stay closed.
 _ACCESS = [
     "No-shows dominate the cost. What does the ledger say?",
     "What share of contact-center calls ask for a referral status?",
@@ -38,6 +50,7 @@ _ACCESS = [
     "Is WhatsApp a new channel, and does a reply survive the session window?",
     "Is the mart wait figure the number you trust at the desk?",
 ]
+# The earlier architect script. It must still land on the same notice as before.
 _DAY1 = [
     "What is the API strategy?",
     "Do h-nakhl and h-safra still send HL7, and is h-wadi on the private cloud?",
@@ -46,6 +59,7 @@ _DAY1 = [
 
 
 def _canary_count(pack: Path, canary: str) -> int:
+    """Count watermark hits across every file in a pack."""
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -54,7 +68,11 @@ def _canary_count(pack: Path, canary: str) -> int:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites an earlier day or that publishes the dropped field."""
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or gold file changes,
+        or when this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -97,6 +115,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w2d2" / "w2d2_gold.json").exists())
 
     def test_profiles_differ_by_canary(self) -> None:
+        """Fails when either watermark is missing, repeated, or shared, or when the
+        fingerprints match.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -107,6 +128,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(root / "practice"), fingerprint(root / "small"))
 
     def test_pack_keeps_the_dropped_field_out(self) -> None:
+        """Fails when the dropped field appears, when the extra field or the clock name is
+        missing, or when the webhook or the gold file drifts. The cancelled-session
+        feed must repeat an event id. The watermark must stay out of the gold file.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -132,7 +157,13 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo or a lesson that names a hidden field, a trap module that was
+    not actually changed, or an interview question that releases the wrong week.
+    """
     def test_demo_shows_order_and_not_the_dropped_field(self) -> None:
+        """Fails when the demo does not show file order and sequence order disagreeing, or
+        when it names the dropped field, the extra value, or the segment name.
+        """
         stdout = StringIO()
         with redirect_stdout(stdout):
             demo_main(["--profile", "practice"])
@@ -145,6 +176,9 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(secret, text)
 
     def test_notes_do_not_name_the_hidden_fields(self) -> None:
+        """Fails when lesson notes or templates contain a hidden field, the clock name, the
+        segment, a watermark prefix, or the sub-specialty label.
+        """
         notes = [path.read_text(encoding="utf-8") for path in W2D2_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W2D2_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -152,6 +186,9 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(secret, lesson_text)
 
     def test_only_the_trap_modules_differ(self) -> None:
+        """Fails when a trap module is identical in the shell and the filled copy, or when
+        any other module was changed.
+        """
         traps = {"intake.py", "cancel.py", "mart.py"}
         for source in W2D2_APP.glob("*.py"):
             copy = W2D2_WORK / "app" / source.name
@@ -161,6 +198,9 @@ class DemoTests(unittest.TestCase):
                 self.assertEqual(source.read_bytes(), copy.read_bytes(), source.name)
 
     def test_day1_questions_still_land(self) -> None:
+        """Fails when the earlier architect script no longer releases the cloud fact and
+        the notice, or when the notice turn starts releasing a fact.
+        """
         turns = run(load_personas()["ea"], _DAY1)
         self.assertIn("private cloud", turns[1]["answer"])
         self.assertIn("hl7-pair", turns[1]["released"])
@@ -168,6 +208,10 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(turns[2]["released"], [])
 
     def test_new_questions_release_no_week1_facts(self) -> None:
+        """Fails when a new question releases a first-week fact, when the webhook, the
+        contract owner, the zone, the channel, or the desk fact does not surface, or
+        when a persona's required-fact list has changed.
+        """
         personas = load_personas()
         ea = run(personas["ea"], _EA)
         self.assertEqual(ea[2]["released"], [])

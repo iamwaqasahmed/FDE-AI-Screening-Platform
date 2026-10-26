@@ -20,6 +20,7 @@ from dates import gregorian
 
 
 class DateTests(unittest.TestCase):
+    """The civil day at a Hijri month boundary."""
     def test_month_boundary_stays_on_the_civil_day(self) -> None:
         """The 29th stays 14 days after the 15th, and the 1st is 2 days later."""
         middle = date.fromisoformat(gregorian("1448-07-15", ""))

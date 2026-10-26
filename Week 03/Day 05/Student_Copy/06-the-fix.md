@@ -25,34 +25,63 @@ Open [before.jsonl](packet/release/slices/before.jsonl). Search for `hours-c1`. 
 1. [repair.py](packet/app/repair.py). Search for `Leave every citation`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/repair.py](work/app/repair.py) is under the Replace heading for this file.
 
 ```text
-"""Leave every citation as it was scored."""
+"""Leave every citation as it was scored.
+
+repair returns a new dict with the same fields as the row. The
+caller can edit the copy without editing the original row.
+"""
 
 from __future__ import annotations
 
 
 def repair(row: dict) -> dict:
+    """Return a copy of the citation.
+
+    row is the scored citation. The copy keeps every field.
+    """
+    # A new dict, so later edits do not change the scored row.
     return dict(row)
 ```
 
 2. [remeasure.py](packet/app/remeasure.py). Search for `Report the first score again`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/remeasure.py](work/app/remeasure.py) is under the Replace heading for this file.
 
 ```text
-"""Report the first score again."""
+"""Report the first score again.
+
+The rows are scored once. That score is stored under before and
+again under after. A hit is the same document id and the same span.
+An empty slice scores as zero.
+"""
 
 from __future__ import annotations
 
 
 def remeasure(rows: list[dict]) -> dict:
+    """Return the same score under before and under after.
+
+    rows carry a label and a pred. Both names on the result are the
+    score of these rows.
+    """
+    # Score the slice once.
     before = _accuracy(rows)
+    # The after name repeats that same score.
     return {"after": before, "before": before}
 
 
 def _accuracy(rows: list[dict]) -> float:
+    """Return the share of rows whose prediction matches the label.
+
+    A match needs the same document id and the same span. An empty
+    slice returns zero.
+    """
+    # An empty slice has no rate.
     if not rows:
         return 0.0
     hits = 0
     for row in rows:
+        # pred is the citation being scored. label is the grader's citation.
         pred, label = row["pred"], row["label"]
+        # A hit needs the same document id and the same span.
         if pred.get("doc_id") == label.get("doc_id") and pred.get("span") == label.get("span"):
             hits += 1
     return hits / len(rows)
@@ -61,12 +90,21 @@ def _accuracy(rows: list[dict]) -> float:
 3. [cost.py](packet/app/cost.py). Search for `Charge nothing`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/cost.py](work/app/cost.py) is under the Replace heading for this file.
 
 ```text
-"""Charge nothing for the fix."""
+"""Charge nothing for the fix.
+
+spend discards the label count, the price, and the budget, and
+returns zero.
+"""
 
 from __future__ import annotations
 
 
 def spend(count: int, price: float, budget_sar: float):
+    """Return zero.
+
+    count, price, and budget_sar are discarded.
+    """
+    # The arguments do not change the charge.
     del count, price, budget_sar
     return 0
 ```
@@ -83,7 +121,13 @@ This block replaces [work/app/repair.py](work/app/repair.py). The full path is `
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Replace a citation that is not in force.`
 
 ```text
-"""Replace a citation that is not in force."""
+"""Replace a citation that is not in force.
+
+When the document id is the unauthorized id, the copy uses the
+in-force id. Every other field is copied as it was. A row with any
+other document id is copied unchanged, so the caller can edit the
+copy without editing the original row.
+"""
 
 from __future__ import annotations
 
@@ -93,6 +137,11 @@ _UNAUTH = "circ-ramadan-unauth"
 
 
 def repair(row: dict) -> dict:
+    """Return a citation, with an unauthorized document id replaced.
+
+    row is the citation. The document id changes only when it is the
+    unauthorized id. Every other field is copied through.
+    """
     # Leave every other field as it was. Only the document id changes.
     if row.get("doc_id") == _UNAUTH:
         return {**row, "doc_id": _IN_FORCE}
@@ -112,14 +161,26 @@ This block replaces [work/app/remeasure.py](work/app/remeasure.py). The full pat
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Score the citation slice before and after the repair.`
 
 ```text
-"""Score the citation slice before and after the repair."""
+"""Score the citation slice before and after the repair.
+
+The before score is the slice as it arrived. Each prediction is
+then repaired, the label stays the grader's label, and the after
+score is that repaired slice. A hit is the same document id and
+the same span. An empty slice scores as zero.
+"""
 
 from __future__ import annotations
 
+# The citation fix applied to a prediction before the second score.
 from repair import repair
 
 
 def remeasure(rows: list[dict]) -> dict:
+    """Return the score before the repair and the score after it.
+
+    rows carry a label and a pred. before scores the rows as they
+    arrived. after scores a copy whose prediction has been repaired.
+    """
     # The first score is the slice as it arrived.
     before = _accuracy(rows)
     # Each prediction is repaired. The label stays the grader's label.
@@ -129,6 +190,11 @@ def remeasure(rows: list[dict]) -> dict:
 
 
 def _accuracy(rows: list[dict]) -> float:
+    """Return the share of rows whose prediction matches the label.
+
+    A match needs the same document id and the same span. An empty
+    slice returns zero.
+    """
     # An empty slice has no rate.
     if not rows:
         return 0.0
@@ -138,6 +204,7 @@ def _accuracy(rows: list[dict]) -> float:
         # A hit needs the same document id and the same span.
         if pred.get("doc_id") == label.get("doc_id") and pred.get("span") == label.get("span"):
             hits += 1
+    # The rate is the hit count divided by how many rows were scored.
     return hits / len(rows)
 ```
 
@@ -153,12 +220,21 @@ This block replaces [work/app/cost.py](work/app/cost.py). The full path is `Week
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Price the fix in labels, and stop when the budget is spent.`
 
 ```text
-"""Price the fix in labels, and stop when the budget is spent."""
+"""Price the fix in labels, and stop when the budget is spent.
+
+spend multiplies the label count by the label price. A product above
+the budget is not priced. A product that meets the budget is returned.
+"""
 
 from __future__ import annotations
 
 
 def spend(count: int, price: float, budget_sar: float):
+    """Return the label cost, or nothing when that cost is past the budget.
+
+    count is how many labels are priced. price is the price of a
+    label. budget_sar is the budget. The cost is count times price.
+    """
     # The cost is the label count times the label price.
     total = count * price
     # Past the annotation budget, the fix is not priced.

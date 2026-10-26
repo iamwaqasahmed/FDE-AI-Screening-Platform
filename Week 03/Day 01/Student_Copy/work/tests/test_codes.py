@@ -17,6 +17,7 @@ from codes import clinic
 
 
 class CodeTests(unittest.TestCase):
+    """The shell clinic-code test."""
     def test_catalog_code_replaces_the_new_code(self) -> None:
         """The newer code is put back to the catalog code."""
         self.assertEqual(clinic("ENDO-CLN", "2024-07-01", "h-wadi"), "END-01")

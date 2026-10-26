@@ -19,6 +19,7 @@ from secrets import credential
 
 
 class SecretTests(unittest.TestCase):
+    """Prod and dev read different credential files."""
     def setUp(self) -> None:
         """Write two stand-in credential files under a temporary pack."""
         self.tmp = tempfile.TemporaryDirectory()

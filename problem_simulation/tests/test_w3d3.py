@@ -1,4 +1,14 @@
-"""Day 3 of Week 3: criteria v4, the change feed, and citations."""
+"""Day 3 of Week 3: criteria v4, the change feed, and citations.
+
+Guards the criteria release, the change feed, and the citation binding.
+
+Earlier days must survive the write. Practice and small packs must match and
+must carry no watermark. The notice must name the specialties that changed and
+must not name the one that did not. The draft status and the unauthorized
+circular must remain visible in the learner files, while held question text must
+not. The demo may name the leaflet pair and must not quote the clause. The
+shell suite must fail and the filled suite must pass.
+"""
 
 from __future__ import annotations
 
@@ -34,10 +44,12 @@ from alwaha.release.w3d2 import write_w3d2
 from alwaha.release.w3d3 import write_w3d3
 from alwaha.release.write import write_release
 
+# Primary-care script. The second turn should release the template fact.
 _PHC = [
     "Why does a hospital return a referral?",
     "Which criteria version does the template form use?",
 ]
+# Coordinator script. The second turn should release the draft and should not name a specialty.
 _COORD = [
     "Why is the coordinator queue so long?",
     "Was the v4 criteria circulated as a draft, and is it the version in use?",
@@ -68,6 +80,7 @@ _TESTS = (
     "test_conflict.py",
     "test_catalog.py",
 )
+# Held question ids and the document each one must bind to. The gold file is checked against this map.
 _EXPECT = {
     "held-endo": "crit-endo-v4",
     "held-flight": "crit-endo-v3",
@@ -78,6 +91,10 @@ _EXPECT = {
 
 
 def _canary_count(pack: Path, canary: str) -> int:
+    """Count watermark hits across every file in a pack.
+
+    This day's pack is supposed to have none.
+    """
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -86,6 +103,9 @@ def _canary_count(pack: Path, canary: str) -> int:
 
 
 def _blob(pack: Path) -> str:
+    """Join every file in a pack so a held question cannot hide in a fixture the prose
+    join would skip.
+    """
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -94,7 +114,13 @@ def _blob(pack: Path) -> str:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites an earlier day, that differs by profile, or that
+    publishes a held question.
+    """
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or gold file changes,
+        or when this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -141,6 +167,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w3d3" / "w3d3_gold.json").exists())
 
     def test_profiles_match_and_the_canary_stays_out(self) -> None:
+        """Fails when either pack contains a watermark, when the two packs differ, or when
+        a gold file drifts from the generator.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -154,6 +183,11 @@ class ReleaseTests(unittest.TestCase):
                 self.assertEqual(hidden, gold(profile))
 
     def test_the_notice_names_three_specialties_and_the_held_text_stays_out(self) -> None:
+        """Fails when the notice omits a changed specialty or includes the unchanged one,
+        when the draft or the unauthorized circular is hidden, or when a held question
+        appears in the pack. The vector rank and the hybrid rank must still disagree
+        on the question that separates them.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -181,7 +215,13 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo or a lesson that quotes a held question, a module that was not
+    changed, a shell suite that passes, or an interview that drops the draft.
+    """
     def test_demo_names_the_pair_and_not_the_clause(self) -> None:
+        """Fails when the demo does not list the leaflets and the superseded line, or when
+        it prints the watermark, the vision clause, or the midnight wording.
+        """
         profile = load("practice")
         stdout = StringIO()
         with redirect_stdout(stdout):
@@ -194,6 +234,7 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn("past midnight", text)
 
     def test_lessons_do_not_state_the_held_questions(self) -> None:
+        """Fails when lesson notes or templates contain the watermark or a held question."""
         notes = [path.read_text(encoding="utf-8") for path in W3D3_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W3D3_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -203,6 +244,9 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(row["question"]["text"], lesson_text)
 
     def test_modules_differ_and_only_the_copy_passes(self) -> None:
+        """Fails when a shell module matches the filled copy, when a packet test was
+        rewritten, when the filled suite fails, or when the shell suite passes.
+        """
         packet = W3D3_APP.parent
         for name in _APP:
             shell = (W3D3_APP / name).read_bytes()
@@ -218,6 +262,9 @@ class DemoTests(unittest.TestCase):
         self.assertNotEqual(shell.returncode, 0, shell.stdout + shell.stderr)
 
     def test_interviews_release_the_draft_and_the_template(self) -> None:
+        """Fails when the template fact or the draft fact does not surface, or when the
+        draft answer names a specialty. The required-fact lists must stay as they were.
+        """
         personas = load_personas()
         phc = run(personas["phc-lead"], _PHC)
         self.assertEqual(phc[1]["released"], ["templates-v3"])
@@ -229,6 +276,7 @@ class DemoTests(unittest.TestCase):
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
+    """Run a packet's own unit tests and return the process result without raising."""
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,

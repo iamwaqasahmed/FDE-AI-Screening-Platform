@@ -1,4 +1,8 @@
-"""Steering questions and the Day 5 document gold. Answers stay in the interviews."""
+"""Steering questions and the Day 5 document gold.
+Answers stay in the interviews.
+
+QUESTIONS is what the steering page asks. DOC_IDS is the document set the design page is checked against. The answers themselves are not stored here.
+"""
 
 from __future__ import annotations
 
@@ -24,11 +28,16 @@ DOC_IDS = (
 
 
 def steer_page() -> str:
+    """Return the steering questions as one markdown page, in list order."""
     numbered = "\n".join(f"{index}. {text}" for index, text in enumerate(QUESTIONS, start=1))
     return f"# steer-w1\n\nThe steering committee asks these questions.\n\n{numbered}\n"
 
 
 def document_gold() -> dict:
+    """Return the checker expectations for the design page, the readout, and the individual exercise.
+
+    design names the documents and the mentions the page must carry. readout names the headings and the cues each answer must contain. individual names the tool, the document, and that the exercise was refused.
+    """
     return {
         "design": {
             "share": 0.8,

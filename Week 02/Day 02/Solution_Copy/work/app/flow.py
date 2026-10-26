@@ -1,4 +1,10 @@
-"""Sign in and answer one status question."""
+"""Sign in and answer one status question.
+
+run.py and server.py both call this module. The auth check and the
+journey check call it too. load_pack reads the release. sign_in stores
+a session when the token is accepted. status_answer reads the record,
+then builds the reply.
+"""
 
 from __future__ import annotations
 
@@ -13,6 +19,13 @@ import session
 
 
 def load_pack(pack: Path) -> dict:
+    """Read the four release files the sign-in and the status question need.
+
+    The note is the assurance page. The spec is the his-wadi document.
+    The identity spec supplies the actors. The scenario file supplies
+    the one status question. A missing file raises, and the message
+    does not name which file.
+    """
     note = pack / "identity" / "loa.md"
     spec = pack / "openapi" / "his-wadi.yaml"
     iam = pack / "openapi" / "iam.yaml"
@@ -29,6 +42,13 @@ def load_pack(pack: Path) -> dict:
 
 
 def sign_in(db, token: dict, note: str) -> dict:
+    """Open chat or console, and write the session row when the token is accepted.
+
+    A refused token returns ok False and an empty page. Nothing is
+    written. An accepted token stores the subject as both session_id
+    and subject, then the role and the assurance level from the token.
+    The page is chat or console. The server redirects to that page.
+    """
     page = auth.open_for(token, note)
     if not page:
         return {"ok": False, "page": ""}
@@ -43,5 +63,10 @@ def sign_in(db, token: dict, note: str) -> dict:
 
 
 def status_answer(spec: str, row: dict, message: str) -> dict:
+    """Read his-wadi with the current client, then answer with the status tool.
+
+    client.read_body builds the body. his.read compares that body with
+    the spec. contract turns the boolean into the reply.
+    """
     ok = his.read(client.read_body(row["referral_id"]), spec)
     return contract.reply(message, row, ok)

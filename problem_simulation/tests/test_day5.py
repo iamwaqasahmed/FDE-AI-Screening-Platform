@@ -1,4 +1,12 @@
-"""Day 5 release, steering page, and the readout demo."""
+"""Day 5 release, steering page, and the readout demo.
+
+Guards the steering-day release and the readout demo.
+
+Earlier packs and gold files must survive the write. The failure scenarios and
+their order must match the generator, and the answers those scenarios are about
+must stay out of the learner pack and the lesson packet. The demo may read the
+sponsor's opening line and the question list, and must not reveal the hidden fact.
+"""
 
 from __future__ import annotations
 
@@ -24,6 +32,10 @@ from alwaha.release.write import write_release
 
 
 def _canary_count(pack: Path, canary: str) -> int:
+    """Count watermark hits across every file in a pack.
+
+    Used to require exactly one hit in each profile's pack.
+    """
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -32,7 +44,13 @@ def _canary_count(pack: Path, canary: str) -> int:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a steering pack that rewrites an earlier day or that copies an answer
+    into the learner files or the lesson notes.
+    """
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or gold file changes,
+        or when this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -66,6 +84,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((packs[4] / "day5_gold.json").exists())
 
     def test_profiles_differ_by_canary(self) -> None:
+        """Fails when either watermark is missing, repeated, or shared, or when the two
+        packs have the same fingerprint.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -76,6 +97,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(root / "practice"), fingerprint(root / "small"))
 
     def test_pack_keeps_the_answers_out(self) -> None:
+        """Fails when the failure file drifts from the generator, when the order file
+        drifts, or when an answer phrase appears in the learner pack. The gold file
+        must list the same scenarios and must not contain the watermark.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -96,6 +121,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertEqual([row["scenario"] for row in gold["scenarios"]], list(FAILURE_ORDER))
 
     def test_notes_do_not_copy_the_answers(self) -> None:
+        """Fails when lesson notes, templates, or the packet agent contain an answer phrase
+        or a watermark prefix. The packet model must still be the unfinished model, not
+        a filled one.
+        """
         packet = DAY5_ROOT / "Student_Copy" / "packet"
         notes = [path.read_text(encoding="utf-8") for path in DAY5_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in (packet / "templates").glob("*.md"))
@@ -107,7 +136,12 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a readout demo that skips the sponsor's card or that speaks the hidden fact."""
     def test_demo_reads_the_card_and_not_the_hidden_fact(self) -> None:
+        """Fails when the first line is not the sponsor's opening line, when the remaining
+        lines are not the question list, or when the hidden deadline or the purchase
+        fact appears in the output.
+        """
         stdout = StringIO()
         with redirect_stdout(stdout):
             demo_main(["--profile", "small"])

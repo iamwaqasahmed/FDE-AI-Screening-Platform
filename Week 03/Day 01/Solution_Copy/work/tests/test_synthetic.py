@@ -20,6 +20,7 @@ from synthetic import sample
 
 
 class SyntheticTests(unittest.TestCase):
+    """The sample keeps the rare class and drops the real letter."""
     def test_rare_class_has_no_real_id(self) -> None:
         """The invented rows do not repeat the letter, and two name retina."""
         rows = sample([{"text": "clerk-row CANARY-x"}], {"rare_sub_specialty": "retina"})

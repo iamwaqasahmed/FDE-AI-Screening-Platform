@@ -1,4 +1,8 @@
-"""rel-w3d2 gold. Hashes, the quota, and prices stay out of the lesson prose."""
+"""rel-w3d2 gold.
+Hashes, the quota, and prices stay out of the lesson prose.
+
+Adapter and cloud hashes, the GPU quota, and the token prices are derived here and returned only inside gold. The held-out letters and messages are labeled by the reference extractor and classifier so the checker can score a submission without those labels appearing in the lesson.
+"""
 
 from __future__ import annotations
 
@@ -23,34 +27,45 @@ ZONE_PUBLIC = "zone-public"
 
 
 def _digest(seed: int, label: str) -> str:
+    """Return a hex prefix of the seed and the label so the adapter and the cloud hash cannot collide."""
     return hashlib.sha256(f"{seed}:{label}".encode()).hexdigest()[:16]
 
 
 def adapter_hash(profile: Profile) -> str:
+    """Return the hash of the approved local adapter for this profile."""
     return "sha256:" + _digest(profile.seed, "w3d2-lora-local")
 
 
 def cloud_hash(profile: Profile) -> str:
+    """Return the hash of the unregistered cloud tune, which is not in the registry."""
     return "sha256:" + _digest(profile.seed, "w3d2-cloud-tune")
 
 
 def gpu_quota(profile: Profile) -> int:
+    """Return how many GPUs this profile's release allows. It moves with the seed."""
     return 1 + profile.seed % 2
 
 
 def rates(profile: Profile) -> dict[str, int]:
+    """Return the price sheet for this seed, keyed by the price name."""
     return {row["key"]: int(row["sar"]) for row in price_rows(profile.seed)}
 
 
 def cap() -> dict:
+    """Return the score floor, the spend ceiling, the latency ceiling, and the token count the cost uses."""
     return {"f1_floor": FLOOR, "max_sar": MAX_SAR, "max_seconds": MAX_SECONDS, "tokens": TOKENS}
 
 
 def quota(profile: Profile) -> dict:
+    """Return the GPU quota record for this profile."""
     return {"gpus": gpu_quota(profile)}
 
 
 def registry(profile: Profile) -> dict:
+    """Return the approved models, including the local adapter pinned to the local base.
+
+    The external model stays in the public zone. The local models and the adapter stay in the private zone.
+    """
     return {
         "models": [
             {"hash": external_hash(profile), "id": "ext-large", "status": "approved", "zone": ZONE_PUBLIC},
@@ -68,10 +83,12 @@ def registry(profile: Profile) -> dict:
 
 
 def cloud(profile: Profile) -> dict:
+    """Return the unregistered cloud tune. It is not an approved model."""
     return {"hash": cloud_hash(profile), "id": CLOUD, "status": "unregistered"}
 
 
 def labeled_letters(rows: tuple[tuple[str, str], ...]) -> list[dict]:
+    """Return each letter with the reference extraction fields added beside its text."""
     labeled = []
     for row in letters(rows):
         labeled.append({**row, **extract(row)})
@@ -79,6 +96,10 @@ def labeled_letters(rows: tuple[tuple[str, str], ...]) -> list[dict]:
 
 
 def measurement_block(adapter: str, local_sar: int) -> str:
+    """Return the measurement table for the local adapter.
+
+    Extraction and intent are filled. The hours row is left blank because that task is retrieval, not this adapter.
+    """
     return (
         "| task | method | f1 | cost | hash |\n"
         "| --- | --- | --- | --- | --- |\n"
@@ -89,6 +110,10 @@ def measurement_block(adapter: str, local_sar: int) -> str:
 
 
 def gold(profile: Profile) -> dict:
+    """Return the hashes, the quota, the held-out labels, and both token costs for this profile.
+
+    Local and external costs scale the sheet price by the shared token count. The held-out preference is returned as the draft and the edited text, not as a computed revision.
+    """
     sheet = rates(profile)
     local = sheet["price.local_per_1k"] * TOKENS // 1000
     external = sheet["price.ext_large_per_1k"] * TOKENS // 1000

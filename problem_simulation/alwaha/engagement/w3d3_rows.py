@@ -1,4 +1,8 @@
-"""Questions for rel-w3d3. Held-out text stays out of the pack."""
+"""Questions for rel-w3d3.
+Held-out text stays out of the pack.
+
+dev_questions copies the questions a participant can practice on. held_questions copies the questions only the checker asks. Each copy is a new dict so a caller cannot change the constants.
+"""
 
 from __future__ import annotations
 
@@ -86,8 +90,10 @@ HELD = (
 
 
 def dev_questions() -> list[dict]:
+    """Return a copy of the practice questions so a caller cannot change the constant."""
     return [dict(row) for row in DEV]
 
 
 def held_questions() -> list[dict]:
+    """Return a copy of the held-out questions. These are the ones the checker asks."""
     return [dict(row) for row in HELD]

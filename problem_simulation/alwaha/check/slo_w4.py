@@ -1,4 +1,7 @@
-"""chk-w4-slo, load portion. Day 4 adds failover to this check."""
+"""chk-w4-slo, load portion. Day 4 adds failover to this check.
+
+Load portion of the service check. It grades which adapters load, whether the backlog hours match the forecast, whether chat latency is reserved while the batch runs, whether scale leads the peak by the cold start, whether today's price is used, and whether the capacity table matches the plan. Notes are graded after the probes so a crash does not hide them. The failover half of this check is a later day.
+"""
 
 from __future__ import annotations
 
@@ -23,15 +26,24 @@ _MODULES = ("adapters", "batch", "quota", "scale", "price", "capacity")
 
 
 def _once(problems: list[str], item: str) -> None:
+    """Append the miss when that sentence is not already in the list.
+
+    Several probes can fail the same way, and the list should name each failure once.
+    """
     if item not in problems:
         problems.append(item)
 
 
 def _adapters(module, registry: dict, candidate: dict) -> list[str]:
+    """Return the adapter misses.
+
+    A crash is the harness miss. A result that is not a list is both a missing adapter and an unregistered load. An exact match with the approved names passes. A missing approved name is the missing miss. A loaded name that is the candidate or the external model is the unregistered miss. Any other disagreement is still reported as missing.
+    """
     try:
         got = module.loaded(registry, candidate)
     except Exception:
         return [RUN]
+    # A result that is not a list is both a missing adapter and an unregistered load.
     if not isinstance(got, list):
         return [MISSING, UNREGISTERED]
     names = sorted(str(item) for item in got)
@@ -44,12 +56,17 @@ def _adapters(module, registry: dict, candidate: dict) -> list[str]:
         problems.append(MISSING)
     if any(name in blocked for name in names):
         problems.append(UNREGISTERED)
+    # The loaded names differ from the approved names, but neither a missing approved name nor a blocked name was found, so it is still reported as missing.
     if not problems:
         problems.append(MISSING)
     return problems
 
 
 def _hours(module, sheet: dict, forecast: dict) -> list[str]:
+    """Return the backlog miss when the hours disagree with the reference.
+
+    A crash is the harness miss. The reference uses the batched throughput, the referral count, and the tokens per referral.
+    """
     try:
         got = module.hours(sheet, forecast)
     except Exception:
@@ -63,6 +80,10 @@ def _hours(module, sheet: dict, forecast: dict) -> list[str]:
 
 
 def _latency(module, sheet: dict) -> list[str]:
+    """Return the latency miss when chat latency is not the reserved value on the sheet.
+
+    A crash is the harness miss.
+    """
     try:
         got = module.latency(sheet)
     except Exception:
@@ -73,6 +94,10 @@ def _latency(module, sheet: dict) -> list[str]:
 
 
 def _scale(module, forecast: dict, sheet: dict) -> list[str]:
+    """Return the window miss when the start time is not the peak minus the cold start.
+
+    A crash is the harness miss.
+    """
     try:
         got = module.started(forecast, sheet)
     except Exception:
@@ -84,6 +109,10 @@ def _scale(module, forecast: dict, sheet: dict) -> list[str]:
 
 
 def _price(module, today: dict, old: int) -> list[str]:
+    """Return the yesterday miss when the rate is not today's price.
+
+    The old price is passed in so a module that still uses it disagrees. A crash is the harness miss.
+    """
     try:
         got = module.rate(today, {"price.ext_large_per_1k": old})
     except Exception:
@@ -94,6 +123,10 @@ def _price(module, today: dict, old: int) -> list[str]:
 
 
 def _table(module, sheet: dict, forecast: dict, today: dict) -> list[str]:
+    """Return the table miss when the returned record disagrees with the plan on any field.
+
+    A crash, a non-record, or one wrong field is the same miss.
+    """
     expect = plan(sheet, forecast, int(today["sar"]))
     try:
         got = module.table(expect)
@@ -105,6 +138,10 @@ def _table(module, sheet: dict, forecast: dict, today: dict) -> list[str]:
 
 
 def slo_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
+    """Return the load misses and then the note misses.
+
+    A planted token returns only the watermark. The six probes run under one import. A crash of that import is the harness miss. Notes are graded afterward so they survive that crash.
+    """
     if contains_canary(work, canary):
         return [WATERMARK]
     registry = json.loads((pack / "registry" / "adapters.json").read_text(encoding="utf-8"))

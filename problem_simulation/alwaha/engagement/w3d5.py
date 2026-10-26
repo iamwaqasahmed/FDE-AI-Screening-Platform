@@ -1,4 +1,8 @@
-"""rel-w3d5 gold. Labels, the label spend, and the gate map stay here."""
+"""rel-w3d5 gold.
+Labels, the label spend, and the gate map stay here.
+
+gold repairs nothing itself. It asks the reference scorer for the before-and-after metrics, the count of rows that moved, and what that count costs against the budget. The requirements block is told that count so the mention check uses the measured value rather than a fixed one.
+"""
 
 from __future__ import annotations
 
@@ -11,6 +15,10 @@ _SEATS = ("cdo", "access-mgr", "phc-lead", "dpo")
 
 
 def _mentions(count: int) -> list[dict]:
+    """Return the mention checks for the requirements page.
+
+    The count is passed in from the measured rows, so this list does not store its own copy of how many rows moved.
+    """
     seats = [{"id": seat, "text": seat} for seat in _SEATS]
     return [
         {"id": "triage", "section": "Non-goals", "text": "p-triage"},
@@ -28,6 +36,7 @@ def _mentions(count: int) -> list[dict]:
 
 
 def _readout() -> dict:
+    """Return the readout sections the closing page is checked against."""
     return {
         "asks": "Asks",
         "sections": [
@@ -41,10 +50,15 @@ def _readout() -> dict:
 
 
 def _personal() -> dict:
+    """Return which personal citations may be kept, and whether each metric meets its floor.
+
+    A citation whose audience is staff is not kept. Metric rows record the value, the floor, and whether the value clears it.
+    """
     citations = []
     metrics = []
     for row in personal_public():
         if row["kind"] == "citation":
+            # A staff-only document is not kept on this public readout.
             citations.append({**row, "keep": row["audience"] != "staff"})
         else:
             metrics.append({"floor": row["floor"], "meets": row["value"] >= row["floor"], "value": row["value"]})
@@ -52,6 +66,10 @@ def _personal() -> dict:
 
 
 def gold(profile: Profile) -> dict:
+    """Return the before rows, the remeasured scores, the label cost, and the requirement checks.
+
+    The measured count is how many predictions still name a different document from the label. That same count is handed to the mention list.
+    """
     rows = before_labeled()
     scored = remeasure(rows)
     count = moved(rows)

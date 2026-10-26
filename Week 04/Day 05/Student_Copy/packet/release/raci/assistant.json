@@ -1,0 +1,11 @@
+{
+  "cells": [
+    {
+      "id": "clinical-safety",
+      "owner": "",
+      "role": "clinical safety"
+    }
+  ],
+  "gate": "G4",
+  "id": "go-live"
+}

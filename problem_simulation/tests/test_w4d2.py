@@ -1,4 +1,15 @@
-"""Day 2 of Week 4: the replay, the Ramadan-hours circular, and shadow-extract."""
+"""Day 2 of Week 4: the replay, the Ramadan-hours circular, and shadow-extract.
+
+Guards the incident release, the hours circular, and the trace demo.
+
+The previous attack day must survive the write. Packs must not carry a
+watermark, the gold name, or the override rate, while the alert time may appear.
+The new hours must match the document-changed event, and the old hours must not
+appear in the pack. The security and patient-representative interviews must
+reach the replay and the old hours. The demo may print the trace fields and
+must not print the hidden detail. Lesson sources must not contain the watermark,
+either hash, or that detail. Both suites must pass.
+"""
 
 from __future__ import annotations
 
@@ -24,18 +35,22 @@ from alwaha.release.fingerprint import fingerprint
 from alwaha.release.w4d1 import write_w4d1
 from alwaha.release.w4d2 import write_w4d2
 
+# Security script. Both turns should release a fact: the replay, then the blind dashboard.
 _CISO = [
     "What does the incident replay already contain?",
     "Why does a CPU dashboard miss the tool failures?",
 ]
+# Patient-representative script. The hours turn should release the old-hours fact.
 _REP = [
     "Why does the phone line still not answer?",
     "Which clinic hours is she still offered after the circular?",
 ]
+# Shell modules that must differ from the filled copy.
 _APP = ("spans.py", "dashboard.py", "meter.py", "cache.py", "drift.py", "override.py", "shadow.py")
 
 
 def _blob(pack: Path) -> str:
+    """Join every file in a pack so an override rate cannot hide in one fixture."""
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -44,6 +59,7 @@ def _blob(pack: Path) -> str:
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
+    """Run a packet's own unit tests and return the process result without raising."""
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,
@@ -54,7 +70,13 @@ def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites the previous day, prints the override rate, or
+    leaves the old clinic hours in the learner files.
+    """
     def test_same_seed_matches_and_day_1_stays(self) -> None:
+        """Fails when a second write disagrees, when the previous pack changes, or when
+        this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -69,6 +91,11 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w4d2" / "w4d2_gold.json").exists())
 
     def test_profiles_differ_and_the_rate_stays_out(self) -> None:
+        """Fails when a pack contains a watermark, the gold name, or the override rate,
+        when the gateway meters match across profiles, or when the alert is not inside
+        the response window. The new hours must equal the document event, and the old
+        hours must stay out of the pack.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -104,6 +131,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotIn(practice_gold["old_hours"], practice_blob)
 
     def test_the_interviews_reach_the_replay_and_the_old_hours(self) -> None:
+        """Fails when the security script does not release the replay and the blind
+        dashboard, or when the patient representative does not release the old hours.
+        """
         ciso = run(load_personas()["ciso"], _CISO)
         released = [fact_id for turn in ciso for fact_id in turn["released"]]
         self.assertEqual(released, ["replay-alert", "cpu-blind"])
@@ -112,6 +142,9 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(released, ["old-hours"])
 
     def test_demo_prints_the_trace_fields(self) -> None:
+        """Fails when the demo does not print the tool, the hash, and the token count from
+        the gold demo, or when it prints the hidden detail or the watermark.
+        """
         profile = load("practice")
         stdout = StringIO()
         with redirect_stdout(stdout):
@@ -123,6 +156,9 @@ class ReleaseTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_state_the_canary_or_the_hash(self) -> None:
+        """Fails when a lesson or packet source, other than the release fixtures, contains
+        the watermark, either hash, or the hidden trace detail.
+        """
         release_trees = (
             W4D2_ROOT / "Student_Copy" / "packet" / "release",
             W4D2_ROOT / "Solution_Copy" / "sources",
@@ -141,6 +177,7 @@ class ReleaseTests(unittest.TestCase):
         self.assertNotIn(DETAIL, blob)
 
     def test_modules_differ_and_both_copies_pass(self) -> None:
+        """Fails when a shell module matches the filled copy, or when either suite fails."""
         for name in _APP:
             shell = (W4D2_APP / name).read_bytes()
             filled = (W4D2_WORK / "app" / name).read_bytes()

@@ -175,6 +175,9 @@ This block replaces [work/tests/test_queue.py](work/tests/test_queue.py). It doe
 
 Leave the packet shell unchanged. Ain stays queued. The live-slot
 fault is still booked. A hospital that is not Ain is booked.
+
+The fixture is the hospital id and, on one call, the live-slot
+fault. There is no pack file.
 """
 
 import sys
@@ -187,8 +190,16 @@ from queue import book
 
 
 class QueueTests(unittest.TestCase):
+    """Ain stays queued unless the live-slot fault is set. Another hospital is booked."""
+
     def test_ain_stays_queued(self) -> None:
-        """Ain waits. The live-slot fault and another hospital do not."""
+        """Ain waits. The live-slot fault and another hospital do not.
+
+        The first assertion proves Ain with an empty fault stays
+        queued. The next assertion is the live-slot fault, and it
+        is booked. The last assertion proves a hospital that is not
+        Ain is booked.
+        """
         self.assertEqual(book("h-ain", ""), "queued")
         # booked on this line is the live-slot fault. That is expected.
         self.assertEqual(book("h-ain", "live-slot"), "booked")
@@ -244,6 +255,10 @@ This block replaces [work/tests/test_file.py](work/tests/test_file.py). It does 
 
 Leave the packet shell unchanged. A missing night keeps yesterday.
 A file that arrives replaces it.
+
+The fixture is a previous schedule whose day is yesterday. None
+stands in for a night file that did not arrive. A later call passes
+a file whose day is today.
 """
 
 import sys
@@ -256,8 +271,15 @@ from file_ain import apply_file
 
 
 class FileTests(unittest.TestCase):
+    """A missing night keeps the previous schedule, and an arrived file replaces it."""
+
     def test_missing_file_keeps_yesterday(self) -> None:
-        """None for the night drop keeps the previous file."""
+        """None for the night drop keeps the previous file.
+
+        The first assertion proves a missing night returns the same
+        previous schedule. The later assertion proves a file that
+        arrives replaces that schedule with the arrived day.
+        """
         previous = {"day": "yesterday"}
         self.assertEqual(apply_file(previous, None), previous)
         self.assertEqual(apply_file(previous, {"day": "today"}), {"day": "today"})
@@ -312,6 +334,9 @@ This block replaces [work/tests/test_notify.py](work/tests/test_notify.py). It d
 
 Leave the packet shell unchanged. A failed notice stays queued.
 A notice that was sent stays queued too.
+
+The fixture is the word queued. sent is false on the first call
+and true on the later call. Both results have to stay queued.
 """
 
 import sys
@@ -324,8 +349,15 @@ from notify import notify
 
 
 class NotifyTests(unittest.TestCase):
+    """A queued notice stays queued whether or not it was sent."""
+
     def test_failed_notice_stays_queued(self) -> None:
-        """queued stays queued when sent is false and when it is true."""
+        """queued stays queued when sent is false and when it is true.
+
+        The first assertion proves a failed notice stays queued.
+        The later assertion proves a notice that was sent stays
+        queued too.
+        """
         self.assertEqual(notify("queued", False), "queued")
         self.assertEqual(notify("queued", True), "queued")
 

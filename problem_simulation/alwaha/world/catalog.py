@@ -1,4 +1,7 @@
-"""Specialties and hospitals the generators share. Ids stay stable on every profile."""
+"""Specialties and hospitals the generators share. Ids stay stable on every profile.
+
+HOSPITALS are the facility ids. SPECIALTIES are the specialty ids. GIVEN and FAMILY are the name parts the generators draw from. Profiles reuse these tuples so the ids stay the same on every seed.
+"""
 
 from __future__ import annotations
 

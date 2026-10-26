@@ -17,6 +17,7 @@ from router import route
 
 
 class RouterTests(unittest.TestCase):
+    """The shell router test. It expects the external model."""
     def test_router_uses_the_external_model(self) -> None:
         """Prod still leaves for the external model.
 

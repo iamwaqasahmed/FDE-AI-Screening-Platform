@@ -1,4 +1,7 @@
-"""chk-w4-rcp. A miss does not print a SAR figure."""
+"""chk-w4-rcp. A miss does not print a SAR figure.
+
+This check grades the proposal and the ranking helper. The client must be the organization, the ranking must not follow the dot-vote, dependencies must be named, and the roadmap must not open on the non-goal or the vendor bot. Metrics must name the second site and a problem, and must not contain the rejected figure. The two savings must be treated as one, and adoption must name the phone-only channel. A price figure is not printed. Gold is unused because the problems come from the pack.
+"""
 
 from __future__ import annotations
 
@@ -38,11 +41,19 @@ _PAIRS = (("p-waitlist", "identity"), ("p-dna", "identity"), ("p-status", "ident
 
 
 def _once(problems: list[str], item: str) -> None:
+    """Append the miss when that sentence is not already in the list.
+
+    Several probes can fail the same way, and the list should name each failure once.
+    """
     if item not in problems:
         problems.append(item)
 
 
 def _first_id(text: str) -> str:
+    """Return the problem id that appears earliest in the text, or an empty string when none appear.
+
+    The earliest position decides which id the section opens on.
+    """
     places = [(text.find(token), token) for token in _IDS if token in text]
     if not places:
         return ""
@@ -50,10 +61,18 @@ def _first_id(text: str) -> str:
 
 
 def _depends(body: str) -> bool:
+    """Return true when any dependency pair is both present in the body.
+
+    One pair is enough. The pairs are the ones that share a dependency in the proposal.
+    """
     return any(left in body and right in body for left, right in _PAIRS)
 
 
 def _proposal(text: str) -> list[str]:
+    """Return the proposal misses.
+
+    A banned sentence is recorded. The client section must name the organization. The ranking must say it is not the value model and must name a dependency pair. The roadmap must open on a real problem id other than the non-goal and the vendor bot. Metrics must name the second site and a problem id, and must not contain the rejected figure. The plan must say the savings are the same and must mention the call. Adoption must name the phone-only channel, the site, and readiness.
+    """
     problems: list[str] = []
     if banned(text):
         problems.append(BANNED)
@@ -64,9 +83,11 @@ def _proposal(text: str) -> list[str]:
         problems.append(DOT)
     if not _depends(ranking):
         problems.append(DEPEND)
+    # The roadmap must open on a real problem id, and that id must not be the non-goal or the vendor bot.
     if _first_id(section(text, "Roadmap").lower()) in {"", "p-triage", "vendor-bot"}:
         problems.append(ROADMAP)
     metrics = section(text, "Metrics").lower()
+    # Metrics must name the second site and a problem id, and must not contain the rejected figure.
     if "site-b" not in metrics or "70" in metrics or _first_id(metrics) == "":
         problems.append(METRICS)
     plan = section(text, "Plan").lower()
@@ -79,6 +100,10 @@ def _proposal(text: str) -> list[str]:
 
 
 def _rank(module, rows: list[dict]) -> list[str]:
+    """Return the roadmap miss when the module's first id is not one of the open ids.
+
+    A crash is the run miss. An empty result is not an open id.
+    """
     try:
         got = module.first(rows)
     except Exception:
@@ -89,6 +114,11 @@ def _rank(module, rows: list[dict]) -> list[str]:
 
 
 def rcp_problems(work: Path, pack: Path, gold: dict, canary: str) -> list[str]:
+    """Return the proposal misses.
+
+    Gold is discarded because the problem rows come from the pack. A planted token returns only the watermark. A missing proposal is its own miss. The note is graded, then the rank module is called. A crash of the import adds the harness miss.
+    """
+    # Gold is unused. The problem rows come from the pack. The caller still loads the release so a missing pack fails first.
     del gold
     if contains_canary(work, canary):
         return [WATERMARK]

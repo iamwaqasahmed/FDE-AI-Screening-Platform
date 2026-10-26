@@ -1,4 +1,17 @@
-"""Day 1 build, interviews, and checks."""
+"""Day 1 build, interviews, and checks.
+
+Guards the first release, the interview scorer, and the repo and interview checkers.
+
+The build tests keep the corpus causes, make sure one profile writes the same pack
+twice, and make sure two profiles do not share a watermark. The interview tests
+walk each persona's question tree and the command the learner runs. The check
+tests build a small work tree and then break it on purpose.
+
+The work-tree fixture copies the starter, adds the dev credential, fills the
+access request, and writes a winning question list plus a short note for the
+two personas the checker reads. A problem list must describe the failure without
+repeating a watermark or a banned sentence.
+"""
 
 from __future__ import annotations
 
@@ -22,6 +35,13 @@ from alwaha.corpus.texts import assistant_use
 
 
 def _fill_request(blank: str) -> str:
+    """Fill the blank access-request fields the checker expects.
+
+    The requester, the data, the purpose, and the classification are the fixture.
+    Only the first empty label of each field is replaced, so a second copy of the
+    label would stay blank.
+    """
+    # Fixture answers for the blank access request. They are not hidden release facts.
     values = {
         "Requester": "Noura Al-Qahtani",
         "Data": "dev credentials and the kickoff corpus",
@@ -35,6 +55,12 @@ def _fill_request(blank: str) -> str:
 
 
 def _notes(persona_id: str) -> str:
+    """A short note that attributes its lines to the persona and marks them as a claim
+    or a request.
+
+    The words are not a hidden fact. They exist so the checker has a note file to
+    grade, and so a later test can append a banned sentence to one of them.
+    """
     return "\n".join(
         [
             "| Who | Their words | Kind |",
@@ -47,10 +73,20 @@ def _notes(persona_id: str) -> str:
 
 
 class BuildTests(unittest.TestCase):
+    """Catches a corpus or a release that does not reproduce.
+
+    A dropped cause, a pack that changes when the same profile is written twice, or
+    a watermark that leaks from one profile into another, all fail here.
+    """
     def test_minutes_keep_the_causes(self) -> None:
+        """Fails when the minutes or the postmortem lose a cause the corpus is supposed to keep."""
         self.assertEqual(fact_problems(minutes(), postmortem()), [])
 
     def test_same_seed_matches_and_profiles_differ(self) -> None:
+        """Fails when the same profile writes two different packs, when the sample letter
+        carries the wrong watermark, or when the starter policy page drifts from the
+        corpus page that was copied into the pack.
+        """
         practice, small = load("practice"), load("small")
         self.assertNotEqual(practice.canary(), small.canary())
         with tempfile.TemporaryDirectory() as tmp:
@@ -67,18 +103,32 @@ class BuildTests(unittest.TestCase):
 
 
 class InterviewTests(unittest.TestCase):
+    """Catches an interview tree that opens too early, and a command that shows the score.
+
+    A winning script has to release every fact. A follow-up asked before its parent
+    must stay closed. The command the learner runs may speak the answer and must not
+    print a score or the hidden fact id.
+    """
     def test_winning_script_reaches_every_fact(self) -> None:
+        """Fails when the prepared question list leaves any persona's required fact unreleased."""
         for data in load_personas().values():
             result = score_turns(data, run(data, winning_questions(data)))
             self.assertTrue(result["ok"], data["id"])
 
     def test_follow_up_before_its_parent_stays_closed(self) -> None:
+        """Fails when a child question, asked on its own, still counts as a completed interview.
+
+        The parent has to be opened first. Keywords from the follow-up are not enough.
+        """
         data = load_personas()["cdo"]
         child = next(node for node in data["tree"] if node.parent)
         result = score_turns(data, run(data, [" ".join(child.keywords)]))
         self.assertFalse(result["ok"])
 
     def test_command_prints_no_score(self) -> None:
+        """Fails when the interview command hides the answer the persona would say, or when
+        it prints a score or the hidden fact id.
+        """
         data = load_personas()["cdo"]
         with tempfile.TemporaryDirectory() as tmp:
             script = Path(tmp) / "questions.txt"
@@ -93,7 +143,20 @@ class InterviewTests(unittest.TestCase):
 
 
 class CheckTests(unittest.TestCase):
+    """Catches a work tree the repo or interview checker mis-grades.
+
+    A complete fixture must pass. A watermark copied into a tracked file must fail
+    without the problem text echoing the watermark. An unfinished interview must
+    fail without naming the hidden template fact, and a banned sentence in a note
+    must fail without the problem text quoting that sentence.
+    """
     def setUp(self) -> None:
+        """Build a temporary small release and a work tree a finished learner would hand in.
+
+        The starter is copied, the dev credential is added, the access request is filled,
+        and two personas get a winning question file plus a short note. The persona
+        truth and the watermark come from the hidden side of that release.
+        """
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         write_release(load("small"), root / "pack", root / "truth")
@@ -113,13 +176,18 @@ class CheckTests(unittest.TestCase):
             (folder / f"{persona_id}.notes.md").write_text(_notes(persona_id), encoding="utf-8")
 
     def tearDown(self) -> None:
+        """Delete the temporary release and work tree created for this case."""
         self.tmp.cleanup()
 
     def test_good_work_passes(self) -> None:
+        """Fails when the finished fixture still produces a repo problem or an interview problem."""
         self.assertEqual(repo_problems(self.work, self.canary), [])
         self.assertEqual(interview_problems(self.work, self.personas), [])
 
     def test_canary_in_a_tracked_file_fails_without_echoing_it(self) -> None:
+        """Fails when a watermark pasted into the tracked readme is ignored, or when a
+        problem message contains the watermark itself.
+        """
         readme = self.work / "README.md"
         readme.write_text(readme.read_text(encoding="utf-8") + self.canary + "\n", encoding="utf-8")
         problems = repo_problems(self.work, self.canary)
@@ -127,6 +195,12 @@ class CheckTests(unittest.TestCase):
         self.assertTrue(all(self.canary not in item for item in problems))
 
     def test_incomplete_interview_and_banned_sentence(self) -> None:
+        """Fails in either direction the interview checker can leak.
+
+        An unfinished question file must be reported without naming the hidden template
+        fact. After that file is restored, a banned sentence in the other persona's note
+        must be reported without the problem list quoting the sentence.
+        """
         (self.work / "interviews" / "phc-lead.questions.txt").write_text("hello\n", encoding="utf-8")
         problems = interview_problems(self.work, self.personas)
         self.assertIn("phc-lead interview is incomplete", problems)

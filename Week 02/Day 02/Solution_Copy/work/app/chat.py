@@ -4,6 +4,10 @@ from __future__ import annotations
 
 
 def _escape(text: str) -> str:
+    """Return text that can be placed in the page.
+
+    Ampersands are replaced first, then the brackets, so a reply is shown as text and the replacements are not escaped a second time.
+    """
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
@@ -25,6 +29,10 @@ def home() -> str:
 
 
 def render(stored: dict, answer: dict | None = None) -> str:
+    """Return the patient chat page, or nothing for any other role.
+
+    An empty string keeps this page off a coordinator session. A patient sees the message form. A reply on the answer is escaped and shown, and a count on that answer is escaped and shown with it.
+    """
     if stored.get("role") != "patient":
         return ""
     extra = ""

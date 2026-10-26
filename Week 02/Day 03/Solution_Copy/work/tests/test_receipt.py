@@ -26,6 +26,7 @@ _SENT = "2027-01-19T09:00:00"
 
 
 class ReceiptTests(unittest.TestCase):
+    """The receipt follows the case clock and the switch."""
     def test_clock_and_switch(self) -> None:
         """Pending at the sent time, due after the move, pending when the switch is on.
 

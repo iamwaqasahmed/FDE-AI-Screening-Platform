@@ -1,4 +1,8 @@
-"""Public rows for rel-w3d5. Labels stay out of the pack."""
+"""Public rows for rel-w3d5.
+Labels stay out of the pack.
+
+before_public is the citation predictions a participant can see. before_labeled pairs each of those predictions with the in-force label for the checker. personal_public mixes citations and metric rows. stories names the work items, including the ones the proof will not build.
+"""
 
 from __future__ import annotations
 
@@ -8,17 +12,20 @@ UNAUTH = "circ-ramadan-unauth"
 
 
 def before_public() -> list[dict]:
+    """Return the citation predictions: several that already match, then one that cites the unauthorized document."""
     right = {"doc_id": IN_FORCE, "span": SPAN}
     wrong = {"doc_id": UNAUTH, "span": SPAN}
     return [right, right, right, right, wrong]
 
 
 def before_labeled() -> list[dict]:
+    """Return each public prediction beside the in-force label it should have matched."""
     label = {"doc_id": IN_FORCE, "span": SPAN}
     return [{"label": label, "pred": dict(row)} for row in before_public()]
 
 
 def personal_public() -> list[dict]:
+    """Return the personal citations and the metric rows, including one staff citation and one metric under its floor."""
     return [
         {"asker": "patient", "audience": "patient", "doc_id": IN_FORCE, "kind": "citation", "version": "v4"},
         {"asker": "patient", "audience": "staff", "doc_id": "prep-staff", "kind": "citation", "version": "v2"},
@@ -28,6 +35,7 @@ def personal_public() -> list[dict]:
 
 
 def stories() -> list[dict]:
+    """Return the work items, including the ones the proof will not build and the citation requirement it will."""
     return [
         {"story_id": "p-triage", "title": "Set clinical urgency"},
         {"story_id": "vendor-bot", "title": "Replace the contact center with the vendor bot"},

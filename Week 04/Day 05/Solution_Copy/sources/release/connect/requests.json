@@ -1,0 +1,20 @@
+{
+  "confirm": [
+    "bus",
+    "iam"
+  ],
+  "requests": [
+    {
+      "id": "cc",
+      "kind": "handoff"
+    },
+    {
+      "id": "bi",
+      "kind": "warehouse"
+    },
+    {
+      "id": "hr",
+      "kind": "leave"
+    }
+  ]
+}

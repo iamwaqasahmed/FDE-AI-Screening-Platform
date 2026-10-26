@@ -143,7 +143,7 @@ cd problem_simulation
 python -m alwaha.interview --persona ea --script "../Week 04/Day 04/Student_Copy/work/interviews/ea.questions.txt"
 ```
 
-You should see `Q1:`, `Q2:`, `Q3:`, and `Q4:`, each followed by `A:`. The command prints no score. The first answer says the strategy is real and the hospitals are not all on it. The second answer says site-b is the second private-cloud site and it takes over when site-a is down. The third answer says in-flight approvals live in the workflow store and they are not on the pod. The fourth answer says insure is a partner and it is not a site. You paste the notes in [chapter 08](08-the-pages.md). Do not type into [ea.notes.md](work/interviews/ea.notes.md) on this page. The question file is not the graded note.
+You should see `Q1:`, `Q2:`, `Q3:`, and `Q4:`, each followed by `A:`. The command prints no score. If the command says it cannot find the script, [chapter 01](01-setup.md) has not created `work/` yet. Run `prepare_work.py` from that chapter, then come back to this heading. The first answer says the strategy is real and the hospitals are not all on it. The second answer says site-b is the second private-cloud site and it takes over when site-a is down. The third answer says in-flight approvals live in the workflow store and they are not on the pod. The fourth answer says insure is a partner and it is not a site. You paste the notes in [chapter 08](08-the-pages.md). Do not type into [ea.notes.md](work/interviews/ea.notes.md) on this page. The question file is not the graded note.
 
 Stay on this page. The next heading is Interview finance.
 
@@ -156,7 +156,7 @@ cd problem_simulation
 python -m alwaha.interview --persona finance --script "../Week 04/Day 04/Student_Copy/work/interviews/finance.questions.txt"
 ```
 
-You should see `Q1:`, `Q2:`, and `Q3:`, each followed by `A:`. The command prints no score. The first answer says the line exists. The second answer says buying GPUs takes 16 weeks and renting them does not. The third answer says a GPU purchase started on this release misses 8 February 2027 and renting meets that date. You paste the notes in [chapter 08](08-the-pages.md). Do not type into [finance.notes.md](work/interviews/finance.notes.md) on this page. The question file is not the graded note.
+You should see `Q1:`, `Q2:`, and `Q3:`, each followed by `A:`. The command prints no score. If the command says it cannot find the script, [chapter 01](01-setup.md) has not created `work/` yet. Run `prepare_work.py` from that chapter, then come back to this heading. The first answer says the line exists. The second answer says buying GPUs takes 16 weeks and renting them does not. The third answer says a GPU purchase started on this release misses 8 February 2027 and renting meets that date. You paste the notes in [chapter 08](08-the-pages.md). Do not type into [finance.notes.md](work/interviews/finance.notes.md) on this page. The question file is not the graded note.
 
 This page is done when you have finished all ten items, the demo has printed two lines, and both interviews have printed `Q1:`. You have not pasted a file.
 

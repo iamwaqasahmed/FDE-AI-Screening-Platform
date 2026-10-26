@@ -4,6 +4,10 @@ from __future__ import annotations
 
 
 def render(stored: dict) -> str:
+    """Return the staff console page, or nothing for any other role.
+
+    An empty string keeps the console off a patient session. A coordinator sees that they are signed in and that booking is still a later day.
+    """
     if stored.get("role") != "coordinator":
         return ""
     return """<!DOCTYPE html>

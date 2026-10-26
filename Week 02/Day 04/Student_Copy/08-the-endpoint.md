@@ -159,6 +159,7 @@ from router import route
 
 
 class RouterTests(unittest.TestCase):
+    """The router stays on the private endpoint."""
     def test_router_uses_the_private_endpoint(self) -> None:
         """Prod and dev both name the private endpoint.
 
@@ -242,6 +243,7 @@ from secrets import credential
 
 
 class SecretTests(unittest.TestCase):
+    """Prod and dev read different credential files."""
     def setUp(self) -> None:
         """Write two stand-in credential files under a temporary pack."""
         self.tmp = tempfile.TemporaryDirectory()

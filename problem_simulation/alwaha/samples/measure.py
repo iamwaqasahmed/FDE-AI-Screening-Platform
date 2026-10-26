@@ -1,4 +1,7 @@
-"""Recompute the four printed baselines from a rel-w1d2 pack."""
+"""Recompute the four printed baselines from a rel-w1d2 pack.
+
+The pack's sample files are scored with the participant baseline modules. The result maps each problem id to the figure that baseline prints, and also keeps the row-split accuracy, the shared-person count, and the mean demand error.
+"""
 
 from __future__ import annotations
 
@@ -8,6 +11,10 @@ from alwaha.samples.script import load_baseline
 
 
 def measure_pack(pack: Path) -> dict[str, str | int]:
+    """Return the baseline figures for the sample files under this pack.
+
+    p-dna is the person split. dna_row is the row split. dna_shared is how many people cross that row split. p-status is the keyword share. p-bounce is the filled-letter count. p-forecast is the seasonal error, and demand_mean is the earlier-average error.
+    """
     dna = load_baseline("dna.py")
     messages = load_baseline("messages.py")
     letters = load_baseline("letters.py")

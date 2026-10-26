@@ -1,4 +1,8 @@
-"""Dev slices for rel-w3d2. Held-out rows stay in gold."""
+"""Dev slices for rel-w3d2.
+Held-out rows stay in gold.
+
+Development letters, messages, hours questions, domain notes, and the preference pair are the rows a participant can see. The held-out constants are read by gold, not by the pack builders.
+"""
 
 from __future__ import annotations
 
@@ -58,20 +62,25 @@ HELD_PREF = ("Book crit-ophth-v3 at the sugar clinic on 2027-03-10.", "Book crit
 
 
 def letters(rows: tuple[tuple[str, str], ...]) -> list[dict]:
+    """Return letter records from id-and-text pairs. The caller chooses the development or held-out pairs."""
     return [{"item_id": item_id, "text": text} for item_id, text in rows]
 
 
 def messages(rows: tuple[tuple[str, str, str], ...]) -> list[dict]:
+    """Return message records, keeping the intent that was stored beside each text."""
     return [{"intent": intent, "message_id": item_id, "text": text} for item_id, text, intent in rows]
 
 
 def hours() -> list[dict]:
+    """Return the hours questions. They are the retrieval task, not an intent class."""
     return [{"question_id": item_id, "text": text} for item_id, text in HOURS]
 
 
 def domain() -> list[dict]:
+    """Return the domain notes that say how the shorthand is expanded."""
     return [{"text": text} for text in DOMAIN]
 
 
 def dev_prefs() -> list[dict]:
+    """Return the development draft and the edited wording a participant can practice on."""
     return [{"draft": draft, "edited": edited} for draft, edited in DEV_PREFS]

@@ -149,6 +149,7 @@ _EXPECTED = {"thursday": "2027-01-24", "eid": "2027-03-15"}
 
 
 class CalendarTests(unittest.TestCase):
+    """The calendar cases, counted on the cluster week."""
     def test_pack_cases(self) -> None:
         """Each case id lands on the date the cluster week produces.
 

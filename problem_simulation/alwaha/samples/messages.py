@@ -1,4 +1,7 @@
-"""Patient messages. The intent stays out of the participant file."""
+"""Patient messages. The intent stays out of the participant file.
+
+BASE is the fixed message list, each row an id, a text, and an intent. One extra row is appended. An odd seed replaces that extra text with the other sentence. Both extras are labeled status, but only one of the two sentences contains the word the keyword baseline counts.
+"""
 
 from __future__ import annotations
 
@@ -22,8 +25,10 @@ BASE: tuple[tuple[str, str, str], ...] = (
 
 
 def message_rows(seed: int) -> list[dict[str, str]]:
+    """Return the message rows, including the seed-dependent extra status row."""
     extra = ("m16", "What is the status of my file?", "status")
     if seed % 2:
+        # Odd seeds use the other sentence. The intent label is still status.
         extra = ("m16", "Where did my referral go?", "status")
     rows = []
     for message_id, text, intent in (*BASE, extra):

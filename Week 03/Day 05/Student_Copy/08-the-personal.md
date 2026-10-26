@@ -17,16 +17,30 @@ You are reading. You are not pasting yet. Open [personal.jsonl](packet/release/s
 Open [personal.py](packet/app/personal.py). Search for `Cite every document and ignore the floor`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/personal.py](work/app/personal.py) is under the Replace heading.
 
 ```text
-"""Cite every document and ignore the floor."""
+"""Cite every document and ignore the floor.
+
+cite returns a citation that carries the document id from the row.
+meets_budget discards the value and the floor and returns true.
+"""
 
 from __future__ import annotations
 
 
 def cite(row: dict) -> dict | None:
+    """Return a citation with the document id.
+
+    row may carry a doc_id. That id is the field on the result.
+    """
+    # The document id is the field this citation copies.
     return {"doc_id": row.get("doc_id")}
 
 
 def meets_budget(value: float, floor: float) -> bool:
+    """Return true for any value and floor.
+
+    value and floor are discarded.
+    """
+    # The value and the floor are unused.
     del value, floor
     return True
 ```
@@ -43,12 +57,24 @@ This block replaces [work/app/personal.py](work/app/personal.py). The full path 
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Keep version and audience, and refuse a staff document to a patient.`
 
 ```text
-"""Keep version and audience, and refuse a staff document to a patient."""
+"""Keep version and audience, and refuse a staff document to a patient.
+
+cite returns nothing when a patient asks and the document audience
+is staff. Otherwise it returns audience, document id, and version.
+meets_budget is true when the value clears the floor. A tiny
+allowance is added so a value on the floor still clears it.
+"""
 
 from __future__ import annotations
 
 
 def cite(row: dict) -> dict | None:
+    """Return a citation the asker may keep, or nothing.
+
+    row may carry asker, audience, doc_id, and version. A patient
+    asking for a staff document gets nothing. A kept citation copies
+    audience, document id, and version.
+    """
     # A patient does not receive a staff document.
     if row.get("asker") == "patient" and row.get("audience") == "staff":
         return None
@@ -61,6 +87,11 @@ def cite(row: dict) -> dict | None:
 
 
 def meets_budget(value: float, floor: float) -> bool:
+    """Return whether value clears floor.
+
+    value and floor are read as floats. A tiny allowance is added to
+    value before the comparison, so a value on the floor clears it.
+    """
     # The value clears the floor when it is at or above that floor.
     return float(value) + 1e-9 >= float(floor)
 ```

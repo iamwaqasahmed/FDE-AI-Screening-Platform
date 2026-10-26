@@ -16,20 +16,36 @@ RELEASE = "rel-w3d2"
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _json(path: Path, payload: dict) -> None:
+    """Write one JSON value to the path.
+
+    Keys are sorted and the text ends with a newline. The text writer creates parent directories.
+    """
     _write(path, json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
 
 def _jsonl(path: Path, rows: list[dict]) -> None:
+    """Write the rows as JSON lines.
+
+    Each object has sorted keys and brings its own newline. No extra blank line is added after the last row.
+    """
     body = "".join(json.dumps(row, sort_keys=True) + "\n" for row in rows)
     _write(path, body)
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from the data protection office and says the ruling is signed.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w3d2
 
@@ -45,6 +61,10 @@ Files:
 
 
 def write_w3d2(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and its gold.
+
+    It writes the ruling, the registry, the quota, the price cap, the labeled slices, the domain rows, the preferences, the cloud fixture, the router interface, and the gold.
+    """
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
     _write(pack / "notices" / "ruling.md", ruling_note())

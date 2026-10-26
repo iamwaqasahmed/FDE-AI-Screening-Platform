@@ -17,11 +17,19 @@ RELEASE = "rel-w1d5"
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _copy_tree(source: Path, destination: Path) -> None:
+    """Copy a source tree onto the destination.
+
+    Caches are skipped. A missing source stops the release so a half-built pack is not left behind.
+    """
     if not source.is_dir():
         raise SystemExit(f"Missing {source}.")
     shutil.copytree(
@@ -33,6 +41,10 @@ def _copy_tree(source: Path, destination: Path) -> None:
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from the steering committee and points at the steering questions.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w1d5
 
@@ -48,6 +60,10 @@ Files:
 
 
 def write_day5(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and the day gold.
+
+    It writes the failure scenarios, their order, the steering page, and the templates. A missing template stops the release before anything is replaced.
+    """
     if not DAY5_TEMPLATES.is_dir():
         raise SystemExit("Day 5 template is missing.")
     reset(pack)

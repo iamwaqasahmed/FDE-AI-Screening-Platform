@@ -17,6 +17,7 @@ from health import health
 
 
 class HealthTests(unittest.TestCase):
+    """The shell health test. It expects the candidate hash."""
     def test_health_uses_the_candidate(self) -> None:
         """The body reports the candidate, not the registered row.
 

@@ -6,6 +6,10 @@ from alwaha.world.calendar import RETRY_LIMIT, WORKING_DAY_COUNT
 
 
 def criteria_docs() -> list[dict]:
+    """Return the criteria documents shipped in this pack.
+
+    One is in force and one is a draft of the same specialty, so the release can render both and the check can tell them apart.
+    """
     return [
         {
             "doc_id": "crit-endo-v3",

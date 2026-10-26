@@ -46,6 +46,10 @@ phrases:
 
 
 def catalog() -> dict:
+    """Return the tool catalog for the cluster server.
+
+    Each tool is named with its approval flag and whether it reads or writes, so the release page and the catalog file list the same tools.
+    """
     return {
         "server": "mcp-cluster",
         "tools": [
@@ -60,4 +64,8 @@ def catalog() -> dict:
 
 
 def catalog_page() -> str:
+    """Return the catalog as JSON text.
+
+    Keys are sorted and a newline is added so the file the release writes stays stable from run to run.
+    """
     return json.dumps(catalog(), indent=2, sort_keys=True) + "\n"

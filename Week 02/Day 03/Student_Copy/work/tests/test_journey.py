@@ -18,6 +18,7 @@ from schema import journey_ok
 
 
 class JourneyTests(unittest.TestCase):
+    """The shell journey. The sentence is the result. The state is ignored."""
     def test_sentence_books(self) -> None:
         """A sentence that says booked passes while booked is false.
 

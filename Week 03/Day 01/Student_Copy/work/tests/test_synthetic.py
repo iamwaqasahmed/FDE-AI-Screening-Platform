@@ -17,6 +17,7 @@ from synthetic import sample
 
 
 class SyntheticTests(unittest.TestCase):
+    """The shell sample test."""
     def test_real_letter_is_copied(self) -> None:
         """The first letter is the whole sample."""
         letter = {"text": "CANARY-x clerk-row"}

@@ -25,6 +25,7 @@ ITEMS = (
 
 
 class BudgetTests(unittest.TestCase):
+    """Uncertain items are bought until the budget stops."""
     def test_uncertain_items_stay_inside_the_budget(self) -> None:
         """Price 2 and budget 6 buy three items, highest uncertainty first."""
         self.assertEqual(spend(list(ITEMS), 2, 6), ["higher", "high", "mid"])

@@ -17,23 +17,39 @@ SAMPLE_MARKER = "SAMPLE-REFERRAL-ALWAHA"
 
 
 def reset(path: Path) -> None:
+    """Delete the directory when it exists, then create it empty.
+
+    A new pack must not keep a file from an earlier write.
+    """
     if path.exists():
         shutil.rmtree(path)
     path.mkdir(parents=True)
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _persona_page(data: dict) -> str:
+    """Return one persona as a markdown card.
+
+    The name, role, opening line, and goals are included so the pack page matches the interview card.
+    """
     card = data["card"]
     goals = "\n".join(f"- {goal}" for goal in card["goals"])
     return f"# {card['name']}\n\nRole: {card['role']}\n\n{card['says_first']}\n\nGoals:\n\n{goals}\n"
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is the kickoff. It says the dev credentials are watermarked and are not the full history.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w1d1
 
@@ -49,6 +65,10 @@ Files:
 
 
 def _truth_payload(personas: dict[str, dict], canary: str) -> dict:
+    """Return the facilitator copy of the personas.
+
+    Surface lines, banned lines, facts, the interview tree, and the profile marker are included so grading can use them without placing them in the participant pack.
+    """
     payload = {}
     for key, data in personas.items():
         payload[key] = {
@@ -67,6 +87,10 @@ def _truth_payload(personas: dict[str, dict], canary: str) -> dict:
 
 
 def copy_starter(destination: Path) -> None:
+    """Copy the starter tree onto the destination.
+
+    Caches are skipped so the pack contains the student starter and not a local cache.
+    """
     shutil.copytree(
         STARTER_ROOT,
         destination,
@@ -76,6 +100,10 @@ def copy_starter(destination: Path) -> None:
 
 
 def write_release(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and the facilitator directory.
+
+    It writes the corpus, the persona pages, the watermarked credentials, the starter, the readme, and the facilitator files. It stops if the starter is missing, if the corpus facts disagree, or if the copied policy does not match the corpus.
+    """
     if not STARTER_ROOT.is_dir():
         raise SystemExit(f"Starter template is missing at {STARTER_ROOT}.")
     minutes_text, postmortem_text = minutes(), postmortem()

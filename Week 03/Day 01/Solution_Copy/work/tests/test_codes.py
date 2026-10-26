@@ -19,6 +19,7 @@ from codes import clinic
 
 
 class CodeTests(unittest.TestCase):
+    """Endocrinology at h-wadi changes in June 2024."""
     def test_wadi_endo_changes_in_june_2024(self) -> None:
         """May keeps END-01. July at h-wadi is ENDO-CLN."""
         self.assertEqual(clinic("END-01", "2024-05-01", "h-wadi"), "END-01")

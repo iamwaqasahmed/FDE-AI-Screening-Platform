@@ -1,4 +1,7 @@
-"""Show a v1 his-wadi client fail, then the generated client succeed."""
+"""Show a v1 his-wadi client fail, then the generated client succeed.
+
+The starter client is loaded from W2D1_APP. A second client is rendered from the current spec into a temporary file and loaded from that path. Both clients read the same body. The page prints a fixed line for each result.
+"""
 
 from __future__ import annotations
 
@@ -15,8 +18,13 @@ from alwaha.serve.fhir import read
 
 
 def _load(path: Path, name: str):
+    """Load a module from a file path and return it.
+
+    name is the module name importlib records. A spec with no loader cannot be executed, so that case raises before exec_module.
+    """
     spec = importlib.util.spec_from_file_location(name, path)
     module = importlib.util.module_from_spec(spec)
+    # A spec with no loader has nothing to execute.
     if spec.loader is None:
         raise RuntimeError(name)
     spec.loader.exec_module(module)
@@ -24,6 +32,10 @@ def _load(path: Path, name: str):
 
 
 def main(argv: list[str] | None = None) -> None:
+    """Print the v1 result and the generated-client result. Returns nothing.
+
+    argv replaces the process arguments. The profile is loaded, the spec is rendered into a temporary client, and both clients read the same reference body. The printed lines name success or failure and do not print the body.
+    """
     parser = argparse.ArgumentParser(description="Read his-wadi with a v1 client, then a generated client.")
     parser.add_argument("--profile", default=None)
     args = parser.parse_args(argv)
@@ -42,4 +54,5 @@ def main(argv: list[str] | None = None) -> None:
 
 
 if __name__ == "__main__":
+    # A direct run prints the page. Importing this module does not.
     main(sys.argv[1:])

@@ -15,20 +15,36 @@ RELEASE = "rel-w2d3"
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _json(path: Path, payload: dict | list) -> None:
+    """Write one JSON value to the path.
+
+    Keys are sorted and the text ends with a newline. The text writer creates parent directories.
+    """
     _write(path, json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
 
 def _jsonl(path: Path, rows: list[dict]) -> None:
+    """Write the rows as JSON lines.
+
+    Each object has sorted keys. The file ends with a newline even when there are no rows, so the terminator is always there.
+    """
     lines = [json.dumps(row, sort_keys=True) for row in rows]
     _write(path, "\n".join(lines) + "\n")
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from the patient representative and points at receipt timing, the access clauses, and the scripts.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w2d3
 
@@ -44,6 +60,10 @@ Files:
 
 
 def write_w2d3(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and its gold.
+
+    It writes the timing notice, the clock guide, the access note, the interface documents, the clock and calendar data, the scripts, the model fixture, and the gold.
+    """
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
     _write(pack / "notices" / "timing.md", timing_note())

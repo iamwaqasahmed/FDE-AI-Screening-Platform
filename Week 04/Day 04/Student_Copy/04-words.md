@@ -1,6 +1,6 @@
 # 04 — Words
 
-[Chapter 03](03-the-drill.md) opened the files. This chapter names the words before a later chapter asks you to use them. You do not paste a file on this page. There is no heading that starts with Replace. You do not memorize the tables. Scan them, then go on. Come back to a row when a later chapter uses the word.
+[Chapter 03](03-the-drill.md) opened the files. This chapter names the words before a later chapter asks you to use them. You do not paste a file on this page. There is no heading that starts with Replace. You do not memorize the tables. Scan them, then go on. Do not open every link on this page. A later chapter opens the file when you need it. Come back to a row when that chapter uses the word.
 
 Do not copy a hash, a budget, a timeout, a week count, a date, or a price onto a page from the release files. The finished sentences in later chapters are the ones you paste.
 

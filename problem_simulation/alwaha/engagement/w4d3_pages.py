@@ -6,6 +6,10 @@ from alwaha.engagement.w4d3_rows import CASE_DATE
 
 
 def release_note(price: int, files: list[str]) -> str:
+    """Return the release note for the files it is given.
+
+    The token price is written into the note so the page matches the rate selected for this pack. Every pack file except the readme is listed.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w4d3
 

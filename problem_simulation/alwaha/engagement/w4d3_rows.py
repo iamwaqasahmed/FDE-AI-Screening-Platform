@@ -1,4 +1,8 @@
-"""Public rows for rel-w4d3. The cost budget stays out of the pack."""
+"""Public rows for rel-w4d3.
+The cost budget stays out of the pack.
+
+Throughput, today's rate, and the forecast move with the seed. registry lists the approved adapters. candidate is the unregistered lookalike. load_rows repeats the public text so a cache can answer the second copy without a new model call.
+"""
 
 from __future__ import annotations
 
@@ -22,19 +26,29 @@ ADAPTERS = ("lora-extract", "lora-intent", "lora-local")
 
 
 def _hash(seed: int, label: str) -> str:
+    """Return a hash of the seed and the label so two adapters cannot share a digest."""
     digest = hashlib.sha256(f"{seed}:{label}".encode()).hexdigest()[:16]
     return "sha256:" + digest
 
 
 def rates(seed: int) -> dict[str, int]:
+    """Return the price sheet for this seed, keyed by the price name."""
     return {row["key"]: int(row["sar"]) for row in price_rows(seed)}
 
 
 def today_rate(seed: int) -> int:
+    """Return today's external price.
+
+    It is the sheet price plus an offset that moves with the seed, so a plan still using the sheet price is not today's price.
+    """
     return rates(seed)["price.ext_large_per_1k"] + 1 + (seed % 7)
 
 
 def throughput(seed: int) -> dict:
+    """Return the speeds and the chat latency budget for this seed.
+
+    Batched local throughput is higher than unbatched. The starved chat latency sits past the budget. The reserved chat latency sits inside it.
+    """
     unbatched = 20 + (seed % 41)
     batched = 80 + (seed % 121)
     budget_ms = 500 + (seed % 401)
@@ -51,6 +65,7 @@ def throughput(seed: int) -> dict:
 
 
 def forecast(profile: Profile) -> dict:
+    """Return the campaign forecast, including the GPU quota this profile shares with chat."""
     return {
         "backlog_referrals": BACKLOG,
         "campaign": "eye-screening",
@@ -65,6 +80,7 @@ def forecast(profile: Profile) -> dict:
 
 
 def price_today(seed: int) -> dict:
+    """Return today's external price as a sheet row that replaces the previous external price."""
     sheet = rates(seed)
     return {
         "key": "price.ext_large_per_1k",
@@ -75,6 +91,7 @@ def price_today(seed: int) -> dict:
 
 
 def _adapter(name: str, digest: str) -> dict:
+    """Return an approved private-zone adapter pinned to the local base."""
     return {
         "base": "local-small",
         "hash": digest,
@@ -85,6 +102,7 @@ def _adapter(name: str, digest: str) -> dict:
 
 
 def registry(profile: Profile) -> dict:
+    """Return the three approved adapters. The local one reuses the earlier adapter hash."""
     return {
         "models": [
             _adapter("lora-extract", _hash(profile.seed, "w4d3-lora-extract")),
@@ -95,10 +113,15 @@ def registry(profile: Profile) -> dict:
 
 
 def candidate(profile: Profile) -> dict:
+    """Return the unregistered lookalike. Its id resembles a local model, and its hash is not registered."""
     return {"hash": _hash(profile.seed, "w4d3-lookalike"), "id": CANDIDATE_ID, "status": "unregistered"}
 
 
 def load_rows() -> list[dict]:
+    """Return the work mix: a chat row, a batch row, and the public text twice.
+
+    The public text is repeated so a cache can answer the second copy without another model call.
+    """
     return [
         {"adapter": "lora-intent", "id": "chat-1", "kind": "chat", "phi": True, "text": "Where is my referral?"},
         {"adapter": "lora-extract", "id": "batch-1", "kind": "batch", "phi": True, "text": "Referral letter."},
@@ -108,4 +131,5 @@ def load_rows() -> list[dict]:
 
 
 def public_cache() -> dict:
+    """Return the stored body for the public id. A hit on this id does not call the model."""
     return {PUBLIC_ID: PUBLIC_BODY}

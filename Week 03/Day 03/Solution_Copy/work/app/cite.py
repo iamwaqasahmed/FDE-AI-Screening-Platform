@@ -10,6 +10,10 @@ from search import rank
 
 
 def answer(question: dict, docs: list[dict]) -> dict:
+    """Return a citation the asker may see, or a refusal.
+
+    A specialty question binds criteria for the start day, or the case date when the start day is absent. Nothing bound returns a no-document refusal. A bound document the asker cannot see returns an audience refusal. With no specialty, the first in-force span the asker may see is cited, or the same no-document refusal when none remains.
+    """
     # A specialty question binds the criteria for the start day, or the case date.
     if question.get("specialty"):
         chosen = criteria(docs, question["specialty"], question.get("started") or question["case_date"])
@@ -28,6 +32,10 @@ def answer(question: dict, docs: list[dict]) -> dict:
 
 
 def _visible(question: dict, docs: list[dict]) -> list[dict]:
+    """Return in-force spans this asker may see that carry a question code.
+
+    Hybrid rank supplies the order. A span that is not in force, or that this asker cannot see, is dropped. A span whose vector contains none of the question codes is dropped.
+    """
     query_codes = codes(question["text"])
     kept = []
     for chunk in rank(question["text"], build(docs), "hybrid"):
@@ -42,6 +50,10 @@ def _visible(question: dict, docs: list[dict]) -> list[dict]:
 
 
 def _cite(doc: dict) -> dict:
+    """Return the citation fields for one document.
+
+    The span is the clause id. Audience, document id, status, and version travel with it so the citation can be checked without the rest of the document. A missing text field is empty, and a missing version is zero.
+    """
     # The span is the clause id. The other fields travel with the citation.
     return {
         "audience": doc.get("audience", ""),

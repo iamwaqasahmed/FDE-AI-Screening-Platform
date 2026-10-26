@@ -1,4 +1,7 @@
-"""Facility ids and zones. No people, and no planted defects."""
+"""Facility ids and zones. No people, and no planted defects.
+
+ZONES names the hospital data centers, the private cloud, and the public cloud. The private zone lists its practice sites. The public zone names the external hold. SITES gives each hospital and primary-care clinic an id, a display name, and a zone. Community clinics use the community label. DISTRICTS are district ids, and they carry no people.
+"""
 
 from __future__ import annotations
 

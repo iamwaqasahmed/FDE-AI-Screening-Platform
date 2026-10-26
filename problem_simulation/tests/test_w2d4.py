@@ -1,4 +1,14 @@
-"""Day 4 of Week 2: the release, the register, and the root-image demo."""
+"""Day 4 of Week 2: the release, the register, and the root-image demo.
+
+Guards the deploy release, the model register, and the root-image demo.
+
+Earlier days must survive the write. Prose and the deploy notice must not
+contain the hashes, the tokens, the national id, the watermark, or the quota.
+Those values may live in the register and the log fixture. The demo may reject
+a root image and accept a registered one without printing a secret. The security
+interview must release the log fact. Both the filled suite and the shell suite
+must pass, because the shell tests are still green on purpose.
+"""
 
 from __future__ import annotations
 
@@ -29,6 +39,7 @@ from alwaha.release.w2d3 import write_w2d3
 from alwaha.release.w2d4 import write_w2d4
 from alwaha.release.write import write_release
 
+# Security-officer script. The last turn is the one that should release the log fact.
 _CISO = [
     "Is the security review booked at the end?",
     "Which go-live checklist does gate G4 use?",
@@ -37,6 +48,7 @@ _CISO = [
 
 
 def _canary_count(pack: Path, canary: str) -> int:
+    """Count watermark hits across every file in a pack."""
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -45,6 +57,10 @@ def _canary_count(pack: Path, canary: str) -> int:
 
 
 def _prose(pack: Path) -> str:
+    """Join the markdown and the manifest files in a pack.
+
+    Secrets are forbidden in prose even when a fixture file is allowed to hold them.
+    """
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file() and path.suffix in {".md", ".yaml", ".yml"}:
@@ -53,6 +69,9 @@ def _prose(pack: Path) -> str:
 
 
 def _secrets(hidden: dict, canary: str) -> list[str]:
+    """The hidden values this day's prose must not print: the three image hashes, both
+    tokens, the national id, and the watermark.
+    """
     return [
         hidden["approved_hash"],
         hidden["previous_hash"],
@@ -65,7 +84,11 @@ def _secrets(hidden: dict, canary: str) -> list[str]:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites an earlier day or that prints a deploy secret in prose."""
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or gold file changes,
+        or when this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -112,6 +135,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w2d4" / "w2d4_gold.json").exists())
 
     def test_profiles_differ_by_canary(self) -> None:
+        """Fails when either watermark is missing, repeated, or shared, or when the
+        fingerprints match.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -122,6 +148,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(root / "practice"), fingerprint(root / "small"))
 
     def test_notice_keeps_the_secrets_out(self) -> None:
+        """Fails when prose or the notice contains a secret or the quota, when the register
+        loses the approved hash, when the log fixture loses the national id, or when
+        the watermark is not exactly once in the pack and absent from the gold file.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -143,7 +173,13 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo or a lesson that prints a secret, a trap file that was not
+    changed, or a packet suite that does not pass.
+    """
     def test_demo_rejects_root_without_the_hash(self) -> None:
+        """Fails when the demo does not reject the root image and accept the registered
+        one, or when it prints a secret or the quota.
+        """
         profile = load("practice")
         hidden = gold(profile)
         stdout = StringIO()
@@ -156,6 +192,7 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(str(hidden["quota"]), text)
 
     def test_notes_do_not_name_the_secrets(self) -> None:
+        """Fails when lesson notes or templates contain a secret or the quota."""
         notes = [path.read_text(encoding="utf-8") for path in W2D4_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W2D4_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -166,6 +203,10 @@ class DemoTests(unittest.TestCase):
         self.assertIsNone(re.search(rf"(?<!\d){hidden['quota']}(?!\d)", lesson_text))
 
     def test_only_the_trap_modules_differ(self) -> None:
+        """Fails when an app module, a packet test, the image file, the manifest, or the
+        pipeline is identical in the shell and the filled copy. This day changes all
+        of them.
+        """
         for source in W2D4_APP.glob("*.py"):
             copy = W2D4_WORK / "app" / source.name
             self.assertNotEqual(source.read_bytes(), copy.read_bytes(), source.name)
@@ -188,6 +229,9 @@ class DemoTests(unittest.TestCase):
         )
 
     def test_ciso_releases_the_log(self) -> None:
+        """Fails when the review question releases a fact too early, or when the checklist
+        and the engine-log facts do not surface. The log answer must name the change.
+        """
         turns = run(load_personas()["ciso"], _CISO)
         self.assertEqual(turns[0]["released"], [])
         self.assertIn("review", turns[0]["answer"].lower())
@@ -197,6 +241,7 @@ class DemoTests(unittest.TestCase):
         self.assertIn("CHG-2025-118", turns[2]["answer"])
 
     def test_filled_suite_passes(self) -> None:
+        """Fails when the filled packet's own unit tests do not pass."""
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
             cwd=W2D4_WORK,
@@ -207,6 +252,11 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
 
     def test_shell_suite_passes(self) -> None:
+        """Fails when the unfinished packet's own unit tests do not pass.
+
+        Those tests are still green. The traps are caught by the deploy checker, not
+        by the shell suite.
+        """
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
             cwd=W2D4_ROOT / "Student_Copy" / "packet",

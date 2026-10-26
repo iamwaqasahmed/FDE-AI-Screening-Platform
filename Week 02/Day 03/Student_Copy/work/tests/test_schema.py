@@ -18,6 +18,7 @@ from schema import schema_ok
 
 
 class SchemaTests(unittest.TestCase):
+    """The shell schema. A sentence is required. Intent is ignored."""
     def test_sentence_is_required(self) -> None:
         """A sentence passes. An empty sentence fails, even with intent.
 

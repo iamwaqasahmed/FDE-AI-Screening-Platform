@@ -1,4 +1,15 @@
-"""Reply fields. A count is the tool result, or empty when status was not called."""
+"""Reply fields.
+
+A count is the tool result, or empty when status was not called.
+
+Row builders for the patient agent. The checks copy this file with the model.
+
+reply is the small object inside a row. row is the full scenario result the
+checker compares. A count stays empty unless a status tool returned one, which
+is how an invented count is distinguished from a tool count. Lists default to
+empty and flags default to false so a skipped tool is not confused with a tool
+that ran.
+"""
 
 from __future__ import annotations
 
@@ -10,6 +21,12 @@ def reply(
     facility_id: str = "",
     constraint: str = "",
 ) -> dict:
+    """Build the reply object.
+
+    The count is left empty when status was not called. Facility and constraint
+    stay blank unless the caller has one. The text is whatever the caller decided
+    to say. This builder does not invent a count.
+    """
     return {
         "intent": intent,
         "text": text,
@@ -34,6 +51,11 @@ def row(
     preference_used: bool = False,
     decisions: int = 0,
 ) -> dict:
+    """Build one scenario result.
+
+    Omitted citations, traces, and approval lists stay empty. Omitted flags stay
+    false. The checker uses those empties to see which tools the agent did not call.
+    """
     return {
         "scenario": scenario,
         "reply": reply_body,

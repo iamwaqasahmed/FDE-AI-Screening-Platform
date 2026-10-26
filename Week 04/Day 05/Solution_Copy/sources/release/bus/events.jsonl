@@ -1,0 +1,2 @@
+{"disposition": "kept", "id": "evt-extra", "session": "ses-2", "topic": "session.cancelled"}
+{"id": "evt-cancel", "session": "ses-1", "topic": "session.cancelled"}

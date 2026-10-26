@@ -1,9 +1,20 @@
-"""Accept a patient or a staff role named in the identity note."""
+"""Accept a patient or a staff role named in the identity note.
+
+A patient with an assurance level opens the chat. A role listed under
+the staff heading in that note opens the console. A service token
+opens neither. This file enforces those states.
+"""
 
 from __future__ import annotations
 
 
 def staff_roles(note: str) -> tuple[str, ...]:
+    """Read the bullet list that follows the staff heading.
+
+    Collection starts on the heading line and stops at the next
+    heading. Each bullet is one role. The check signs one of those
+    roles in and expects the console. It does not print the list.
+    """
     roles: list[str] = []
     collecting = False
     for line in note.splitlines():
@@ -19,6 +30,13 @@ def staff_roles(note: str) -> tuple[str, ...]:
 
 
 def actors(text: str) -> dict[str, dict[str, str]]:
+    """Read the identity spec into one record per actor name.
+
+    Each record keeps sub, role, and loa. flow.sign_in stores those
+    three, plus the sub again as the session id. The home page only
+    offers the patient and the coordinator. The check also tries roles
+    that have no button.
+    """
     found: dict[str, dict[str, str]] = {}
     current = ""
     for line in text.splitlines():
@@ -36,6 +54,13 @@ def actors(text: str) -> dict[str, dict[str, str]]:
 
 
 def open_for(token: dict, note: str) -> str:
+    """Return chat, console, or an empty string when the token is refused.
+
+    A service role, and the integration subject, are refused before
+    the patient test. A patient needs an assurance level. Any other
+    role must appear in the identity note. Anything else is refused.
+    An empty string is the refusal. The caller treats that as no page.
+    """
     role = str(token.get("role", ""))
     subject = str(token.get("sub", ""))
     if role == "service" or subject == "svc-integration":

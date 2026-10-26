@@ -245,6 +245,7 @@ from labels import relabel
 
 
 class LabelTests(unittest.TestCase):
+    """A phone photo and a retina note follow ann-v2."""
     def test_photo_and_retina_follow_ann_v2(self) -> None:
         """Phone and retina in the text override the clerk fields."""
         row = {"item_id": "h1", "source_type": "scan", "sub_specialty": "", "text": "Phone photo from the retina service."}
@@ -330,6 +331,7 @@ from synthetic import sample
 
 
 class SyntheticTests(unittest.TestCase):
+    """The sample keeps the rare class and drops the real letter."""
     def test_rare_class_has_no_real_id(self) -> None:
         """The invented rows do not repeat the letter, and two name retina."""
         rows = sample([{"text": "clerk-row CANARY-x"}], {"rare_sub_specialty": "retina"})
@@ -410,6 +412,7 @@ from scan import accept
 
 
 class ScanTests(unittest.TestCase):
+    """A mark or a listed token is refused. A clean line is accepted."""
     def test_watermark_and_national_id_are_refused(self) -> None:
         """The mark and a listed token fail. A clean sentence passes."""
         self.assertFalse(accept("CANARY-x", ["clerk-row"]))

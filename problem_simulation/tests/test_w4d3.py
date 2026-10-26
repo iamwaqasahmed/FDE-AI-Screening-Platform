@@ -1,4 +1,16 @@
-"""Day 3 of Week 4: the surge forecast, the new external price, and the referral batch."""
+"""Day 3 of Week 4: the surge forecast, the new external price, and the referral batch.
+
+Guards the surge release, the new external price, and the referral batch.
+
+The previous incident day must survive the write. Spend figures must stay out
+of the learner pack, while the readme may name today's price and the price key.
+Profiles must differ in throughput and in price. The new price must be the
+higher one, the external rate must beat the batched local rate, and the batched
+rate must beat the unbatched rate and fit the window. The unregistered candidate
+must stay out of the adapter list. The finance and warehouse interviews must
+reach the price and the campaign. The demo may show the missed window and must
+not print the price or the backlog. Both suites must pass.
+"""
 
 from __future__ import annotations
 
@@ -24,20 +36,24 @@ from alwaha.release.fingerprint import fingerprint
 from alwaha.release.w4d2 import write_w4d2
 from alwaha.release.w4d3 import write_w4d3
 
+# Finance script. One of these turns should release today's price.
 _FINANCE = [
     "Is there a budget line for the spend?",
     "Where are the SMS and label prices on the sheet?",
     "Does today's external price replace yesterday's?",
 ]
+# Warehouse-lead script. The forecast turn should release the campaign backlog.
 _BI = [
     "Did the wait dashboard improve?",
     "Is the forecast backlog the eye-screening campaign?",
 ]
+# Shell modules that must differ from the filled copy.
 _APP = ("adapters.py", "batch.py", "route.py", "public.py", "quota.py", "scale.py", "price.py", "capacity.py")
 _TEXT = {".md", ".py", ".yml", ".yaml", ".json", ".txt"}
 
 
 def _blob(pack: Path) -> str:
+    """Join every file in a pack so a spend figure cannot hide outside the readme."""
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file():
@@ -46,6 +62,7 @@ def _blob(pack: Path) -> str:
 
 
 def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
+    """Run a packet's own unit tests and return the process result without raising."""
     return subprocess.run(
         [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
         cwd=folder,
@@ -56,7 +73,13 @@ def _suite(folder: Path) -> subprocess.CompletedProcess[str]:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites the previous day, leaks a spend figure, or serves
+    an unregistered adapter.
+    """
     def test_same_seed_matches_and_day_2_stays(self) -> None:
+        """Fails when a second write disagrees, when the previous pack changes, or when
+        this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -71,6 +94,11 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w4d3" / "w4d3_gold.json").exists())
 
     def test_profiles_differ_and_the_budget_stays_out(self) -> None:
+        """Fails when a spend figure leaks into a pack, when the two profiles match, or
+        when the serving rules disagree with the gold file. The forecast must be the
+        eye-screening backlog, chat latency must stay inside its budget only when it
+        is reserved, and the candidate must be unregistered.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -130,6 +158,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertIn("2027-02-02", note)
 
     def test_the_interviews_reach_the_price_and_the_campaign(self) -> None:
+        """Fails when finance does not release today's price, when that persona's required
+        facts changed, or when the warehouse lead does not release the campaign backlog.
+        """
         finance = run(load_personas()["finance"], _FINANCE)
         released = [fact_id for turn in finance for fact_id in turn["released"]]
         self.assertIn("price-today", released)
@@ -139,6 +170,9 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(released, ["campaign-backlog"])
 
     def test_demo_prints_the_missed_window(self) -> None:
+        """Fails when the demo does not show the window and the cold start, or when it
+        prints the new price, the backlog, or the watermark.
+        """
         profile = load("practice")
         stdout = StringIO()
         with redirect_stdout(stdout):
@@ -151,6 +185,9 @@ class ReleaseTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_state_the_canary_or_the_price(self) -> None:
+        """Fails when a lesson or packet source contains the watermark or a model hash, or
+        when a lesson page contains a spend figure or a bare price.
+        """
         release_trees = (
             W4D3_ROOT / "Student_Copy" / "packet" / "release",
             W4D3_ROOT / "Solution_Copy" / "sources",
@@ -180,6 +217,7 @@ class ReleaseTests(unittest.TestCase):
             self.assertIsNone(re.search(rf"(?<!\d){shown[key]}(?!\d)", prose))
 
     def test_modules_differ_and_both_copies_pass(self) -> None:
+        """Fails when a shell module matches the filled copy, or when either suite fails."""
         for name in _APP:
             shell = (W4D3_APP / name).read_bytes()
             filled = (W4D3_WORK / "app" / name).read_bytes()

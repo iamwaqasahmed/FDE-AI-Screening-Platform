@@ -25,24 +25,43 @@ Open [calibration.jsonl](packet/release/slices/calibration.jsonl). Search for `c
 1. [judge.py](packet/app/judge.py). Search for `when it is fluent`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/judge.py](work/app/judge.py) is under the Replace heading for this file.
 
 ```text
-"""Mark a citation correct when it is fluent."""
+"""Mark a citation correct when it is fluent.
+
+mark returns the fluent field. A fluent item is a pass. A missing
+fluent field is not a pass.
+"""
 
 from __future__ import annotations
 
 
 def mark(item: dict) -> bool:
+    """Return whether the item is fluent.
+
+    item is a citation record. The flag is the fluent field.
+    """
+    # The fluent field is the mark.
     return bool(item.get("fluent"))
 ```
 
 2. [gate.py](packet/app/gate.py). Search for `Accept a citation when it is fluent`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/gate.py](work/app/gate.py) is under the Replace heading for this file.
 
 ```text
-"""Accept a citation when it is fluent."""
+"""Accept a citation when it is fluent.
+
+accepts returns the fluent flag. A fluent item is accepted. A
+missing flag is rejected.
+"""
 
 from __future__ import annotations
 
 
 def accepts(item: dict) -> bool:
+    """Return whether the item is fluent.
+
+    item is a citation record. The flag is the fluent field. A
+    missing fluent field is false.
+    """
+    # The fluent field is the decision.
     return bool(item.get("fluent"))
 ```
 
@@ -77,12 +96,19 @@ This block replaces [work/app/judge.py](work/app/judge.py). The full path is `We
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Mark a citation with the calibration label."""
+"""Mark a citation with the calibration label.
+
+mark returns the pass field. A missing pass field is not a pass.
+"""
 
 from __future__ import annotations
 
 
 def mark(item: dict) -> bool:
+    """Return the calibration label.
+
+    item is a citation record. The label is the pass field.
+    """
     # The calibration label is the pass field.
     return bool(item.get("pass"))
 ```
@@ -99,12 +125,21 @@ This block replaces [work/app/gate.py](work/app/gate.py). The full path is `Week
 4. Paste. Save. The sentence under the block names what to search for. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS.
 
 ```text
-"""Reject a fluent citation that the calibration label marks wrong."""
+"""Reject a fluent citation that the calibration label marks wrong.
+
+accepts returns the calibration label. A false label is rejected.
+A true label is accepted. A missing label is rejected.
+"""
 
 from __future__ import annotations
 
 
 def accepts(item: dict) -> bool:
+    """Return the calibration label on the item.
+
+    item is a citation record. The label is the pass field. A missing
+    pass field is false.
+    """
     # The regression follows the calibration label.
     return bool(item.get("pass"))
 ```

@@ -1,4 +1,7 @@
-"""Patient and staff tokens for the dev identity provider."""
+"""Patient and staff tokens for the dev identity provider.
+
+discovery() returns the issuer, the token endpoint, and the staff role names. token() returns a copy of the actor record, or raises KeyError when the actor is not in the dev directory. The HTTP layer turns that KeyError into a not-found response.
+"""
 
 from __future__ import annotations
 
@@ -17,6 +20,10 @@ _ACTORS = {
 
 
 def discovery() -> dict:
+    """Return the issuer, the token endpoint, and the staff roles.
+
+    Patient actors are issued by token() and are not listed in this discovery document.
+    """
     return {
         "issuer": ISSUER,
         "token_endpoint": ISSUER + "/token",
@@ -25,6 +32,11 @@ def discovery() -> dict:
 
 
 def token(actor: str) -> dict:
+    """Return a copy of the actor record.
+
+    An unknown actor raises KeyError so this module stays free of HTTP status codes. The caller maps that error to a not-found response.
+    """
+    # KeyError is the unknown-actor signal. A missing actor is not given a token.
     if actor not in _ACTORS:
         raise KeyError(actor)
     return dict(_ACTORS[actor])

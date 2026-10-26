@@ -1,4 +1,8 @@
-"""Patient chat and staff console on one process."""
+"""Patient chat and staff console on one process.
+
+Chat and the staff console are routes on this process. Health, sign-in,
+and the status reply are routes on it too. Leave this file unchanged.
+"""
 
 from __future__ import annotations
 
@@ -17,16 +21,31 @@ import session
 
 
 class Handler(BaseHTTPRequestHandler):
+    """One request handler for health, the two pages, sign-in, and chat.
+
+    loaded is the pack flow.load_pack returned. db_path is the session
+    database. database_connection is opened on the first request and
+    reused. log_message is silent so a waiting server prints nothing.
+    """
+
     loaded: dict = {}
     db_path: Path = Path("sessions.db")
     database_connection = None
 
     def database(self):
+        """Open the session database once, then return the same connection."""
         if self.database_connection is None:
             Handler.database_connection = session.connect(self.db_path)
         return self.database_connection
 
     def do_GET(self) -> None:
+        """Serve health, the home page, the chat, and the console.
+
+        /health and /v1/health return contract.health. / is the sign-in
+        page. /chat requires a patient session. /console requires a
+        coordinator session. Anything else is 404. A missing session
+        is 401 and the body is Sign in.
+        """
         if self.path in {"/health", "/v1/health"}:
             self._json(contract.health())
             return
@@ -50,6 +69,12 @@ class Handler(BaseHTTPRequestHandler):
         self._text(404, "Not found")
 
     def do_POST(self) -> None:
+        """Sign in, hold an approval, or answer a chat message.
+
+        /sign-in reads the actor button. /v1/approvals/ returns the
+        approval object for the id on the path. /v1/chat accepts JSON
+        or a form. A form with no cookie is 401. Other paths are 404.
+        """
         length = int(self.headers.get("Content-Length", "0"))
         raw = self.rfile.read(length)
         if self.path == "/sign-in":
@@ -75,9 +100,17 @@ class Handler(BaseHTTPRequestHandler):
         self._html(chat.render(stored, self._answer(stored["session_id"], message)))
 
     def log_message(self, format: str, *args: object) -> None:
+        """Stay quiet. A running server looks idle until you stop it."""
         return
 
     def _sign_in(self, form: dict) -> None:
+        """Look up the actor, write the session, and redirect to the page.
+
+        An unknown actor, or a token auth.py refuses, is 403 Refused.
+        A patient is sent to /chat. Anyone else who was accepted is
+        sent to /console. The cookie is alwaha_session and its value
+        is the token subject. The browser follows the redirect.
+        """
         actor = form.get("actor", [""])[0]
         token = self.loaded["actors"].get(actor)
         if token is None:
@@ -96,15 +129,23 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def _answer(self, session_id: str, message: str) -> dict:
+        """Answer as the patient, or refuse the read when the role is not patient.
+
+        A missing session or a staff session still gets a reply object,
+        with the read marked failed. A patient session calls
+        flow.status_answer, which reads his-wadi and then the status tool.
+        """
         stored = self._by_id(session_id)
         if stored is None or stored["role"] != "patient":
             return contract.reply(message, self.loaded["row"], False)
         return flow.status_answer(self.loaded["spec"], self.loaded["row"], message)
 
     def _stored(self) -> dict | None:
+        """Return the session row for the cookie, or None."""
         return self._by_id(self._session_id())
 
     def _by_id(self, session_id: str) -> dict | None:
+        """Find one session row by its session id."""
         if not session_id:
             return None
         for row in session.rows(self.database()):
@@ -113,6 +154,7 @@ class Handler(BaseHTTPRequestHandler):
         return None
 
     def _session_id(self) -> str:
+        """Read alwaha_session from the Cookie header, or return an empty string."""
         for part in self.headers.get("Cookie", "").split(";"):
             name, _, value = part.strip().partition("=")
             if name == "alwaha_session":
@@ -120,6 +162,7 @@ class Handler(BaseHTTPRequestHandler):
         return ""
 
     def _json(self, payload: dict) -> None:
+        """Send a JSON body with status 200."""
         body = json.dumps(payload).encode()
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
@@ -128,6 +171,7 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def _html(self, text: str) -> None:
+        """Send an HTML body with status 200."""
         body = text.encode()
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
@@ -136,6 +180,7 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def _text(self, status: int, text: str) -> None:
+        """Send a short plain-text error. status is 401, 403, or 404."""
         body = text.encode()
         self.send_response(status)
         self.send_header("Content-Type", "text/plain; charset=utf-8")
@@ -145,6 +190,11 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def serve(pack: Path, db_path: Path, host: str, port: int) -> HTTPServer:
+    """Load the pack, point the handler at the database, and bind the port.
+
+    The checks call this with port 0 so the operating system picks a
+    free port. The command line uses the default port when none is passed.
+    """
     Handler.loaded = flow.load_pack(pack)
     Handler.db_path = db_path
     Handler.database_connection = None
@@ -152,6 +202,12 @@ def serve(pack: Path, db_path: Path, host: str, port: int) -> HTTPServer:
 
 
 def main(argv: list[str] | None = None) -> None:
+    """Serve until the terminal is stopped.
+
+    --pack is required. --db defaults to sessions.db in the current
+    folder. --host defaults to every interface. --port defaults to 8080.
+    This call does not return.
+    """
     parser = argparse.ArgumentParser(description="Serve the patient chat and the staff console.")
     parser.add_argument("--pack", required=True)
     parser.add_argument("--db", default="sessions.db")

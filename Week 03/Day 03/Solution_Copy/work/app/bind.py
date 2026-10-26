@@ -9,6 +9,10 @@ _V4 = {"card", "endo", "ophth"}
 
 
 def _covers(doc: dict, day: str) -> bool:
+    """Return whether the day sits inside the document window.
+
+    A day before the effective date is outside. A day on or after sunset is outside. An empty bound does not close that side.
+    """
     effective = doc.get("effective") or ""
     sunset = doc.get("sunset") or ""
     # A day before the effective date is outside the window.
@@ -21,6 +25,10 @@ def _covers(doc: dict, day: str) -> bool:
 
 
 def criteria(docs: list[dict], specialty: str, started: str) -> dict:
+    """Return the criteria document that covers this start day.
+
+    For a specialty in the v4 set, an in-force v4 that covers the day wins. Otherwise a v3 that is in force or superseded, and that covers the day, wins. Nothing that covers the day returns an empty mapping so the caller can refuse.
+    """
     rows = [doc for doc in docs if doc.get("specialty") == specialty]
     # For the three specialties, an in-force v4 that covers the start day wins.
     if specialty in _V4:

@@ -45,7 +45,7 @@ On Windows, the file sometimes saves as `sprint.md.txt`. In File Explorer, open 
 
 Open [work/sprint.md](work/sprint.md). Six numbered lines. The drill comes first, then the replicas, then the failover, then the breaker, then the patient view, then the trade-off. The five owners are on the last paragraph. The lead checks the Ramadan date.
 
-If you are lost, you are still on this page. Finish the paste. The line that starts with Next is the end.
+If you are lost, you are still on this page. Finish the paste. The heading Order inside the block is part of the sprint file. It is not the next step. The line that starts with Next is the end.
 
 This page is done when `work/sprint.md` has drill, then replicas, then failover, then breaker, then patient, then trade-off, in that order. Do not run a check from this page.
 

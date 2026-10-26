@@ -22,6 +22,7 @@ OLD_SECONDS = 30
 
 
 class ReceiptTests(unittest.TestCase):
+    """The shell receipt test. It waits, then expects every receipt to be due."""
     def test_receipt_follows_the_wait(self) -> None:
         """Wait, then accept a due receipt while the switch is on.
 

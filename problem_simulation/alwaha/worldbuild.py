@@ -1,4 +1,7 @@
-"""Build the facilitator world for one profile. python -m alwaha.worldbuild."""
+"""Build the facilitator world for one profile. python -m alwaha.worldbuild.
+
+The profile comes from the argument or from the environment the loader already understands. An explicit volume-row count is passed through. When that argument is omitted, the writer uses the profile's own volume setting.
+"""
 
 from __future__ import annotations
 
@@ -11,6 +14,7 @@ from alwaha.world_write import write_world
 
 
 def main(argv: list[str] | None = None) -> None:
+    """Write the world for the chosen profile and print its path, population, and fingerprint."""
     parser = argparse.ArgumentParser(description="Write the Al-Waha world for a profile.")
     parser.add_argument("--profile", default=None)
     parser.add_argument("--volume-rows", type=int, default=None)

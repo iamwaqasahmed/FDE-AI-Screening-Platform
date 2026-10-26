@@ -1,0 +1,60 @@
+{
+  "method": "value",
+  "problems": [
+    {
+      "blockers": [
+        "pol-clinical-safety"
+      ],
+      "depends_on": [],
+      "id": "p-triage"
+    },
+    {
+      "blockers": [],
+      "depends_on": [],
+      "id": "p-clock"
+    },
+    {
+      "blockers": [],
+      "depends_on": [
+        "identity"
+      ],
+      "id": "p-waitlist"
+    },
+    {
+      "blockers": [],
+      "depends_on": [
+        "identity"
+      ],
+      "id": "p-dna"
+    },
+    {
+      "blockers": [],
+      "depends_on": [
+        "identity"
+      ],
+      "id": "p-status"
+    },
+    {
+      "blockers": [],
+      "depends_on": [
+        "criteria"
+      ],
+      "id": "p-bounce"
+    },
+    {
+      "blockers": [],
+      "depends_on": [],
+      "id": "p-slots"
+    },
+    {
+      "blockers": [],
+      "depends_on": [],
+      "id": "p-info"
+    },
+    {
+      "blockers": [],
+      "depends_on": [],
+      "id": "p-forecast"
+    }
+  ]
+}

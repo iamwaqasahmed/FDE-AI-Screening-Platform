@@ -21,6 +21,7 @@ from calendar_count import add_working_days
 
 
 class CalendarTests(unittest.TestCase):
+    """The shell calendar. Friday still counts. The holiday list is ignored."""
     def test_thursday_span(self) -> None:
         """Two weekdays from Thursday land on Friday in this shell.
 

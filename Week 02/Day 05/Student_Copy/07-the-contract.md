@@ -86,6 +86,9 @@ This block replaces [work/tests/test_contract.py](work/tests/test_contract.py). 
 
 Leave the packet shell unchanged. The word holds is in this file.
 A queued booking stays green. The live-slot fault goes red.
+
+Each test passes a status word straight to holds. There is no pack
+file. queued must hold. booked must not.
 """
 
 import sys
@@ -98,12 +101,22 @@ from contract import holds
 
 
 class ContractTests(unittest.TestCase):
+    """The contract holds for a queued booking and fails for booked."""
+
     def test_queued_fixture_holds(self) -> None:
-        """A queued booking keeps the contract."""
+        """A queued booking keeps the contract.
+
+        The fixture is the word queued. The assertion proves holds
+        accepts that word.
+        """
         self.assertTrue(holds("queued"))
 
     def test_live_slot_fault_fails_the_contract(self) -> None:
-        """booked on this line is the live-slot fault. It does not hold."""
+        """booked on this line is the live-slot fault. It does not hold.
+
+        The fixture is the word booked. The assertion proves holds
+        rejects that word.
+        """
         self.assertFalse(holds("booked"))
 
 

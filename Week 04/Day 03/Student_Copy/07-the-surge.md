@@ -30,10 +30,17 @@ You are reading. You are not pasting yet. Open these in the packet. Read the fir
 1. Open [quota.py](packet/app/quota.py). Search for `Give the batch the whole pool.`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/quota.py](work/app/quota.py) is under the Replace heading for this file.
 
 ```text
-"""Give the batch the whole pool."""
+"""Give the batch the whole pool.
+
+This is the starter. latency returns chat_p95_starved_ms
+from the sheet. That is the latency when the batch has
+the whole pool. No other key is read.
+"""
 
 
 def latency(sheet: dict) -> int:
+    """Return the starved chat latency from the sheet, as an integer."""
+    # The starved figure is the latency this module reports.
     return int(sheet["chat_p95_starved_ms"])
 ```
 
@@ -42,24 +49,38 @@ That was a picture. Do not paste it. The next item is number 2.
 2. Open [test_quota.py](packet/tests/test_quota.py). Search for `test_the_shell_gives_the_batch_the_whole_pool`. That name is the shell test. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/tests/test_quota.py](work/tests/test_quota.py) is under the Replace heading for this file.
 
 ```text
+"""Tests for the starter pool.
+
+The sheet holds a budget, a reserved latency, and a
+starved latency. These tests lock the starter: latency
+is the starved figure, and that figure is over the budget.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from quota import latency
 
+# Budget, reserved latency, and the starved figure the starter returns.
 _SHEET = {"chat_p95_budget_ms": 800, "chat_p95_reserved_ms": 200, "chat_p95_starved_ms": 2000}
 
 
 class QuotaTests(unittest.TestCase):
+    """The starved latency the starter reports."""
+
     def test_the_shell_gives_the_batch_the_whole_pool(self) -> None:
+        """Latency is the starved 2000, and 2000 is over the budget of 800."""
         self.assertEqual(latency(_SHEET), 2000)
         self.assertGreater(latency(_SHEET), _SHEET["chat_p95_budget_ms"])
 
 
 if __name__ == "__main__":
+    # So this file can be run on its own, not only by discover.
     unittest.main()
 ```
 
@@ -68,10 +89,21 @@ That was a picture. Do not paste it. The next item is number 3.
 3. Open [scale.py](packet/app/scale.py). Search for `Start when the peak arrives.`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/scale.py](work/app/scale.py) is under the Replace heading for this file.
 
 ```text
-"""Start when the peak arrives."""
+"""Start when the peak arrives.
+
+This is the starter. started returns peak_at from the
+forecast as text. A missing peak_at becomes an empty
+string. The sheet is discarded.
+"""
 
 
 def started(forecast: dict, sheet: dict) -> str:
+    """Return the peak time unchanged. Ignore the sheet.
+
+    peak_at is turned into a string. When it is missing,
+    the result is an empty string.
+    """
+    # The sheet is unused. The peak is returned as given.
     del sheet
     return str(forecast.get("peak_at") or "")
 ```
@@ -81,24 +113,39 @@ That was a picture. Do not paste it. The next item is number 4.
 4. Open [test_scale.py](packet/tests/test_scale.py). Search for `test_the_shell_starts_at_the_peak`. That name is the shell test. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/tests/test_scale.py](work/tests/test_scale.py) is under the Replace heading for this file.
 
 ```text
+"""Tests for the starter scale.
+
+The forecast peak is 2024-06-11T04:15:00+03:00. The sheet
+cold start is 15 seconds. These tests lock the starter:
+the result equals the peak itself.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from scale import started
 
+# The peak the starter returns as the start time.
 _FORECAST = {"peak_at": "2024-06-11T04:15:00+03:00"}
+# A cold start of 15 seconds. The starter does not apply it.
 _SHEET = {"cold_start_seconds": 15}
 
 
 class ScaleTests(unittest.TestCase):
+    """The peak timestamp the starter returns unchanged."""
+
     def test_the_shell_starts_at_the_peak(self) -> None:
+        """The result is the peak timestamp. The cold start on the sheet is unused."""
         self.assertEqual(started(_FORECAST, _SHEET), _FORECAST["peak_at"])
 
 
 if __name__ == "__main__":
+    # So this file can be run on its own, not only by discover.
     unittest.main()
 ```
 
@@ -107,10 +154,21 @@ That was a picture. Do not paste it. The next item is number 5.
 5. Open [price.py](packet/app/price.py). Search for `Price the batch at yesterday's external rate.`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/price.py](work/app/price.py) is under the Replace heading for this file.
 
 ```text
-"""Price the batch at yesterday's external rate."""
+"""Price the batch at yesterday's external rate.
+
+This is the starter. rate returns price.ext_large_per_1k
+from the yesterday record, as an integer. The today
+record is discarded.
+"""
 
 
 def rate(today: dict, yesterday: dict) -> int:
+    """Return yesterday's external price as an integer. Ignore today.
+
+    today is part of the signature so both records can be
+    passed in. It is not read.
+    """
+    # The today record is not the price this module reports.
     del today
     return int(yesterday["price.ext_large_per_1k"])
 ```
@@ -120,24 +178,39 @@ That was a picture. Do not paste it. The next item is number 6.
 6. Open [test_price.py](packet/tests/test_price.py). Search for `test_the_shell_uses_yesterday`. That name is the shell test. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/tests/test_price.py](work/tests/test_price.py) is under the Replace heading for this file.
 
 ```text
+"""Tests for the starter price.
+
+Today's record holds sar. Yesterday's record holds
+price.ext_large_per_1k. These tests lock the starter:
+the result is yesterday's price.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from price import rate
 
+# Today's sar. The starter does not return it.
 _TODAY = {"sar": 41}
+# The external price the starter returns.
 _YESTERDAY = {"price.ext_large_per_1k": 17}
 
 
 class PriceTests(unittest.TestCase):
+    """The yesterday price the starter returns."""
+
     def test_the_shell_uses_yesterday(self) -> None:
+        """The result is 17, the price on the yesterday record."""
         self.assertEqual(rate(_TODAY, _YESTERDAY), 17)
 
 
 if __name__ == "__main__":
+    # So this file can be run on its own, not only by discover.
     unittest.main()
 ```
 
@@ -146,10 +219,22 @@ That was a picture. Do not paste it. The next item is number 7.
 7. Open [capacity.py](packet/app/capacity.py). Search for `Leave the price and the backlog off the table.`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/capacity.py](work/app/capacity.py) is under the Replace heading for this file.
 
 ```text
-"""Leave the price and the backlog off the table."""
+"""Leave the price and the backlog off the table.
+
+This is the starter. table copies chat_p95 and
+tokens_per_second. get is used, so a missing field
+becomes None. Every other field on the plan is left
+off. That is how the price and the backlog stay off
+this table.
+"""
 
 
 def table(plan: dict) -> dict:
+    """Return chat latency and tokens per second. Leave every other field off.
+
+    A missing chat_p95 or tokens_per_second is stored as None.
+    """
+    # Price and backlog are not copied onto this table.
     return {
         "chat_p95": plan.get("chat_p95"),
         "tokens_per_second": plan.get("tokens_per_second"),
@@ -161,19 +246,32 @@ That was a picture. Do not paste it. The next item is number 8.
 8. Open [test_capacity.py](packet/tests/test_capacity.py). Search for `test_the_shell_omits_the_price_and_the_backlog`. That name is the shell test. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/tests/test_capacity.py](work/tests/test_capacity.py) is under the Replace heading for this file.
 
 ```text
+"""Tests for the starter capacity table.
+
+The plan holds chat_p95, hours, sar, and tokens_per_second.
+These tests lock the starter: sar and hours are absent,
+tokens_per_second stays 100, and chat_p95 stays 200.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from capacity import table
 
+# The plan has four fields. The starter copies two of them.
 _PLAN = {"chat_p95": 200, "hours": 33.3333, "sar": 41, "tokens_per_second": 100}
 
 
 class CapacityTests(unittest.TestCase):
+    """The two fields the starter keeps, and the two it drops."""
+
     def test_the_shell_omits_the_price_and_the_backlog(self) -> None:
+        """sar and hours are absent. tokens_per_second is 100 and chat_p95 is 200."""
         got = table(_PLAN)
         self.assertNotIn("sar", got)
         self.assertNotIn("hours", got)
@@ -182,6 +280,7 @@ class CapacityTests(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    # So this file can be run on its own, not only by discover.
     unittest.main()
 ```
 
@@ -199,12 +298,19 @@ This block replaces [work/app/quota.py](work/app/quota.py). The full path is `We
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Keep a chat reserve on the shared pool.`.
 
 ```text
-"""Keep a chat reserve on the shared pool."""
+"""Keep a chat reserve on the shared pool.
+
+latency returns chat_p95_reserved_ms from the sheet.
+That is the latency kept when a chat reserve remains
+on the pool. No other key on the sheet is read.
+"""
 
 from __future__ import annotations
 
 
 def latency(sheet: dict) -> int:
+    """Return the reserved chat latency from the sheet, as an integer."""
+    # The reserve is the latency this module reports.
     return int(sheet["chat_p95_reserved_ms"])
 ```
 
@@ -224,24 +330,38 @@ This block replaces [work/tests/test_quota.py](work/tests/test_quota.py). The fu
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `test_a_chat_reserve_stays_inside_the_budget`.
 
 ```text
+"""Tests for the finished chat reserve.
+
+The sheet holds a budget, a reserved latency, and a
+starved latency. The result should be the reserved
+latency, and that figure should be at or under the budget.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from quota import latency
 
+# Budget, reserved latency, and starved latency.
 _SHEET = {"chat_p95_budget_ms": 800, "chat_p95_reserved_ms": 200, "chat_p95_starved_ms": 2000}
 
 
 class QuotaTests(unittest.TestCase):
+    """The reserved latency against the chat budget."""
+
     def test_a_chat_reserve_stays_inside_the_budget(self) -> None:
+        """Latency is the reserved 200, and 200 is at or under the budget of 800."""
         self.assertEqual(latency(_SHEET), 200)
         self.assertLessEqual(latency(_SHEET), _SHEET["chat_p95_budget_ms"])
 
 
 if __name__ == "__main__":
+    # So this file can be run on its own, not only by discover.
     unittest.main()
 ```
 
@@ -261,7 +381,13 @@ This block replaces [work/app/scale.py](work/app/scale.py). The full path is `We
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Start one cold start before the peak.`.
 
 ```text
-"""Start one cold start before the peak."""
+"""Start one cold start before the peak.
+
+started reads peak_at from the forecast and
+cold_start_seconds from the sheet. It moves the peak
+earlier by that many seconds and returns the new time
+with isoformat.
+"""
 
 from __future__ import annotations
 
@@ -269,8 +395,14 @@ from datetime import datetime, timedelta
 
 
 def started(forecast: dict, sheet: dict) -> str:
+    """Return the peak time minus the cold-start seconds.
+
+    peak_at is parsed as a date and time. cold_start_seconds
+    is a whole number of seconds. The return value is isoformat.
+    """
     peak = datetime.fromisoformat(str(forecast["peak_at"]))
     cold = int(sheet["cold_start_seconds"])
+    # Lead the peak by the cold start on the sheet.
     return (peak - timedelta(seconds=cold)).isoformat()
 ```
 
@@ -290,21 +422,36 @@ This block replaces [work/tests/test_scale.py](work/tests/test_scale.py). The fu
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `test_the_start_leads_the_peak_by_the_cold_start`.
 
 ```text
+"""Tests for the finished cold start.
+
+The forecast peak is 2024-06-11T04:15:00+03:00. The sheet
+cold start is 15 seconds. The start should equal that
+peak minus 15 seconds, and that earlier time should not
+equal the peak.
+"""
+
 import sys
 import unittest
 from datetime import datetime, timedelta
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from scale import started
 
+# The peak timestamp the cold start is subtracted from.
 _FORECAST = {"peak_at": "2024-06-11T04:15:00+03:00"}
+# The cold start, in seconds.
 _SHEET = {"cold_start_seconds": 15}
 
 
 class ScaleTests(unittest.TestCase):
+    """The peak time minus the cold start on the sheet."""
+
     def test_the_start_leads_the_peak_by_the_cold_start(self) -> None:
+        """started matches the peak minus 15 seconds, and that time is not the peak."""
         peak = datetime.fromisoformat(_FORECAST["peak_at"])
         expect = (peak - timedelta(seconds=15)).isoformat()
         self.assertEqual(started(_FORECAST, _SHEET), expect)
@@ -312,6 +459,7 @@ class ScaleTests(unittest.TestCase):
 
 
 if __name__ == "__main__":
+    # So this file can be run on its own, not only by discover.
     unittest.main()
 ```
 
@@ -331,12 +479,23 @@ This block replaces [work/app/price.py](work/app/price.py). The full path is `We
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Price the batch at today's external rate.`.
 
 ```text
-"""Price the batch at today's external rate."""
+"""Price the batch at today's external rate.
+
+rate returns the sar figure on the today record, as an
+integer. The yesterday record is discarded, so the older
+price is not the result.
+"""
 
 from __future__ import annotations
 
 
 def rate(today: dict, yesterday: dict) -> int:
+    """Return today's sar as an integer. Ignore yesterday.
+
+    yesterday is part of the signature so both records can
+    be passed in. It is not read.
+    """
+    # The older record is not the price reported here.
     del yesterday
     return int(today["sar"])
 ```
@@ -357,25 +516,40 @@ This block replaces [work/tests/test_price.py](work/tests/test_price.py). The fu
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `test_today_replaces_yesterday`.
 
 ```text
+"""Tests for the finished price.
+
+Today's record holds sar. Yesterday's record holds
+price.ext_large_per_1k. The rate should be today's sar,
+and that value should be greater than yesterday's price.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from price import rate
 
+# The sar figure the rate should return.
 _TODAY = {"sar": 41}
+# The older external price. It must not win.
 _YESTERDAY = {"price.ext_large_per_1k": 17}
 
 
 class PriceTests(unittest.TestCase):
+    """Today's sar compared with yesterday's price."""
+
     def test_today_replaces_yesterday(self) -> None:
+        """The result is 41, today's sar, and it is above yesterday's price."""
         self.assertEqual(rate(_TODAY, _YESTERDAY), 41)
         self.assertGreater(rate(_TODAY, _YESTERDAY), _YESTERDAY["price.ext_large_per_1k"])
 
 
 if __name__ == "__main__":
+    # So this file can be run on its own, not only by discover.
     unittest.main()
 ```
 
@@ -395,12 +569,24 @@ This block replaces [work/app/capacity.py](work/app/capacity.py). The full path 
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `Record tokens per second, SAR, chat latency, and hours.`.
 
 ```text
-"""Record tokens per second, SAR, chat latency, and hours."""
+"""Record tokens per second, SAR, chat latency, and hours.
+
+table copies four fields off the plan: tokens_per_second,
+sar, chat_p95, and hours. It does not recompute them.
+Each field is read by name, so the plan must already
+carry all four.
+"""
 
 from __future__ import annotations
 
 
 def table(plan: dict) -> dict:
+    """Copy tokens_per_second, sar, chat_p95, and hours off the plan.
+
+    The values are stored under those same keys. Nothing
+    is calculated here.
+    """
+    # Price, hours, chat latency, and throughput stay together.
     return {
         "chat_p95": plan["chat_p95"],
         "hours": plan["hours"],
@@ -425,23 +611,37 @@ This block replaces [work/tests/test_capacity.py](work/tests/test_capacity.py). 
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `test_the_table_records_the_price_and_the_hours`.
 
 ```text
+"""Tests for the finished capacity table.
+
+The plan holds chat_p95, hours, sar, and tokens_per_second.
+The table should come back equal to that whole plan, so
+none of the four fields is dropped.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from capacity import table
 
+# Chat latency, hours, sar, and tokens per second.
 _PLAN = {"chat_p95": 200, "hours": 33.3333, "sar": 41, "tokens_per_second": 100}
 
 
 class CapacityTests(unittest.TestCase):
+    """The plan fields the finished table keeps."""
+
     def test_the_table_records_the_price_and_the_hours(self) -> None:
+        """The table equals the plan, including sar and hours."""
         self.assertEqual(table(_PLAN), _PLAN)
 
 
 if __name__ == "__main__":
+    # So this file can be run on its own, not only by discover.
     unittest.main()
 ```
 

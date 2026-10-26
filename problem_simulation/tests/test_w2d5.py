@@ -1,4 +1,14 @@
-"""Day 5 of Week 2: the release, the change request, and the steering card."""
+"""Day 5 of Week 2: the release, the change request, and the steering card.
+
+Guards the change-request release and the steering card.
+
+Earlier days, including the deploy day, must survive the write. Prose must not
+contain the clinic code, the previous code, or the watermark, while the nightly
+fixture must still contain the code. The change notice must not say that a
+nightly file exists. The demo may print the card and the questions and must not
+mention the file. The new trap modules must differ, and the smoke modules carried
+forward from the deploy day must not.
+"""
 
 from __future__ import annotations
 
@@ -30,11 +40,13 @@ from alwaha.release.w2d4 import write_w2d4
 from alwaha.release.w2d5 import write_w2d5
 from alwaha.release.write import write_release
 
+# Architect script. The middle turn should release the nightly-file fact and the last turn should not release a new one.
 _EA = [
     "Do we have an API strategy?",
     "Does Ain publish a nightly schedule file?",
     "What does a missed night leave, and whose clinic codes are on it?",
 ]
+# Deploy modules and tests that must stay identical. The new queue modules are checked on their own.
 _SMOKE = (
     "admit.py",
     "health.py",
@@ -48,6 +60,7 @@ _SMOKE = (
 
 
 def _canary_count(pack: Path, canary: str) -> int:
+    """Count watermark hits across every file in a pack."""
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -56,6 +69,9 @@ def _canary_count(pack: Path, canary: str) -> int:
 
 
 def _prose(pack: Path) -> str:
+    """Join the markdown and the manifest files so a secret in prose can be told apart
+    from the same secret in a fixture.
+    """
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file() and path.suffix in {".md", ".yaml", ".yml"}:
@@ -64,7 +80,12 @@ def _prose(pack: Path) -> str:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites an earlier day or that names the clinic code in prose."""
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or the deploy gold
+        changes, or when this day's gold is missing from the hidden side or present in
+        the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -102,6 +123,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w2d5" / "w2d5_gold.json").exists())
 
     def test_profiles_differ_by_canary(self) -> None:
+        """Fails when either watermark is missing, repeated, or shared, or when the
+        fingerprints match.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -112,6 +136,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(root / "practice"), fingerprint(root / "small"))
 
     def test_notice_keeps_the_clinic_code_out(self) -> None:
+        """Fails when prose contains a clinic code or the watermark, when the nightly
+        fixture loses the code, or when the change notice mentions a nightly file.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -130,7 +157,13 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo or a lesson that reveals the clinic code, a trap module that was
+    not changed, or a smoke module that was changed by mistake.
+    """
     def test_demo_prints_the_card_without_the_file_sentence(self) -> None:
+        """Fails when the demo is not the steering card followed by the questions, or when
+        it mentions the nightly file, the clinic code, or the watermark.
+        """
         profile = load("practice")
         hidden = gold(profile)
         stdout = StringIO()
@@ -144,6 +177,7 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(profile.canary(), text)
 
     def test_lessons_do_not_name_the_clinic_code(self) -> None:
+        """Fails when lesson notes or templates contain either clinic code."""
         notes = [path.read_text(encoding="utf-8") for path in W2D5_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W2D5_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -152,6 +186,9 @@ class DemoTests(unittest.TestCase):
         self.assertNotIn(hidden["previous_code"], lesson_text)
 
     def test_only_the_trap_modules_differ(self) -> None:
+        """Fails when a new queue module matches the shell, or when a smoke module or the
+        image file differs from the filled deploy copy. Only the new modules are traps.
+        """
         for name in ("queue.py", "file_ain.py", "notify.py", "contract.py"):
             shell = (W2D5_APP / name).read_bytes()
             filled = (W2D5_WORK / "app" / name).read_bytes()
@@ -170,6 +207,10 @@ class DemoTests(unittest.TestCase):
         )
 
     def test_ea_confirms_the_missed_night(self) -> None:
+        """Fails when the strategy question releases a fact, when the nightly-file fact
+        does not surface, or when the missed-night turn releases a new fact. The
+        architect's required-fact list must stay the one from the first week.
+        """
         persona = load_personas()["ea"]
         turns = run(persona, _EA)
         self.assertEqual(turns[0]["released"], [])
@@ -180,6 +221,7 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(persona["must_surface"], ("ain-file", "hl7-pair"))
 
     def test_filled_suite_passes(self) -> None:
+        """Fails when the filled packet's own unit tests do not pass."""
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
             cwd=W2D5_WORK,
@@ -190,6 +232,7 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
 
     def test_shell_suite_passes(self) -> None:
+        """Fails when the unfinished packet's own unit tests do not pass."""
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
             cwd=W2D5_ROOT / "Student_Copy" / "packet",

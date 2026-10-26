@@ -14,6 +14,10 @@ QUESTIONS = (
 
 
 def release_note(files: list[str]) -> str:
+    """Return the release note for the files it is given.
+
+    It names the systems that asked to be connected and lists every pack file except the readme.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w4d5
 
@@ -29,6 +33,10 @@ Files:
 
 
 def steer_page() -> str:
+    """Return the steering page for this pack.
+
+    The committee is named and the questions are numbered in the stored order so the file matches that list.
+    """
     numbered = "\n".join(f"{index}. {text}" for index, text in enumerate(QUESTIONS, start=1))
     return f"""# steer-w4
 

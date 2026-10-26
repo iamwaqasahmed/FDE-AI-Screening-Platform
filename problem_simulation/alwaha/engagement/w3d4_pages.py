@@ -7,10 +7,18 @@ SEATS = ("cdo", "access-mgr", "phc-lead", "dpo")
 
 
 def budgets() -> dict:
+    """Return the citation, extraction, and journey budgets.
+
+    The release writes this mapping into the metrics file so the scored thresholds travel with the pack.
+    """
     return {"citation": 0.8, "extraction": 0.8, "journey": 0.8}
 
 
 def experiment() -> dict:
+    """Return the wording experiment definition.
+
+    The arms, the counts, and the metric are included so a decision can be checked against this definition.
+    """
     return {
         "arms": ["clause", "short"],
         "counts": {
@@ -22,6 +30,10 @@ def experiment() -> dict:
 
 
 def dot_vote() -> dict:
+    """Return the workshop ranking.
+
+    The method and the ranked ids are what the release stores, so a later ranking can be compared with this order.
+    """
     return {"method": "dot-vote", "ranked": ["p-triage", "vendor-bot", "p-status", "p-dna"]}
 
 

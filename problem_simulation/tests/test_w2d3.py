@@ -1,4 +1,13 @@
-"""Day 3 of Week 2: the release, the clock, and the receipt demo."""
+"""Day 3 of Week 2: the release, the clock, and the receipt demo.
+
+Guards the receipt-clock release and the switch demo.
+
+Earlier integration days must survive the write. The learner pack must mention
+the switch and must not contain the old delay or either hidden due time. The
+demo may show the switch turning a pass into a failure and must not print the
+delay. The patient-representative script must release the caregiver fact. The
+filled packet's own tests must pass.
+"""
 
 from __future__ import annotations
 
@@ -27,6 +36,7 @@ from alwaha.release.w2d2 import write_w2d2
 from alwaha.release.w2d3 import write_w2d3
 from alwaha.release.write import write_release
 
+# Patient-representative script. The last turn is the one that should release the caregiver fact.
 _REP = [
     "Why does the phone line still not answer?",
     "Are the daytime slots in Ramadan the ones his mother misses?",
@@ -35,6 +45,7 @@ _REP = [
 
 
 def _canary_count(pack: Path, canary: str) -> int:
+    """Count watermark hits across every file in a pack."""
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -43,7 +54,11 @@ def _canary_count(pack: Path, canary: str) -> int:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites an earlier day or that publishes the old delay."""
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or gold file changes,
+        or when this day's gold is missing from the hidden side or present in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -84,6 +99,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w2d3" / "w2d3_gold.json").exists())
 
     def test_profiles_differ_by_canary(self) -> None:
+        """Fails when either watermark is missing, repeated, or shared, or when the
+        fingerprints match.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -94,6 +112,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(root / "practice"), fingerprint(root / "small"))
 
     def test_pack_keeps_the_old_delay_out(self) -> None:
+        """Fails when the gold drifts, when the old delay or a hidden due time appears in
+        the learner pack, when the switch name is missing, or when the watermark is not
+        exactly once in the pack and absent from the gold file.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -111,7 +133,13 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo or a lesson that reveals the delay, a module that was not
+    actually fixed, or a filled test suite that does not pass.
+    """
     def test_demo_goes_red_without_the_delay(self) -> None:
+        """Fails when the demo does not show the switch turning a pass into a failure, or
+        when it prints the delay, a due time, the switch name, or a watermark prefix.
+        """
         stdout = StringIO()
         with redirect_stdout(stdout):
             demo_main(["--profile", "practice"])
@@ -121,6 +149,9 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(secret, text)
 
     def test_notes_do_not_name_the_hidden_delay(self) -> None:
+        """Fails when lesson notes contain the old delay, a hidden due time, or a watermark
+        prefix.
+        """
         notes = [path.read_text(encoding="utf-8") for path in W2D3_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W2D3_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -130,6 +161,10 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(secret, lesson_text)
 
     def test_only_the_trap_modules_differ(self) -> None:
+        """Fails when an app module or a packet test is identical in the shell and the
+        filled copy. The workflow file must stay the same, because this day does not
+        change the pipeline.
+        """
         for source in W2D3_APP.glob("*.py"):
             copy = W2D3_WORK / "app" / source.name
             self.assertNotEqual(source.read_bytes(), copy.read_bytes(), source.name)
@@ -142,6 +177,9 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(shell_ci, filled_ci)
 
     def test_patient_rep_releases_the_caregiver(self) -> None:
+        """Fails when the phone-line turn releases a fact, or when the Ramadan and
+        caregiver turns do not release the facts they exist to release.
+        """
         turns = run(load_personas()["patient-rep"], _REP)
         self.assertEqual(turns[0]["released"], [])
         self.assertIn("phone line", turns[0]["answer"])
@@ -151,6 +189,7 @@ class DemoTests(unittest.TestCase):
         self.assertIn("caregiver", turns[2]["answer"].lower())
 
     def test_filled_suite_passes(self) -> None:
+        """Fails when the filled packet's own unit tests do not pass."""
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
             cwd=W2D3_WORK,

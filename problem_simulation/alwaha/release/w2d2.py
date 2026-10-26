@@ -15,20 +15,36 @@ RELEASE = "rel-w2d2"
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _json(path: Path, payload: dict) -> None:
+    """Write one JSON value to the path.
+
+    Keys are sorted and the text ends with a newline. The text writer creates parent directories.
+    """
     _write(path, json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
 
 def _jsonl(path: Path, rows: list[dict]) -> None:
+    """Write the rows as JSON lines.
+
+    Each object has sorted keys. The file ends with a newline even when there are no rows, so the terminator is always there.
+    """
     lines = [json.dumps(row, sort_keys=True) for row in rows]
     _write(path, "\n".join(lines) + "\n")
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from the enterprise architect and points at the webhooks, the messaging channel, and the feeds.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w2d2
 
@@ -44,6 +60,10 @@ Files:
 
 
 def write_w2d2(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and its gold.
+
+    It writes the feed notice, the topic registry, the interface documents, the channel notes, the webhook, the cancellations, the faults, the feed, the mart, and the gold.
+    """
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
     _write(pack / "notices" / "feeds.md", notice())

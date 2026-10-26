@@ -154,6 +154,7 @@ ROWS = (
 
 
 class PitTests(unittest.TestCase):
+    """The invite date keeps the earlier district."""
     def test_invite_time_keeps_the_earlier_district(self) -> None:
         """March keeps January. June is after the invite."""
         found = features(list(ROWS), "2026-03-01")
@@ -243,6 +244,7 @@ ITEMS = (
 
 
 class BudgetTests(unittest.TestCase):
+    """Uncertain items are bought until the budget stops."""
     def test_uncertain_items_stay_inside_the_budget(self) -> None:
         """Price 2 and budget 6 buy three items, highest uncertainty first."""
         self.assertEqual(spend(list(ITEMS), 2, 6), ["higher", "high", "mid"])

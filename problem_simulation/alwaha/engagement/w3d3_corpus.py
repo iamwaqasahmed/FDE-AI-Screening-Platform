@@ -1,4 +1,7 @@
-"""Hours, leaflets, and the other rel-w3d3 documents."""
+"""Hours, leaflets, and the other rel-w3d3 documents.
+
+doc builds one document from shared defaults, then the caller’s fields, then the body that was actually stored. The hours, leaflet, and extra helpers are the texts the snapshot and the feed assemble. photo is the page whose export is shorter than its transcription.
+"""
 
 from __future__ import annotations
 
@@ -8,10 +11,15 @@ OPENED = "2026-01-01"
 
 
 def _hash(body: str) -> str:
+    """Return a content hash of the body, so two texts cannot share a hash by accident."""
     return "sha256:" + hashlib.sha256(body.encode()).hexdigest()[:16]
 
 
 def doc(**kwargs: object) -> dict:
+    """Return one document.
+
+    Missing fields take the staff, in-force, criteria defaults. Caller fields then override those defaults. The body and its hash are written last, from the text that was actually stored, so a caller cannot leave a stale hash behind.
+    """
     body = str(kwargs["body"])
     row = {
         "audience": "staff",
@@ -30,12 +38,17 @@ def doc(**kwargs: object) -> dict:
         "version": 3,
     }
     row.update(kwargs)
+    # Caller fields win first. Body and hash are then taken from the text actually stored.
     row["body"] = body
     row["content_hash"] = _hash(body)
     return row
 
 
 def hours() -> tuple[dict, dict]:
+    """Return the authorized hours and the unauthorized copy that says the opposite.
+
+    Both share a code. Only the status tells them apart, which is why a search that ignores status can cite the wrong one.
+    """
     current = doc(
         audience="public",
         body="Code hrs-ramadan closes the evening clinics at 21:00.",
@@ -65,6 +78,10 @@ def hours() -> tuple[dict, dict]:
 
 
 def leaflets() -> tuple[dict, dict, dict]:
+    """Return the current public leaflet, the earlier public edition, and the staff-only note.
+
+    They share a code. Audience and version are what keep the staff note and the old edition from being the public answer.
+    """
     current = doc(
         audience="public",
         body="Code prep-endo. Bring the referral card.",
@@ -103,6 +120,10 @@ def leaflets() -> tuple[dict, dict, dict]:
 
 
 def extras() -> tuple[dict, dict, dict]:
+    """Return the restricted safety list, the cluster booking window, and the shorter site window.
+
+    The site window is the local policy. The cluster window is the one the conflict helper treats as the winner.
+    """
     safety = doc(
         audience="restricted",
         body="Code safety-red stays with records.",
@@ -136,6 +157,7 @@ def extras() -> tuple[dict, dict, dict]:
 
 
 def photo() -> dict:
+    """Return the photographed page. The export is shorter than the transcription."""
     return {
         "doc_id": "photo-prep",
         "export": "Bring your card.",
@@ -144,9 +166,11 @@ def photo() -> dict:
 
 
 def catalog_rows() -> list[dict]:
+    """Return the clinic catalog row the lookup is checked against."""
     return [{"clinic": "endo", "code": "cat-endo", "prep": "fast from midnight"}]
 
 
 def leaflet_titles() -> tuple[str, str]:
+    """Return the current leaflet title and the earlier edition's title. The staff note is not included."""
     current, earlier, _staff = leaflets()
     return current["title"], earlier["title"]

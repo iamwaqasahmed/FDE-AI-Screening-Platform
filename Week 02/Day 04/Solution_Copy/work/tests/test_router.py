@@ -17,6 +17,7 @@ from router import route
 
 
 class RouterTests(unittest.TestCase):
+    """The router stays on the private endpoint."""
     def test_router_uses_the_private_endpoint(self) -> None:
         """Prod and dev both name the private endpoint.
 

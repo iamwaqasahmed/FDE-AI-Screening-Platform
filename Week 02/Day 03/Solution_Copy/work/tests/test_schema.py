@@ -17,6 +17,7 @@ from schema import schema_ok
 
 
 class SchemaTests(unittest.TestCase):
+    """The reply schema requires intent, not a sentence."""
     def test_intent_without_a_sentence(self) -> None:
         """An empty sentence with intent status is accepted."""
         self.assertTrue(schema_ok({"intent": "status", "text": ""}))

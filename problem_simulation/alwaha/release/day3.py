@@ -22,11 +22,19 @@ CLINIC_FIELDS = ("facility_id", "specialty_id", "clinic")
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _write_csv(path: Path, fields: tuple[str, ...], rows: list[dict[str, str]]) -> None:
+    """Write a CSV file with the given columns and rows.
+
+    Parent directories are created. The open-referral table and the clinic table use this so their headers stay in the given order.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
@@ -35,6 +43,10 @@ def _write_csv(path: Path, fields: tuple[str, ...], rows: list[dict[str, str]]) 
 
 
 def _copy_tree(source: Path, destination: Path) -> None:
+    """Copy a source tree onto the destination.
+
+    Caches are skipped. A missing source stops the release so a half-built pack is not left behind.
+    """
     if not source.is_dir():
         raise SystemExit(f"Missing {source}.")
     shutil.copytree(
@@ -46,6 +58,10 @@ def _copy_tree(source: Path, destination: Path) -> None:
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from the enterprise architect and points at the event stream, the policy, and the calendar.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w1d3
 
@@ -61,6 +77,10 @@ Files:
 
 
 def write_day3(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and the events gold.
+
+    It writes the calendar, the policy, the criteria pages, the event stream, the faults, the open referrals, the clinics, the contract, the interface files, the workflow tree, and the templates. A missing template stops the release before anything is replaced.
+    """
     if not WORKFLOW_ROOT.is_dir() or not DAY3_TEMPLATES.is_dir():
         raise SystemExit("Day 3 template is missing.")
     reset(pack)

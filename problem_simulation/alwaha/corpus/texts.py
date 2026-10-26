@@ -6,6 +6,10 @@ import hashlib
 
 
 def document(doc_id: str, family: str, title: str, audience: str, body: str, effective: str = "2024-06-01") -> str:
+    """Return one corpus document with a header in front of the body.
+
+    The header records the identity, the audience, and a hash of the body. Callers share this shape, and the hash changes when the body changes.
+    """
     digest = hashlib.sha256(body.encode()).hexdigest()[:16]
     header = "\n".join(
         [
@@ -92,6 +96,10 @@ MINUTE_CAUSES = (
 
 
 def fact_problems(minutes_text: str, postmortem_text: str) -> list[str]:
+    """Return the mismatches between the minutes and the postmortem.
+
+    A required cause missing from the minutes is reported. The same cause showing up in the postmortem is reported. An empty list means the two documents still split those causes.
+    """
     problems = []
     minutes_lower = minutes_text.lower()
     postmortem_lower = postmortem_text.lower()
@@ -131,6 +139,10 @@ Fill every field. A blank field is not a request.
 
 
 def zones_page() -> str:
+    """Return the page that says where the cluster runs.
+
+    Opening day, working days, zones, and facilities come from the world tables, so the pack page matches those tables.
+    """
     from alwaha.world.clock import ENGAGEMENT_OPENS, WORKING_DAYS
     from alwaha.world.sites import SITES, ZONES
 

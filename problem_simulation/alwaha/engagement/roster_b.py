@@ -1,4 +1,8 @@
-"""The second half of the persona roster. A tree row is (node_id, keywords, answer, releases, parent)."""
+"""The second half of the persona roster.
+A tree row is (node_id, keywords, answer, releases, parent).
+
+These records use the same shape as the first roster. A fact pair is the id and the text. A third value says whether the checker requires that fact to surface. An empty parent is a root. Releases may be empty when the answer carries no hidden fact. The catalog concatenates the first roster with this one.
+"""
 
 from __future__ import annotations
 
@@ -21,6 +25,7 @@ ROSTER_B: tuple[dict, ...] = (
             ("checklist", ("checklist", "golive", "gate", "g4"), "The go-live checklist is the list the security office will use at gate G4.", ("checklist",), "review"),
             ("log", ("log", "engine", "change", "chg"), "Patient data has been in the integration-engine log since change CHG-2025-118.", ("engine-log",), "review"),
             (
+                # No parent, so this node can match before the review branch is opened.
                 "replay",
                 ("replay", "incident", "telemetry"),
                 "The incident replay already contains the alert. Do not add a new bug.",

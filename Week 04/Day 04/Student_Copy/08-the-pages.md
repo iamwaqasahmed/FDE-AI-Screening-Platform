@@ -134,7 +134,7 @@ This note is a table. Keep the pipes. If the pipes are gone, you pasted from a p
 
 Open [work/interviews/finance.notes.md](work/interviews/finance.notes.md). You should see 16 weeks and rent. You should see 8 February 2027. The pipes are still there.
 
-Stay on this page. That was the last paste on this page.
+Stay on this page. That was the last paste on this page. The line that starts with Next is the end of this page.
 
 This page is done when the failover note has the five headings, the architecture draft has the four headings, and both notes keep their pipes. Do not run a check from this page.
 

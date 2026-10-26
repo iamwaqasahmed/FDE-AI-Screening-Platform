@@ -1,4 +1,13 @@
-"""Day 2 release and the four baselines."""
+"""Day 2 release and the four baselines.
+
+Guards the second-day release, the sample measurements, and the four baseline scripts.
+
+Writing this day must be stable and must leave the first day's pack and persona
+file untouched. The gold approach file stays on the hidden side. The sample tests
+use one small pack and the measurements taken from it. They catch a leaked label,
+a family word in the learner pack, a baseline script that prints the wrong kind
+of number, and a demo that names the split defect.
+"""
 
 from __future__ import annotations
 
@@ -23,8 +32,10 @@ from alwaha.release.write import write_release
 from alwaha.samples.measure import measure_pack
 from day2_memos import grab
 
+# Method-family names that must not appear in the learner pack. The pattern matches them as whole words.
 FAMILY_WORDS = ("no-model", "classical-ml", "extract", "retrieve", "agent", "forecast", "blocked")
 FAMILY_PATTERN = re.compile("|".join(rf"(?<![a-z-]){re.escape(word)}(?![a-z-])" for word in FAMILY_WORDS))
+# Every key the price sheet must contain. The test checks the set of keys, not a copied amount.
 PRICE_KEYS = {
     "cost.slot_missed",
     "cost.return_cycle",
@@ -42,7 +53,14 @@ PRICE_KEYS = {
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a second-day pack that is unstable, that rewrites the first day, or that
+    publishes the approach gold beside the samples.
+    """
     def test_same_seed_matches_and_day1_stays(self) -> None:
+        """Fails when a second write disagrees with the first, when the first day's pack or
+        persona file changes, or when the approach gold is missing from the hidden side
+        or present in the learner pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -59,6 +77,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((day2 / "approach_gold.json").exists())
 
     def test_profiles_differ(self) -> None:
+        """Fails when practice and small write the same fingerprint, or when the practice
+        watermark shows up in the small letter sample.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice = write_day2(load("practice"), root / "practice", root / "practice-truth")
@@ -70,12 +91,24 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotIn(load("practice").canary(), small_letter)
 
     def test_unknown_release_exits(self) -> None:
+        """Fails when the build command accepts a release name it does not know."""
         with self.assertRaises(SystemExit):
             build_main(["--release", "rel-nope"])
 
 
 class SampleTests(unittest.TestCase):
+    """Catches a sample pack whose measurements, labels, prices, or baseline output drifted.
+
+    The fixture is one small second-day pack plus the measurement dict taken from it.
+    Prices, the no-show page, and the leader pages are read from that pack. The
+    baseline scripts are the ones shipped for learners, run against those samples.
+    """
     def setUp(self) -> None:
+        """Write a temporary small pack and measure it.
+
+        Later tests read both the files and the measurement dict, so a change in either
+        place is visible here.
+        """
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -85,9 +118,14 @@ class SampleTests(unittest.TestCase):
         self.measured = measure_pack(self.pack)
 
     def tearDown(self) -> None:
+        """Delete the temporary pack."""
         self.tmp.cleanup()
 
     def test_dna_split_and_hidden_column(self) -> None:
+        """Fails when the person-level no-show figure collapses into the row-level figure,
+        when the hidden final-status column disagrees with the attendance flag, or when
+        the learner baseline script can see that column.
+        """
         self.assertEqual(self.measured["p-dna"], "0.0000")
         self.assertEqual(self.measured["dna_row"], "0.7692")
         self.assertGreater(int(self.measured["dna_shared"]), 0)
@@ -102,6 +140,12 @@ class SampleTests(unittest.TestCase):
         self.assertNotIn("appointment_status_final", script)
 
     def test_messages_hide_intent_and_miss_a_status(self) -> None:
+        """Fails when the message sample still has an intent column, or when every status
+        message is obvious from its wording.
+
+        The hidden intent list is what makes a missed status detectable. The learner
+        file must not carry that column.
+        """
         raw = json.loads((self.truth / "sample_metrics.json").read_text(encoding="utf-8"))
         intents = {row["id"]: row["intent"] for row in raw["message_intents"]}
         with (self.pack / "samples" / "ds-messages.csv").open(encoding="utf-8", newline="") as handle:
@@ -111,6 +155,11 @@ class SampleTests(unittest.TestCase):
         self.assertTrue(missed)
 
     def test_prices_and_leader_pages(self) -> None:
+        """Fails when the price sheet is missing a key, when the external or purchase price
+        is not the more expensive of its pair, when the leader pages lose the booking
+        date or the vendor's containment claim, or when a family word or a planted rate
+        leaks into any learner file.
+        """
         with (self.pack / "finance" / "prices.csv").open(encoding="utf-8", newline="") as handle:
             prices = {row["key"]: int(row["sar"]) for row in csv.DictReader(handle)}
         self.assertEqual(set(prices), PRICE_KEYS)
@@ -132,6 +181,9 @@ class SampleTests(unittest.TestCase):
             self.assertIsNone(FAMILY_PATTERN.search(text.lower()), path.as_posix())
 
     def test_cli_prints_the_baseline(self) -> None:
+        """Fails when a baseline script prints a different figure, or a different method
+        name, than the measurement of the pack it was given.
+        """
         samples = self.pack / "samples"
         cases = (
             (["dna.py", str(samples / "ds-dna.csv"), "--split", "person"], f"person {self.measured['p-dna']}"),
@@ -146,6 +198,9 @@ class SampleTests(unittest.TestCase):
         self.assertIn(f"mean {self.measured['demand_mean']}", demand.stdout)
 
     def test_demo_does_not_name_the_split_defect(self) -> None:
+        """Fails when the demo names the leak or the hidden column, or when the row figure
+        is not the larger of the two splits it prints.
+        """
         stdout = io.StringIO()
         with redirect_stdout(stdout):
             demo_main(["--profile", "small"])
@@ -158,6 +213,10 @@ class SampleTests(unittest.TestCase):
 
 
 def _run(args: list[str]) -> subprocess.CompletedProcess[str]:
+    """Run one baseline script and capture its text.
+
+    A non-zero exit fails the case. The caller compares the text with the measurement.
+    """
     return subprocess.run(
         [sys.executable, str(BASELINES_ROOT / args[0]), *args[1:]],
         check=True,

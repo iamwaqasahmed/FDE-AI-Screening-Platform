@@ -14,11 +14,19 @@ RELEASE = "rel-w2d1"
 
 
 def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from the enterprise architect and points at the new interface and the assurance levels.
+    """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
     return f"""# rel-w2d1
 
@@ -34,6 +42,10 @@ Files:
 
 
 def write_w2d1(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and its gold.
+
+    It writes the interface notice, the assurance page, both interface documents, the status scenario, and the gold.
+    """
     reset(pack)
     truth.mkdir(parents=True, exist_ok=True)
     _write(pack / "notices" / "fhir-v2.md", notice())

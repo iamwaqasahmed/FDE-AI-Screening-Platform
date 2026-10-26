@@ -1,4 +1,12 @@
-"""The facilitator world: defects, corpus, exports, and a stable fingerprint."""
+"""The facilitator world: defects, corpus, exports, and a stable fingerprint.
+
+Guards the facilitator world: planted identity defects, a stable small world,
+and a complete corpus and system export.
+
+The practice population is built in memory and checked person by person for the
+planted defects. The small world is written twice and must match, and its corpus
+must contain the required page plus one file of each shipped document kind.
+"""
 
 from __future__ import annotations
 
@@ -16,7 +24,16 @@ from alwaha.world_write import write_world
 
 
 class WorldTests(unittest.TestCase):
+    """Catches a population that lost a planted defect, or a small world that is not
+    deterministic or not complete.
+    """
     def test_practice_population_carries_the_planted_defects(self) -> None:
+        """Fails when the practice population is the wrong size or when any planted defect
+        is missing: a shared phone, a borrowed national id, a visitor number, a reused
+        record number, a reversed merge, a shared birth date, a moved district, a bad
+        check digit, a death recorded before it happened, or a birth date stored in the
+        other calendar.
+        """
         people = build_people(load("practice"))
         self.assertEqual(len(people), 60000)
         self.assertEqual(people[0]["phone"], people[1]["phone"])
@@ -33,6 +50,10 @@ class WorldTests(unittest.TestCase):
         self.assertEqual(people[11]["dob_era"], "hijri")
 
     def test_small_world_is_deterministic_and_complete(self) -> None:
+        """Fails when two writes disagree, when the corpus or the system export is short,
+        when the unauthorized circular or a required document kind is missing, or when
+        the volume streams and the planted record-number fault are absent.
+        """
         profile = load("small")
         root = world_dir("small")
         first = write_world(profile, root, stream_rows=30)

@@ -27,6 +27,10 @@ Case date: {CASE_DATE}.
 
 
 def steer_page() -> str:
+    """Return the steering page for this pack.
+
+    The committee is named and the questions are numbered in the stored order so the file matches that list.
+    """
     numbered = "\n".join(f"{index}. {text}" for index, text in enumerate(QUESTIONS, start=1))
     return f"""# steer-w3
 
@@ -37,6 +41,10 @@ The steering committee asks these questions. The committee is cdo, med-dir, dpo,
 
 
 def role_cards() -> str:
+    """Return the workshop role cards.
+
+    Each seat is shown with its name, role, opening line, and goals. Hidden interview answers stay out of the page.
+    """
     by_id = {row["id"]: row for row in PERSONAS}
     parts = ["# Role cards", "", "ws-access seats. Hidden answers stay in the interview.", ""]
     for seat in SEATS:

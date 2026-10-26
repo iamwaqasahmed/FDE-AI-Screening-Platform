@@ -1,4 +1,7 @@
-"""Written notes for Week 3 Day 5. A miss does not print a price or a count."""
+"""Written notes for Week 3 Day 5. A miss does not print a price or a count.
+
+Written notes for the second evaluation run. The sprint must fix, rerun, then write the spec. The benchmark must name each planted failure and the second run. The improvement plan must name the label cost. The knowledge note must say what the second run changed and which requirement is out of scope. A commented improvement gate does not count.
+"""
 
 from __future__ import annotations
 
@@ -24,31 +27,52 @@ _PAIRS = (
 
 
 def _text(path: Path) -> str:
+    """Return the file text, or an empty string when the path is not a file.
+
+    Callers treat empty text as a missing note and report a content miss instead of raising.
+    """
     if not path.is_file():
         return ""
     return path.read_text(encoding="utf-8")
 
 
 def _once(problems: list[str], item: str) -> None:
+    """Append the miss when that sentence is not already in the list.
+
+    Several note groups can fail the same way, and the list should name each failure once.
+    """
     if item not in problems:
         problems.append(item)
 
 
 def _in_force(text: str) -> bool:
+    """Return true when the text uses any of the in-force spellings.
+
+    A space, a hyphen, or an underscore all count.
+    """
     return "in force" in text or "in-force" in text or "in_force" in text
 
 
 def sprint_problems(work: Path) -> list[str]:
+    """Return the sequence miss unless fix, the second run, and the spec appear in that order.
+
+    A missing word or the wrong order is the same miss.
+    """
     lowered = _text(work / "sprint.md").lower()
     fix = lowered.find("fix")
     second = lowered.find("second")
     spec = lowered.find("spec")
+    # Fix, the second run, and the spec must all exist, in that order.
     if not (0 <= fix < second < spec):
         return [SEQUENCE]
     return []
 
 
 def benchmark_problems(work: Path) -> list[str]:
+    """Return the planted-failure miss and the second-run miss.
+
+    Every log id must appear with its failure name. The note must also mention the second run and retrieval.
+    """
     lowered = _text(work / "benchmark.md").lower()
     problems: list[str] = []
     if not all(log_id in lowered and name in lowered for log_id, name in _PAIRS):
@@ -59,6 +83,7 @@ def benchmark_problems(work: Path) -> list[str]:
 
 
 def improvement_problems(work: Path) -> list[str]:
+    """Return the label-cost miss unless the cost field, the label word, and retrieval all appear."""
     lowered = _text(work / "improvement.md").lower()
     if "cost.label" not in lowered or "label" not in lowered or "retrieval" not in lowered:
         return [LABEL]
@@ -66,6 +91,10 @@ def improvement_problems(work: Path) -> list[str]:
 
 
 def knowledge_problems(work: Path) -> list[str]:
+    """Return the knowledge misses.
+
+    Fewer than two numbered answers is the two-answer miss. The first answer must mention retrieval and an in-force spelling, which is what the second run changed. The second must name the out-of-scope requirement and must leave urgency with a clinician.
+    """
     text = _text(work / "knowledge.md")
     answers = [line for line in text.splitlines() if re.match(r"\s*\d+\.\s+\S", line)]
     if len(answers) < 2 or not two_answers(text):
@@ -81,10 +110,15 @@ def knowledge_problems(work: Path) -> list[str]:
 
 
 def gate_problems(work: Path) -> list[str]:
+    """Return the gate miss unless the workflow has a real improvement-gate job and the remeasure test command.
+
+    Blank lines and comments are skipped. Both the job name and the command must appear.
+    """
     text = _text(work / ".github" / "workflows" / "ci.yml")
     job = command = False
     for line in text.splitlines():
         stripped = line.strip()
+        # A blank line or a comment is skipped, so a gate that exists only in a comment does not count.
         if not stripped or stripped.startswith("#"):
             continue
         if stripped.startswith("improvement-gate:"):
@@ -97,6 +131,7 @@ def gate_problems(work: Path) -> list[str]:
 
 
 def note_problems(work: Path) -> list[str]:
+    """Return the sprint, benchmark, improvement, knowledge, and gate misses, each sentence at most once."""
     problems: list[str] = []
     for item in sprint_problems(work):
         _once(problems, item)

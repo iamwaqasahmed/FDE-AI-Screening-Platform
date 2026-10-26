@@ -1,4 +1,7 @@
-"""Build a release. A second run with the same profile writes the same bytes."""
+"""Build a release. A second run with the same profile writes the same bytes.
+
+The release argument selects a writer. The first release uses the default pack path. Every later release names its own pack directory. Truth is the shared directory for the profile. An unknown release id stops before anything is written. The command prints the release, the profile, both paths, and the fingerprint.
+"""
 
 from __future__ import annotations
 
@@ -50,11 +53,13 @@ from alwaha.release.write import write_release
 
 
 def main(argv: list[str] | None = None) -> None:
+    """Write the selected release for the loaded profile and print the fingerprint."""
     parser = argparse.ArgumentParser(description="Write an Al-Waha release.")
     parser.add_argument("--profile", default=None)
     parser.add_argument("--release", default=DAY1)
     args = parser.parse_args(argv)
     profile = load(args.profile)
+    # The first release uses the default pack path. Later releases each name a directory.
     if args.release == DAY1:
         pack, truth = pack_dir(profile.name), truth_dir(profile.name)
         digest = write_release(profile, pack, truth)
@@ -135,6 +140,7 @@ def main(argv: list[str] | None = None) -> None:
         truth = truth_dir(profile.name)
         digest = write_w4d5(profile, pack, truth)
     else:
+        # Stop before creating a directory for an id this builder does not know.
         raise SystemExit(f"Unknown release {args.release}.")
     print(f"Wrote {args.release} for {profile.name}")
     print(f"Pack: {pack}")

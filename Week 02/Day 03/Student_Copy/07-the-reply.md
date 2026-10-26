@@ -89,6 +89,7 @@ from schema import schema_ok
 
 
 class SchemaTests(unittest.TestCase):
+    """The reply schema requires intent, not a sentence."""
     def test_intent_without_a_sentence(self) -> None:
         """An empty sentence with intent status is accepted."""
         self.assertTrue(schema_ok({"intent": "status", "text": ""}))
@@ -138,6 +139,7 @@ _ROOT = Path(__file__).resolve().parents[5]
 
 
 class JourneyTests(unittest.TestCase):
+    """The journey asserts the mock state, not the sentence."""
     def test_recorded_sentence_is_not_the_state(self) -> None:
         """A recorded sentence with booked false is not a booking.
 

@@ -1,4 +1,15 @@
-"""Day 1 of Week 3: the history, the guideline, and the fidelity card."""
+"""Day 1 of Week 3: the history, the guideline, and the fidelity card.
+
+Guards the history release, the fidelity card, and the interview that must not
+add a required fact.
+
+Earlier weeks must survive the write. Prose must not contain national ids, the
+converted dates, or the watermark, while the clerk letters may carry the
+watermark. The demo may show the two record numbers and the shared national id
+and must not print a converted date. Shell modules must differ from the filled
+copy, and both test suites must pass. The data-protection and coordinator
+scripts must not release a new required fact.
+"""
 
 from __future__ import annotations
 
@@ -30,15 +41,18 @@ from alwaha.release.w2d5 import write_w2d5
 from alwaha.release.w3d1 import write_w3d1
 from alwaha.release.write import write_release
 
+# Data-protection script. Neither turn should release a fact.
 _DPO = [
     "How should we handle patient data?",
     "Is the data request for the full history approved, or is it only a sample?",
 ]
+# Coordinator-lead script. The photo turn should stay closed.
 _COORD = [
     "Is the queue the problem?",
     "What sits in the note?",
     "How do clerk labels and the guideline treat a photo?",
 ]
+# Shell modules that must differ from the filled copy. The suites are run separately.
 _APP = (
     "dates.py",
     "codes.py",
@@ -52,6 +66,7 @@ _APP = (
 
 
 def _canary_count(pack: Path, canary: str) -> int:
+    """Count watermark hits across every file in a pack."""
     total = 0
     for path in pack.rglob("*"):
         if path.is_file():
@@ -60,6 +75,9 @@ def _canary_count(pack: Path, canary: str) -> int:
 
 
 def _prose(pack: Path) -> str:
+    """Join the markdown and the manifest files. Identity secrets are forbidden there
+    even when a letter fixture is allowed to carry the watermark.
+    """
     chunks = []
     for path in pack.rglob("*"):
         if path.is_file() and path.suffix in {".md", ".yaml", ".yml"}:
@@ -68,7 +86,12 @@ def _prose(pack: Path) -> str:
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a pack that rewrites an earlier week or that prints an identity secret in prose."""
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or the previous gold
+        file changes, or when this day's gold is missing from the hidden side or present
+        in the pack.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -107,6 +130,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((root / "w3d1" / "w3d1_gold.json").exists())
 
     def test_profiles_differ_by_canary(self) -> None:
+        """Fails when either watermark is missing, repeated, or shared, or when the
+        fingerprints match.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice, small = load("practice"), load("small")
@@ -117,6 +143,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(root / "practice"), fingerprint(root / "small"))
 
     def test_prose_keeps_the_secrets_out(self) -> None:
+        """Fails when prose contains the watermark, a national id, or a converted date, or
+        when the watermark is not exactly once in the pack and present in the clerk letters.
+        The gold file must match the generator and must not contain the watermark.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -133,7 +163,14 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo or a lesson that states a converted date, a module that was not
+    changed, a suite that fails, or an interview that releases a required fact.
+    """
     def test_demo_prints_two_mrns_and_one_national_id(self) -> None:
+        """Fails when the demo does not show the two record numbers, the shared national
+        id, and the line that keeps them as two people, or when it prints the watermark
+        or a converted date.
+        """
         profile = load("practice")
         hidden = gold(profile)
         stdout = StringIO()
@@ -148,6 +185,9 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(converted, text)
 
     def test_lessons_do_not_state_the_gregorian_date(self) -> None:
+        """Fails when lesson notes or templates contain the watermark, a national id, or a
+        converted date.
+        """
         notes = [path.read_text(encoding="utf-8") for path in W3D1_ROOT.glob("*.md")]
         notes.extend(path.read_text(encoding="utf-8") for path in W3D1_TEMPLATES.glob("*.md"))
         lesson_text = "\n".join(notes)
@@ -157,12 +197,18 @@ class DemoTests(unittest.TestCase):
             self.assertNotIn(secret, lesson_text)
 
     def test_modules_differ_and_both_suites_pass(self) -> None:
+        """Fails when a shell module is identical to the filled copy.
+
+        The suites themselves are checked by the following two cases, so a byte match
+        here is only the first half of the guard.
+        """
         for name in _APP:
             shell = (W3D1_APP / name).read_bytes()
             filled = (W3D1_WORK / "app" / name).read_bytes()
             self.assertNotEqual(shell, filled, name)
 
     def test_filled_suite_passes(self) -> None:
+        """Fails when the filled packet's own unit tests do not pass."""
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
             cwd=W3D1_WORK,
@@ -173,6 +219,7 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
 
     def test_shell_suite_passes(self) -> None:
+        """Fails when the unfinished packet's own unit tests do not pass."""
         completed = subprocess.run(
             [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-q"],
             cwd=W3D1_ROOT / "Student_Copy" / "packet",
@@ -183,6 +230,10 @@ class DemoTests(unittest.TestCase):
         self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
 
     def test_dpo_and_coord_lead_add_no_required_fact(self) -> None:
+        """Fails when either new question releases a fact, or when a persona's required-fact
+        list has changed. The answers may still mention the history approval and the
+        phone photo. Those mentions are not new required facts.
+        """
         personas = load_personas()
         dpo = personas["dpo"]
         turns = run(dpo, _DPO)

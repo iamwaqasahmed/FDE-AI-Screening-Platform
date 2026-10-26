@@ -25,12 +25,27 @@ You are reading. You are not pasting yet. Open these in the packet. Read the com
 1. [adapter.py](packet/app/adapter.py). Search for `Load the cloud-tune hash`. That sentence is the shell. It asks for more GPUs than the quota. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/adapter.py](work/app/adapter.py) is under Replace the adapter.
 
 ```text
-"""Load the cloud-tune hash and ask for more GPUs than the quota."""
+"""Load the cloud-tune hash and ask for more GPUs than the quota.
+
+This file does not read the model register. It reports the
+cloud-tune id, the hash taken from the cloud argument, and the
+ext-large base. The GPU count is the quota plus one, so the
+request sits above the quota. The rank is the fixed rank in
+the returned row.
+"""
 
 from __future__ import annotations
 
 
 def serve(registry: dict, quota: dict, cloud: dict) -> dict:
+    """Build the cloud-tune row from the quota and the cloud hash.
+
+    registry is not read. quota supplies the GPU count, and this
+    row asks for one more than that count. cloud supplies the
+    hash. The id, the base, and the rank do not come from the
+    arguments.
+    """
+    # The register is unused. Every call returns this cloud-tune row.
     return {
         "base": "ext-large",
         "gpus": quota["gpus"] + 1,
@@ -43,29 +58,59 @@ def serve(registry: dict, quota: dict, cloud: dict) -> dict:
 2. [route.py](packet/app/route.py). Search for `Allow every call`. That sentence is the shell. The next block is a picture of that file. Do not paste it.
 
 ```text
-"""Allow every call, including a phi field sent to ext-large."""
+"""Allow every call, including a phi field sent to ext-large.
+
+allow does not read the call or the register. It returns true
+for every call. task does not read the task name. It returns
+ext-large for every name.
+"""
 
 from __future__ import annotations
 
 
 def allow(call: dict, registry: dict) -> bool:
+    """Allow the call.
+
+    call and registry are not read. A phi field sent to
+    ext-large is allowed, because no field and no hash is
+    checked.
+    """
     return True
 
 
 def task(name: str) -> str:
+    """Send every task to ext-large.
+
+    name is not read. Every task name receives the same model
+    name.
+    """
     return "ext-large"
 ```
 
 3. [cost.py](packet/app/cost.py). Search for `Price the token count on ext-large`. That sentence is the shell. The next block is a picture of that file. Do not paste it.
 
 ```text
-"""Price the token count on ext-large."""
+"""Price the token count on ext-large.
+
+quote reads the ext-large rate, divides the token count by one
+thousand, and multiplies. The model name on the quote is
+ext-large. The latency on the quote is one second. The cap
+limits are not read.
+"""
 
 from __future__ import annotations
 
 
 def quote(cap: dict, prices: dict) -> dict:
+    """Price the cap's tokens with the ext-large per-thousand rate.
+
+    cap supplies the token count. prices supplies the rate stored
+    under the ext-large key. The local rate is not read. The
+    result names ext-large and sets the latency to one second.
+    """
+    # The rate is stored as text. int() makes it a number.
     rate = int(prices["price.ext_large_per_1k"])
+    # The token count is billed per thousand.
     sar = cap["tokens"] / 1000 * rate
     return {"model": "ext-large", "sar": sar, "seconds": 1}
 ```

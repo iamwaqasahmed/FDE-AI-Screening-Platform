@@ -17,6 +17,7 @@ from admit import admit, emitted_log
 
 
 class AdmitTests(unittest.TestCase):
+    """Root is rejected, and the stand-in id leaves the log."""
     def test_root_is_rejected(self) -> None:
         """root and 0 are rejected.
 

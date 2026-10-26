@@ -52,7 +52,15 @@ NAIVE = {
 
 
 class CheckTests(unittest.TestCase):
+    """Grade the intake check on a temporary pack.
+
+    Each test gets its own pack and work directory, and that directory is removed when the test ends.
+    """
     def setUp(self) -> None:
+        """Build a temporary pack, its gold, and an empty work directory.
+
+        The release is written for the small profile so every test grades the same pack.
+        """
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name)
         self.profile = load("small")
@@ -65,9 +73,17 @@ class CheckTests(unittest.TestCase):
         self.here = Path(__file__).resolve().parent
 
     def tearDown(self) -> None:
+        """Remove the temporary directory.
+
+        A later test must not see this pack or this work directory.
+        """
         self.tmp.cleanup()
 
     def _copy_skeleton(self) -> None:
+        """Copy the workflow skeleton into the work directory.
+
+        Caches are skipped so the grade sees source. The naive test uses this copy to catch an unfinished worker.
+        """
         shutil.copytree(
             WORKFLOW_ROOT,
             self.work / "workflow",
@@ -75,19 +91,35 @@ class CheckTests(unittest.TestCase):
         )
 
     def _use_correct_worker(self) -> None:
+        """Install the finished worker and calendar on the skeleton.
+
+        The rest of the skeleton stays, so a pass means those two files are what the check accepts.
+        """
         self._copy_skeleton()
         workflow = self.work / "workflow"
         (workflow / "worker.py").write_text((self.here / "day3_worker.py").read_text(encoding="utf-8"), encoding="utf-8")
         (workflow / "calendar_count.py").write_text((self.here / "day3_calendar.py").read_text(encoding="utf-8"), encoding="utf-8")
 
     def _prose(self) -> None:
+        """Write the intake diagram and the knowledge answers.
+
+        The check reads both files. Writing them first keeps a later failure about the workflow rather than missing prose.
+        """
         (self.work / "intake.md").write_text(INTAKE, encoding="utf-8")
         (self.work / "knowledge.md").write_text(KNOWLEDGE, encoding="utf-8")
 
     def _grade(self) -> list[str]:
+        """Return the intake problems for the work directory.
+
+        The tests fail when this list is not the set of misses they expect.
+        """
         return events_problems(self.work, self.pack, self.gold, self.profile.canary())
 
     def test_naive_skeleton_fails_without_the_key(self) -> None:
+        """Catch an unfinished worker whose report is incomplete or leaks a hidden value.
+
+        Every planted intake miss must be named. The report must not repeat the watermark, the held state, the clinic, a due date, a criteria id, or a clause id.
+        """
         self._copy_skeleton()
         self._prose()
         problems = self._grade()
@@ -106,11 +138,19 @@ class CheckTests(unittest.TestCase):
             self.assertNotIn(doc, joined)
 
     def test_correct_worker_passes(self) -> None:
+        """Catch a finished worker that the intake check still rejects.
+
+        An empty problem list is required. Any remaining miss fails the test.
+        """
         self._use_correct_worker()
         self._prose()
         self.assertEqual(self._grade(), [])
 
     def test_diagram_and_knowledge_are_required(self) -> None:
+        """Catch a blank diagram or a knowledge note with one answer.
+
+        The human step and the criteria version must appear, and the note must hold both answers, or the check is wrong to accept the work.
+        """
         self._use_correct_worker()
         (self.work / "intake.md").write_text(DAY3_TEMPLATES.joinpath("intake.md").read_text(encoding="utf-8"), encoding="utf-8")
         (self.work / "knowledge.md").write_text("1. only one\n", encoding="utf-8")
@@ -120,12 +160,20 @@ class CheckTests(unittest.TestCase):
         self.assertIn("knowledge.md needs two answers", problems)
 
     def test_watermark_in_work_is_not_echoed(self) -> None:
+        """Catch a watermark copied into the work directory.
+
+        The only problem may be the watermarked-sample message. That message must not contain the watermark itself.
+        """
         (self.work / "copied.md").write_text(self.profile.canary(), encoding="utf-8")
         problems = self._grade()
         self.assertEqual(problems, ["a watermarked sample is in the work directory"])
         self.assertNotIn(self.profile.canary(), "\n".join(problems))
 
     def test_watermark_in_the_log_is_not_echoed(self) -> None:
+        """Catch a worker that copies the event stream into the log.
+
+        The check must report the watermarked sample and must not repeat the watermark in the problem text.
+        """
         workflow = self.work / "workflow"
         workflow.mkdir()
         script = """import sys

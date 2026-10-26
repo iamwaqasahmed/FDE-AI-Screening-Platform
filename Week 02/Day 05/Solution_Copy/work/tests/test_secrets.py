@@ -1,3 +1,10 @@
+"""Prod and dev read different credential files.
+
+dev-token and prod-token are stand-ins written into a temporary
+pack. They are not loaded from a release file. The tests import
+credential from the app folder beside this tests folder.
+"""
+
 import json
 import sys
 import tempfile
@@ -10,7 +17,14 @@ from secrets import credential
 
 
 class SecretTests(unittest.TestCase):
+    """Each environment reads the endpoint from its own credential file."""
+
     def setUp(self) -> None:
+        """Write two stand-in credential files under a temporary pack.
+
+        The fixture is a temporary folder with credentials/dev.json
+        and credentials/prod.json. Each file holds an endpoint field.
+        """
         self.tmp = tempfile.TemporaryDirectory()
         root = Path(self.tmp.name) / "credentials"
         root.mkdir()
@@ -19,9 +33,16 @@ class SecretTests(unittest.TestCase):
         self.pack = Path(self.tmp.name)
 
     def tearDown(self) -> None:
+        """Remove the temporary pack created for this test."""
         self.tmp.cleanup()
 
     def test_prod_differs_from_dev(self) -> None:
+        """Each environment returns the stand-in from its own file.
+
+        dev reads the dev file. prod reads the prod file. The two
+        values are not equal. The assertions prove both reads and
+        that the values differ.
+        """
         self.assertEqual(credential("dev", self.pack), "dev-token")
         self.assertEqual(credential("prod", self.pack), "prod-token")
         self.assertNotEqual(credential("dev", self.pack), credential("prod", self.pack))

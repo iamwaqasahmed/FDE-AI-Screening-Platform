@@ -19,6 +19,7 @@ from labels import relabel
 
 
 class LabelTests(unittest.TestCase):
+    """A phone photo and a retina note follow ann-v2."""
     def test_photo_and_retina_follow_ann_v2(self) -> None:
         """Phone and retina in the text override the clerk fields."""
         row = {"item_id": "h1", "source_type": "scan", "sub_specialty": "", "text": "Phone photo from the retina service."}

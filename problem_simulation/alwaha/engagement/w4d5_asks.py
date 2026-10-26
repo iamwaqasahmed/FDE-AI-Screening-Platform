@@ -1,4 +1,8 @@
-"""Day 5 interview nodes. They do not join the Week 1 must-surface list."""
+"""Day 5 interview nodes.
+They do not join the Week 1 must-surface list.
+
+ASKS adds facts and tree nodes for two personas. The new facts carry a false surface flag, so the Week 1 checker does not require them. Each new node names a parent that already exists on that persona, so it opens only as a follow-up. extend leaves every other persona unchanged.
+"""
 
 from __future__ import annotations
 
@@ -45,7 +49,12 @@ ASKS = {
 
 
 def extend(row: dict) -> dict:
+    """Return the row with its day-five facts and nodes appended, or the same row when this persona has none.
+
+    The new facts carry a false surface flag, so they do not become required. The new nodes name a parent that already exists on that persona.
+    """
     extra = ASKS.get(row["id"])
+    # Personas without a day-five addition stay exactly as catalogued.
     if extra is None:
         return row
     merged = dict(row)

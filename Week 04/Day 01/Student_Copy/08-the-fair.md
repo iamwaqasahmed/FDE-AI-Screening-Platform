@@ -20,17 +20,29 @@ You are reading. You are not pasting yet. Open these in the packet. Read the com
 1. Open [fair.py](packet/app/fair.py). Search for `Report no gap and no stamp rate`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/fair.py](work/app/fair.py) is under the Replace heading for this file.
 
 ```text
-"""Report no gap and no stamp rate."""
+"""Report no gap and no stamp rate.
+
+gap and stamp_rate both discard the rows they are given and return
+zero. Nothing on the row changes either result.
+"""
 
 from __future__ import annotations
 
 
 def gap(rows: list[dict]) -> float:
+    """Return zero for any rows.
+
+    del drops the local name. The rows are not read.
+    """
     del rows
     return 0.0
 
 
 def stamp_rate(rows: list[dict]) -> float:
+    """Return zero for any rows.
+
+    No field is read. An empty list and a full list match.
+    """
     del rows
     return 0.0
 ```
@@ -38,29 +50,51 @@ def stamp_rate(rows: list[dict]) -> float:
 2. Open [test_fair.py](packet/tests/test_fair.py). Search for `test_the_gap_is_zero`. That name is the shell test. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/tests/test_fair.py](work/tests/test_fair.py) is under the Replace heading for this file.
 
 ```text
+"""Tests for a gap and a stamp rate that are both zero.
+
+The decision fixture and the stamp fixture are passed in. Both
+results are expected to be zero no matter what the rows contain.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from fair import gap, stamp_rate
 
+# A yes in one district and insurance class, and a no in the other.
 _ROWS = [
     {"decision": "yes", "district": "d-nakhl", "insurance": "class-a"},
     {"decision": "no", "district": "d-rim", "insurance": "class-b"},
 ]
+# One stamped row and one row that is not stamped.
 _STAMPS = [{"stamped": True}, {"stamped": False}]
 
 
 class FairTests(unittest.TestCase):
+    """Check that neither fixture moves the result off zero."""
+
     def test_the_gap_is_zero(self) -> None:
+        """gap returns zero for the decision fixture.
+
+        The yes and no decisions are in the fixture. They do not change
+        the result. The assertion is zero.
+        """
         self.assertEqual(gap(_ROWS), 0.0)
 
     def test_the_stamp_rate_is_zero(self) -> None:
+        """stamp_rate returns zero for the stamp fixture.
+
+        One row is stamped and one is not. The assertion is still zero.
+        """
         self.assertEqual(stamp_rate(_STAMPS), 0.0)
 
 
+# Executing this file runs the tests defined above.
 if __name__ == "__main__":
     unittest.main()
 ```
@@ -77,22 +111,46 @@ This block replaces [work/app/fair.py](work/app/fair.py). The full path is `Week
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `setdefault`.
 
 ```text
-"""Disparity by district and insurance class, and the Thursday stamp rate."""
+"""Disparity by district and insurance class, and the Thursday stamp rate.
+
+gap is the wider yes-rate spread across district and across insurance.
+A yes decision is the decision text yes. For each key, rows are grouped
+and each group's rate is the share of yes decisions. The spread is the
+highest rate minus the lowest. gap returns the larger spread. No rows,
+or a key with no groups, contributes nothing, and no spreads at all
+returns zero.
+
+stamp_rate is the share of rows whose stamped field is true. An empty
+list returns zero so the length is never used as a divisor.
+"""
 
 from __future__ import annotations
 
 
 def _rates(rows: list[dict], key: str) -> list[float]:
+    """Group rows by key and return the yes-rate of each group.
+
+    Group order follows the first time each key value appears. The spread
+    later uses the highest and lowest rates, so that order does not matter.
+    """
     groups: dict[str, list[bool]] = {}
     for row in rows:
+        # The row must have this key and a decision. Other decision text counts as no.
         groups.setdefault(row[key], []).append(row["decision"] == "yes")
+    # Skip an empty group so the rate is never a division by an empty length.
     return [sum(flags) / len(flags) for flags in groups.values() if flags]
 
 
 def gap(rows: list[dict]) -> float:
+    """Return the wider yes-rate spread across district and insurance.
+
+    Each spread is the highest group rate minus the lowest. The result is
+    the larger of those spreads, or zero when neither key produced one.
+    """
     spreads = []
     for key in ("district", "insurance"):
         rates = _rates(rows, key)
+        # A key that formed no groups does not add a spread.
         if rates:
             spreads.append(max(rates) - min(rates))
     if not spreads:
@@ -101,6 +159,11 @@ def gap(rows: list[dict]) -> float:
 
 
 def stamp_rate(rows: list[dict]) -> float:
+    """Return the share of rows with a true stamped field.
+
+    A missing stamped field counts as not stamped. An empty list returns zero.
+    """
+    # An empty list has no share. Return zero before dividing.
     if not rows:
         return 0.0
     return sum(1 for row in rows if row.get("stamped")) / len(rows)
@@ -118,29 +181,52 @@ This block replaces [work/tests/test_fair.py](work/tests/test_fair.py). The full
 4. Paste. Save. Search the saved work file, not this chapter. Ctrl+F on Windows, Command+F on macOS. Look for `test_the_gap_is_the_spread_across_both_slices`.
 
 ```text
+"""Tests for the disparity gap and the stamp share.
+
+One fixture has a yes in one district and insurance class, and a no
+in the other. The other fixture has one stamped row and one row that
+is not stamped.
+"""
+
 import sys
 import unittest
 from pathlib import Path
 
+# tests/ sits beside app/. This puts that app folder on the path so
+# the import below loads this copy, not a module from another day.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))
 
 from fair import gap, stamp_rate
 
+# A yes in one district and insurance class, and a no in the other.
 _ROWS = [
     {"decision": "yes", "district": "d-nakhl", "insurance": "class-a"},
     {"decision": "no", "district": "d-rim", "insurance": "class-b"},
 ]
+# One stamped row and one row that is not stamped.
 _STAMPS = [{"stamped": True}, {"stamped": False}]
 
 
 class FairTests(unittest.TestCase):
+    """Check the gap on the decision rows and the share on the stamp rows."""
+
     def test_the_gap_is_the_spread_across_both_slices(self) -> None:
+        """The gap on the decision fixture is the spread in the assertion.
+
+        Each slice has a yes and a no, so the spread is the whole range
+        from yes to no. The assertion is that spread.
+        """
         self.assertEqual(gap(_ROWS), 1.0)
 
     def test_the_stamp_rate_is_the_thursday_share(self) -> None:
+        """The stamp share of the stamp fixture is the value in the assertion.
+
+        One row is stamped and one is not. The assertion is that share.
+        """
         self.assertEqual(stamp_rate(_STAMPS), 0.5)
 
 
+# Executing this file runs the tests defined above.
 if __name__ == "__main__":
     unittest.main()
 ```

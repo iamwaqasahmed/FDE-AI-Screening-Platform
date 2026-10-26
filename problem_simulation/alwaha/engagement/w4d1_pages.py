@@ -26,6 +26,10 @@ Case date: {CASE_DATE}.
 
 
 def checklist() -> str:
+    """Return the go-live checklist as a table.
+
+    Each stored id is paired with its check so the page uses the same ids as the deployment policy.
+    """
     lines = [
         "# Go-live checklist",
         "",

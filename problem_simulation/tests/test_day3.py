@@ -1,4 +1,14 @@
-"""Day 3 release, calendar, and the out-of-order demo."""
+"""Day 3 release, calendar, and the out-of-order demo.
+
+Guards the working-day calendar, the third-day release, and the out-of-order demo.
+
+The calendar test uses the real counter, not the test double. The release tests
+write earlier days first and then this day, and they require the earlier packs
+and gold files to stay put. The learner pack must match the event stream, keep
+the in-force criteria distinct from the draft, and keep due dates and clause ids
+out of the lesson notes. The demo may show the arrival pair and must not name
+the ordering defect.
+"""
 
 from __future__ import annotations
 
@@ -24,7 +34,13 @@ from alwaha.world.calendar import WORKING_DAY_COUNT, add_working_days, holiday_d
 
 
 class CalendarTests(unittest.TestCase):
+    """Catches a counter that treats a weekend or a holiday as a working day, or that
+    lands a due date on the wrong side of the weekend.
+    """
     def test_friday_and_eid_are_not_working_days(self) -> None:
+        """Fails when the weekend day or a holiday counts as a working day, or when the
+        span that starts just before the weekend does not land on the next working day.
+        """
         holidays = set(holiday_dates())
         friday = date(2027, 1, 15)
         self.assertEqual(friday.weekday(), 4)
@@ -39,7 +55,14 @@ class CalendarTests(unittest.TestCase):
 
 
 class ReleaseTests(unittest.TestCase):
+    """Catches a third-day pack that drifts, that rewrites an earlier day, or that
+    leaks the event gold, the watermark, or the criteria key into the learner side.
+    """
     def test_same_seed_matches_and_earlier_days_stay(self) -> None:
+        """Fails when a second write disagrees, when an earlier pack or gold file changes,
+        or when the event gold is missing from the hidden side or present in the pack.
+        The scheduling spec that belongs to a later day must not appear yet.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -62,6 +85,9 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse((day3 / "openapi" / "sched-ain.yaml").exists())
 
     def test_profiles_differ_by_canary(self) -> None:
+        """Fails when the practice watermark is missing, repeated, or shared with the small
+        pack, or when the two packs share a fingerprint.
+        """
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             practice = load("practice")
@@ -76,6 +102,10 @@ class ReleaseTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(root / "practice"), fingerprint(root / "small"))
 
     def test_pack_matches_the_stream_and_the_criteria(self) -> None:
+        """Fails when the written event file drifts from the stream, when the out-of-order
+        pair or the replay is flattened, when the draft criteria looks in force, or when
+        the watermark appears in the gold file or the workflow pages.
+        """
         profile = load("small")
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -99,6 +129,11 @@ class ReleaseTests(unittest.TestCase):
                     self.assertNotIn(profile.canary(), path.read_text(encoding="utf-8"))
 
     def test_notes_do_not_copy_the_key(self) -> None:
+        """Fails when lesson notes contain a clause id, the working-day setting, the retry
+        setting, or a due date. Also fails when the unfinished worker already knows
+        which document is in force, or when the unfinished calendar already knows about
+        holidays.
+        """
         notes = "\n".join(path.read_text(encoding="utf-8") for path in DAY3_ROOT.glob("*.md"))
         for doc in criteria_docs():
             self.assertNotIn(doc["clause_id"], notes)
@@ -115,7 +150,11 @@ class ReleaseTests(unittest.TestCase):
 
 
 class DemoTests(unittest.TestCase):
+    """Catches a demo that names the ordering defect or that hides the two arrivals."""
     def test_demo_shows_the_pair_and_does_not_name_it(self) -> None:
+        """Fails when the demo's lines are not the two arrivals and the single approval,
+        or when it uses the words that would tell the learner the defect's name.
+        """
         stdout = StringIO()
         with redirect_stdout(stdout):
             demo_main(["--profile", "small"])

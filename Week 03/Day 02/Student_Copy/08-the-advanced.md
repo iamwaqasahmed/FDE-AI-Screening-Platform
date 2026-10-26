@@ -27,12 +27,26 @@ Open [ds-domain.jsonl](packet/release/domain/ds-domain.jsonl) and [ds-prefs.json
 1. [qlora.py](packet/app/qlora.py). Search for `Spend a full LoRA rank`. That sentence is the shell. The next block is a picture of that file. Do not paste it. This block replaces nothing. The paste that replaces [work/app/qlora.py](work/app/qlora.py) is under Replace the rank fit.
 
 ```text
-"""Spend a full LoRA rank, even when the quota is smaller."""
+"""Spend a full LoRA rank, even when the quota is smaller.
+
+fit ignores the GPU quota. It turns the requested rank into a
+GPU count in groups of eight, and it never asks for fewer than
+one GPU. The method name on the result is lora. The rank is
+returned unchanged.
+"""
 
 from __future__ import annotations
 
 
 def fit(rank: int, gpus: int) -> dict:
+    """Turn the rank into a LoRA GPU count and leave the quota unread.
+
+    rank is the requested rank and is copied into the result.
+    gpus is not read, so a smaller quota does not lower the
+    count. The count is at least one, and it steps up by one
+    GPU for each group of eight ranks. The method is lora.
+    """
+    # Round the rank up into groups of eight, and keep at least one GPU.
     need = max(1, (rank + 7) // 8)
     return {"gpus": need, "method": "lora", "rank": rank}
 ```
@@ -40,24 +54,46 @@ def fit(rank: int, gpus: int) -> dict:
 2. [domain.py](packet/app/domain.py). Search for `Train on every row`. That sentence is the shell. The next block is a picture of that file. Do not paste it.
 
 ```text
-"""Train on every row, including the extraction letters."""
+"""Train on every row, including the extraction letters.
+
+keep copies the whole list and returns it in the same order. A
+row that carries an item id stays beside a row that does not.
+Nothing is filtered.
+"""
 
 from __future__ import annotations
 
 
 def keep(rows: list[dict]) -> list[dict]:
+    """Return every row, in the same order.
+
+    rows may mix domain lines and extraction letters. This
+    function does not look at keys. The new list holds the same
+    row objects.
+    """
+    # A new list, with every row kept.
     return list(rows)
 ```
 
 3. [prefs.py](packet/app/prefs.py). Search for `Return the coordinator draft unchanged`. That sentence is the shell. The next block is a picture of that file. Do not paste it.
 
 ```text
-"""Return the coordinator draft unchanged."""
+"""Return the coordinator draft unchanged.
+
+revise returns the same string it was given. No word is expanded
+and no word is removed.
+"""
 
 from __future__ import annotations
 
 
 def revise(draft: str) -> str:
+    """Return the draft as it arrived.
+
+    draft is the coordinator sentence. This function does not
+    scan it.
+    """
+    # The sentence is handed back with every word still in place.
     return draft
 ```
 

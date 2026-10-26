@@ -1,4 +1,7 @@
-"""Session headers for a scaled run of working days. Slots stay a count on the row."""
+"""Session headers for a scaled run of working days. Slots stay a count on the row.
+
+The number of working days grows with the profile population and has a floor. The cursor starts on the fixed opening date and walks forward. Weekend weekdays are skipped and do not count toward that total. Each working day gets one header per hospital and specialty, with slot ids expanded from the count.
+"""
 
 from __future__ import annotations
 
@@ -12,11 +15,13 @@ WEEKEND = {4, 5}
 
 
 def sessions(profile) -> list[dict]:
+    """Return session headers for the scaled run of working days."""
     days = max(5, round(48 * profile.people / PRACTICE_PEOPLE))
     cursor = date(2026, 1, 4)
     produced = 0
     rows: list[dict] = []
     while produced < days:
+        # A weekend weekday does not enter this branch, so it does not count as a working day.
         if cursor.weekday() not in WEEKEND:
             rows.extend(_day(cursor))
             produced += 1
@@ -25,6 +30,7 @@ def sessions(profile) -> list[dict]:
 
 
 def _day(cursor: date) -> list[dict]:
+    """Return every hospital and specialty header for one working day."""
     stamp = cursor.isoformat()
     rows = []
     for hospital in HOSPITALS:
