@@ -20,7 +20,7 @@ Open `work/` and find each row.
 | [dpo.notes.md](work/interviews/dpo.notes.md) | What the data protection officer says about where patient data sits. You were not asked to write this note. The checks do not read it |
 | [knowledge.md](work/knowledge.md) | The two answers. Explained in [chapter 06](06-knowledge.md) |
 
-The checks print `passed` when they can run the agent, the trace matches the approval rules and the two new failures, the diagram has a human step, the design leaves urgency with a clinician, the readout answers the five questions, and the trace note names the emergency tool, the document, and the refusal. They do not grade the sentences in `knowledge.md`. The trainer reads those. The design check still grades the diagram, the urgency section, and the stage-2 facts. On `knowledge.md` it only requires two numbered lines with a word after the number.
+The checks print `passed` when they can run the agent, the trace matches the approval rules and the two new failures, the diagram has a human step, the design leaves urgency with a clinician, the readout answers the five questions, and the trace note names the emergency tool, the document, and the refusal. They do not grade the sentences in `knowledge.md`. The trainer reads those. The design check still grades the diagram, the urgency section, and the Stage 2 table. On `knowledge.md` it only requires two numbered lines with a word after the number.
 
 The checks run `run.py` again. A trace you typed by hand is not what they grade. This copy of the trace is here so you can read the rows beside chapter 02.
 

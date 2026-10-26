@@ -45,7 +45,7 @@ cd problem_simulation
 python -m alwaha.interview --persona cdo --script "../Week 01/Day 05/Student_Copy/notes/cdo.questions.txt"
 ```
 
-The second answer says the board date assumes a GPU purchase, and that purchase takes 16 weeks. The deadline sentence below uses that number and cites `cdo`. If the second answer is her opening line, run the two questions again in this order.
+The second answer should move past her opening line. It names a GPU purchase and says that purchase takes 16 weeks. The deadline sentence below uses that number and cites `cdo`. If the second answer is only her opening line, run the two questions again in this order.
 
 No kickoff file contains the 16 weeks. Her sentence is a claim. You cite `cdo` because she said it. Day 1's rule still holds: a fact is a sentence you can point at in a file.
 

@@ -24,7 +24,7 @@ Open `work/access-request.md`. Replace the four empty lines with these, and put 
 - Classification: internal
 ```
 
-You are the person asking. A persona name is someone you may interview, not the requester. The full history stays off the Data line. The three labels, and when to use each one, are in [chapter 04](04-words.md). `internal` is the label for today's kickoff and the dev credentials.
+You are the person asking. A persona name is someone you may interview, not the requester. Full history means the measurements and the files that arrive on later mornings. Those stay off the Data line. Today you ask for the kickoff and the dev credentials. The three labels, and when to use each one, are in [chapter 04](04-words.md). `internal` is the label for today's kickoff and the dev credentials.
 
 Keep the hyphen and the label. The value stays on the same line, after the colon.
 

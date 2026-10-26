@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | | | |
 
-Kind is claim, request, or fact.
+Kind is claim, request, or fact. Chapter 07 has the six rows that replace the empty one.
 
 ## Sizes
 

@@ -33,7 +33,7 @@ Q3: Must a human approve every returned referral before it is sent?
 A: A human must see every return before it is sent.
 ```
 
-Open [med-dir.notes.md](work/interviews/med-dir.notes.md). The fact row points at a sentence in [pol-stage-gate.md](sources/kickoff/corpus/pol-stage-gate.md).
+Open [med-dir.notes.md](work/interviews/med-dir.notes.md). The check does not grade row order. This file puts the opening line, then the printed answers, then the fact, then the request. The fact row points at a sentence in [pol-stage-gate.md](sources/kickoff/corpus/pol-stage-gate.md).
 
 | Who | Their words | Kind | Why that kind |
 | --- | --- | --- | --- |
@@ -65,7 +65,7 @@ Q2: Is that ruling unsigned, and does it keep training on our cloud rather than 
 A: An unsigned ruling says patient data stays off the external model ext-large, and training stays on the private cloud.
 ```
 
-Open [dpo.notes.md](work/interviews/dpo.notes.md). The fact row points at [pol-assistant-use.md](sources/kickoff/corpus/pol-assistant-use.md).
+Open [dpo.notes.md](work/interviews/dpo.notes.md). The row order is the same as the medical director's file. The fact row points at [pol-assistant-use.md](sources/kickoff/corpus/pol-assistant-use.md).
 
 | Who | Their words | Kind | Why that kind |
 | --- | --- | --- | --- |

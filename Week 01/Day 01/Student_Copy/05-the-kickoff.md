@@ -8,7 +8,7 @@ The worksheets stay in `notes/`. The scan reads `work/`, so leave the worksheets
 
 1. Open [packet/kickoff/world/zones.md](packet/kickoff/world/zones.md).
 
-   A zone is a place a system can run. A facility line names the zone that facility sits in. On [notes/zones.md](notes/zones.md), place `h-nakhl`, `h-safra`, `h-wadi`, and `h-ain`. If a primary care center has no zone on that page, leave it off the sketch. Your sketch uses this file and nothing later. You draw it yourself.
+   A zone is a place a system can run. A facility line names the zone that facility sits in. On [notes/zones.md](notes/zones.md), place `h-nakhl`, `h-safra`, `h-wadi`, and `h-ain`. [Chapter 03](03-the-client.md) named three places. It does not place the hospitals. Copy the zone written on the same line as each id. Ain is on this page. If a primary care center has no zone on that page, leave it off the sketch. Your sketch uses this file and nothing later. You draw it yourself.
 
 2. Open [packet/kickoff/corpus/pol-stage-gate.md](packet/kickoff/corpus/pol-stage-gate.md).
 
@@ -29,11 +29,11 @@ The worksheets stay in `notes/`. The scan reads `work/`, so leave the worksheets
 
 3. Open [packet/kickoff/corpus/pol-assistant-use.md](packet/kickoff/corpus/pol-assistant-use.md).
 
-   On the same worksheet, write what a coding assistant may be shown, and what stays out of a prompt and out of `work/`. You will apply this in [chapter 07](07-the-pipeline.md). The same text is already inside the starter as `policy/pol-assistant-use.md`. Leave that file as the cluster wrote it.
+   On the same worksheet, write what stays out of a prompt and out of `work/`. The page's first rule is that coding assistants may be used. The rest of the page is the list that stays out. Write both. The page does not name the three kinds of material a prompt may hold. [Chapter 07](07-the-pipeline.md) names those three. The knowledge answer needs that list as well as the prohibitions. The same text is already inside the starter as `policy/pol-assistant-use.md`. Leave that file as the cluster wrote it.
 
 4. Open [packet/kickoff/corpus/doc-postmortem-2023.md](packet/kickoff/corpus/doc-postmortem-2023.md), then [packet/kickoff/corpus/doc-minutes-2023-11.md](packet/kickoff/corpus/doc-minutes-2023-11.md).
 
-   The postmortem is the write-up. The minutes are the room. On [notes/reading-notes.md](notes/reading-notes.md), write what each document says in its own row before you decide what the 2023 chatbot teaches. Then write what you are willing to treat as settled, and what you still need to ask someone.
+   The postmortem is the write-up. The minutes are the room. On [notes/reading-notes.md](notes/reading-notes.md), write what each document says in its own row before you decide what the 2023 chatbot teaches. If the two rows do not say the same thing, keep both. Do not let the write-up replace the minutes. Then write what you are willing to treat as settled, and what you still need to ask someone.
 
 ## You should now see
 

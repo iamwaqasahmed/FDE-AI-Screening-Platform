@@ -359,7 +359,7 @@ python -c "import datetime; start=datetime.date.fromisoformat('2027-01-10'); [pr
 
 You should see `2027-01-10 Sunday` on the first line.
 
-[pol-sla.md](packet/release/policy/pol-sla.md) says a referral submitted on Sunday counts Sunday as day one and Monday as day two. On your list, Sunday is the first line and Monday is the next line. Friday and Saturday would be skipped. A date in the calendar's `holidays` list would be skipped. The count stops on day two. That is the shape of every due date today.
+[pol-sla.md](packet/release/policy/pol-sla.md) says a referral submitted on Sunday counts Sunday as day one and Monday as day two. The number of days is the `working_days` line on that page. That line is 2, which is why the count stops on day two. On your list, Sunday is the first line and Monday is the next line. Friday and Saturday would be skipped. A date in the calendar's `holidays` list would be skipped. That is the shape of every due date today.
 
 For the friday row, then the holiday row:
 

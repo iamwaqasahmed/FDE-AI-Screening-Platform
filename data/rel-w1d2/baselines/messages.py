@@ -1,6 +1,12 @@
 """One-feature baseline. Count messages that contain the word status.
 
-The share is the number of texts that contain that word, in lower case, divided by the number of rows. An empty file stops, because the share would have no denominator.
+The rate is the share of rows whose text contains the word status,
+ignoring letter case. A question can ask where a referral stands and
+still miss that word. Read the message file and find one. This script
+prints only the share. It does not list the misses.
+
+Read the message file where it sits. Do not copy it into a prompt or
+into the work folder.
 """
 
 from __future__ import annotations
@@ -12,29 +18,32 @@ from pathlib import Path
 
 
 def load_rows(path: str | Path) -> list[dict[str, str]]:
-    """Return every CSV row as a dictionary of strings, keyed by the header."""
+    """Read the message file. Each row is one message_id and one text."""
     with Path(path).open(newline="", encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
 
 
 def rate(rows: list[dict[str, str]]) -> float:
-    """Return the share of rows whose text contains the status word."""
+    """Share of messages that contain the word status.
+
+    Stop when there are no rows, otherwise count the texts that contain that word and divide by the number of rows.
+    """
+    # An empty file has no denominator, so the share stops here.
     if not rows:
-        # The share needs a denominator, so an empty file stops the run.
         raise SystemExit("The message file has no rows.")
     hits = sum("status" in row["text"].lower() for row in rows)
     return hits / len(rows)
 
 
 def show(value: float) -> str:
-    """Format the share to the printed width."""
+    """Four digits after the decimal point."""
     return f"{value:.4f}"
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print the keyword share for the CSV path in the arguments.
+    """Print one line that starts with keyword.
 
-    Read that CSV, compute the share, and print it.
+    Read the CSV path, compute the share, and print that share.
     """
     parser = argparse.ArgumentParser(description="Print the share of messages containing status.")
     parser.add_argument("csv_path")

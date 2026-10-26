@@ -18,7 +18,7 @@ Open [approach.md](work/approach.md) and [brief.md](work/brief.md). This page sa
 
 `## Tools` names the same boundary: the clock is a query, slots are a workflow, status is a tool, and clinical urgency is not a model call. The check does not read that section.
 
-`## Cost` counts 84 words in the letter file. At the price sheet, 84 / 1000 × 20 = 1.68 SAR on `ext-large`, and 84 / 1000 × 3 = 0.252 SAR on `local-small`. The letters are watermarked, so this is a count on the file, not a call. The check does not read it. [zones.md](sources/kickoff/world/zones.md) is where `ext-large` is named. The prices are in [prices.csv](sources/release/finance/prices.csv).
+`## Cost` counts 84 words in the letter file. A word is a run of characters with spaces around it, and the headings count. At the price sheet, 84 / 1000 × 20 = 1.68 SAR on `ext-large`, and 84 / 1000 × 3 = 0.252 SAR on `local-small`. The letters are watermarked, so this is a count on the file, not a call. The check does not read it. [zones.md](sources/kickoff/world/zones.md) is where `ext-large` is named. The prices are in [prices.csv](sources/release/finance/prices.csv).
 
 `## Overlap` names letter-01 and letter-06. They share the same three sentences. letter-06 adds a watermark line. The line is not copied here.
 

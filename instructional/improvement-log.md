@@ -115,6 +115,20 @@ Paste blocks and packet files stayed. The release README links that do not open 
 | 4 | A rent sentence on knowledge line 1, with line 2 empty, is the rent miss. There is no separate two-answer miss. |
 | 5 | `the roadmap starts with p-triage` is the function or the Roadmap heading, not the Ranking sentence that names `p-triage` and then rejects that ranking. `Ran 8 tests` after `prepare_work.py` is the shell again. Weeks 5 and 6 are named in the course guide. The case folder says the later project is a different client. |
 
+## Week 1 student-simulation pass
+
+A later pass walked Week 1 again as a first-time student and checked the instructions against the files and the solution checks. Paste blocks, check commands, packet files, and Python were left as they were. The stalls were places a reader could not tell whether they were finished, or could misread a trace that is actually correct.
+
+| Day | What the page now says |
+| --- | --- |
+| 1 | The zones file, not the briefing table, places each hospital. The assistant-use policy lists what stays out. Chapter 07 names what may be shown. The 2023 write-up and the minutes can disagree, and both rows stay. Interview notes are finished when the opening line, the printed answers, the fact, and the request are all present. Row order is not graded. An answer that is only the opening line missed. |
+| 2 | The figures worksheet needs one row per figure, not one row for the whole day. A word in the optional letter count is a run of characters with spaces around it, headings included. |
+| 3 | The policy line `working_days: 2` is why the Sunday example stops on day two. |
+| 4 | `reject` can say `Done.` while `refusal_logged` is true. The agent note is not copied into the trace. The words `Your answer` can pass the knowledge check. The day is not done until those lines are replaced. |
+| 5 | The steering page does not hold the purchase weeks, a passed gate, or the data location. `race-slot` books and still logs a refusal. The reply text stays `Done.` The Stage 2 heading is the name to search for in `design.md`. |
+
+The Week 1 solution checks were run after `python -m alwaha.build --profile practice` for `rel-w1d1` through `rel-w1d5`. Each printed `passed`. The count demo printed `model count 12` and `tool count 4`. The Day 2 baselines and the Day 3 solution worker were run against the student packet and matched the numbers already in the chapters. This did not run a fresh student `work/` from an empty folder through every paste.
+
 ## References added
 
 Internal links only: earlier and later student copies, the words pages, the course guide, the concept index, and the optional review. No new external URL. The Python, Git, and clone links already in chapter 01 were left as written and were not re-fetched in this pass.

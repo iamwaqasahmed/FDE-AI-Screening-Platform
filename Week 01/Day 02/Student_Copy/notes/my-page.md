@@ -10,7 +10,7 @@ Who the sponsor is:
 
 ## Figures
 
-Copy each leader figure you will use. Mark each figure as a claim. On the next line, mark the column name `booking_date` as a fact. Name the file each line came from.
+Copy each leader figure you will use. Add one table row for each figure in chapter 05. Mark a leader figure as `claim`. Mark the column name `booking_date` as `fact` in its own row. The blank row below is the pattern. Add more rows under it. Do not stop after one figure.
 
 | Figure | File | Kind |
 | --- | --- | --- |

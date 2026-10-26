@@ -1,6 +1,16 @@
 """One-feature baseline. Score 2026 by last year's month, and by the earlier mean.
 
-The CSV is year, month, and visits. The seasonal figure is the average absolute gap between each later-year month and the same month a year earlier. The mean figure is the average absolute gap between those later months and the average visit count of every earlier row. Both stop if the later window is missing, because an empty window cannot be averaged.
+The file has one row per month: year, month, and visits.
+
+seasonal walks each month of 2026, takes the absolute difference from
+the same month in 2025, and averages those differences.
+
+mean_error averages every visits value from years before 2026, then
+averages the absolute difference of each 2026 month from that one number.
+
+The command prints both lines. A smaller error is the closer score.
+The memo uses the seasonal line. Keep the mean line in your notes
+beside it.
 """
 
 from __future__ import annotations
@@ -10,61 +20,61 @@ import csv
 import sys
 from pathlib import Path
 
+# The year the two scores are judged against.
 LATER = 2026
 
 
 def load_rows(path: str | Path) -> list[dict[str, str]]:
-    """Return every CSV row as a dictionary of strings, keyed by the header."""
+    """Read the monthly file. Each row is one year, one month, and a visit count."""
     with Path(path).open(newline="", encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
 
 
 def _pairs(rows: list[dict[str, str]]) -> dict[tuple[int, int], int]:
-    """Map each year and month to its visit count so a prior month can be looked up."""
+    """Map (year, month) to the visit count, so a month can be looked up in the year before."""
     return {(int(row["year"]), int(row["month"])): int(row["visits"]) for row in rows}
 
 
 def seasonal(rows: list[dict[str, str]]) -> float:
-    """Return the mean absolute error of forecasting each later month from the same month a year earlier.
+    """Average absolute error of 2026 against the same month in 2025.
 
-    Walk each later month, subtract the same month one year earlier, average those absolute gaps, and stop when that later window is empty.
+    Walk each later month, take the absolute gap from the same month one year earlier, average those gaps, and stop when the later window is empty.
     """
     by_month = _pairs(rows)
     errors = []
     for (year, month), actual in sorted(by_month.items()):
         if year != LATER:
-            # Earlier years supply the comparison. Only the later year is scored.
             continue
+        # The comparison for this month is the same month one year earlier.
         errors.append(abs(actual - by_month[(year - 1, month)]))
     if not errors:
-        # An empty later window would divide by zero, so the run stops instead.
         raise SystemExit("The demand file has no later window.")
     return sum(errors) / len(errors)
 
 
 def mean_error(rows: list[dict[str, str]]) -> float:
-    """Return the mean absolute error of forecasting every later month with the earlier average.
+    """Average absolute error of 2026 against the mean of every earlier year.
 
-    Average every visit from before the later year, then average how far each later month sits from that figure. Stop if either side is empty.
+    Average the visit counts from earlier years, then average how far each later month sits from that one number, and stop when either side is empty.
     """
     history = [int(row["visits"]) for row in rows if int(row["year"]) < LATER]
     later = [int(row["visits"]) for row in rows if int(row["year"]) == LATER]
     if not history or not later:
-        # Either side being empty means there is no before-and-after comparison.
         raise SystemExit("The demand file has no later window.")
+    # That one earlier average is the comparison for every later month.
     average = sum(history) / len(history)
     return sum(abs(value - average) for value in later) / len(later)
 
 
 def show(value: float) -> str:
-    """Format one error to the printed width used by both figures."""
+    """Four digits after the decimal point."""
     return f"{value:.4f}"
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print the seasonal error and the mean error for the CSV path in the arguments.
+    """Print the seasonal line, then the mean line.
 
-    Read that CSV, score both errors, and print the seasonal line and then the mean line.
+    Read the CSV path from the arguments, score both errors, and print each one on its own line.
     """
     parser = argparse.ArgumentParser(description="Print the seasonal and mean errors on 2026.")
     parser.add_argument("csv_path")

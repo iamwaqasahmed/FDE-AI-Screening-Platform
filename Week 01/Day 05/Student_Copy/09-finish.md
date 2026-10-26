@@ -1,6 +1,6 @@
 # 09 — Finish
 
-The checks grade the agent, the trace it writes when they run it, the architecture, the design, the readout, the trace note, and the shape of the knowledge file. They run the agent again. A trace you typed by hand is not the trace they grade. The sentences in `knowledge.md` are still part of done. The trainer reads them. The design check grades the diagram, the urgency section, and the stage-2 facts. On `knowledge.md` it only requires two numbered lines with a word after the number. It does not grade those sentences.
+The checks grade the agent, the trace it writes when they run it, the architecture, the design, the readout, the trace note, and the shape of the knowledge file. They run the agent again. A trace you typed by hand is not the trace they grade. The sentences in `knowledge.md` are still part of done. The trainer reads them. The design check grades the diagram, the urgency section, and the Stage 2 table. On `knowledge.md` it only requires two numbered lines with a word after the number. It does not grade those sentences.
 
 Use the failure table at the bottom only when a check fails. It is not more work.
 
@@ -82,7 +82,7 @@ A failed scenario names the case. It does not print the count, the slot, or an i
 | `the diagram has no human step` | The diagram section needs the word coordinator, human, or approval. Use the architecture block in chapter 07 |
 | `the design does not leave urgency with a clinician` | The section `What we will not build` needs both clinician and urgency. Use the design block in chapter 07 |
 | `design contains a banned sentence` or `readout contains a banned sentence` | Take out the sentence that lets the assistant set clinical urgency, or that sends identified patient data to the external model. The message does not print the sentence |
-| `the design note is missing a required fact` | The check does not name the fact. Use the stage 2 table in chapter 07, and keep the pipe characters. The diagram also needs `wf-intake`, `wf-self-service`, the three zones, and `referral.status` |
+| `the design note is missing a required fact` | The check does not name the fact. Use the Stage 2 table in chapter 07, and keep the pipe characters. The diagram also needs `wf-intake`, `wf-self-service`, the three zones, and `referral.status` |
 | `knowledge.md needs two answers` | Two lines that start with `1.` and `2.` and then a word. Use the block above |
 | `readout.md is missing` | [Chapter 08](08-the-readout.md). Paste the readout. Do not run `pages` again if the diagram is already filled. If the blank is gone, copy [readout.md](packet/templates/readout.md) into `work/` by hand, then paste the chapter 08 block over it |
 | `the readout does not answer the deadline` | The check does not print the number of weeks. Use the Deadline row in chapter 08. That sentence cites `cdo`. Paste the readout block again if the heading is empty |

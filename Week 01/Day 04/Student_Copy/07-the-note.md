@@ -43,7 +43,7 @@ A coordinator will answer, and this visit is not booked.
 
 The tool list is the catalog from chapter 05, in the agent's own words. The privilege boundary is the architect's line: the part that reads a letter does not hold book or message. Status stays one agent and one tool. The refusal line is the product decision you are writing in this note. A coordinator will answer, and this visit is not booked. That sentence covers a rejection, a constraint, and a stored preference that cannot be reused.
 
-That sentence is not what the trace stores. After the run, compare the note with these reply texts. Status and reject say `Done.` Emergency says `A person will take this from here.` Consent says `Say what you need for this visit.` Reason says `No slot meets the constraint.` The check reads this note for a refusal of at least three words. It does not compare the note with those trace texts.
+That sentence is not what the trace stores. Do not edit `model.py` or `trace.json` so the reply text matches this note. After the run, compare the note with these reply texts. Status and reject say `Done.` Emergency says `A person will take this from here.` Consent says `Say what you need for this visit.` Reason says `No slot meets the constraint.` The check reads this note for a refusal of at least three words. It does not compare the note with those trace texts.
 
 The checks do not score the wording beyond those pieces. If you add a sentence, keep the three headings and keep those words in the file.
 

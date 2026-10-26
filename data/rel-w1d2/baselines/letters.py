@@ -1,6 +1,17 @@
 """One-feature baseline. Count letters whose specialty is on the word list.
 
-The markdown is split on letter headings. The text before the first heading is not a letter. A letter counts as filled when its body contains any word from the specialty list, compared in lower case.
+The letter file is split on headings that start with "## letter-".
+Each piece after a heading is one letter body.
+
+WORDS is the specialty list. A letter counts when its body contains any
+of those words, in any letter case. A letter that names the clinic with
+some other wording stays uncounted. That is why the printed count can
+be lower than the number of letters in the file.
+
+Read the letter file where it already sits. Do not copy it into this
+script, into a prompt, or into the work folder. The file carries a
+watermark. One letter adds a line that is that watermark. Leave the
+line in the file.
 """
 
 from __future__ import annotations
@@ -10,34 +21,38 @@ import re
 import sys
 from pathlib import Path
 
+# Specialty names this count looks for. A body matches if any one appears.
 WORDS = ("eye", "ophthalmology", "endocrinology", "diabetes", "cardiology", "heart")
 
 
 def load_text(path: str | Path) -> str:
-    """Return the markdown file as one string."""
+    """Read the whole letter file as one string."""
     return Path(path).read_text(encoding="utf-8")
 
 
 def bodies(text: str) -> list[str]:
-    """Return the text of each letter section, dropping the preamble before the first heading."""
+    """Split on the letter headings and drop the title that sits above the first one."""
     return re.split(r"(?m)^## letter-", text)[1:]
 
 
 def filled(text: str) -> int:
-    """Return how many letter bodies contain a specialty word from the list."""
+    """How many letter bodies contain a word from WORDS.
+
+    Lowercase each letter body and count it when any specialty word appears in that body.
+    """
     count = 0
     for body in bodies(text):
         lowered = body.lower()
+        # One matching specialty word counts this letter.
         if any(word in lowered for word in WORDS):
-            # One matching word is enough. The body is not scanned for a second hit.
             count += 1
     return count
 
 
 def main(argv: list[str] | None = None) -> None:
-    """Print how many letters in the markdown path the specialty list fills.
+    """Print one line that starts with filled.
 
-    Read that path, count the filled letters, and print the count.
+    Read the markdown path, count the filled letters, and print that count.
     """
     parser = argparse.ArgumentParser(description="Count letters the specialty list fills.")
     parser.add_argument("markdown")

@@ -19,6 +19,8 @@ Use the failure table at the bottom only when a check fails. It is not more work
 2. Your answer. Say what must be true before a slot is booked.
 ```
 
+Save `knowledge.md` before the check. The words `Your answer` already satisfy the check. A numbered line with any word after the number is enough. The day is not done until you replace them. Line 1 says a second agent is worth its tokens when the extractor would otherwise hold the book tool. Line 2 says the patient has confirmed and a coordinator has decided the approval.
+
 2. Open a terminal in the course folder, the same way as chapter 01. If that window is already inside `problem_simulation`, skip the `cd` line and run the two python lines. Then run:
 
 ```text
@@ -79,7 +81,7 @@ A failed scenario names the case. It does not print the count, the slot, or the 
 | `the note does not list the status tool` | The tool list needs `referral.status`. Use the note in chapter 07 |
 | `the note does not separate extract from book and message` | The privilege boundary needs the word extract, and the word book or the word message. Use the note in chapter 07 |
 | `the note does not say what the patient sees on a refusal` | The refusal needs at least three words. Use the sentence in chapter 07 |
-| `knowledge.md needs two answers` | Two lines that start with `1.` and `2.` and then a word. Replace the two lines in the block above |
+| `knowledge.md needs two answers` | Two lines that start with `1.` and `2.` and then a word. The words `Your answer` already satisfy the check. Replace them with the sentences above the command |
 | `a watermarked sample is in the work directory` | A scenario file, or the watermark line, was copied into `work/`. The message does not print the watermark. Delete that copy. Leave the scenario files in `packet/release/scenarios` |
 
 ## Done

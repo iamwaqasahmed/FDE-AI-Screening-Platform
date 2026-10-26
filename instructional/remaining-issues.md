@@ -42,9 +42,9 @@ Chapter 01 still points at python.org, git-scm.com, and `https://github.com/iamw
 
 `FDE Program Syllabus.md` still contains `Original PDF page` comments. It is the accepted program text. It was not cleaned up.
 
-## This review did not run the graders
+## This review did not run every grader in the course
 
-The checks write under `problem_simulation/build`, which the course tells readers to leave closed. Running all twenty days would also execute the reference solutions rather than prove the documentation. Code explanations in the new sections were checked against the chapters and the shell or replacement text those chapters already contain. They were not checked by a live `alwaha.check` run in this pass.
+An earlier pass did not run `alwaha.check`. A later pass ran the Week 1 solution checks, after building `rel-w1d1` through `rel-w1d5` for `practice`. Those Week 1 checks printed `passed`. Weeks 2 through 4 were not run in that pass. The checks write under `problem_simulation/build`, which the course tells readers to leave closed.
 
 ## An expert read is not a classroom
 

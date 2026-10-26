@@ -594,4 +594,6 @@ Copy one cell from each of these fields:
 | consent | No tools. The refusal is logged. `preference_used` is false. The stored preference string is not anywhere in the block. |
 | reason | Offer only. Nothing is booked. The reply names the constraint. The trace cites `slots.offer`. The refusal is logged. |
 
+`status` and `reject` both say `Done.` in `reply.text`. On `reject`, `refusal_logged` is true and `booked` is false. The refusal is that field, not the sentence `Done.` [Chapter 07](07-the-note.md) uses a different sentence in the note. Do not copy that sentence into the trace.
+
 Next: [07 — The note](07-the-note.md).

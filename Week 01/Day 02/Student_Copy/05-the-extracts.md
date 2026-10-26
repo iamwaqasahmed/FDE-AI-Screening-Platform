@@ -26,6 +26,8 @@ On [notes/my-page.md](notes/my-page.md), under Figures, copy every leader figure
 
 The column name `booking_date` is a fact. You can point at it in the dashboard. The median beside it stays a claim. The vendor percent is about a national pilot. Keep the sentence that the pilot is not the Al-Waha Health Cluster next to that percent.
 
+[notes/my-page.md](notes/my-page.md) starts with one blank row. Add a row for each figure named in the table above. A line that names several figures needs several rows. The column name is its own row, marked fact. Do not stop after the first figure.
+
 The price sheet is the cluster's unit prices. You will need `price.ext_large_per_1k` and `price.local_per_1k` only if you fill the optional cost lines in chapter 07. You do not need the sheet to finish the four baselines.
 
 ## What you already know from Day 1

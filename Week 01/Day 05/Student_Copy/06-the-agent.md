@@ -614,13 +614,13 @@ tool count 4
 
 Open [trace.json](work/trace.json). It is a list. Each object starts with `"scenario"`. Use Ctrl+F, or Command+F on macOS. Search `"timeout"`, then `"race-slot"`, then `"emergency"`. Stay on the object that starts with that scenario. Do not use a later copy of the same word.
 
-On that object, read `failure`, `booked`, `tool_trace`, `citations`, and `refusal_logged`. The other fields can stay unread for now.
+On that object, read `failure`, `booked`, `tool_trace`, `citations`, `refusal_logged`, and the reply `text`. On `race-slot`, also read `decisions`.
 
-For `timeout`, `failure` is `timeout`, `booked` is false, and `tool_trace` is `slots.offer`. `slots.book` is not in that list.
+For `timeout`, `failure` is `timeout`, `booked` is false, and `refusal_logged` is true. `tool_trace` is `slots.offer`. `citations` is `slots.offer`. `slots.book` is not in that list. The reply text is `The offer did not return.`
 
-For `race-slot`, `failure` is `race-slot`, `booked` is true, and `tool_trace` is `slots.offer`, `slots.book`, `sms.send`, `slots.offer`. The last offer is the second patient. `slots.book` appears once, and `sms.send` appears once. Leave that second offer in the trace.
+For `race-slot`, `failure` is `race-slot` and `booked` is true. `tool_trace` is `slots.offer`, `slots.book`, `sms.send`, `slots.offer`. The last offer is the second patient, after the first booking and the SMS. `slots.book` appears once, and `sms.send` appears once. Leave that second offer in the trace. `citations` are `slots.offer` and `pol-approval`. `refusal_logged` is true because the second patient's offer was taken. The reply text is still `Done.` That sentence belongs to the booking. The refusal is the `refusal_logged` field, not the reply text. `decisions` is 2. The worksheet has no column for `decisions`. Leave it in the file.
 
-For `emergency`, `tool_trace` is `safety.redirect`, `citations` includes `pol-clinical-safety`, `redirected` is true, `refusal_logged` is true, and `booked` is false.
+For `emergency`, `tool_trace` is `safety.redirect`, `citations` are `safety.redirect` and `pol-clinical-safety`, `redirected` is true, `refusal_logged` is true, and `booked` is false.
 
 If those three do not match, the paste in this chapter is not the file that ran. Go back to the first-line check under Run it, fix the file that is still the starter, and run the command again. Do not edit `trace.json`.
 

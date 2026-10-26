@@ -59,7 +59,7 @@ The check does not read this section. It is the application-engineer part of the
 
 ### Optional
 
-Under `## Cost`, count the words in [ds-letters.md](packet/release/samples/ds-letters.md) where the file sits. Divide that count by 1,000. Multiply by `price.ext_large_per_1k` and by `price.local_per_1k` from [prices.csv](packet/release/finance/prices.csv). Write the two results. Do not copy a line from the letter file into the memo.
+Under `## Cost`, count the words in [ds-letters.md](packet/release/samples/ds-letters.md) where the file sits. A word is a run of characters with spaces around it. Count the headings too. Divide that count by 1,000. Multiply by `price.ext_large_per_1k` and by `price.local_per_1k` from [prices.csv](packet/release/finance/prices.csv). Write the two results. Do the count while the file stays in `packet/`. Do not copy a line from the letter file into the memo.
 
 Under `## Overlap`, two letters share the same three sentences, and one of them adds a watermark line. Write the two headings only, `letter-01` and `letter-06`. Do not copy a line from the file into `work/`.
 

@@ -85,14 +85,14 @@ python -m alwaha.interview --persona med-dir --script "../Week 01/Day 01/Student
 python -m alwaha.interview --persona dpo --script "../Week 01/Day 01/Student_Copy/work/interviews/dpo.questions.txt"
 ```
 
-4. Create `med-dir.notes.md` and `dpo.notes.md` in that same `work/interviews` folder. Write them after the command has printed. The check can print `passed` when a file has only two rows. The notes are finished when every item below is present, one row each, in this order:
+4. Create `med-dir.notes.md` and `dpo.notes.md` in that same `work/interviews` folder. Write them after the command has printed. The check can print `passed` when a file has only two rows. Do not stop there. The check does not require a particular row order. The notes are finished when every item below is present, one row each. A clear order, and the order in the comparison copy, is the opening line, then each printed answer, then the fact, then the request.
 
 - The opening line on the card. Kind is `claim`. Medical director: `Clinicians own urgency.` Data protection officer: `Patient data needs care.`
-- One request, the next thing you will do. Kind is `request`. Medical director: read pol-stage-gate before anyone writes an urgency grade. Data protection officer: keep the sample letter out of any prompt while her ruling is unsigned.
-- One fact from a kickoff file. Kind is `fact`. The command does not print this sentence. Add it anyway. Medical director, from [pol-stage-gate.md](packet/kickoff/corpus/pol-stage-gate.md): the assistant routes emergency wording to a human and does not grade urgency. Data protection officer, from [pol-assistant-use.md](packet/kickoff/corpus/pol-assistant-use.md): patient data, secrets, unpublished cluster documents, and the sample referral letter stay out of prompts and out of the repository.
 - Every answer the command printed. Kind is `claim`. The red-flag document and the unsigned ruling are not in today's kickoff, so those answers stay claims. A confident sentence is a fact only when you can point at it in a kickoff file.
+- One fact from a kickoff file. Kind is `fact`. The command does not print this sentence. Add it anyway. Medical director, from [pol-stage-gate.md](packet/kickoff/corpus/pol-stage-gate.md): the assistant routes emergency wording to a human and does not grade urgency. Data protection officer, from [pol-assistant-use.md](packet/kickoff/corpus/pol-assistant-use.md): patient data, secrets, unpublished cluster documents, and the sample referral letter stay out of prompts and out of the repository.
+- One request, the next thing you will do. Kind is `request`. Medical director: read pol-stage-gate before anyone writes an urgency grade. Data protection officer: keep the sample letter out of any prompt while her ruling is unsigned. "Until that ruling is signed" is the same request.
 
-Keep the header and the `| --- |` row. This shape is enough to start the medical director's file. It is not the finished file:
+Keep the header and the `| --- |` row. This shape is enough to start the medical director's file. The printed answers and the fact are not in it yet. It is not the finished file:
 
 ```text
 | Who | Their words | Kind |
@@ -101,11 +101,13 @@ Keep the header and the `| --- |` row. This shape is enough to start the medical
 | med-dir | Read pol-stage-gate before anyone writes an urgency grade. | request |
 ```
 
+The request sits above the answers in this fragment. When you add the printed answers and the fact, put the request last if you want the comparison order. The check accepts either order.
+
 A third `*.questions.txt` file makes the check fail. These two files are the whole submission.
 
 ## You should now see
 
-The interview command prints `Q1:` and `A:` for each question, and it prints no score. When an answer repeats the opening line, go back to the question.
+The interview command prints `Q1:` and `A:` for each question, and it prints no score. You are on the right path when the medical director's first answer is not only `Clinicians own urgency.` and the data protection officer's first answer is not only `Patient data needs care.` When an answer is only that opening line, go back to the question.
 
 Each notes file has a header row whose last column is `Kind`, a separator row, and a data row for the opening line, the request, the fact from the kickoff, and each answer the command printed. Each kind is one of `claim`, `request`, or `fact`. Search the medical director's file for `pol-clinical-safety` and for `pol-stage-gate`. Search the data protection officer's file for `unsigned` and for `pol-assistant-use`. The check can print `passed` before those searches succeed. Stop when they do.
 
