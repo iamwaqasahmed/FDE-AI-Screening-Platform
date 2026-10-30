@@ -1,4 +1,4 @@
-"""Markdown tables shared by the Day 2 checks.
+"""Markdown tables shared by the Lesson 2 checks.
 
 Shared markdown-table helpers for the day-two checks, plus the planted-sample scan used by later checks. Tables are read as rows of cells. A separator of dashes is not a row. Figures ignore the stamped day in this file so that day is not mistaken for a measurement.
 """

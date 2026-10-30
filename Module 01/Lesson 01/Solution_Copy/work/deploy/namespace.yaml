@@ -1,0 +1,22 @@
+# Applied later, into the team namespace on the private cloud.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: patient-access-assistant
+  labels:
+    app: patient-access-assistant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: patient-access-assistant
+  template:
+    metadata:
+      labels:
+        app: patient-access-assistant
+    spec:
+      containers:
+        - name: assistant
+          image: patient-access-assistant:m01_l01
+          ports:
+            - containerPort: 8080

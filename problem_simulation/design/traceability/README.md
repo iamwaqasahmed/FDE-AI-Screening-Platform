@@ -1,6 +1,6 @@
 # Traceability
 
-Facilitators only. This folder maps the Weeks 1–4 syllabus onto the case. The syllabus is [../../../FDE Program Syllabus.md](<../../../FDE Program Syllabus.md>).
+Facilitators only. This folder maps the two-module syllabus onto the case. The syllabus is [../../../FDE Program Syllabus.md](<../../../FDE Program Syllabus.md>).
 
 ## Gap rule
 
@@ -15,15 +15,15 @@ A syllabus element is covered when all of the following exist:
 | Day | A day on the [day maps](../../../course_design/README.md) |
 | Check | An id in [11 Eval](../11-eval-and-hardness.md) |
 
-Program-level elements are in [program.md](program.md). Daily topics and weekly deliverables are in [week-1.md](week-1.md) through [week-4.md](week-4.md).
+Program-level elements are in [program.md](program.md). Daily topics and weekly deliverables are in [module-01-trace.md](module-01-trace.md) through [module-04-trace.md](module-04-trace.md).
 
-An element missing any field is a gap. Close the gap in the design notes before generator work for that week starts. Do not close it by dropping the syllabus line.
+An element missing any field is a gap. Close the gap in the design notes before generator work for that module starts. Do not close it by dropping the syllabus line.
 
 ## How to read a row
 
-The week files use one table per group of topics. "Feature" points at a design note and an id. "Piece" is the reference-system part. Days match [10 Release schedule](../10-release-schedule.md).
+The module files use one table per group of topics. "Feature" points at a design note and an id. "Piece" is the reference-system part. Days match [10 Release schedule](../10-release-schedule.md).
 
-Checks listed as `rubric` still have an id (`chk-w1-design`, `chk-readout`, and the RCP checks). Spoken and written rubrics are specified in [assessment map](../../../course_design/assessment-map.md).
+Checks listed as `rubric` still have an id (`chk-design`, `chk-readout`, and the RCP checks). Spoken and written rubrics are specified in [assessment map](../../../course_design/assessment-map.md).
 
 ## What this folder is not
 

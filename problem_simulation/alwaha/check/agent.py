@@ -1,4 +1,4 @@
-"""chk-w1-agent. A miss names the scenario and does not print the count or the approval id.
+"""chk-agent. A miss names the scenario and does not print the count or the approval id.
 
 This check compares one trace row per scenario with gold. It grades booking, sending, the message, the count, the facility, the constraint, decisions, preferences, approvals, and a named failure. A watermark in the work tree is returned alone. The written note is optional so a later rescore can grade the trace without grading the note again.
 """

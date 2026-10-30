@@ -1,0 +1,63 @@
+{
+  "sites": [
+    {
+      "health": "down",
+      "id": "site-a",
+      "models": [
+        {
+          "base": "local-small",
+          "hash": "sha256:cda42659c076da12",
+          "id": "lora-extract",
+          "status": "approved",
+          "zone": "zone-private"
+        },
+        {
+          "base": "local-small",
+          "hash": "sha256:264d485a25fbc0e5",
+          "id": "lora-intent",
+          "status": "approved",
+          "zone": "zone-private"
+        },
+        {
+          "base": "local-small",
+          "hash": "sha256:8c515636b689ad80",
+          "id": "lora-local",
+          "status": "approved",
+          "zone": "zone-private"
+        }
+      ]
+    },
+    {
+      "health": "up",
+      "id": "site-b",
+      "models": [
+        {
+          "base": "local-small",
+          "hash": "sha256:cda42659c076da12",
+          "id": "lora-extract",
+          "status": "approved",
+          "zone": "zone-private"
+        },
+        {
+          "base": "local-small",
+          "hash": "sha256:264d485a25fbc0e5",
+          "id": "lora-intent",
+          "status": "approved",
+          "zone": "zone-private"
+        },
+        {
+          "base": "local-small",
+          "hash": "sha256:8c515636b689ad80",
+          "id": "lora-local",
+          "status": "approved",
+          "zone": "zone-private"
+        },
+        {
+          "hash": "sha256:f66f9fb4e58d6417",
+          "id": "local-smallx",
+          "status": "unregistered"
+        }
+      ]
+    }
+  ]
+}

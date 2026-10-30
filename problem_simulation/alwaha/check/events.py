@@ -1,4 +1,4 @@
-"""chk-w1-events. A miss does not print the due date, the clause, or the fitting state.
+"""chk-events. A miss does not print the due date, the clause, or the fitting state.
 
 This check runs the participant worker and grades the scenario log. A poison scenario must not be applied. A live scenario must stop for one person, keep the calendar due date, the criteria in force, and the booking, suggestion, clinic, duplicate, and hold flags. The intake note must show a human step and must keep the criteria version. A due date, a clause, or a fitting state is not printed.
 """

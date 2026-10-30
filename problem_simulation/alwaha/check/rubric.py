@@ -36,9 +36,9 @@ def section(text: str, heading: str) -> str:
 def has_token(text: str, token: str) -> bool:
     """Return true when the token occurs with the boundary that fits its shape.
 
-    The week token also matches the plural, which a plain boundary search would miss. A token made only of digits must not match inside a longer number. Any other token must sit where a letter or digit does not continue it.
+    The module token also matches the plural, which a plain boundary search would miss. A token made only of digits must not match inside a longer number. Any other token must sit where a letter or digit does not continue it.
     """
-    # The week token also matches the plural, which a plain boundary search would miss.
+    # The module token also matches the plural, which a plain boundary search would miss.
     if token == "week":
         return re.search(r"\bweeks?\b", text, re.IGNORECASE) is not None
     # A numeric token must not match inside a longer number.

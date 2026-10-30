@@ -1,4 +1,4 @@
-"""Written notes for the Week 2 Day 2 journey. A miss does not name the owner or the figure.
+"""Written notes for the Module 2 Lesson 2 journey. A miss does not name the owner or the figure.
 
 Written notes for the webhook journey. The state table must show every patient-visible state, the zone table must cross from the hospital zone into the private zone, the message note must not carry a national id, the mart note must name the clock and must not treat the wait figure as truth, and the sprint must subscribe before it builds the mart. The knowledge note must name the owner and say what a replay does.
 """

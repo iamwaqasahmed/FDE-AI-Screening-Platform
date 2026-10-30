@@ -1,6 +1,6 @@
 # How to read a replacement chapter
 
-Many days from Week 1 Day 3 onward hand you a finished Python file to paste. The check runs that file again. A log or a trace you type by hand is not what it grades. Pasting is the way the file gets into `work/`. Reading is the way you can explain it afterward.
+Many lessons from Module 1, Lesson 3 onward hand you a finished Python file to paste. The check runs that file again. A log or a trace you type by hand is not what it grades. Pasting is the way the file gets into `work/`. Reading is the way you can explain it afterward.
 
 ## Two kinds of block
 

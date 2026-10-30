@@ -1,4 +1,4 @@
-"""chk-w1-interview. Reports a miss as incomplete. It does not print the fact.
+"""chk-interview. Reports a miss as incomplete. It does not print the fact.
 
 This check runs two interview scripts against the persona trees and grades the notes. A failed interview is reported as incomplete. The fact that should have surfaced is not printed. Notes need a table whose rows are marked claim, request, or fact, and they must not contain a banned sentence.
 """

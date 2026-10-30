@@ -10,18 +10,18 @@ Every mock is stateful, seeded per team, and specified in OpenAPI. The same oper
 |---|---|
 | `his-wadi` | FHIR. Other channels compete for the same slots. Supports holds with a TTL |
 | `his-nakhl`, `his-safra` | HL7 v2 through `int-engine`. Replay, delay, and duplicate are switches |
-| `eref` | Referral read and decision. Webhooks after `rel-w2d2`. Patient scope hides `pending` until the product change |
-| `sched-ain` | Accepts a file after `rel-w2d5`. Real-time booking returns a queued state, not a slot |
+| `eref` | Referral read and decision. Webhooks after `rel-m02-l02`. Patient scope hides `pending` until the product change |
+| `sched-ain` | Accepts a file after `rel-m02-l05`. Real-time booking returns a queued state, not a slot |
 | `nid` | Identity proof. Rate-limited. Death and id-replacement events arrive late |
 | `sms`, `wa` | Accept a send, return receipts on the stream. WhatsApp enforces template and session-window rules |
 | `cc` | Handoff endpoint: a transcript in, an agent id out |
 | `consent` | Grant lookup by patient and actor. The stale-cache defect is a switch |
-| `insure` | Mutual TLS. Stale snapshot. Outage script for `rel-w4d4` |
-| `hr` | Leave feed, connected on `rel-w4d5` |
+| `insure` | Mutual TLS. Stale snapshot. Outage script for `rel-m04-l04` |
+| `hr` | Leave feed, connected on `rel-m04-l05` |
 | `dms` | Fetch, search, and the change feed |
 | `iam` | The identity provider below |
 
-Fault switches are deterministic under the case clock. A test run can pin the clock and the switch set. That is the mode Week 2 contract tests use.
+Fault switches are deterministic under the case clock. A test run can pin the clock and the switch set. That is the mode Module 2 contract tests use.
 
 ## Identity
 
@@ -33,12 +33,12 @@ Fault switches are deterministic under the case clock. A test run can pin the cl
 | Service | Client credentials | A service token is not a patient token |
 | Break-glass | A staff elevation with a reason | Writes an audit row and a review ticket, then expires |
 
-The confused-deputy scenario: an assistant that queries `his-wadi` with `svc-integration` can read any patient, including a canary. The passing call uses the patient's token. Step-up from `loa-1` to `loa-2` is a foundation-plus check inside `chk-w2-auth`.
+The confused-deputy scenario: an assistant that queries `his-wadi` with `svc-integration` can read any patient, including a canary. The passing call uses the patient's token. Step-up from `loa-1` to `loa-2` is a foundation-plus check inside `chk-auth`.
 
 ## Supporting services
 
 - **Annotation service.** Accepts an item id and a guideline version, charges `cost.label`, and returns an adjudicated label after a delay. The team has a budget. Spending it at random loses to active learning on `slice-active`.
-- **Schema registry.** Topics: `referral.submitted`, `referral.decided`, `appointment.booked`, `appointment.cancelled`, `session.cancelled`, `message.receipt`, `document.changed`, `slot.held`. Each has a version. A consumer that assumes unknown fields are absent survives the Week 2 field additions.
+- **Schema registry.** Topics: `referral.submitted`, `referral.decided`, `appointment.booked`, `appointment.cancelled`, `session.cancelled`, `message.receipt`, `document.changed`, `slot.held`. Each has a version. A consumer that assumes unknown fields are absent survives the Module 2 field additions.
 - **Case clock.** All of the above read one clock. `rel-*` ids are the dates in [01 Hidden world](01-hidden-world.md).
 - **Chaos.** Pod kill on `site-a`, slow `eref`, and the insurance outage. Workflow state has to survive the pod kill.
 - **External gateway.** The only path to `ext-large`. It meters tokens and SAR per team and per hospital, and it flags canary strings in the prompt or the completion. A `phi` field in the prompt fails the call and records a residency breach.

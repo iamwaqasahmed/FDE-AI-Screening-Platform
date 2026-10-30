@@ -2,41 +2,43 @@
 
 Facilitators only. Participants leave this folder closed. The participant-facing case is [../case/README.md](../case/README.md). The course that sits on this world is [../course_design/README.md](../course_design/README.md).
 
-This folder generates the Al-Waha world from a seed. The twenty teaching releases are `rel-w1d1` through `rel-w4d5`. The population, exports, and corpus are `python -m alwaha.worldbuild`. The mocks are `python -m alwaha.serve`. The readiness record is `python -m alwaha.audit`.
+This folder generates the Al-Waha world from a seed. The twenty teaching releases are `rel-m01-l01` through `rel-m04-l05`. The population, exports, and corpus are `python -m alwaha.worldbuild`. The mocks are `python -m alwaha.serve`. The readiness record is `python -m alwaha.audit`.
 
-## Days built so far
+## Releases built so far
+
+Learners meet these releases as four modules of five lessons, in this order, with no timetable. The id in each command is the pack name. It is not a schedule.
 
 From this folder:
 
 ```text
-python -m alwaha.build --profile practice --release rel-w1d1
-python -m alwaha.build --profile practice --release rel-w1d2
-python -m alwaha.build --profile practice --release rel-w1d3
-python -m alwaha.build --profile practice --release rel-w1d4
-python -m alwaha.build --profile practice --release rel-w1d5
-python -m alwaha.build --profile practice --release rel-w2d1
-python -m alwaha.build --profile practice --release rel-w2d2
-python -m alwaha.build --profile practice --release rel-w2d3
-python -m alwaha.build --profile practice --release rel-w2d4
-python -m alwaha.build --profile practice --release rel-w2d5
-python -m alwaha.build --profile practice --release rel-w3d1
-python -m alwaha.build --profile practice --release rel-w3d2
-python -m alwaha.build --profile practice --release rel-w3d3
-python -m alwaha.build --profile practice --release rel-w3d4
-python -m alwaha.build --profile practice --release rel-w3d5
-python -m alwaha.build --profile practice --release rel-w4d1
-python -m alwaha.build --profile practice --release rel-w4d2
-python -m alwaha.build --profile practice --release rel-w4d3
-python -m alwaha.build --profile practice --release rel-w4d4
-python -m alwaha.build --profile practice --release rel-w4d5
+python -m alwaha.build --profile practice --release rel-m01-l01
+python -m alwaha.build --profile practice --release rel-m01-l02
+python -m alwaha.build --profile practice --release rel-m01-l03
+python -m alwaha.build --profile practice --release rel-m01-l04
+python -m alwaha.build --profile practice --release rel-m01-l05
+python -m alwaha.build --profile practice --release rel-m02-l01
+python -m alwaha.build --profile practice --release rel-m02-l02
+python -m alwaha.build --profile practice --release rel-m02-l03
+python -m alwaha.build --profile practice --release rel-m02-l04
+python -m alwaha.build --profile practice --release rel-m02-l05
+python -m alwaha.build --profile practice --release rel-m03-l01
+python -m alwaha.build --profile practice --release rel-m03-l02
+python -m alwaha.build --profile practice --release rel-m03-l03
+python -m alwaha.build --profile practice --release rel-m03-l04
+python -m alwaha.build --profile practice --release rel-m03-l05
+python -m alwaha.build --profile practice --release rel-m04-l01
+python -m alwaha.build --profile practice --release rel-m04-l02
+python -m alwaha.build --profile practice --release rel-m04-l03
+python -m alwaha.build --profile practice --release rel-m04-l04
+python -m alwaha.build --profile practice --release rel-m04-l05
 python -m unittest discover -s tests -q
 ```
 
-Day 1 writes `../data/rel-w1d1`. Day 2 writes `../data/rel-w1d2` and adds its gold beside the Day 1 truth in `build/practice/truth`. Day 3 writes `../data/rel-w1d3` and adds `events_gold.json` beside that truth. Day 4 writes `../data/rel-w1d4` and adds `agent_gold.json` beside that truth. Day 5 writes `../data/rel-w1d5` and adds `day5_gold.json` beside that truth. Week 2 Day 1 writes `../data/rel-w2d1` and adds `w2d1_gold.json` beside that truth. Week 2 Day 2 writes `../data/rel-w2d2` and adds `w2d2_gold.json` beside that truth. Week 2 Day 3 writes `../data/rel-w2d3` and adds `w2d3_gold.json` beside that truth. Week 2 Day 4 writes `../data/rel-w2d4` and adds `w2d4_gold.json` beside that truth. Week 2 Day 5 writes `../data/rel-w2d5` and adds `w2d5_gold.json` beside that truth. Week 3 Day 1 writes `../data/rel-w3d1` and adds `w3d1_gold.json` beside that truth. Week 3 Day 2 writes `../data/rel-w3d2` and adds `w3d2_gold.json` beside that truth. Week 3 Day 3 writes `../data/rel-w3d3` and adds `w3d3_gold.json` beside that truth. Week 3 Day 4 writes `../data/rel-w3d4` and adds `w3d4_gold.json` beside that truth. Week 3 Day 5 writes `../data/rel-w3d5` and adds `w3d5_gold.json` beside that truth. Week 4 Day 1 writes `../data/rel-w4d1` and adds `w4d1_gold.json` beside that truth. Week 4 Day 2 writes `../data/rel-w4d2` and adds `w4d2_gold.json` beside that truth. Week 4 Day 3 writes `../data/rel-w4d3` and adds `w4d3_gold.json` beside that truth. Week 4 Day 4 writes `../data/rel-w4d4` and adds `w4d4_gold.json` beside that truth. Week 4 Day 5 writes `../data/rel-w4d5` and adds `w4d5_gold.json` beside that truth. Rebuilding Day 1 clears that truth folder. Rebuilding a later day leaves the other days' packs where they are. Participants use the packs and the commands in [Week 1, Day 1](<../Week 01/Day 01/README.md>), [Week 1, Day 2](<../Week 01/Day 02/README.md>), [Week 1, Day 3](<../Week 01/Day 03/README.md>), [Week 1, Day 4](<../Week 01/Day 04/README.md>), [Week 1, Day 5](<../Week 01/Day 05/README.md>), [Week 2, Day 1](<../Week 02/Day 01/README.md>), [Week 2, Day 2](<../Week 02/Day 02/README.md>), [Week 2, Day 3](<../Week 02/Day 03/README.md>), [Week 2, Day 4](<../Week 02/Day 04/README.md>), [Week 2, Day 5](<../Week 02/Day 05/README.md>), [Week 3, Day 1](<../Week 03/Day 01/README.md>), [Week 3, Day 2](<../Week 03/Day 02/README.md>), [Week 3, Day 3](<../Week 03/Day 03/README.md>), [Week 3, Day 4](<../Week 03/Day 04/README.md>), [Week 3, Day 5](<../Week 03/Day 05/README.md>), [Week 4, Day 1](<../Week 04/Day 01/README.md>), [Week 4, Day 2](<../Week 04/Day 02/README.md>), and [Week 4, Day 3](<../Week 04/Day 03/README.md>), and [Week 4, Day 4](<../Week 04/Day 04/README.md>), and [Week 4, Day 5](<../Week 04/Day 05/README.md>). They leave `build/` and `design/` closed.
+Module 1, Lesson 1 writes `../data/rel-m01-l01`. Module 1, Lesson 2 writes `../data/rel-m01-l02` and adds its gold beside the Lesson 1 truth in `build/practice/truth`. Module 1, Lesson 3 writes `../data/rel-m01-l03` and adds `events_gold.json` beside that truth. Module 1, Lesson 4 writes `../data/rel-m01-l04` and adds `agent_gold.json` beside that truth. Module 1, Lesson 5 writes `../data/rel-m01-l05` and adds `m01_l05_gold.json` beside that truth. Module 2, Lesson 1 writes `../data/rel-m02-l01` and adds `m02_l01_gold.json` beside that truth. Module 2, Lesson 2 writes `../data/rel-m02-l02` and adds `m02_l02_gold.json` beside that truth. Module 2, Lesson 3 writes `../data/rel-m02-l03` and adds `m02_l03_gold.json` beside that truth. Module 2, Lesson 4 writes `../data/rel-m02-l04` and adds `m02_l04_gold.json` beside that truth. Module 2, Lesson 5 writes `../data/rel-m02-l05` and adds `m02_l05_gold.json` beside that truth. Module 3, Lesson 1 writes `../data/rel-m03-l01` and adds `m03_l01_gold.json` beside that truth. Module 3, Lesson 2 writes `../data/rel-m03-l02` and adds `m03_l02_gold.json` beside that truth. Module 3, Lesson 3 writes `../data/rel-m03-l03` and adds `m03_l03_gold.json` beside that truth. Module 3, Lesson 4 writes `../data/rel-m03-l04` and adds `m03_l04_gold.json` beside that truth. Module 3, Lesson 5 writes `../data/rel-m03-l05` and adds `m03_l05_gold.json` beside that truth. Module 4, Lesson 1 writes `../data/rel-m04-l01` and adds `m04_l01_gold.json` beside that truth. Module 4, Lesson 2 writes `../data/rel-m04-l02` and adds `m04_l02_gold.json` beside that truth. Module 4, Lesson 3 writes `../data/rel-m04-l03` and adds `m04_l03_gold.json` beside that truth. Module 4, Lesson 4 writes `../data/rel-m04-l04` and adds `m04_l04_gold.json` beside that truth. Module 4, Lesson 5 writes `../data/rel-m04-l05` and adds `m04_l05_gold.json` beside that truth. Rebuilding Module 1, Lesson 1 clears that truth folder. Rebuilding a later day leaves the other days' packs where they are. Participants use the packs and the commands in [Module 1 Lesson 1](<../Module 01/Lesson 01/Student_Copy/home.md>), [Module 1 Lesson 2](<../Module 01/Lesson 02/Student_Copy/home.md>), [Module 1 Lesson 3](<../Module 01/Lesson 03/Student_Copy/home.md>), [Module 1 Lesson 4](<../Module 01/Lesson 04/Student_Copy/home.md>), [Module 1 Lesson 5](<../Module 01/Lesson 05/Student_Copy/home.md>), [Module 2 Lesson 1](<../Module 02/Lesson 01/Student_Copy/home.md>), [Module 2 Lesson 2](<../Module 02/Lesson 02/Student_Copy/home.md>), [Module 2 Lesson 3](<../Module 02/Lesson 03/Student_Copy/home.md>), [Module 2 Lesson 4](<../Module 02/Lesson 04/Student_Copy/home.md>), [Module 2 Lesson 5](<../Module 02/Lesson 05/Student_Copy/home.md>), [Module 3 Lesson 1](<../Module 03/Lesson 01/Student_Copy/home.md>), [Module 3 Lesson 2](<../Module 03/Lesson 02/Student_Copy/home.md>), [Module 3 Lesson 3](<../Module 03/Lesson 03/Student_Copy/home.md>), [Module 3 Lesson 4](<../Module 03/Lesson 04/Student_Copy/home.md>), [Module 3 Lesson 5](<../Module 03/Lesson 05/Student_Copy/home.md>), [Module 4 Lesson 1](<../Module 04/Lesson 01/Student_Copy/home.md>), [Module 4 Lesson 2](<../Module 04/Lesson 02/Student_Copy/home.md>), and [Module 4 Lesson 3](<../Module 04/Lesson 03/Student_Copy/home.md>), and [Module 4 Lesson 4](<../Module 04/Lesson 04/Student_Copy/home.md>), and [Module 4 Lesson 5](<../Module 04/Lesson 05/Student_Copy/home.md>). They leave `build/` and `design/` closed.
 
 `python -m alwaha.interview --persona <id> --script questions.txt` prints the answer and does not print a score.
 
-`python -m alwaha.check repo --work <dir>` and `python -m alwaha.check interview --work <dir>` print pass or fail for Day 1. `approach` and `brief` do the same for Day 2. `events` does the same for Day 3. `agent` and `trajectory` do the same for Day 4. Day 5 runs `agent` and `trajectory` with `--release rel-w1d5`, then `design`, `readout`, and `individual`. Week 2 Day 1 runs `auth` and `journey` with `--release rel-w2d1`. Week 2 Day 2 runs `journey` with `--release rel-w2d2`. Week 2 Day 3 runs `tests` and `ux` with `--release rel-w2d3`. Week 2 Day 4 runs `deploy` with `--release rel-w2d4`. Week 2 Day 5 runs `deploy`, `journey`, `readout`, and `individual` with `--release rel-w2d5`. Week 3 Day 1 runs `identity`, `labels`, and `synthetic` with `--release rel-w3d1`. Week 3 Day 2 runs `model` and `lora` with `--release rel-w3d2`. Week 3 Day 3 runs `rag`, `hybrid`, and `acl` with `--release rel-w3d3`. Week 3 Day 4 runs `eval` and `judge` with `--release rel-w3d4`. Week 3 Day 5 runs `eval`, `rcp`, `readout`, and `individual` with `--release rel-w3d5`. Week 4 Day 1 runs `redteam`, `privacy`, `access`, and `fair` with `--release rel-w4d1`. Week 4 Day 2 runs `incident` and `cache` with `--release rel-w4d2`. Week 4 Day 3 runs `slo` and `surge` with `--release rel-w4d3`. Week 4 Day 4 runs `slo` with `--release rel-w4d4`. Week 4 Day 5 runs `integrate`, `ops`, `rcp`, `readout`, and `individual` with `--release rel-w4d5`. They do not print the missing fact, the fitting family, the due date, the tool count, the removed field, the extra field, the dropped field, the wait figure, the owner, the interval, the old delay, the hash, the quota, the national id, the clinic code, the converted date, the watermark, a fidelity rate, a gold label, an F1, a price, an interview sentence, a doc id, a span, a clause, a log id, a visit count, a judge item, a rate, the due instant, a lag, a survey count, or the attack text.
+`python -m alwaha.check repo --work <dir>` and `python -m alwaha.check interview --work <dir>` print pass or fail for Lesson 1. `approach` and `brief` do the same for Module 1, Lesson 2. `events` does the same for Module 1, Lesson 3. `agent` and `trajectory` do the same for Module 1, Lesson 4. Module 1, Lesson 5 runs `agent` and `trajectory` with `--release rel-m01-l05`, then `design`, `readout`, and `individual`. Module 2, Lesson 1 runs `auth` and `journey` with `--release rel-m02-l01`. Module 2, Lesson 2 runs `journey` with `--release rel-m02-l02`. Module 2, Lesson 3 runs `tests` and `ux` with `--release rel-m02-l03`. Module 2, Lesson 4 runs `deploy` with `--release rel-m02-l04`. Module 2, Lesson 5 runs `deploy`, `journey`, `readout`, and `individual` with `--release rel-m02-l05`. Module 3, Lesson 1 runs `identity`, `labels`, and `synthetic` with `--release rel-m03-l01`. Module 3, Lesson 2 runs `model` and `lora` with `--release rel-m03-l02`. Module 3, Lesson 3 runs `rag`, `hybrid`, and `acl` with `--release rel-m03-l03`. Module 3, Lesson 4 runs `eval` and `judge` with `--release rel-m03-l04`. Module 3, Lesson 5 runs `eval`, `rcp`, `readout`, and `individual` with `--release rel-m03-l05`. Module 4, Lesson 1 runs `redteam`, `privacy`, `access`, and `fair` with `--release rel-m04-l01`. Module 4, Lesson 2 runs `incident` and `cache` with `--release rel-m04-l02`. Module 4, Lesson 3 runs `slo` and `surge` with `--release rel-m04-l03`. Module 4, Lesson 4 runs `slo` with `--release rel-m04-l04`. Module 4, Lesson 5 runs `integrate`, `ops`, `rcp`, `readout`, and `individual` with `--release rel-m04-l05`. They do not print the missing fact, the fitting family, the due date, the tool count, the removed field, the extra field, the dropped field, the wait figure, the owner, the interval, the old delay, the hash, the quota, the national id, the clinic code, the converted date, the watermark, a fidelity rate, a gold label, an F1, a price, an interview sentence, a doc id, a span, a clause, a log id, a visit count, a judge item, a rate, the due instant, a lag, a survey count, or the attack text.
 
 `python -m alwaha.demo.split --profile practice` prints the two DNA scores and how many people sit on both sides of the row split. Read those three lines aloud. Do not name the cause.
 
@@ -82,7 +84,7 @@ Day 1 writes `../data/rel-w1d1`. Day 2 writes `../data/rel-w1d2` and adds its go
 - **Closed truth.** `truth/` and `eval/` are never part of the participant pack. A grading service scores submissions without handing the key back.
 - **A technique earns its place.** A method is taught when a simpler method loses on a published slice. The slices are in [design/11-eval-and-hardness.md](design/11-eval-and-hardness.md).
 - **Foundation and advanced layers.** Every syllabus topic has a foundation check and further checks. Deeper work can earn credit. Day content chooses the depth.
-- **Daily releases.** `rel-w1d1` through `rel-w4d5` are written by the same seed. A later release can invalidate an earlier design. See [design/10-release-schedule.md](design/10-release-schedule.md).
+- **Daily releases.** `rel-m01-l01` through `rel-m04-l05` are written by the same seed. A later release can invalidate an earlier design. See [design/10-release-schedule.md](design/10-release-schedule.md).
 - **Stable ids.** Lessons cite facilities, personas, systems, files, and checks by id. Counts and dates that the seed can change are measurements, not constants in the prose.
 - **Fictional and safe.** Fictional people and facilities. No real patient data. Page images are synthetic. Clinical weights and red-flag lists are teaching devices. The assistant routes emergency wording to a human and leaves urgency decisions to a clinician.
 - **Small modules.** Generator modules stay under about 200 lines, one purpose each.
@@ -118,4 +120,4 @@ Case documents use the fictional names. Facilitators may say what each one resem
 
 ## Version 01
 
-Copy and adapt. Do not import. Version 01 stays frozen. Paths are under `Version 01/Week 01 - Week 06/problem_simulation/`. What moves, and what is rewritten, is listed in [design/12-generator-build.md](design/12-generator-build.md).
+Copy and adapt. Do not import. Version 01 stays frozen. Paths are under `Version 01/Module 01 - Module 06/problem_simulation/`. What moves, and what is rewritten, is listed in [design/12-generator-build.md](design/12-generator-build.md).

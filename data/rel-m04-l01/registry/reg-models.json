@@ -1,0 +1,29 @@
+{
+  "models": [
+    {
+      "hash": "sha256:f23bd66c0c3d29ba",
+      "id": "ext-large",
+      "status": "approved",
+      "zone": "zone-public"
+    },
+    {
+      "hash": "sha256:f44c007923644956",
+      "id": "local-small",
+      "status": "approved",
+      "zone": "zone-private"
+    },
+    {
+      "hash": "sha256:c79a865ded71c33f",
+      "id": "local-embed",
+      "status": "approved",
+      "zone": "zone-private"
+    },
+    {
+      "base": "local-small",
+      "hash": "sha256:8c515636b689ad80",
+      "id": "lora-local",
+      "status": "approved",
+      "zone": "zone-private"
+    }
+  ]
+}

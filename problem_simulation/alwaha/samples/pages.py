@@ -1,4 +1,4 @@
-"""Leader pages for rel-w1d2.
+"""Leader pages for rel-m01-l02.
 
 Figures are claims. Causes are not on the page.
 register_page lists each problem id with the symptom named for it. The dashboard, vendor, access, and sponsor functions are short notes. claim_figures derives the numbers those notes print from the seed.

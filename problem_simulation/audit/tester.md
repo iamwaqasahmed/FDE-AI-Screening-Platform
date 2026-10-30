@@ -15,7 +15,7 @@ The mocks listen on port 8080. The reference assistant listens on port 8081. Do 
 
 ## One day
 
-1. Open the day folder under `Week 0N/Day 0N` and follow its four notes in order.
+1. Open the day folder under `Module 0N/Lesson 0N` and follow its four notes in order.
 2. Use the pack named in that README under `data/`. Build it only with the command the note prints.
 3. Edit the `work/` copy, not the shell.
 4. Run the check command in the day's last note.

@@ -26,7 +26,7 @@ Every document carries `doc_id`, `family`, `title`, `status`, `effective`, `suns
 | `stage-gate` | `pol-stage-gate` | staff | Intake, risk tier, DPIA, pilot, go-live, review |
 | `security` | `pol-deploy`, NCC-analogue standard, coding-assistant rule | staff | Deployment checks and assistant use |
 | `privacy` | PDS-analogue, retention, DPIA template `tpl-dpia` | staff | Residency, deletion, breach clock |
-| `ai-gov` | Risk-tier policy, model-card template, transparency notice, incident runbook | staff | Week 4 governance pack |
+| `ai-gov` | Risk-tier policy, model-card template, transparency notice, incident runbook | staff | Module 2 governance pack |
 | `register` | `reg-models`, with approved hashes | staff | Serving only registered weights |
 | `service-catalog` | Structured clinic and preparation tables | public | A slice where SQL beats retrieval |
 | `vendor` | Three proposals, including containment claims | staff | Claims the transcripts can refute |
@@ -39,7 +39,7 @@ Every document carries `doc_id`, `family`, `title`, `status`, `effective`, `suns
 
 ## Planted conflicts
 
-- Criteria v3 is in force at engagement open. V4 is `draft` and `staff`. On `rel-w3d3`, v4 becomes `in_force` for `endo`, `ophth`, and `card` only.
+- Criteria v3 is in force at engagement open. V4 is `draft` and `staff`. On `rel-m03-l03`, v4 becomes `in_force` for `endo`, `ophth`, and `card` only.
 - `circ-ramadan-unauth` is `unauthorized` and mis-filed as `public`. Retrieving it as policy fails the citation check.
 - One facility override at `h-safra` shortens a booking window below the cluster policy. The cluster policy wins. Gold names both documents.
 - A board-pack spreadsheet contains a workforce and finance table that the Markdown export drops.

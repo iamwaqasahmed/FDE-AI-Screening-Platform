@@ -20,7 +20,7 @@ paths:
       summary: Referral read. Patients do not see pending.
   /eref/webhooks:
     post:
-      summary: Webhook intake from rel-w2d2
+      summary: Webhook intake from rel-m02-l02
   /sched-ain/book:
     post:
       summary: Real-time booking returns queued

@@ -1,4 +1,4 @@
-"""The Day 4 dev slice. One letter carries the profile canary.
+"""The Lesson 4 dev slice. One letter carries the profile canary.
 
 Each case is a session, a referral, a facility, a turn list, and the flags that case needs. Most cases sit on the agent dataset. Memory and consent sit on the sessions dataset. Reason sits on the reason dataset and carries the travel constraint. The injection case is the one that receives the letter, and that letter includes the watermark. Replay adds a second decision with the same approval id. Consent turns consent off and stores a preference. Reject uses a rejected decision. The list is returned in scenario order.
 """

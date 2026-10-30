@@ -9,7 +9,7 @@ import argparse
 import sys
 
 from alwaha.config.profile import load
-from alwaha.engagement.w4d3 import gold
+from alwaha.engagement.m04_l03 import gold
 
 
 def main(argv: list[str] | None = None) -> None:

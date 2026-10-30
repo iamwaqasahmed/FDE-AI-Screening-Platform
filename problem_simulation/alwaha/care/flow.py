@@ -64,7 +64,7 @@ def bookings(profile, people: list[dict], referral_rows: list[dict]) -> list[dic
 def breaches(referral_rows: list[dict]) -> list[dict]:
     """Return breach rows for the opening slice of referrals.
 
-    The steps take the opening referrals and record each submission day as the clock start, with Friday excluded from the working week and the breach marked.
+    The steps take the opening referrals and record each submission day as the clock start, with Friday excluded from the working module and the breach marked.
     """
     rows = []
     for referral in referral_rows[:2]:

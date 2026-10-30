@@ -10,7 +10,7 @@ import sys
 
 from alwaha.config.profile import load
 from alwaha.engagement.catalog import PERSONAS
-from alwaha.engagement.day5 import QUESTIONS
+from alwaha.engagement.m01_l05 import QUESTIONS
 
 
 def main(argv: list[str] | None = None) -> None:

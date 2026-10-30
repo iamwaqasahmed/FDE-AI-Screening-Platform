@@ -11,7 +11,7 @@ from pathlib import Path
 from alwaha.check.rubric import banned, has_id, has_token, section
 from alwaha.check.tables import contains_canary
 from alwaha.engagement.catalog import PERSONAS
-from alwaha.engagement.day5 import DOC_IDS
+from alwaha.engagement.m01_l05 import DOC_IDS
 
 _PERSONAS = tuple(row["id"] for row in PERSONAS)
 _GATE = re.compile(r"(?<![A-Za-z0-9])G[1-5](?![0-9])")

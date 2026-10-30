@@ -1,4 +1,4 @@
-"""itsm. The cause of a feed gap sits in a ticket, among routine tickets. Ramadan week is a freeze.
+"""itsm. The cause of a feed gap sits in a ticket, among routine tickets. Ramadan module is a freeze.
 
 fault() returns that hidden-cause defect. The affected keys are the feed-gap ticket and the freeze. The clean columns are the ticket id and the cause id.
 """

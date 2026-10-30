@@ -1,4 +1,4 @@
-"""chk-individual-w1. A miss does not name the document.
+"""chk-individual-m01. A miss does not name the document.
 
 This check grades the week-one trace note. It looks only at the Tool, Document, and Refused sections. A planted token, or a missing note, stops the check. The misses say what is wrong without naming the document.
 """

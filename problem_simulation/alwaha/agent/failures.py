@@ -1,4 +1,4 @@
-"""Day 5 failure scenarios. Gold stays out of the pack.
+"""Lesson 5 failure scenarios. Gold stays out of the pack.
 
 Two cases are built, in failure order. Timeout carries a letter and a timeout fault, and its turns are only the booking request. Race-slot has two actors, each confirming and each receiving an approval, and they share one slot id. The comparison rows are separate: timeout does not book and records the timeout failure, while race-slot books once, sends a message, keeps both approval ids, and records the race failure.
 """

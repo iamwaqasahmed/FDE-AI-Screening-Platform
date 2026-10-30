@@ -1,0 +1,29 @@
+# 07 — Knowledge
+
+Open the finished [knowledge.md](work/knowledge.md) and put it beside yours.
+
+The check needs two numbered lines. A second sentence wrapped onto the next line does not count. Fewer than two numbered lines says `knowledge.md needs two answers`.
+
+## Which problem stays on retrieval?
+
+Hours questions for p-info stay on retrieval.
+
+[ruling.md](sources/release/notices/ruling.md) says hours questions stay on retrieval. [hours.jsonl](sources/release/slices/hours.jsonl) is that slice. It is not a model call. The first numbered line has to contain a retrieval word and either `hour` or `p-info`. The finished line has both. While it does not, the check says `knowledge.md does not say which problem stays on retrieval`.
+
+## Which hash is legal to serve?
+
+The legal hash is lora-local on reg-models.
+
+[reg-models.json](sources/release/registry/reg-models.json) is the register. The row whose id is `lora-local` and whose status is `approved` is the one that may be served. The second numbered line names that row. It does not print the hash. While the line is missing `lora-local` or `reg-models`, the check says `knowledge.md does not say which hash is legal to serve`.
+
+The checks do not read the interview notes.
+
+Next: [08 — Trainer session](08-trainer.md). Students can skip that page.
+
+## Carry this forward
+
+You leave Module 3, Lesson 2 with a registered adapter that beats the prompt baseline inside the quota and the price cap. The cloud fine-tune is closed. Hours stayed on retrieval.
+
+This lesson is done. The next day cites, then measures. Criteria v4 is in force for three specialties. You cite an in-force document the asker may see.
+
+The trainer chapter, if this page links one, is optional. Tomorrow's lesson is the [Module 3, Lesson 3 student copy](<../../Lesson 03/Student_Copy/README.md>), starting at its background.

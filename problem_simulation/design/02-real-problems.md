@@ -1,6 +1,6 @@
 # Real problems
 
-Facilitators only. Participants meet symptoms and claims. The nine problems below are the causes those claims come from. Approach choice on Week 1, Day 2 is graded against this table (`chk-w1-approach`).
+Facilitators only. Participants meet symptoms and claims. The nine problems below are the causes those claims come from. Approach choice on Module 1, Lesson 2 is graded against this table (`chk-approach`).
 
 Rates are practice-profile targets. Gold stores the seed's actual rate. Lesson prose cites the id, not the percent.
 
@@ -28,7 +28,7 @@ Costs come from the catalog keys in [04 Systems](04-systems-and-environments.md)
 
 `p-triage` can show the largest gross saving and still have a blocker that no design removes. `p-clock` is cheap and changes the value of every other problem, because it fixes the baseline. Identity resolution and a patient-visible referral status unlock `p-waitlist`, `p-dna`, and `p-status`.
 
-A ranking has no single correct order. Gold is the value range, the dependency edges, and the facts a defensible ranking must cite. A ranking that puts a blocked problem first, with the block unaddressed, fails `chk-w1-brief`.
+A ranking has no single correct order. Gold is the value range, the dependency edges, and the facts a defensible ranking must cite. A ranking that puts a blocked problem first, with the block unaddressed, fails `chk-brief`.
 
 ## Dependencies
 
@@ -61,4 +61,4 @@ These are claims, and they are the opening lines of the persona cards in [06 Eng
 
 ## Where the problems surface
 
-Interviews can reveal the blockers early: the DPO's unsigned ruling, and the v4 draft. Teams that record those facts are ready for `rel-w3d2` and `rel-w3d3`. Teams that do not still receive the files on the day. The reward is preparation, not a hidden score bonus.
+Interviews can reveal the blockers early: the DPO's unsigned ruling, and the v4 draft. Teams that record those facts are ready for `rel-m03-l02` and `rel-m03-l03`. Teams that do not still receive the files on the day. The reward is preparation, not a hidden score bonus.

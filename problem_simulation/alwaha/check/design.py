@@ -1,4 +1,4 @@
-"""chk-w1-design. A miss does not name the missing token.
+"""chk-design. A miss does not name the missing token.
 
 This check grades the architecture and the design note together. It looks for a banned sentence, a human step on the diagram, urgency left with a clinician, enough of the required facts, and two knowledge answers. A planted token or a missing file stops the check. A miss does not name the missing token.
 """

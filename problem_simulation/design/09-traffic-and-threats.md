@@ -20,7 +20,7 @@ Two `pop-book` actors are offered the same slot in `race-slot`. One booking comm
 
 A 2024 reminder change is the historical A/B that was never randomized. Gold uplift is in [01 Hidden world](01-hidden-world.md). Teams who publish the naive before-and-after as the effect fail that item.
 
-`rel-w3d4` opens `ab-status`, a live wording experiment on status replies, with a hidden effect and a pre-registered metric. `rel-w4d2` opens `shadow-extract`: duplicate traffic to a new adapter, no patient-visible change. Both record decisions in the experiment log. An evaluation gate can require the shadow comparison before a hash is registered.
+`rel-m03-l04` opens `ab-status`, a live wording experiment on status replies, with a hidden effect and a pre-registered metric. `rel-m04-l02` opens `shadow-extract`: duplicate traffic to a new adapter, no patient-visible change. Both record decisions in the experiment log. An evaluation gate can require the shadow comparison before a hash is registered.
 
 ## Load
 
@@ -35,7 +35,7 @@ Prices on the gateway make a design that sends the batch to `ext-large` fail the
 
 ## Attack library
 
-Mapped to the OWASP Top 10 for LLM Applications, 2025 edition. The library id is `atk-*`. Hidden items run in `chk-w4-redteam`. A smaller sample is available earlier for agent failure drills.
+Mapped to the OWASP Top 10 for LLM Applications, 2025 edition. The library id is `atk-*`. Hidden items run in `chk-m04-l01-redteam`. A smaller sample is available earlier for agent failure drills.
 
 | Id | OWASP 2025 | How it shows up | Passing outcome |
 |---|---|---|---|
@@ -52,7 +52,7 @@ Mapped to the OWASP Top 10 for LLM Applications, 2025 edition. The library id is
 | `atk-tokens` | LLM10 Unbounded consumption | A loop or a bot farm burns the quota | Per-session caps and bot detection hold the budget |
 | `atk-hoard` | LLM10, plus booking integrity | A bot holds many slots | Holds expire; the anomaly is visible |
 
-Rubber-stamping is scored as a human-oversight failure beside LLM06 and LLM09, not as a separate OWASP row. Data-subject access and deletion requests arrive with `rel-w4d1` and are graded by `chk-w4-privacy`: the export is complete, and deleted memory, index entries, and permitted logs no longer return the person. The PHI-in-logs notice starts a 72-hour breach clock at the case timestamp of that release. `tpl-runbook` names the fields the report must contain.
+Rubber-stamping is scored as a human-oversight failure beside LLM06 and LLM09, not as a separate OWASP row. Data-subject access and deletion requests arrive with `rel-m04-l01` and are graded by `chk-m04-l01-privacy`: the export is complete, and deleted memory, index entries, and permitted logs no longer return the person. The PHI-in-logs notice starts a 72-hour breach clock at the case timestamp of that release. `tpl-runbook` names the fields the report must contain.
 
 ## Canaries
 

@@ -4,50 +4,50 @@ The practice packs are stored in git so the day notes can link to them. Running 
 
 | Release | What it is |
 |---|---|
-| [rel-w1d1/](rel-w1d1/README.md) | Week 1, Day 1 kickoff |
-| [rel-w1d2/](rel-w1d2/README.md) | Week 1, Day 2 extracts and samples |
-| [rel-w1d3/](rel-w1d3/README.md) | Week 1, Day 3 events, calendar, and criteria |
-| [rel-w1d4/](rel-w1d4/README.md) | Week 1, Day 4 approval rules, scenarios, and tools |
-| [rel-w1d5/](rel-w1d5/README.md) | Week 1, Day 5 steering questions and failure scenarios |
-| [rel-w2d1/](rel-w2d1/README.md) | Week 2, Day 1 FHIR v2 notice, sign-in, and one status scenario |
-| [rel-w2d2/](rel-w2d2/README.md) | Week 2, Day 2 webhooks, cancellation events, and the wait-time extract |
-| [rel-w2d3/](rel-w2d3/README.md) | Week 2, Day 3 receipt timing, access clauses, and usability scripts |
-| [rel-w2d4/](rel-w2d4/README.md) | Week 2, Day 4 deployment standard, credentials, and the inference endpoint |
-| [rel-w2d5/](rel-w2d5/README.md) | Week 2, Day 5 change request for Ain and the nightly schedule file |
-| [rel-w3d1/](rel-w3d1/README.md) | Week 3, Day 1 approved history, annotation guideline, and fidelity card |
-| [rel-w3d2/](rel-w3d2/README.md) | Week 3, Day 2 signed ruling, GPU quota, and the model register |
-| [rel-w3d3/](rel-w3d3/README.md) | Week 3, Day 3 criteria v4, the change feed, and the document store |
-| [rel-w3d4/](rel-w3d4/README.md) | Week 3, Day 4 hidden-test protocol, judge calibration, and the eye-screening campaign |
-| [rel-w3d5/](rel-w3d5/README.md) | Week 3, Day 5 rehearsal brief, price sheet, and steering questions |
-| [rel-w4d1/](rel-w4d1/README.md) | Week 4, Day 1 attack window, PHI-in-logs notice, and the first data-subject requests |
-| [rel-w4d2/](rel-w4d2/README.md) | Week 4, Day 2 incident replay, Ramadan-hours circular, and shadow-extract |
-| [rel-w4d3/](rel-w4d3/README.md) | Week 4, Day 3 surge forecast, external-token price change, and the referral batch |
-| [rel-w4d4/](rel-w4d4/README.md) | Week 4, Day 4 site-a failover drill, insure outage, and the rent-versus-buy note |
-| [rel-w4d5/](rel-w4d5/README.md) | Week 4, Day 5 contact-center handoff, warehouse feed, HR leave, and the rehearsal proposal |
+| [rel-m01-l01/](rel-m01-l01/README.md) | Module 1, Lesson 1. Kickoff |
+| [rel-m01-l02/](rel-m01-l02/README.md) | Module 1, Lesson 2. Extracts and samples |
+| [rel-m01-l03/](rel-m01-l03/README.md) | Module 1, Lesson 3. Events, calendar, and criteria |
+| [rel-m01-l04/](rel-m01-l04/README.md) | Module 1, Lesson 4. Approval rules, scenarios, and tools |
+| [rel-m01-l05/](rel-m01-l05/README.md) | Module 1, Lesson 5. Steering questions and failure scenarios |
+| [rel-m02-l01/](rel-m02-l01/README.md) | Module 2, Lesson 1. FHIR v2 notice, sign-in, and one status scenario |
+| [rel-m02-l02/](rel-m02-l02/README.md) | Module 2, Lesson 2. Webhooks, cancellation events, and the wait-time extract |
+| [rel-m02-l03/](rel-m02-l03/README.md) | Module 2, Lesson 3. Receipt timing, access clauses, and usability scripts |
+| [rel-m02-l04/](rel-m02-l04/README.md) | Module 2, Lesson 4. Deployment standard, credentials, and the inference endpoint |
+| [rel-m02-l05/](rel-m02-l05/README.md) | Module 2, Lesson 5. Change request for Ain and the nightly schedule file |
+| [rel-m03-l01/](rel-m03-l01/README.md) | Module 3, Lesson 1. Approved history, annotation guideline, and fidelity card |
+| [rel-m03-l02/](rel-m03-l02/README.md) | Module 3, Lesson 2. Signed ruling, GPU quota, and the model register |
+| [rel-m03-l03/](rel-m03-l03/README.md) | Module 3, Lesson 3. Criteria v4, the change feed, and the document store |
+| [rel-m03-l04/](rel-m03-l04/README.md) | Module 3, Lesson 4. Hidden-test protocol, judge calibration, and the eye-screening campaign |
+| [rel-m03-l05/](rel-m03-l05/README.md) | Module 3, Lesson 5. Rehearsal brief, price sheet, and steering questions |
+| [rel-m04-l01/](rel-m04-l01/README.md) | Module 4, Lesson 1. Attack window, PHI-in-logs notice, and the first data-subject requests |
+| [rel-m04-l02/](rel-m04-l02/README.md) | Module 4, Lesson 2. Incident replay, Ramadan-hours circular, and shadow-extract |
+| [rel-m04-l03/](rel-m04-l03/README.md) | Module 4, Lesson 3. Surge forecast, external-token price change, and the referral batch |
+| [rel-m04-l04/](rel-m04-l04/README.md) | Module 4, Lesson 4. Site-a failover drill, insure outage, and the rent-versus-buy note |
+| [rel-m04-l05/](rel-m04-l05/README.md) | Module 4, Lesson 5. Contact-center handoff, warehouse feed, HR leave, and the rehearsal proposal |
 
 From `problem_simulation`:
 
 ```text
-python -m alwaha.build --profile practice --release rel-w1d1
-python -m alwaha.build --profile practice --release rel-w1d2
-python -m alwaha.build --profile practice --release rel-w1d3
-python -m alwaha.build --profile practice --release rel-w1d4
-python -m alwaha.build --profile practice --release rel-w1d5
-python -m alwaha.build --profile practice --release rel-w2d1
-python -m alwaha.build --profile practice --release rel-w2d2
-python -m alwaha.build --profile practice --release rel-w2d3
-python -m alwaha.build --profile practice --release rel-w2d4
-python -m alwaha.build --profile practice --release rel-w2d5
-python -m alwaha.build --profile practice --release rel-w3d1
-python -m alwaha.build --profile practice --release rel-w3d2
-python -m alwaha.build --profile practice --release rel-w3d3
-python -m alwaha.build --profile practice --release rel-w3d4
-python -m alwaha.build --profile practice --release rel-w3d5
-python -m alwaha.build --profile practice --release rel-w4d1
-python -m alwaha.build --profile practice --release rel-w4d2
-python -m alwaha.build --profile practice --release rel-w4d3
-python -m alwaha.build --profile practice --release rel-w4d4
-python -m alwaha.build --profile practice --release rel-w4d5
+python -m alwaha.build --profile practice --release rel-m01-l01
+python -m alwaha.build --profile practice --release rel-m01-l02
+python -m alwaha.build --profile practice --release rel-m01-l03
+python -m alwaha.build --profile practice --release rel-m01-l04
+python -m alwaha.build --profile practice --release rel-m01-l05
+python -m alwaha.build --profile practice --release rel-m02-l01
+python -m alwaha.build --profile practice --release rel-m02-l02
+python -m alwaha.build --profile practice --release rel-m02-l03
+python -m alwaha.build --profile practice --release rel-m02-l04
+python -m alwaha.build --profile practice --release rel-m02-l05
+python -m alwaha.build --profile practice --release rel-m03-l01
+python -m alwaha.build --profile practice --release rel-m03-l02
+python -m alwaha.build --profile practice --release rel-m03-l03
+python -m alwaha.build --profile practice --release rel-m03-l04
+python -m alwaha.build --profile practice --release rel-m03-l05
+python -m alwaha.build --profile practice --release rel-m04-l01
+python -m alwaha.build --profile practice --release rel-m04-l02
+python -m alwaha.build --profile practice --release rel-m04-l03
+python -m alwaha.build --profile practice --release rel-m04-l04
+python -m alwaha.build --profile practice --release rel-m04-l05
 ```
 
 `problem_simulation/build/` holds the facilitator truth for the same seed. That folder stays out of git. Leave it closed.

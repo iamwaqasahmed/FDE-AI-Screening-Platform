@@ -1,4 +1,4 @@
-"""chk-w2-auth. A miss does not print the role list or the assurance level.
+"""chk-auth. A miss does not print the role list or the assurance level.
 
 This check grades sign-in: the session row, which page each actor opens, and which actors are refused. It runs the shared shell exercise and then reads the notes. A shell that does not run returns only that failure. The role list and the assurance level are not printed.
 """

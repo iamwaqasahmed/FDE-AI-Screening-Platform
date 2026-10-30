@@ -9,7 +9,7 @@ import argparse
 import sys
 
 from alwaha.config.profile import load
-from alwaha.engagement.w2d2 import hl7_rows
+from alwaha.engagement.m02_l02 import hl7_rows
 from alwaha.serve.hl7 import outcomes
 
 

@@ -1,16 +1,16 @@
 # Terminal and Python basics
 
-Read this once if the setup chapter's commands are new. It adds no file and no command. The day's chapter is still the instruction.
+Read this once if the setup chapter's commands are new. It adds no file and no command. The lesson's chapter is still the instruction.
 
 ## The terminal
 
-A terminal is a window that runs one command at a time. Chapter 01 tells you how to open one already inside the course folder. The course folder is the folder that contains `problem_simulation` and `Week 01`.
+A terminal is a window that runs one command at a time. Chapter 01 tells you how to open one already inside the course folder. The course folder is the folder that contains `problem_simulation` and `Module 01`.
 
 `cd` changes the folder. `cd problem_simulation` moves into that folder. `cd ..` moves up one folder. On Windows, `dir` lists the names. On macOS and Linux, `ls` lists the names.
 
-When a path contains a space, the chapter puts it in quotes: `cd "Week 01/Day 01/Student_Copy"`. Keep the quotes.
+When a path contains a space, the chapter puts it in quotes: `cd "Module 01/Lesson 01/Student_Copy"`. Keep the quotes.
 
-The prompt returns when the command has finished. A command that sits there with no prompt is still running. Chapter 01 of a later day says when to press Ctrl+C to stop one.
+The prompt returns when the command has finished. A command that sits there with no prompt is still running. Chapter 01 of a later lesson says when to press Ctrl+C to stop one.
 
 ## Python
 

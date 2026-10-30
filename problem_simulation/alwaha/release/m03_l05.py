@@ -1,0 +1,112 @@
+"""Write rel-m03-l05.
+Earlier packs and personas.json are left where they are.
+
+The pack is cleared, then the rehearsal, the steering page, the role cards, the stage-gate page, the price table, and the slices are written. Gold goes into the truth directory. The release note is added once the file list is known, and the fingerprint covers the pack and the gold file.
+"""
+
+from __future__ import annotations
+
+import csv
+import io
+import json
+from pathlib import Path
+
+from alwaha.config.profile import Profile
+from alwaha.engagement.m03_l01 import budget
+from alwaha.engagement.m03_l05 import gold
+from alwaha.engagement.m03_l05_pages import CASE_DATE, rehearsal, role_cards, stage_gate, steer_page
+from alwaha.engagement.m03_l05_rows import before_public, personal_public, stories
+from alwaha.release.fingerprint import fingerprint
+from alwaha.release.write import reset
+from alwaha.samples.prices import PRICE_FIELDS, price_rows
+
+RELEASE = "rel-m03-l05"
+
+
+def _write(path: Path, text: str) -> None:
+    """Write text to the path, creating parent directories.
+
+    A Unix newline is forced so the pack file does not depend on the machine that wrote it.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8", newline="\n")
+
+
+def _json(path: Path, payload: dict | list) -> None:
+    """Write one JSON value to the path.
+
+    Keys are sorted and the text ends with a newline. The text writer creates parent directories.
+    """
+    _write(path, json.dumps(payload, indent=2, sort_keys=True) + "\n")
+
+
+def _jsonl(path: Path, rows: list[dict]) -> None:
+    """Write the rows as JSON lines.
+
+    Each object has sorted keys and brings its own newline. No extra blank line is added after the last row.
+    """
+    body = "".join(json.dumps(row, sort_keys=True) + "\n" for row in rows)
+    _write(path, body)
+
+
+def _csv(path: Path, rows: list[dict], fields: tuple[str, ...]) -> None:
+    """Write rows as CSV.
+
+    The caller supplies the column order, and each row is written in that order. The text writer stores the finished text.
+    """
+    buffer = io.StringIO(newline="")
+    writer = csv.DictWriter(buffer, fieldnames=list(fields), lineterminator="\n")
+    writer.writeheader()
+    for row in rows:
+        writer.writerow(row)
+    _write(path, buffer.getvalue())
+
+
+def _release_note(files: list[str]) -> str:
+    """Return the readme for this pack.
+
+    Every pack file is listed except the readme itself, because this text is that readme. The note is from the steering committee and points at the rehearsal brief.
+    """
+    listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
+    return f"""# rel-m03-l05
+
+From: the steering committee
+Case date: {CASE_DATE}
+
+Steering asks for the rehearsal brief. The lesson notes are [Module 3 Lesson 5](<../../Module 03/Lesson 05/Student_Copy/home.md>).
+
+Files:
+
+{listed}
+"""
+
+
+def write_m03_l05(profile: Profile, pack: Path, truth: Path) -> str:
+    """Return the fingerprint of the pack and its gold.
+
+    It writes the rehearsal, the steering page, the role cards, the stage-gate page, the price table, the label budget, the slices, the backlog, and the gold.
+    """
+    # Clear the pack and open the truth directory.
+    reset(pack)
+    truth.mkdir(parents=True, exist_ok=True)
+    # Rehearsal, steering page, role cards, and the stage-gate page.
+    _write(pack / "notices" / "rehearsal.md", rehearsal())
+    _write(pack / "steering" / "steer-m03-l05.md", steer_page())
+    _write(pack / "workshop" / "role-cards.md", role_cards())
+    _write(pack / "gates" / "stage-gate.md", stage_gate())
+    # Price table, label budget, slices, and the backlog.
+    _csv(pack / "finance" / "prices.csv", price_rows(profile.seed), PRICE_FIELDS)
+    _json(pack / "budget" / "labels.json", budget(profile))
+    _jsonl(pack / "slices" / "before.jsonl", before_public())
+    _jsonl(pack / "slices" / "personal.jsonl", personal_public())
+    _json(pack / "backlog" / "seed.json", stories())
+    # Gold, after the pack files it is checked against.
+    _write(truth / "m03_l05_gold.json", json.dumps(gold(profile), indent=2, sort_keys=True) + "\n")
+    names = sorted(path.relative_to(pack).as_posix() for path in pack.rglob("*") if path.is_file())
+    # The note is not on disk yet, so its name is added before the note is written.
+    names.append("README.md")
+    _write(pack / "README.md", _release_note(sorted(names)))
+    # Fingerprint the pack and the gold file, and store that digest.
+    digest = fingerprint(pack, truth / "m03_l05_gold.json")
+    _write(truth / "rel-m03-l05-fingerprint.txt", digest + "\n")
+    return digest

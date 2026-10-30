@@ -24,7 +24,7 @@ The baseline list is [protected-file-checksums.txt](protected-file-checksums.txt
 
 - The root [README](../README.md), with a solo-learner paragraph and two rows in the audience table. The existing reading order is still there.
 - [course_design/README.md](../course_design/README.md), one paragraph pointing at this folder.
-- For each of the 20 days: the day README, the student README, `04-words.md`, the finish chapter, and the solution knowledge chapter.
+- For each of the 20 releases: the day README, the student README, `04-words.md`, the finish chapter, and the solution knowledge chapter.
 
 ## New files
 
@@ -33,7 +33,7 @@ The baseline list is [protected-file-checksums.txt](protected-file-checksums.txt
 | `learning/README.md` | Participants |
 | `learning/concept-index.md` | Participants |
 | `learning/review.md` | Participants. Optional. Not a deliverable |
-| `Week 01/README.md` through `Week 04/README.md` | Participants |
+| `Module 01/README.md` and `Module 02/README.md` | Participants |
 | `instructional/` | Authors. Participants are told to leave it closed |
 
 ## Requirements left as written
@@ -43,7 +43,7 @@ Checked by diff scope and by re-reading the inserted sections against the chapte
 - Problem statements, release ids, and the Al-Waha scenario were not rewritten.
 - Exercise steps, paste blocks, check commands, and pass lines were not rewritten.
 - Expected deliverables in each student README were not rewritten.
-- Reference solutions under `Solution_Copy/work` were not rewritten.
+- Reference solutions under `Solution_Copy/morning/work` were not rewritten.
 - Datasets and client documents in `packet/`, `sources/`, and `data/` were not rewritten.
 - No day was added or removed. No mandatory topic was added as a new exercise.
 
@@ -51,7 +51,7 @@ The new sections say, where a reader might wonder, that they add no file and no 
 
 ## Wording that was clarified, not replaced
 
-The Week 3 Day 3 words table still says an embedding is "a vector of tokens." That phrase matches the course's own term "token vector" in `embed.py`. A plain reading under the table says what that file computes: a weight per token, including hyphenated codes, compared by cosine similarity. The table cell was left so a search for the course's phrase still lands.
+The Module 3, Lesson 3 words table still says an embedding is "a vector of tokens." That phrase matches the course's own term "token vector" in `embed.py`. A plain reading under the table says what that file computes: a weight per token, including hyphenated codes, compared by cosine similarity. The table cell was left so a search for the course's phrase still lands.
 
 ## Issues seen and not patched
 

@@ -18,7 +18,7 @@ def score(profile_name: str) -> dict:
     for which, release, work in jobs():
         ok, detail = _one(which, release, work, profile_name)
         # A job that names no release is reported under the first release id.
-        rows.append({"check": which, "release": release or "rel-w1d1", "ok": ok, "detail": detail.strip()})
+        rows.append({"check": which, "release": release or "rel-m01-l01", "ok": ok, "detail": detail.strip()})
     passed = sum(1 for row in rows if row["ok"])
     return {"passed": passed, "total": len(rows), "rate": passed / len(rows), "rows": rows}
 

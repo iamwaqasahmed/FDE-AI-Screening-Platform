@@ -1,4 +1,4 @@
-"""chk-w2-journey for a status question. A miss does not name the field or the count.
+"""chk-journey for a status question. A miss does not name the field or the count.
 
 This check grades a status question against the shell exercise. It fails a book call, a wrong count, a wrong state, a wrong facility, an open approval, a missing citation, a thin health report, and an approval that is not held. The knowledge note must answer where assurance sits and where the session row lives. A miss does not name the field or the count.
 """

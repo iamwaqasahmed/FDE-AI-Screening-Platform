@@ -87,7 +87,7 @@ At every paragraph, instruction, and activity:
 3. Write in the course voice: short sentences, named files, named commands, named pass lines.
 4. Add nothing from later days, and nothing that answers a trap.
 5. If an addition would run past about 25 lines in a chapter already over about 400 lines, put it in `learning/explainers/` and link it where the topic is first used.
-6. Shared files (`learning/`, week READMEs, the root README, `instructional/`) are edited in one place at a time.
+6. Shared files (`learning/`, module READMEs, the root README, `instructional/`) are edited in one place at a time.
 7. An edit to an earlier day is re-checked on that day and logged.
 8. Optional questions belong in `learning/review.md`. They are not filed.
 9. Concept-index rows are added only for terms the pages teach.

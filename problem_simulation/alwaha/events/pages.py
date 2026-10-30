@@ -1,4 +1,4 @@
-"""Participant-facing text for the Day 3 release.
+"""Participant-facing text for the Lesson 3 release.
 
 criteria_docs returns the endocrinology criteria whose status is in_force, and a draft of the same specialty. The policy page states how the SLA clock runs, how many retries are allowed, and how events that share a referral are ordered. The remaining functions are the event contract and the two API descriptions.
 """

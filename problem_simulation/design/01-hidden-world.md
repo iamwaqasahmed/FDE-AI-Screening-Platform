@@ -13,7 +13,7 @@ Ids in this note are stable. Lesson text may name them. Lesson text leaves count
 | Capacity | Sessions, slots, leave, and travel | Calendars, unused slots, waiting |
 | Behavior | Attendance, contactability, and how staff work | DNA, reminder receipts, approval delays, edited drafts |
 | Infrastructure | What the platforms can do, and what they cost | Quotas, price sheets, SLOs, incidents |
-| Threats | Who attacks which workflow | The attack traffic in Week 4, plus a few earlier traces |
+| Threats | Who attacks which workflow | The attack traffic in Module 2, plus a few earlier traces |
 
 ### People
 
@@ -30,7 +30,7 @@ Pairwise same-person labels and point-in-time clusters are gold. A false merge c
 
 ### Demand
 
-Each person has a latent need for zero or more specialties. Need rises with age and with recorded chronic conditions, varies by season, and jumps when the eye-screening campaign is announced (`rel-w3d4`). Specialty mix differs by district. Referrals are the observed requests, and some of them are duplicates after a return.
+Each person has a latent need for zero or more specialties. Need rises with age and with recorded chronic conditions, varies by season, and jumps when the eye-screening campaign is announced (`rel-m03-l04`). Specialty mix differs by district. Referrals are the observed requests, and some of them are duplicates after a return.
 
 ### Capacity
 
@@ -94,12 +94,12 @@ Course days map onto the engagement calendar. Releases, outages, and token expir
 
 | Course day | Case date | Release |
 |---|---|---|
-| Week 1, Days 1–5 | 10–14 January 2027 | `rel-w1d1` … `rel-w1d5` |
-| Week 2, Days 1–5 | 17–21 January 2027 | `rel-w2d1` … `rel-w2d5` |
-| Week 3, Days 1–5 | 24–28 January 2027 | `rel-w3d1` … `rel-w3d5` |
-| Week 4, Days 1–5 | 31 January–4 February 2027 | `rel-w4d1` … `rel-w4d5` |
+| Module 1, Lesson 1 through Lesson 5 | 10–14 January 2027 | `rel-m01-l01` … `rel-m01-l05` |
+| Module 2, Lesson 1 through Lesson 5 | 17–21 January 2027 | `rel-m02-l01` … `rel-m02-l05` |
+| Module 3, Lesson 1 through Lesson 5 | 24–28 January 2027 | `rel-m03-l01` … `rel-m03-l05` |
+| Module 4, Lesson 1 through Lesson 5 | 31 January–4 February 2027 | `rel-m04-l01` … `rel-m04-l05` |
 
-The sponsor's deadline, "live before Ramadan," is 8 February 2027, the first Monday after Week 4.
+The sponsor's deadline, "live before Ramadan," is 8 February 2027, the Monday after the last classroom day.
 
 ## Clinical boundary
 

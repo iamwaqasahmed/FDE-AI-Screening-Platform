@@ -1,4 +1,4 @@
-"""Write the rel-w1d1 pack and the facilitator truth beside it.
+"""Write the rel-m01-l01 pack and the facilitator truth beside it.
 
 The writer stops if the starter is missing or the corpus facts disagree, then clears both directories and writes the corpus, the persona pages, and the watermarked credentials. The starter is copied in, and the copied policy is checked against the corpus. The release note is added once the file list is known, and the facilitator directory receives the interview payload, the marker, and the fingerprint.
 """
@@ -15,7 +15,7 @@ from alwaha.engagement.personas import load_personas
 from alwaha.paths import STARTER_ROOT
 from alwaha.release.fingerprint import fingerprint
 
-RELEASE = "rel-w1d1"
+RELEASE = "rel-m01-l01"
 SAMPLE_MARKER = "SAMPLE-REFERRAL-ALWAHA"
 
 
@@ -54,12 +54,12 @@ def _release_note(files: list[str]) -> str:
     Every pack file is listed except the readme itself, because this text is that readme. The note is the kickoff. It says the dev credentials are watermarked and are not the full history.
     """
     listed = "\n".join(f"- [{name}]({name})" for name in files if name != "README.md")
-    return f"""# rel-w1d1
+    return f"""# rel-m01-l01
 
 From: the office of the Chief Digital and Transformation Officer
 Case date: 2027-01-10
 
-This is the kickoff. Dev credentials are watermarked. They are not a grant of the full history. The day notes are [Week 1, Day 1](../../Week%2001/Day%2001/README.md).
+This is the kickoff. Dev credentials are watermarked. They are not a grant of the full history. The lesson notes are [Module 1 Lesson 1](<../../Module 01/Lesson 01/Student_Copy/home.md>).
 
 Files:
 

@@ -1,4 +1,4 @@
-"""Family constraints for chk-w1-approach. This module stays out of the participant pack.
+"""Family constraints for chk-approach. This module stays out of the participant pack.
 
 ALLOWED is the family vocabulary. Each problem maps to the families it requires and the families it forbids. Two problems require no model and forbid every model family. The triage problem requires the blocked family and forbids every other allowed family. The payload sorts those sets so the written JSON is stable.
 """

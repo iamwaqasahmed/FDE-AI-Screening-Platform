@@ -1,6 +1,6 @@
 """Output locations for a profile. Practice pack is the published drop.
 
-The constants point at the student packets and the filled work copies for each teaching day. pack_dir is where a release is written. truth_dir is the facilitator gold beside a profile. world_dir is the facilitator world, and it refuses to resolve inside the published data tree.
+The constants point at the student packets and the filled work copies for each lesson. Constant names still use the old release letters. pack_dir is where a release is written. truth_dir is the facilitator gold beside a profile. world_dir is the facilitator world, and it refuses to resolve inside the published data tree.
 """
 
 from __future__ import annotations
@@ -9,119 +9,119 @@ from pathlib import Path
 
 SIM_ROOT = Path(__file__).resolve().parents[1]
 VERSION_ROOT = SIM_ROOT.parent
-STARTER_ROOT = VERSION_ROOT / "Week 01" / "Day 01" / "Student_Copy" / "packet" / "starter"
-DAY1_WORK = VERSION_ROOT / "Week 01" / "Day 01" / "Solution_Copy" / "work"
-DAY2_ROOT = VERSION_ROOT / "Week 01" / "Day 02"
-BASELINES_ROOT = DAY2_ROOT / "Student_Copy" / "packet" / "baselines"
-TEMPLATES_ROOT = DAY2_ROOT / "Student_Copy" / "packet" / "templates"
-DAY2_WORK = DAY2_ROOT / "Solution_Copy" / "work"
-DAY3_ROOT = VERSION_ROOT / "Week 01" / "Day 03"
-WORKFLOW_ROOT = DAY3_ROOT / "Student_Copy" / "packet" / "workflow"
-DAY3_TEMPLATES = DAY3_ROOT / "Student_Copy" / "packet" / "templates"
-DAY3_WORK = DAY3_ROOT / "Solution_Copy" / "work"
-DAY4_ROOT = VERSION_ROOT / "Week 01" / "Day 04"
-AGENT_ROOT = DAY4_ROOT / "Student_Copy" / "packet" / "agent"
-DAY4_TEMPLATES = DAY4_ROOT / "Student_Copy" / "packet" / "templates"
-DAY4_WORK = DAY4_ROOT / "Solution_Copy" / "work"
-DAY5_ROOT = VERSION_ROOT / "Week 01" / "Day 05"
-DAY5_TEMPLATES = DAY5_ROOT / "Student_Copy" / "packet" / "templates"
-DAY5_WORK = DAY5_ROOT / "Solution_Copy" / "work"
-W2D1_ROOT = VERSION_ROOT / "Week 02" / "Day 01"
-W2D1_APP = W2D1_ROOT / "Student_Copy" / "packet" / "app"
-W2D1_TEMPLATES = W2D1_ROOT / "Student_Copy" / "packet" / "templates"
-W2D1_WORK = W2D1_ROOT / "Solution_Copy" / "work"
-W2D2_ROOT = VERSION_ROOT / "Week 02" / "Day 02"
-W2D2_APP = W2D2_ROOT / "Student_Copy" / "packet" / "app"
-W2D2_TEMPLATES = W2D2_ROOT / "Student_Copy" / "packet" / "templates"
-W2D2_WORK = W2D2_ROOT / "Solution_Copy" / "work"
-W2D3_ROOT = VERSION_ROOT / "Week 02" / "Day 03"
-W2D3_APP = W2D3_ROOT / "Student_Copy" / "packet" / "app"
-W2D3_TEMPLATES = W2D3_ROOT / "Student_Copy" / "packet" / "templates"
-W2D3_TESTS = W2D3_ROOT / "Student_Copy" / "packet" / "tests"
-W2D3_WORK = W2D3_ROOT / "Solution_Copy" / "work"
-W2D4_ROOT = VERSION_ROOT / "Week 02" / "Day 04"
-W2D4_APP = W2D4_ROOT / "Student_Copy" / "packet" / "app"
-W2D4_TEMPLATES = W2D4_ROOT / "Student_Copy" / "packet" / "templates"
-W2D4_TESTS = W2D4_ROOT / "Student_Copy" / "packet" / "tests"
-W2D4_DEPLOY = W2D4_ROOT / "Student_Copy" / "packet" / "deploy"
-W2D4_WORK = W2D4_ROOT / "Solution_Copy" / "work"
-W2D5_ROOT = VERSION_ROOT / "Week 02" / "Day 05"
-W2D5_APP = W2D5_ROOT / "Student_Copy" / "packet" / "app"
-W2D5_TEMPLATES = W2D5_ROOT / "Student_Copy" / "packet" / "templates"
-W2D5_TESTS = W2D5_ROOT / "Student_Copy" / "packet" / "tests"
-W2D5_DEPLOY = W2D5_ROOT / "Student_Copy" / "packet" / "deploy"
-W2D5_WORK = W2D5_ROOT / "Solution_Copy" / "work"
-W3D1_ROOT = VERSION_ROOT / "Week 03" / "Day 01"
-W3D1_APP = W3D1_ROOT / "Student_Copy" / "packet" / "app"
-W3D1_TEMPLATES = W3D1_ROOT / "Student_Copy" / "packet" / "templates"
-W3D1_WORK = W3D1_ROOT / "Solution_Copy" / "work"
-W3D2_ROOT = VERSION_ROOT / "Week 03" / "Day 02"
-W3D2_APP = W3D2_ROOT / "Student_Copy" / "packet" / "app"
-W3D2_TEMPLATES = W3D2_ROOT / "Student_Copy" / "packet" / "templates"
-W3D2_WORK = W3D2_ROOT / "Solution_Copy" / "work"
-W3D3_ROOT = VERSION_ROOT / "Week 03" / "Day 03"
-W3D3_APP = W3D3_ROOT / "Student_Copy" / "packet" / "app"
-W3D3_TEMPLATES = W3D3_ROOT / "Student_Copy" / "packet" / "templates"
-W3D3_WORK = W3D3_ROOT / "Solution_Copy" / "work"
-W3D4_ROOT = VERSION_ROOT / "Week 03" / "Day 04"
-W3D4_APP = W3D4_ROOT / "Student_Copy" / "packet" / "app"
-W3D4_TEMPLATES = W3D4_ROOT / "Student_Copy" / "packet" / "templates"
-W3D4_WORK = W3D4_ROOT / "Solution_Copy" / "work"
-W3D5_ROOT = VERSION_ROOT / "Week 03" / "Day 05"
-W3D5_APP = W3D5_ROOT / "Student_Copy" / "packet" / "app"
-W3D5_TEMPLATES = W3D5_ROOT / "Student_Copy" / "packet" / "templates"
-W3D5_WORK = W3D5_ROOT / "Solution_Copy" / "work"
-W4D1_ROOT = VERSION_ROOT / "Week 04" / "Day 01"
-W4D1_APP = W4D1_ROOT / "Student_Copy" / "packet" / "app"
-W4D1_TEMPLATES = W4D1_ROOT / "Student_Copy" / "packet" / "templates"
-W4D1_WORK = W4D1_ROOT / "Solution_Copy" / "work"
-W4D2_ROOT = VERSION_ROOT / "Week 04" / "Day 02"
-W4D2_APP = W4D2_ROOT / "Student_Copy" / "packet" / "app"
-W4D2_WORK = W4D2_ROOT / "Solution_Copy" / "work"
-W4D3_ROOT = VERSION_ROOT / "Week 04" / "Day 03"
-W4D3_APP = W4D3_ROOT / "Student_Copy" / "packet" / "app"
-W4D3_WORK = W4D3_ROOT / "Solution_Copy" / "work"
-W4D4_ROOT = VERSION_ROOT / "Week 04" / "Day 04"
-W4D4_APP = W4D4_ROOT / "Student_Copy" / "packet" / "app"
-W4D4_WORK = W4D4_ROOT / "Solution_Copy" / "work"
-W4D5_ROOT = VERSION_ROOT / "Week 04" / "Day 05"
-W4D5_APP = W4D5_ROOT / "Student_Copy" / "packet" / "app"
-W4D5_WORK = W4D5_ROOT / "Solution_Copy" / "work"
+STARTER_ROOT = VERSION_ROOT / "Module 01" / "Lesson 01" / "Student_Copy" / "packet" / "starter"
+M01_L01_WORK = VERSION_ROOT / "Module 01" / "Lesson 01" / "Solution_Copy" / "work"
+M01_L02_ROOT = VERSION_ROOT / "Module 01" / "Lesson 02" / "Student_Copy"
+BASELINES_ROOT = M01_L02_ROOT / "packet" / "baselines"
+TEMPLATES_ROOT = M01_L02_ROOT / "packet" / "templates"
+M01_L02_WORK = M01_L02_ROOT.parent / "Solution_Copy" / "work"
+M01_L03_ROOT = VERSION_ROOT / "Module 01" / "Lesson 03"
+WORKFLOW_ROOT = M01_L03_ROOT / "Student_Copy" / "packet" / "workflow"
+M01_L03_TEMPLATES = M01_L03_ROOT / "Student_Copy" / "packet" / "templates"
+M01_L03_WORK = M01_L03_ROOT / "Solution_Copy" / "work"
+M01_L04_ROOT = VERSION_ROOT / "Module 01" / "Lesson 04" / "Student_Copy"
+AGENT_ROOT = M01_L04_ROOT / "packet" / "agent"
+M01_L04_TEMPLATES = M01_L04_ROOT / "packet" / "templates"
+M01_L04_WORK = M01_L04_ROOT.parent / "Solution_Copy" / "work"
+M01_L05_ROOT = VERSION_ROOT / "Module 01" / "Lesson 05"
+M01_L05_TEMPLATES = M01_L05_ROOT / "Student_Copy" / "packet" / "templates"
+M01_L05_WORK = M01_L05_ROOT / "Solution_Copy" / "work"
+M02_L01_ROOT = VERSION_ROOT / "Module 02" / "Lesson 01" / "Student_Copy"
+M02_L01_APP = M02_L01_ROOT / "packet" / "app"
+M02_L01_TEMPLATES = M02_L01_ROOT / "packet" / "templates"
+M02_L01_WORK = M02_L01_ROOT.parent / "Solution_Copy" / "work"
+M02_L02_ROOT = VERSION_ROOT / "Module 02" / "Lesson 02"
+M02_L02_APP = M02_L02_ROOT / "Student_Copy" / "packet" / "app"
+M02_L02_TEMPLATES = M02_L02_ROOT / "Student_Copy" / "packet" / "templates"
+M02_L02_WORK = M02_L02_ROOT / "Solution_Copy" / "work"
+M02_L03_ROOT = VERSION_ROOT / "Module 02" / "Lesson 03" / "Student_Copy"
+M02_L03_APP = M02_L03_ROOT / "packet" / "app"
+M02_L03_TEMPLATES = M02_L03_ROOT / "packet" / "templates"
+M02_L03_TESTS = M02_L03_ROOT / "packet" / "tests"
+M02_L03_WORK = M02_L03_ROOT.parent / "Solution_Copy" / "work"
+M02_L04_ROOT = VERSION_ROOT / "Module 02" / "Lesson 04"
+M02_L04_APP = M02_L04_ROOT / "Student_Copy" / "packet" / "app"
+M02_L04_TEMPLATES = M02_L04_ROOT / "Student_Copy" / "packet" / "templates"
+M02_L04_TESTS = M02_L04_ROOT / "Student_Copy" / "packet" / "tests"
+M02_L04_DEPLOY = M02_L04_ROOT / "Student_Copy" / "packet" / "deploy"
+M02_L04_WORK = M02_L04_ROOT / "Solution_Copy" / "work"
+M02_L05_ROOT = VERSION_ROOT / "Module 02" / "Lesson 05" / "Student_Copy"
+M02_L05_APP = M02_L05_ROOT / "packet" / "app"
+M02_L05_TEMPLATES = M02_L05_ROOT / "packet" / "templates"
+M02_L05_TESTS = M02_L05_ROOT / "packet" / "tests"
+M02_L05_DEPLOY = M02_L05_ROOT / "packet" / "deploy"
+M02_L05_WORK = M02_L05_ROOT.parent / "Solution_Copy" / "work"
+M03_L01_ROOT = VERSION_ROOT / "Module 03" / "Lesson 01"
+M03_L01_APP = M03_L01_ROOT / "Student_Copy" / "packet" / "app"
+M03_L01_TEMPLATES = M03_L01_ROOT / "Student_Copy" / "packet" / "templates"
+M03_L01_WORK = M03_L01_ROOT / "Solution_Copy" / "work"
+M03_L02_ROOT = VERSION_ROOT / "Module 03" / "Lesson 02" / "Student_Copy"
+M03_L02_APP = M03_L02_ROOT / "packet" / "app"
+M03_L02_TEMPLATES = M03_L02_ROOT / "packet" / "templates"
+M03_L02_WORK = M03_L02_ROOT.parent / "Solution_Copy" / "work"
+M03_L03_ROOT = VERSION_ROOT / "Module 03" / "Lesson 03"
+M03_L03_APP = M03_L03_ROOT / "Student_Copy" / "packet" / "app"
+M03_L03_TEMPLATES = M03_L03_ROOT / "Student_Copy" / "packet" / "templates"
+M03_L03_WORK = M03_L03_ROOT / "Solution_Copy" / "work"
+M03_L04_ROOT = VERSION_ROOT / "Module 03" / "Lesson 04" / "Student_Copy"
+M03_L04_APP = M03_L04_ROOT / "packet" / "app"
+M03_L04_TEMPLATES = M03_L04_ROOT / "packet" / "templates"
+M03_L04_WORK = M03_L04_ROOT.parent / "Solution_Copy" / "work"
+M03_L05_ROOT = VERSION_ROOT / "Module 03" / "Lesson 05"
+M03_L05_APP = M03_L05_ROOT / "Student_Copy" / "packet" / "app"
+M03_L05_TEMPLATES = M03_L05_ROOT / "Student_Copy" / "packet" / "templates"
+M03_L05_WORK = M03_L05_ROOT / "Solution_Copy" / "work"
+M04_L01_ROOT = VERSION_ROOT / "Module 04" / "Lesson 01" / "Student_Copy"
+M04_L01_APP = M04_L01_ROOT / "packet" / "app"
+M04_L01_TEMPLATES = M04_L01_ROOT / "packet" / "templates"
+M04_L01_WORK = M04_L01_ROOT.parent / "Solution_Copy" / "work"
+M04_L02_ROOT = VERSION_ROOT / "Module 04" / "Lesson 02"
+M04_L02_APP = M04_L02_ROOT / "Student_Copy" / "packet" / "app"
+M04_L02_WORK = M04_L02_ROOT / "Solution_Copy" / "work"
+M04_L03_ROOT = VERSION_ROOT / "Module 04" / "Lesson 03" / "Student_Copy"
+M04_L03_APP = M04_L03_ROOT / "packet" / "app"
+M04_L03_WORK = M04_L03_ROOT.parent / "Solution_Copy" / "work"
+M04_L04_ROOT = VERSION_ROOT / "Module 04" / "Lesson 04"
+M04_L04_APP = M04_L04_ROOT / "Student_Copy" / "packet" / "app"
+M04_L04_WORK = M04_L04_ROOT / "Solution_Copy" / "work"
+M04_L05_ROOT = VERSION_ROOT / "Module 04" / "Lesson 05" / "Student_Copy"
+M04_L05_APP = M04_L05_ROOT / "packet" / "app"
+M04_L05_WORK = M04_L05_ROOT.parent / "Solution_Copy" / "work"
 
 
-def pack_dir(profile: str, release: str = "rel-w1d1") -> Path:
+def pack_dir(profile: str, release: str = "rel-m01-l01") -> Path:
     """Return the pack directory for this profile and release.
 
     An unknown release stops. Practice writes into the published data tree. Any other profile writes under the build tree. The first release keeps a shorter path. Later releases nest under the release name.
     """
     known = {
-        "rel-w1d1",
-        "rel-w1d2",
-        "rel-w1d3",
-        "rel-w1d4",
-        "rel-w1d5",
-        "rel-w2d1",
-        "rel-w2d2",
-        "rel-w2d3",
-        "rel-w2d4",
-        "rel-w2d5",
-        "rel-w3d1",
-        "rel-w3d2",
-        "rel-w3d3",
-        "rel-w3d4",
-        "rel-w3d5",
-        "rel-w4d1",
-        "rel-w4d2",
-        "rel-w4d3",
-        "rel-w4d4",
-        "rel-w4d5",
+        "rel-m01-l01",
+        "rel-m01-l02",
+        "rel-m01-l03",
+        "rel-m01-l04",
+        "rel-m01-l05",
+        "rel-m02-l01",
+        "rel-m02-l02",
+        "rel-m02-l03",
+        "rel-m02-l04",
+        "rel-m02-l05",
+        "rel-m03-l01",
+        "rel-m03-l02",
+        "rel-m03-l03",
+        "rel-m03-l04",
+        "rel-m03-l05",
+        "rel-m04-l01",
+        "rel-m04-l02",
+        "rel-m04-l03",
+        "rel-m04-l04",
+        "rel-m04-l05",
     }
     if release not in known:
         raise SystemExit(f"Unknown release {release}.")
     if profile == "practice":
         # Practice is the published drop, with one directory per release.
         return VERSION_ROOT / "data" / release
-    if release == "rel-w1d1":
+    if release == "rel-m01-l01":
         # The first release keeps the shorter pack path the early tools already use.
         return SIM_ROOT / "build" / profile / "pack"
     return SIM_ROOT / "build" / profile / release / "pack"

@@ -1,4 +1,4 @@
-"""Participant-facing text for the Day 4 release.
+"""Participant-facing text for the Lesson 4 release.
 
 The approval page says when a return, a booking, and an SMS may be sent. The safety page lists phrases that create a handoff to a human. The catalog names each cluster tool and whether that tool reads or writes.
 """

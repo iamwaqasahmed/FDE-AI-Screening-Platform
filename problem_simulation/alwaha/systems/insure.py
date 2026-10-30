@@ -1,4 +1,4 @@
-"""insure. The eligibility snapshot can be 48 hours old. rel-w4d4 is a gateway outage.
+"""insure. The eligibility snapshot can be 48 hours old. rel-m04-l04 is a gateway outage.
 
 fault() returns that stale-snapshot defect. The affected keys are the old eligibility snapshot and the outage. The clean columns are the person, the class, and the as-of instant.
 """
@@ -14,6 +14,6 @@ def fault(_profile) -> dict:
     return record(
         "insure",
         "stale-snapshot",
-        ["eligibility:48h", "outage:rel-w4d4"],
+        ["eligibility:48h", "outage:rel-m04-l04"],
         ["person_id", "class", "as_of"],
     )

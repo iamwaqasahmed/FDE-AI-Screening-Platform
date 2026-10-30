@@ -2,14 +2,10 @@ __pycache__/
 *.py[cod]
 .venv/
 
-# Facilitator answer key. The practice kickoff pack under data/rel-w1d1 is tracked.
+# Facilitator answer key. The practice kickoff pack under data/rel-m01-l01 is tracked.
 problem_simulation/build/
 
-# The student's Day 1 attempt. The finished example is Week 01/Day 01/Solution_Copy/work.
-Week 01/Day 01/Student_Copy/work/
-
-# The student's Day 2 attempt. The finished example is Week 01/Day 02/Solution_Copy/work.
-Week 01/Day 02/Student_Copy/work/
-
-# The student's Day 3 attempt. The finished example is Week 01/Day 03/Solution_Copy/work.
-Week 01/Day 03/Student_Copy/work/
+# Lesson attempts that are created by prepare_work.py and are not the published starter.
+Module 01/Lesson 01/Student_Copy/work/
+Module 01/Lesson 02/Student_Copy/work/
+Module 01/Lesson 03/Student_Copy/work/

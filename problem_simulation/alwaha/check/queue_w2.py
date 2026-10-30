@@ -1,4 +1,4 @@
-"""chk-w2-journey for the Ain file. A miss does not print the clinic code.
+"""chk-journey for the Ain file. A miss does not print the clinic code.
 
 This check grades the Ain booking path: the live-slot promise, the nightly file, and a failed notice. Each helper stays quiet when its file is absent, and only a file that exists is called. A planted token stops the check. A crash is the run miss. The clinic code is not printed.
 """

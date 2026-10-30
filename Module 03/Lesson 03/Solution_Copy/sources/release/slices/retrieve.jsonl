@@ -1,0 +1,3 @@
+{"asker": "patient", "case_date": "2027-01-26", "question_id": "dev-hours", "site": "cluster", "text": "When do the public evening clinics close?"}
+{"asker": "staff", "case_date": "2027-01-26", "question_id": "dev-endo", "site": "cluster", "specialty": "endo", "started": "2027-01-26", "text": "Which endocrinology criteria does a new referral use?"}
+{"asker": "staff", "case_date": "2027-01-26", "question_id": "dev-flight", "site": "cluster", "specialty": "endo", "started": "2027-01-20", "text": "Which endocrinology criteria does a referral opened last module keep?"}

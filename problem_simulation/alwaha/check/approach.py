@@ -1,4 +1,4 @@
-"""chk-w1-approach. A miss does not name the fitting family.
+"""chk-approach. A miss does not name the fitting family.
 
 This check grades the approach table. Each gold problem needs one row whose family fits, whose measured cell matches the baseline when there is one, whose citation is a persona or a release file, and whose system and reason are filled. A planted token or a missing file or a bad header stops the check. The fitting family is not named in a miss.
 """

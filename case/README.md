@@ -8,7 +8,7 @@ The program map is [../README.md](../README.md). The words are [access_language.
 
 Al-Waha runs three hospitals, a diabetes and eye center, and about 24 primary health care centers. Some of those centers are in villages about 200 km from the nearest hospital. The cluster books outpatient care across about 15 specialties.
 
-History in the files runs from 2023 into 2026. Your engagement opens on 10 January 2027. The cluster's weekend is Friday and Saturday. A few weeks after your four weeks, Ramadan begins, and the cluster will change its clinic hours.
+History in the files runs from 2023 into 2026. Your engagement opens on 10 January 2027. The cluster's weekend is Friday and Saturday. A few weeks after this engagement opens, Ramadan begins, and the cluster will change its clinic hours.
 
 ## The ask
 
@@ -28,20 +28,18 @@ Treat those sentences as claims. Your first job is to find which problems are re
 | The cluster's private cloud, on two sites | The newer hospital system, the referral platform, and a small GPU quota | This is where the cluster will let you deploy, and where patient data may be processed |
 | A public-cloud model | One external language model the cluster already contracts | Use it only for content the cluster has classed as public |
 
-The private cloud is the deployment target in Week 2. A design that uses all three places is a hybrid design. The cluster will give you a deployment standard and a data catalog. Read both before you move data.
+The private cloud is the deployment target on module 2, lesson 4 (`rel-m02-l04`). A design that uses all three places is a hybrid design. The cluster will give you a deployment standard and a data catalog. Read both before you move data.
 
 ## What you will build
 
-Over four weeks your team builds an assistant for this service, then makes it accurate, observable, secure, and operable. You choose the architecture. The cluster grades the behavior of the system you deploy: the bookings it makes, the referrals it returns, the documents it cites, and the patient data it keeps inside the private cloud.
+Across the lessons your team builds an assistant for this service, then makes it accurate, observable, secure, and operable. You choose the architecture. The cluster grades the behavior of the system you deploy: the bookings it makes, the referrals it returns, the documents it cites, and the patient data it keeps inside the private cloud.
 
-| Week | You leave the week with |
+| Module | You leave the module with |
 |---|---|
-| 1 | A working proof of concept, an architecture diagram, and a design note that says which approach you chose and why |
-| 2 | An application signed in to the cluster, wired to its systems, tested, and deployed on the private cloud |
-| 3 | Customized models, retrieval over the cluster's documents, and an evaluation report |
-| 4 | Security, monitoring, a serving design that meets the surge, and an operations and governance plan |
+| 1 | A working proof, signed in, tested, and deployed on the private cloud, with an architecture diagram and a design note that says which approach you chose and why |
+| 2 | Customized models, retrieval over the cluster's documents, an evaluation, security, monitoring, a serving design that meets the surge, and an operations and governance plan |
 
-Weeks 3 and 4 also rehearse the discovery and the proposal you will need for a real client afterward. The rehearsal client is Al-Waha. The later project is a different client.
+Modules 3 and 4 also rehearse the discovery and the proposal you will need for a real client afterward. The rehearsal client is Al-Waha. The later project is a different client. The [course guide](../learning/README.md) is the module list. Pack ids such as `rel-m02-l04` are lesson names.
 
 ## How the case behaves
 
@@ -52,4 +50,4 @@ Weeks 3 and 4 also rehearse the discovery and the proposal you will need for a r
 
 ## Teams
 
-A team of five shares one world, so another team's counts will not match yours. During the four weeks each person rotates through the lead, the AI and data work, the application and integration work, the product work, and the architecture and client work. Individual labs use a smaller personal world.
+A team of five shares one world, so another team's counts will not match yours. A person working alone holds the lead, the AI and data work, the application and integration work, the product work, and the architecture and client work. A cohort can rotate those parts at the start of module 3. Individual labs use a smaller personal world.

@@ -1,4 +1,4 @@
-"""chk-individual-w2. A miss does not print the fixture status.
+"""chk-individual-m02. A miss does not print the fixture status.
 
 This personal check grades the booking contract. The queued fixture must be held and the live-slot fault must not. A planted token stops the check. A missing module, a missing test, or a test that never calls the contract is the missing miss. A crash while loading or while calling is the run miss.
 """

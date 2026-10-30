@@ -1,4 +1,4 @@
-"""chk-w1-repo. Paths and scan results only. The watermark value is not printed.
+"""chk-repo. Paths and scan results only. The watermark value is not printed.
 
 This check grades the repository shape: required paths, the ignore rule, the policy document, the workflow, the credential file, the access request, the health test, and the secret scan. The watermark value is compared and not printed. Command output is not included in a failure.
 """

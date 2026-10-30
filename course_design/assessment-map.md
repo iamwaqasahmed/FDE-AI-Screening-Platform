@@ -6,22 +6,22 @@ Facilitators only. Weights are the syllabus weights. The 25% Real Client Project
 
 | Component | Weight | Evidence | Check or rubric |
 |---|---|---|---|
-| Individual technical and knowledge assessment | 15% | `personal` labs plus the daily knowledge questions | `chk-individual-w1` … `w4`, knowledge items on the day maps |
-| Case study discovery and problem definition | 15% | Interview coverage, `brief.md`, sizing of the nine problems | `chk-w1-interview`, `chk-w1-brief` |
-| Case study architecture and technical solution | 20% | `architecture.md`, `design.md`, `deployment.md`, `architecture-deploy.md`, `operations.md`, live security and scale | `chk-w1-design`, `chk-w2-deploy`, `chk-w4-ops`, `chk-w4-redteam`, `chk-w4-slo`, `chk-w4-integrate` |
-| Case study prototype and evaluation | 15% | Journey results, `benchmark.md`, hidden-test scores | `chk-w2-journey`, `chk-w3-eval`, `chk-w3-model`, `chk-w3-rag` |
+| Individual technical and knowledge assessment | 15% | `personal` labs plus the lesson knowledge questions | `chk-individual-m01`, `chk-individual-m02`, `chk-individual-m03-l05`, `chk-individual-m04-l05`, knowledge items on the module maps |
+| Case study discovery and problem definition | 15% | Interview coverage, `brief.md`, sizing of the nine problems | `chk-interview`, `chk-brief` |
+| Case study architecture and technical solution | 20% | `architecture.md`, `design.md`, `deployment.md`, `architecture-deploy.md`, `operations.md`, live security and scale | `chk-design`, `chk-deploy`, `chk-m04-l05-ops`, `chk-m04-l01-redteam`, `chk-slo`, `chk-m04-l05-integrate` |
+| Case study prototype and evaluation | 15% | Journey results, `benchmark.md`, hidden-test scores | `chk-journey`, `chk-eval`, `chk-m03-l02-model`, `chk-m03-l03-rag` |
 | Executive communication and professionalism | 10% | Four readouts, plus data-handling conduct | `chk-readout`, gateway and canary logs |
-| Real Client Project delivery | 25% | Weeks 5–6 | Out of this case |
+| Real Client Project delivery | 25% | A later real client | Out of this case |
 
-The rehearsal documents `rcp/requirements.md` (`chk-w3-rcp`) and `rcp/proposal.md` (`chk-w4-rcp`) are scored inside the discovery and architecture components as practice. They are not a substitute for the later project.
+The rehearsal documents `rcp/requirements.md` (`chk-m03-l05-rcp`) and `rcp/proposal.md` (`chk-m04-l05-rcp`) are scored inside the discovery and architecture components as practice. They are not a substitute for the later project.
 
 Within a component, foundation checks are the pass line. Advanced checks and slices add credit up to the component's ceiling. A component with a failed foundation check cannot receive a distinction mark.
 
 ## Individual path
 
-Each week the participant completes one lab on `personal` that mirrors the team's foundation check at smaller scale:
+Each module the participant completes one lab on `personal` that mirrors the team's foundation check at smaller scale:
 
-| Week | Lab |
+| Module | Lab |
 |---|---|
 | 1 | Explain a trace: the tool, the document, and whether the reply was refused |
 | 2 | A contract test that goes red when a seeded fault is on |
@@ -32,7 +32,7 @@ Daily knowledge questions are two short written answers. They are scored complet
 
 ## Rubric dimensions
 
-Written rubrics (`chk-w1-brief`, `chk-w1-design`, `chk-w2-deploy`, `chk-w3-eval`, `chk-w3-rcp`, `chk-w4-ops`, `chk-w4-rcp`) share four dimensions, scored from the gold lists:
+Written rubrics (`chk-brief`, `chk-design`, `chk-deploy`, `chk-eval`, `chk-m03-l05-rcp`, `chk-m04-l05-ops`, `chk-m04-l05-rcp`) share four dimensions, scored from the gold lists:
 
 | Dimension | Pass line |
 |---|---|
@@ -41,7 +41,7 @@ Written rubrics (`chk-w1-brief`, `chk-w1-design`, `chk-w2-deploy`, `chk-w3-eval`
 | Traceability | Claims cite a file id, a persona id, or a measurement the team produced |
 | Boundary | Clinical urgency stays with a clinician; PHI stays off `ext-large` |
 
-`chk-readout` uses the same four dimensions on a facilitator sheet filled during the steering session. The question bank is `steer-w1` … `steer-w4`.
+`chk-readout` uses the same four dimensions on a facilitator sheet filled during the steering session. The question bank is `steer-m01` … `steer-m04-l05`.
 
 ## Submission
 
@@ -59,11 +59,11 @@ The grading service returns pass or fail per check id and the rubric scores. It 
 
 | Requirement | Record |
 |---|---|
-| Required labs | Every foundation check assigned on the day maps |
+| Required labs | Every foundation check assigned on the module maps |
 | Assessments | The four components above, plus knowledge items |
 | Contribution | Rotation log from [roles](roles-and-delivery.md) and the submission |
 | Conduct | No unexplained canary or residency breach |
-| Final presentation and the second phase | Weeks 5–6 |
+| Final presentation and the second phase | A later real client, not these two weeks |
 | Attendance and the passing score | Cohort operations, using these weights plus the later 25% |
 
 Advanced checks passed, and readout scores, are the evidence a distinction board would read. This note does not set the numeric cut.

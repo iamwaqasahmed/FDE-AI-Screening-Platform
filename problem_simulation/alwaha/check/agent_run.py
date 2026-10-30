@@ -1,4 +1,4 @@
-"""Run the Day 4 agent and read the note. A miss does not print the watermark.
+"""Run the Lesson 4 agent and read the note. A miss does not print the watermark.
 
 Run the participant agent, read its trace, and grade the written note. A planted token in the work tree stops the run. A token inside the trace file is the same watermark, and it is caught before the trace is parsed so the token is not copied into a later message. The note grader looks at the tool list, the privilege boundary, and the refusal the patient would see.
 """

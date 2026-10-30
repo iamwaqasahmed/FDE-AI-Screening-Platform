@@ -9,7 +9,7 @@ import argparse
 import sys
 
 from alwaha.config.profile import load
-from alwaha.engagement.w2d5 import CARD, QUESTIONS
+from alwaha.engagement.m02_l05 import CARD, QUESTIONS
 
 
 def main(argv: list[str] | None = None) -> None:

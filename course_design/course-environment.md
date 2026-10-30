@@ -15,7 +15,7 @@ One Kubernetes cluster per cohort. Network policy keeps the zones apart.
 
 The gateway meters tokens and SAR per team and per hospital, blocks `phi` fields, and records canaries. Teams do not receive a raw key to the external model.
 
-A shared GPU pool serves `local-small` and the teams' adapters. The quota in the case is the quota the scheduler enforces. A team that exceeds it waits, which is the constraint Week 3 and Week 4 teach.
+A shared GPU pool serves `local-small` and the teams' adapters. The quota in the case is the quota the scheduler enforces. A team that exceeds it waits, which is the constraint Module 2 and Module 2 teach.
 
 ## Facilitator services
 
@@ -33,11 +33,11 @@ The `small` profile runs under Docker Compose with CPU-sized models. Faults, ide
 
 ## Starter kit
 
-The Week 1, Day 1 template is [Week 01/Day 01/Student_Copy/packet/starter](../Week%2001/Day%2001/Student_Copy/packet/starter/README.md). The lab copies it into `Student_Copy/work`. It contains:
+The Module 1, Lesson 1 template is [Module 01/Lesson 01/Student_Copy/packet/starter](<../Module 01/Lesson 01/Student_Copy/packet/starter/README.md>). The lab copies it into `Student_Copy/morning/work`. It contains:
 
-- a service skeleton and generated clients for the OpenAPI specs published with `rel-w1d1`;
+- a service skeleton and generated clients for the OpenAPI specs published with `rel-m01-l01`;
 - a compose file for the dev mocks;
-- CI that runs tests, a secret scan, and a canary scan, and that holds an evaluation-gate job for Week 3 to fill in;
+- CI that runs tests, a secret scan, and a canary scan, and that holds an evaluation-gate job for Module 2 to fill in;
 - deployment manifests for the team namespace;
 - the assistant-use rule as a file the scan checks for.
 
@@ -54,4 +54,4 @@ These change capacity planning. They do not change the case, the checks, or the 
 | Whether cohorts run at the same time | Worlds are seeded per team, so cohorts do not share data |
 | Per-team budget caps | The gateway already meters; the cap is a configuration value |
 
-Set them before the Week 2 gate, when the first real endpoint is deployed.
+Set them before the Module 2 gate, when the first real endpoint is deployed.

@@ -6,7 +6,7 @@ Every Markdown file in the working tree that git tracks, or that is new and not 
 | --- | --- | --- |
 | edited-or-written | 37 | Written or edited in this pass, including this record |
 | edited-setup-note | 20 | The twenty setup chapters. One `python3` note and one failure row were added. The command blocks were not changed. |
-| checks-ran-for-the-day | 392 | Day and week READMEs and numbered chapters. The day's finish checks were run. |
+| checks-ran-for-the-day | 392 | Day and module READMEs and numbered chapters. The day's finish checks were run. |
 | hashed-not-rewritten | 811 | Packet, notes, solution sources, solution work, tracked work templates, and `data/`. Hashed. Not edited. |
 | author-side-only | 49 | `course_design/` and `problem_simulation/` facilitator notes. |
 | entry-or-author | 10 | Root README, case, syllabus, and learning pages that were not rewritten. |

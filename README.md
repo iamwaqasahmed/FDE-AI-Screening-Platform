@@ -1,10 +1,10 @@
-# Version 02 — Weeks 1 to 4
+# Version 02 — Four modules
 
-Weeks 1 to 4 of the FDE program are one engagement. Participants design, build, deploy, and harden an AI assistant for a fictional Saudi health cluster. The topic list is the [FDE Program Syllabus](<FDE Program Syllabus.md>). This folder is the base those days are written from: the case, the system, the simulated world, and the course design.
+The FDE case in this folder is one engagement. Participants design, build, deploy, and harden an AI assistant for a fictional Saudi health cluster. They do it in four modules and twenty lessons, at their own pace. The topic list is the [FDE Program Syllabus](<FDE Program Syllabus.md>). This folder is the base those lessons are written from: the case, the system, the simulated world, and the course design. A release id such as `rel-m03-l01` is the pack name the checks use. It is not a timetable.
 
 Nothing here is a real patient's record, a real facility, or a protocol for care. Laws that appear in the case are fictional analogues. A mapping for facilitators sits in [problem_simulation/README.md](problem_simulation/README.md).
 
-Participants working alone should open [learning/README.md](learning/README.md) once, then start at [Week 1, Day 1](<Week 01/Day 01/Student_Copy/README.md>). That guide says how a day is shaped. It does not replace the chapters. Leave [instructional/](instructional/README.md) closed while you do a day. It is an author record, in the same sense as `course_design/`.
+Participants working alone should open [learning/README.md](learning/README.md) once, then start at [Module 1 Lesson 1](<Module 01/Lesson 01/Student_Copy/README.md>). That guide says how a lesson is shaped. It does not replace the chapters. Leave [instructional/](instructional/README.md) closed while you do a lesson. It is an author record, in the same sense as `course_design/`.
 
 ## Who may open what
 
@@ -13,57 +13,41 @@ Participants working alone should open [learning/README.md](learning/README.md) 
 | [FDE Program Syllabus](<FDE Program Syllabus.md>) | Everyone | The accepted program |
 | [case](case/README.md) | Participants and facilitators | The client, the ask, the constraints, and the words |
 | [problem_simulation](problem_simulation/README.md) | Facilitators | The hidden world, the reference system, the data, the services, and the gold |
-| [course_design](course_design/README.md) | Facilitators | The day maps, roles, assessment, and the course environment |
-| [learning](learning/README.md) | Participants | How to move through the twenty days alone |
+| [course_design](course_design/README.md) | Facilitators | The module maps, roles, assessment, and the course environment |
+| [learning](learning/README.md) | Participants | How to move through the four modules alone |
 | [instructional](instructional/README.md) | Authors | The curriculum map and the edit record. Participants leave this closed |
 
-Week 1, Day 1 is the [student copy](<Week 01/Day 01/Student_Copy/README.md>). Later days use the case and the packs under `data/`. Participants work from `case/`, from [Week 1, Day 1](<Week 01/Day 01/README.md>), [Week 1, Day 2](<Week 01/Day 02/README.md>), [Week 1, Day 3](<Week 01/Day 03/README.md>), [Week 1, Day 4](<Week 01/Day 04/README.md>), [Week 1, Day 5](<Week 01/Day 05/README.md>), [Week 2, Day 1](<Week 02/Day 01/README.md>), [Week 2, Day 2](<Week 02/Day 02/README.md>), [Week 2, Day 3](<Week 02/Day 03/README.md>), [Week 2, Day 4](<Week 02/Day 04/README.md>), [Week 2, Day 5](<Week 02/Day 05/README.md>), [Week 3, Day 1](<Week 03/Day 01/README.md>), [Week 3, Day 2](<Week 03/Day 02/README.md>), [Week 3, Day 3](<Week 03/Day 03/README.md>), [Week 3, Day 4](<Week 03/Day 04/README.md>), [Week 3, Day 5](<Week 03/Day 05/README.md>), [Week 4, Day 1](<Week 04/Day 01/README.md>), [Week 4, Day 2](<Week 04/Day 02/README.md>), [Week 4, Day 3](<Week 04/Day 03/README.md>), and [Week 4, Day 4](<Week 04/Day 04/README.md>), and [Week 4, Day 5](<Week 04/Day 05/README.md>), and from the packs in `data/rel-w1d1`, `data/rel-w1d2`, `data/rel-w1d3`, `data/rel-w1d4`, `data/rel-w1d5`, `data/rel-w2d1`, `data/rel-w2d2`, `data/rel-w2d3`, `data/rel-w2d4`, `data/rel-w2d5`, `data/rel-w3d1`, `data/rel-w3d2`, `data/rel-w3d3`, `data/rel-w3d4`, `data/rel-w3d5`, `data/rel-w4d1`, `data/rel-w4d2`, `data/rel-w4d3`, `data/rel-w4d4`, and `data/rel-w4d5`. They leave `course_design/`, `instructional/`, `problem_simulation/design`, and `problem_simulation/build` closed. Opening the design skips the discovery the course is built to teach.
+Module 1, Lesson 1 is the [student copy](<Module 01/Lesson 01/Student_Copy/README.md>). Later lessons use the case and the packs under `data/`. Participants work from `case/`, from the lesson folders under `Module 01` through `Module 04`, and from the packs in `data/rel-m01-l01` through `data/rel-m04-l05`. They leave `course_design/`, `instructional/`, `problem_simulation/design`, and `problem_simulation/build` closed. Opening the design skips the discovery the course is built to teach.
 
 ## Read in this order
 
 Participants:
 
 1. This page.
-2. [Week 1, Day 1 student copy](<Week 01/Day 01/Student_Copy/README.md>). Read [00 — Background](<Week 01/Day 01/Student_Copy/00-background.md>) first, then the chapters in order. That folder has the client, the words, and the files for today. The full [case](case/README.md) and [word list](case/access_language.md) are there when a later day uses a word this folder does not define.
-3. [Week 1, Day 2](<Week 01/Day 02/README.md>).
-4. [Week 1, Day 3](<Week 01/Day 03/README.md>).
-5. [Week 1, Day 4](<Week 01/Day 04/README.md>).
-6. [Week 1, Day 5](<Week 01/Day 05/README.md>).
-7. [Week 2, Day 1](<Week 02/Day 01/README.md>).
-8. [Week 2, Day 2](<Week 02/Day 02/README.md>).
-9. [Week 2, Day 3](<Week 02/Day 03/README.md>).
-10. [Week 2, Day 4](<Week 02/Day 04/README.md>).
-11. [Week 2, Day 5](<Week 02/Day 05/README.md>).
-12. [Week 3, Day 1](<Week 03/Day 01/README.md>).
-13. [Week 3, Day 2](<Week 03/Day 02/README.md>).
-14. [Week 3, Day 3](<Week 03/Day 03/README.md>).
-15. [Week 3, Day 4](<Week 03/Day 04/README.md>).
-16. [Week 3, Day 5](<Week 03/Day 05/README.md>).
-17. [Week 4, Day 1](<Week 04/Day 01/README.md>).
-18. [Week 4, Day 2](<Week 04/Day 02/README.md>).
-19. [Week 4, Day 3](<Week 04/Day 03/README.md>).
-20. [Week 4, Day 4](<Week 04/Day 04/README.md>).
-21. [Week 4, Day 5](<Week 04/Day 05/README.md>).
+2. [The course guide](learning/README.md). It is the module list. Finish one lesson before you open the next.
+3. [Module 1 Lesson 1 student copy](<Module 01/Lesson 01/Student_Copy/README.md>). Read [00 — Background](<Module 01/Lesson 01/Student_Copy/00-background.md>) first, then the chapters in order. That folder is release `rel-m01-l01`. It has the client, the words, and the files for the morning session of lesson 1. The full [case](case/README.md) and [word list](case/access_language.md) are there when a later release uses a word this folder does not define.
+
+The finish chapter of each release names the next folder. Do not skip ahead of that chapter.
 
 Facilitators, after the case:
 
 1. [Simulation index](problem_simulation/README.md).
 2. The design notes in order, `01` through `12`, then [traceability](problem_simulation/design/traceability/README.md).
-3. [Course design](course_design/README.md), then the week day maps.
+3. [Course design](course_design/README.md), then the module day maps.
 
 ## The four parts
 
 ```mermaid
 flowchart LR
-  syllabus[Syllabus weeks 1 to 4]
+  syllabus[Syllabus four modules]
   caseBrief[Case]
   world[Problem simulation]
   course[Course design]
-  days[Day content later]
+  lessons[Lesson content]
   syllabus --> caseBrief
   caseBrief --> world
   world --> course
-  course --> days
+  course --> lessons
 ```
 
 | Part | Question it answers |
@@ -71,7 +55,7 @@ flowchart LR
 | Case | Who the client is, what they asked for, and what the team is allowed to do |
 | Problem simulation | What is true in the world, what the team can see, and how work is graded |
 | Reference system | One architecture that can carry every topic, held back so teams can design their own |
-| Course design | What each day, role, and grade uses from that world |
+| Course design | What each lesson, role, and grade uses from that world |
 
 The reference system is facilitator material. Teams publish their own architecture. Checks grade outcomes through a fixed assistant contract, so a different stack can pass.
 
@@ -87,9 +71,9 @@ Stable names (facilities, personas, systems, releases, checks) are defined in th
 
 ## What this folder contains
 
-Days 1 to 5 of each week are in place, from [Week 1, Day 1](<Week 01/Day 01/README.md>) through [Week 4, Day 5](<Week 04/Day 05/README.md>). The practice packs are under `data/rel-w1d1` through `data/rel-w4d5`.
+Twenty lessons are in place. They open [Module 1 Lesson 1](<Module 01/Lesson 01/Student_Copy/home.md>) through [Module 4 Lesson 5](<Module 04/Lesson 05/Student_Copy/home.md>). The practice packs are under `data/rel-m01-l01` through `data/rel-m04-l05`.
 
-The world behind those days is built from `problem_simulation`:
+The world behind those lessons is built from `problem_simulation`:
 
 ```text
 python -m alwaha.worldbuild --profile practice
@@ -98,6 +82,6 @@ python -m reference.server --port 8081
 python -m alwaha.audit --profile practice --score
 ```
 
-`worldbuild` writes the population, the hospital exports, and the corpus under `problem_simulation/build/<profile>/world`. That folder stays closed. `assessment` is never written under `data/`. The laptop stack is [problem_simulation/host/compose.yaml](problem_simulation/host/compose.yaml). A person who has not seen the generator still has to walk one day; the steps are in [problem_simulation/audit/tester.md](problem_simulation/audit/tester.md).
+`worldbuild` writes the population, the hospital exports, and the corpus under `problem_simulation/build/<profile>/world`. That folder stays closed. `assessment` is never written under `data/`. The laptop stack is [problem_simulation/host/compose.yaml](problem_simulation/host/compose.yaml). A person who has not seen the generator still has to walk one lesson; the steps are in [problem_simulation/audit/tester.md](problem_simulation/audit/tester.md).
 
-Weeks 5 and 6, the Real Client Project, are a real client. This case supplies the rehearsal only. The optional admissions prep course is out of scope; the `small` world profile is reserved for it.
+The Real Client Project, after these four modules, is a real client. This case supplies the rehearsal only. The optional admissions prep course is out of scope; the `small` world profile is reserved for it.

@@ -1,6 +1,6 @@
 # Roles and delivery
 
-Facilitators only. A team of five holds the Real Client Project roles. The hats rotate each week. Individual labs do not rotate: `chk-individual-w1` through `chk-individual-w4` stay with the person.
+Facilitators only. A team of five holds the Real Client Project roles. A person working alone holds every hat. A cohort that rotates does so at the start of module 3. Individual labs do not rotate: `chk-individual-m01` through `chk-individual-m04-l05` stay with the person.
 
 | Seat | Hat |
 |---|---|
@@ -12,26 +12,24 @@ Facilitators only. A team of five holds the Real Client Project roles. The hats 
 
 ## Rotation
 
-Label the people 1–5. Each week they move one seat. After four weeks each person has missed one hat. That missing hat is the pen they hold on the rehearsal document: Week 3 requirements or Week 4 proposal. The later real-client weeks cover a full rotation again.
+The rehearsal is four modules. There is no timetable. A cohort moves one seat at the start of module 3. The requirements are release `rel-m03-l05` (module 3, lesson 5). The proposal is release `rel-m04-l05` (module 4, lesson 5).
 
-| Week | 1 | 2 | 3 | 4 | 5 |
+| When | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|---|
-| 1 | L | A | P | M | R |
-| 2 | R | L | A | P | M |
-| 3 | M | R | L | A | P |
-| 4 | P | M | R | L | A |
+| Modules 1 and 2 | L | A | P | M | R |
+| Modules 3 and 4 | R | L | A | P | M |
 
 ## Sprint
 
-The week is an agile sprint. Day 1 is sprint planning against releases the team already has. Later releases are not previewed. Each morning has a stand-up. Day 5 is the steering readout (`steer-w1` … `steer-w4`), then a retrospective. The scripted change request is `cr-ain` on Week 2, Day 5. Other changes go through `pol-stage-gate`.
+There is no sprint clock. Lesson 1 of a module is planned against releases the learner already has. Later lessons are not previewed. Lesson 5 of each module is the steering readout (`steer-m01` through `steer-m04-l05`), then a retrospective. The scripted change request is `cr-ain` on module 2, lesson 5. Other changes go through `pol-stage-gate`.
 
 The definition of done from security, the DPO, and the medical director overrides a tracker status. A story can be closed in the seed backlog and still fail that list.
 
 ## What each hat does
 
-Cells are the emphasis. The day maps name the day's artifact. Empty-looking days still have a stand-up and a review of the previous day's check.
+Cells are the emphasis. The module maps name the lesson's artifact. The numbers in this grid are the module and the lesson.
 
-| Week | Day | L | A | P | M | R |
+| Module | Lesson | L | A | P | M | R |
 |---|---|---|---|---|---|---|
 | 1 | 1 | Access request | Sample rules | CI | Interview plan | Zone sketch |
 | 1 | 2 | Challenge the ask | Baselines | Tool boundaries | Ranking | System of record |
@@ -56,6 +54,6 @@ Cells are the emphasis. The day maps name the day's artifact. Empty-looking days
 
 ## Work for participants who write more than they code
 
-Every day in the M and R columns is a graded artifact or a scored conversation: interviews, the brief, acceptance lines, usability, the workshop, the DPIA, the runbook, the readout, the requirements, and the proposal. The A and P columns are where the models and the integration live. The lead's column is the client relationship and the go or no-go.
+Every lesson in the M and R columns is a graded artifact or a scored conversation: interviews, the brief, acceptance lines, usability, the workshop, the DPIA, the runbook, the readout, the requirements, and the proposal. The A and P columns are where the models and the integration live. The lead's column is the client relationship and the go or no-go.
 
 Pairs are encouraged. The check still names one owner so a team cannot leave a hat empty.

@@ -1,4 +1,4 @@
-"""Recompute the four printed baselines from a rel-w1d2 pack.
+"""Recompute the four printed baselines from a rel-m01-l02 pack.
 
 The pack's sample files are scored with the participant baseline modules. The result maps each problem id to the figure that baseline prints, and also keeps the row-split accuracy, the shared-person count, and the mean demand error.
 """

@@ -1,4 +1,4 @@
-"""Load the Day 1 shell and run one sign-in plus one status question.
+"""Load the Lesson 1 shell and run one sign-in plus one status question.
 
 Load the participant shell and exercise one sign-in plus one status question. The returned record is what the auth and journey checks grade. A planted token in the work tree, a missing flow module, or a crash returns no record. A token that shows up inside the status answer is also a planted sample, even when the tree itself was clean.
 """

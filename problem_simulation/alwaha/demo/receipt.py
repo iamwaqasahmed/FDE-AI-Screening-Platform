@@ -9,7 +9,7 @@ import argparse
 import sys
 
 from alwaha.config.profile import load
-from alwaha.engagement.w2d3 import INTERVAL_MINUTES
+from alwaha.engagement.m02_l03 import INTERVAL_MINUTES
 from alwaha.serve.clock import advance
 from alwaha.serve.receipt import due
 

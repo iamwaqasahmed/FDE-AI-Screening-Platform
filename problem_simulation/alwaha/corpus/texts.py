@@ -1,4 +1,4 @@
-"""Day 1 documents.
+"""Lesson 1 documents.
 
 The body is fixed. The header hash is of the body.
 document places that header in front of a body. The functions below it are the stage gates, the assistant-use rule, the postmortem, the steering minutes, the sample letter, and the access form. zones_page describes where the cluster runs, and fact_problems compares the minutes with the postmortem.

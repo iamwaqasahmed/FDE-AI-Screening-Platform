@@ -27,7 +27,7 @@ The interview simulator matches a question to a node in a scripted tree. A follo
 
 The discovery workshop (`ws-access`) seats `cdo`, `access-mgr`, `phc-lead`, and `dpo`. A dot-vote export ranks triage and the vendor bot first. The value model does not. Facilitators get role cards and a question bank.
 
-The steering committee is `cdo`, `med-dir`, `dpo`, `ciso`, and `finance`. It meets on each Day 5. Question banks for those readouts are `steer-w1` through `steer-w4`. The committee can issue a change request; `cr-ain` on `rel-w2d5` brings `h-ain` into scope.
+The steering committee is `cdo`, `med-dir`, `dpo`, `ciso`, and `finance`. It meets on each Lesson 5. Question banks for those readouts are `steer-m01` through `steer-m04-l05`. The committee can issue a change request; `cr-ain` on `rel-m02-l05` brings `h-ain` into scope.
 
 ## Research and adoption
 

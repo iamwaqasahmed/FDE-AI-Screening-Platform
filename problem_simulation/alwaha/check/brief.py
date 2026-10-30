@@ -1,4 +1,4 @@
-"""chk-w1-brief. Draft bar: sizes, a ranking, and no banned sentence outside a claim.
+"""chk-brief. Draft bar: sizes, a ranking, and no banned sentence outside a claim.
 
 This check grades the brief at the draft bar: a claims table, a sizes table, and a ranking. A banned sentence is allowed inside a row marked claim and forbidden everywhere else. A measured size must be the baseline. A claimed size must appear in the cited release file. The ranking must list every problem once. If the triage id is ranked first, that same line must carry the urgency rule.
 """

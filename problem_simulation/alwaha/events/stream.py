@@ -1,4 +1,4 @@
-"""The Day 3 intake stream. One letter carries the profile canary.
+"""The Lesson 3 intake stream. One letter carries the profile canary.
 
 File order is not scenario order. The order pair is written later-sequence first, and those two events get distinct ids after they are built. The replay event is appended a second time with the same id. The watermark is appended only to the letter that is given one.
 """

@@ -10,7 +10,7 @@ Sources are typed notes, scans, and phone photos. Phone photos are synthetic pag
 
 The extraction schema is: patient name, date of birth, id type and value, PHC, specialty, sub-specialty, clinical question, medications, requested clinician gender, and source quality. Gold spans mark PHI.
 
-Clerk labels follow annotation guideline `ann-v1` and are noisy: sub-specialty is often blank, and a phone photo is often typed as a scan. `ann-v2`, released on `rel-w3d1`, splits sub-specialty and adds the source type. Adjudicated labels for a held-out slice arrive with that release. The rest can be bought through the annotation service in [08 Live services](08-live-services.md).
+Clerk labels follow annotation guideline `ann-v1` and are noisy: sub-specialty is often blank, and a phone photo is often typed as a scan. `ann-v2`, released on `rel-m03-l01`, splits sub-specialty and adds the source type. Adjudicated labels for a held-out slice arrive with that release. The rest can be bought through the annotation service in [08 Live services](08-live-services.md).
 
 Rare sub-specialties are too thin to fine-tune until synthetic letters, checked against the real-label distribution, are added. A slice trains on real data only and shows the gap (`slice-synth`).
 
@@ -45,6 +45,6 @@ Point-in-time feature code must join the identity and insurance tables as of the
 
 ## Summary statistics for synthetic data
 
-The pack includes distribution cards: specialty mix, phrase frequencies, PHI rates, and label margins. A synthetic set is scored against those cards, against a train-on-synthetic test-on-real slice, and against canary strings. A generated letter that contains a canary, or a real national id, fails `chk-w3-synthetic`.
+The pack includes distribution cards: specialty mix, phrase frequencies, PHI rates, and label margins. A synthetic set is scored against those cards, against a train-on-synthetic test-on-real slice, and against canary strings. A generated letter that contains a canary, or a real national id, fails `chk-m03-l01-synthetic`.
 
-Judge calibration items, with scored answers, ship as `eval/judge_calibration.jsonl` for facilitators and as a student subset on `rel-w3d4`.
+Judge calibration items, with scored answers, ship as `eval/judge_calibration.jsonl` for facilitators and as a student subset on `rel-m03-l04`.

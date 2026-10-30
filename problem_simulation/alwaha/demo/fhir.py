@@ -1,6 +1,6 @@
 """Show a v1 his-wadi client fail, then the generated client succeed.
 
-The starter client is loaded from W2D1_APP. A second client is rendered from the current spec into a temporary file and loaded from that path. Both clients read the same body. The page prints a fixed line for each result.
+The starter client is loaded from M02_L01_APP. A second client is rendered from the current spec into a temporary file and loaded from that path. Both clients read the same body. The page prints a fixed line for each result.
 """
 
 from __future__ import annotations
@@ -12,8 +12,8 @@ import tempfile
 from pathlib import Path
 
 from alwaha.config.profile import load
-from alwaha.engagement.w2d1 import FIELD, REMOVED, his_wadi_spec
-from alwaha.paths import W2D1_APP
+from alwaha.engagement.m02_l01 import FIELD, REMOVED, his_wadi_spec
+from alwaha.paths import M02_L01_APP
 from alwaha.serve.fhir import read
 
 
@@ -42,14 +42,14 @@ def main(argv: list[str] | None = None) -> None:
     args = parser.parse_args(argv)
     load(args.profile)
     spec = his_wadi_spec()
-    # Load the starter client and the generator from the week 2 day 1 app.
-    starter = _load(W2D1_APP / "client.py", "w2d1_v1_client")
-    generate = _load(W2D1_APP / "generate.py", "w2d1_generate")
+    # Load the starter client and the generator from the module 2 lesson 1 app.
+    starter = _load(M02_L01_APP / "client.py", "m02_l01_v1_client")
+    generate = _load(M02_L01_APP / "generate.py", "m02_l01_generate")
     # Render a second client into a temporary file and load that file.
     with tempfile.TemporaryDirectory() as tmp:
         path = Path(tmp) / "client.py"
         path.write_text(generate.render(generate.fields(spec)), encoding="utf-8", newline="\n")
-        generated = _load(path, "w2d1_v2_client")
+        generated = _load(path, "m02_l01_v2_client")
     # Both clients read the same reference. The printed lines say ok or failed.
     v1 = read(starter.read_body("ref-status"), FIELD, REMOVED)
     v2 = read(generated.read_body("ref-status"), FIELD, REMOVED)

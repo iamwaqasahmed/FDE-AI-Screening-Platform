@@ -11,9 +11,9 @@ The FDE Training Program combines technical engineering, AI architecture, produc
 
 Unlike a conventional classroom-based bootcamp, the program is structured around continuous project delivery:
 
-- Weeks 1–4: Participants complete an end-to-end government AI implementation case study.
+- This folder: Participants complete an end-to-end government AI implementation case study, in four modules, at their own pace.
 
-- Weeks 5–6: Participants work in teams on a real client or government-sponsored project using the Forward Deployed Engineering model.
+- A later project, not in this folder: Participants may work in teams on a real client or government-sponsored project using the Forward Deployed Engineering model.
 
 The proposed program will train 100 government employees across four cohorts, with approximately 25 participants per classroom. The small-cohort model will provide sufficient access to instructors, technical mentors, project supervisors, and client stakeholders.
 
@@ -31,7 +31,7 @@ The FDE Program is designed for government employees who will contribute to AI t
 
 ### Learning Objectives & Outcome
 
-The program is not intended to produce specialists in every AI or software discipline within six weeks. Its purpose is to develop implementation-oriented professionals with sufficient breadth, practical judgment, and delivery experience to lead or support enterprise AI projects.
+The program is not intended to produce specialists in every AI or software discipline on a short timetable. Its purpose is to develop implementation-oriented professionals with sufficient breadth, practical judgment, and delivery experience to lead or support enterprise AI projects.
 
 The intended outcome is a national pool of government professionals who can support AI transformation initiatives from problem discovery through solution design, prototyping, implementation planning, and executive presentation.
 
@@ -107,7 +107,7 @@ Applicants should normally meet the following requirements:
 
 <!-- Original PDF page 4 -->
 
-- Ability to attend the full 6-week program approved by the line manager
+- Ability to attend the full 2-module program approved by the line manager
 
 - Nomination from the applicant’s employer or sponsoring entity
 
@@ -163,7 +163,7 @@ The program consists of two integrated phases.
 
 Participants develop the technical competencies required to design, build, deploy, and operate production-ready enterprise AI solutions through a structured government or enterprise AI implementation project. Using a guided case study, participants progressively build an end-to-end AI solution while learning the engineering practices and delivery methodologies expected of a Forward Deployed Engineer.
 
-Duration: 4 Weeks (35 hours per week)
+Pace: self-paced. The case study in this folder is four modules and twenty lessons. There is no weekly timetable.
 
 Technical Focus Areas
 
@@ -191,7 +191,7 @@ This phase ensures that participants acquire the required concepts and delivery 
 
 ### Phase Two: Real Client Project (FDE POC)
 
-Duration: 2 Weeks (35 hours per week)
+This phase is not in this folder. It has no timetable here.
 
 Participants are assigned to a real government, Saudi industry, technology partner, or approved international client project.
 
@@ -217,7 +217,7 @@ Each project will be supervised by experienced FDE mentors, technical specialist
 
 <!-- Original PDF page 7 -->
 
-## Detailed 6-Week Syllabus
+## Detailed syllabus
 
 The program will develop participants across five competency domains.
 
@@ -241,222 +241,106 @@ The program will develop participants across five competency domains.
 
   - End-to-end AI project delivery from discovery and solution design to proof of concept and production readiness.
 
-Each week is organized around five focused training days. During the first four weeks, participants progressively develop an enterprise AI case study. During the final two weeks, they apply the same methodology to a Real Client Project.
+The case study is four modules. Each module is five lessons. Participants work in order, at their own pace. A later real-client project can use the same methodology. It is not in this folder.
 
 ## Phase 1 – Applied AI Engineering
 
-### Stage 1. Build an End-to-End AI Solution (Weeks 1–2)
+### Stage 1. Build an end-to-end AI solution (Modules 1 and 2)
 
-Objective: Build and deploy a working AI proof of concept from scratch. Participants learn the core technologies required to deliver an AI application before optimizing it for enterprise use.
+Objective: Build and deploy a working AI proof of concept from scratch. Participants learn the core technologies required to deliver an AI application before optimizing it for enterprise use. Module 1 is lessons 1 to 5. Module 2 is lessons 1 to 5.
 
-Week                      Daily Topics                      Weekly Deliverables
+Module 1, lessons 1 and 2. Forward deployed engineering foundations, then applied ML and LLM foundations.
 
-<!-- Original PDF page 8 -->
+- Understand the role of a Forward Deployed Engineer and the enterprise AI delivery lifecycle.
+- Set up an AI-assisted development environment with coding assistants, development tools, and productivity workflows.
+- Review core machine learning and generative AI concepts required for enterprise AI applications.
+- Compare prompting, RAG, fine-tuning, AI agents, and traditional ML to select the appropriate solution architecture.
 
-```text
-         Day 1: Forward Deployed Engineering             ● Development
-Week 1   Foundations                                       environment fully
-           ● Understand the role of a Forward              configured with AI coding
-             Deployed Engineer and the enterprise          assistants, project
-             AI delivery lifecycle.                        repository, and
-           ● Set up an AI-assisted development             deployment workflow.
-             environment with coding assistants,         ● Working AI agent proof of
-             development tools, and productivity           concept capable of
-             workflows.                                    completing an end-to-end
-         Day 2: Applied ML & LLM Foundations               business workflow using
-           ● Review core machine learning and              LLMs, tools, and APIs.
-             generative AI concepts required for         ● Solution architecture
-             enterprise AI applications.                   diagram documenting the
-           ● Compare prompting, RAG, fine-tuning,          agent, workflow, tools,
-             AI agents, and traditional ML to select       data flow, and integration
-             the appropriate solution architecture.        points.
-         Day 3: AI Automation & Workflow                 ● Technical design
-         Orchestration                                     document outlining the
-           ● Design AI-powered workflows using             selected AI approach,
-             orchestration frameworks and business         implementation rationale,
-             automation patterns.                          and identified areas for
-           ● Integrate LLMs, APIs, databases, and          improvement in Stage 2.
-             external tools into end-to-end
-             automated workflows.
-         Day 4-5: Agent Engineering & Agentic
-         Workflows
-           ● Build AI agents with tool calling,
-             memory, structured outputs, and
-             reasoning workflows.
-           ● Design single-agent and multi-agent
-             architectures for enterprise use cases.
-           ● Develop production-oriented agentic
-             applications with human-in-the-loop
-             interactions and workflow controls.
-           ● Evaluate agent performance, reliability,
-             and failure handling through practical
-             implementation and testing.
+Module 1, lessons 3 and 4. Workflow orchestration, then agent engineering.
 
-         Day 1-2: AI Application Development &           ● Production-ready AI
-Week 2   Enterprise Integration                            application integrating
-           ● Develop a full-stack AI application using     LLMs, APIs, enterprise data
-             modern AI-assisted development                sources, and business
-             practices.                                    workflows.
-           ● Integrate LLMs with enterprise systems,     ● Automated testing suite
-             APIs, databases, and external services.       covering core application
-           ● Implement conversational interfaces,          functionality and end-to-
-             authentication, and backend workflows.        end AI workflows.
-           ● Connect AI agents to business               ● Cloud-deployed AI
-             processes through APIs, tool calling,         solution with inference
-             and event-driven integrations.                endpoints, monitoring, and
-         Day 3: Testing Fundamentals
-```
+- Design AI-powered workflows using orchestration frameworks and business automation patterns.
+- Integrate LLMs, APIs, databases, and external tools into end-to-end automated workflows.
+- Build AI agents with tool calling, memory, structured outputs, and reasoning workflows.
+- Design single-agent and multi-agent architectures for enterprise use cases.
+- Develop production-oriented agentic applications with human-in-the-loop interactions and workflow controls.
 
-<!-- Original PDF page 9 -->
+Module 1, lesson 5, then module 2, lesson 1. Evaluate the agent, then sign in.
 
-```text
-                  ● Develop unit, integration, and end-to-             deployment
-                    end tests for AI applications and agentic          documentation.
-                    workflows.                                       ● End-to-end AI Proof of
-                  ● Validate functional correctness,                   Concept ready for
-                    workflow reliability, and user                     production optimization
-                    experience before deployment.                      and enhancement in Stage
-                Day 4-5: Deployment, Cloud & AI                        2.
-                Operations
-                  ● Containerize and deploy AI applications
-                    using cloud-native deployment
-                    workflows.
-                  ● Configure model serving, inference
-                    endpoints, and environment
-                    management for production.
+- Evaluate agent performance, reliability, and failure handling through practical implementation and testing.
+- Develop a full-stack AI application using modern AI-assisted development practices.
+- Implement conversational interfaces, authentication, and backend workflows.
 
+Module 2, lessons 2 and 3. Enterprise integration, then testing.
 
+- Integrate LLMs with enterprise systems, APIs, databases, and external services.
+- Connect AI agents to business processes through APIs, tool calling, and event-driven integrations.
+- Develop unit, integration, and end-to-end tests for AI applications and agentic workflows.
+- Validate functional correctness, workflow reliability, and user experience before deployment.
 
-Stage 2. Optimize, Scale & Productionize (Weeks 3 - 4)
+Module 2, lessons 4 and 5. Deployment, then the sequenced change.
 
-Objective: Transform the proof of concept into a production-ready enterprise AI solution by
-improving accuracy, reliability, scalability, observability, security, and operational efficiency.
+- Containerize and deploy AI applications using cloud-native deployment workflows.
+- Configure model serving, inference endpoints, and environment management for production.
 
-    Week                          Daily Topics                            Weekly Deliverables
+You leave module 2 with a development environment, a working agent proof of concept, a solution architecture diagram, a technical design note, an automated test suite, deployment documentation, and an end-to-end proof of concept ready for the work in modules 3 and 4.
 
-                Day 1: Data Engineering, Annotation & Synthetic         ● Enhanced AI solution
-   Week 3       Data                                                      incorporating customized
-                  ● Prepare, clean, and structure enterprise data         models, RAG capabilities,
-                     for AI applications using annotation and data        and improved enterprise
-                     engineering best practices.                          data integration.
-                  ● Generate and curate synthetic datasets to           ● Evaluation framework and
-                     improve model performance and expand                 benchmark report
-                     domain-specific knowledge.                           measuring application
-                Day 2: Model Customization & Fine-tuning                  quality, accuracy, and
-                  ● Customize foundation models using prompt              reliability.
-                     engineering, parameter-efficient fine-tuning       ● Performance improvement
-                     (PEFT/LoRA), and domain adaptation                   plan documenting
-                     techniques.                                          identified shortcomings
-                  ● Compare prompting, fine-tuning, and RAG to            and recommended
-                     determine the most effective customization           technical enhancements.
-                     strategy for different use cases.                  ● Client requirements
-                Day 3: Retrieval-Augmented Generation (RAG)               specification summarizing
-                  ● Build RAG pipelines using embeddings,                 business objectives,
-                     vector databases, and enterprise                     functional requirements,
-                     knowledge sources.                                   and the proposed
-                  ● Optimize retrieval quality, grounding, and            technical approach for the
-                     response generation for enterprise AI                Real Client Project (RCP).
-                     applications.
-                Day 4-5: Evaluation of LLMs, RAG & Agents
-```
+### Stage 2. Optimize, scale, and productionize (Modules 3 and 4)
 
-<!-- Original PDF page 10 -->
+Objective: Transform the proof of concept into a production-ready enterprise AI solution by improving accuracy, reliability, scalability, observability, security, and operational efficiency. Module 3 is lessons 1 to 5. Module 4 is lessons 1 to 5.
 
-```text
-           ● Design evaluation frameworks to measure
-             the quality, accuracy, and reliability of AI
-             applications.
-           ● Evaluate LLM, RAG, and agent performance
-             using automated metrics and benchmark
-             datasets.
-           ● Perform error analysis to identify
-             hallucinations, retrieval failures, reasoning
-             gaps, and workflow issues.
-           ● Improve AI system performance through
-             iterative evaluation, testing, and
-             optimization.
-         RCP Preparation: Client Discovery Workshops &
-         Requirement Decomposition
-           ● Client Discovery Workshops: Understand
-             the client's business objectives, operational
-             challenges, stakeholders, and AI
-             opportunities.
-           ● Requirement Decomposition: Translate
-             business problems into technical
-             requirements, define project scope, and
-             identify implementation priorities.
+Module 3, lessons 1 and 2. Data engineering, annotation, and synthetic data, then model customization.
 
-         Day 1: AI Security & Governance                     ● Production-ready
-Week 4     ● Implement AI security controls, guardrails,       enterprise AI solution
-             access management, and responsible AI             incorporating security,
-             practices for enterprise environments.            monitoring, scalability, and
-           ● Address prompt injection, data privacy,           enterprise integration best
-             compliance, governance, and risk                  practices.
-             management throughout the AI application        ● Deployment architecture
-             lifecycle.                                        and infrastructure design
-         Day 2: Observability, Monitoring & Production         documenting application
-         Operations                                            components, integrations,
-           ● Monitor AI applications using logging,            operational workflows, and
-             tracing, metrics, and performance                 scaling strategy.
-             dashboards.                                     ● Operations and
-           ● Diagnose failures, track model performance,       governance plan covering
-             and establish operational practices for           security controls,
-             maintaining production AI systems.                monitoring dashboards,
-         Day 3-4: Scaling, Infrastructure & Model Serving      incident response, and
-           ● Deploy scalable inference services using          operational procedures.
-             modern model serving frameworks and             ● RCP solution proposal
-             cloud infrastructure.                             including client
-           ● Optimize GPU utilization, latency,                requirements, prioritized
-             throughput, and resource allocation for           use case, solution
-             production workloads.                             architecture,
-           ● Design highly available AI architectures with     implementation roadmap,
-             load balancing, autoscaling, caching, and         and project execution plan.
-             resilient deployment strategies.
-           ● Evaluate infrastructure trade-offs for cost,
-             scalability, reliability, and performance
-             across enterprise deployments.
-```
+- Prepare, clean, and structure enterprise data for AI applications using annotation and data engineering best practices.
+- Generate and curate synthetic datasets to improve model performance and expand domain-specific knowledge.
+- Customize foundation models using prompt engineering, parameter-efficient fine-tuning (PEFT/LoRA), and domain adaptation techniques.
+- Compare prompting, fine-tuning, and RAG to determine the most effective customization strategy for different use cases.
 
-<!-- Original PDF page 11 -->
+Module 3, lessons 3 and 4. Retrieval-augmented generation, then evaluation.
 
-```text
-              Day 5: Enterprise Systems Integration
-                ● Integrate AI applications with enterprise
-                  platforms, authentication services,
-                  databases, messaging systems, and
-                  business applications.
-                ● Design production-ready system
-                  architectures that support secure, reliable,
-                  and maintainable AI solutions.
-              RCP Preparation: Use-Case Prioritization &
-              Solution Architect
-                ● Use-Case Prioritization: Evaluate potential AI
-                  use cases based on business value,
-                  technical feasibility, implementation effort,
-                  and organizational impact.
-                ● Solution Architecture & Project Planning:
-                  Produce a solution architecture,
-                  implementation roadmap, project plan, and
-                  success metrics for the Real Client Project
-                  (RCP).
+- Build RAG pipelines using embeddings, vector databases, and enterprise knowledge sources.
+- Optimize retrieval quality, grounding, and response generation for enterprise AI applications.
+- Design evaluation frameworks to measure the quality, accuracy, and reliability of AI applications.
+- Evaluate LLM, RAG, and agent performance using automated metrics and benchmark datasets.
+- Perform error analysis to identify hallucinations, retrieval failures, reasoning gaps, and workflow issues.
 
+Module 3, lesson 5, then module 4, lesson 1. One measured improvement and the requirements, then security and governance.
 
+- Improve AI system performance through iterative evaluation, testing, and optimization.
+- Client discovery: understand the client's business objectives, operational challenges, stakeholders, and AI opportunities.
+- Requirement decomposition: translate business problems into technical requirements, define project scope, and identify implementation priorities.
+- Implement AI security controls, guardrails, access management, and responsible AI practices.
+- Address prompt injection, data privacy, compliance, governance, and risk management throughout the AI application lifecycle.
+
+Module 4, lessons 2 and 3. Observability, then scaling and model serving.
+
+- Monitor AI applications using logging, tracing, metrics, and performance dashboards.
+- Diagnose failures, track model performance, and establish operational practices for maintaining production AI systems.
+- Deploy scalable inference services using modern model serving frameworks and cloud infrastructure.
+- Optimize GPU utilization, latency, throughput, and resource allocation for production workloads.
+
+Module 4, lessons 4 and 5. Site resilience and the trade-off, then enterprise integration and the proposal.
+
+- Design highly available AI architectures with load balancing, autoscaling, caching, and resilient deployment strategies.
+- Evaluate infrastructure trade-offs for cost, scalability, reliability, and performance across enterprise deployments.
+- Integrate AI applications with enterprise platforms, authentication services, databases, messaging systems, and business applications.
+- Design production-ready system architectures that support secure, reliable, and maintainable AI solutions.
+- Use-case prioritization: evaluate potential AI use cases based on business value, technical feasibility, implementation effort, and organizational impact.
+- Solution architecture and project planning: produce a solution architecture, implementation roadmap, project plan, and success metrics for the Real Client Project (RCP).
+
+You leave module 4 with a customized model, RAG, an evaluation and an improvement plan, a requirements specification, a production-ready design for security, monitoring, and scale, an operations and governance plan, and an RCP solution proposal.
 
 Phase 2 – Forward Deployed Engineering Capstone Project
 
-Stage 3. Real Client Project (Weeks 5–6)
+Stage 3. Real Client Project (after these modules, not in this folder)
 
 Objective: Apply the complete Forward Deployed Engineering lifecycle by delivering an AI
 proof of concept for a real government or enterprise client.
-
-   Week                        Daily Topics                        Weekly Deliverables
-```
 
 <!-- Original PDF page 12 -->
 
 ```text
                                                              ● Functional AI solution
-Week 5   Day 1-3: AI Application Development &                 tailored to the client's
+Later    Lesson 1-3: AI Application Development &                 tailored to the client's
          Integration                                           business requirements.
             ● Develop the core AI application and            ● Integrated enterprise
               integrate LLMs, enterprise data, APIs, and       application connected to
@@ -468,40 +352,40 @@ Week 5   Day 1-3: AI Application Development &                 tailored to the c
             ● Implement authentication, enterprise             and revised
               integrations, and production-ready               implementation plan.
               application components.
-         Day 4: Iterative Client Feedback
+         Lesson 4: Iterative Client Feedback
             ● Demonstrate project progress, gather
               stakeholder feedback, and validate
               assumptions.
             ● Prioritize enhancements and refine
               functionality based on client requirements.
-         Day 5: System Refinement & Testing
+         Lesson 5: System Refinement & Testing
             ● Resolve technical issues, improve solution
               quality, and complete end-to-end integration
               testing.
             ● Prepare the solution for production
               deployment and operational validation.
 
-         Day 1: System Refinement & User Acceptance          ● Production-ready AI proof
-Week 6   Testing                                               of concept deployed in
+         Lesson 1: System Refinement & User Acceptance          ● Production-ready AI proof
+Later    Testing                                               of concept deployed in
            ● Finalize application features, resolve            the target environment.
               defects, and conduct user acceptance           ● Complete technical
               testing.                                         documentation,
            ● Validate performance, reliability, and            deployment guide, and
               business workflows with stakeholders.            knowledge transfer
-         Day 2: Deployment & Operational Readiness             package.
+         Lesson 2: Deployment & Operational Readiness             package.
            ● Deploy the AI solution to the target            ● Business value
               environment and verify operational               assessment,
               readiness.                                       implementation roadmap,
            ● Configure monitoring, security,                   and adoption strategy.
               documentation, and operational procedures.     ● Executive presentation,
-         Day 3: Business Value Assessment & Adoption           live demonstration, and
+         Lesson 3: Business Value Assessment & Adoption           live demonstration, and
          Strategy                                              final client project report.
            ● Measure expected business impact, ROI,
               operational benefits, and implementation
               risks.
            ● Develop adoption, change management,
               and success measurement plans.
-         Day 4: Executive Presentation & Demonstration
+         Lesson 4: Executive Presentation & Demonstration
            ● Prepare an executive implementation
               roadmap covering future phases,
               governance, resource planning, and scaling
@@ -514,7 +398,7 @@ Week 6   Testing                                               of concept deploy
                 ● Develop presentation materials, technical
                    documentation, and knowledge transfer
                    artifacts.
-              Day 5: Executive Presentation, Demonstration &
+              Lesson 5: Executive Presentation, Demonstration &
               Project Showcase
                 ● Present the completed AI solution to client
                    executives, instructors, and evaluation panel
@@ -549,7 +433,7 @@ Each Real Client Project should:
 
    ●   Address a genuine organizational problem
    ●   Have an accessible client sponsor
-   ●   Be achievable within a 2-week to 4-week proof-of-concept cycle
+   ●   Be achievable within the two-module proof-of-concept window
    ●   Have clearly defined users and intended outcomes
    ●   Provide sufficient data or representative sample data
    ●   Avoid uncontrolled access to classified or highly sensitive information
