@@ -1,0 +1,26 @@
+[
+  {
+    "name": "letter",
+    "where": "hospital letter for REF-4417"
+  },
+  {
+    "name": "national-id",
+    "where": "bytes/national_id.txt"
+  },
+  {
+    "name": "quotation",
+    "where": "document quote-harbor"
+  },
+  {
+    "name": "wage",
+    "where": "document wage-band"
+  },
+  {
+    "name": "leaflet-public",
+    "where": "document leaflet-hours"
+  },
+  {
+    "name": "hours-public",
+    "where": "document hours-cedar"
+  }
+]

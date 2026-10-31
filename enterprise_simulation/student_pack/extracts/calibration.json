@@ -1,0 +1,42 @@
+[
+  {
+    "id": "cal-01",
+    "score_a": 0.62,
+    "score_b": 0.6,
+    "n": 400,
+    "pass": true,
+    "arm": "A"
+  },
+  {
+    "id": "cal-02",
+    "score_a": 0.55,
+    "score_b": 0.57,
+    "n": 380,
+    "pass": true,
+    "arm": "B"
+  },
+  {
+    "id": "cal-03",
+    "score_a": 0.5,
+    "score_b": 0.5,
+    "n": 12,
+    "pass": true,
+    "arm": "A"
+  },
+  {
+    "id": "cal-04",
+    "score_a": 0.71,
+    "score_b": 0.69,
+    "n": 220,
+    "pass": false,
+    "arm": "A"
+  },
+  {
+    "id": "cal-07",
+    "score_a": 0.5001,
+    "score_b": 0.5,
+    "n": 8,
+    "pass": true,
+    "arm": "A"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "call_id": "call-west",
+    "endpoint_region": "us-west-2",
+    "processor_region": "us-east-1",
+    "payload_kind": "referral-letter",
+    "http_status": 200
+  },
+  {
+    "call_id": "call-match",
+    "endpoint_region": "ca-central-1",
+    "processor_region": "ca-central-1",
+    "payload_kind": "referral-letter",
+    "http_status": 200
+  },
+  {
+    "call_id": "call-leaflet",
+    "endpoint_region": "ca-central-1",
+    "processor_region": "ca-central-1",
+    "payload_kind": "public-leaflet",
+    "http_status": 200
+  }
+]

@@ -1,0 +1,4986 @@
+[
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0001",
+    "occurred_at": "2025-01-12T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100001",
+      "person_id": "p-0001",
+      "ref": "HX-0001",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0002",
+    "occurred_at": "2025-01-15T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100002",
+      "person_id": "p-0002",
+      "ref": "HX-0002",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0003",
+    "occurred_at": "2025-01-20T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100003",
+      "person_id": "p-0003",
+      "ref": "HX-0003",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0004",
+    "occurred_at": "2025-01-18T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100004",
+      "person_id": "p-0004",
+      "ref": "HX-0004",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0005",
+    "occurred_at": "2025-01-21T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100005",
+      "person_id": "p-0005",
+      "ref": "HX-0005",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0005",
+    "booking_date": "2025-01-23",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0005",
+    "file_id": "cedar-2025-01-23-5",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-01-23T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0006",
+    "occurred_at": "2025-01-24T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100006",
+      "person_id": "p-0006",
+      "ref": "HX-0006",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0007",
+    "occurred_at": "2025-01-29T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100007",
+      "person_id": "p-0007",
+      "ref": "HX-0007",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0008",
+    "occurred_at": "2025-02-03T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100008",
+      "person_id": "p-0008",
+      "ref": "HX-0008",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0009",
+    "occurred_at": "2025-02-04T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100009",
+      "person_id": "p-0009",
+      "ref": "HX-0009",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0011",
+    "occurred_at": "2025-02-09T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100011",
+      "person_id": "p-0011",
+      "ref": "HX-0011",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0012",
+    "occurred_at": "2025-02-14T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100012",
+      "person_id": "p-0012",
+      "ref": "HX-0012",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0013",
+    "occurred_at": "2025-02-19T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100013",
+      "person_id": "p-0013",
+      "ref": "HX-0013",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0014",
+    "occurred_at": "2025-02-18T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100014",
+      "person_id": "p-0014",
+      "ref": "HX-0014",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0015",
+    "occurred_at": "2025-02-21T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100015",
+      "person_id": "p-0015",
+      "ref": "HX-0015",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0015",
+    "booking_date": "2025-02-23",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0015",
+    "file_id": "cedar-2025-02-23-15",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-02-23T21:00:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0015",
+    "booking_date": "2025-02-23",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0015",
+    "file_id": "cedar-2025-02-23-15",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-02-24T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0016",
+    "occurred_at": "2025-02-27T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100016",
+      "person_id": "p-0016",
+      "ref": "HX-0016",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0017",
+    "occurred_at": "2025-02-26T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100017",
+      "person_id": "p-0017",
+      "ref": "HX-0017",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0018",
+    "occurred_at": "2025-03-06T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100018",
+      "person_id": "p-0018",
+      "ref": "HX-0018",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0019",
+    "occurred_at": "2025-03-04T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100019",
+      "person_id": "p-0019",
+      "ref": "HX-0019",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0021",
+    "occurred_at": "2025-03-11T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-44190",
+      "person_id": "p-0021",
+      "ref": "HX-0021",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "MrnPointer",
+    "ref": "HX-0021",
+    "occurred_at": "2025-03-12T01:00:00Z",
+    "payload": {
+      "from_person": "p-0020",
+      "mrn": "MRN-44190",
+      "ref": "HX-0021",
+      "to_person": "p-0021"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0022",
+    "occurred_at": "2025-03-14T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100022",
+      "person_id": "p-0022",
+      "ref": "HX-0022",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0023",
+    "occurred_at": "2025-03-20T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100023",
+      "person_id": "p-0023",
+      "ref": "HX-0023",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0024",
+    "occurred_at": "2025-03-22T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100024",
+      "person_id": "p-0024",
+      "ref": "HX-0024",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0025",
+    "occurred_at": "2025-03-23T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100025",
+      "person_id": "p-0025",
+      "ref": "HX-0025",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0025",
+    "booking_date": "2025-03-25",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0025",
+    "file_id": "cedar-2025-03-25-25",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-03-25T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0026",
+    "occurred_at": "2025-03-28T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100026",
+      "person_id": "p-0026",
+      "ref": "HX-0026",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0027",
+    "occurred_at": "2025-03-29T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100027",
+      "person_id": "p-0027",
+      "ref": "HX-0027",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0028",
+    "occurred_at": "2025-04-04T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100028",
+      "person_id": "p-0028",
+      "ref": "HX-0028",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0029",
+    "occurred_at": "2025-04-06T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100029",
+      "person_id": "p-0029",
+      "ref": "HX-0029",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0031",
+    "occurred_at": "2025-04-12T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100031",
+      "person_id": "p-0031",
+      "ref": "HX-0031",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0032",
+    "occurred_at": "2025-04-14T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100032",
+      "person_id": "p-0032",
+      "ref": "HX-0032",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0033",
+    "occurred_at": "2025-04-16T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100033",
+      "person_id": "p-0033",
+      "ref": "HX-0033",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0034",
+    "occurred_at": "2025-04-21T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100034",
+      "person_id": "p-0034",
+      "ref": "HX-0034",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0035",
+    "occurred_at": "2025-04-21T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100035",
+      "person_id": "p-0035",
+      "ref": "HX-0035",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0036",
+    "occurred_at": "2025-04-27T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100036",
+      "person_id": "p-0036",
+      "ref": "HX-0036",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0037",
+    "occurred_at": "2025-04-28T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100037",
+      "person_id": "p-0037",
+      "ref": "HX-0037",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0038",
+    "occurred_at": "2025-05-02T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100038",
+      "person_id": "p-0038",
+      "ref": "HX-0038",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0039",
+    "occurred_at": "2025-05-04T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100039",
+      "person_id": "p-0039",
+      "ref": "HX-0039",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0041",
+    "occurred_at": "2025-05-14T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100041",
+      "person_id": "p-0041",
+      "ref": "HX-0041",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0042",
+    "occurred_at": "2025-05-16T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100042",
+      "person_id": "p-0042",
+      "ref": "HX-0042",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0043",
+    "occurred_at": "2025-05-18T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100043",
+      "person_id": "p-0043",
+      "ref": "HX-0043",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0044",
+    "occurred_at": "2025-05-18T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100044",
+      "person_id": "p-0044",
+      "ref": "HX-0044",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0045",
+    "occurred_at": "2025-05-23T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100045",
+      "person_id": "p-0045",
+      "ref": "HX-0045",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0045",
+    "booking_date": "2025-05-25",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0045",
+    "file_id": "cedar-2025-05-25-45",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-05-25T21:00:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0045",
+    "booking_date": "2025-05-25",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0045",
+    "file_id": "cedar-2025-05-25-45",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-05-26T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0046",
+    "occurred_at": "2025-05-24T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100046",
+      "person_id": "p-0046",
+      "ref": "HX-0046",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0047",
+    "occurred_at": "2025-05-31T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100047",
+      "person_id": "p-0047",
+      "ref": "HX-0047",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0048",
+    "occurred_at": "2025-06-03T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100048",
+      "person_id": "p-0048",
+      "ref": "HX-0048",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0049",
+    "occurred_at": "2025-06-06T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100049",
+      "person_id": "p-0049",
+      "ref": "HX-0049",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0051",
+    "occurred_at": "2025-06-09T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100051",
+      "person_id": "p-0051",
+      "ref": "HX-0051",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0052",
+    "occurred_at": "2025-06-11T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100052",
+      "person_id": "p-0052",
+      "ref": "HX-0052",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0053",
+    "occurred_at": "2025-06-15T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100053",
+      "person_id": "p-0053",
+      "ref": "HX-0053",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0054",
+    "occurred_at": "2025-06-21T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100054",
+      "person_id": "p-0054",
+      "ref": "HX-0054",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0055",
+    "occurred_at": "2025-06-22T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100055",
+      "person_id": "p-0055",
+      "ref": "HX-0055",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0055",
+    "booking_date": "2025-06-24",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0055",
+    "file_id": "cedar-2025-06-24-55",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-06-24T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0056",
+    "occurred_at": "2025-06-25T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100056",
+      "person_id": "p-0056",
+      "ref": "HX-0056",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0057",
+    "occurred_at": "2025-06-30T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100057",
+      "person_id": "p-0057",
+      "ref": "HX-0057",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0058",
+    "occurred_at": "2025-07-04T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100058",
+      "person_id": "p-0058",
+      "ref": "HX-0058",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0059",
+    "occurred_at": "2025-07-06T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100059",
+      "person_id": "p-0059",
+      "ref": "HX-0059",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0061",
+    "occurred_at": "2025-07-12T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100061",
+      "person_id": "p-0061",
+      "ref": "HX-0061",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0062",
+    "occurred_at": "2025-07-13T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100062",
+      "person_id": "p-0062",
+      "ref": "HX-0062",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0063",
+    "occurred_at": "2025-07-15T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100063",
+      "person_id": "p-0063",
+      "ref": "HX-0063",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0064",
+    "occurred_at": "2025-07-21T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100064",
+      "person_id": "p-0064",
+      "ref": "HX-0064",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0065",
+    "occurred_at": "2025-07-24T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100065",
+      "person_id": "p-0065",
+      "ref": "HX-0065",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0065",
+    "booking_date": "2025-07-26",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0065",
+    "file_id": "cedar-2025-07-26-65",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-07-26T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0066",
+    "occurred_at": "2025-07-25T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100066",
+      "person_id": "p-0066",
+      "ref": "HX-0066",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0067",
+    "occurred_at": "2025-07-28T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100067",
+      "person_id": "p-0067",
+      "ref": "HX-0067",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0068",
+    "occurred_at": "2025-08-01T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100068",
+      "person_id": "p-0068",
+      "ref": "HX-0068",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0069",
+    "occurred_at": "2025-08-03T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100069",
+      "person_id": "p-0069",
+      "ref": "HX-0069",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0071",
+    "occurred_at": "2025-08-10T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100071",
+      "person_id": "p-0071",
+      "ref": "HX-0071",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0072",
+    "occurred_at": "2025-08-10T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100072",
+      "person_id": "p-0072",
+      "ref": "HX-0072",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0073",
+    "occurred_at": "2025-08-14T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100073",
+      "person_id": "p-0073",
+      "ref": "HX-0073",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0074",
+    "occurred_at": "2025-08-19T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100074",
+      "person_id": "p-0074",
+      "ref": "HX-0074",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0075",
+    "occurred_at": "2025-08-19T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100075",
+      "person_id": "p-0075",
+      "ref": "HX-0075",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0075",
+    "booking_date": "2025-08-21",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0075",
+    "file_id": "cedar-2025-08-21-75",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-08-21T21:00:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0075",
+    "booking_date": "2025-08-21",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0075",
+    "file_id": "cedar-2025-08-21-75",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-08-22T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0076",
+    "occurred_at": "2025-08-25T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100076",
+      "person_id": "p-0076",
+      "ref": "HX-0076",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0077",
+    "occurred_at": "2025-08-25T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100077",
+      "person_id": "p-0077",
+      "ref": "HX-0077",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0078",
+    "occurred_at": "2025-08-30T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100078",
+      "person_id": "p-0078",
+      "ref": "HX-0078",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0079",
+    "occurred_at": "2025-08-31T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100079",
+      "person_id": "p-0079",
+      "ref": "HX-0079",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0081",
+    "occurred_at": "2025-09-10T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100081",
+      "person_id": "p-0081",
+      "ref": "HX-0081",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0082",
+    "occurred_at": "2025-09-11T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100082",
+      "person_id": "p-0082",
+      "ref": "HX-0082",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0083",
+    "occurred_at": "2025-09-17T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100083",
+      "person_id": "p-0083",
+      "ref": "HX-0083",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0084",
+    "occurred_at": "2025-09-18T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100084",
+      "person_id": "p-0084",
+      "ref": "HX-0084",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0085",
+    "occurred_at": "2025-09-22T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100085",
+      "person_id": "p-0085",
+      "ref": "HX-0085",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0085",
+    "booking_date": "2025-09-24",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0085",
+    "file_id": "cedar-2025-09-24-85",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-09-24T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0086",
+    "occurred_at": "2025-09-21T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100086",
+      "person_id": "p-0086",
+      "ref": "HX-0086",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0087",
+    "occurred_at": "2025-09-26T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100087",
+      "person_id": "p-0087",
+      "ref": "HX-0087",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0088",
+    "occurred_at": "2025-10-01T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100088",
+      "person_id": "p-0088",
+      "ref": "HX-0088",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0089",
+    "occurred_at": "2025-09-30T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100089",
+      "person_id": "p-0089",
+      "ref": "HX-0089",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0091",
+    "occurred_at": "2025-10-09T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100091",
+      "person_id": "p-0091",
+      "ref": "HX-0091",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0092",
+    "occurred_at": "2025-10-10T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100092",
+      "person_id": "p-0092",
+      "ref": "HX-0092",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0093",
+    "occurred_at": "2025-10-14T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100093",
+      "person_id": "p-0093",
+      "ref": "HX-0093",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0094",
+    "occurred_at": "2025-10-19T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100094",
+      "person_id": "p-0094",
+      "ref": "HX-0094",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0095",
+    "occurred_at": "2025-10-18T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100095",
+      "person_id": "p-0095",
+      "ref": "HX-0095",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0095",
+    "booking_date": "2025-10-20",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0095",
+    "file_id": "cedar-2025-10-20-95",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-10-20T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0096",
+    "occurred_at": "2025-10-22T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100096",
+      "person_id": "p-0096",
+      "ref": "HX-0096",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0097",
+    "occurred_at": "2025-10-25T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100097",
+      "person_id": "p-0097",
+      "ref": "HX-0097",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0098",
+    "occurred_at": "2025-10-29T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100098",
+      "person_id": "p-0098",
+      "ref": "HX-0098",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0099",
+    "occurred_at": "2025-11-03T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100099",
+      "person_id": "p-0099",
+      "ref": "HX-0099",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0101",
+    "occurred_at": "2025-11-07T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100101",
+      "person_id": "p-0101",
+      "ref": "HX-0101",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0102",
+    "occurred_at": "2025-11-11T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100102",
+      "person_id": "p-0102",
+      "ref": "HX-0102",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0103",
+    "occurred_at": "2025-11-13T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100103",
+      "person_id": "p-0103",
+      "ref": "HX-0103",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0104",
+    "occurred_at": "2025-11-19T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100104",
+      "person_id": "p-0104",
+      "ref": "HX-0104",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0105",
+    "occurred_at": "2025-11-21T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100105",
+      "person_id": "p-0105",
+      "ref": "HX-0105",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0106",
+    "occurred_at": "2025-11-24T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100106",
+      "person_id": "p-0106",
+      "ref": "HX-0106",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0107",
+    "occurred_at": "2025-11-23T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100107",
+      "person_id": "p-0107",
+      "ref": "HX-0107",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0108",
+    "occurred_at": "2025-11-28T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100108",
+      "person_id": "p-0108",
+      "ref": "HX-0108",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0109",
+    "occurred_at": "2025-12-03T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100109",
+      "person_id": "p-0109",
+      "ref": "HX-0109",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0111",
+    "occurred_at": "2025-12-07T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100111",
+      "person_id": "p-0111",
+      "ref": "HX-0111",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0112",
+    "occurred_at": "2025-12-12T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100112",
+      "person_id": "p-0112",
+      "ref": "HX-0112",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0113",
+    "occurred_at": "2025-12-14T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100113",
+      "person_id": "p-0113",
+      "ref": "HX-0113",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0114",
+    "occurred_at": "2025-12-17T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100114",
+      "person_id": "p-0114",
+      "ref": "HX-0114",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0115",
+    "occurred_at": "2025-12-21T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100115",
+      "person_id": "p-0115",
+      "ref": "HX-0115",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0115",
+    "booking_date": "2025-12-23",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0115",
+    "file_id": "cedar-2025-12-23-115",
+    "site": "cedar-ridge",
+    "occurred_at": "2025-12-23T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0116",
+    "occurred_at": "2025-12-21T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100116",
+      "person_id": "p-0116",
+      "ref": "HX-0116",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0117",
+    "occurred_at": "2025-12-26T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100117",
+      "person_id": "p-0117",
+      "ref": "HX-0117",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0118",
+    "occurred_at": "2025-12-29T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100118",
+      "person_id": "p-0118",
+      "ref": "HX-0118",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0119",
+    "occurred_at": "2026-01-01T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100119",
+      "person_id": "p-0119",
+      "ref": "HX-0119",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0121",
+    "occurred_at": "2026-01-08T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100121",
+      "person_id": "p-0121",
+      "ref": "HX-0121",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0122",
+    "occurred_at": "2026-01-10T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100122",
+      "person_id": "p-0122",
+      "ref": "HX-0122",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0123",
+    "occurred_at": "2026-01-11T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100123",
+      "person_id": "p-0123",
+      "ref": "HX-0123",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0124",
+    "occurred_at": "2026-01-15T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100124",
+      "person_id": "p-0124",
+      "ref": "HX-0124",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0125",
+    "occurred_at": "2026-01-19T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100125",
+      "person_id": "p-0125",
+      "ref": "HX-0125",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0125",
+    "booking_date": "2026-01-21",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0125",
+    "file_id": "cedar-2026-01-21-125",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-01-21T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0126",
+    "occurred_at": "2026-01-19T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100126",
+      "person_id": "p-0126",
+      "ref": "HX-0126",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0127",
+    "occurred_at": "2026-01-23T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100127",
+      "person_id": "p-0127",
+      "ref": "HX-0127",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0128",
+    "occurred_at": "2026-01-29T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100128",
+      "person_id": "p-0128",
+      "ref": "HX-0128",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0129",
+    "occurred_at": "2026-02-01T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100129",
+      "person_id": "p-0129",
+      "ref": "HX-0129",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0131",
+    "occurred_at": "2026-02-06T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100131",
+      "person_id": "p-0131",
+      "ref": "HX-0131",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0132",
+    "occurred_at": "2026-02-11T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100132",
+      "person_id": "p-0132",
+      "ref": "HX-0132",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0133",
+    "occurred_at": "2026-02-09T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100133",
+      "person_id": "p-0133",
+      "ref": "HX-0133",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0134",
+    "occurred_at": "2026-02-15T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100134",
+      "person_id": "p-0134",
+      "ref": "HX-0134",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0135",
+    "occurred_at": "2026-02-15T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100135",
+      "person_id": "p-0135",
+      "ref": "HX-0135",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0135",
+    "booking_date": "2026-02-17",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0135",
+    "file_id": "cedar-2026-02-17-135",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-02-17T21:00:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0135",
+    "booking_date": "2026-02-17",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0135",
+    "file_id": "cedar-2026-02-17-135",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-02-18T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0136",
+    "occurred_at": "2026-02-22T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100136",
+      "person_id": "p-0136",
+      "ref": "HX-0136",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0137",
+    "occurred_at": "2026-02-22T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100137",
+      "person_id": "p-0137",
+      "ref": "HX-0137",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0138",
+    "occurred_at": "2026-02-27T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100138",
+      "person_id": "p-0138",
+      "ref": "HX-0138",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0139",
+    "occurred_at": "2026-03-01T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100139",
+      "person_id": "p-0139",
+      "ref": "HX-0139",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0141",
+    "occurred_at": "2026-03-09T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100141",
+      "person_id": "p-0141",
+      "ref": "HX-0141",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0142",
+    "occurred_at": "2026-03-09T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100142",
+      "person_id": "p-0142",
+      "ref": "HX-0142",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0143",
+    "occurred_at": "2026-03-14T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100143",
+      "person_id": "p-0143",
+      "ref": "HX-0143",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0144",
+    "occurred_at": "2026-03-16T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100144",
+      "person_id": "p-0144",
+      "ref": "HX-0144",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0145",
+    "occurred_at": "2026-03-19T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100145",
+      "person_id": "p-0145",
+      "ref": "HX-0145",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0145",
+    "booking_date": "2026-03-21",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0145",
+    "file_id": "cedar-2026-03-21-145",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-03-21T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0146",
+    "occurred_at": "2026-03-22T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100146",
+      "person_id": "p-0146",
+      "ref": "HX-0146",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0147",
+    "occurred_at": "2026-03-27T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100147",
+      "person_id": "p-0147",
+      "ref": "HX-0147",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0148",
+    "occurred_at": "2026-03-27T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100148",
+      "person_id": "p-0148",
+      "ref": "HX-0148",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0149",
+    "occurred_at": "2026-03-30T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100149",
+      "person_id": "p-0149",
+      "ref": "HX-0149",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0151",
+    "occurred_at": "2026-04-08T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100151",
+      "person_id": "p-0151",
+      "ref": "HX-0151",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0152",
+    "occurred_at": "2026-04-10T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100152",
+      "person_id": "p-0152",
+      "ref": "HX-0152",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0153",
+    "occurred_at": "2026-04-14T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100153",
+      "person_id": "p-0153",
+      "ref": "HX-0153",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0154",
+    "occurred_at": "2026-04-18T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100154",
+      "person_id": "p-0154",
+      "ref": "HX-0154",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0155",
+    "occurred_at": "2026-04-20T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100155",
+      "person_id": "p-0155",
+      "ref": "HX-0155",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0155",
+    "booking_date": "2026-04-22",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0155",
+    "file_id": "cedar-2026-04-22-155",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-04-22T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0156",
+    "occurred_at": "2026-04-19T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100156",
+      "person_id": "p-0156",
+      "ref": "HX-0156",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0157",
+    "occurred_at": "2026-04-26T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100157",
+      "person_id": "p-0157",
+      "ref": "HX-0157",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0158",
+    "occurred_at": "2026-04-27T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100158",
+      "person_id": "p-0158",
+      "ref": "HX-0158",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0159",
+    "occurred_at": "2026-04-30T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100159",
+      "person_id": "p-0159",
+      "ref": "HX-0159",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0161",
+    "occurred_at": "2026-05-07T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100161",
+      "person_id": "p-0161",
+      "ref": "HX-0161",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0162",
+    "occurred_at": "2026-05-08T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100162",
+      "person_id": "p-0162",
+      "ref": "HX-0162",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0163",
+    "occurred_at": "2026-05-14T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100163",
+      "person_id": "p-0163",
+      "ref": "HX-0163",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0164",
+    "occurred_at": "2026-05-15T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100164",
+      "person_id": "p-0164",
+      "ref": "HX-0164",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0165",
+    "occurred_at": "2026-05-16T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100165",
+      "person_id": "p-0165",
+      "ref": "HX-0165",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0165",
+    "booking_date": "2026-05-18",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0165",
+    "file_id": "cedar-2026-05-18-165",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-05-18T21:00:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0165",
+    "booking_date": "2026-05-18",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0165",
+    "file_id": "cedar-2026-05-18-165",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-05-19T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0166",
+    "occurred_at": "2026-05-20T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100166",
+      "person_id": "p-0166",
+      "ref": "HX-0166",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0167",
+    "occurred_at": "2026-05-23T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100167",
+      "person_id": "p-0167",
+      "ref": "HX-0167",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0168",
+    "occurred_at": "2026-05-28T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100168",
+      "person_id": "p-0168",
+      "ref": "HX-0168",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0169",
+    "occurred_at": "2026-05-31T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100169",
+      "person_id": "p-0169",
+      "ref": "HX-0169",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0171",
+    "occurred_at": "2026-06-05T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100171",
+      "person_id": "p-0171",
+      "ref": "HX-0171",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0172",
+    "occurred_at": "2026-06-06T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100172",
+      "person_id": "p-0172",
+      "ref": "HX-0172",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0173",
+    "occurred_at": "2026-06-12T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100173",
+      "person_id": "p-0173",
+      "ref": "HX-0173",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0174",
+    "occurred_at": "2026-06-16T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100174",
+      "person_id": "p-0174",
+      "ref": "HX-0174",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0175",
+    "occurred_at": "2026-06-19T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100175",
+      "person_id": "p-0175",
+      "ref": "HX-0175",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0176",
+    "occurred_at": "2026-06-22T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100176",
+      "person_id": "p-0176",
+      "ref": "HX-0176",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0177",
+    "occurred_at": "2026-06-22T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100177",
+      "person_id": "p-0177",
+      "ref": "HX-0177",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0178",
+    "occurred_at": "2026-06-26T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100178",
+      "person_id": "p-0178",
+      "ref": "HX-0178",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0179",
+    "occurred_at": "2026-06-29T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100179",
+      "person_id": "p-0179",
+      "ref": "HX-0179",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0181",
+    "occurred_at": "2026-07-04T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100181",
+      "person_id": "p-0181",
+      "ref": "HX-0181",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0182",
+    "occurred_at": "2026-07-08T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100182",
+      "person_id": "p-0182",
+      "ref": "HX-0182",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0183",
+    "occurred_at": "2026-07-12T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100183",
+      "person_id": "p-0183",
+      "ref": "HX-0183",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0184",
+    "occurred_at": "2026-07-15T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100184",
+      "person_id": "p-0184",
+      "ref": "HX-0184",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0185",
+    "occurred_at": "2026-07-16T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100185",
+      "person_id": "p-0185",
+      "ref": "HX-0185",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0185",
+    "booking_date": "2026-07-18",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0185",
+    "file_id": "cedar-2026-07-18-185",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-07-18T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0186",
+    "occurred_at": "2026-07-19T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100186",
+      "person_id": "p-0186",
+      "ref": "HX-0186",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0187",
+    "occurred_at": "2026-07-21T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100187",
+      "person_id": "p-0187",
+      "ref": "HX-0187",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0188",
+    "occurred_at": "2026-07-28T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100188",
+      "person_id": "p-0188",
+      "ref": "HX-0188",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0189",
+    "occurred_at": "2026-07-31T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100189",
+      "person_id": "p-0189",
+      "ref": "HX-0189",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0191",
+    "occurred_at": "2026-08-05T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100191",
+      "person_id": "p-0191",
+      "ref": "HX-0191",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0192",
+    "occurred_at": "2026-08-10T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100192",
+      "person_id": "p-0192",
+      "ref": "HX-0192",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0193",
+    "occurred_at": "2026-08-10T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100193",
+      "person_id": "p-0193",
+      "ref": "HX-0193",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0194",
+    "occurred_at": "2026-08-13T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100194",
+      "person_id": "p-0194",
+      "ref": "HX-0194",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0195",
+    "occurred_at": "2026-08-18T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100195",
+      "person_id": "p-0195",
+      "ref": "HX-0195",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0195",
+    "booking_date": "2026-08-20",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0195",
+    "file_id": "cedar-2026-08-20-195",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-08-20T21:00:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0195",
+    "booking_date": "2026-08-20",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0195",
+    "file_id": "cedar-2026-08-20-195",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-08-21T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0196",
+    "occurred_at": "2026-08-20T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100196",
+      "person_id": "p-0196",
+      "ref": "HX-0196",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0197",
+    "occurred_at": "2026-08-20T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100197",
+      "person_id": "p-0197",
+      "ref": "HX-0197",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0198",
+    "occurred_at": "2026-08-26T19:00:00Z",
+    "payload": {
+      "mrn": "MRN-100198",
+      "person_id": "p-0198",
+      "ref": "HX-0198",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0199",
+    "occurred_at": "2026-08-30T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100199",
+      "person_id": "p-0199",
+      "ref": "HX-0199",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0201",
+    "occurred_at": "2026-09-06T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100201",
+      "person_id": "p-0201",
+      "ref": "HX-0201",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0202",
+    "occurred_at": "2026-09-09T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100202",
+      "person_id": "p-0202",
+      "ref": "HX-0202",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0203",
+    "occurred_at": "2026-09-07T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100203",
+      "person_id": "p-0203",
+      "ref": "HX-0203",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0204",
+    "occurred_at": "2026-09-10T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100204",
+      "person_id": "p-0204",
+      "ref": "HX-0204",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0205",
+    "occurred_at": "2026-09-18T00:00:00Z",
+    "payload": {
+      "mrn": "MRN-100205",
+      "person_id": "p-0205",
+      "ref": "HX-0205",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0205",
+    "booking_date": "2026-09-20",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0205",
+    "file_id": "cedar-2026-09-20-205",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-09-20T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0206",
+    "occurred_at": "2026-09-19T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100206",
+      "person_id": "p-0206",
+      "ref": "HX-0206",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0207",
+    "occurred_at": "2026-09-23T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100207",
+      "person_id": "p-0207",
+      "ref": "HX-0207",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0208",
+    "occurred_at": "2026-09-24T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100208",
+      "person_id": "p-0208",
+      "ref": "HX-0208",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0209",
+    "occurred_at": "2026-09-29T03:00:00Z",
+    "payload": {
+      "mrn": "MRN-100209",
+      "person_id": "p-0209",
+      "ref": "HX-0209",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0211",
+    "occurred_at": "2026-10-03T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100211",
+      "person_id": "p-0211",
+      "ref": "HX-0211",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0212",
+    "occurred_at": "2026-10-07T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100212",
+      "person_id": "p-0212",
+      "ref": "HX-0212",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0213",
+    "occurred_at": "2026-10-11T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100213",
+      "person_id": "p-0213",
+      "ref": "HX-0213",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0214",
+    "occurred_at": "2026-10-10T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100214",
+      "person_id": "p-0214",
+      "ref": "HX-0214",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0215",
+    "occurred_at": "2026-10-17T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100215",
+      "person_id": "p-0215",
+      "ref": "HX-0215",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0215",
+    "booking_date": "2026-10-19",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0215",
+    "file_id": "cedar-2026-10-19-215",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-10-19T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0216",
+    "occurred_at": "2026-10-16T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100216",
+      "person_id": "p-0216",
+      "ref": "HX-0216",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0217",
+    "occurred_at": "2026-10-22T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100217",
+      "person_id": "p-0217",
+      "ref": "HX-0217",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0218",
+    "occurred_at": "2026-10-23T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100218",
+      "person_id": "p-0218",
+      "ref": "HX-0218",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0219",
+    "occurred_at": "2026-10-26T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100219",
+      "person_id": "p-0219",
+      "ref": "HX-0219",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0221",
+    "occurred_at": "2026-10-31T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100221",
+      "person_id": "p-0221",
+      "ref": "HX-0221",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0222",
+    "occurred_at": "2026-11-05T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100222",
+      "person_id": "p-0222",
+      "ref": "HX-0222",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0223",
+    "occurred_at": "2026-11-11T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100223",
+      "person_id": "p-0223",
+      "ref": "HX-0223",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0224",
+    "occurred_at": "2026-11-12T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100224",
+      "person_id": "p-0224",
+      "ref": "HX-0224",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0225",
+    "occurred_at": "2026-11-15T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100225",
+      "person_id": "p-0225",
+      "ref": "HX-0225",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0225",
+    "booking_date": "2026-11-17",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0225",
+    "file_id": "cedar-2026-11-17-225",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-11-17T21:00:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0225",
+    "booking_date": "2026-11-17",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0225",
+    "file_id": "cedar-2026-11-17-225",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-11-18T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0226",
+    "occurred_at": "2026-11-15T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100226",
+      "person_id": "p-0226",
+      "ref": "HX-0226",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0227",
+    "occurred_at": "2026-11-22T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100227",
+      "person_id": "p-0227",
+      "ref": "HX-0227",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0228",
+    "occurred_at": "2026-11-23T01:00:00Z",
+    "payload": {
+      "mrn": "MRN-100228",
+      "person_id": "p-0228",
+      "ref": "HX-0228",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0229",
+    "occurred_at": "2026-11-26T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100229",
+      "person_id": "p-0229",
+      "ref": "HX-0229",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0231",
+    "occurred_at": "2026-12-04T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100231",
+      "person_id": "p-0231",
+      "ref": "HX-0231",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0232",
+    "occurred_at": "2026-12-04T22:00:00Z",
+    "payload": {
+      "mrn": "MRN-100232",
+      "person_id": "p-0232",
+      "ref": "HX-0232",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0233",
+    "occurred_at": "2026-12-11T02:00:00Z",
+    "payload": {
+      "mrn": "MRN-100233",
+      "person_id": "p-0233",
+      "ref": "HX-0233",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0234",
+    "occurred_at": "2026-12-11T20:00:00Z",
+    "payload": {
+      "mrn": "MRN-100234",
+      "person_id": "p-0234",
+      "ref": "HX-0234",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0235",
+    "occurred_at": "2026-12-12T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100235",
+      "person_id": "p-0235",
+      "ref": "HX-0235",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "HX-0235",
+    "booking_date": "2026-12-14",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "HX-0235",
+    "file_id": "cedar-2026-12-14-235",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-12-14T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0236",
+    "occurred_at": "2026-12-15T18:00:00Z",
+    "payload": {
+      "mrn": "MRN-100236",
+      "person_id": "p-0236",
+      "ref": "HX-0236",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0237",
+    "occurred_at": "2026-12-20T21:00:00Z",
+    "payload": {
+      "mrn": "MRN-100237",
+      "person_id": "p-0237",
+      "ref": "HX-0237",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0238",
+    "occurred_at": "2026-12-23T23:00:00Z",
+    "payload": {
+      "mrn": "MRN-100238",
+      "person_id": "p-0238",
+      "ref": "HX-0238",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "HX-0239",
+    "occurred_at": "2026-12-24T17:00:00Z",
+    "payload": {
+      "mrn": "MRN-100239",
+      "person_id": "p-0239",
+      "ref": "HX-0239",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "dq-8840",
+    "occurred_at": "2025-09-04T15:20:00Z",
+    "payload": {
+      "consequence": "Fraser Burnaby accepted a BC referral. The price is not on this row; the payer rows are what a bill will quote.",
+      "mrn": "MRN-884021",
+      "person_id": "p-dq-8840",
+      "ref": "dq-8840",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "dq-2204",
+    "occurred_at": "2025-11-20T18:12:00Z",
+    "payload": {
+      "consequence": "The hospital accepted dq-2204 at Fraser Burnaby. A reader that stops on this row directs the patient to that BC site.",
+      "mrn": "MRN-220418",
+      "person_id": "p-dq-2204",
+      "ref": "dq-2204",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralCorrected",
+    "ref": "dq-2204",
+    "occurred_at": "2025-11-21T16:48:00Z",
+    "payload": {
+      "consequence": "This correction was appended and names Cedar Ridge in Washington. The Fraser Burnaby ReferralAccepted row remains in the log, so instructions can name both sites.",
+      "mrn": "MRN-220418",
+      "person_id": "p-dq-2204",
+      "prior_site": "fraser-burnaby",
+      "prior_state": "BC",
+      "ref": "dq-2204",
+      "site": "cedar-ridge",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "AddressRecorded",
+    "ref": "dq-post",
+    "occurred_at": "2026-02-11T19:06:00Z",
+    "payload": {
+      "bc_postal": "98101",
+      "bc_postal_example": "V6B 2W9",
+      "city": "Vancouver",
+      "consequence": "The BC postal field holds ZIP 98101, so a carrier sorts this Vancouver packet toward Seattle. A BC postal code has the shape of V6B 2W9, and the referral letter would leave British Columbia.",
+      "line1": "18 Northline Way",
+      "mrn": "MRN-773014",
+      "person_id": "p-dq-7730",
+      "ref": "dq-post",
+      "region": "BC",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ClerkNote",
+    "ref": "dq-post",
+    "occurred_at": "2026-02-11T20:22:00Z",
+    "payload": {
+      "bc_postal": "98101",
+      "bc_postal_example": "V6B 2W9",
+      "clerk_action": "rejected",
+      "consequence": "The clerk rejected the address and held the letter. The address row at revision 1 still stores 98101, and this note was added beside it.",
+      "note": "Registration rejected this address before the letter went out. The postal field contains 98101. A BC postal code has the shape of V6B 2W9.",
+      "packet": "held",
+      "ref": "dq-post"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "dq-6612",
+    "booking_date": "2026-06-13",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "dq-6612",
+    "file_id": "cedar-2026-06-13-dq6612",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-06-13T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "circ-unauth",
+    "occurred_at": "2026-11-02T16:00:00Z",
+    "payload": {
+      "audience": "public",
+      "body": "All referrals received this week are pre-approved for a slot.",
+      "content_hash": "013f8b00d602148b75888883c7109bad10e7ae0f12af6b3c7801899e611ba601",
+      "doc_id": "circ-unauth",
+      "language": "en",
+      "status": "unauthorized",
+      "version": "circ-2026-11"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "hours-cedar-fr",
+    "occurred_at": "2026-12-01T16:00:00Z",
+    "payload": {
+      "audience": "public",
+      "body": "La clinique de Cedar Ridge ferme \u00e0 21 h.",
+      "content_hash": "6e3863116f72c3f59189c20a1076f70abf0b093f588c323c8a518a9164768090",
+      "doc_id": "hours-cedar-fr",
+      "language": "fr",
+      "status": "in_flight",
+      "version": "2026-summer"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "quote-harbor",
+    "occurred_at": "2027-01-04T18:00:00Z",
+    "payload": {
+      "audience": "procurement",
+      "body": "Harbor Coverage renewal quotation CAD 18420 for calendar 2027.",
+      "content_hash": "ba0f203788cb62c37a1ebba227d9c4bedd1dbab533d83fda85c9631c07f188ad",
+      "doc_id": "quote-harbor",
+      "language": "en",
+      "status": "in_force",
+      "version": "q-2027"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "leaflet-hours",
+    "occurred_at": "2027-01-05T18:00:00Z",
+    "payload": {
+      "audience": "public",
+      "body": "Northline publishes clinic hours on the public page. This page has no patient identifiers.",
+      "content_hash": "b59e3a339bba09a6269a30fbf903037eaafd0675a31b1a15d70082b327c59bcc",
+      "doc_id": "leaflet-hours",
+      "language": "en",
+      "status": "in_force",
+      "version": "leaf-2027"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "wage-band",
+    "occurred_at": "2027-01-06T18:00:00Z",
+    "payload": {
+      "audience": "payroll",
+      "body": "Synthetic payroll band W-4 for a test employee. Not a real wage.",
+      "content_hash": "2e28e50f97ca9685a97e972d53cd0665f24671d1b164af74ae65fc4790797997",
+      "doc_id": "wage-band",
+      "language": "en",
+      "status": "in_force",
+      "version": "w-4"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "hours-cedar-copy",
+    "occurred_at": "2027-01-10T02:00:00Z",
+    "payload": {
+      "audience": "public",
+      "body": "Cedar Ridge evening clinic closes at 9:00 p.m. Pacific.",
+      "content_hash": "938842e16e331445bc96a144d0c5ff0700687832660d4b6bff0052e3b8290a68",
+      "doc_id": "hours-cedar-copy",
+      "language": "en",
+      "status": "in_force",
+      "version": "2027-winter"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReturnPosted",
+    "ref": "REF-3304",
+    "occurred_at": "2027-01-10T15:20:00Z",
+    "payload": {
+      "ref": "REF-3304",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SlotOffered",
+    "ref": "REF-5510",
+    "occurred_at": "2027-01-11T22:00:00Z",
+    "payload": {
+      "offer_id": "offer-a",
+      "ref": "REF-5510",
+      "site": "cascade-seattle",
+      "version": "slot-v3"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SlotOffered",
+    "ref": "REF-5510",
+    "occurred_at": "2027-01-11T22:04:00Z",
+    "payload": {
+      "offer_id": "offer-b",
+      "ref": "REF-5510",
+      "site": "cascade-seattle",
+      "version": "slot-v3"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "POISON-1",
+    "booking_date": "2027-01-08",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "POISON-1",
+    "file_id": "cedar-poison-2026",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-01-08T21:00:00Z",
+    "trailer_ok": false,
+    "trailer_count": 12,
+    "body_count": 11
+  },
+  {
+    "kind": "mart",
+    "ref": "WEEKEND-1",
+    "booking_date": "2027-01-09",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "WEEKEND-1",
+    "file_id": "cedar-2027-01-09",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-01-09T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "PolicyNoted",
+    "ref": "org-letter",
+    "occurred_at": "2026-12-14T22:40:00Z",
+    "payload": {
+      "ref": "org-letter",
+      "role_id": "endocrine-clinician",
+      "site": "fraser-burnaby",
+      "statement": "The referral letter stays with clinicians. A model does not grade it. A disclaimer on the assistant does not change that.",
+      "stream_id": "org-letter",
+      "title": "Endocrine clinician"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "PolicyNoted",
+    "ref": "org-letter",
+    "occurred_at": "2026-12-16T18:00:00Z",
+    "payload": {
+      "ref": "org-letter",
+      "role_id": "privacy-officer",
+      "site": "cascade-seattle",
+      "statement": "Upload of referral letters is blocked. The letter corpus stays on the hospital side. Do not send letters from cascade-seattle, cedar-ridge, or fraser-burnaby to a sponsor model or to an external scorer.",
+      "stream_id": "org-letter",
+      "title": "Privacy officer"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "PolicyNoted",
+    "ref": "org-wait",
+    "occurred_at": "2027-01-08T18:10:00Z",
+    "payload": {
+      "office_id": "cascade-records",
+      "ref": "org-wait",
+      "role_id": "cascade-records",
+      "site": "cascade-seattle",
+      "statement": "The Cascade records board starts when the referral is accepted into the hospital record. We will not replace that board with the desk's number, and we will not publish a second number beside it.",
+      "stream_id": "org-wait",
+      "title": "Records officer"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "PolicyNoted",
+    "ref": "org-file",
+    "occurred_at": "2027-01-09T21:05:00Z",
+    "payload": {
+      "file_id": "cedar-2027-01-09",
+      "ref": "org-file",
+      "role_id": "cedar-clerk",
+      "site": "cedar-ridge",
+      "slot_api": false,
+      "statement": "Cedar Ridge has no slot API. The nightly file cedar-2027-01-09 is what I released. I file at night, including weekends. I will not add a booking because a caller said they were booked tonight.",
+      "stream_id": "org-file",
+      "title": "Nightly file clerk"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "LeavePosted",
+    "ref": "org-leave",
+    "occurred_at": "2027-01-09T21:30:00Z",
+    "payload": {
+      "away_from": "2027-01-10",
+      "away_to": "2027-01-11",
+      "clinician_role_id": "endocrine-clinician",
+      "clinician_site": "fraser-burnaby",
+      "office_id": "cascade-records",
+      "ref": "org-leave",
+      "role_id": "cascade-records",
+      "site": "cascade-seattle",
+      "statement": "Leave for the Fraser Burnaby endocrine clinician is on the hospital record from 2027-01-10 through 2027-01-11. A Vancouver desk session was already open earlier on 2027-01-09. The letter stays with clinicians.",
+      "stream_id": "org-leave",
+      "title": "Records officer"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "THR-17",
+    "occurred_at": "2027-01-07T17:05:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "person-thr-17",
+      "ref": "THR-17",
+      "site": "cedar-ridge",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "LetterStored",
+    "ref": "THR-17",
+    "occurred_at": "2027-01-07T18:20:00Z",
+    "payload": {
+      "audience": "coordinator",
+      "ref": "THR-17",
+      "text": "Filed desk transcript for THR-17. Transcript says the Cedar Ridge visit was booked for 6 January."
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SlotOffered",
+    "ref": "THR-17",
+    "occurred_at": "2027-01-07T22:15:00Z",
+    "payload": {
+      "offer_id": "offer-thr-17",
+      "ref": "THR-17",
+      "site": "cedar-ridge",
+      "version": "slot-thr-17"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "THR-17",
+    "booking_date": "2027-01-08",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "THR-17",
+    "file_id": "thr-cedar-2027-01-08",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-01-08T21:00:00Z"
+  },
+  {
+    "kind": "eligibility_cache",
+    "ref": "THR-17",
+    "eligible": true,
+    "window_present": false,
+    "occurred_at": "2027-01-09T21:12:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "THR-17",
+    "booking_date": "2027-01-08",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "THR-17",
+    "file_id": "thr-cedar-2027-01-08",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-01-10T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ReferralHidden",
+    "ref": "LEG-2201",
+    "occurred_at": "2027-01-10T15:00:00Z",
+    "payload": {
+      "coordinator_note": "The coordinator is waiting on the imaging addendum before a clinic date is set.",
+      "patient_api": "omit",
+      "patient_text": "Your referral is with the imaging clinic.",
+      "ref": "LEG-2201",
+      "status": "pending"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "leg-dms-draft",
+    "occurred_at": "2027-01-10T18:30:00Z",
+    "payload": {
+      "audience": "public",
+      "body": "Cedar Ridge draft hours close at 5:00 p.m. Pacific.",
+      "content_hash": "0598e29166d0891099c1a1c18239451188dbc4a20e74a29f448ac2ac9cf140f8",
+      "doc_id": "leg-dms-draft",
+      "language": "en",
+      "status": "draft",
+      "version": "2027-01-10-draft"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "LEG-2201",
+    "booking_date": "2027-01-11",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "LEG-2201",
+    "file_id": "cedar-legacy-2027-01-11",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-01-11T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "SlotApiAbsent",
+    "ref": "LEG-2201",
+    "occurred_at": "2027-01-11T21:05:00Z",
+    "payload": {
+      "file_id": "cedar-legacy-2027-01-11",
+      "ref": "LEG-2201",
+      "site": "cedar-ridge"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "INT-17",
+    "booking_date": "2027-01-11",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "INT-17",
+    "file_id": "int-file-17",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-01-11T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "SlotCancelled",
+    "ref": "INT-17",
+    "occurred_at": "2027-01-11T18:10:00Z",
+    "payload": {
+      "booking_date": "2027-01-11",
+      "cancelled_at": "2027-01-11T18:10:00Z",
+      "clinic": "ENDO-CLN",
+      "file_id": "int-file-17",
+      "filed_at": "2027-01-11T21:00:00Z",
+      "ref": "INT-17",
+      "site": "cedar-ridge",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "MorningBoard",
+    "ref": "int-board-morning",
+    "occurred_at": "2027-01-12T15:22:00Z",
+    "payload": {
+      "board": "morning",
+      "read_date": "2027-01-12",
+      "shown_date": "2027-01-11"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HashRecorded",
+    "ref": "sec-hours-hash",
+    "occurred_at": "2027-01-10T02:40:00Z",
+    "payload": {
+      "body_hash": "8c0e85b50b3902dd04d7971b1268f72465461cd43f54bb7731560aed90a8aa50",
+      "doc_id": "hours-cedar-copy",
+      "stored_hash": "938842e16e331445bc96a144d0c5ff0700687832660d4b6bff0052e3b8290a68",
+      "version": "2027-winter"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "CopyRecorded",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-10T16:12:00Z",
+    "payload": {
+      "call_id": "call-west",
+      "destination_region": "us-east-1",
+      "endpoint_region": "us-west-2",
+      "http_status": 200,
+      "job": "copy",
+      "member_desk": "America/Vancouver",
+      "object_where": "hospital letter for REF-4417",
+      "processor_region": "us-east-1",
+      "ref": "REF-4417"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "AttachmentRecorded",
+    "ref": "sec-hours-packet",
+    "occurred_at": "2027-01-10T18:05:00Z",
+    "payload": {
+      "attached_doc_id": "wage-band",
+      "attached_where": "document wage-band",
+      "packet_docs": [
+        "leaflet-hours",
+        "hours-cedar"
+      ],
+      "packet_id": "hours-packet-cedar"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "BreakGlassRecorded",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-11T04:12:00Z",
+    "payload": {
+      "action": "break-glass",
+      "object_where": "hospital letter for REF-4417",
+      "reason": "Night coverage for REF-4417 at the Vancouver desk.",
+      "ref": "REF-4417",
+      "reviewer": null,
+      "role": "on-call physician"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "AccessRecorded",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-11T21:06:00Z",
+    "payload": {
+      "action": "slot-write",
+      "ref": "REF-4417",
+      "shadow_id": "sh-1",
+      "wrote_slot": true
+    }
+  },
+  {
+    "kind": "event",
+    "type": "VisitCancelled",
+    "ref": "CUR-4",
+    "occurred_at": "2027-01-13T21:00:00Z",
+    "payload": {
+      "file_id": "cedar-cur-2027-01-13",
+      "ref": "CUR-4",
+      "site": "cedar-ridge",
+      "visit_state": "cancelled"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "FaqBodyStored",
+    "ref": "cur-faq",
+    "occurred_at": "2027-01-14T18:00:00Z",
+    "payload": {
+      "body": "Patient reports urgent chest pain.",
+      "faq_id": "faq-mixed-cur"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0001",
+    "occurred_at": "2025-02-06T14:12:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0001",
+      "ref": "R2B-0001",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0002",
+    "occurred_at": "2025-02-10T11:24:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0002",
+      "ref": "R2B-0002",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0003",
+    "occurred_at": "2025-02-14T17:36:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0003",
+      "ref": "R2B-0003",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0004",
+    "occurred_at": "2025-02-18T11:04:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0004",
+      "ref": "R2B-0004",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0006",
+    "occurred_at": "2025-02-26T12:50:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0006",
+      "ref": "R2B-0006",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0007",
+    "occurred_at": "2025-03-02T12:04:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0007",
+      "ref": "R2B-0007",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0008",
+    "occurred_at": "2025-03-06T15:24:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0008",
+      "ref": "R2B-0008",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0009",
+    "occurred_at": "2025-03-10T14:00:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0009",
+      "ref": "R2B-0009",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0011",
+    "occurred_at": "2025-03-18T12:18:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0011",
+      "ref": "R2B-0011",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0012",
+    "occurred_at": "2025-03-22T13:18:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0012",
+      "ref": "R2B-0012",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0013",
+    "occurred_at": "2025-03-26T13:48:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0013",
+      "ref": "R2B-0013",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0014",
+    "occurred_at": "2025-03-30T17:43:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0014",
+      "ref": "R2B-0014",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0016",
+    "occurred_at": "2025-04-07T18:08:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0016",
+      "ref": "R2B-0016",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0017",
+    "occurred_at": "2025-04-11T14:14:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0017",
+      "ref": "R2B-0017",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0018",
+    "occurred_at": "2025-04-15T17:42:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0018",
+      "ref": "R2B-0018",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0019",
+    "occurred_at": "2025-04-19T11:22:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0019",
+      "ref": "R2B-0019",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0021",
+    "occurred_at": "2025-04-27T16:31:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0021",
+      "ref": "R2B-0021",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0022",
+    "occurred_at": "2025-05-01T16:04:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0022",
+      "ref": "R2B-0022",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0023",
+    "occurred_at": "2025-05-05T17:33:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0023",
+      "ref": "R2B-0023",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0024",
+    "occurred_at": "2025-05-09T11:02:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0024",
+      "ref": "R2B-0024",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0026",
+    "occurred_at": "2025-05-17T18:01:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0026",
+      "ref": "R2B-0026",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0027",
+    "occurred_at": "2025-05-21T12:09:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0027",
+      "ref": "R2B-0027",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0028",
+    "occurred_at": "2025-05-25T10:21:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0028",
+      "ref": "R2B-0028",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0029",
+    "occurred_at": "2025-05-29T14:31:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0029",
+      "ref": "R2B-0029",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0031",
+    "occurred_at": "2025-06-06T10:43:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0031",
+      "ref": "R2B-0031",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0032",
+    "occurred_at": "2025-06-10T12:22:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0032",
+      "ref": "R2B-0032",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0033",
+    "occurred_at": "2025-06-14T13:29:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0033",
+      "ref": "R2B-0033",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0034",
+    "occurred_at": "2025-06-18T18:02:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0034",
+      "ref": "R2B-0034",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0036",
+    "occurred_at": "2025-06-26T15:43:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0036",
+      "ref": "R2B-0036",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0037",
+    "occurred_at": "2025-06-30T11:30:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0037",
+      "ref": "R2B-0037",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0038",
+    "occurred_at": "2025-07-04T15:23:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0038",
+      "ref": "R2B-0038",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0039",
+    "occurred_at": "2025-07-08T13:23:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0039",
+      "ref": "R2B-0039",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0041",
+    "occurred_at": "2025-07-16T14:15:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0041",
+      "ref": "R2B-0041",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0042",
+    "occurred_at": "2025-07-20T13:01:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0042",
+      "ref": "R2B-0042",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0043",
+    "occurred_at": "2025-07-24T16:25:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0043",
+      "ref": "R2B-0043",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0044",
+    "occurred_at": "2025-07-28T18:05:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0044",
+      "ref": "R2B-0044",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0046",
+    "occurred_at": "2025-08-05T14:04:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0046",
+      "ref": "R2B-0046",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2B-0047",
+    "occurred_at": "2025-08-09T16:08:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0047",
+      "ref": "R2B-0047",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "OnboardingNoted",
+    "ref": "r2a-onboard-fb",
+    "occurred_at": "2027-01-12T17:05:00Z",
+    "payload": {
+      "application_status": "lodged",
+      "note": "Fraser Burnaby recorded the lodged clinic application on the hospital record.",
+      "packet": "clinic-onboarding",
+      "ref": "r2a-onboard-fb",
+      "region": "BC",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "OnboardingNoted",
+    "ref": "r2a-onboard-fb",
+    "occurred_at": "2027-01-12T20:15:00Z",
+    "payload": {
+      "note": "The referral letter stays on the hospital side.",
+      "packet_site": "fraser-burnaby",
+      "ref": "r2a-onboard-fb",
+      "role_id": "privacy-officer",
+      "site": "cascade-seattle",
+      "title": "Privacy officer"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "r2a-quote-18420",
+    "occurred_at": "2027-01-13T19:00:00Z",
+    "payload": {
+      "amount": 9600,
+      "audience": "procurement",
+      "body": "Fraser Burnaby clinic onboarding quotation QUO-18420. Supplier id SUP-14. Amount 9600 CAD.",
+      "content_hash": "e0d34f9580acb9c37a65221caa34ffd423f47f3d6faf041db9b80115f201f0d6",
+      "currency": "CAD",
+      "doc_id": "r2a-quo-18420",
+      "language": "en",
+      "packet_ref": "r2a-onboard-fb",
+      "quote_id": "QUO-18420",
+      "ref": "r2a-quote-18420",
+      "site": "fraser-burnaby",
+      "status": "in_force",
+      "supplier_id": "SUP-14",
+      "version": "2027-01-13"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "r2a-sat-file",
+    "booking_date": "2027-01-16",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "r2a-sat-file",
+    "file_id": "cedar-r2a-2027-01-16",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-01-16T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "r2c-dms-fraser",
+    "occurred_at": "2027-01-11T18:00:00Z",
+    "payload": {
+      "audience": "public",
+      "body": "Fraser Burnaby draft hours close at 4:00 p.m. Pacific.",
+      "content_hash": "e2ddb7939a05de3310a430feba40fb3768d4f3ccaa9eea60d95caf5ddadbd942",
+      "doc_id": "dms-draft-fraser",
+      "language": "en",
+      "site": "fraser-burnaby",
+      "status": "draft",
+      "version": "2027-01-draft"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReadModelServed",
+    "ref": "R2C-CS",
+    "occurred_at": "2027-01-12T17:00:00Z",
+    "payload": {
+      "clinic_name": "Cascade day clinic",
+      "ref": "R2C-CS",
+      "rev": 1,
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralCorrected",
+    "ref": "R2C-CS",
+    "occurred_at": "2027-01-12T19:30:00Z",
+    "payload": {
+      "clinic_name": "Cascade endocrine",
+      "ref": "R2C-CS",
+      "rev": 2,
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "FeedExported",
+    "ref": "R2C-FR",
+    "occurred_at": "2027-01-13T16:00:00Z",
+    "payload": {
+      "ref": "R2C-FR",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "FeedExported",
+    "ref": "R2C-CD",
+    "occurred_at": "2027-01-13T16:10:00Z",
+    "payload": {
+      "ref": "R2C-CD",
+      "site": "cedar-ridge"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "LeavePosted",
+    "ref": "R2C-LEAVE",
+    "occurred_at": "2027-01-18T17:05:00Z",
+    "payload": {
+      "clinician_id": "clin-r2c-endo",
+      "local_date": "2027-01-18",
+      "local_time": "09:05",
+      "ref": "R2C-LEAVE",
+      "session_id": "sess-r2c-leave",
+      "site": "fraser-burnaby",
+      "zone": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2D-7",
+    "occurred_at": "2027-01-19T17:05:00Z",
+    "payload": {
+      "member_id": "MRN-R2D-7",
+      "person_id": "p-r2d-7",
+      "ref": "R2D-7",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "IdentifierRecorded",
+    "ref": "R2D-7",
+    "occurred_at": "2027-01-19T18:20:00Z",
+    "payload": {
+      "member_id": "MRN-R2D-7",
+      "person_id": "p-r2d-7",
+      "recorded_on": "hospital",
+      "ref": "R2D-7",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SlotOffered",
+    "ref": "R2D-7",
+    "occurred_at": "2027-01-21T22:00:00Z",
+    "payload": {
+      "offer_id": "offer-r2d-7",
+      "person_id": "p-r2d-7",
+      "ref": "R2D-7",
+      "site": "fraser-burnaby",
+      "version": "slot-r2d-7"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R2E-9",
+    "occurred_at": "2027-01-11T16:20:00Z",
+    "payload": {
+      "member_id": "MBR-OLD-9",
+      "member_region": "BC",
+      "person_id": "p-r2e-9",
+      "ref": "R2E-9",
+      "site": "cedar-ridge",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "MigrationNote",
+    "ref": "R2E-9",
+    "occurred_at": "2027-01-27T19:05:00Z",
+    "payload": {
+      "current_member_id": "MBR-R2E-9",
+      "person_id": "p-r2e-9",
+      "previous_member_id": "MBR-OLD-9",
+      "ref": "R2E-9"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ClosureListed",
+    "ref": "R2E-9",
+    "occurred_at": "2027-02-01T16:30:00Z",
+    "payload": {
+      "closed_office_days": [
+        "2027-02-15"
+      ],
+      "ref": "R2E-9",
+      "site": "cedar-ridge",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "R2E-9",
+    "booking_date": "2027-02-15",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "R2E-9",
+    "file_id": "cedar-r2e-2027-02-15",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-02-15T21:00:00Z",
+    "trailer_ok": true,
+    "trailer_count": 9,
+    "body_count": 9
+  },
+  {
+    "kind": "eligibility_cache",
+    "ref": "R2E-9",
+    "eligible": true,
+    "window_present": false,
+    "occurred_at": "2027-02-16T23:40:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ClinicNoted",
+    "ref": "R2F-ORD",
+    "occurred_at": "2026-08-02",
+    "payload": {
+      "person_id": "p-r2f-ord",
+      "ref": "R2F-ORD",
+      "site": "cedar-ridge"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ClinicNoted",
+    "ref": "R2F-ORD",
+    "occurred_at": "2026-08-01",
+    "payload": {
+      "person_id": "p-r2f-ord",
+      "ref": "R2F-ORD",
+      "site": "cedar-ridge"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SourceRowMigrated",
+    "ref": "R2F-14",
+    "occurred_at": "2024-03-14T16:10:00Z",
+    "payload": {
+      "person_id": "p-r2f-14",
+      "ref": "R2F-14",
+      "source": "desk-spreadsheet-2024",
+      "source_row": "S-14"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SourceRowMigrated",
+    "ref": "R2F-15",
+    "occurred_at": "2024-03-18T16:10:00Z",
+    "payload": {
+      "person_id": "p-r2f-15",
+      "ref": "R2F-15",
+      "source": "desk-spreadsheet-2024",
+      "source_row": "S-15"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SourceRowMigrated",
+    "ref": "R2F-99",
+    "occurred_at": "2024-10-02T16:10:00Z",
+    "payload": {
+      "person_id": "p-r2f-99",
+      "ref": "R2F-99",
+      "source": "desk-spreadsheet-2024",
+      "source_row": "S-14"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "AddressRecorded",
+    "ref": "R2H-WA",
+    "occurred_at": "2027-01-11T17:05:00Z",
+    "payload": {
+      "city": "Seattle",
+      "line1": "90 Northline Avenue",
+      "note": "Cascade Seattle site address for this Washington row.",
+      "ref": "R2H-WA",
+      "region": "WA",
+      "site": "cascade-seattle",
+      "zip": "98101"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ClinicListed",
+    "ref": "R3A-MERGE",
+    "occurred_at": "2025-06-02T16:00:00Z",
+    "payload": {
+      "ref": "R3A-MERGE",
+      "region": "WA",
+      "site": "inlet-medical",
+      "state": "WA",
+      "statement": "inlet-medical is a clinic in WA.",
+      "timezone": "America/Los_Angeles"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "R3A-MERGE",
+    "occurred_at": "2026-08-12T17:30:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r3a-1",
+      "ref": "R3A-MERGE",
+      "site": "inlet-medical",
+      "state": "WA",
+      "statement": "Person p-r3a-1 is on the inlet-medical record in WA.",
+      "timezone": "America/Los_Angeles"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ClinicMerged",
+    "ref": "R3A-MERGE",
+    "occurred_at": "2026-09-01T16:00:00Z",
+    "payload": {
+      "merged_on": "2026-09-01",
+      "new_site": "cedar-ridge",
+      "new_site_slot_api": false,
+      "new_site_timezone": "America/Los_Angeles",
+      "new_state": "WA",
+      "old_site": "inlet-medical",
+      "old_state": "WA",
+      "person_id": "p-r3a-1",
+      "ref": "R3A-MERGE",
+      "statement": "Clinic inlet-medical in WA is merged into cedar-ridge."
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "R3A-MERGE",
+    "booking_date": "2026-11-02",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "R3A-MERGE",
+    "file_id": "inlet-2026-11-02",
+    "site": "inlet-medical",
+    "occurred_at": "2026-11-02T21:00:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "R3A-MERGE",
+    "booking_date": "2026-11-02",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "R3A-MERGE",
+    "file_id": "cedar-r3a-2026-11-02",
+    "site": "cedar-ridge",
+    "occurred_at": "2026-11-02T22:10:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "IdentifierRecorded",
+    "ref": "R3C-1",
+    "occurred_at": "2026-04-08T17:40:00Z",
+    "payload": {
+      "mrn": "MRN-R3C-1",
+      "person_id": "p-r3c-1",
+      "recorded_on": "hospital",
+      "ref": "R3C-1",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ChartOpened",
+    "ref": "R3C-1",
+    "occurred_at": "2026-04-08T19:05:00Z",
+    "payload": {
+      "note": "Chart opened for p-r3c-2. This command stores no phone.",
+      "person_id": "p-r3c-2",
+      "ref": "R3C-1",
+      "site": "fraser-burnaby",
+      "state": "BC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "PhoneRecorded",
+    "ref": "R3C-1",
+    "occurred_at": "2026-04-09T16:20:00Z",
+    "payload": {
+      "copied_from_command_id": "cmd-r3c-request",
+      "note": "Phone 604-555-2770 was copied onto person_id p-r3c-2.",
+      "person_id": "p-r3c-2",
+      "phone": "604-555-2770",
+      "ref": "R3C-1",
+      "site": "fraser-burnaby"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "IdentitySplit",
+    "ref": "R3C-1",
+    "occurred_at": "2026-04-16T18:55:00Z",
+    "payload": {
+      "bindings": [
+        {
+          "person_id": "p-r3c-1",
+          "phone": "604-555-2770"
+        },
+        {
+          "person_id": "p-r3c-2",
+          "phone": "604-555-2771"
+        }
+      ],
+      "note": "This event stores phone 604-555-2770 on p-r3c-1 and phone 604-555-2771 on p-r3c-2. cmd-r3c-phone-copy remains in the log.",
+      "other_person_id": "p-r3c-2",
+      "other_phone": "604-555-2771",
+      "person_id": "p-r3c-1",
+      "phone": "604-555-2770",
+      "prior_command_id": "cmd-r3c-phone-copy",
+      "ref": "R3C-1"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2024-06-03T17:00:00Z",
+    "payload": {
+      "audience": "finance",
+      "body": "Contract MA-2024 between the Vancouver desk and harbor-coverage. The office week is printed as \"Monday through Friday\". The currency of record for BC members is CAD. The fee clause is 12 CAD.",
+      "content_hash": "9f73143cafcdeec1bec8733a1a72b346834002f40fae463a400d390b4f648322",
+      "contract_id": "MA-2024",
+      "doc_id": "MA-2024",
+      "language": "en",
+      "status": "in_force",
+      "version": "1"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RetentionNote",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2024-06-03T17:40:00Z",
+    "payload": {
+      "contract_id": "MA-2024",
+      "doc_id": "MA-2024",
+      "keep_years": 7
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2026-08-01",
+    "payload": {
+      "audience": "finance",
+      "body": "Contract MA-2024 between the Vancouver desk and harbor-coverage. The office week is printed as \"Monday through Friday\". The currency of record for BC members is CAD. The fee clause changes from 12 CAD to 14 CAD.",
+      "content_hash": "df58cb8425fd1a45a396747525bea109a1d9b59f23695dbcbdf1e6aa99086a73",
+      "contract_id": "MA-2024",
+      "doc_id": "MA-2024",
+      "language": "en",
+      "status": "in_force",
+      "version": "2"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "StatusNoted",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2026-08-01",
+    "payload": {
+      "contract_id": "MA-2024",
+      "doc_id": "MA-2024",
+      "status": "superseded",
+      "version": "1"
+    }
+  },
+  {
+    "kind": "mart",
+    "ref": "R3E-SYNC",
+    "booking_date": "2027-01-18",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "R3E-SYNC",
+    "file_id": "cedar-r3e-2027-01-18",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-01-18T21:00:00Z",
+    "trailer_ok": true,
+    "trailer_count": 8,
+    "body_count": 8
+  },
+  {
+    "kind": "event",
+    "type": "ReplicaCursor",
+    "ref": "R3E-SYNC",
+    "occurred_at": "2027-01-18T22:10:00Z",
+    "payload": {
+      "file_id": "cedar-r3e-2027-01-18",
+      "ref": "R3E-SYNC",
+      "replica": "cedar-copy",
+      "seq_caught": 14,
+      "source_stream": "r3e-sync"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReplicaCursor",
+    "ref": "R3E-SYNC",
+    "occurred_at": "2027-01-18T22:16:00Z",
+    "payload": {
+      "file_id": "cedar-r3e-2027-01-18",
+      "ref": "R3E-SYNC",
+      "replica": "cascade-copy",
+      "seq_caught": 10,
+      "source_stream": "r3e-sync"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReplicaExport",
+    "ref": "R3E-SYNC",
+    "occurred_at": "2027-01-19T14:40:00Z",
+    "payload": {
+      "amount": 90,
+      "currency": "USD",
+      "file_id": "cedar-r3e-2027-01-18",
+      "ref": "R3E-SYNC",
+      "replica": "cedar-copy",
+      "source_stream": "r3e-sync"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReplicaExport",
+    "ref": "R3E-SYNC",
+    "occurred_at": "2027-01-19T14:46:00Z",
+    "payload": {
+      "amount": 90,
+      "currency": "CAD",
+      "file_id": "cedar-r3e-2027-01-18",
+      "ref": "R3E-SYNC",
+      "replica": "cascade-copy",
+      "source_stream": "r3e-sync"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "BoardPrinted",
+    "ref": "R3F-LEDGER",
+    "occurred_at": "2027-01-21T15:00:00Z",
+    "payload": {
+      "amount": 18420,
+      "board": "finance",
+      "currency": "USD",
+      "ref": "R3F-LEDGER",
+      "source": "cascade-copy"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "CopyHeld",
+    "ref": "R3F-LEDGER",
+    "occurred_at": "2027-01-21T14:20:00Z",
+    "payload": {
+      "lines": [
+        {
+          "amount": 18420,
+          "book": "hospital-finance",
+          "currency": "USD"
+        }
+      ],
+      "ref": "R3F-LEDGER",
+      "source": "cascade-copy"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "AmountPosted",
+    "ref": "R3F-LEDGER",
+    "occurred_at": "2027-01-20T19:00:00Z",
+    "payload": {
+      "amount": 18420,
+      "book": "hospital-finance",
+      "currency": "USD",
+      "ref": "R3F-LEDGER",
+      "site": "cascade-seattle"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SiteRecorded",
+    "ref": "R3F-LEDGER",
+    "occurred_at": "2027-01-20T15:10:00Z",
+    "payload": {
+      "ref": "R3F-LEDGER",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ConsentNoted",
+    "ref": "R3G-CONSENT",
+    "occurred_at": "2027-01-19T17:35:00Z",
+    "payload": {
+      "consent_recorded": false,
+      "person_id": "p-r3g-1",
+      "policy": "Cedar Ridge desk policy records the letter file with consent_recorded false.",
+      "ref": "R3G-CONSENT",
+      "scope": "letter file",
+      "site": "cedar-ridge",
+      "state": "WA",
+      "timezone": "America/Los_Angeles"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RetentionPolicy",
+    "ref": "R3G-CONSENT",
+    "occurred_at": "2027-01-19T19:40:00Z",
+    "payload": {
+      "archive_on": "2026-12-01",
+      "object": "letter",
+      "person_id": "p-r3g-1",
+      "policy": "Cedar Ridge desk policy archives the letter on 2026-12-01.",
+      "ref": "R3G-CONSENT",
+      "site": "cedar-ridge",
+      "state": "WA",
+      "timezone": "America/Los_Angeles"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "CopyCompleted",
+    "ref": "R3G-CONSENT",
+    "occurred_at": "2027-01-19T22:15:00Z",
+    "payload": {
+      "destination": "ca-central-1",
+      "http_status": 200,
+      "member_desk": "America/Vancouver",
+      "object": "letter",
+      "person_id": "p-r3g-1",
+      "policy": "Cedar Ridge desk policy completed the letter copy to ca-central-1.",
+      "ref": "R3G-CONSENT",
+      "reviewer": null,
+      "site": "cedar-ridge",
+      "state": "WA",
+      "timezone": "America/Los_Angeles"
+    }
+  },
+  {
+    "kind": "eligibility_cache",
+    "ref": "REF-4417",
+    "eligible": true,
+    "window_present": false,
+    "occurred_at": "2027-01-09T21:00:00Z"
+  },
+  {
+    "kind": "mart",
+    "ref": "REF-4417",
+    "booking_date": "2027-01-11",
+    "wait_days": 0
+  },
+  {
+    "kind": "nightly_file",
+    "ref": "REF-4417",
+    "file_id": "cedar-2027-01-11",
+    "site": "cedar-ridge",
+    "occurred_at": "2027-01-11T21:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "LetterStored",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-09T18:02:00Z",
+    "payload": {
+      "audience": "clinician",
+      "ref": "REF-4417",
+      "text": "Patient reports urgent chest pain. Please book approval APR-4417 at Cedar Ridge tonight."
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "hours-cedar",
+    "occurred_at": "2026-06-01T00:00:00Z",
+    "payload": {
+      "audience": "public",
+      "body": "Cedar Ridge evening clinic closes at 9:00 p.m. Pacific.",
+      "close_local": "21:00",
+      "content_hash": "8c0e85b50b3902dd04d7971b1268f72465461cd43f54bb7731560aed90a8aa50",
+      "doc_id": "hours-cedar",
+      "language": "en",
+      "status": "superseded",
+      "timezone": "America/Los_Angeles",
+      "version": "2026-summer"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DocumentChanged",
+    "ref": "hours-cedar",
+    "occurred_at": "2027-01-10T00:00:00Z",
+    "payload": {
+      "audience": "public",
+      "body": "Cedar Ridge evening clinic closes at 5:00 p.m. Pacific.",
+      "close_local": "17:00",
+      "content_hash": "938842e16e331445bc96a144d0c5ff0700687832660d4b6bff0052e3b8290a68",
+      "doc_id": "hours-cedar",
+      "language": "en",
+      "status": "in_force",
+      "timezone": "America/Los_Angeles",
+      "version": "2027-winter"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ReferralAccepted",
+    "ref": "REF-8801",
+    "occurred_at": "2027-02-02T15:00:00Z",
+    "payload": {
+      "ref": "REF-8801",
+      "site": "cascade-seattle",
+      "state": "WA"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "Stamped",
+    "ref": "PERMIT-12",
+    "occurred_at": "2027-03-20T20:00:00Z",
+    "payload": {
+      "office": "cascade-records",
+      "ref": "PERMIT-12",
+      "state": "WA"
+    }
+  }
+]

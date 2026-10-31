@@ -1,0 +1,333 @@
+[
+  {
+    "type": "DeskSession",
+    "occurred_at": "2027-01-09T08:10:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "factor": "screen-code-then-sms",
+      "session_id": "sess-8841",
+      "token_subject": "member-bc-4417"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2026-11-01T08:30:00Z",
+    "payload": {
+      "local_stamps": [
+        "2026-11-01T01:30:00-07:00",
+        "2026-11-01T01:30:00-08:00"
+      ],
+      "note": "the desk recorded the same civil time twice on the fall-back morning"
+    }
+  },
+  {
+    "type": "DeskSession",
+    "occurred_at": "2027-01-06T15:40:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "factor": "screen-code",
+      "person_id": "person-thr-17",
+      "phone": "604-555-0177",
+      "postal": "V6B 1A1",
+      "ref": "THR-17",
+      "session_id": "sess-thr-17",
+      "token_subject": "member-bc-thr-17",
+      "zone": "America/Vancouver"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-11T16:30:00Z",
+    "payload": {
+      "note": "Patient told the visit was booked. The file night is a different date.",
+      "ref": "THR-17",
+      "role": "clerk"
+    }
+  },
+  {
+    "type": "DeskSession",
+    "occurred_at": "2027-01-09T08:22:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "factor": "screen-code-then-sms",
+      "screen_code": "4417",
+      "session_id": "sess-7710",
+      "token_subject": "member-bc-4417"
+    }
+  },
+  {
+    "type": "DeskSession",
+    "occurred_at": "2027-01-09T11:05:00Z",
+    "payload": {
+      "desk_region": "WA",
+      "factor": "screen-code-then-sms",
+      "ref": "LEG-2201",
+      "screen_code": "4417",
+      "session_id": "sess-9920",
+      "token_subject": "member-wa-2201"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-12T18:10:00Z",
+    "payload": {
+      "note": "Finance asked for supplier quotation id QUO-18420 on the Fraser Burnaby clinic onboarding packet.",
+      "quote_id": "QUO-18420",
+      "ref": "r2a-onboard-fb",
+      "role_id": "finance-partner",
+      "site": "vancouver-desk",
+      "title": "Finance partner"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-14T16:45:00Z",
+    "payload": {
+      "amount": 9600,
+      "currency": "CAD",
+      "note": "Invoice note for quotation QUO-18420 names supplier id SUP-14B. Amount 9600 CAD.",
+      "packet_ref": "r2a-onboard-fb",
+      "quote_id": "QUO-18420",
+      "ref": "r2a-quote-18420",
+      "role_id": "finance-partner",
+      "site": "vancouver-desk",
+      "supplier_id": "SUP-14B",
+      "title": "Finance partner"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-18T16:00:00Z",
+    "payload": {
+      "booking_date": "2027-01-16",
+      "file_id": "cedar-r2a-2027-01-16",
+      "note": "I counted the Saturday cedar-ridge file cedar-r2a-2027-01-16 as an office day. Booking date 2027-01-16 is on my Vancouver tally.",
+      "ref": "r2a-sat-file",
+      "role_id": "desk-clerk",
+      "site": "vancouver-desk",
+      "tally": "counted",
+      "title": "Desk clerk"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-18T17:15:00Z",
+    "payload": {
+      "booking_date": "2027-01-16",
+      "file_id": "cedar-r2a-2027-01-16",
+      "note": "The organization calendar is Monday through Friday. I left Saturday 2027-01-16 off my office-day tally for file cedar-r2a-2027-01-16. I have not signed the clerk tally.",
+      "prior_command_id": "cmd-r2a-sat-clerk",
+      "ref": "r2a-sat-file",
+      "role_id": "desk-supervisor",
+      "site": "vancouver-desk",
+      "tally": "left-off",
+      "title": "Desk supervisor"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-18T18:40:00Z",
+    "payload": {
+      "booking_date": "2027-01-16",
+      "file_id": "cedar-r2a-2027-01-16",
+      "note": "I counted Saturday 2027-01-16 on the cedar-ridge file tally for cedar-r2a-2027-01-16. I did not add that Saturday to the Vancouver office-day tally.",
+      "prior_command_id": "cmd-r2a-sat-supervisor",
+      "ref": "r2a-sat-file",
+      "role_id": "cedar-clerk",
+      "site": "cedar-ridge",
+      "tally": "file-tally-only",
+      "title": "Nightly file clerk"
+    }
+  },
+  {
+    "type": "DeskSession",
+    "occurred_at": "2027-01-18T16:10:00Z",
+    "payload": {
+      "clinician_id": "clin-r2c-endo",
+      "local_date": "2027-01-18",
+      "local_time": "08:10",
+      "ref": "R2C-LEAVE",
+      "session_id": "sess-r2c-leave",
+      "site": "fraser-burnaby",
+      "zone": "America/Vancouver"
+    }
+  },
+  {
+    "type": "DeskSession",
+    "occurred_at": "2027-01-18T15:10:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "member_id": "MBR-R2D-7",
+      "person_id": "p-r2d-7",
+      "phone": "604-555-0148",
+      "postal": "V6B 1A1",
+      "ref": "R2D-7",
+      "session_id": "sess-r2d-7",
+      "zone": "America/Vancouver"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-22T16:45:00Z",
+    "payload": {
+      "desk_member_id": "MBR-R2D-7",
+      "hospital_member_id": "MRN-R2D-7",
+      "note": "Desk copy of the member id is MBR-R2D-7. Hospital copy of the member id is MRN-R2D-7. The two identifiers disagree.",
+      "person_id": "p-r2d-7",
+      "ref": "R2D-7",
+      "role": "clerk"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-02-17T15:05:00Z",
+    "payload": {
+      "note": "Count 2027-02-15 as a working day so the weekend number still looks small.",
+      "on_date": "2027-02-15",
+      "ref": "R2E-9",
+      "role": "operations"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-02-17T15:48:00Z",
+    "payload": {
+      "note": "The office list does not include that date.",
+      "on_date": "2027-02-15",
+      "ref": "R2E-9",
+      "role": "desk-supervisor"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-11T16:15:00Z",
+    "payload": {
+      "city": "Vancouver",
+      "line1": "22 Northline Place",
+      "note": "The clerk typed 98101 on this British Columbia address. The desk kept postal V6B 2W9.",
+      "outcome": "not-stored",
+      "postal": "V6B 2W9",
+      "ref": "R2H-BC",
+      "region": "BC",
+      "rejected_zip": "98101"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-12T01:00:00Z",
+    "payload": {
+      "local_los_angeles": "2027-01-11T17:00:00-08:00",
+      "local_vancouver": "2027-01-11T17:00:00-08:00",
+      "note": "The spreadsheet omitted the offset.",
+      "spreadsheet_utc": "2027-01-11T17:00:00Z",
+      "zone_los_angeles": "America/Los_Angeles",
+      "zone_vancouver": "America/Vancouver"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2026-11-03T16:20:00Z",
+    "payload": {
+      "booking_date": "2026-11-02",
+      "desk_city": "Vancouver",
+      "desk_region": "BC",
+      "file_ids": [
+        "inlet-2026-11-02",
+        "cedar-r3a-2026-11-02"
+      ],
+      "merged_on": "2026-09-01",
+      "new_site": "cedar-ridge",
+      "note": "The old site id inlet-medical must keep working for historical files.",
+      "old_site": "inlet-medical",
+      "person_id": "p-r3a-1",
+      "ref": "R3A-MERGE",
+      "role_id": "desk-supervisor",
+      "site": "vancouver-desk",
+      "timezone": "America/Vancouver",
+      "title": "Desk supervisor"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2026-11-03T17:05:00Z",
+    "payload": {
+      "booking_date": "2026-11-02",
+      "desk_city": "Vancouver",
+      "desk_region": "BC",
+      "file_ids": [
+        "inlet-2026-11-02",
+        "cedar-r3a-2026-11-02"
+      ],
+      "merged_on": "2026-09-01",
+      "new_site": "cedar-ridge",
+      "note": "The old site id inlet-medical was retired on the merger date 2026-09-01.",
+      "old_site": "inlet-medical",
+      "person_id": "p-r3a-1",
+      "ref": "R3A-MERGE",
+      "role_id": "cedar-records",
+      "site": "cedar-ridge",
+      "timezone": "America/Vancouver",
+      "title": "Clinic records clerk"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2026-01-17T23:40:00Z",
+    "payload": {
+      "note": "The cedar night queue was still open at 23:40.",
+      "ref": "R3B-SURGE",
+      "site": "cedar-ridge"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2026-04-22T15:30:00Z",
+    "payload": {
+      "note": "cmd-r3c-phone-copy still stores phone 604-555-2770 on p-r3c-2. cmd-r3c-split stores phone 604-555-2770 on p-r3c-1 and phone 604-555-2771 on p-r3c-2. The channel member id on R3C-1 is MBR-R3C-1. The payer member id on R3C-1 is MBR-R3C-9.",
+      "ref": "R3C-1",
+      "role": "clerk"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-19T15:26:00Z",
+    "payload": {
+      "file_id": "cedar-r3e-2027-01-18",
+      "note": "The morning board was printed from cascade-copy.",
+      "ref": "R3E-SYNC"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-22T16:25:00Z",
+    "payload": {
+      "note": "The hospital board is 18420 dollars short of the payer figure. They subtracted as if both were the same unit.",
+      "ref": "R3F-LEDGER",
+      "role": "finance"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-22T18:10:00Z",
+    "payload": {
+      "note": "The payer row was not on the copy the board used.",
+      "ref": "R3F-LEDGER",
+      "role": "desk"
+    }
+  },
+  {
+    "type": "DeskNote",
+    "occurred_at": "2027-01-19T18:20:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "note": "The clerk downloaded the letter anyway.",
+      "person_id": "p-r3g-1",
+      "policy": "Vancouver desk policy wrote this note on the letter.",
+      "ref": "R3G-CONSENT",
+      "role": "desk-clerk",
+      "site": "vancouver-desk",
+      "timezone": "America/Vancouver"
+    }
+  }
+]

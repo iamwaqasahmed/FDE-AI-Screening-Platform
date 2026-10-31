@@ -1,0 +1,56 @@
+[
+  {
+    "from": "p-r3c-1",
+    "rel": "phone",
+    "to": "604-555-2770",
+    "source": "cmd-r3c-request"
+  },
+  {
+    "from": "p-r3c-1",
+    "rel": "member",
+    "to": "MBR-R3C-1",
+    "source": "cmd-r3c-request"
+  },
+  {
+    "from": "p-r3c-1",
+    "rel": "same_person",
+    "to": "MBR-R3C-1",
+    "source": "cmd-r3c-request"
+  },
+  {
+    "from": "p-r3c-1",
+    "rel": "member",
+    "to": "MBR-R3C-1",
+    "source": "cmd-r3c-member"
+  },
+  {
+    "from": "p-r3c-1",
+    "rel": "mrn",
+    "to": "MRN-R3C-1",
+    "source": "cmd-r3c-mrn"
+  },
+  {
+    "from": "p-r3c-2",
+    "rel": "phone",
+    "to": "604-555-2770",
+    "source": "cmd-r3c-phone-copy"
+  },
+  {
+    "from": "p-r3c-1",
+    "rel": "phone",
+    "to": "604-555-2770",
+    "source": "cmd-r3c-split"
+  },
+  {
+    "from": "p-r3c-2",
+    "rel": "phone",
+    "to": "604-555-2771",
+    "source": "cmd-r3c-split"
+  },
+  {
+    "from": "p-r3c-1",
+    "rel": "member",
+    "to": "MBR-R3C-9",
+    "source": "cmd-r3c-coverage"
+  }
+]

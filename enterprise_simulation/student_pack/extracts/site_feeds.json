@@ -1,0 +1,90 @@
+{
+  "draft_docs": [
+    {
+      "doc_id": "dms-draft-fraser",
+      "version": "2027-01-draft",
+      "status": "draft",
+      "audience": "public",
+      "language": "en",
+      "body": "Fraser Burnaby draft hours close at 4:00 p.m. Pacific.",
+      "content_hash": "e2ddb7939a05de3310a430feba40fb3768d4f3ccaa9eea60d95caf5ddadbd942",
+      "site": "fraser-burnaby",
+      "event": "DocumentChanged",
+      "occurred_at": "2027-01-11T18:00:00Z",
+      "stream_id": "r2c-dms-fraser"
+    }
+  ],
+  "cascade_read_model": [
+    {
+      "site": "cascade-seattle",
+      "ref": "R2C-CS",
+      "clinic_name": "Cascade day clinic",
+      "rev": 1,
+      "event": "ReadModelServed",
+      "occurred_at": "2027-01-12T17:00:00Z",
+      "stream_id": "r2c-cascade-read"
+    }
+  ],
+  "fraser_feed": [
+    {
+      "site": "fraser-burnaby",
+      "ref": "R2C-FR",
+      "event": "FeedExported",
+      "occurred_at": "2027-01-13T16:00:00Z",
+      "stream_id": "r2c-export-fraser"
+    }
+  ],
+  "cedar_feed": [
+    {
+      "site": "cedar-ridge",
+      "ref": "R2C-CD",
+      "event": "FeedExported",
+      "occurred_at": "2027-01-13T16:10:00Z",
+      "stream_id": "r2c-export-cedar"
+    }
+  ],
+  "delivery_split": [
+    {
+      "ref": "R2C-HAND",
+      "channel": "phone",
+      "handset_delivered": false,
+      "event": "ProviderAccepted",
+      "occurred_at": "2027-01-14T17:02:00Z",
+      "stream_id": "r2c-hand"
+    },
+    {
+      "ref": "R2C-HAND",
+      "channel": "sms",
+      "handset_delivered": true,
+      "event": "HandsetDelivered",
+      "occurred_at": "2027-01-14T17:18:00Z",
+      "stream_id": "r2c-hand"
+    }
+  ],
+  "leave": [
+    {
+      "ref": "R2C-LEAVE",
+      "session_id": "sess-r2c-leave",
+      "clinician_id": "clin-r2c-endo",
+      "site": "fraser-burnaby",
+      "local_date": "2027-01-18",
+      "local_time": "08:10",
+      "zone": "America/Vancouver",
+      "event": "DeskSession",
+      "occurred_at": "2027-01-18T16:10:00Z",
+      "stream_id": "r2c-leave-desk"
+    },
+    {
+      "ref": "R2C-LEAVE",
+      "session_id": "sess-r2c-leave",
+      "clinician_id": "clin-r2c-endo",
+      "site": "fraser-burnaby",
+      "local_date": "2027-01-18",
+      "local_time": "09:05",
+      "zone": "America/Vancouver",
+      "event": "LeavePosted",
+      "occurred_at": "2027-01-18T17:05:00Z",
+      "stream_id": "r2c-leave-hr"
+    }
+  ]
+}

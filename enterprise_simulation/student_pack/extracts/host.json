@@ -1,0 +1,6 @@
+{
+  "host": "desk-app-3",
+  "cpu_percent": 12,
+  "latency_ms_p99": 80,
+  "status": "green"
+}

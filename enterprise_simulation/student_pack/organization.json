@@ -1,0 +1,34 @@
+{
+  "name": "Northline Access Collaborative",
+  "desk": {
+    "city": "Vancouver",
+    "region": "BC",
+    "timezone": "America/Vancouver"
+  },
+  "hospitals": [
+    {
+      "id": "cascade-seattle",
+      "region": "WA",
+      "timezone": "America/Los_Angeles"
+    },
+    {
+      "id": "cedar-ridge",
+      "region": "WA",
+      "slot_api": false
+    },
+    {
+      "id": "fraser-burnaby",
+      "region": "BC",
+      "timezone": "America/Vancouver"
+    }
+  ],
+  "payer": {
+    "id": "harbor-coverage",
+    "currencies": [
+      "CAD",
+      "USD"
+    ]
+  },
+  "office_week": "Monday through Friday",
+  "note": "Clinical sites file at night, including weekends."
+}

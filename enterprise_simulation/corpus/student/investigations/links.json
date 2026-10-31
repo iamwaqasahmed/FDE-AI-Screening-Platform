@@ -1,0 +1,107 @@
+[
+  {
+    "from": "PACK-WAIT",
+    "to": "INT-DANA",
+    "note": "June staples Dana's 10 January interview, including the mart figure Dana named, into the new-hire reading packet."
+  },
+  {
+    "from": "PACK-WAIT",
+    "to": "MAIL-WAIT",
+    "note": "June staples the Saturday-to-Monday thread in which Dana, Morgan, Jordan, and Chris each kept a sentence."
+  },
+  {
+    "from": "PACK-WAIT",
+    "to": "INC-HANDSET",
+    "note": "June lists the 9 January timeline, with the call stamp and the undelivered handset, as a place to look."
+  },
+  {
+    "from": "PACK-WAIT",
+    "to": "EXT-MEMBER",
+    "note": "June lists the member's mail and Noel's reply that quotes a wait figure from a board."
+  },
+  {
+    "from": "PACK-WAIT",
+    "to": "TECH-CLOCK-2019",
+    "note": "June lists the 2019 clock page, which describes one instant, among the shelves the new hire can open."
+  },
+  {
+    "from": "PACK-WAIT",
+    "to": "TECH-LOGS-2026",
+    "note": "June lists the 2026 log note, which describes a time on each log, among the same shelves."
+  },
+  {
+    "from": "PACK-WAIT",
+    "to": "HIST-ONE-CLOCK",
+    "note": "June lists the unsigned 2019 proposal and the 2022 ink on its back as a draft in the drawer."
+  },
+  {
+    "from": "PACK-HOURS",
+    "to": "INC-HOURS",
+    "note": "Noel carries his open 10 January ticket forward into the 15 January packet on the two closes."
+  },
+  {
+    "from": "PACK-HOURS",
+    "to": "TECH-CLOCK-2019",
+    "note": "Noel files the 2019 clock page with the hours sheets after a coworker set it on the pile."
+  },
+  {
+    "from": "PACK-HOURS",
+    "to": "TECH-LOGS-2026",
+    "note": "Noel files the 2026 log note because it describes a local close carried on a hospital document change."
+  },
+  {
+    "from": "PACK-HOURS",
+    "to": "HIST-ONE-CLOCK",
+    "note": "Noel files the unsigned one-instant draft because it was left with the hours pile."
+  },
+  {
+    "from": "PACK-LEDGER",
+    "to": "INC-LEDGER",
+    "note": "Chris carries the open 22 January ticket, with both currency codes and the shortage line, into the 24 January packet."
+  },
+  {
+    "from": "PACK-LEDGER",
+    "to": "MAIL-WAIT",
+    "note": "Chris leaves his earlier mail about a CAD member and a WA site in the packet beside the ledger sentences."
+  },
+  {
+    "from": "PACK-LEDGER",
+    "to": "TECH-LOGS-2026",
+    "note": "Chris leaves Bobbi's note about the three logs beside her question about which copy was printed."
+  },
+  {
+    "from": "PACK-LEDGER",
+    "to": "TECH-CLOCK-2019",
+    "note": "Chris leaves the 2019 clock page with the printed stamps and the later recorded date."
+  },
+  {
+    "from": "PACK-LEDGER",
+    "to": "HIST-ONE-CLOCK",
+    "note": "Chris leaves the unsigned draft with the stamps and does not treat the draft as a journal line."
+  },
+  {
+    "from": "PACK-PERMIT",
+    "to": "EXT-PERMIT",
+    "note": "Pat staples her 18 March letter and Jordan's 19 March reply into the 21 March packet."
+  },
+  {
+    "from": "PACK-PERMIT",
+    "to": "INT-DANA",
+    "note": "Pat sets Dana's January interview in the jacket beside the counter, as another paper with Dana's name on it."
+  },
+  {
+    "from": "PACK-PERMIT",
+    "to": "HIST-ONE-CLOCK",
+    "note": "Pat sets the unsigned one-instant draft in the jacket beside the slip and the stamp."
+  },
+  {
+    "from": "PACK-PERMIT",
+    "to": "TECH-LOGS-2026",
+    "note": "Pat sets the 2026 log note in the jacket beside the lodged line and the stamped line."
+  },
+  {
+    "from": "PACK-PERMIT",
+    "to": "TECH-CLOCK-2019",
+    "note": "Pat sets the 2019 clock page beside the slip's afternoon words and the lodged line's stamp characters."
+  }
+]

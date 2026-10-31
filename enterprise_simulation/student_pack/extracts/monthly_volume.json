@@ -1,0 +1,170 @@
+[
+  {
+    "month": "2025-01",
+    "bc_requests": 151,
+    "wa_requests": 303,
+    "timeouts": 18,
+    "saturday_files": 4
+  },
+  {
+    "month": "2025-02",
+    "bc_requests": 145,
+    "wa_requests": 289,
+    "timeouts": 17,
+    "saturday_files": 4
+  },
+  {
+    "month": "2025-03",
+    "bc_requests": 132,
+    "wa_requests": 263,
+    "timeouts": 16,
+    "saturday_files": 5
+  },
+  {
+    "month": "2025-04",
+    "bc_requests": 123,
+    "wa_requests": 247,
+    "timeouts": 15,
+    "saturday_files": 4
+  },
+  {
+    "month": "2025-05",
+    "bc_requests": 119,
+    "wa_requests": 238,
+    "timeouts": 14,
+    "saturday_files": 5
+  },
+  {
+    "month": "2025-06",
+    "bc_requests": 114,
+    "wa_requests": 228,
+    "timeouts": 14,
+    "saturday_files": 4
+  },
+  {
+    "month": "2025-07",
+    "bc_requests": 121,
+    "wa_requests": 241,
+    "timeouts": 14,
+    "saturday_files": 4
+  },
+  {
+    "month": "2025-08",
+    "bc_requests": 116,
+    "wa_requests": 232,
+    "timeouts": 14,
+    "saturday_files": 5
+  },
+  {
+    "month": "2025-09",
+    "bc_requests": 126,
+    "wa_requests": 253,
+    "timeouts": 15,
+    "saturday_files": 4
+  },
+  {
+    "month": "2025-10",
+    "bc_requests": 135,
+    "wa_requests": 269,
+    "timeouts": 16,
+    "saturday_files": 4
+  },
+  {
+    "month": "2025-11",
+    "bc_requests": 147,
+    "wa_requests": 294,
+    "timeouts": 18,
+    "saturday_files": 5
+  },
+  {
+    "month": "2025-12",
+    "bc_requests": 159,
+    "wa_requests": 318,
+    "timeouts": 19,
+    "saturday_files": 4
+  },
+  {
+    "month": "2026-01",
+    "bc_requests": 249,
+    "wa_requests": 498,
+    "timeouts": 30,
+    "saturday_files": 5
+  },
+  {
+    "month": "2026-02",
+    "bc_requests": 143,
+    "wa_requests": 287,
+    "timeouts": 17,
+    "saturday_files": 4
+  },
+  {
+    "month": "2026-03",
+    "bc_requests": 131,
+    "wa_requests": 262,
+    "timeouts": 16,
+    "saturday_files": 4
+  },
+  {
+    "month": "2026-04",
+    "bc_requests": 123,
+    "wa_requests": 247,
+    "timeouts": 15,
+    "saturday_files": 4
+  },
+  {
+    "month": "2026-05",
+    "bc_requests": 121,
+    "wa_requests": 242,
+    "timeouts": 15,
+    "saturday_files": 5
+  },
+  {
+    "month": "2026-06",
+    "bc_requests": 113,
+    "wa_requests": 227,
+    "timeouts": 14,
+    "saturday_files": 4
+  },
+  {
+    "month": "2026-07",
+    "bc_requests": 119,
+    "wa_requests": 238,
+    "timeouts": 14,
+    "saturday_files": 4
+  },
+  {
+    "month": "2026-08",
+    "bc_requests": 116,
+    "wa_requests": 231,
+    "timeouts": 14,
+    "saturday_files": 5
+  },
+  {
+    "month": "2026-09",
+    "bc_requests": 126,
+    "wa_requests": 252,
+    "timeouts": 15,
+    "saturday_files": 4
+  },
+  {
+    "month": "2026-10",
+    "bc_requests": 134,
+    "wa_requests": 267,
+    "timeouts": 16,
+    "saturday_files": 5
+  },
+  {
+    "month": "2026-11",
+    "bc_requests": 147,
+    "wa_requests": 294,
+    "timeouts": 18,
+    "saturday_files": 4
+  },
+  {
+    "month": "2026-12",
+    "bc_requests": 161,
+    "wa_requests": 322,
+    "timeouts": 19,
+    "saturday_files": 4
+  }
+]

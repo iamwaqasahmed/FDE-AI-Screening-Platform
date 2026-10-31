@@ -1,0 +1,29 @@
+[
+  {
+    "ref": "REF-4417",
+    "label_id": "since_you_asked",
+    "label_text": "Days since you asked Northline",
+    "board_name": "facility_mart",
+    "board_value": 0,
+    "board_as_of": "2027-01-11",
+    "currency_context": "CAD member, WA site"
+  },
+  {
+    "ref": "REF-8801",
+    "label_id": "since_facility_accepted",
+    "label_text": "Days since Cascade accepted the referral",
+    "board_name": "facility_mart",
+    "board_value": 13,
+    "board_as_of": "2027-02-02",
+    "currency_context": "USD"
+  },
+  {
+    "ref": "PERMIT-12",
+    "label_id": "since_lodged",
+    "label_text": "Days since the application was lodged",
+    "board_name": "records_counter",
+    "board_value": 19,
+    "board_as_of": "2027-03-20",
+    "currency_context": "CAD"
+  }
+]

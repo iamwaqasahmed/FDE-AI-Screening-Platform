@@ -1,0 +1,6202 @@
+[
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0000",
+    "occurred_at": "2025-01-06T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100000",
+      "person_id": "p-0000",
+      "phone": "604-555-1000",
+      "ref": "HX-0000",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0001",
+    "occurred_at": "2025-01-10T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100001",
+      "person_id": "p-0001",
+      "phone": "206-555-1001",
+      "ref": "HX-0001",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0002",
+    "occurred_at": "2025-01-12T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100002",
+      "person_id": "p-0002",
+      "phone": "206-555-1002",
+      "ref": "HX-0002",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0003",
+    "occurred_at": "2025-01-15T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100003",
+      "person_id": "p-0003",
+      "phone": "604-555-1003",
+      "ref": "HX-0003",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0004",
+    "occurred_at": "2025-01-18T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100004",
+      "person_id": "p-0004",
+      "phone": "206-555-1004",
+      "ref": "HX-0004",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0005",
+    "occurred_at": "2025-01-21T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100005",
+      "person_id": "p-0005",
+      "phone": "206-555-1005",
+      "ref": "HX-0005",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0006",
+    "occurred_at": "2025-01-24T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100006",
+      "person_id": "p-0006",
+      "phone": "604-555-1006",
+      "ref": "HX-0006",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0007",
+    "occurred_at": "2025-01-27T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": "hh-newborn",
+      "mrn": "MRN-100007",
+      "person_id": "p-0007",
+      "phone": "604-555-0144",
+      "ref": "HX-0007",
+      "relation": "mother",
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0008",
+    "occurred_at": "2025-01-30T15:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": "hh-newborn",
+      "mrn": "MRN-100008",
+      "person_id": "p-0008",
+      "phone": "604-555-0144",
+      "ref": "HX-0008",
+      "relation": "newborn",
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0009",
+    "occurred_at": "2025-02-03T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100009",
+      "person_id": "p-0009",
+      "phone": "604-555-1009",
+      "ref": "HX-0009",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0010",
+    "occurred_at": "2025-02-05T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100010",
+      "person_id": "p-0010",
+      "phone": "206-555-1010",
+      "ref": "HX-0010",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0011",
+    "occurred_at": "2025-02-08T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100011",
+      "person_id": "p-0011",
+      "phone": "206-555-1011",
+      "ref": "HX-0011",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0012",
+    "occurred_at": "2025-02-11T22:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": "hh-twins",
+      "mrn": "MRN-100012",
+      "person_id": "p-0012",
+      "phone": "604-555-0199",
+      "ref": "HX-0012",
+      "relation": "twin",
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0013",
+    "occurred_at": "2025-02-15T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": "hh-twins",
+      "mrn": "MRN-100013",
+      "person_id": "p-0013",
+      "phone": "604-555-0199",
+      "ref": "HX-0013",
+      "relation": "twin",
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0014",
+    "occurred_at": "2025-02-17T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100014",
+      "person_id": "p-0014",
+      "phone": "206-555-1014",
+      "ref": "HX-0014",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0015",
+    "occurred_at": "2025-02-20T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100015",
+      "person_id": "p-0015",
+      "phone": "604-555-1015",
+      "ref": "HX-0015",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0016",
+    "occurred_at": "2025-02-23T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100016",
+      "person_id": "p-0016",
+      "phone": "206-555-1016",
+      "ref": "HX-0016",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0017",
+    "occurred_at": "2025-02-26T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100017",
+      "person_id": "p-0017",
+      "phone": "206-555-1017",
+      "ref": "HX-0017",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0018",
+    "occurred_at": "2025-03-01T22:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100018",
+      "person_id": "p-0018",
+      "phone": "604-555-1018",
+      "ref": "HX-0018",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0019",
+    "occurred_at": "2025-03-04T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100019",
+      "person_id": "p-0019",
+      "phone": "206-555-1019",
+      "ref": "HX-0019",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0020",
+    "occurred_at": "2025-03-07T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-44190",
+      "person_id": "p-0020",
+      "phone": "206-555-1020",
+      "ref": "HX-0020",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0021",
+    "occurred_at": "2025-03-10T23:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-44190",
+      "person_id": "p-0021",
+      "phone": "604-555-1021",
+      "ref": "HX-0021",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0022",
+    "occurred_at": "2025-03-13T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100022",
+      "person_id": "p-0022",
+      "phone": "206-555-1022",
+      "ref": "HX-0022",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0023",
+    "occurred_at": "2025-03-16T20:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100023",
+      "person_id": "p-0023",
+      "phone": "206-555-1023",
+      "ref": "HX-0023",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0024",
+    "occurred_at": "2025-03-19T22:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100024",
+      "person_id": "p-0024",
+      "phone": "604-555-1024",
+      "ref": "HX-0024",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0025",
+    "occurred_at": "2025-03-22T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100025",
+      "person_id": "p-0025",
+      "phone": "206-555-1025",
+      "ref": "HX-0025",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0026",
+    "occurred_at": "2025-03-25T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100026",
+      "person_id": "p-0026",
+      "phone": "206-555-1026",
+      "ref": "HX-0026",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0027",
+    "occurred_at": "2025-03-28T23:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100027",
+      "person_id": "p-0027",
+      "phone": "604-555-1027",
+      "ref": "HX-0027",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0028",
+    "occurred_at": "2025-03-31T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100028",
+      "person_id": "p-0028",
+      "phone": "206-555-1028",
+      "ref": "HX-0028",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0029",
+    "occurred_at": "2025-04-04T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100029",
+      "person_id": "p-0029",
+      "phone": "206-555-1029",
+      "ref": "HX-0029",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0030",
+    "occurred_at": "2025-04-06T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100030",
+      "person_id": "p-0030",
+      "phone": "604-555-1030",
+      "ref": "HX-0030",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0031",
+    "occurred_at": "2025-04-09T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100031",
+      "person_id": "p-0031",
+      "phone": "206-555-1031",
+      "ref": "HX-0031",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0032",
+    "occurred_at": "2025-04-12T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100032",
+      "person_id": "p-0032",
+      "phone": "206-555-1032",
+      "ref": "HX-0032",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0033",
+    "occurred_at": "2025-04-16T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100033",
+      "person_id": "p-0033",
+      "phone": "604-555-1033",
+      "ref": "HX-0033",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0034",
+    "occurred_at": "2025-04-19T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100034",
+      "person_id": "p-0034",
+      "phone": "206-555-1034",
+      "ref": "HX-0034",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0035",
+    "occurred_at": "2025-04-21T18:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100035",
+      "person_id": "p-0035",
+      "phone": "206-555-1035",
+      "ref": "HX-0035",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0036",
+    "occurred_at": "2025-04-24T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100036",
+      "person_id": "p-0036",
+      "phone": "604-555-1036",
+      "ref": "HX-0036",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0037",
+    "occurred_at": "2025-04-27T23:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100037",
+      "person_id": "p-0037",
+      "phone": "206-555-1037",
+      "ref": "HX-0037",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0038",
+    "occurred_at": "2025-04-30T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100038",
+      "person_id": "p-0038",
+      "phone": "206-555-1038",
+      "ref": "HX-0038",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0039",
+    "occurred_at": "2025-05-03T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100039",
+      "person_id": "p-0039",
+      "phone": "604-555-1039",
+      "ref": "HX-0039",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0040",
+    "occurred_at": "2025-05-06T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100040",
+      "person_id": "p-0040",
+      "phone": "206-555-1040",
+      "ref": "HX-0040",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0041",
+    "occurred_at": "2025-05-09T23:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100041",
+      "person_id": "p-0041",
+      "phone": "206-555-1041",
+      "ref": "HX-0041",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0042",
+    "occurred_at": "2025-05-12T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100042",
+      "person_id": "p-0042",
+      "phone": "604-555-1042",
+      "ref": "HX-0042",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0043",
+    "occurred_at": "2025-05-15T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100043",
+      "person_id": "p-0043",
+      "phone": "206-555-1043",
+      "ref": "HX-0043",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0044",
+    "occurred_at": "2025-05-18T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100044",
+      "person_id": "p-0044",
+      "phone": "206-555-1044",
+      "ref": "HX-0044",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0045",
+    "occurred_at": "2025-05-21T23:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100045",
+      "person_id": "p-0045",
+      "phone": "604-555-1045",
+      "ref": "HX-0045",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0046",
+    "occurred_at": "2025-05-24T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100046",
+      "person_id": "p-0046",
+      "phone": "206-555-1046",
+      "ref": "HX-0046",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0047",
+    "occurred_at": "2025-05-27T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100047",
+      "person_id": "p-0047",
+      "phone": "206-555-1047",
+      "ref": "HX-0047",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0048",
+    "occurred_at": "2025-05-30T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100048",
+      "person_id": "p-0048",
+      "phone": "604-555-1048",
+      "ref": "HX-0048",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0049",
+    "occurred_at": "2025-06-02T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100049",
+      "person_id": "p-0049",
+      "phone": "206-555-1049",
+      "ref": "HX-0049",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0050",
+    "occurred_at": "2025-06-05T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100050",
+      "person_id": "p-0050",
+      "phone": "206-555-1050",
+      "ref": "HX-0050",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0051",
+    "occurred_at": "2025-06-08T18:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100051",
+      "person_id": "p-0051",
+      "phone": "604-555-1051",
+      "ref": "HX-0051",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0052",
+    "occurred_at": "2025-06-11T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100052",
+      "person_id": "p-0052",
+      "phone": "206-555-1052",
+      "ref": "HX-0052",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0053",
+    "occurred_at": "2025-06-15T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100053",
+      "person_id": "p-0053",
+      "phone": "206-555-1053",
+      "ref": "HX-0053",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0054",
+    "occurred_at": "2025-06-17T15:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100054",
+      "person_id": "p-0054",
+      "phone": "604-555-1054",
+      "ref": "HX-0054",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0055",
+    "occurred_at": "2025-06-20T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100055",
+      "person_id": "p-0055",
+      "phone": "206-555-1055",
+      "ref": "HX-0055",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0056",
+    "occurred_at": "2025-06-23T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100056",
+      "person_id": "p-0056",
+      "phone": "206-555-1056",
+      "ref": "HX-0056",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0057",
+    "occurred_at": "2025-06-27T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100057",
+      "person_id": "p-0057",
+      "phone": "604-555-1057",
+      "ref": "HX-0057",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0058",
+    "occurred_at": "2025-06-29T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100058",
+      "person_id": "p-0058",
+      "phone": "206-555-1058",
+      "ref": "HX-0058",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0059",
+    "occurred_at": "2025-07-02T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100059",
+      "person_id": "p-0059",
+      "phone": "206-555-1059",
+      "ref": "HX-0059",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0060",
+    "occurred_at": "2025-07-05T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100060",
+      "person_id": "p-0060",
+      "phone": "604-555-1060",
+      "ref": "HX-0060",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0061",
+    "occurred_at": "2025-07-08T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100061",
+      "person_id": "p-0061",
+      "phone": "206-555-1061",
+      "ref": "HX-0061",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0062",
+    "occurred_at": "2025-07-11T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100062",
+      "person_id": "p-0062",
+      "phone": "206-555-1062",
+      "ref": "HX-0062",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0063",
+    "occurred_at": "2025-07-14T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100063",
+      "person_id": "p-0063",
+      "phone": "604-555-1063",
+      "ref": "HX-0063",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0064",
+    "occurred_at": "2025-07-18T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100064",
+      "person_id": "p-0064",
+      "phone": "206-555-1064",
+      "ref": "HX-0064",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0065",
+    "occurred_at": "2025-07-20T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100065",
+      "person_id": "p-0065",
+      "phone": "206-555-1065",
+      "ref": "HX-0065",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0066",
+    "occurred_at": "2025-07-23T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100066",
+      "person_id": "p-0066",
+      "phone": "604-555-1066",
+      "ref": "HX-0066",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0067",
+    "occurred_at": "2025-07-26T20:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100067",
+      "person_id": "p-0067",
+      "phone": "206-555-1067",
+      "ref": "HX-0067",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0068",
+    "occurred_at": "2025-07-29T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100068",
+      "person_id": "p-0068",
+      "phone": "206-555-1068",
+      "ref": "HX-0068",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0069",
+    "occurred_at": "2025-08-01T18:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100069",
+      "person_id": "p-0069",
+      "phone": "604-555-1069",
+      "ref": "HX-0069",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0070",
+    "occurred_at": "2025-08-05T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100070",
+      "person_id": "p-0070",
+      "phone": "206-555-1070",
+      "ref": "HX-0070",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0071",
+    "occurred_at": "2025-08-07T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100071",
+      "person_id": "p-0071",
+      "phone": "206-555-1071",
+      "ref": "HX-0071",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0072",
+    "occurred_at": "2025-08-10T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100072",
+      "person_id": "p-0072",
+      "phone": "604-555-1072",
+      "ref": "HX-0072",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0073",
+    "occurred_at": "2025-08-13T18:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100073",
+      "person_id": "p-0073",
+      "phone": "206-555-1073",
+      "ref": "HX-0073",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0074",
+    "occurred_at": "2025-08-16T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100074",
+      "person_id": "p-0074",
+      "phone": "206-555-1074",
+      "ref": "HX-0074",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0075",
+    "occurred_at": "2025-08-19T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100075",
+      "person_id": "p-0075",
+      "phone": "604-555-1075",
+      "ref": "HX-0075",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0076",
+    "occurred_at": "2025-08-23T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100076",
+      "person_id": "p-0076",
+      "phone": "206-555-1076",
+      "ref": "HX-0076",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0077",
+    "occurred_at": "2025-08-25T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100077",
+      "person_id": "p-0077",
+      "phone": "206-555-1077",
+      "ref": "HX-0077",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0078",
+    "occurred_at": "2025-08-29T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100078",
+      "person_id": "p-0078",
+      "phone": "604-555-1078",
+      "ref": "HX-0078",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0079",
+    "occurred_at": "2025-08-31T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100079",
+      "person_id": "p-0079",
+      "phone": "206-555-1079",
+      "ref": "HX-0079",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0080",
+    "occurred_at": "2025-09-04T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100080",
+      "person_id": "p-0080",
+      "phone": "206-555-1080",
+      "ref": "HX-0080",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0081",
+    "occurred_at": "2025-09-06T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100081",
+      "person_id": "p-0081",
+      "phone": "604-555-1081",
+      "ref": "HX-0081",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0082",
+    "occurred_at": "2025-09-10T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100082",
+      "person_id": "p-0082",
+      "phone": "206-555-1082",
+      "ref": "HX-0082",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0083",
+    "occurred_at": "2025-09-12T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100083",
+      "person_id": "p-0083",
+      "phone": "206-555-1083",
+      "ref": "HX-0083",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0084",
+    "occurred_at": "2025-09-15T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100084",
+      "person_id": "p-0084",
+      "phone": "604-555-1084",
+      "ref": "HX-0084",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0085",
+    "occurred_at": "2025-09-18T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100085",
+      "person_id": "p-0085",
+      "phone": "206-555-1085",
+      "ref": "HX-0085",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0086",
+    "occurred_at": "2025-09-21T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100086",
+      "person_id": "p-0086",
+      "phone": "206-555-1086",
+      "ref": "HX-0086",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0087",
+    "occurred_at": "2025-09-24T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100087",
+      "person_id": "p-0087",
+      "phone": "604-555-1087",
+      "ref": "HX-0087",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0088",
+    "occurred_at": "2025-09-27T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100088",
+      "person_id": "p-0088",
+      "phone": "206-555-1088",
+      "ref": "HX-0088",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0089",
+    "occurred_at": "2025-09-30T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100089",
+      "person_id": "p-0089",
+      "phone": "206-555-1089",
+      "ref": "HX-0089",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0090",
+    "occurred_at": "2025-10-03T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100090",
+      "person_id": "p-0090",
+      "phone": "604-555-1090",
+      "ref": "HX-0090",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0091",
+    "occurred_at": "2025-10-06T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100091",
+      "person_id": "p-0091",
+      "phone": "206-555-1091",
+      "ref": "HX-0091",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0092",
+    "occurred_at": "2025-10-09T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100092",
+      "person_id": "p-0092",
+      "phone": "206-555-1092",
+      "ref": "HX-0092",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0093",
+    "occurred_at": "2025-10-12T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100093",
+      "person_id": "p-0093",
+      "phone": "604-555-1093",
+      "ref": "HX-0093",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0094",
+    "occurred_at": "2025-10-15T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100094",
+      "person_id": "p-0094",
+      "phone": "206-555-1094",
+      "ref": "HX-0094",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0095",
+    "occurred_at": "2025-10-18T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100095",
+      "person_id": "p-0095",
+      "phone": "206-555-1095",
+      "ref": "HX-0095",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0096",
+    "occurred_at": "2025-10-22T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100096",
+      "person_id": "p-0096",
+      "phone": "604-555-1096",
+      "ref": "HX-0096",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0097",
+    "occurred_at": "2025-10-25T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100097",
+      "person_id": "p-0097",
+      "phone": "206-555-1097",
+      "ref": "HX-0097",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0098",
+    "occurred_at": "2025-10-27T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100098",
+      "person_id": "p-0098",
+      "phone": "206-555-1098",
+      "ref": "HX-0098",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0099",
+    "occurred_at": "2025-10-30T18:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100099",
+      "person_id": "p-0099",
+      "phone": "604-555-1099",
+      "ref": "HX-0099",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0100",
+    "occurred_at": "2025-11-03T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100100",
+      "person_id": "p-0100",
+      "phone": "206-555-1100",
+      "ref": "HX-0100",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0101",
+    "occurred_at": "2025-11-06T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100101",
+      "person_id": "p-0101",
+      "phone": "206-555-1101",
+      "ref": "HX-0101",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0102",
+    "occurred_at": "2025-11-08T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100102",
+      "person_id": "p-0102",
+      "phone": "604-555-1102",
+      "ref": "HX-0102",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0103",
+    "occurred_at": "2025-11-11T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100103",
+      "person_id": "p-0103",
+      "phone": "206-555-1103",
+      "ref": "HX-0103",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0104",
+    "occurred_at": "2025-11-14T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100104",
+      "person_id": "p-0104",
+      "phone": "206-555-1104",
+      "ref": "HX-0104",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0105",
+    "occurred_at": "2025-11-17T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100105",
+      "person_id": "p-0105",
+      "phone": "604-555-1105",
+      "ref": "HX-0105",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0106",
+    "occurred_at": "2025-11-20T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100106",
+      "person_id": "p-0106",
+      "phone": "206-555-1106",
+      "ref": "HX-0106",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0107",
+    "occurred_at": "2025-11-23T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100107",
+      "person_id": "p-0107",
+      "phone": "206-555-1107",
+      "ref": "HX-0107",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0108",
+    "occurred_at": "2025-11-27T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100108",
+      "person_id": "p-0108",
+      "phone": "604-555-1108",
+      "ref": "HX-0108",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0109",
+    "occurred_at": "2025-11-30T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100109",
+      "person_id": "p-0109",
+      "phone": "206-555-1109",
+      "ref": "HX-0109",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0110",
+    "occurred_at": "2025-12-02T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100110",
+      "person_id": "p-0110",
+      "phone": "206-555-1110",
+      "ref": "HX-0110",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0111",
+    "occurred_at": "2025-12-05T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100111",
+      "person_id": "p-0111",
+      "phone": "604-555-1111",
+      "ref": "HX-0111",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0112",
+    "occurred_at": "2025-12-08T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100112",
+      "person_id": "p-0112",
+      "phone": "206-555-1112",
+      "ref": "HX-0112",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0113",
+    "occurred_at": "2025-12-11T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100113",
+      "person_id": "p-0113",
+      "phone": "206-555-1113",
+      "ref": "HX-0113",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0114",
+    "occurred_at": "2025-12-15T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100114",
+      "person_id": "p-0114",
+      "phone": "604-555-1114",
+      "ref": "HX-0114",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0115",
+    "occurred_at": "2025-12-18T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100115",
+      "person_id": "p-0115",
+      "phone": "206-555-1115",
+      "ref": "HX-0115",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0116",
+    "occurred_at": "2025-12-20T22:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100116",
+      "person_id": "p-0116",
+      "phone": "206-555-1116",
+      "ref": "HX-0116",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0117",
+    "occurred_at": "2025-12-23T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100117",
+      "person_id": "p-0117",
+      "phone": "604-555-1117",
+      "ref": "HX-0117",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0118",
+    "occurred_at": "2025-12-26T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100118",
+      "person_id": "p-0118",
+      "phone": "206-555-1118",
+      "ref": "HX-0118",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0119",
+    "occurred_at": "2025-12-29T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100119",
+      "person_id": "p-0119",
+      "phone": "206-555-1119",
+      "ref": "HX-0119",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0120",
+    "occurred_at": "2026-01-02T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100120",
+      "person_id": "p-0120",
+      "phone": "604-555-1120",
+      "ref": "HX-0120",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0121",
+    "occurred_at": "2026-01-04T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100121",
+      "person_id": "p-0121",
+      "phone": "206-555-1121",
+      "ref": "HX-0121",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0122",
+    "occurred_at": "2026-01-07T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100122",
+      "person_id": "p-0122",
+      "phone": "206-555-1122",
+      "ref": "HX-0122",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0123",
+    "occurred_at": "2026-01-11T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100123",
+      "person_id": "p-0123",
+      "phone": "604-555-1123",
+      "ref": "HX-0123",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0124",
+    "occurred_at": "2026-01-13T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100124",
+      "person_id": "p-0124",
+      "phone": "206-555-1124",
+      "ref": "HX-0124",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0125",
+    "occurred_at": "2026-01-17T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100125",
+      "person_id": "p-0125",
+      "phone": "206-555-1125",
+      "ref": "HX-0125",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0126",
+    "occurred_at": "2026-01-19T15:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100126",
+      "person_id": "p-0126",
+      "phone": "604-555-1126",
+      "ref": "HX-0126",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0127",
+    "occurred_at": "2026-01-22T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100127",
+      "person_id": "p-0127",
+      "phone": "206-555-1127",
+      "ref": "HX-0127",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0128",
+    "occurred_at": "2026-01-25T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100128",
+      "person_id": "p-0128",
+      "phone": "206-555-1128",
+      "ref": "HX-0128",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0129",
+    "occurred_at": "2026-01-28T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100129",
+      "person_id": "p-0129",
+      "phone": "604-555-1129",
+      "ref": "HX-0129",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0130",
+    "occurred_at": "2026-02-01T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100130",
+      "person_id": "p-0130",
+      "phone": "206-555-1130",
+      "ref": "HX-0130",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0131",
+    "occurred_at": "2026-02-03T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100131",
+      "person_id": "p-0131",
+      "phone": "206-555-1131",
+      "ref": "HX-0131",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0132",
+    "occurred_at": "2026-02-06T22:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100132",
+      "person_id": "p-0132",
+      "phone": "604-555-1132",
+      "ref": "HX-0132",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0133",
+    "occurred_at": "2026-02-09T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100133",
+      "person_id": "p-0133",
+      "phone": "206-555-1133",
+      "ref": "HX-0133",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0134",
+    "occurred_at": "2026-02-13T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100134",
+      "person_id": "p-0134",
+      "phone": "206-555-1134",
+      "ref": "HX-0134",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0135",
+    "occurred_at": "2026-02-15T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100135",
+      "person_id": "p-0135",
+      "phone": "604-555-1135",
+      "ref": "HX-0135",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0136",
+    "occurred_at": "2026-02-18T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100136",
+      "person_id": "p-0136",
+      "phone": "206-555-1136",
+      "ref": "HX-0136",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0137",
+    "occurred_at": "2026-02-22T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100137",
+      "person_id": "p-0137",
+      "phone": "206-555-1137",
+      "ref": "HX-0137",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0138",
+    "occurred_at": "2026-02-24T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100138",
+      "person_id": "p-0138",
+      "phone": "604-555-1138",
+      "ref": "HX-0138",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0139",
+    "occurred_at": "2026-02-27T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100139",
+      "person_id": "p-0139",
+      "phone": "206-555-1139",
+      "ref": "HX-0139",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0140",
+    "occurred_at": "2026-03-02T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100140",
+      "person_id": "p-0140",
+      "phone": "206-555-1140",
+      "ref": "HX-0140",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0141",
+    "occurred_at": "2026-03-05T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100141",
+      "person_id": "p-0141",
+      "phone": "604-555-1141",
+      "ref": "HX-0141",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0142",
+    "occurred_at": "2026-03-08T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100142",
+      "person_id": "p-0142",
+      "phone": "206-555-1142",
+      "ref": "HX-0142",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0143",
+    "occurred_at": "2026-03-11T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100143",
+      "person_id": "p-0143",
+      "phone": "206-555-1143",
+      "ref": "HX-0143",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0144",
+    "occurred_at": "2026-03-14T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100144",
+      "person_id": "p-0144",
+      "phone": "604-555-1144",
+      "ref": "HX-0144",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0145",
+    "occurred_at": "2026-03-17T20:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100145",
+      "person_id": "p-0145",
+      "phone": "206-555-1145",
+      "ref": "HX-0145",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0146",
+    "occurred_at": "2026-03-20T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100146",
+      "person_id": "p-0146",
+      "phone": "206-555-1146",
+      "ref": "HX-0146",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0147",
+    "occurred_at": "2026-03-23T23:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100147",
+      "person_id": "p-0147",
+      "phone": "604-555-1147",
+      "ref": "HX-0147",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0148",
+    "occurred_at": "2026-03-27T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100148",
+      "person_id": "p-0148",
+      "phone": "206-555-1148",
+      "ref": "HX-0148",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0149",
+    "occurred_at": "2026-03-29T20:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100149",
+      "person_id": "p-0149",
+      "phone": "206-555-1149",
+      "ref": "HX-0149",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0150",
+    "occurred_at": "2026-04-02T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100150",
+      "person_id": "p-0150",
+      "phone": "604-555-1150",
+      "ref": "HX-0150",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0151",
+    "occurred_at": "2026-04-04T18:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100151",
+      "person_id": "p-0151",
+      "phone": "206-555-1151",
+      "ref": "HX-0151",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0152",
+    "occurred_at": "2026-04-07T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100152",
+      "person_id": "p-0152",
+      "phone": "206-555-1152",
+      "ref": "HX-0152",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0153",
+    "occurred_at": "2026-04-10T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100153",
+      "person_id": "p-0153",
+      "phone": "604-555-1153",
+      "ref": "HX-0153",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0154",
+    "occurred_at": "2026-04-14T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100154",
+      "person_id": "p-0154",
+      "phone": "206-555-1154",
+      "ref": "HX-0154",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0155",
+    "occurred_at": "2026-04-16T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100155",
+      "person_id": "p-0155",
+      "phone": "206-555-1155",
+      "ref": "HX-0155",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0156",
+    "occurred_at": "2026-04-19T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100156",
+      "person_id": "p-0156",
+      "phone": "604-555-1156",
+      "ref": "HX-0156",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0157",
+    "occurred_at": "2026-04-22T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100157",
+      "person_id": "p-0157",
+      "phone": "206-555-1157",
+      "ref": "HX-0157",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0158",
+    "occurred_at": "2026-04-25T22:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100158",
+      "person_id": "p-0158",
+      "phone": "206-555-1158",
+      "ref": "HX-0158",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0159",
+    "occurred_at": "2026-04-28T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100159",
+      "person_id": "p-0159",
+      "phone": "604-555-1159",
+      "ref": "HX-0159",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0160",
+    "occurred_at": "2026-05-02T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100160",
+      "person_id": "p-0160",
+      "phone": "206-555-1160",
+      "ref": "HX-0160",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0161",
+    "occurred_at": "2026-05-04T17:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100161",
+      "person_id": "p-0161",
+      "phone": "206-555-1161",
+      "ref": "HX-0161",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0162",
+    "occurred_at": "2026-05-07T22:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100162",
+      "person_id": "p-0162",
+      "phone": "604-555-1162",
+      "ref": "HX-0162",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0163",
+    "occurred_at": "2026-05-10T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100163",
+      "person_id": "p-0163",
+      "phone": "206-555-1163",
+      "ref": "HX-0163",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0164",
+    "occurred_at": "2026-05-13T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100164",
+      "person_id": "p-0164",
+      "phone": "206-555-1164",
+      "ref": "HX-0164",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0165",
+    "occurred_at": "2026-05-16T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100165",
+      "person_id": "p-0165",
+      "phone": "604-555-1165",
+      "ref": "HX-0165",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0166",
+    "occurred_at": "2026-05-20T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100166",
+      "person_id": "p-0166",
+      "phone": "206-555-1166",
+      "ref": "HX-0166",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0167",
+    "occurred_at": "2026-05-22T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100167",
+      "person_id": "p-0167",
+      "phone": "206-555-1167",
+      "ref": "HX-0167",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0168",
+    "occurred_at": "2026-05-25T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100168",
+      "person_id": "p-0168",
+      "phone": "604-555-1168",
+      "ref": "HX-0168",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0169",
+    "occurred_at": "2026-05-28T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100169",
+      "person_id": "p-0169",
+      "phone": "206-555-1169",
+      "ref": "HX-0169",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0170",
+    "occurred_at": "2026-06-01T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100170",
+      "person_id": "p-0170",
+      "phone": "206-555-1170",
+      "ref": "HX-0170",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0171",
+    "occurred_at": "2026-06-03T20:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100171",
+      "person_id": "p-0171",
+      "phone": "604-555-1171",
+      "ref": "HX-0171",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0172",
+    "occurred_at": "2026-06-06T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100172",
+      "person_id": "p-0172",
+      "phone": "206-555-1172",
+      "ref": "HX-0172",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0173",
+    "occurred_at": "2026-06-09T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100173",
+      "person_id": "p-0173",
+      "phone": "206-555-1173",
+      "ref": "HX-0173",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0174",
+    "occurred_at": "2026-06-12T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100174",
+      "person_id": "p-0174",
+      "phone": "604-555-1174",
+      "ref": "HX-0174",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0175",
+    "occurred_at": "2026-06-15T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100175",
+      "person_id": "p-0175",
+      "phone": "206-555-1175",
+      "ref": "HX-0175",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0176",
+    "occurred_at": "2026-06-18T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100176",
+      "person_id": "p-0176",
+      "phone": "206-555-1176",
+      "ref": "HX-0176",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0177",
+    "occurred_at": "2026-06-21T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100177",
+      "person_id": "p-0177",
+      "phone": "604-555-1177",
+      "ref": "HX-0177",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0178",
+    "occurred_at": "2026-06-24T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100178",
+      "person_id": "p-0178",
+      "phone": "206-555-1178",
+      "ref": "HX-0178",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0179",
+    "occurred_at": "2026-06-27T20:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100179",
+      "person_id": "p-0179",
+      "phone": "206-555-1179",
+      "ref": "HX-0179",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0180",
+    "occurred_at": "2026-06-30T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100180",
+      "person_id": "p-0180",
+      "phone": "604-555-1180",
+      "ref": "HX-0180",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0181",
+    "occurred_at": "2026-07-04T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100181",
+      "person_id": "p-0181",
+      "phone": "206-555-1181",
+      "ref": "HX-0181",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0182",
+    "occurred_at": "2026-07-06T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100182",
+      "person_id": "p-0182",
+      "phone": "206-555-1182",
+      "ref": "HX-0182",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0183",
+    "occurred_at": "2026-07-09T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100183",
+      "person_id": "p-0183",
+      "phone": "604-555-1183",
+      "ref": "HX-0183",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0184",
+    "occurred_at": "2026-07-12T22:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100184",
+      "person_id": "p-0184",
+      "phone": "206-555-1184",
+      "ref": "HX-0184",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0185",
+    "occurred_at": "2026-07-15T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100185",
+      "person_id": "p-0185",
+      "phone": "206-555-1185",
+      "ref": "HX-0185",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0186",
+    "occurred_at": "2026-07-18T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100186",
+      "person_id": "p-0186",
+      "phone": "604-555-1186",
+      "ref": "HX-0186",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0187",
+    "occurred_at": "2026-07-21T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100187",
+      "person_id": "p-0187",
+      "phone": "206-555-1187",
+      "ref": "HX-0187",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0188",
+    "occurred_at": "2026-07-24T22:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100188",
+      "person_id": "p-0188",
+      "phone": "206-555-1188",
+      "ref": "HX-0188",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0189",
+    "occurred_at": "2026-07-27T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100189",
+      "person_id": "p-0189",
+      "phone": "604-555-1189",
+      "ref": "HX-0189",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0190",
+    "occurred_at": "2026-07-31T01:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100190",
+      "person_id": "p-0190",
+      "phone": "206-555-1190",
+      "ref": "HX-0190",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0191",
+    "occurred_at": "2026-08-02T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100191",
+      "person_id": "p-0191",
+      "phone": "206-555-1191",
+      "ref": "HX-0191",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0192",
+    "occurred_at": "2026-08-06T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100192",
+      "person_id": "p-0192",
+      "phone": "604-555-1192",
+      "ref": "HX-0192",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0193",
+    "occurred_at": "2026-08-08T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100193",
+      "person_id": "p-0193",
+      "phone": "206-555-1193",
+      "ref": "HX-0193",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0194",
+    "occurred_at": "2026-08-11T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100194",
+      "person_id": "p-0194",
+      "phone": "206-555-1194",
+      "ref": "HX-0194",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0195",
+    "occurred_at": "2026-08-15T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100195",
+      "person_id": "p-0195",
+      "phone": "604-555-1195",
+      "ref": "HX-0195",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0196",
+    "occurred_at": "2026-08-17T15:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100196",
+      "person_id": "p-0196",
+      "phone": "206-555-1196",
+      "ref": "HX-0196",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0197",
+    "occurred_at": "2026-08-20T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100197",
+      "person_id": "p-0197",
+      "phone": "206-555-1197",
+      "ref": "HX-0197",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0198",
+    "occurred_at": "2026-08-23T17:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100198",
+      "person_id": "p-0198",
+      "phone": "604-555-1198",
+      "ref": "HX-0198",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0199",
+    "occurred_at": "2026-08-26T23:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100199",
+      "person_id": "p-0199",
+      "phone": "206-555-1199",
+      "ref": "HX-0199",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0200",
+    "occurred_at": "2026-08-29T19:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100200",
+      "person_id": "p-0200",
+      "phone": "206-555-1200",
+      "ref": "HX-0200",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0201",
+    "occurred_at": "2026-09-02T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100201",
+      "person_id": "p-0201",
+      "phone": "604-555-1201",
+      "ref": "HX-0201",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0202",
+    "occurred_at": "2026-09-04T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100202",
+      "person_id": "p-0202",
+      "phone": "206-555-1202",
+      "ref": "HX-0202",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0203",
+    "occurred_at": "2026-09-07T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100203",
+      "person_id": "p-0203",
+      "phone": "206-555-1203",
+      "ref": "HX-0203",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0204",
+    "occurred_at": "2026-09-10T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100204",
+      "person_id": "p-0204",
+      "phone": "604-555-1204",
+      "ref": "HX-0204",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0205",
+    "occurred_at": "2026-09-13T22:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100205",
+      "person_id": "p-0205",
+      "phone": "206-555-1205",
+      "ref": "HX-0205",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0206",
+    "occurred_at": "2026-09-16T15:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100206",
+      "person_id": "p-0206",
+      "phone": "206-555-1206",
+      "ref": "HX-0206",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0207",
+    "occurred_at": "2026-09-20T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100207",
+      "person_id": "p-0207",
+      "phone": "604-555-1207",
+      "ref": "HX-0207",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0208",
+    "occurred_at": "2026-09-22T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100208",
+      "person_id": "p-0208",
+      "phone": "206-555-1208",
+      "ref": "HX-0208",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0209",
+    "occurred_at": "2026-09-26T01:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100209",
+      "person_id": "p-0209",
+      "phone": "206-555-1209",
+      "ref": "HX-0209",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0210",
+    "occurred_at": "2026-09-29T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100210",
+      "person_id": "p-0210",
+      "phone": "604-555-1210",
+      "ref": "HX-0210",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0211",
+    "occurred_at": "2026-10-01T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100211",
+      "person_id": "p-0211",
+      "phone": "206-555-1211",
+      "ref": "HX-0211",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0212",
+    "occurred_at": "2026-10-04T15:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100212",
+      "person_id": "p-0212",
+      "phone": "206-555-1212",
+      "ref": "HX-0212",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0213",
+    "occurred_at": "2026-10-07T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100213",
+      "person_id": "p-0213",
+      "phone": "604-555-1213",
+      "ref": "HX-0213",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0214",
+    "occurred_at": "2026-10-10T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100214",
+      "person_id": "p-0214",
+      "phone": "206-555-1214",
+      "ref": "HX-0214",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0215",
+    "occurred_at": "2026-10-13T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100215",
+      "person_id": "p-0215",
+      "phone": "206-555-1215",
+      "ref": "HX-0215",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0216",
+    "occurred_at": "2026-10-16T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100216",
+      "person_id": "p-0216",
+      "phone": "604-555-1216",
+      "ref": "HX-0216",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0217",
+    "occurred_at": "2026-10-19T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100217",
+      "person_id": "p-0217",
+      "phone": "206-555-1217",
+      "ref": "HX-0217",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0218",
+    "occurred_at": "2026-10-22T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100218",
+      "person_id": "p-0218",
+      "phone": "206-555-1218",
+      "ref": "HX-0218",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0219",
+    "occurred_at": "2026-10-25T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100219",
+      "person_id": "p-0219",
+      "phone": "604-555-1219",
+      "ref": "HX-0219",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0220",
+    "occurred_at": "2026-10-28T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100220",
+      "person_id": "p-0220",
+      "phone": "206-555-1220",
+      "ref": "HX-0220",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0221",
+    "occurred_at": "2026-10-31T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100221",
+      "person_id": "p-0221",
+      "phone": "206-555-1221",
+      "ref": "HX-0221",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0222",
+    "occurred_at": "2026-11-04T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100222",
+      "person_id": "p-0222",
+      "phone": "604-555-1222",
+      "ref": "HX-0222",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0223",
+    "occurred_at": "2026-11-06T23:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100223",
+      "person_id": "p-0223",
+      "phone": "206-555-1223",
+      "ref": "HX-0223",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0224",
+    "occurred_at": "2026-11-10T00:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100224",
+      "person_id": "p-0224",
+      "phone": "206-555-1224",
+      "ref": "HX-0224",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0225",
+    "occurred_at": "2026-11-12T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100225",
+      "person_id": "p-0225",
+      "phone": "604-555-1225",
+      "ref": "HX-0225",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0226",
+    "occurred_at": "2026-11-15T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100226",
+      "person_id": "p-0226",
+      "phone": "206-555-1226",
+      "ref": "HX-0226",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0227",
+    "occurred_at": "2026-11-18T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100227",
+      "person_id": "p-0227",
+      "phone": "206-555-1227",
+      "ref": "HX-0227",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0228",
+    "occurred_at": "2026-11-21T23:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100228",
+      "person_id": "p-0228",
+      "phone": "604-555-1228",
+      "ref": "HX-0228",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0229",
+    "occurred_at": "2026-11-24T20:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100229",
+      "person_id": "p-0229",
+      "phone": "206-555-1229",
+      "ref": "HX-0229",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0230",
+    "occurred_at": "2026-11-27T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100230",
+      "person_id": "p-0230",
+      "phone": "206-555-1230",
+      "ref": "HX-0230",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0231",
+    "occurred_at": "2026-12-01T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": null,
+      "mrn": "MRN-100231",
+      "person_id": "p-0231",
+      "phone": "604-555-1231",
+      "ref": "HX-0231",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0232",
+    "occurred_at": "2026-12-03T20:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100232",
+      "person_id": "p-0232",
+      "phone": "206-555-1232",
+      "ref": "HX-0232",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0233",
+    "occurred_at": "2026-12-07T00:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100233",
+      "person_id": "p-0233",
+      "phone": "206-555-1233",
+      "ref": "HX-0233",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0234",
+    "occurred_at": "2026-12-09T18:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100234",
+      "person_id": "p-0234",
+      "phone": "604-555-1234",
+      "ref": "HX-0234",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0235",
+    "occurred_at": "2026-12-12T21:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100235",
+      "person_id": "p-0235",
+      "phone": "206-555-1235",
+      "ref": "HX-0235",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0236",
+    "occurred_at": "2026-12-15T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100236",
+      "person_id": "p-0236",
+      "phone": "206-555-1236",
+      "ref": "HX-0236",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0237",
+    "occurred_at": "2026-12-18T19:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100237",
+      "person_id": "p-0237",
+      "phone": "604-555-1237",
+      "ref": "HX-0237",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0238",
+    "occurred_at": "2026-12-21T21:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100238",
+      "person_id": "p-0238",
+      "phone": "206-555-1238",
+      "ref": "HX-0238",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "HX-0239",
+    "occurred_at": "2026-12-24T15:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": true,
+      "household": null,
+      "mrn": "MRN-100239",
+      "person_id": "p-0239",
+      "phone": "206-555-1239",
+      "ref": "HX-0239",
+      "relation": null,
+      "utterance": "please check the referral"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "dq-0172-a",
+    "occurred_at": "2025-06-18T16:05:00Z",
+    "payload": {
+      "channel": "phone",
+      "consequence": "A dial of 604-555-0172 matches p-dq-6101 and p-dq-6102. This row labels p-dq-6101 a spouse, so a consent read from this chart is addressed to a spouse.",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": "hh-dq-0172",
+      "mrn": "MRN-610141",
+      "person_id": "p-dq-6101",
+      "phone": "604-555-0172",
+      "ref": "dq-0172-a",
+      "relation": "spouse",
+      "utterance": "calling as the spouse"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "dq-0172-b",
+    "occurred_at": "2025-06-18T16:40:00Z",
+    "payload": {
+      "channel": "phone",
+      "consequence": "A dial of 604-555-0172 matches p-dq-6102 and p-dq-6101. This row labels p-dq-6102 the patient, so the same number is on file as both spouse and patient.",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "household": "hh-dq-0172",
+      "mrn": "MRN-610242",
+      "person_id": "p-dq-6102",
+      "phone": "604-555-0172",
+      "ref": "dq-0172-b",
+      "relation": "patient",
+      "utterance": "calling as the patient"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "dq-4408",
+    "occurred_at": "2026-04-02T17:14:00Z",
+    "payload": {
+      "channel": "web",
+      "consequence": "The request stored an empty phone string, so the desk has no number to dial and a text cannot be sent from this row.",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "mrn": "MRN-440811",
+      "person_id": "p-dq-4408",
+      "phone": "",
+      "ref": "dq-4408",
+      "utterance": "please have the desk call me"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "CallbackRecorded",
+    "ref": "dq-4408",
+    "occurred_at": "2026-04-03T15:02:00Z",
+    "payload": {
+      "callback_number": "604-555-0166",
+      "channel": "phone",
+      "consequence": "Callback number 604-555-0166 arrived on a later channel event. The request still has an empty phone, and this event leaves that row as it was.",
+      "person_id": "p-dq-4408",
+      "ref": "dq-4408"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "WebhookAttempt",
+    "ref": "REF-2290",
+    "occurred_at": "2027-01-09T19:41:00Z",
+    "payload": {
+      "attempt": 2,
+      "partner": "harbor-coverage",
+      "ref": "REF-2290",
+      "status": "timeout"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "REF-3304",
+    "occurred_at": "2027-01-10T15:05:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "ref": "REF-3304",
+      "utterance": "This is an emergency. Send the patient back to the desk."
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandsetDispatch",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-11T22:10:00Z",
+    "payload": {
+      "attempt": 1,
+      "idempotency_key": "sms-4417",
+      "ref": "REF-4417",
+      "status": "dispatched-unacked"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandsetDispatch",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-11T22:16:00Z",
+    "payload": {
+      "attempt": 2,
+      "idempotency_key": "sms-4417",
+      "ref": "REF-4417",
+      "status": "redelivered"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskSession",
+    "ref": "desk-8841",
+    "occurred_at": "2027-01-09T08:10:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "factor": "screen-code-then-sms",
+      "session_id": "sess-8841",
+      "token_subject": "member-bc-4417"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "desk-fallback",
+    "occurred_at": "2026-11-01T08:30:00Z",
+    "payload": {
+      "local_stamps": [
+        "2026-11-01T01:30:00-07:00",
+        "2026-11-01T01:30:00-08:00"
+      ],
+      "note": "the desk recorded the same civil time twice on the fall-back morning"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SponsorAsked",
+    "ref": "org-letter",
+    "occurred_at": "2026-12-15T17:20:00Z",
+    "payload": {
+      "ref": "org-letter",
+      "role_id": "medical-director",
+      "site": "fraser-burnaby",
+      "statement": "Have the assistant grade urgency from the referral letter before the clinic reopens.",
+      "stream_id": "org-letter",
+      "title": "Medical director"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SponsorAsked",
+    "ref": "org-letter",
+    "occurred_at": "2026-12-16T20:15:00Z",
+    "payload": {
+      "ref": "org-letter",
+      "role_id": "finance-partner",
+      "site": "vancouver-desk",
+      "statement": "Use the external model. The spreadsheet says it is cheaper today. Send the letter corpus so it can grade urgency.",
+      "stream_id": "org-letter",
+      "title": "Finance partner"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SponsorAsked",
+    "ref": "org-wait",
+    "occurred_at": "2027-01-08T16:30:00Z",
+    "payload": {
+      "ref": "org-wait",
+      "role_id": "ops-director",
+      "site": "vancouver-desk",
+      "statement": "Put one wait number on the patient screen before the long weekend.",
+      "stream_id": "org-wait",
+      "title": "Operations director"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "PolicyNoted",
+    "ref": "org-wait",
+    "occurred_at": "2027-01-08T17:05:00Z",
+    "payload": {
+      "ref": "org-wait",
+      "role_id": "desk-supervisor",
+      "site": "vancouver-desk",
+      "statement": "Vancouver desk practice is to tell the patient the count starts when we take the call.",
+      "stream_id": "org-wait",
+      "title": "Desk supervisor"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SponsorAsked",
+    "ref": "org-cover-clerk",
+    "occurred_at": "2027-01-09T19:55:00Z",
+    "payload": {
+      "ref": "org-cover-clerk",
+      "role_id": "ops-director",
+      "site": "vancouver-desk",
+      "statement": "Harbor Coverage recorded timeout on org-cover-clerk. Put one wait number on the patient screen anyway, and treat the member as covered enough to keep that screen simple.",
+      "stream_id": "org-cover",
+      "title": "Operations director"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SponsorAsked",
+    "ref": "org-file",
+    "occurred_at": "2027-01-09T20:10:00Z",
+    "payload": {
+      "ref": "org-file",
+      "role_id": "desk-supervisor",
+      "site": "vancouver-desk",
+      "statement": "The caller said Cedar Ridge tonight. Put that on the patient screen before the nightly file lands.",
+      "stream_id": "org-file",
+      "title": "Desk supervisor"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskSession",
+    "ref": "THR-17",
+    "occurred_at": "2027-01-06T15:40:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "factor": "screen-code",
+      "person_id": "person-thr-17",
+      "phone": "604-555-0177",
+      "postal": "V6B 1A1",
+      "ref": "THR-17",
+      "session_id": "sess-thr-17",
+      "token_subject": "member-bc-thr-17",
+      "zone": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "THR-17",
+    "occurred_at": "2027-01-06T15:46:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "person_id": "person-thr-17",
+      "phone": "604-555-0177",
+      "ref": "THR-17",
+      "utterance": "Your visit at Cedar Ridge is booked for 6 January."
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandsetDispatch",
+    "ref": "THR-17",
+    "occurred_at": "2027-01-06T16:02:00Z",
+    "payload": {
+      "attempt": 1,
+      "idempotency_key": "thr-handset-17",
+      "ref": "THR-17",
+      "status": "not-delivered"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "WebhookAttempt",
+    "ref": "THR-17",
+    "occurred_at": "2027-01-09T16:44:00Z",
+    "payload": {
+      "attempt": 1,
+      "eligible": true,
+      "partner": "harbor-coverage",
+      "ref": "THR-17",
+      "status": "posted"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "THR-17",
+    "occurred_at": "2027-01-11T16:30:00Z",
+    "payload": {
+      "note": "Patient told the visit was booked. The file night is a different date.",
+      "ref": "THR-17",
+      "role": "clerk"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskSession",
+    "ref": "leg-desk-7710",
+    "occurred_at": "2027-01-09T08:22:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "factor": "screen-code-then-sms",
+      "screen_code": "4417",
+      "session_id": "sess-7710",
+      "token_subject": "member-bc-4417"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskSession",
+    "ref": "LEG-2201",
+    "occurred_at": "2027-01-09T11:05:00Z",
+    "payload": {
+      "desk_region": "WA",
+      "factor": "screen-code-then-sms",
+      "ref": "LEG-2201",
+      "screen_code": "4417",
+      "session_id": "sess-9920",
+      "token_subject": "member-wa-2201"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "WindowOpened",
+    "ref": "LEG-2201",
+    "occurred_at": "2027-01-09T16:00:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "ref": "LEG-2201",
+      "state": "open"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ProviderAccepted",
+    "ref": "LEG-2201",
+    "occurred_at": "2027-01-09T16:04:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "ref": "LEG-2201"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandsetDelivered",
+    "ref": "LEG-2201",
+    "occurred_at": "2027-01-09T16:11:00Z",
+    "payload": {
+      "channel": "sms",
+      "ref": "LEG-2201",
+      "status": "delivered"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "WindowClosed",
+    "ref": "LEG-2201",
+    "occurred_at": "2027-01-09T16:40:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "WA",
+      "ref": "LEG-2201",
+      "state": "closed"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandoffQueued",
+    "ref": "leg-cc",
+    "occurred_at": "2027-01-09T17:15:00Z",
+    "payload": {
+      "call_id": "p-legacy-1",
+      "desk_region": "WA",
+      "person_id": "p-legacy-1",
+      "queue": "handoff"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandoffQueued",
+    "ref": "leg-cc",
+    "occurred_at": "2027-01-09T17:22:00Z",
+    "payload": {
+      "call_id": "p-legacy-2",
+      "desk_region": "WA",
+      "person_id": "p-legacy-1",
+      "previous_person_id": "p-legacy-1",
+      "queue": "handoff"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "OutboxRecorded",
+    "ref": "INT-17",
+    "occurred_at": "2027-01-10T16:00:00Z",
+    "payload": {
+      "consumer_ack": "missing",
+      "idempotency_key": "int-outbox-17",
+      "outbox_id": "int-outbox-17",
+      "ref": "INT-17"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "OutboxDelivered",
+    "ref": "INT-17",
+    "occurred_at": "2027-01-10T16:02:00Z",
+    "payload": {
+      "attempt": 1,
+      "consumer_ack": "missing",
+      "idempotency_key": "int-outbox-17",
+      "outbox_id": "int-outbox-17",
+      "ref": "INT-17",
+      "transcripts": [
+        "Northline: visit filed for referral INT-17 at Cedar Ridge."
+      ]
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ConsumerAck",
+    "ref": "INT-17",
+    "occurred_at": "2027-01-10T16:07:00Z",
+    "payload": {
+      "consumer_ack": "missing",
+      "idempotency_key": "int-outbox-17",
+      "outbox_id": "int-outbox-17",
+      "ref": "INT-17"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "OutboxDelivered",
+    "ref": "INT-17",
+    "occurred_at": "2027-01-10T16:14:00Z",
+    "payload": {
+      "attempt": 2,
+      "consumer_ack": "missing",
+      "idempotency_key": "int-outbox-17",
+      "outbox_id": "int-outbox-17",
+      "ref": "INT-17",
+      "transcripts": [
+        "Northline: visit filed for referral INT-17 at Cedar Ridge.",
+        "Northline: visit filed for referral INT-17 at Cedar Ridge."
+      ]
+    }
+  },
+  {
+    "kind": "event",
+    "type": "WebhookAttempt",
+    "ref": "INT-30",
+    "occurred_at": "2027-01-08T18:05:00Z",
+    "payload": {
+      "attempt": 3,
+      "partner": "inland-coverage",
+      "ref": "INT-30",
+      "status": "timeout"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "QueueDepth",
+    "ref": "int-queue-morning",
+    "occurred_at": "2027-01-12T15:20:00Z",
+    "payload": {
+      "consumer_alive": true,
+      "oldest_age_seconds": 960,
+      "visible_backlog": 40
+    }
+  },
+  {
+    "kind": "event",
+    "type": "AccessRecorded",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-09T18:40:00Z",
+    "payload": {
+      "action": "file-download",
+      "grant": "screen text only",
+      "object_where": "hospital letter for REF-4417",
+      "ref": "REF-4417",
+      "role": "desk-clerk"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "AccessRecorded",
+    "ref": "sec-national-id",
+    "occurred_at": "2027-01-09T19:12:00Z",
+    "payload": {
+      "action": "file-read",
+      "host": "desk-app-3",
+      "on_disk_token": "900-00-4417",
+      "where": "bytes/national_id.txt"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "AccessRecorded",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-11T16:40:00Z",
+    "payload": {
+      "action": "screen-render",
+      "object_where": "hospital letter for REF-4417",
+      "product": "northline-assistant-2024",
+      "ref": "REF-4417",
+      "screen_field": "approval_accepted",
+      "screen_value": "APR-4417"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandsetDispatch",
+    "ref": "CUR-4",
+    "occurred_at": "2027-01-13T21:10:00Z",
+    "payload": {
+      "file_id": "cedar-cur-2027-01-13",
+      "ref": "CUR-4",
+      "status": "dispatched",
+      "text_sent": true
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ClosuresAnnounced",
+    "ref": "cur-closures",
+    "occurred_at": "2026-12-15T16:00:00Z",
+    "payload": {
+      "dates": [
+        "2027-01-01",
+        "2027-02-15"
+      ],
+      "list_id": "office-closures-2027",
+      "note": "announced office closure dates"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ComparisonNoted",
+    "ref": "CUR-6",
+    "occurred_at": "2027-01-14T16:00:00Z",
+    "payload": {
+      "n": 9,
+      "ref": "CUR-6",
+      "score_a": 0.5002,
+      "score_b": 0.5,
+      "tiny_delta": "scores 0.5002 vs 0.5000, n 9"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ShadowRequest",
+    "ref": "CUR-7",
+    "occurred_at": "2027-01-14T17:00:00Z",
+    "payload": {
+      "ref": "CUR-7",
+      "replay": true,
+      "shadow_wrote": true,
+      "wrote_slot": true
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HostObserved",
+    "ref": "CUR-7",
+    "occurred_at": "2027-01-14T17:01:00Z",
+    "payload": {
+      "cpu_percent": 11,
+      "from_cache": true,
+      "host": "desk-app-9",
+      "ref": "CUR-7",
+      "served_version": "old-hours",
+      "status": "green"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0000",
+    "occurred_at": "2025-02-02T11:41:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0000",
+      "phone": "604-555-2000",
+      "ref": "R2B-0000"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0001",
+    "occurred_at": "2025-02-06T12:12:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0001",
+      "phone": "206-555-3001",
+      "ref": "R2B-0001"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0002",
+    "occurred_at": "2025-02-10T09:24:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0002",
+      "phone": "206-555-3002",
+      "ref": "R2B-0002"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0003",
+    "occurred_at": "2025-02-14T15:36:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0003",
+      "phone": "604-555-2003",
+      "ref": "R2B-0003"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0004",
+    "occurred_at": "2025-02-18T09:04:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0004",
+      "phone": "206-555-3004",
+      "ref": "R2B-0004"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0005",
+    "occurred_at": "2025-02-22T10:04:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0005",
+      "phone": "206-555-3005",
+      "ref": "R2B-0005"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0006",
+    "occurred_at": "2025-02-26T10:50:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0006",
+      "phone": "604-555-2006",
+      "ref": "R2B-0006"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0007",
+    "occurred_at": "2025-03-02T10:04:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0007",
+      "phone": "206-555-3007",
+      "ref": "R2B-0007"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0008",
+    "occurred_at": "2025-03-06T13:24:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0008",
+      "phone": "206-555-3008",
+      "ref": "R2B-0008"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0009",
+    "occurred_at": "2025-03-10T12:00:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0009",
+      "phone": "604-555-2009",
+      "ref": "R2B-0009"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0010",
+    "occurred_at": "2025-03-14T16:21:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0010",
+      "phone": "206-555-3010",
+      "ref": "R2B-0010"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0011",
+    "occurred_at": "2025-03-18T10:18:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0011",
+      "phone": "206-555-3011",
+      "ref": "R2B-0011"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0012",
+    "occurred_at": "2025-03-22T11:18:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0012",
+      "phone": "604-555-2012",
+      "ref": "R2B-0012"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0013",
+    "occurred_at": "2025-03-26T11:48:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0013",
+      "phone": "206-555-3013",
+      "ref": "R2B-0013"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0014",
+    "occurred_at": "2025-03-30T15:43:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0014",
+      "phone": "206-555-3014",
+      "ref": "R2B-0014"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0015",
+    "occurred_at": "2025-04-03T13:33:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0015",
+      "phone": "604-555-2015",
+      "ref": "R2B-0015"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0016",
+    "occurred_at": "2025-04-07T16:08:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0016",
+      "phone": "206-555-3016",
+      "ref": "R2B-0016"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0017",
+    "occurred_at": "2025-04-11T12:14:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0017",
+      "phone": "206-555-3017",
+      "ref": "R2B-0017"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0018",
+    "occurred_at": "2025-04-15T15:42:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0018",
+      "phone": "604-555-2018",
+      "ref": "R2B-0018"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0019",
+    "occurred_at": "2025-04-19T09:22:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0019",
+      "phone": "206-555-3019",
+      "ref": "R2B-0019"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0020",
+    "occurred_at": "2025-04-23T16:45:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0020",
+      "phone": "206-555-3020",
+      "ref": "R2B-0020"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0021",
+    "occurred_at": "2025-04-27T14:31:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0021",
+      "phone": "604-555-2144",
+      "ref": "R2B-0021"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0022",
+    "occurred_at": "2025-05-01T14:04:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0022",
+      "phone": "604-555-2144",
+      "ref": "R2B-0022"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0023",
+    "occurred_at": "2025-05-05T15:33:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0023",
+      "phone": "206-555-3023",
+      "ref": "R2B-0023"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0024",
+    "occurred_at": "2025-05-09T09:02:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0024",
+      "phone": "604-555-2024",
+      "ref": "R2B-0024"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0025",
+    "occurred_at": "2025-05-13T11:23:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0025",
+      "phone": "206-555-3025",
+      "ref": "R2B-0025"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0026",
+    "occurred_at": "2025-05-17T16:01:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0026",
+      "phone": "206-555-3026",
+      "ref": "R2B-0026"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0027",
+    "occurred_at": "2025-05-21T10:09:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0027",
+      "phone": "604-555-2027",
+      "ref": "R2B-0027"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0028",
+    "occurred_at": "2025-05-25T08:21:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0028",
+      "phone": "206-555-3028",
+      "ref": "R2B-0028"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0029",
+    "occurred_at": "2025-05-29T12:31:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0029",
+      "phone": "206-555-3029",
+      "ref": "R2B-0029"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0030",
+    "occurred_at": "2025-06-02T12:18:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0030",
+      "phone": "604-555-2030",
+      "ref": "R2B-0030"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0031",
+    "occurred_at": "2025-06-06T08:43:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0031",
+      "phone": "206-555-3031",
+      "ref": "R2B-0031"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0032",
+    "occurred_at": "2025-06-10T10:22:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0032",
+      "phone": "206-555-3032",
+      "ref": "R2B-0032"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0033",
+    "occurred_at": "2025-06-14T11:29:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0033",
+      "phone": "604-555-2033",
+      "ref": "R2B-0033"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0034",
+    "occurred_at": "2025-06-18T16:02:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0034",
+      "phone": "206-555-3034",
+      "ref": "R2B-0034"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0035",
+    "occurred_at": "2025-06-22T09:36:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0035",
+      "phone": "206-555-3035",
+      "ref": "R2B-0035"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0036",
+    "occurred_at": "2025-06-26T13:43:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0036",
+      "phone": "604-555-2036",
+      "ref": "R2B-0036"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0037",
+    "occurred_at": "2025-06-30T09:30:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0037",
+      "phone": "206-555-3037",
+      "ref": "R2B-0037"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0038",
+    "occurred_at": "2025-07-04T13:23:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0038",
+      "phone": "206-555-3038",
+      "ref": "R2B-0038"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0039",
+    "occurred_at": "2025-07-08T11:23:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0039",
+      "phone": "604-555-2039",
+      "ref": "R2B-0039"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0040",
+    "occurred_at": "2025-07-12T08:35:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0040",
+      "phone": "206-555-3040",
+      "ref": "R2B-0040"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0041",
+    "occurred_at": "2025-07-16T12:15:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0041",
+      "phone": "206-555-3041",
+      "ref": "R2B-0041"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0042",
+    "occurred_at": "2025-07-20T11:01:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0042",
+      "phone": "604-555-2042",
+      "ref": "R2B-0042"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0043",
+    "occurred_at": "2025-07-24T14:25:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0043",
+      "phone": "206-555-3043",
+      "ref": "R2B-0043"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0044",
+    "occurred_at": "2025-07-28T16:05:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0044",
+      "phone": "206-555-3044",
+      "ref": "R2B-0044"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0045",
+    "occurred_at": "2025-08-01T13:23:00Z",
+    "payload": {
+      "member_region": "BC",
+      "person_id": "p-r2b-0045",
+      "phone": "604-555-2045",
+      "ref": "R2B-0045"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0046",
+    "occurred_at": "2025-08-05T12:04:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0046",
+      "phone": "206-555-3046",
+      "ref": "R2B-0046"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2B-0047",
+    "occurred_at": "2025-08-09T14:08:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r2b-0047",
+      "phone": "206-555-3047",
+      "ref": "R2B-0047"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "r2a-onboard-fb",
+    "occurred_at": "2027-01-12T16:20:00Z",
+    "payload": {
+      "application_status": "lodged",
+      "channel": "web",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "packet": "clinic-onboarding",
+      "ref": "r2a-onboard-fb",
+      "region": "BC",
+      "site": "fraser-burnaby",
+      "utterance": "Fraser Burnaby clinic onboarding application lodged."
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "r2a-onboard-fb",
+    "occurred_at": "2027-01-12T18:10:00Z",
+    "payload": {
+      "note": "Finance asked for supplier quotation id QUO-18420 on the Fraser Burnaby clinic onboarding packet.",
+      "quote_id": "QUO-18420",
+      "ref": "r2a-onboard-fb",
+      "role_id": "finance-partner",
+      "site": "vancouver-desk",
+      "title": "Finance partner"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "r2a-quote-18420",
+    "occurred_at": "2027-01-14T16:45:00Z",
+    "payload": {
+      "amount": 9600,
+      "currency": "CAD",
+      "note": "Invoice note for quotation QUO-18420 names supplier id SUP-14B. Amount 9600 CAD.",
+      "packet_ref": "r2a-onboard-fb",
+      "quote_id": "QUO-18420",
+      "ref": "r2a-quote-18420",
+      "role_id": "finance-partner",
+      "site": "vancouver-desk",
+      "supplier_id": "SUP-14B",
+      "title": "Finance partner"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "r2a-sat-file",
+    "occurred_at": "2027-01-18T16:00:00Z",
+    "payload": {
+      "booking_date": "2027-01-16",
+      "file_id": "cedar-r2a-2027-01-16",
+      "note": "I counted the Saturday cedar-ridge file cedar-r2a-2027-01-16 as an office day. Booking date 2027-01-16 is on my Vancouver tally.",
+      "ref": "r2a-sat-file",
+      "role_id": "desk-clerk",
+      "site": "vancouver-desk",
+      "tally": "counted",
+      "title": "Desk clerk"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "r2a-sat-file",
+    "occurred_at": "2027-01-18T17:15:00Z",
+    "payload": {
+      "booking_date": "2027-01-16",
+      "file_id": "cedar-r2a-2027-01-16",
+      "note": "The organization calendar is Monday through Friday. I left Saturday 2027-01-16 off my office-day tally for file cedar-r2a-2027-01-16. I have not signed the clerk tally.",
+      "prior_command_id": "cmd-r2a-sat-clerk",
+      "ref": "r2a-sat-file",
+      "role_id": "desk-supervisor",
+      "site": "vancouver-desk",
+      "tally": "left-off",
+      "title": "Desk supervisor"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "r2a-sat-file",
+    "occurred_at": "2027-01-18T18:40:00Z",
+    "payload": {
+      "booking_date": "2027-01-16",
+      "file_id": "cedar-r2a-2027-01-16",
+      "note": "I counted Saturday 2027-01-16 on the cedar-ridge file tally for cedar-r2a-2027-01-16. I did not add that Saturday to the Vancouver office-day tally.",
+      "prior_command_id": "cmd-r2a-sat-supervisor",
+      "ref": "r2a-sat-file",
+      "role_id": "cedar-clerk",
+      "site": "cedar-ridge",
+      "tally": "file-tally-only",
+      "title": "Nightly file clerk"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ProviderAccepted",
+    "ref": "R2C-HAND",
+    "occurred_at": "2027-01-14T17:02:00Z",
+    "payload": {
+      "channel": "phone",
+      "handset_delivered": false,
+      "ref": "R2C-HAND"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandsetDelivered",
+    "ref": "R2C-HAND",
+    "occurred_at": "2027-01-14T17:18:00Z",
+    "payload": {
+      "channel": "sms",
+      "handset_delivered": true,
+      "ref": "R2C-HAND"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskSession",
+    "ref": "R2C-LEAVE",
+    "occurred_at": "2027-01-18T16:10:00Z",
+    "payload": {
+      "clinician_id": "clin-r2c-endo",
+      "local_date": "2027-01-18",
+      "local_time": "08:10",
+      "ref": "R2C-LEAVE",
+      "session_id": "sess-r2c-leave",
+      "site": "fraser-burnaby",
+      "zone": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskSession",
+    "ref": "R2D-7",
+    "occurred_at": "2027-01-18T15:10:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "member_id": "MBR-R2D-7",
+      "person_id": "p-r2d-7",
+      "phone": "604-555-0148",
+      "postal": "V6B 1A1",
+      "ref": "R2D-7",
+      "session_id": "sess-r2d-7",
+      "zone": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2D-7",
+    "occurred_at": "2027-01-18T15:26:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "member_id": "MBR-R2D-7",
+      "person_id": "p-r2d-7",
+      "ref": "R2D-7",
+      "utterance": "asking about referral R2D-7"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "IdentifierRecorded",
+    "ref": "R2D-7",
+    "occurred_at": "2027-01-18T15:40:00Z",
+    "payload": {
+      "member_id": "MBR-R2D-7",
+      "person_id": "p-r2d-7",
+      "recorded_on": "desk",
+      "ref": "R2D-7"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R2D-7",
+    "occurred_at": "2027-01-22T16:45:00Z",
+    "payload": {
+      "desk_member_id": "MBR-R2D-7",
+      "hospital_member_id": "MRN-R2D-7",
+      "note": "Desk copy of the member id is MBR-R2D-7. Hospital copy of the member id is MRN-R2D-7. The two identifiers disagree.",
+      "person_id": "p-r2d-7",
+      "ref": "R2D-7",
+      "role": "clerk"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2E-9",
+    "occurred_at": "2027-02-12T16:12:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "member_id": "MBR-R2E-9",
+      "member_region": "BC",
+      "person_id": "p-r2e-9",
+      "ref": "R2E-9",
+      "site": "cedar-ridge",
+      "utterance": "The Cedar Ridge visit is booked for 2027-02-15."
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R2E-9",
+    "occurred_at": "2027-02-17T15:05:00Z",
+    "payload": {
+      "note": "Count 2027-02-15 as a working day so the weekend number still looks small.",
+      "on_date": "2027-02-15",
+      "ref": "R2E-9",
+      "role": "operations"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R2E-9",
+    "occurred_at": "2027-02-17T15:48:00Z",
+    "payload": {
+      "note": "The office list does not include that date.",
+      "on_date": "2027-02-15",
+      "ref": "R2E-9",
+      "role": "desk-supervisor"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SchemaEpoch",
+    "ref": "r2f-schema",
+    "occurred_at": "2025-01-15",
+    "payload": {
+      "example": "6045552701",
+      "field": "phone",
+      "form": "digits",
+      "person_id": "p-r2f-2701"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "PhoneRecorded",
+    "ref": "r2f-phone",
+    "occurred_at": "2025-04-11T17:20:00Z",
+    "payload": {
+      "field": "phone",
+      "form": "digits",
+      "person_id": "p-r2f-2701",
+      "phone": "6045552701"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "SchemaEpoch",
+    "ref": "r2f-schema",
+    "occurred_at": "2026-06-01",
+    "payload": {
+      "example": "604-555-2701",
+      "field": "phone",
+      "form": "dashed",
+      "person_id": "p-r2f-2701"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "PhoneRecorded",
+    "ref": "r2f-phone",
+    "occurred_at": "2026-06-02T16:40:00Z",
+    "payload": {
+      "field": "phone",
+      "form": "dashed",
+      "person_id": "p-r2f-2701",
+      "phone": "604-555-2701"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R2F-LATE",
+    "occurred_at": "2026-03-04T15:00:00Z",
+    "payload": {
+      "person_id": "p-r2f-late",
+      "reason": "spreadsheet row found in November",
+      "recorded_on": "2026-11-02",
+      "ref": "R2F-LATE"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R2H-BC",
+    "occurred_at": "2027-01-11T16:15:00Z",
+    "payload": {
+      "city": "Vancouver",
+      "line1": "22 Northline Place",
+      "note": "The clerk typed 98101 on this British Columbia address. The desk kept postal V6B 2W9.",
+      "outcome": "not-stored",
+      "postal": "V6B 2W9",
+      "ref": "R2H-BC",
+      "region": "BC",
+      "rejected_zip": "98101"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "r2h-local",
+    "occurred_at": "2027-01-12T01:00:00Z",
+    "payload": {
+      "local_los_angeles": "2027-01-11T17:00:00-08:00",
+      "local_vancouver": "2027-01-11T17:00:00-08:00",
+      "note": "The spreadsheet omitted the offset.",
+      "spreadsheet_utc": "2027-01-11T17:00:00Z",
+      "zone_los_angeles": "America/Los_Angeles",
+      "zone_vancouver": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R3A-MERGE",
+    "occurred_at": "2026-11-03T16:20:00Z",
+    "payload": {
+      "booking_date": "2026-11-02",
+      "desk_city": "Vancouver",
+      "desk_region": "BC",
+      "file_ids": [
+        "inlet-2026-11-02",
+        "cedar-r3a-2026-11-02"
+      ],
+      "merged_on": "2026-09-01",
+      "new_site": "cedar-ridge",
+      "note": "The old site id inlet-medical must keep working for historical files.",
+      "old_site": "inlet-medical",
+      "person_id": "p-r3a-1",
+      "ref": "R3A-MERGE",
+      "role_id": "desk-supervisor",
+      "site": "vancouver-desk",
+      "timezone": "America/Vancouver",
+      "title": "Desk supervisor"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R3A-MERGE",
+    "occurred_at": "2026-11-03T17:05:00Z",
+    "payload": {
+      "booking_date": "2026-11-02",
+      "desk_city": "Vancouver",
+      "desk_region": "BC",
+      "file_ids": [
+        "inlet-2026-11-02",
+        "cedar-r3a-2026-11-02"
+      ],
+      "merged_on": "2026-09-01",
+      "new_site": "cedar-ridge",
+      "note": "The old site id inlet-medical was retired on the merger date 2026-09-01.",
+      "old_site": "inlet-medical",
+      "person_id": "p-r3a-1",
+      "ref": "R3A-MERGE",
+      "role_id": "cedar-records",
+      "site": "cedar-ridge",
+      "timezone": "America/Vancouver",
+      "title": "Clinic records clerk"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ObligationNoted",
+    "ref": "R3A-MERGE",
+    "occurred_at": "2026-11-03T18:15:00Z",
+    "payload": {
+      "clerk_role_id": "cedar-clerk",
+      "clerk_site": "cedar-ridge",
+      "clerk_slot_api": false,
+      "clerk_statement": "Inlet files are not on the cedar nightly extract yet.",
+      "clerk_title": "Nightly file clerk",
+      "desk_city": "Vancouver",
+      "desk_region": "BC",
+      "file_ids": [
+        "inlet-2026-11-02",
+        "cedar-r3a-2026-11-02"
+      ],
+      "operations_role_id": "ops-director",
+      "operations_site": "vancouver-desk",
+      "operations_statement": "Operations wants one wait number.",
+      "operations_title": "Operations director",
+      "person_id": "p-r3a-1",
+      "ref": "R3A-MERGE",
+      "site": "vancouver-desk",
+      "timezone": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R3B-SURGE",
+    "occurred_at": "2026-01-17T23:40:00Z",
+    "payload": {
+      "note": "The cedar night queue was still open at 23:40.",
+      "ref": "R3B-SURGE",
+      "site": "cedar-ridge"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R3B-SURGE",
+    "occurred_at": "2026-01-21T16:05:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r3b-4410",
+      "phone": "206-555-4410",
+      "ref": "R3B-SURGE"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R3B-SURGE",
+    "occurred_at": "2026-01-21T16:05:00Z",
+    "payload": {
+      "member_region": "WA",
+      "person_id": "p-r3b-4411",
+      "phone": "206-555-4411",
+      "ref": "R3B-SURGE"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "R3C-1",
+    "occurred_at": "2026-04-06T15:05:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "member_id": "MBR-R3C-1",
+      "person_id": "p-r3c-1",
+      "phone": "604-555-2770",
+      "ref": "R3C-1",
+      "same_person": [
+        "p-r3c-1",
+        "MBR-R3C-1"
+      ],
+      "utterance": "calling about referral R3C-1"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "IdentifierRecorded",
+    "ref": "R3C-1",
+    "occurred_at": "2026-04-06T15:20:00Z",
+    "payload": {
+      "member_id": "MBR-R3C-1",
+      "person_id": "p-r3c-1",
+      "recorded_on": "desk",
+      "ref": "R3C-1"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R3C-1",
+    "occurred_at": "2026-04-22T15:30:00Z",
+    "payload": {
+      "note": "cmd-r3c-phone-copy still stores phone 604-555-2770 on p-r3c-2. cmd-r3c-split stores phone 604-555-2770 on p-r3c-1 and phone 604-555-2771 on p-r3c-2. The channel member id on R3C-1 is MBR-R3C-1. The payer member id on R3C-1 is MBR-R3C-9.",
+      "ref": "R3C-1",
+      "role": "clerk"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ContractRecorded",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2024-04-08T16:20:00Z",
+    "payload": {
+      "contract_id": "MA-2024",
+      "desk": "vancouver-desk",
+      "doc_id": "MA-2024",
+      "payer": "harbor-coverage"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "PrintedCopy",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2026-09-16T16:45:00Z",
+    "payload": {
+      "audience": "finance",
+      "body": "Contract MA-2024 between the Vancouver desk and harbor-coverage. The office week is printed as \"Monday through Friday\". The currency of record for BC members is CAD. The fee clause is 12 CAD.",
+      "content_hash": "9f73143cafcdeec1bec8733a1a72b346834002f40fae463a400d390b4f648322",
+      "contract_id": "MA-2024",
+      "doc_id": "MA-2024",
+      "language": "en",
+      "status": "in_force",
+      "version": "2"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "BackdatedCorrection",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2026-08-01",
+    "payload": {
+      "contract_id": "MA-2024",
+      "doc_id": "MA-2024",
+      "note": "The August amendment was entered in December.",
+      "recorded_on": "2026-12-15",
+      "subject_command_id": "cmd-r3d-doc-v2",
+      "version": "2"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandsetDispatch",
+    "ref": "R3E-SYNC",
+    "occurred_at": "2027-01-19T15:02:00Z",
+    "payload": {
+      "attempt": 1,
+      "file_id": "cedar-r3e-2027-01-18",
+      "idempotency_key": "r3e-sms-1",
+      "ref": "R3E-SYNC",
+      "status": "sent",
+      "transcripts": [
+        "Northline visit filed at Cedar Ridge."
+      ]
+    }
+  },
+  {
+    "kind": "event",
+    "type": "HandsetDispatch",
+    "ref": "R3E-SYNC",
+    "occurred_at": "2027-01-19T15:08:00Z",
+    "payload": {
+      "attempt": 2,
+      "file_id": "cedar-r3e-2027-01-18",
+      "idempotency_key": "r3e-sms-1",
+      "ref": "R3E-SYNC",
+      "status": "redelivered",
+      "transcripts": [
+        "Northline visit booked at Cedar Ridge."
+      ]
+    }
+  },
+  {
+    "kind": "event",
+    "type": "QueueDepth",
+    "ref": "R3E-SYNC",
+    "occurred_at": "2027-01-19T15:20:00Z",
+    "payload": {
+      "consumer_alive": true,
+      "oldest_age_seconds": 5400,
+      "ref": "R3E-SYNC",
+      "visible_backlog": 120
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R3E-SYNC",
+    "occurred_at": "2027-01-19T15:26:00Z",
+    "payload": {
+      "file_id": "cedar-r3e-2027-01-18",
+      "note": "The morning board was printed from cascade-copy.",
+      "ref": "R3E-SYNC"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R3F-LEDGER",
+    "occurred_at": "2027-01-22T16:25:00Z",
+    "payload": {
+      "note": "The hospital board is 18420 dollars short of the payer figure. They subtracted as if both were the same unit.",
+      "ref": "R3F-LEDGER",
+      "role": "finance"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R3F-LEDGER",
+    "occurred_at": "2027-01-22T18:10:00Z",
+    "payload": {
+      "note": "The payer row was not on the copy the board used.",
+      "ref": "R3F-LEDGER",
+      "role": "desk"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "BoardRequested",
+    "ref": "R3F-LEDGER",
+    "occurred_at": "2027-01-21T13:40:00Z",
+    "payload": {
+      "board": "finance",
+      "ref": "R3F-LEDGER",
+      "role": "finance"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "MemberRecorded",
+    "ref": "R3F-LEDGER",
+    "occurred_at": "2027-01-20T15:40:00Z",
+    "payload": {
+      "member_id": "MBR-R3F-14",
+      "member_region": "BC",
+      "person_id": "p-r3f-ledger",
+      "ref": "R3F-LEDGER"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ConsentNoted",
+    "ref": "R3G-CONSENT",
+    "occurred_at": "2027-01-19T17:10:00Z",
+    "payload": {
+      "consent_recorded": true,
+      "desk_region": "BC",
+      "person_id": "p-r3g-1",
+      "policy": "Vancouver desk policy records consent for screen text.",
+      "ref": "R3G-CONSENT",
+      "role": "desk-clerk",
+      "scope": "screen text",
+      "site": "vancouver-desk",
+      "timezone": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "DeskNote",
+    "ref": "R3G-CONSENT",
+    "occurred_at": "2027-01-19T18:20:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "note": "The clerk downloaded the letter anyway.",
+      "person_id": "p-r3g-1",
+      "policy": "Vancouver desk policy wrote this note on the letter.",
+      "ref": "R3G-CONSENT",
+      "role": "desk-clerk",
+      "site": "vancouver-desk",
+      "timezone": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RetentionPolicy",
+    "ref": "R3G-CONSENT",
+    "occurred_at": "2027-01-19T19:05:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "keep_years": 7,
+      "object": "letter",
+      "person_id": "p-r3g-1",
+      "policy": "Vancouver desk policy keeps the letter for 7 years.",
+      "ref": "R3G-CONSENT",
+      "site": "vancouver-desk",
+      "timezone": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "ApprovalRequested",
+    "ref": "R3G-CONSENT",
+    "occurred_at": "2027-01-19T21:10:00Z",
+    "payload": {
+      "desk_region": "BC",
+      "destination": "ca-central-1",
+      "job": "copy",
+      "object": "letter",
+      "person_id": "p-r3g-1",
+      "policy": "Vancouver desk policy requested a letter copy to ca-central-1.",
+      "ref": "R3G-CONSENT",
+      "reviewer": null,
+      "role": "desk-clerk",
+      "site": "vancouver-desk",
+      "timezone": "America/Vancouver"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-09T08:14:00Z",
+    "payload": {
+      "channel": "phone",
+      "desk_region": "BC",
+      "handset_delivered": false,
+      "ref": "REF-4417",
+      "utterance": "booked at Cedar Ridge tonight"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RequestAccepted",
+    "ref": "REF-8801",
+    "occurred_at": "2027-01-20T16:00:00Z",
+    "payload": {
+      "channel": "web",
+      "desk_region": "WA",
+      "handset_delivered": false,
+      "ref": "REF-8801",
+      "utterance": "still waiting"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "Lodged",
+    "ref": "PERMIT-12",
+    "occurred_at": "2027-03-01T17:00:00Z",
+    "payload": {
+      "city": "Vancouver",
+      "postal": "V6B 1A1",
+      "ref": "PERMIT-12",
+      "region": "BC"
+    }
+  }
+]

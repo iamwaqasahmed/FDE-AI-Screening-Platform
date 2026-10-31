@@ -1,0 +1,12 @@
+[
+  {
+    "ask_id": "ask-hours",
+    "audience": "public",
+    "text": "When does Cedar Ridge close?"
+  },
+  {
+    "ask_id": "ask-quote",
+    "audience": "public",
+    "text": "What is the Harbor renewal price?"
+  }
+]

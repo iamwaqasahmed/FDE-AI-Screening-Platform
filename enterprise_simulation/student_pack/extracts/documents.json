@@ -1,0 +1,146 @@
+[
+  {
+    "audience": "public",
+    "body": "All referrals received this week are pre-approved for a slot.",
+    "content_hash": "013f8b00d602148b75888883c7109bad10e7ae0f12af6b3c7801899e611ba601",
+    "doc_id": "circ-unauth",
+    "language": "en",
+    "status": "unauthorized",
+    "version": "circ-2026-11",
+    "occurred_at": "2026-11-02T16:00:00Z"
+  },
+  {
+    "audience": "public",
+    "body": "La clinique de Cedar Ridge ferme \u00e0 21 h.",
+    "content_hash": "6e3863116f72c3f59189c20a1076f70abf0b093f588c323c8a518a9164768090",
+    "doc_id": "hours-cedar-fr",
+    "language": "fr",
+    "status": "in_flight",
+    "version": "2026-summer",
+    "occurred_at": "2026-12-01T16:00:00Z"
+  },
+  {
+    "audience": "procurement",
+    "body": "Harbor Coverage renewal quotation CAD 18420 for calendar 2027.",
+    "content_hash": "ba0f203788cb62c37a1ebba227d9c4bedd1dbab533d83fda85c9631c07f188ad",
+    "doc_id": "quote-harbor",
+    "language": "en",
+    "status": "in_force",
+    "version": "q-2027",
+    "occurred_at": "2027-01-04T18:00:00Z"
+  },
+  {
+    "audience": "public",
+    "body": "Northline publishes clinic hours on the public page. This page has no patient identifiers.",
+    "content_hash": "b59e3a339bba09a6269a30fbf903037eaafd0675a31b1a15d70082b327c59bcc",
+    "doc_id": "leaflet-hours",
+    "language": "en",
+    "status": "in_force",
+    "version": "leaf-2027",
+    "occurred_at": "2027-01-05T18:00:00Z"
+  },
+  {
+    "audience": "payroll",
+    "body": "Synthetic payroll band W-4 for a test employee. Not a real wage.",
+    "content_hash": "2e28e50f97ca9685a97e972d53cd0665f24671d1b164af74ae65fc4790797997",
+    "doc_id": "wage-band",
+    "language": "en",
+    "status": "in_force",
+    "version": "w-4",
+    "occurred_at": "2027-01-06T18:00:00Z"
+  },
+  {
+    "audience": "public",
+    "body": "Cedar Ridge evening clinic closes at 9:00 p.m. Pacific.",
+    "content_hash": "938842e16e331445bc96a144d0c5ff0700687832660d4b6bff0052e3b8290a68",
+    "doc_id": "hours-cedar-copy",
+    "language": "en",
+    "status": "in_force",
+    "version": "2027-winter",
+    "occurred_at": "2027-01-10T02:00:00Z"
+  },
+  {
+    "audience": "public",
+    "body": "Cedar Ridge draft hours close at 5:00 p.m. Pacific.",
+    "content_hash": "0598e29166d0891099c1a1c18239451188dbc4a20e74a29f448ac2ac9cf140f8",
+    "doc_id": "leg-dms-draft",
+    "language": "en",
+    "status": "draft",
+    "version": "2027-01-10-draft",
+    "occurred_at": "2027-01-10T18:30:00Z"
+  },
+  {
+    "amount": 9600,
+    "audience": "procurement",
+    "body": "Fraser Burnaby clinic onboarding quotation QUO-18420. Supplier id SUP-14. Amount 9600 CAD.",
+    "content_hash": "e0d34f9580acb9c37a65221caa34ffd423f47f3d6faf041db9b80115f201f0d6",
+    "currency": "CAD",
+    "doc_id": "r2a-quo-18420",
+    "language": "en",
+    "packet_ref": "r2a-onboard-fb",
+    "quote_id": "QUO-18420",
+    "ref": "r2a-quote-18420",
+    "site": "fraser-burnaby",
+    "status": "in_force",
+    "supplier_id": "SUP-14",
+    "version": "2027-01-13",
+    "occurred_at": "2027-01-13T19:00:00Z"
+  },
+  {
+    "audience": "public",
+    "body": "Fraser Burnaby draft hours close at 4:00 p.m. Pacific.",
+    "content_hash": "e2ddb7939a05de3310a430feba40fb3768d4f3ccaa9eea60d95caf5ddadbd942",
+    "doc_id": "dms-draft-fraser",
+    "language": "en",
+    "site": "fraser-burnaby",
+    "status": "draft",
+    "version": "2027-01-draft",
+    "occurred_at": "2027-01-11T18:00:00Z"
+  },
+  {
+    "audience": "finance",
+    "body": "Contract MA-2024 between the Vancouver desk and harbor-coverage. The office week is printed as \"Monday through Friday\". The currency of record for BC members is CAD. The fee clause is 12 CAD.",
+    "content_hash": "9f73143cafcdeec1bec8733a1a72b346834002f40fae463a400d390b4f648322",
+    "contract_id": "MA-2024",
+    "doc_id": "MA-2024",
+    "language": "en",
+    "status": "in_force",
+    "version": "1",
+    "occurred_at": "2024-06-03T17:00:00Z"
+  },
+  {
+    "audience": "finance",
+    "body": "Contract MA-2024 between the Vancouver desk and harbor-coverage. The office week is printed as \"Monday through Friday\". The currency of record for BC members is CAD. The fee clause changes from 12 CAD to 14 CAD.",
+    "content_hash": "df58cb8425fd1a45a396747525bea109a1d9b59f23695dbcbdf1e6aa99086a73",
+    "contract_id": "MA-2024",
+    "doc_id": "MA-2024",
+    "language": "en",
+    "status": "in_force",
+    "version": "2",
+    "occurred_at": "2026-08-01"
+  },
+  {
+    "audience": "public",
+    "body": "Cedar Ridge evening clinic closes at 9:00 p.m. Pacific.",
+    "close_local": "21:00",
+    "content_hash": "8c0e85b50b3902dd04d7971b1268f72465461cd43f54bb7731560aed90a8aa50",
+    "doc_id": "hours-cedar",
+    "language": "en",
+    "status": "superseded",
+    "timezone": "America/Los_Angeles",
+    "version": "2026-summer",
+    "occurred_at": "2026-06-01T00:00:00Z"
+  },
+  {
+    "audience": "public",
+    "body": "Cedar Ridge evening clinic closes at 5:00 p.m. Pacific.",
+    "close_local": "17:00",
+    "content_hash": "938842e16e331445bc96a144d0c5ff0700687832660d4b6bff0052e3b8290a68",
+    "doc_id": "hours-cedar",
+    "language": "en",
+    "status": "in_force",
+    "timezone": "America/Los_Angeles",
+    "version": "2027-winter",
+    "occurred_at": "2027-01-10T00:00:00Z"
+  }
+]

@@ -1,0 +1,2216 @@
+[
+  {
+    "kind": "coverage",
+    "ref": "HX-0001",
+    "answer": "yes",
+    "effective_from": "2025-01-15T00:00:00Z",
+    "effective_to": "2025-04-12T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-01-13T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0002",
+    "answer": "yes",
+    "effective_from": "2025-01-18T00:00:00Z",
+    "effective_to": "2025-04-15T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-01-20T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0003",
+    "answer": "yes",
+    "effective_from": "2025-01-23T00:00:00Z",
+    "effective_to": "2025-04-20T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-01-25T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0004",
+    "answer": "yes",
+    "effective_from": "2025-01-21T00:00:00Z",
+    "effective_to": "2025-04-18T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-01-24T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0005",
+    "answer": "yes",
+    "effective_from": "2025-01-24T00:00:00Z",
+    "effective_to": "2025-04-21T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-01-22T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0006",
+    "answer": "yes",
+    "effective_from": "2025-01-27T00:00:00Z",
+    "effective_to": "2025-04-24T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-01-26T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0008",
+    "answer": "yes",
+    "effective_from": "2025-02-06T00:00:00Z",
+    "effective_to": "2025-05-04T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-02-05T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0009",
+    "answer": "yes",
+    "effective_from": "2025-02-07T00:00:00Z",
+    "effective_to": "2025-05-05T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-02-06T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0011",
+    "answer": "yes",
+    "effective_from": "2025-02-12T00:00:00Z",
+    "effective_to": "2025-05-10T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-02-15T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0012",
+    "answer": "yes",
+    "effective_from": "2025-02-17T00:00:00Z",
+    "effective_to": "2025-05-15T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-02-18T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0013",
+    "answer": "yes",
+    "effective_from": "2025-02-22T00:00:00Z",
+    "effective_to": "2025-05-20T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-02-20T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0015",
+    "answer": "yes",
+    "effective_from": "2025-02-24T00:00:00Z",
+    "effective_to": "2025-05-22T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-02-23T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0016",
+    "answer": "yes",
+    "effective_from": "2025-03-02T00:00:00Z",
+    "effective_to": "2025-05-28T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-03-02T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0017",
+    "answer": "no",
+    "effective_from": "2025-03-01T00:00:00Z",
+    "effective_to": "2025-05-27T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-03-03T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0018",
+    "answer": "yes",
+    "effective_from": "2025-03-09T00:00:00Z",
+    "effective_to": "2025-06-04T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-03-12T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0019",
+    "answer": "yes",
+    "effective_from": "2025-03-07T00:00:00Z",
+    "effective_to": "2025-06-02T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-03-05T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0022",
+    "answer": "yes",
+    "effective_from": "2025-03-17T00:00:00Z",
+    "effective_to": "2025-06-12T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-03-14T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0023",
+    "answer": "yes",
+    "effective_from": "2025-03-23T00:00:00Z",
+    "effective_to": "2025-06-18T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-03-22T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0024",
+    "answer": "yes",
+    "effective_from": "2025-03-25T00:00:00Z",
+    "effective_to": "2025-06-20T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-03-24T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0025",
+    "answer": "yes",
+    "effective_from": "2025-03-26T00:00:00Z",
+    "effective_to": "2025-06-21T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-03-25T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0026",
+    "answer": "yes",
+    "effective_from": "2025-03-31T00:00:00Z",
+    "effective_to": "2025-06-26T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-04-02T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0027",
+    "answer": "yes",
+    "effective_from": "2025-04-01T00:00:00Z",
+    "effective_to": "2025-06-27T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-04-04T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0029",
+    "answer": "yes",
+    "effective_from": "2025-04-09T00:00:00Z",
+    "effective_to": "2025-07-05T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-04-11T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0031",
+    "answer": "yes",
+    "effective_from": "2025-04-15T00:00:00Z",
+    "effective_to": "2025-07-11T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-04-14T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0032",
+    "answer": "yes",
+    "effective_from": "2025-04-17T00:00:00Z",
+    "effective_to": "2025-07-13T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-04-20T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0033",
+    "answer": "yes",
+    "effective_from": "2025-04-19T00:00:00Z",
+    "effective_to": "2025-07-15T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-04-20T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0034",
+    "answer": "no",
+    "effective_from": "2025-04-24T00:00:00Z",
+    "effective_to": "2025-07-20T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-04-22T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0036",
+    "answer": "yes",
+    "effective_from": "2025-04-30T00:00:00Z",
+    "effective_to": "2025-07-26T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-05-02T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0037",
+    "answer": "yes",
+    "effective_from": "2025-05-01T00:00:00Z",
+    "effective_to": "2025-07-27T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-04-30T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0038",
+    "answer": "yes",
+    "effective_from": "2025-05-05T00:00:00Z",
+    "effective_to": "2025-07-31T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-05-02T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0039",
+    "answer": "yes",
+    "effective_from": "2025-05-07T00:00:00Z",
+    "effective_to": "2025-08-02T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-05-07T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0041",
+    "answer": "yes",
+    "effective_from": "2025-05-17T00:00:00Z",
+    "effective_to": "2025-08-12T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-05-17T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0043",
+    "answer": "yes",
+    "effective_from": "2025-05-21T00:00:00Z",
+    "effective_to": "2025-08-16T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-05-22T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0044",
+    "answer": "yes",
+    "effective_from": "2025-05-21T00:00:00Z",
+    "effective_to": "2025-08-16T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-05-20T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0045",
+    "answer": "yes",
+    "effective_from": "2025-05-26T00:00:00Z",
+    "effective_to": "2025-08-21T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-05-24T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0046",
+    "answer": "yes",
+    "effective_from": "2025-05-27T00:00:00Z",
+    "effective_to": "2025-08-22T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-05-26T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0047",
+    "answer": "yes",
+    "effective_from": "2025-06-03T00:00:00Z",
+    "effective_to": "2025-08-29T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-06-04T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0048",
+    "answer": "yes",
+    "effective_from": "2025-06-06T00:00:00Z",
+    "effective_to": "2025-09-01T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-06-05T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0051",
+    "answer": "no",
+    "effective_from": "2025-06-12T00:00:00Z",
+    "effective_to": "2025-09-07T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-06-09T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0052",
+    "answer": "yes",
+    "effective_from": "2025-06-14T00:00:00Z",
+    "effective_to": "2025-09-09T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-06-13T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0053",
+    "answer": "yes",
+    "effective_from": "2025-06-18T00:00:00Z",
+    "effective_to": "2025-09-13T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-06-19T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0054",
+    "answer": "yes",
+    "effective_from": "2025-06-24T00:00:00Z",
+    "effective_to": "2025-09-19T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-06-27T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0055",
+    "answer": "yes",
+    "effective_from": "2025-06-25T00:00:00Z",
+    "effective_to": "2025-09-20T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-06-27T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0057",
+    "answer": "yes",
+    "effective_from": "2025-07-03T00:00:00Z",
+    "effective_to": "2025-09-28T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-07-05T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0058",
+    "answer": "yes",
+    "effective_from": "2025-07-07T00:00:00Z",
+    "effective_to": "2025-10-02T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-07-04T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0059",
+    "answer": "yes",
+    "effective_from": "2025-07-09T00:00:00Z",
+    "effective_to": "2025-10-04T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-07-06T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0061",
+    "answer": "yes",
+    "effective_from": "2025-07-15T00:00:00Z",
+    "effective_to": "2025-10-10T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-07-15T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0062",
+    "answer": "yes",
+    "effective_from": "2025-07-16T00:00:00Z",
+    "effective_to": "2025-10-11T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-07-19T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0064",
+    "answer": "yes",
+    "effective_from": "2025-07-24T00:00:00Z",
+    "effective_to": "2025-10-19T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-07-22T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0065",
+    "answer": "yes",
+    "effective_from": "2025-07-27T00:00:00Z",
+    "effective_to": "2025-10-22T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-07-27T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0066",
+    "answer": "yes",
+    "effective_from": "2025-07-28T00:00:00Z",
+    "effective_to": "2025-10-23T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-07-25T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0067",
+    "answer": "yes",
+    "effective_from": "2025-07-31T00:00:00Z",
+    "effective_to": "2025-10-26T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-07-29T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0068",
+    "answer": "no",
+    "effective_from": "2025-08-04T00:00:00Z",
+    "effective_to": "2025-10-30T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-08-04T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0069",
+    "answer": "yes",
+    "effective_from": "2025-08-06T00:00:00Z",
+    "effective_to": "2025-11-01T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-08-07T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0071",
+    "answer": "yes",
+    "effective_from": "2025-08-13T00:00:00Z",
+    "effective_to": "2025-11-08T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-08-10T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0072",
+    "answer": "yes",
+    "effective_from": "2025-08-13T00:00:00Z",
+    "effective_to": "2025-11-08T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-08-16T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0073",
+    "answer": "yes",
+    "effective_from": "2025-08-17T00:00:00Z",
+    "effective_to": "2025-11-12T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-08-16T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0074",
+    "answer": "yes",
+    "effective_from": "2025-08-22T00:00:00Z",
+    "effective_to": "2025-11-17T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-08-20T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0075",
+    "answer": "yes",
+    "effective_from": "2025-08-22T00:00:00Z",
+    "effective_to": "2025-11-17T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-08-23T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0076",
+    "answer": "yes",
+    "effective_from": "2025-08-28T00:00:00Z",
+    "effective_to": "2025-11-23T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-08-28T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0078",
+    "answer": "yes",
+    "effective_from": "2025-09-02T00:00:00Z",
+    "effective_to": "2025-11-28T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-09-02T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0079",
+    "answer": "yes",
+    "effective_from": "2025-09-03T00:00:00Z",
+    "effective_to": "2025-11-29T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-09-02T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0081",
+    "answer": "yes",
+    "effective_from": "2025-09-13T00:00:00Z",
+    "effective_to": "2025-12-09T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-09-15T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0082",
+    "answer": "yes",
+    "effective_from": "2025-09-14T00:00:00Z",
+    "effective_to": "2025-12-10T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-09-17T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0083",
+    "answer": "yes",
+    "effective_from": "2025-09-20T00:00:00Z",
+    "effective_to": "2025-12-16T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-09-17T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0085",
+    "answer": "no",
+    "effective_from": "2025-09-25T00:00:00Z",
+    "effective_to": "2025-12-21T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-09-26T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0086",
+    "answer": "yes",
+    "effective_from": "2025-09-24T00:00:00Z",
+    "effective_to": "2025-12-20T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-09-23T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0087",
+    "answer": "yes",
+    "effective_from": "2025-09-29T00:00:00Z",
+    "effective_to": "2025-12-25T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-09-29T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0088",
+    "answer": "yes",
+    "effective_from": "2025-10-04T00:00:00Z",
+    "effective_to": "2025-12-30T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-10-02T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0089",
+    "answer": "yes",
+    "effective_from": "2025-10-03T00:00:00Z",
+    "effective_to": "2025-12-29T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-10-02T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0092",
+    "answer": "yes",
+    "effective_from": "2025-10-13T00:00:00Z",
+    "effective_to": "2026-01-08T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-10-14T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0093",
+    "answer": "yes",
+    "effective_from": "2025-10-17T00:00:00Z",
+    "effective_to": "2026-01-12T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-10-18T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0094",
+    "answer": "yes",
+    "effective_from": "2025-10-22T00:00:00Z",
+    "effective_to": "2026-01-17T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-10-24T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0095",
+    "answer": "yes",
+    "effective_from": "2025-10-21T00:00:00Z",
+    "effective_to": "2026-01-16T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-10-21T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0096",
+    "answer": "yes",
+    "effective_from": "2025-10-25T00:00:00Z",
+    "effective_to": "2026-01-20T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-10-28T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0097",
+    "answer": "yes",
+    "effective_from": "2025-10-28T00:00:00Z",
+    "effective_to": "2026-01-23T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-10-29T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0099",
+    "answer": "yes",
+    "effective_from": "2025-11-06T00:00:00Z",
+    "effective_to": "2026-02-01T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-11-09T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0101",
+    "answer": "yes",
+    "effective_from": "2025-11-10T00:00:00Z",
+    "effective_to": "2026-02-05T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-11-10T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0102",
+    "answer": "no",
+    "effective_from": "2025-11-14T00:00:00Z",
+    "effective_to": "2026-02-09T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-11-14T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0103",
+    "answer": "yes",
+    "effective_from": "2025-11-16T00:00:00Z",
+    "effective_to": "2026-02-11T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-11-14T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0104",
+    "answer": "yes",
+    "effective_from": "2025-11-22T00:00:00Z",
+    "effective_to": "2026-02-17T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-11-25T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0106",
+    "answer": "yes",
+    "effective_from": "2025-11-27T00:00:00Z",
+    "effective_to": "2026-02-22T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-11-28T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0107",
+    "answer": "yes",
+    "effective_from": "2025-11-26T00:00:00Z",
+    "effective_to": "2026-02-21T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-11-24T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0108",
+    "answer": "yes",
+    "effective_from": "2025-12-01T00:00:00Z",
+    "effective_to": "2026-02-26T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-12-04T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0109",
+    "answer": "yes",
+    "effective_from": "2025-12-06T00:00:00Z",
+    "effective_to": "2026-03-03T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-12-05T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0111",
+    "answer": "yes",
+    "effective_from": "2025-12-10T00:00:00Z",
+    "effective_to": "2026-03-07T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-12-07T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0113",
+    "answer": "yes",
+    "effective_from": "2025-12-17T00:00:00Z",
+    "effective_to": "2026-03-14T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-12-16T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0114",
+    "answer": "yes",
+    "effective_from": "2025-12-20T00:00:00Z",
+    "effective_to": "2026-03-17T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-12-23T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0115",
+    "answer": "yes",
+    "effective_from": "2025-12-24T00:00:00Z",
+    "effective_to": "2026-03-21T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-12-26T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0116",
+    "answer": "yes",
+    "effective_from": "2025-12-24T00:00:00Z",
+    "effective_to": "2026-03-21T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-12-22T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0117",
+    "answer": "yes",
+    "effective_from": "2025-12-29T00:00:00Z",
+    "effective_to": "2026-03-26T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-12-27T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0118",
+    "answer": "yes",
+    "effective_from": "2026-01-01T00:00:00Z",
+    "effective_to": "2026-03-29T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-01-01T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0121",
+    "answer": "yes",
+    "effective_from": "2026-01-11T00:00:00Z",
+    "effective_to": "2026-04-08T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-01-12T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0122",
+    "answer": "yes",
+    "effective_from": "2026-01-13T00:00:00Z",
+    "effective_to": "2026-04-10T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-01-11T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0123",
+    "answer": "yes",
+    "effective_from": "2026-01-14T00:00:00Z",
+    "effective_to": "2026-04-11T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-01-14T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0124",
+    "answer": "yes",
+    "effective_from": "2026-01-18T00:00:00Z",
+    "effective_to": "2026-04-15T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-01-18T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0125",
+    "answer": "yes",
+    "effective_from": "2026-01-22T00:00:00Z",
+    "effective_to": "2026-04-19T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-01-25T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0127",
+    "answer": "yes",
+    "effective_from": "2026-01-26T00:00:00Z",
+    "effective_to": "2026-04-23T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-01-28T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0128",
+    "answer": "yes",
+    "effective_from": "2026-02-01T00:00:00Z",
+    "effective_to": "2026-04-29T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-02-01T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0129",
+    "answer": "yes",
+    "effective_from": "2026-02-04T00:00:00Z",
+    "effective_to": "2026-05-02T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-02-03T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0131",
+    "answer": "yes",
+    "effective_from": "2026-02-09T00:00:00Z",
+    "effective_to": "2026-05-07T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-02-06T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0132",
+    "answer": "yes",
+    "effective_from": "2026-02-14T00:00:00Z",
+    "effective_to": "2026-05-12T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-02-14T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0134",
+    "answer": "yes",
+    "effective_from": "2026-02-18T00:00:00Z",
+    "effective_to": "2026-05-16T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-02-18T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0135",
+    "answer": "yes",
+    "effective_from": "2026-02-18T00:00:00Z",
+    "effective_to": "2026-05-16T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-02-21T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0136",
+    "answer": "no",
+    "effective_from": "2026-02-25T00:00:00Z",
+    "effective_to": "2026-05-23T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-02-24T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0137",
+    "answer": "yes",
+    "effective_from": "2026-02-25T00:00:00Z",
+    "effective_to": "2026-05-23T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-02-22T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0138",
+    "answer": "yes",
+    "effective_from": "2026-03-02T00:00:00Z",
+    "effective_to": "2026-05-28T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-03-01T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0139",
+    "answer": "yes",
+    "effective_from": "2026-03-04T00:00:00Z",
+    "effective_to": "2026-05-30T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-03-07T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0141",
+    "answer": "yes",
+    "effective_from": "2026-03-12T00:00:00Z",
+    "effective_to": "2026-06-07T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-03-14T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0142",
+    "answer": "yes",
+    "effective_from": "2026-03-12T00:00:00Z",
+    "effective_to": "2026-06-07T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-03-13T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0143",
+    "answer": "yes",
+    "effective_from": "2026-03-17T00:00:00Z",
+    "effective_to": "2026-06-12T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-03-20T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0144",
+    "answer": "yes",
+    "effective_from": "2026-03-19T00:00:00Z",
+    "effective_to": "2026-06-14T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-03-17T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0145",
+    "answer": "yes",
+    "effective_from": "2026-03-22T00:00:00Z",
+    "effective_to": "2026-06-17T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-03-25T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0146",
+    "answer": "yes",
+    "effective_from": "2026-03-25T00:00:00Z",
+    "effective_to": "2026-06-20T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-03-22T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0148",
+    "answer": "yes",
+    "effective_from": "2026-03-30T00:00:00Z",
+    "effective_to": "2026-06-25T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-03-27T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0149",
+    "answer": "yes",
+    "effective_from": "2026-04-02T00:00:00Z",
+    "effective_to": "2026-06-28T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-04-01T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0151",
+    "answer": "yes",
+    "effective_from": "2026-04-11T00:00:00Z",
+    "effective_to": "2026-07-07T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-04-13T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0152",
+    "answer": "yes",
+    "effective_from": "2026-04-13T00:00:00Z",
+    "effective_to": "2026-07-09T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-04-13T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0153",
+    "answer": "no",
+    "effective_from": "2026-04-17T00:00:00Z",
+    "effective_to": "2026-07-13T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-04-18T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0155",
+    "answer": "yes",
+    "effective_from": "2026-04-23T00:00:00Z",
+    "effective_to": "2026-07-19T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-04-24T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0156",
+    "answer": "yes",
+    "effective_from": "2026-04-22T00:00:00Z",
+    "effective_to": "2026-07-18T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-04-25T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0157",
+    "answer": "yes",
+    "effective_from": "2026-04-29T00:00:00Z",
+    "effective_to": "2026-07-25T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-05-02T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0158",
+    "answer": "yes",
+    "effective_from": "2026-04-30T00:00:00Z",
+    "effective_to": "2026-07-26T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-04-29T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0159",
+    "answer": "yes",
+    "effective_from": "2026-05-03T00:00:00Z",
+    "effective_to": "2026-07-29T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-05-05T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0162",
+    "answer": "yes",
+    "effective_from": "2026-05-11T00:00:00Z",
+    "effective_to": "2026-08-06T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-05-09T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0163",
+    "answer": "yes",
+    "effective_from": "2026-05-17T00:00:00Z",
+    "effective_to": "2026-08-12T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-05-17T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0164",
+    "answer": "yes",
+    "effective_from": "2026-05-18T00:00:00Z",
+    "effective_to": "2026-08-13T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-05-17T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0165",
+    "answer": "yes",
+    "effective_from": "2026-05-19T00:00:00Z",
+    "effective_to": "2026-08-14T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-05-18T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0166",
+    "answer": "yes",
+    "effective_from": "2026-05-23T00:00:00Z",
+    "effective_to": "2026-08-18T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-05-20T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0167",
+    "answer": "yes",
+    "effective_from": "2026-05-26T00:00:00Z",
+    "effective_to": "2026-08-21T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-05-27T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0169",
+    "answer": "yes",
+    "effective_from": "2026-06-03T00:00:00Z",
+    "effective_to": "2026-08-29T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-06-06T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0171",
+    "answer": "yes",
+    "effective_from": "2026-06-08T00:00:00Z",
+    "effective_to": "2026-09-03T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-06-06T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0172",
+    "answer": "yes",
+    "effective_from": "2026-06-09T00:00:00Z",
+    "effective_to": "2026-09-04T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-06-06T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0173",
+    "answer": "yes",
+    "effective_from": "2026-06-15T00:00:00Z",
+    "effective_to": "2026-09-10T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-06-16T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0174",
+    "answer": "yes",
+    "effective_from": "2026-06-19T00:00:00Z",
+    "effective_to": "2026-09-14T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-06-21T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0176",
+    "answer": "yes",
+    "effective_from": "2026-06-25T00:00:00Z",
+    "effective_to": "2026-09-20T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-06-26T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0177",
+    "answer": "yes",
+    "effective_from": "2026-06-25T00:00:00Z",
+    "effective_to": "2026-09-20T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-06-23T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0178",
+    "answer": "yes",
+    "effective_from": "2026-06-29T00:00:00Z",
+    "effective_to": "2026-09-24T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-07-01T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0179",
+    "answer": "yes",
+    "effective_from": "2026-07-02T00:00:00Z",
+    "effective_to": "2026-09-27T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-07-04T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0181",
+    "answer": "yes",
+    "effective_from": "2026-07-07T00:00:00Z",
+    "effective_to": "2026-10-02T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-07-05T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0183",
+    "answer": "yes",
+    "effective_from": "2026-07-15T00:00:00Z",
+    "effective_to": "2026-10-10T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-07-13T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0184",
+    "answer": "yes",
+    "effective_from": "2026-07-18T00:00:00Z",
+    "effective_to": "2026-10-13T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-07-18T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0185",
+    "answer": "yes",
+    "effective_from": "2026-07-19T00:00:00Z",
+    "effective_to": "2026-10-14T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-07-21T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0186",
+    "answer": "yes",
+    "effective_from": "2026-07-22T00:00:00Z",
+    "effective_to": "2026-10-17T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-07-24T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0187",
+    "answer": "no",
+    "effective_from": "2026-07-24T00:00:00Z",
+    "effective_to": "2026-10-19T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-07-21T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0188",
+    "answer": "yes",
+    "effective_from": "2026-07-31T00:00:00Z",
+    "effective_to": "2026-10-26T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-08-03T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0191",
+    "answer": "yes",
+    "effective_from": "2026-08-08T00:00:00Z",
+    "effective_to": "2026-11-03T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-08-05T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0192",
+    "answer": "yes",
+    "effective_from": "2026-08-13T00:00:00Z",
+    "effective_to": "2026-11-08T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-08-11T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0193",
+    "answer": "yes",
+    "effective_from": "2026-08-13T00:00:00Z",
+    "effective_to": "2026-11-08T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-08-10T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0194",
+    "answer": "yes",
+    "effective_from": "2026-08-16T00:00:00Z",
+    "effective_to": "2026-11-11T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-08-17T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0195",
+    "answer": "yes",
+    "effective_from": "2026-08-21T00:00:00Z",
+    "effective_to": "2026-11-16T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-08-20T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0197",
+    "answer": "yes",
+    "effective_from": "2026-08-23T00:00:00Z",
+    "effective_to": "2026-11-18T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-08-22T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0198",
+    "answer": "yes",
+    "effective_from": "2026-08-29T00:00:00Z",
+    "effective_to": "2026-11-24T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-08-30T19:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0199",
+    "answer": "yes",
+    "effective_from": "2026-09-02T00:00:00Z",
+    "effective_to": "2026-11-28T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-09-03T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0201",
+    "answer": "yes",
+    "effective_from": "2026-09-09T00:00:00Z",
+    "effective_to": "2026-12-05T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-09-11T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0202",
+    "answer": "yes",
+    "effective_from": "2026-09-12T00:00:00Z",
+    "effective_to": "2026-12-08T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-09-10T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0204",
+    "answer": "no",
+    "effective_from": "2026-09-13T00:00:00Z",
+    "effective_to": "2026-12-09T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-09-12T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0205",
+    "answer": "yes",
+    "effective_from": "2026-09-21T00:00:00Z",
+    "effective_to": "2026-12-17T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-09-18T00:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0206",
+    "answer": "yes",
+    "effective_from": "2026-09-22T00:00:00Z",
+    "effective_to": "2026-12-18T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-09-25T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0207",
+    "answer": "yes",
+    "effective_from": "2026-09-26T00:00:00Z",
+    "effective_to": "2026-12-22T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-09-25T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0208",
+    "answer": "yes",
+    "effective_from": "2026-09-27T00:00:00Z",
+    "effective_to": "2026-12-23T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-09-24T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0209",
+    "answer": "yes",
+    "effective_from": "2026-10-02T00:00:00Z",
+    "effective_to": "2026-12-28T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-10-04T03:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0211",
+    "answer": "yes",
+    "effective_from": "2026-10-06T00:00:00Z",
+    "effective_to": "2027-01-01T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-10-08T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0212",
+    "answer": "yes",
+    "effective_from": "2026-10-10T00:00:00Z",
+    "effective_to": "2027-01-05T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-10-08T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0213",
+    "answer": "yes",
+    "effective_from": "2026-10-14T00:00:00Z",
+    "effective_to": "2027-01-09T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-10-12T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0214",
+    "answer": "yes",
+    "effective_from": "2026-10-13T00:00:00Z",
+    "effective_to": "2027-01-08T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-10-12T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0215",
+    "answer": "yes",
+    "effective_from": "2026-10-20T00:00:00Z",
+    "effective_to": "2027-01-15T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-10-18T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0216",
+    "answer": "yes",
+    "effective_from": "2026-10-19T00:00:00Z",
+    "effective_to": "2027-01-14T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-10-21T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0218",
+    "answer": "yes",
+    "effective_from": "2026-10-26T00:00:00Z",
+    "effective_to": "2027-01-21T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-10-24T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0219",
+    "answer": "yes",
+    "effective_from": "2026-10-29T00:00:00Z",
+    "effective_to": "2027-01-24T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-10-28T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0221",
+    "answer": "no",
+    "effective_from": "2026-11-03T00:00:00Z",
+    "effective_to": "2027-01-29T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-11-05T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0222",
+    "answer": "yes",
+    "effective_from": "2026-11-08T00:00:00Z",
+    "effective_to": "2027-02-03T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-11-07T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0223",
+    "answer": "yes",
+    "effective_from": "2026-11-14T00:00:00Z",
+    "effective_to": "2027-02-09T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-11-14T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0225",
+    "answer": "yes",
+    "effective_from": "2026-11-18T00:00:00Z",
+    "effective_to": "2027-02-13T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-11-19T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0226",
+    "answer": "yes",
+    "effective_from": "2026-11-18T00:00:00Z",
+    "effective_to": "2027-02-13T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-11-17T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0227",
+    "answer": "yes",
+    "effective_from": "2026-11-25T00:00:00Z",
+    "effective_to": "2027-02-20T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-11-27T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0228",
+    "answer": "yes",
+    "effective_from": "2026-11-26T00:00:00Z",
+    "effective_to": "2027-02-21T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-11-26T01:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0229",
+    "answer": "yes",
+    "effective_from": "2026-11-29T00:00:00Z",
+    "effective_to": "2027-02-24T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-11-27T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0232",
+    "answer": "yes",
+    "effective_from": "2026-12-07T00:00:00Z",
+    "effective_to": "2027-03-04T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-12-05T22:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0233",
+    "answer": "yes",
+    "effective_from": "2026-12-14T00:00:00Z",
+    "effective_to": "2027-03-11T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-12-17T02:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0234",
+    "answer": "yes",
+    "effective_from": "2026-12-14T00:00:00Z",
+    "effective_to": "2027-03-11T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-12-16T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0235",
+    "answer": "yes",
+    "effective_from": "2026-12-15T00:00:00Z",
+    "effective_to": "2027-03-12T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-12-18T23:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0236",
+    "answer": "yes",
+    "effective_from": "2026-12-18T00:00:00Z",
+    "effective_to": "2027-03-15T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-12-17T18:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0237",
+    "answer": "yes",
+    "effective_from": "2026-12-23T00:00:00Z",
+    "effective_to": "2027-03-20T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-12-25T21:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "HX-0239",
+    "answer": "yes",
+    "effective_from": "2026-12-27T00:00:00Z",
+    "effective_to": "2027-03-24T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2026-12-29T17:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "dq-8840",
+    "answer": "yes",
+    "effective_from": "2025-09-07T00:00:00Z",
+    "effective_to": "2025-12-06T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2025-09-04T17:05:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "dq-8840",
+    "answer": "yes",
+    "effective_from": "2025-09-07T00:00:00Z",
+    "effective_to": "2025-12-06T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2025-09-09T14:40:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "REF-2290",
+    "answer": "timeout",
+    "effective_from": null,
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2027-01-09T19:40:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "org-cover-clerk",
+    "answer": "timeout",
+    "effective_from": null,
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2027-01-09T19:42:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "THR-17",
+    "answer": "yes",
+    "effective_from": "2027-01-15T00:00:00Z",
+    "effective_to": "2027-04-15T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2027-01-09T16:40:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "CallRecorded",
+    "ref": "REF-4417",
+    "occurred_at": "2027-01-10T16:20:00Z",
+    "payload": {
+      "call_id": "call-match",
+      "endpoint_region": "ca-central-1",
+      "http_status": 200,
+      "member_desk": "America/Vancouver",
+      "object_where": "hospital letter for REF-4417",
+      "processor_region": "ca-central-1",
+      "ref": "REF-4417"
+    }
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0001",
+    "answer": "yes",
+    "effective_from": "2025-02-09T14:12:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-02-06T16:12:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0002",
+    "answer": "yes",
+    "effective_from": "2025-02-13T11:24:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-02-10T13:24:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0003",
+    "answer": "yes",
+    "effective_from": "2025-02-17T17:36:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-02-14T19:36:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0004",
+    "answer": "yes",
+    "effective_from": "2025-02-21T11:04:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-02-18T13:04:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0006",
+    "answer": "yes",
+    "effective_from": "2025-03-01T12:50:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-02-26T14:50:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0007",
+    "answer": "yes",
+    "effective_from": "2025-03-05T12:04:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-03-02T14:04:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0008",
+    "answer": "yes",
+    "effective_from": "2025-03-09T15:24:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-03-06T17:24:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0009",
+    "answer": "yes",
+    "effective_from": "2025-03-13T14:00:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-03-10T16:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0011",
+    "answer": "no",
+    "effective_from": "2025-03-21T12:18:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-03-18T14:18:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0012",
+    "answer": "yes",
+    "effective_from": "2025-03-25T13:18:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-03-22T15:18:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0013",
+    "answer": "timeout",
+    "effective_from": null,
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-03-26T15:48:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0014",
+    "answer": "yes",
+    "effective_from": "2025-04-02T17:43:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-03-30T19:43:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0016",
+    "answer": "yes",
+    "effective_from": "2025-04-10T18:08:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-04-07T20:08:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0017",
+    "answer": "yes",
+    "effective_from": "2025-04-14T14:14:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-04-11T16:14:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0018",
+    "answer": "yes",
+    "effective_from": "2025-04-18T17:42:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-04-15T19:42:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0019",
+    "answer": "yes",
+    "effective_from": "2025-04-22T11:22:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-04-19T13:22:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0021",
+    "answer": "yes",
+    "effective_from": "2025-04-30T16:31:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-04-27T18:31:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0022",
+    "answer": "no",
+    "effective_from": "2025-05-04T16:04:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-05-01T18:04:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0023",
+    "answer": "yes",
+    "effective_from": "2025-05-08T17:33:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-05-05T19:33:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0024",
+    "answer": "yes",
+    "effective_from": "2025-05-12T11:02:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-05-09T13:02:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0026",
+    "answer": "timeout",
+    "effective_from": null,
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-05-17T20:01:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0027",
+    "answer": "yes",
+    "effective_from": "2025-05-24T12:09:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-05-21T14:09:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0028",
+    "answer": "yes",
+    "effective_from": "2025-05-28T10:21:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-05-25T12:21:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0029",
+    "answer": "yes",
+    "effective_from": "2025-06-01T14:31:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-05-29T16:31:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0031",
+    "answer": "yes",
+    "effective_from": "2025-06-09T10:43:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-06-06T12:43:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0032",
+    "answer": "yes",
+    "effective_from": "2025-06-13T12:22:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-06-10T14:22:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0033",
+    "answer": "no",
+    "effective_from": "2025-06-17T13:29:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-06-14T15:29:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0034",
+    "answer": "yes",
+    "effective_from": "2025-06-21T18:02:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-06-18T20:02:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0036",
+    "answer": "yes",
+    "effective_from": "2025-06-29T15:43:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-06-26T17:43:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0037",
+    "answer": "yes",
+    "effective_from": "2025-07-03T11:30:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-06-30T13:30:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0038",
+    "answer": "yes",
+    "effective_from": "2025-07-07T15:23:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-07-04T17:23:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0039",
+    "answer": "timeout",
+    "effective_from": null,
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-07-08T15:23:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0041",
+    "answer": "yes",
+    "effective_from": "2025-07-19T14:15:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-07-16T16:15:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0042",
+    "answer": "yes",
+    "effective_from": "2025-07-23T13:01:00Z",
+    "effective_to": null,
+    "currency": "CAD",
+    "occurred_at": "2025-07-20T15:01:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0043",
+    "answer": "yes",
+    "effective_from": "2025-07-27T16:25:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-07-24T18:25:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0044",
+    "answer": "no",
+    "effective_from": "2025-07-31T18:05:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-07-28T20:05:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0046",
+    "answer": "yes",
+    "effective_from": "2025-08-08T14:04:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-08-05T16:04:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2B-0047",
+    "answer": "yes",
+    "effective_from": "2025-08-12T16:08:00Z",
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2025-08-09T18:08:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "r2a-onboard-fb",
+    "answer": "yes",
+    "effective_from": "2027-01-20T00:00:00Z",
+    "effective_to": "2027-04-20T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2027-01-13T17:30:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2D-7",
+    "answer": "yes",
+    "effective_from": "2027-01-25T00:00:00Z",
+    "effective_to": "2027-01-31T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2027-01-20T16:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2E-9",
+    "answer": "yes",
+    "effective_from": "2027-02-20",
+    "effective_to": "2027-05-20",
+    "currency": "CAD",
+    "occurred_at": "2027-02-16T17:25:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "PhoneFiled",
+    "ref": "R2F-2701",
+    "occurred_at": "2025-04-11T19:05:00Z",
+    "payload": {
+      "field": "phone",
+      "form": "digits",
+      "person_id": "p-r2f-2701",
+      "phone": "6045552701",
+      "ref": "R2F-2701"
+    }
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2H-BC",
+    "answer": "yes",
+    "effective_from": "2027-02-01T00:00:00Z",
+    "effective_to": "2027-05-01T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2027-01-11T20:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R2H-WA",
+    "answer": "yes",
+    "effective_from": "2027-02-01T00:00:00Z",
+    "effective_to": "2027-05-01T00:00:00Z",
+    "currency": "USD",
+    "occurred_at": "2027-01-11T20:10:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "AccountListed",
+    "ref": "R3A-MERGE",
+    "occurred_at": "2026-11-04T17:00:00Z",
+    "payload": {
+      "clinic_state": "WA",
+      "currencies": [
+        "CAD",
+        "USD"
+      ],
+      "member_region": "BC",
+      "payer": "harbor-coverage",
+      "person_id": "p-r3a-1",
+      "ref": "R3A-MERGE",
+      "site": "harbor-coverage",
+      "statement": "Harbor Coverage lists CAD for the BC member and USD for the WA clinic."
+    }
+  },
+  {
+    "kind": "coverage",
+    "ref": "R3B-SURGE",
+    "answer": "timeout",
+    "effective_from": null,
+    "effective_to": null,
+    "currency": "USD",
+    "occurred_at": "2026-01-21T18:11:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "R3C-1",
+    "answer": "yes",
+    "effective_from": "2026-05-04T00:00:00Z",
+    "effective_to": "2026-08-04T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2026-04-21T16:00:00Z"
+  },
+  {
+    "kind": "event",
+    "type": "ContractRecorded",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2024-04-12T18:05:00Z",
+    "payload": {
+      "contract_id": "MA-2024",
+      "desk": "vancouver-desk",
+      "doc_id": "MA-2024",
+      "payer": "harbor-coverage"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "RetentionNote",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2025-11-18T20:10:00Z",
+    "payload": {
+      "archive_after": "2026-01-01",
+      "contract_id": "MA-2024",
+      "doc_id": "MA-2024"
+    }
+  },
+  {
+    "kind": "event",
+    "type": "AmendmentLogged",
+    "ref": "r3d-ma-2024",
+    "occurred_at": "2026-12-15T21:10:00Z",
+    "payload": {
+      "contract_id": "MA-2024",
+      "doc_id": "MA-2024",
+      "note": "Amendment packet for contract MA-2024 logged at harbor-coverage."
+    }
+  },
+  {
+    "kind": "coverage",
+    "ref": "R3F-LEDGER",
+    "answer": "yes",
+    "effective_from": "2027-02-01",
+    "effective_to": "2027-05-01",
+    "currency": "CAD",
+    "occurred_at": "2027-01-20T16:00:00Z"
+  },
+  {
+    "kind": "coverage",
+    "ref": "REF-4417",
+    "answer": "yes",
+    "effective_from": "2027-01-12T00:00:00Z",
+    "effective_to": "2027-04-12T00:00:00Z",
+    "currency": "CAD",
+    "occurred_at": "2027-01-08T16:00:00Z"
+  }
+]
