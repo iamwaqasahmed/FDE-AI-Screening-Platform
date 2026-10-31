@@ -1,0 +1,54 @@
+---
+doc_id: MIG-02-NO
+access: student
+family: history
+title: Letter of the Harbor and Cascade declines
+status: filed
+effective: 2022-09-14
+sunset:
+site: vancouver-desk
+audience: staff
+supersedes:
+author: Harper Singh
+---
+
+NORTHLINE ACCESS COLLABORATIVE
+Integration
+Vancouver desk
+
+Our file MIG-02-NO
+To: the integration drawer, in front of the September letters
+From: Harper Singh, integration engineer
+Place: 4th floor, Vancouver
+Date: 14 September 2022
+Subject: Harbor Coverage and Cascade Seattle decline a shared write
+
+I am Harper Singh. I am the integration engineer at Northline Access Collaborative. This is the letter. I am writing it on Wednesday, 14 September 2022, at the Vancouver desk, on an office day. The office week is Monday through Friday. The wall clock is America/Vancouver. I am not writing a memorandum about a letter I might compose later. The declines are already in the drawer. This page is the letter that carries them, in the words that were signed, into one place a reader can hold. I asked Harbor Coverage and Cascade Seattle to write one table. They declined a shared write. Both answers are no.
+
+The ask went out at the end of August. I sent it by the internal post and by the wire the payer liaison already uses. I addressed Harbor's copy to Lena Brooks. She is the Harbor Coverage supervisor in Seattle. I did not address it to a general mailbox, because a mailbox can decline by silence and I wanted a person. I addressed Cascade's copy to Jordan Hale. He keeps records at Cascade Seattle. I asked each of them to answer in writing, even if the answer was no, so that I would not be left building a refusal out of a missed call. I asked for one table, and I meant one table that both of them would write. Harbor Coverage would write its rows there. Cascade Seattle would write its rows there. A referral that touched both rooms would have one place where both writings landed, instead of two books that mention each other by a code and never share a surface. That was the whole request. I did not send a design for a glass. I did not send a column list for a board. I did not send a sentence about what a clerk should read aloud. I sent the table, the names of the two writers, and the date I hoped they would answer.
+
+I left rooms out of the ask on purpose, and the letter would be false if I widened it now. I left the Vancouver desk's own book out of the ask. I left Fraser Burnaby out of the ask. Fraser is a hospital in British Columbia and keeps America/Vancouver, and Anita Desai's chart rack was not the table I requested. I left Cedar Ridge out of the ask. Cedar Ridge files at night, including Saturday and Sunday, and it has no slot wire a desk can call. That fact was true in August and it is true today, and it was not the subject of the letters. I asked two organizations. I asked them for one shared write. I am not going to describe the September answers as if I had asked three doors and been misunderstood at the third.
+
+Harbor's decline reached me first, on 6 September, on Harbor Coverage letterhead, signed by Lena Brooks. I am keeping her sentence in her words. Harbor will write Harbor's book and will not write a table that Cascade also writes. She did not offer a different table under a Harbor name and then invite Cascade in as a guest. She did not offer to let a Northline login append on Harbor's side. She declined the shared writing itself. I had been ready, if she had asked, to talk about who would hold the pen when a row was wrong. She did not ask. The decline is complete as to Harbor. Ruth Alvarez's name is not on the letter. Ruth is the Harbor clerk who often attaches the spreadsheet. I am not inserting a clerk into a refusal a supervisor has already signed. Lena Brooks is the person who declined for Harbor Coverage. I have read the letter more than once. It is a no to the shared write. It is not a request for a calmer draft of the same table.
+
+Cascade's decline reached me on 9 September. It is a short memorandum from Jordan Hale, and I am treating it as the letter it is, because he signed it and because he answered the question I asked. He wrote that Cascade records will keep Cascade's charts in Cascade's book, and that he will not put those charts into a table whose other writer is the payer. He was polite about the referral code. He said a code can be copied onto a Cascade header when a case is Cascade's case, and that a copied code is not a shared table. I agree that a copied code is not a shared table. I had not asked him for a copied code. I had asked him to write the table. He declined. He also wrote that he would not invent a naming rule for anyone else while he was declining. I am not treating that sentence as a riddle I have to solve in this letter. The part I asked, he answered. The answer is no. Omar Farouk's night shift at Cascade is not a second answer. Omar was not the signer. Jordan Hale declined for Cascade records.
+
+I sat with both letters on Monday, 12 September, which was an office day at this desk. I did not telephone either of them to soften the wording. A telephone call would have let me hear a tone, and a tone is not what belongs in the drawer. I need the fact that each organization, asked in writing to write one table with the other, declined in writing. I read Lena's letter once more beside Jordan's memorandum. They had declined the same thing. They had not declined two different proposals that I could reconcile by splitting the ask. There was one proposal. Harbor said no to it. Cascade said no to it. I am not going to describe that pair of answers as a misunderstanding a third letter could cure. I understood them on Monday. I understand them today. This letter records the understanding. It does not reopen the ask.
+
+I want a later reader to recover the shape of the table, because the words "shared write" can be stretched by someone who was not in the post. I did not mean three tables with a view laid over them. I did not mean a nightly file from Cedar Ridge renamed as a table. I did not mean Fraser Burnaby's rack. I meant one table, writable by Harbor Coverage and writable by Cascade Seattle, for a referral both of them touch. Cascade keeps America/Los_Angeles. Harbor records its own time on its own notices. The desk keeps America/Vancouver. I knew those clocks were different when I wrote the August letters. I still asked for one table. The difference in clocks was not the sentence they answered. The sentence they answered was the sentence about writing. They will not write one table together. I am not converting their refusal of a pen into a ruling about which stamp a room may paint. They did not issue that ruling. I am not issuing it for them.
+
+The clock page dated 2 April 2019 is still on the platform index. Wes Calder wrote it. The title on it is the title he gave it. The status printed on that page is current. I opened it before I sent the August letters, and I opened it again this morning. I am not editing that page in this letter. I am not striking the status line. I am not adding a footnote to his cover. The September attempt was an attempt to get two organizations to write one table. It was not a rewrite of his page, and it was not a request that Lena or Jordan adopt his sentences in the margin of my August letter. They did not adopt the table. The page remains the page, with the status it already has. I am putting this letter in the integration drawer beside the declines, not on top of the clock page in a way that would look like a substitution. Staff may argue about the page. This letter does not award the argument, and it does not award a clock to a screen.
+
+What I will not do with the declines is as much a part of the letter as the nos themselves. I am not opening a substitute project this month in which Northline writes the table for them and tells them afterward. A pen only I can move, worn as if it were theirs, is not the shared write I asked for. I am not going to keep a private copy in integration and call it the table they declined. A copy I can edit, and they cannot, is my notebook. It is not the thing I requested. I am not going to mark either letter provisional. Lena Brooks did not say she would revisit the question in October. Jordan Hale did not say he was waiting on a calmer week. If either of them writes again, that writing can be clipped behind this page. I will not pretend, in the clipping, that September's answer was yes.
+
+People who heard that I had sent the August letters have asked me what the desk would then put in front of a member. I am recording that they asked, because the question will be repeated by anyone who finds a decline and wants it to finish in a picture of a glass. I did not answer it in August. I am not answering it in this letter. Harbor and Cascade declined before any such picture would have had a table under it. This letter does not propose what a screen should display. It does not name a field for a panel. It does not say which figure a clerk should read aloud. It does not say which feed should be painted at the top of anything. I was asked for that proposal in the hallway on Tuesday, and I refused it, and the refusal belongs in the letter and not only in the hallway. The subject of the letter is the shared write they will not perform. Display is a different subject. I am not taking it up.
+
+The practical residue is small and I want it exact. The channel book at the Vancouver desk continues to be written here. The hospital book at Cascade continues to be written at Cascade. Harbor's book continues to be written at Harbor. Referral codes will still be copied from one of those books onto another when a person types them. A copied code is text. It is not the table I asked for. Jordan Hale was right to separate those two ideas even in the act of declining. I am not celebrating the separation. I am keeping it, because if I blur it now I will have failed to record what was refused. What was refused is one table with two writers. What remains is the books those writers already keep. Morgan Ibarra still has the bay. June Lau and Noel Park still meet the spreadsheets. Chris Pell still does not want a currency code chosen for him on the way into finance. I am not choosing one. Dana Okonkwo still holds operations. She is not, by this letter, granted a pen in Harbor's book or in Cascade's book.
+
+Distribution of this letter: the integration drawer, in front of Lena Brooks's letter of 6 September and Jordan Hale's memorandum of 9 September, both clipped behind it. A copy stays on my shelf. I am not sending a fresh argument to either of them this week. They have declined a shared write. This is the letter of that decline. I have nothing further to propose under these lines.
+
+Harper Singh
+Integration engineer
+Northline Access Collaborative
+Vancouver
+14 September 2022

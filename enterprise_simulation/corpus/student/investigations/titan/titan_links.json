@@ -1,0 +1,197 @@
+[
+  {
+    "from": "NET-WAIT",
+    "to": "INT-DANA",
+    "note": "June puts Dana's 10 January interview in the 29 January jacket as the first numbered statement."
+  },
+  {
+    "from": "NET-WAIT",
+    "to": "SES-DANA-2",
+    "note": "June puts Dana's 20 January interview beside the first, including Dana's unread window and the withdrawn guess."
+  },
+  {
+    "from": "NET-WAIT",
+    "to": "INT-MORGAN",
+    "note": "June puts Morgan's 16 January interview in the jacket as part of the second numbered statement."
+  },
+  {
+    "from": "NET-WAIT",
+    "to": "SES-MORGAN-2",
+    "note": "June puts Morgan's 21 January interview beside it, including the almost-sentence and the holding line."
+  },
+  {
+    "from": "NET-WAIT",
+    "to": "INT-JORDAN",
+    "note": "June puts Jordan's 17 January interview in the jacket as the third numbered statement."
+  },
+  {
+    "from": "NET-WAIT",
+    "to": "EXT-HARBOR",
+    "note": "June puts Ruth's 8 January letter in the jacket and numbers the window dates as the fifth statement."
+  },
+  {
+    "from": "NET-WAIT",
+    "to": "SES-RUTH-2",
+    "note": "June puts Ruth's 19 January interview beside the letter, including the separation of REF-2290 from REF-4417."
+  },
+  {
+    "from": "NET-WAIT",
+    "to": "MEM-4417-THREAD",
+    "note": "June puts the member thread through 18 January in the jacket and numbers Andrea Moss's words as the sixth statement."
+  },
+  {
+    "from": "NET-WAIT",
+    "to": "CASEPACK-WAIT",
+    "note": "June leaves the 25 January jacket in the drawer under the Friday page."
+  },
+  {
+    "from": "NET-WAIT",
+    "to": "INC-HANDSET",
+    "note": "June leaves the 9 January handset timeline in the folder with the call stamp and the undelivered flag."
+  },
+  {
+    "from": "NET-HOURS",
+    "to": "CASEPACK-HOURS",
+    "note": "Noel leaves Sunday's page in the drawer under the Monday page."
+  },
+  {
+    "from": "NET-HOURS",
+    "to": "INC-HOURS",
+    "note": "Noel carries the open 10 January ticket forward with both named hypotheses still on it."
+  },
+  {
+    "from": "NET-HOURS",
+    "to": "INT-SAM",
+    "note": "Noel files Sam's interview with the file-time sentence and the unfinished zone question."
+  },
+  {
+    "from": "NET-HOURS",
+    "to": "TECH-CLOCK-2019",
+    "note": "Noel files the 2019 page after an unsigned clip set it on the hours pile."
+  },
+  {
+    "from": "NET-HOURS",
+    "to": "TECH-ASSISTANT",
+    "note": "Noel files the operator note that describes which hours document the assistant walks."
+  },
+  {
+    "from": "NET-HOURS",
+    "to": "MAIL-HOURS-WEEK",
+    "note": "Noel leaves the hours-week mail in the pile with the phone script, the cards, and the host readings."
+  },
+  {
+    "from": "NET-HOURS",
+    "to": "PACK-HOURS",
+    "note": "Noel leaves Friday's packet under the Sunday page and the Monday page."
+  },
+  {
+    "from": "NET-LEDGER",
+    "to": "CASEPACK-LEDGER",
+    "note": "Chris leaves the 25 January packet in the folder beside the Wednesday page."
+  },
+  {
+    "from": "NET-LEDGER",
+    "to": "INC-LEDGER",
+    "note": "Chris carries the open 22 January ticket forward with both currency lines still on the paper."
+  },
+  {
+    "from": "NET-LEDGER",
+    "to": "INC-LEDGER-DAY2",
+    "note": "Chris carries Saturday's note forward, including the question he sent and the empty space under it."
+  },
+  {
+    "from": "NET-LEDGER",
+    "to": "RUN-REPLICA",
+    "note": "Chris places Bobbi's 19 January cursor note in the folder beside the unanswered question about the board copy."
+  },
+  {
+    "from": "NET-LEDGER",
+    "to": "TECH-LOGS-2026",
+    "note": "Chris leaves the note about the three logs in the folder with the question Bobbi has not answered."
+  },
+  {
+    "from": "NET-MIGRATE",
+    "to": "RUN-MIGRATE",
+    "note": "Bobbi maps Harper's 2 June phone note onto the shelf with both stored shapes still present."
+  },
+  {
+    "from": "NET-MIGRATE",
+    "to": "YR-2026",
+    "note": "Bobbi maps her 18 December year leaf onto the same shelf as the January leftovers."
+  },
+  {
+    "from": "NET-MIGRATE",
+    "to": "YR-2021",
+    "note": "Bobbi maps June's 2021 spreadsheet leaf into the year drawer beside the later logs."
+  },
+  {
+    "from": "NET-MIGRATE",
+    "to": "TECH-LOGS-2026",
+    "note": "Bobbi maps Harper's three-log note beside the 2019 page that remains linked."
+  },
+  {
+    "from": "NET-MIGRATE",
+    "to": "TECH-CLOCK-2019",
+    "note": "Bobbi maps the 2019 page as a link she has not taken down."
+  },
+  {
+    "from": "NET-MIGRATE",
+    "to": "CASE-MERGE-FILE",
+    "note": "Bobbi maps Sam's open merge jacket, with both file ids still unstruck, onto the Cedar leftover."
+  },
+  {
+    "from": "NET-MIGRATE",
+    "to": "HIST-ONE-CLOCK",
+    "note": "Bobbi maps the unsigned one-instant draft beside the linked 2019 page."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "CASEPACK-LETTER",
+    "note": "Evan leaves the 18 January jacket in the drawer under the Friday list."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "MAIL-LETTER",
+    "note": "Evan staples the 9 January thread into the Friday jacket with the ask still on the page."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "INT-PRIYA",
+    "note": "Evan sets Priya's 11 January interview in the jacket beside the touch he listed for her."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "SES-PRIYA-2",
+    "note": "Evan sets Priya's 22 January interview beside the earlier one, with the Fraser page still in her account."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "GOV-REQ-ALEX",
+    "note": "Evan sets Alex's break-glass note in the jacket with the reviewer field still blank on the page."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "AUD-COPY",
+    "note": "Evan sets the 16 January note about the copy return in the jacket beside the job he listed."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "REQ-LOG",
+    "note": "Evan sets the request log in the jacket beside the screen session he listed for Noel."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "GOV-ACCESS",
+    "note": "Evan sets the May desk page in the jacket beside the clerk touch."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "POL-BREAK",
+    "note": "Evan sets the May reviewer page in the jacket beside Alex's opening line."
+  },
+  {
+    "from": "NET-LETTER",
+    "to": "TECH-ASSISTANT",
+    "note": "Evan sets the operator note in the jacket beside the scan he listed for the assistant owner."
+  }
+]

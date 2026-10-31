@@ -1,0 +1,54 @@
+---
+doc_id: MIG-04-TEST
+access: student
+family: history
+title: Test notes on a row that arrived twice
+status: filed
+effective: 2023-04-02
+sunset:
+site: vancouver-desk
+audience: staff
+supersedes:
+author: Bobbi Tran
+---
+
+NORTHLINE ACCESS COLLABORATIVE
+Information technology
+Vancouver desk
+
+Our file MIG-04-TEST
+To: the integration drawer, test notes, not a finding
+From: Bobbi Tran
+Place: 4th floor, Vancouver
+Date: 2 April 2023
+Subject: a test row arrived twice, and I do not know if the second replaced the first
+
+I am Bobbi Tran. I work in information technology for Northline Access Collaborative. I am writing these test notes on Sunday, 2 April 2023. I am dating them with the day I saw the row, which is a Sunday. The office week at the Vancouver desk is Monday through Friday. Sunday is not an office day. The counter is not open. I am not opening it. Noel Park is not at the bay. June Lau is not on the telephone with a member. Morgan Ibarra is not supervising a live queue from this room. I am in the machine room because Harper Singh asked me to watch a test load that was left running over the weekend, and because I am new to the logs. New to the logs is the true description. I am not new to the building. I have had a seat here since 2020, and I have opened workbooks when a file would not open. The logs are a different object from those workbooks. I was shown them this spring. I do not yet keep them the way a person keeps a thing she can defend. Harper is the integration engineer. These notes are mine. They are notes. They are not a verdict.
+
+The three logs he has me watching are the hospital log, the channel log, and the payer log. I am writing the names in that order because that is the order he said them, not because the order is a sequence of events. He told me to look at one log, close it, and then look at the next. I tried to do that with the test. The test was a small batch of workbook rows copied onto the logs according to the column map he wrote in January. I was not asked to redraw the map. I was asked to see whether a row he had marked as a test row landed where the map said it should land. The test row is not a member I can telephone. I am calling it the test row so I do not borrow a live referral out of the bay to make the note sound urgent. The reference string on it is the string Harper wrote on the test sheet, T-0402-ROW. I am copying that string here so the note points at the sheet. I am not promoting the string into a case.
+
+What I saw is that the row arrived twice. I want that sentence to stay as flat as the screen I was looking at. I ran nothing clever. I had the test sheet on the left, with one line for T-0402-ROW, and I had the log he told me to open on the right. The first time I looked, after the first load message, the matter was there. I wrote the time string I saw onto a piece of paper, and I wrote enough of the payload to recognize it: the reference, a telephone run of digits, and the log name. I closed the result, the way he had told me to close a result before opening another. The second load message appeared while I was writing. I opened the same log again. The matter was there again. I do not mean that I have proved two stored lives in the sense a person who already knows this file would prove them. I mean that from where I sat, new to the logs, the row arrived, and then the row arrived again. Twice. I am not decorating "twice" into a theory.
+
+I am not sure the second replaced the first. That is the other sentence, and it has to be as flat as the first. I looked for a sign that the second arrival had written over the first. I did not find a sign I trust. I also looked for a sign that the second arrival was sitting beside the first as a separate row I could point to without doubt. I did not find a sign I trust there either. The test display I had open is a display. I am new enough that I will not pretend a display and a store are the same object on my second month of looking. When I scrolled, I could believe I was seeing one row that had been refreshed. When I scrolled again, I could believe I was seeing two. I wrote both beliefs on the paper and I did not cross either one out. I am not sure. Uncertainty is the note. I am not going to become sure because a Sunday afternoon is a bad time to leave a question open, and I am not going to ask Monday's reader to treat my discomfort as a decision.
+
+I did not delete the first. I did not delete the second. I would not know, today, which command would even be the delete, and I am not going to learn it by trying it on a test row in order to see what breaks. Harper has not told me that a test row is disposable. I am treating it as a row. If the second replaced the first, I did not watch the replacement happen as an act I can describe. If the second did not replace the first, I did not watch the two of them sit apart as an act I can describe either. Both possibilities are still in the note because I could not throw either of them out. A later person who knows more about this file may have a language for what the writer does when the same matter shows up again. I do not have that language yet. I am not borrowing a confident verb and hoping it fits. "Replaced" is the verb I am unsure of. I am leaving it unsure.
+
+The telephone on the test row was digits. I am writing that down because it was the part I could check without settling the double arrival. The cell on the test sheet was a run of digits with no dash and no space. The characters I saw on the log, the first time and the second time, were that same run. I did not insert a dash to make it easier to read back to myself. I did not see the log insert one. I am not using the telephone as evidence that the second arrival replaced the first, and I am not using it as evidence that it did not. A copied string can look the same in both stories. Sameness of digits does not tell me whether one row remains or two. I checked the digits because the map I was given says phone is digits, and the test was partly a check that I had not been looking at a different column. The check of shape succeeded as a check of shape. It did not answer the replacement question. I am not going to pretend that it did, in a footnote, after I have said that it did not.
+
+I looked at one log for the double arrival, the log the map assigned to that test line. I then did what Harper had said to do with the other two. I closed the first result and opened the hospital log, then closed that and opened the remaining one, so that I would not build a single scrolling list and call it the test. The other two logs did not show me T-0402-ROW in the glance I gave them. I am writing "the glance I gave them" because a glance is not a search I would swear to. I was already unsettled by the double arrival on the first log, and a person who is unsettled can miss a line. If Monday shows me the test reference on a log I thought was empty of it, this note will have been wrong about the glance, and I would rather say so now than sound complete. The double arrival I am sure I saw, in the weak sense of sure that means "I saw it and I wrote it down," was on the log I was told to watch for that line. The replacement question is the part I am not sure of. Those are different degrees of certainty, and I am not averaging them into one mood.
+
+I am not sure of the time strings either, beyond having copied them onto the paper. The first look showed me a time string. The second look showed me a time string. I have both strings on the paper. They are not my subject. I am not lining them up and declaring that the later string is the time a screen should keep. I am not declaring that the earlier string is the time a screen should keep. I am not declaring that they are the same instant printed twice. Wes Calder's page is still in the binder. I have read it, because it was on the shelf when I was new and Dana Okonkwo told me I could read it and should not put my name on it. I have not put my name on it. I am not applying it to T-0402-ROW in order to make two looks into one instant. Harper has not asked me to. The test notes do not award a clock. If the two time strings are different, they are different strings I copied. If a person wants them judged, that person is not me on this Sunday.
+
+Member id and MRN were both on the sample headers Harper left with the test sheet, because the January map calls those columns out. On this particular test line the sheet had a member id and did not have an MRN, or the MRN cell was blank. I am writing it that way because that is what the line showed, and a blank is a blank. I did not fill the blank with the member id in order to make the row look joined. I do not know which id would join it if both had been filled. Harper's map says he does not say which id joins. I am not saying it for him in a test note. I saw the member id copied as the member id. I did not see a second identifier appear in its place. That observation does not pick a key. It is only what the line did.
+
+Cedar Ridge was not in this test batch. I want that in the note so a Monday reader does not think I tested Sam Nguyen's nightly file and forgot to mention the result. The batch was workbook rows. Sam's file is a night file. I did not load it. I did not count it. There is no slot wire in the test I was watching, and I am not describing one. Fraser Burnaby was not in the batch. Clinical paper was not in the batch. I did not type a sentence from a jacket into the test row to see if the log would take it. Evan Cho has not asked me for this test, and I am not sending him a member's words, because the test row has none.
+
+Harper will be in on Monday. I will put this page on his desk before the bay is busy, with the scrap paper clipped to it, both time strings still readable, neither one circled. I will tell him the row arrived twice. I will tell him I am not sure the second replaced the first. If he knows which of those stories is true, he can write it on his own page. I am not going to write it on this one after he tells me, as if I had seen it on Sunday. Dana Okonkwo is operations director. I am not escalating a test uncertainty to her as if it were a member waiting. Morgan can have a copy if she wants to know that a test ran. The copy is not a script for the telephone. Chris Pell is not in this test. There was no currency on T-0402-ROW for me to tidy, and I would not have tidied one.
+
+These are test notes from a person who is new to the logs. The row arrived twice. I am not sure the second replaced the first. I did not delete either arrival. I did not pick a time for a screen. I did not fill an empty identifier. The office opens Monday. The note stays open with the question I could not close.
+
+Bobbi Tran
+Information technology
+Northline Access Collaborative
+Vancouver
+2 April 2023
