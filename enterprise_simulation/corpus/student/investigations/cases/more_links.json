@@ -1,0 +1,112 @@
+[
+  {
+    "from": "CASEPACK-WAIT",
+    "to": "INT-DANA",
+    "note": "June puts Dana's 10 January interview in the 25 January jacket with the other four statements."
+  },
+  {
+    "from": "CASEPACK-WAIT",
+    "to": "INT-MORGAN",
+    "note": "June puts Morgan's Saturday interview in the jacket beside the call time Morgan keeps on the thread."
+  },
+  {
+    "from": "CASEPACK-WAIT",
+    "to": "INT-JORDAN",
+    "note": "June puts Jordan's interview in the jacket beside his sentence about when Cascade's board starts."
+  },
+  {
+    "from": "CASEPACK-WAIT",
+    "to": "EXT-HARBOR",
+    "note": "June puts Ruth's 8 January letter in the jacket and writes that she has not finished understanding it."
+  },
+  {
+    "from": "CASEPACK-WAIT",
+    "to": "MAIL-WAIT",
+    "note": "June leaves the January mail thread in the jacket with the sentences that were still open on the 11th."
+  },
+  {
+    "from": "CASEPACK-HOURS",
+    "to": "INC-HOURS",
+    "note": "Noel carries the open 10 January ticket into the Sunday packet on the phone, the card, the assistant, and the host."
+  },
+  {
+    "from": "CASEPACK-HOURS",
+    "to": "INT-SAM",
+    "note": "Noel files Sam's interview with the note about a file time and does not mark the note."
+  },
+  {
+    "from": "CASEPACK-HOURS",
+    "to": "TECH-ASSISTANT",
+    "note": "Noel files the operator note that describes which hours document the assistant walks."
+  },
+  {
+    "from": "CASEPACK-HOURS",
+    "to": "PACK-HOURS",
+    "note": "Noel leaves Friday's packet in the drawer under the Sunday page."
+  },
+  {
+    "from": "CASEPACK-LEDGER",
+    "to": "INC-LEDGER",
+    "note": "Chris carries the open 22 January ticket into the Monday packet with both currency lines still on the paper."
+  },
+  {
+    "from": "CASEPACK-LEDGER",
+    "to": "INC-LEDGER-DAY2",
+    "note": "Chris carries Saturday's note forward, including the question he sent and the empty space under it."
+  },
+  {
+    "from": "CASEPACK-LEDGER",
+    "to": "PACK-LEDGER",
+    "note": "Chris leaves Sunday's packet in the folder beside the print stamp and the recorded date."
+  },
+  {
+    "from": "CASEPACK-LEDGER",
+    "to": "TECH-LOGS-2026",
+    "note": "Chris leaves the note about the three logs in the folder with the question Bobbi has not answered."
+  },
+  {
+    "from": "CASEPACK-FILE",
+    "to": "INC-REPLAY-FILE",
+    "note": "Sam copies the 4 November lines for one file id on two nights into the 10 November pile."
+  },
+  {
+    "from": "CASEPACK-FILE",
+    "to": "EXT-INLET-FILES",
+    "note": "Sam leaves Pat's November mail in the jacket with both file names still unstruck."
+  },
+  {
+    "from": "CASEPACK-FILE",
+    "to": "HIST-MERGE",
+    "note": "Sam leaves his 2 September night-book page in the jacket with the two names he clipped that week."
+  },
+  {
+    "from": "CASEPACK-FILE",
+    "to": "REQ-RULES-FILE",
+    "note": "Sam leaves the June 2025 night book in the pile beside the later note that kept both lines."
+  },
+  {
+    "from": "CASEPACK-LETTER",
+    "to": "MAIL-LETTER",
+    "note": "Evan staples the 9 January thread into the Monday jacket with the ask still on the page."
+  },
+  {
+    "from": "CASEPACK-LETTER",
+    "to": "INT-PRIYA",
+    "note": "Evan sets Priya's 11 January interview in the jacket beside the touch he listed for her."
+  },
+  {
+    "from": "CASEPACK-LETTER",
+    "to": "INT-EVAN",
+    "note": "Evan sets the Saturday interview in the back of the jacket beside the copy return he wrote down on Friday."
+  },
+  {
+    "from": "CASEPACK-LETTER",
+    "to": "GOV-ACCESS",
+    "note": "Evan sets the May desk page in the jacket beside the screen session he listed for Noel."
+  },
+  {
+    "from": "CASEPACK-LETTER",
+    "to": "TECH-ASSISTANT",
+    "note": "Evan sets the operator note in the jacket beside the scan he listed for the assistant owner."
+  }
+]
